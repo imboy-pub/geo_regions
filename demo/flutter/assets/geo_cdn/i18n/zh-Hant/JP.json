@@ -1,0 +1,30 @@
+{
+  "compatibleStructureRevision": "s-f6f89e0185926a48",
+  "countryCode": "JP",
+  "coverage": {
+    "explicitNames": 1,
+    "missingNames": 47,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:JP": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "cc:JP": "日本"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-9194487433308d2f",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json",
+    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+  ]
+}

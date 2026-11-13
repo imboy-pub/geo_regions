@@ -1,7 +1,9 @@
 name: geo_regions_demo
 publish_to: none
-description: A deterministic UI prototype for geo_regions, not the production SDK.
-version: 0.1.0+1
+description: >-
+  Interactive demo running the production geo_regions SDK over generated
+  offline assets; not the SDK itself and not a published package.
+version: 0.2.0+1
 environment:
   sdk: '>=3.13.0 <4.0.0'
   flutter: '>=3.47.0'
@@ -10,10 +12,14 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  # Official Flutter-team packages that replace the deprecated
-  # flutter/material.dart library split (deprecated after v3.47.0).
+  # Kept for demo/flutter/integration_test (coordinator-owned). The widget
+  # chrome itself uses the SDK's own material library (see lib/main.dart).
   cupertino_ui: ^1.1.6
   material_ui: ^1.11.0
+  # The demo embeds the SDK from this repository; demo packages are not
+  # published, so a path dependency is the intended integration shape.
+  geo_regions:
+    path: ../..
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -21,3 +27,152 @@ dev_dependencies:
     sdk: flutter
 flutter:
   uses-material-design: true
+  # Vendor variant of the assets CLI fragments (demo/flutter/tools/*.config.json):
+  # the CLI emits packages/geo_regions/data/... entries for in-package data;
+  # the demo vendors both bundles locally and rewrites the prefix per file.
+  # Regenerate before building:
+  #   dart run geo_regions:assets --config config/assets.hybrid-cn.json \
+  #     --out demo/flutter/assets/geo_regions/ --replace
+  #   dart run geo_regions:assets --config demo/flutter/tools/geo_cdn.config.json \
+  #     --out demo/flutter/assets/geo_cdn/ --replace
+  assets:
+    - "assets/geo_regions/catalog_i18n/ar.json"
+    - "assets/geo_regions/catalog_i18n/de.json"
+    - "assets/geo_regions/catalog_i18n/en.json"
+    - "assets/geo_regions/catalog_i18n/fr.json"
+    - "assets/geo_regions/catalog_i18n/it.json"
+    - "assets/geo_regions/catalog_i18n/ja.json"
+    - "assets/geo_regions/catalog_i18n/ko.json"
+    - "assets/geo_regions/catalog_i18n/ru.json"
+    - "assets/geo_regions/catalog_i18n/zh-Hans.json"
+    - "assets/geo_regions/catalog_i18n/zh-Hant.json"
+    - "assets/geo_regions/countries.json"
+    - "assets/geo_regions/i18n/en/CN.json"
+    - "assets/geo_regions/i18n/zh-Hans/CN.json"
+    - "assets/geo_regions/i18n/zh-Hant/CN.json"
+    - "assets/geo_regions/manifest.json"
+    - "assets/geo_regions/regions/CN.json"
+    - "assets/geo_regions/registry.json"
+    - "assets/geo_cdn/catalog_i18n/ar.json"
+    - "assets/geo_cdn/catalog_i18n/de.json"
+    - "assets/geo_cdn/catalog_i18n/en.json"
+    - "assets/geo_cdn/catalog_i18n/fr.json"
+    - "assets/geo_cdn/catalog_i18n/it.json"
+    - "assets/geo_cdn/catalog_i18n/ja.json"
+    - "assets/geo_cdn/catalog_i18n/ko.json"
+    - "assets/geo_cdn/catalog_i18n/ru.json"
+    - "assets/geo_cdn/catalog_i18n/zh-Hans.json"
+    - "assets/geo_cdn/catalog_i18n/zh-Hant.json"
+    - "assets/geo_cdn/countries.json"
+    - "assets/geo_cdn/i18n/ar/CN.json"
+    - "assets/geo_cdn/i18n/ar/DE.json"
+    - "assets/geo_cdn/i18n/ar/FR.json"
+    - "assets/geo_cdn/i18n/ar/GB.json"
+    - "assets/geo_cdn/i18n/ar/IT.json"
+    - "assets/geo_cdn/i18n/ar/JP.json"
+    - "assets/geo_cdn/i18n/ar/KR.json"
+    - "assets/geo_cdn/i18n/ar/RU.json"
+    - "assets/geo_cdn/i18n/ar/SA.json"
+    - "assets/geo_cdn/i18n/ar/US.json"
+    - "assets/geo_cdn/i18n/de/CN.json"
+    - "assets/geo_cdn/i18n/de/DE.json"
+    - "assets/geo_cdn/i18n/de/FR.json"
+    - "assets/geo_cdn/i18n/de/GB.json"
+    - "assets/geo_cdn/i18n/de/IT.json"
+    - "assets/geo_cdn/i18n/de/JP.json"
+    - "assets/geo_cdn/i18n/de/KR.json"
+    - "assets/geo_cdn/i18n/de/RU.json"
+    - "assets/geo_cdn/i18n/de/SA.json"
+    - "assets/geo_cdn/i18n/de/US.json"
+    - "assets/geo_cdn/i18n/en/CN.json"
+    - "assets/geo_cdn/i18n/en/DE.json"
+    - "assets/geo_cdn/i18n/en/FR.json"
+    - "assets/geo_cdn/i18n/en/GB.json"
+    - "assets/geo_cdn/i18n/en/IT.json"
+    - "assets/geo_cdn/i18n/en/JP.json"
+    - "assets/geo_cdn/i18n/en/KR.json"
+    - "assets/geo_cdn/i18n/en/RU.json"
+    - "assets/geo_cdn/i18n/en/SA.json"
+    - "assets/geo_cdn/i18n/en/US.json"
+    - "assets/geo_cdn/i18n/fr/CN.json"
+    - "assets/geo_cdn/i18n/fr/DE.json"
+    - "assets/geo_cdn/i18n/fr/FR.json"
+    - "assets/geo_cdn/i18n/fr/GB.json"
+    - "assets/geo_cdn/i18n/fr/IT.json"
+    - "assets/geo_cdn/i18n/fr/JP.json"
+    - "assets/geo_cdn/i18n/fr/KR.json"
+    - "assets/geo_cdn/i18n/fr/RU.json"
+    - "assets/geo_cdn/i18n/fr/SA.json"
+    - "assets/geo_cdn/i18n/fr/US.json"
+    - "assets/geo_cdn/i18n/it/CN.json"
+    - "assets/geo_cdn/i18n/it/DE.json"
+    - "assets/geo_cdn/i18n/it/FR.json"
+    - "assets/geo_cdn/i18n/it/GB.json"
+    - "assets/geo_cdn/i18n/it/IT.json"
+    - "assets/geo_cdn/i18n/it/JP.json"
+    - "assets/geo_cdn/i18n/it/KR.json"
+    - "assets/geo_cdn/i18n/it/RU.json"
+    - "assets/geo_cdn/i18n/it/SA.json"
+    - "assets/geo_cdn/i18n/it/US.json"
+    - "assets/geo_cdn/i18n/ja/CN.json"
+    - "assets/geo_cdn/i18n/ja/DE.json"
+    - "assets/geo_cdn/i18n/ja/FR.json"
+    - "assets/geo_cdn/i18n/ja/GB.json"
+    - "assets/geo_cdn/i18n/ja/IT.json"
+    - "assets/geo_cdn/i18n/ja/JP.json"
+    - "assets/geo_cdn/i18n/ja/KR.json"
+    - "assets/geo_cdn/i18n/ja/RU.json"
+    - "assets/geo_cdn/i18n/ja/SA.json"
+    - "assets/geo_cdn/i18n/ja/US.json"
+    - "assets/geo_cdn/i18n/ko/CN.json"
+    - "assets/geo_cdn/i18n/ko/DE.json"
+    - "assets/geo_cdn/i18n/ko/FR.json"
+    - "assets/geo_cdn/i18n/ko/GB.json"
+    - "assets/geo_cdn/i18n/ko/IT.json"
+    - "assets/geo_cdn/i18n/ko/JP.json"
+    - "assets/geo_cdn/i18n/ko/KR.json"
+    - "assets/geo_cdn/i18n/ko/RU.json"
+    - "assets/geo_cdn/i18n/ko/SA.json"
+    - "assets/geo_cdn/i18n/ko/US.json"
+    - "assets/geo_cdn/i18n/ru/CN.json"
+    - "assets/geo_cdn/i18n/ru/DE.json"
+    - "assets/geo_cdn/i18n/ru/FR.json"
+    - "assets/geo_cdn/i18n/ru/GB.json"
+    - "assets/geo_cdn/i18n/ru/IT.json"
+    - "assets/geo_cdn/i18n/ru/JP.json"
+    - "assets/geo_cdn/i18n/ru/KR.json"
+    - "assets/geo_cdn/i18n/ru/RU.json"
+    - "assets/geo_cdn/i18n/ru/SA.json"
+    - "assets/geo_cdn/i18n/ru/US.json"
+    - "assets/geo_cdn/i18n/zh-Hans/CN.json"
+    - "assets/geo_cdn/i18n/zh-Hans/DE.json"
+    - "assets/geo_cdn/i18n/zh-Hans/FR.json"
+    - "assets/geo_cdn/i18n/zh-Hans/GB.json"
+    - "assets/geo_cdn/i18n/zh-Hans/IT.json"
+    - "assets/geo_cdn/i18n/zh-Hans/JP.json"
+    - "assets/geo_cdn/i18n/zh-Hans/KR.json"
+    - "assets/geo_cdn/i18n/zh-Hans/RU.json"
+    - "assets/geo_cdn/i18n/zh-Hans/SA.json"
+    - "assets/geo_cdn/i18n/zh-Hans/US.json"
+    - "assets/geo_cdn/i18n/zh-Hant/CN.json"
+    - "assets/geo_cdn/i18n/zh-Hant/DE.json"
+    - "assets/geo_cdn/i18n/zh-Hant/FR.json"
+    - "assets/geo_cdn/i18n/zh-Hant/GB.json"
+    - "assets/geo_cdn/i18n/zh-Hant/IT.json"
+    - "assets/geo_cdn/i18n/zh-Hant/JP.json"
+    - "assets/geo_cdn/i18n/zh-Hant/KR.json"
+    - "assets/geo_cdn/i18n/zh-Hant/RU.json"
+    - "assets/geo_cdn/i18n/zh-Hant/SA.json"
+    - "assets/geo_cdn/i18n/zh-Hant/US.json"
+    - "assets/geo_cdn/manifest.json"
+    - "assets/geo_cdn/regions/CN.json"
+    - "assets/geo_cdn/regions/DE.json"
+    - "assets/geo_cdn/regions/FR.json"
+    - "assets/geo_cdn/regions/GB.json"
+    - "assets/geo_cdn/regions/IT.json"
+    - "assets/geo_cdn/regions/JP.json"
+    - "assets/geo_cdn/regions/KR.json"
+    - "assets/geo_cdn/regions/RU.json"
+    - "assets/geo_cdn/regions/SA.json"
+    - "assets/geo_cdn/regions/US.json"
+    - "assets/geo_cdn/registry.json"

@@ -1,0 +1,17 @@
+{
+  "profile": "demo-simulated-cdn-full",
+  "structures": ["CN", "DE", "FR", "GB", "IT", "JP", "KR", "RU", "SA", "US"],
+  "locales": {
+    "CN": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "DE": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "FR": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "GB": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "IT": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "JP": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "KR": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "RU": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "SA": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"],
+    "US": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"]
+  },
+  "catalogLocales": ["ar", "de", "en", "fr", "it", "ja", "ko", "ru", "zh-Hans", "zh-Hant"]
+}

@@ -1,0 +1,62 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 17,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 16,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "provisional",
+      "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BW": "provisional",
+      "iso3166-2:DE-BY": "provisional",
+      "iso3166-2:DE-HB": "provisional",
+      "iso3166-2:DE-HE": "provisional",
+      "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-MV": "provisional",
+      "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-NW": "provisional",
+      "iso3166-2:DE-RP": "provisional",
+      "iso3166-2:DE-SH": "provisional",
+      "iso3166-2:DE-SL": "provisional",
+      "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-ST": "provisional",
+      "iso3166-2:DE-TH": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ru",
+  "names": {
+    "cc:DE": "Германия",
+    "iso3166-2:DE-BB": "Бранденбург",
+    "iso3166-2:DE-BE": "Берлин",
+    "iso3166-2:DE-BW": "Баден-Вюртемберг",
+    "iso3166-2:DE-BY": "Бавария",
+    "iso3166-2:DE-HB": "Бремен",
+    "iso3166-2:DE-HE": "Гессен",
+    "iso3166-2:DE-HH": "Гамбург",
+    "iso3166-2:DE-MV": "Мекленбург-Передняя Померания",
+    "iso3166-2:DE-NI": "Нижняя Саксония",
+    "iso3166-2:DE-NW": "Северный Рейн-Вестфалия",
+    "iso3166-2:DE-RP": "Рейнланд-Пфальц",
+    "iso3166-2:DE-SH": "Шлезвиг-Гольштейн",
+    "iso3166-2:DE-SL": "Саар",
+    "iso3166-2:DE-SN": "Саксония",
+    "iso3166-2:DE-ST": "Саксония-Анхальт",
+    "iso3166-2:DE-TH": "Тюрингия"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-686afde6d5c8249f",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ru.json",
+    "sources/raw/cldr/subdivisions-ru.xml"
+  ]
+}

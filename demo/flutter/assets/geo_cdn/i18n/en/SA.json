@@ -1,0 +1,56 @@
+{
+  "compatibleStructureRevision": "s-116ac088cb082ba7",
+  "countryCode": "SA",
+  "coverage": {
+    "explicitNames": 14,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 13,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:SA": "cldr-json-qualified",
+      "iso3166-2:SA-01": "approved-in-source",
+      "iso3166-2:SA-02": "approved-in-source",
+      "iso3166-2:SA-03": "approved-in-source",
+      "iso3166-2:SA-04": "approved-in-source",
+      "iso3166-2:SA-05": "approved-in-source",
+      "iso3166-2:SA-06": "approved-in-source",
+      "iso3166-2:SA-07": "approved-in-source",
+      "iso3166-2:SA-08": "approved-in-source",
+      "iso3166-2:SA-09": "approved-in-source",
+      "iso3166-2:SA-10": "approved-in-source",
+      "iso3166-2:SA-11": "approved-in-source",
+      "iso3166-2:SA-12": "approved-in-source",
+      "iso3166-2:SA-14": "approved-in-source"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "en",
+  "names": {
+    "cc:SA": "Saudi Arabia",
+    "iso3166-2:SA-01": "Riyadh",
+    "iso3166-2:SA-02": "Makkah",
+    "iso3166-2:SA-03": "Al Madinah",
+    "iso3166-2:SA-04": "Eastern",
+    "iso3166-2:SA-05": "Al-Qassim",
+    "iso3166-2:SA-06": "Ha’il",
+    "iso3166-2:SA-07": "Tabuk",
+    "iso3166-2:SA-08": "Northern Borders",
+    "iso3166-2:SA-09": "Jizan",
+    "iso3166-2:SA-10": "Najran",
+    "iso3166-2:SA-11": "Al Bahah",
+    "iso3166-2:SA-12": "Al Jawf",
+    "iso3166-2:SA-14": "Asir"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-9f38bedb929cacc4",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-en.json",
+    "sources/raw/cldr/subdivisions-en.xml"
+  ]
+}

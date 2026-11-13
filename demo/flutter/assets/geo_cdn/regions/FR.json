@@ -1,0 +1,1272 @@
+{
+  "countryCode": "FR",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "FR",
+      "id": "cc:FR",
+      "kind": "country",
+      "name": "France",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-01",
+      "id": "iso3166-2:FR-01",
+      "kind": "subdivision",
+      "name": "Ain",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-02",
+      "id": "iso3166-2:FR-02",
+      "kind": "subdivision",
+      "name": "Aisne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-HDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-03",
+      "id": "iso3166-2:FR-03",
+      "kind": "subdivision",
+      "name": "Allier",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-04",
+      "id": "iso3166-2:FR-04",
+      "kind": "subdivision",
+      "name": "Alpes-de-Haute-Provence",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-05",
+      "id": "iso3166-2:FR-05",
+      "kind": "subdivision",
+      "name": "Hautes-Alpes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-06",
+      "id": "iso3166-2:FR-06",
+      "kind": "subdivision",
+      "name": "Alpes-Maritimes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-07",
+      "id": "iso3166-2:FR-07",
+      "kind": "subdivision",
+      "name": "Ardèche",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-08",
+      "id": "iso3166-2:FR-08",
+      "kind": "subdivision",
+      "name": "Ardennes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-09",
+      "id": "iso3166-2:FR-09",
+      "kind": "subdivision",
+      "name": "Ariège",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-10",
+      "id": "iso3166-2:FR-10",
+      "kind": "subdivision",
+      "name": "Aube",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-11",
+      "id": "iso3166-2:FR-11",
+      "kind": "subdivision",
+      "name": "Aude",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-12",
+      "id": "iso3166-2:FR-12",
+      "kind": "subdivision",
+      "name": "Aveyron",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-13",
+      "id": "iso3166-2:FR-13",
+      "kind": "subdivision",
+      "name": "Bouches-du-Rhône",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-14",
+      "id": "iso3166-2:FR-14",
+      "kind": "subdivision",
+      "name": "Calvados",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NOR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-15",
+      "id": "iso3166-2:FR-15",
+      "kind": "subdivision",
+      "name": "Cantal",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-16",
+      "id": "iso3166-2:FR-16",
+      "kind": "subdivision",
+      "name": "Charente",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-17",
+      "id": "iso3166-2:FR-17",
+      "kind": "subdivision",
+      "name": "Charente-Maritime",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-18",
+      "id": "iso3166-2:FR-18",
+      "kind": "subdivision",
+      "name": "Cher",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-19",
+      "id": "iso3166-2:FR-19",
+      "kind": "subdivision",
+      "name": "Corrèze",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-20R",
+      "id": "iso3166-2:FR-20R",
+      "kind": "subdivision",
+      "name": "Corse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-21",
+      "id": "iso3166-2:FR-21",
+      "kind": "subdivision",
+      "name": "Côte-d’Or",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-22",
+      "id": "iso3166-2:FR-22",
+      "kind": "subdivision",
+      "name": "Côtes-d’Armor",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BRE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-23",
+      "id": "iso3166-2:FR-23",
+      "kind": "subdivision",
+      "name": "Creuse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-24",
+      "id": "iso3166-2:FR-24",
+      "kind": "subdivision",
+      "name": "Dordogne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-25",
+      "id": "iso3166-2:FR-25",
+      "kind": "subdivision",
+      "name": "Doubs",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-26",
+      "id": "iso3166-2:FR-26",
+      "kind": "subdivision",
+      "name": "Drôme",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-27",
+      "id": "iso3166-2:FR-27",
+      "kind": "subdivision",
+      "name": "Eure",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NOR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-28",
+      "id": "iso3166-2:FR-28",
+      "kind": "subdivision",
+      "name": "Eure-et-Loir",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-29",
+      "id": "iso3166-2:FR-29",
+      "kind": "subdivision",
+      "name": "Finistère",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BRE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-2A",
+      "id": "iso3166-2:FR-2A",
+      "kind": "subdivision",
+      "name": "Corse-du-Sud",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-20R"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-2B",
+      "id": "iso3166-2:FR-2B",
+      "kind": "subdivision",
+      "name": "Haute-Corse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-20R"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-30",
+      "id": "iso3166-2:FR-30",
+      "kind": "subdivision",
+      "name": "Gard",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-31",
+      "id": "iso3166-2:FR-31",
+      "kind": "subdivision",
+      "name": "Haute-Garonne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-32",
+      "id": "iso3166-2:FR-32",
+      "kind": "subdivision",
+      "name": "Gers",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-33",
+      "id": "iso3166-2:FR-33",
+      "kind": "subdivision",
+      "name": "Gironde",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-34",
+      "id": "iso3166-2:FR-34",
+      "kind": "subdivision",
+      "name": "Hérault",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-35",
+      "id": "iso3166-2:FR-35",
+      "kind": "subdivision",
+      "name": "Ille-et-Vilaine",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BRE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-36",
+      "id": "iso3166-2:FR-36",
+      "kind": "subdivision",
+      "name": "Indre",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-37",
+      "id": "iso3166-2:FR-37",
+      "kind": "subdivision",
+      "name": "Indre-et-Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-38",
+      "id": "iso3166-2:FR-38",
+      "kind": "subdivision",
+      "name": "Isère",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-39",
+      "id": "iso3166-2:FR-39",
+      "kind": "subdivision",
+      "name": "Jura",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-40",
+      "id": "iso3166-2:FR-40",
+      "kind": "subdivision",
+      "name": "Landes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-41",
+      "id": "iso3166-2:FR-41",
+      "kind": "subdivision",
+      "name": "Loir-et-Cher",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-42",
+      "id": "iso3166-2:FR-42",
+      "kind": "subdivision",
+      "name": "Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-43",
+      "id": "iso3166-2:FR-43",
+      "kind": "subdivision",
+      "name": "Haute-Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-44",
+      "id": "iso3166-2:FR-44",
+      "kind": "subdivision",
+      "name": "Loire-Atlantique",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PDL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-45",
+      "id": "iso3166-2:FR-45",
+      "kind": "subdivision",
+      "name": "Loiret",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-CVL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-46",
+      "id": "iso3166-2:FR-46",
+      "kind": "subdivision",
+      "name": "Lot",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-47",
+      "id": "iso3166-2:FR-47",
+      "kind": "subdivision",
+      "name": "Lot-et-Garonne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-48",
+      "id": "iso3166-2:FR-48",
+      "kind": "subdivision",
+      "name": "Lozère",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-49",
+      "id": "iso3166-2:FR-49",
+      "kind": "subdivision",
+      "name": "Maine-et-Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PDL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-50",
+      "id": "iso3166-2:FR-50",
+      "kind": "subdivision",
+      "name": "Manche",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NOR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-51",
+      "id": "iso3166-2:FR-51",
+      "kind": "subdivision",
+      "name": "Marne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-52",
+      "id": "iso3166-2:FR-52",
+      "kind": "subdivision",
+      "name": "Haute-Marne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-53",
+      "id": "iso3166-2:FR-53",
+      "kind": "subdivision",
+      "name": "Mayenne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PDL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-54",
+      "id": "iso3166-2:FR-54",
+      "kind": "subdivision",
+      "name": "Meurthe-et-Moselle",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-55",
+      "id": "iso3166-2:FR-55",
+      "kind": "subdivision",
+      "name": "Meuse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-56",
+      "id": "iso3166-2:FR-56",
+      "kind": "subdivision",
+      "name": "Morbihan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BRE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-57",
+      "id": "iso3166-2:FR-57",
+      "kind": "subdivision",
+      "name": "Moselle",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-58",
+      "id": "iso3166-2:FR-58",
+      "kind": "subdivision",
+      "name": "Nièvre",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-59",
+      "id": "iso3166-2:FR-59",
+      "kind": "subdivision",
+      "name": "Nord",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-HDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-60",
+      "id": "iso3166-2:FR-60",
+      "kind": "subdivision",
+      "name": "Oise",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-HDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-61",
+      "id": "iso3166-2:FR-61",
+      "kind": "subdivision",
+      "name": "Orne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NOR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-62",
+      "id": "iso3166-2:FR-62",
+      "kind": "subdivision",
+      "name": "Pas-de-Calais",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-HDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-63",
+      "id": "iso3166-2:FR-63",
+      "kind": "subdivision",
+      "name": "Puy-de-Dôme",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-64",
+      "id": "iso3166-2:FR-64",
+      "kind": "subdivision",
+      "name": "Pyrénées-Atlantiques",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-65",
+      "id": "iso3166-2:FR-65",
+      "kind": "subdivision",
+      "name": "Hautes-Pyrénées",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-66",
+      "id": "iso3166-2:FR-66",
+      "kind": "subdivision",
+      "name": "Pyrénées-Orientales",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-67",
+      "id": "iso3166-2:FR-67",
+      "kind": "subdivision",
+      "name": "Bas-Rhin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-68",
+      "id": "iso3166-2:FR-68",
+      "kind": "subdivision",
+      "name": "Haut-Rhin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-69",
+      "id": "iso3166-2:FR-69",
+      "kind": "subdivision",
+      "name": "Rhône",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-69M",
+      "id": "iso3166-2:FR-69M",
+      "kind": "subdivision",
+      "name": "Métropole de Lyon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-6AE",
+      "id": "iso3166-2:FR-6AE",
+      "kind": "subdivision",
+      "name": "Alsace",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-70",
+      "id": "iso3166-2:FR-70",
+      "kind": "subdivision",
+      "name": "Haute-Saône",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-71",
+      "id": "iso3166-2:FR-71",
+      "kind": "subdivision",
+      "name": "Saône-et-Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-72",
+      "id": "iso3166-2:FR-72",
+      "kind": "subdivision",
+      "name": "Sarthe",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PDL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-73",
+      "id": "iso3166-2:FR-73",
+      "kind": "subdivision",
+      "name": "Savoie",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-74",
+      "id": "iso3166-2:FR-74",
+      "kind": "subdivision",
+      "name": "Haute-Savoie",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-ARA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-75C",
+      "id": "iso3166-2:FR-75C",
+      "kind": "subdivision",
+      "name": "Paris",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-76",
+      "id": "iso3166-2:FR-76",
+      "kind": "subdivision",
+      "name": "Seine-Maritime",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NOR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-77",
+      "id": "iso3166-2:FR-77",
+      "kind": "subdivision",
+      "name": "Seine-et-Marne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-78",
+      "id": "iso3166-2:FR-78",
+      "kind": "subdivision",
+      "name": "Yvelines",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-79",
+      "id": "iso3166-2:FR-79",
+      "kind": "subdivision",
+      "name": "Deux-Sèvres",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-80",
+      "id": "iso3166-2:FR-80",
+      "kind": "subdivision",
+      "name": "Somme",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-HDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-81",
+      "id": "iso3166-2:FR-81",
+      "kind": "subdivision",
+      "name": "Tarn",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-82",
+      "id": "iso3166-2:FR-82",
+      "kind": "subdivision",
+      "name": "Tarn-et-Garonne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-OCC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-83",
+      "id": "iso3166-2:FR-83",
+      "kind": "subdivision",
+      "name": "Var",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-84",
+      "id": "iso3166-2:FR-84",
+      "kind": "subdivision",
+      "name": "Vaucluse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PAC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-85",
+      "id": "iso3166-2:FR-85",
+      "kind": "subdivision",
+      "name": "Vendée",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-PDL"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-86",
+      "id": "iso3166-2:FR-86",
+      "kind": "subdivision",
+      "name": "Vienne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-87",
+      "id": "iso3166-2:FR-87",
+      "kind": "subdivision",
+      "name": "Haute-Vienne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-NAQ"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-88",
+      "id": "iso3166-2:FR-88",
+      "kind": "subdivision",
+      "name": "Vosges",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-GES"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-89",
+      "id": "iso3166-2:FR-89",
+      "kind": "subdivision",
+      "name": "Yonne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-90",
+      "id": "iso3166-2:FR-90",
+      "kind": "subdivision",
+      "name": "Territoire de Belfort",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-BFC"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-91",
+      "id": "iso3166-2:FR-91",
+      "kind": "subdivision",
+      "name": "Essonne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-92",
+      "id": "iso3166-2:FR-92",
+      "kind": "subdivision",
+      "name": "Hauts-de-Seine",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-93",
+      "id": "iso3166-2:FR-93",
+      "kind": "subdivision",
+      "name": "Seine-Saint-Denis",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-94",
+      "id": "iso3166-2:FR-94",
+      "kind": "subdivision",
+      "name": "Val-de-Marne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-95",
+      "id": "iso3166-2:FR-95",
+      "kind": "subdivision",
+      "name": "Val-d’Oise",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:FR-IDF"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-971",
+      "id": "iso3166-2:FR-971",
+      "kind": "subdivision",
+      "name": "Guadeloupe",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-972",
+      "id": "iso3166-2:FR-972",
+      "kind": "subdivision",
+      "name": "Martinique",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-973",
+      "id": "iso3166-2:FR-973",
+      "kind": "subdivision",
+      "name": "Guyane (française)",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-974",
+      "id": "iso3166-2:FR-974",
+      "kind": "subdivision",
+      "name": "La Réunion",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-976",
+      "id": "iso3166-2:FR-976",
+      "kind": "subdivision",
+      "name": "Mayotte",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-ARA",
+      "id": "iso3166-2:FR-ARA",
+      "kind": "subdivision",
+      "name": "Auvergne-Rhône-Alpes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-BFC",
+      "id": "iso3166-2:FR-BFC",
+      "kind": "subdivision",
+      "name": "Burgundy-Franche-Comté",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-BL",
+      "id": "iso3166-2:FR-BL",
+      "kind": "subdivision",
+      "name": "St. Barthélemy",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-BRE",
+      "id": "iso3166-2:FR-BRE",
+      "kind": "subdivision",
+      "name": "Brittany",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-CP",
+      "id": "iso3166-2:FR-CP",
+      "kind": "subdivision",
+      "name": "Clipperton Island",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-CVL",
+      "id": "iso3166-2:FR-CVL",
+      "kind": "subdivision",
+      "name": "Centre-Val de Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-GES",
+      "id": "iso3166-2:FR-GES",
+      "kind": "subdivision",
+      "name": "Grand-Est",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-HDF",
+      "id": "iso3166-2:FR-HDF",
+      "kind": "subdivision",
+      "name": "Hauts-de-France",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-IDF",
+      "id": "iso3166-2:FR-IDF",
+      "kind": "subdivision",
+      "name": "Île-de-France²",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-MF",
+      "id": "iso3166-2:FR-MF",
+      "kind": "subdivision",
+      "name": "St. Martin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-NAQ",
+      "id": "iso3166-2:FR-NAQ",
+      "kind": "subdivision",
+      "name": "Nouvelle-Aquitaine",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-NC",
+      "id": "iso3166-2:FR-NC",
+      "kind": "subdivision",
+      "name": "New Caledonia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-NOR",
+      "id": "iso3166-2:FR-NOR",
+      "kind": "subdivision",
+      "name": "Normandie",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-OCC",
+      "id": "iso3166-2:FR-OCC",
+      "kind": "subdivision",
+      "name": "Occitanie",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-PAC",
+      "id": "iso3166-2:FR-PAC",
+      "kind": "subdivision",
+      "name": "Provence-Alpes-Côte-d’Azur",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "FR-PDL",
+      "id": "iso3166-2:FR-PDL",
+      "kind": "subdivision",
+      "name": "Pays-de-la-Loire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-PF",
+      "id": "iso3166-2:FR-PF",
+      "kind": "subdivision",
+      "name": "French Polynesia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-PM",
+      "id": "iso3166-2:FR-PM",
+      "kind": "subdivision",
+      "name": "St. Pierre & Miquelon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-TF",
+      "id": "iso3166-2:FR-TF",
+      "kind": "subdivision",
+      "name": "French Southern and Antarctic Lands",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "FR-WF",
+      "id": "iso3166-2:FR-WF",
+      "kind": "subdivision",
+      "name": "Wallis & Futuna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:FR"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-7e25a9ba3f5fbfa5",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 17,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 16,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "provisional",
+      "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BW": "provisional",
+      "iso3166-2:DE-BY": "provisional",
+      "iso3166-2:DE-HB": "provisional",
+      "iso3166-2:DE-HE": "provisional",
+      "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-MV": "provisional",
+      "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-NW": "provisional",
+      "iso3166-2:DE-RP": "provisional",
+      "iso3166-2:DE-SH": "provisional",
+      "iso3166-2:DE-SL": "provisional",
+      "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-ST": "provisional",
+      "iso3166-2:DE-TH": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "de",
+  "names": {
+    "cc:DE": "Deutschland",
+    "iso3166-2:DE-BB": "Brandenburg",
+    "iso3166-2:DE-BE": "Berlin",
+    "iso3166-2:DE-BW": "Baden-Württemberg",
+    "iso3166-2:DE-BY": "Bayern",
+    "iso3166-2:DE-HB": "Bremen",
+    "iso3166-2:DE-HE": "Hessen",
+    "iso3166-2:DE-HH": "Hamburg",
+    "iso3166-2:DE-MV": "Mecklenburg-Vorpommern",
+    "iso3166-2:DE-NI": "Niedersachsen",
+    "iso3166-2:DE-NW": "Nordrhein-Westfalen",
+    "iso3166-2:DE-RP": "Rheinland-Pfalz",
+    "iso3166-2:DE-SH": "Schleswig-Holstein",
+    "iso3166-2:DE-SL": "Saarland",
+    "iso3166-2:DE-SN": "Sachsen",
+    "iso3166-2:DE-ST": "Sachsen-Anhalt",
+    "iso3166-2:DE-TH": "Thüringen"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-5537b07755ff6074",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-de.json",
+    "sources/raw/cldr/subdivisions-de.xml"
+  ]
+}

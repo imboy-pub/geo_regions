@@ -1,0 +1,36 @@
+name: geo_regions_example
+publish_to: none
+description: >-
+  Minimal runnable integration of the geo_regions picker over a generated
+  offline bundle. Not published; demonstrates the documented host flow.
+version: 0.1.0
+environment:
+  sdk: '>=3.13.0 <4.0.0'
+  flutter: '>=3.47.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  geo_regions:
+    path: ..
+flutter:
+  uses-material-design: true
+  # Vendor variant of the assets CLI fragment (README step 2): entries point
+  # at this package's own assets/geo_regions/ directory.
+  assets:
+    - "assets/geo_regions/catalog_i18n/ar.json"
+    - "assets/geo_regions/catalog_i18n/de.json"
+    - "assets/geo_regions/catalog_i18n/en.json"
+    - "assets/geo_regions/catalog_i18n/fr.json"
+    - "assets/geo_regions/catalog_i18n/it.json"
+    - "assets/geo_regions/catalog_i18n/ja.json"
+    - "assets/geo_regions/catalog_i18n/ko.json"
+    - "assets/geo_regions/catalog_i18n/ru.json"
+    - "assets/geo_regions/catalog_i18n/zh-Hans.json"
+    - "assets/geo_regions/catalog_i18n/zh-Hant.json"
+    - "assets/geo_regions/countries.json"
+    - "assets/geo_regions/i18n/en/CN.json"
+    - "assets/geo_regions/i18n/zh-Hans/CN.json"
+    - "assets/geo_regions/i18n/zh-Hant/CN.json"
+    - "assets/geo_regions/manifest.json"
+    - "assets/geo_regions/regions/CN.json"
+    - "assets/geo_regions/registry.json"

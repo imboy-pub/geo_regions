@@ -1,0 +1,30 @@
+{
+  "compatibleStructureRevision": "s-abc8dce69b7c079e",
+  "countryCode": "KR",
+  "coverage": {
+    "explicitNames": 1,
+    "missingNames": 17,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:KR": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "cc:KR": "南韓"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-9cb67e8477e70b2d",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json",
+    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+  ]
+}

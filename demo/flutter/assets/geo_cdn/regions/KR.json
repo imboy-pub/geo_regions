@@ -1,0 +1,202 @@
+{
+  "countryCode": "KR",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "KR",
+      "id": "cc:KR",
+      "kind": "country",
+      "name": "South Korea",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-11",
+      "id": "iso3166-2:KR-11",
+      "kind": "subdivision",
+      "name": "Seoul",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-26",
+      "id": "iso3166-2:KR-26",
+      "kind": "subdivision",
+      "name": "Busan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-27",
+      "id": "iso3166-2:KR-27",
+      "kind": "subdivision",
+      "name": "Daegu",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-28",
+      "id": "iso3166-2:KR-28",
+      "kind": "subdivision",
+      "name": "Incheon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-29",
+      "id": "iso3166-2:KR-29",
+      "kind": "subdivision",
+      "name": "Gwangju City",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-30",
+      "id": "iso3166-2:KR-30",
+      "kind": "subdivision",
+      "name": "Daejeon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-31",
+      "id": "iso3166-2:KR-31",
+      "kind": "subdivision",
+      "name": "Ulsan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-41",
+      "id": "iso3166-2:KR-41",
+      "kind": "subdivision",
+      "name": "Gyeonggi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-42",
+      "id": "iso3166-2:KR-42",
+      "kind": "subdivision",
+      "name": "Gangwon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-43",
+      "id": "iso3166-2:KR-43",
+      "kind": "subdivision",
+      "name": "North Chungcheong",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-44",
+      "id": "iso3166-2:KR-44",
+      "kind": "subdivision",
+      "name": "South Chungcheong",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-45",
+      "id": "iso3166-2:KR-45",
+      "kind": "subdivision",
+      "name": "North Jeolla",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-46",
+      "id": "iso3166-2:KR-46",
+      "kind": "subdivision",
+      "name": "South Jeolla",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-47",
+      "id": "iso3166-2:KR-47",
+      "kind": "subdivision",
+      "name": "North Gyeongsang",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-48",
+      "id": "iso3166-2:KR-48",
+      "kind": "subdivision",
+      "name": "South Gyeongsang",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-49",
+      "id": "iso3166-2:KR-49",
+      "kind": "subdivision",
+      "name": "Jeju",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-50",
+      "id": "iso3166-2:KR-50",
+      "kind": "subdivision",
+      "name": "Sejong",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:KR"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-abc8dce69b7c079e",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

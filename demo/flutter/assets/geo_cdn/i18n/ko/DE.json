@@ -1,0 +1,62 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 17,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 16,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "provisional",
+      "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BW": "provisional",
+      "iso3166-2:DE-BY": "provisional",
+      "iso3166-2:DE-HB": "provisional",
+      "iso3166-2:DE-HE": "provisional",
+      "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-MV": "provisional",
+      "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-NW": "provisional",
+      "iso3166-2:DE-RP": "provisional",
+      "iso3166-2:DE-SH": "provisional",
+      "iso3166-2:DE-SL": "provisional",
+      "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-ST": "provisional",
+      "iso3166-2:DE-TH": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ko",
+  "names": {
+    "cc:DE": "독일",
+    "iso3166-2:DE-BB": "브란덴부르크 주",
+    "iso3166-2:DE-BE": "베를린",
+    "iso3166-2:DE-BW": "바덴뷔르템베르크 주",
+    "iso3166-2:DE-BY": "바이에른 주",
+    "iso3166-2:DE-HB": "브레멘 주",
+    "iso3166-2:DE-HE": "헤센 주",
+    "iso3166-2:DE-HH": "함부르크",
+    "iso3166-2:DE-MV": "메클렌부르크포어포메른 주",
+    "iso3166-2:DE-NI": "니더작센 주",
+    "iso3166-2:DE-NW": "노르트라인베스트팔렌 주",
+    "iso3166-2:DE-RP": "라인란트팔츠 주",
+    "iso3166-2:DE-SH": "슐레스비히홀슈타인 주",
+    "iso3166-2:DE-SL": "자를란트 주",
+    "iso3166-2:DE-SN": "작센 주",
+    "iso3166-2:DE-ST": "작센안할트 주",
+    "iso3166-2:DE-TH": "튀링겐 주"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-ca50ddb35ab8a5a4",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ko.json",
+    "sources/raw/cldr/subdivisions-ko.xml"
+  ]
+}

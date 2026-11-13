@@ -1,0 +1,192 @@
+{
+  "countryCode": "DE",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "DE",
+      "id": "cc:DE",
+      "kind": "country",
+      "name": "Germany",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-BB",
+      "id": "iso3166-2:DE-BB",
+      "kind": "subdivision",
+      "name": "Brandenburg",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-BE",
+      "id": "iso3166-2:DE-BE",
+      "kind": "subdivision",
+      "name": "Berlin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-BW",
+      "id": "iso3166-2:DE-BW",
+      "kind": "subdivision",
+      "name": "Baden-Württemberg",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-BY",
+      "id": "iso3166-2:DE-BY",
+      "kind": "subdivision",
+      "name": "Bavaria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-HB",
+      "id": "iso3166-2:DE-HB",
+      "kind": "subdivision",
+      "name": "Bremen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-HE",
+      "id": "iso3166-2:DE-HE",
+      "kind": "subdivision",
+      "name": "Hesse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-HH",
+      "id": "iso3166-2:DE-HH",
+      "kind": "subdivision",
+      "name": "Hamburg",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-MV",
+      "id": "iso3166-2:DE-MV",
+      "kind": "subdivision",
+      "name": "Mecklenburg-Vorpommern",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-NI",
+      "id": "iso3166-2:DE-NI",
+      "kind": "subdivision",
+      "name": "Lower Saxony",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-NW",
+      "id": "iso3166-2:DE-NW",
+      "kind": "subdivision",
+      "name": "North Rhine-Westphalia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-RP",
+      "id": "iso3166-2:DE-RP",
+      "kind": "subdivision",
+      "name": "Rhineland-Palatinate",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-SH",
+      "id": "iso3166-2:DE-SH",
+      "kind": "subdivision",
+      "name": "Schleswig-Holstein",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-SL",
+      "id": "iso3166-2:DE-SL",
+      "kind": "subdivision",
+      "name": "Saarland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-SN",
+      "id": "iso3166-2:DE-SN",
+      "kind": "subdivision",
+      "name": "Saxony",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-ST",
+      "id": "iso3166-2:DE-ST",
+      "kind": "subdivision",
+      "name": "Saxony-Anhalt",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "DE-TH",
+      "id": "iso3166-2:DE-TH",
+      "kind": "subdivision",
+      "name": "Thuringia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:DE"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-aa8bd2af2f7f9748",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+  "coverage": {
+    "qualityMeaning": "CLDR JSON export threshold is contributed or approved; no project review claimed.",
+    "status": "research-seed",
+    "translationQualityById": {
+      "CN": "cldr-json-qualified",
+      "DE": "cldr-json-qualified",
+      "FR": "cldr-json-qualified",
+      "GB": "cldr-json-qualified",
+      "IT": "cldr-json-qualified",
+      "JP": "cldr-json-qualified",
+      "KR": "cldr-json-qualified",
+      "RU": "cldr-json-qualified",
+      "SA": "cldr-json-qualified",
+      "US": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ar",
+  "names": {
+    "CN": "الصين",
+    "DE": "ألمانيا",
+    "FR": "فرنسا",
+    "GB": "المملكة المتحدة",
+    "IT": "إيطاليا",
+    "JP": "اليابان",
+    "KR": "كوريا الجنوبية",
+    "RU": "روسيا",
+    "SA": "المملكة العربية السعودية",
+    "US": "الولايات المتحدة"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-828238b4a10fdfa3",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ar.json"
+  ]
+}

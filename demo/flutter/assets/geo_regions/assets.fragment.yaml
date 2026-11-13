@@ -1,0 +1,20 @@
+# Merge assets into the host's EXISTING flutter: block; do not create a second block.
+flutter:
+  assets:
+    - "packages/geo_regions/data/catalog_i18n/ar.json"
+    - "packages/geo_regions/data/catalog_i18n/de.json"
+    - "packages/geo_regions/data/catalog_i18n/en.json"
+    - "packages/geo_regions/data/catalog_i18n/fr.json"
+    - "packages/geo_regions/data/catalog_i18n/it.json"
+    - "packages/geo_regions/data/catalog_i18n/ja.json"
+    - "packages/geo_regions/data/catalog_i18n/ko.json"
+    - "packages/geo_regions/data/catalog_i18n/ru.json"
+    - "packages/geo_regions/data/catalog_i18n/zh-Hans.json"
+    - "packages/geo_regions/data/catalog_i18n/zh-Hant.json"
+    - "packages/geo_regions/data/countries.json"
+    - "packages/geo_regions/data/i18n/en/CN.json"
+    - "packages/geo_regions/data/i18n/zh-Hans/CN.json"
+    - "packages/geo_regions/data/i18n/zh-Hant/CN.json"
+    - "packages/geo_regions/data/manifest.json"
+    - "packages/geo_regions/data/regions/CN.json"
+    - "packages/geo_regions/data/registry.json"

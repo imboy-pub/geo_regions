@@ -1,0 +1,862 @@
+{
+  "countryCode": "RU",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "RU",
+      "id": "cc:RU",
+      "kind": "country",
+      "name": "Russia",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-AD",
+      "id": "iso3166-2:RU-AD",
+      "kind": "subdivision",
+      "name": "Adygea",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-AL",
+      "id": "iso3166-2:RU-AL",
+      "kind": "subdivision",
+      "name": "Altai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ALT",
+      "id": "iso3166-2:RU-ALT",
+      "kind": "subdivision",
+      "name": "Altai Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-AMU",
+      "id": "iso3166-2:RU-AMU",
+      "kind": "subdivision",
+      "name": "Amur",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ARK",
+      "id": "iso3166-2:RU-ARK",
+      "kind": "subdivision",
+      "name": "Arkhangelsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-AST",
+      "id": "iso3166-2:RU-AST",
+      "kind": "subdivision",
+      "name": "Astrakhan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-BA",
+      "id": "iso3166-2:RU-BA",
+      "kind": "subdivision",
+      "name": "Bashkortostan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-BEL",
+      "id": "iso3166-2:RU-BEL",
+      "kind": "subdivision",
+      "name": "Belgorod",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-BRY",
+      "id": "iso3166-2:RU-BRY",
+      "kind": "subdivision",
+      "name": "Bryansk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-BU",
+      "id": "iso3166-2:RU-BU",
+      "kind": "subdivision",
+      "name": "Buryat",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-CE",
+      "id": "iso3166-2:RU-CE",
+      "kind": "subdivision",
+      "name": "Chechen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-CHE",
+      "id": "iso3166-2:RU-CHE",
+      "kind": "subdivision",
+      "name": "Chelyabinsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-CHU",
+      "id": "iso3166-2:RU-CHU",
+      "kind": "subdivision",
+      "name": "Chukotka Okrug",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-CU",
+      "id": "iso3166-2:RU-CU",
+      "kind": "subdivision",
+      "name": "Chuvash",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-DA",
+      "id": "iso3166-2:RU-DA",
+      "kind": "subdivision",
+      "name": "Dagestan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-IN",
+      "id": "iso3166-2:RU-IN",
+      "kind": "subdivision",
+      "name": "Ingushetia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-IRK",
+      "id": "iso3166-2:RU-IRK",
+      "kind": "subdivision",
+      "name": "Irkutsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-IVA",
+      "id": "iso3166-2:RU-IVA",
+      "kind": "subdivision",
+      "name": "Ivanovo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KAM",
+      "id": "iso3166-2:RU-KAM",
+      "kind": "subdivision",
+      "name": "Kamchatka Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KB",
+      "id": "iso3166-2:RU-KB",
+      "kind": "subdivision",
+      "name": "Kabardino-Balkar",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KC",
+      "id": "iso3166-2:RU-KC",
+      "kind": "subdivision",
+      "name": "Karachay-Cherkess",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KDA",
+      "id": "iso3166-2:RU-KDA",
+      "kind": "subdivision",
+      "name": "Krasnodar Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KEM",
+      "id": "iso3166-2:RU-KEM",
+      "kind": "subdivision",
+      "name": "Kemerovo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KGD",
+      "id": "iso3166-2:RU-KGD",
+      "kind": "subdivision",
+      "name": "Kaliningrad",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KGN",
+      "id": "iso3166-2:RU-KGN",
+      "kind": "subdivision",
+      "name": "Kurgan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KHA",
+      "id": "iso3166-2:RU-KHA",
+      "kind": "subdivision",
+      "name": "Khabarovsk Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KHM",
+      "id": "iso3166-2:RU-KHM",
+      "kind": "subdivision",
+      "name": "Khanty-Mansi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KIR",
+      "id": "iso3166-2:RU-KIR",
+      "kind": "subdivision",
+      "name": "Kirov",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KK",
+      "id": "iso3166-2:RU-KK",
+      "kind": "subdivision",
+      "name": "Khakassia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KL",
+      "id": "iso3166-2:RU-KL",
+      "kind": "subdivision",
+      "name": "Kalmykia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KLU",
+      "id": "iso3166-2:RU-KLU",
+      "kind": "subdivision",
+      "name": "Kaluga",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KO",
+      "id": "iso3166-2:RU-KO",
+      "kind": "subdivision",
+      "name": "Komi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KOS",
+      "id": "iso3166-2:RU-KOS",
+      "kind": "subdivision",
+      "name": "Kostroma",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KR",
+      "id": "iso3166-2:RU-KR",
+      "kind": "subdivision",
+      "name": "Karelia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KRS",
+      "id": "iso3166-2:RU-KRS",
+      "kind": "subdivision",
+      "name": "Kursk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-KYA",
+      "id": "iso3166-2:RU-KYA",
+      "kind": "subdivision",
+      "name": "Krasnoyarsk Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-LEN",
+      "id": "iso3166-2:RU-LEN",
+      "kind": "subdivision",
+      "name": "Leningrad",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-LIP",
+      "id": "iso3166-2:RU-LIP",
+      "kind": "subdivision",
+      "name": "Lipetsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-MAG",
+      "id": "iso3166-2:RU-MAG",
+      "kind": "subdivision",
+      "name": "Magadan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ME",
+      "id": "iso3166-2:RU-ME",
+      "kind": "subdivision",
+      "name": "Mari El",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-MO",
+      "id": "iso3166-2:RU-MO",
+      "kind": "subdivision",
+      "name": "Mordovia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-MOS",
+      "id": "iso3166-2:RU-MOS",
+      "kind": "subdivision",
+      "name": "Moscow Province",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-MOW",
+      "id": "iso3166-2:RU-MOW",
+      "kind": "subdivision",
+      "name": "Moscow",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-MUR",
+      "id": "iso3166-2:RU-MUR",
+      "kind": "subdivision",
+      "name": "Murmansk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-NEN",
+      "id": "iso3166-2:RU-NEN",
+      "kind": "subdivision",
+      "name": "Nenets",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-NGR",
+      "id": "iso3166-2:RU-NGR",
+      "kind": "subdivision",
+      "name": "Novgorod",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-NIZ",
+      "id": "iso3166-2:RU-NIZ",
+      "kind": "subdivision",
+      "name": "Nizhny Novgorod",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-NVS",
+      "id": "iso3166-2:RU-NVS",
+      "kind": "subdivision",
+      "name": "Novosibirsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-OMS",
+      "id": "iso3166-2:RU-OMS",
+      "kind": "subdivision",
+      "name": "Omsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ORE",
+      "id": "iso3166-2:RU-ORE",
+      "kind": "subdivision",
+      "name": "Orenburg",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ORL",
+      "id": "iso3166-2:RU-ORL",
+      "kind": "subdivision",
+      "name": "Oryol",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-PER",
+      "id": "iso3166-2:RU-PER",
+      "kind": "subdivision",
+      "name": "Perm Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-PNZ",
+      "id": "iso3166-2:RU-PNZ",
+      "kind": "subdivision",
+      "name": "Penza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-PRI",
+      "id": "iso3166-2:RU-PRI",
+      "kind": "subdivision",
+      "name": "Primorsky Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-PSK",
+      "id": "iso3166-2:RU-PSK",
+      "kind": "subdivision",
+      "name": "Pskov",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ROS",
+      "id": "iso3166-2:RU-ROS",
+      "kind": "subdivision",
+      "name": "Rostov",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-RYA",
+      "id": "iso3166-2:RU-RYA",
+      "kind": "subdivision",
+      "name": "Ryazan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SA",
+      "id": "iso3166-2:RU-SA",
+      "kind": "subdivision",
+      "name": "Sakha",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SAK",
+      "id": "iso3166-2:RU-SAK",
+      "kind": "subdivision",
+      "name": "Sakhalin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SAM",
+      "id": "iso3166-2:RU-SAM",
+      "kind": "subdivision",
+      "name": "Samara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SAR",
+      "id": "iso3166-2:RU-SAR",
+      "kind": "subdivision",
+      "name": "Saratov",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SE",
+      "id": "iso3166-2:RU-SE",
+      "kind": "subdivision",
+      "name": "North Ossetia-Alania",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SMO",
+      "id": "iso3166-2:RU-SMO",
+      "kind": "subdivision",
+      "name": "Smolensk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SPE",
+      "id": "iso3166-2:RU-SPE",
+      "kind": "subdivision",
+      "name": "Saint Petersburg",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-STA",
+      "id": "iso3166-2:RU-STA",
+      "kind": "subdivision",
+      "name": "Stavropol Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-SVE",
+      "id": "iso3166-2:RU-SVE",
+      "kind": "subdivision",
+      "name": "Sverdlovsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TA",
+      "id": "iso3166-2:RU-TA",
+      "kind": "subdivision",
+      "name": "Tatarstan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TAM",
+      "id": "iso3166-2:RU-TAM",
+      "kind": "subdivision",
+      "name": "Tambov",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TOM",
+      "id": "iso3166-2:RU-TOM",
+      "kind": "subdivision",
+      "name": "Tomsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TUL",
+      "id": "iso3166-2:RU-TUL",
+      "kind": "subdivision",
+      "name": "Tula",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TVE",
+      "id": "iso3166-2:RU-TVE",
+      "kind": "subdivision",
+      "name": "Tver",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TY",
+      "id": "iso3166-2:RU-TY",
+      "kind": "subdivision",
+      "name": "Tuva",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-TYU",
+      "id": "iso3166-2:RU-TYU",
+      "kind": "subdivision",
+      "name": "Tyumen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-UD",
+      "id": "iso3166-2:RU-UD",
+      "kind": "subdivision",
+      "name": "Udmurt",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ULY",
+      "id": "iso3166-2:RU-ULY",
+      "kind": "subdivision",
+      "name": "Ulyanovsk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-VGG",
+      "id": "iso3166-2:RU-VGG",
+      "kind": "subdivision",
+      "name": "Volgograd",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-VLA",
+      "id": "iso3166-2:RU-VLA",
+      "kind": "subdivision",
+      "name": "Vladimir",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-VLG",
+      "id": "iso3166-2:RU-VLG",
+      "kind": "subdivision",
+      "name": "Vologda",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-VOR",
+      "id": "iso3166-2:RU-VOR",
+      "kind": "subdivision",
+      "name": "Voronezh",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-YAN",
+      "id": "iso3166-2:RU-YAN",
+      "kind": "subdivision",
+      "name": "Yamalo-Nenets Okrug",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-YAR",
+      "id": "iso3166-2:RU-YAR",
+      "kind": "subdivision",
+      "name": "Yaroslavl",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-YEV",
+      "id": "iso3166-2:RU-YEV",
+      "kind": "subdivision",
+      "name": "Jewish",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "RU-ZAB",
+      "id": "iso3166-2:RU-ZAB",
+      "kind": "subdivision",
+      "name": "Zabaykalsky Krai",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:RU"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-0683c6f40898a7e1",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

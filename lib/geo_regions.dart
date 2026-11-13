@@ -61,5 +61,13 @@ export 'src/load/bundled_loader.dart';
 export 'src/load/memory_store.dart';
 export 'src/load/repository.dart';
 
+// Default picker UI, decoupled from the data entry via GeoRegionDataSource
+// (P1-07). Labels, theme, selection policy and the repository-backed data
+// source are all replaceable; hosts can fake the source in tests.
+export 'src/ui/geo_picker_data.dart';
+export 'src/ui/geo_picker_labels.dart';
+export 'src/ui/geo_picker_theme.dart';
+export 'src/ui/geo_region_picker.dart';
+
 /// Protocol version accepted by this SDK build (PROTOCOL.md §3).
 const String kGeoRegionsProtocolVersion = '1.0';

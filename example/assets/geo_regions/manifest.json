@@ -1,0 +1,142 @@
+{
+  "datasetId": "geo-regions-seed",
+  "protocolVersion": "1.0",
+  "resources": [
+    {
+      "bytes": 1147,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "ar",
+      "path": "catalog_i18n/ar.json",
+      "revision": "l-828238b4a10fdfa3",
+      "sha256": "7cbed6c5c924cfc9cf01f94a6bb3613e171b449541ed63883e85bc6b1b3afb81"
+    },
+    {
+      "bytes": 1051,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "de",
+      "path": "catalog_i18n/de.json",
+      "revision": "l-75bba0875c4b4b0a",
+      "sha256": "fe5d5da8ac2b7bc9566e6188f488a03f36d2aec38c72dcb339133d6e1279cd30"
+    },
+    {
+      "bytes": 1026,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "en",
+      "path": "catalog_i18n/en.json",
+      "revision": "l-c1a74c3b612cac09",
+      "sha256": "aff6efbd4f81c9c1edb95df3b4d1c695f2c27b553871b2dd9b69d73c8561f60b"
+    },
+    {
+      "bytes": 1029,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "fr",
+      "path": "catalog_i18n/fr.json",
+      "revision": "l-9df2f6bbdba6536f",
+      "sha256": "f89da9ca425a4c7350e9b180f1f8d010c9291249f7c3668f9e8e4541693a83df"
+    },
+    {
+      "bytes": 1030,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "it",
+      "path": "catalog_i18n/it.json",
+      "revision": "l-e2ffa5e5e2ab71c0",
+      "sha256": "d33647b2ee9cabce4711f12041fb4c88ed9a53f6875393f88b271b4287b40dc4"
+    },
+    {
+      "bytes": 1056,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "ja",
+      "path": "catalog_i18n/ja.json",
+      "revision": "l-ec4ff25f47df157b",
+      "sha256": "ed4d44224f40ba2133aa8acb9e6efbd9bf9ec0b2977f92c255338f0ed0cb6075"
+    },
+    {
+      "bytes": 1035,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "ko",
+      "path": "catalog_i18n/ko.json",
+      "revision": "l-0d946502326246f1",
+      "sha256": "9d8966079a4d82ce7d28c3217803b7fa0a838281e5833e79b7d789d73cf880ac"
+    },
+    {
+      "bytes": 1143,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "ru",
+      "path": "catalog_i18n/ru.json",
+      "revision": "l-3e9099f5af7d7026",
+      "sha256": "41eb7de990dc38a6bb24c4ab6488d040f3664bb42d78cf7913db23332bd9aaf9"
+    },
+    {
+      "bytes": 1022,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "zh-Hans",
+      "path": "catalog_i18n/zh-Hans.json",
+      "revision": "l-43b4475aa49213f2",
+      "sha256": "3ffa9a3d01b3cfd34baa2350eff69e697ff17f9ce483b9036acccffdd9f522be"
+    },
+    {
+      "bytes": 1030,
+      "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+      "kind": "country-names",
+      "locale": "zh-Hant",
+      "path": "catalog_i18n/zh-Hant.json",
+      "revision": "l-a0944c216c266803",
+      "sha256": "486819cbeb7b0a3ab95f34384918d14263f0ff04c92cf0be46a07b4b27aa4b66"
+    },
+    {
+      "bytes": 957,
+      "kind": "countries",
+      "path": "countries.json",
+      "revision": "c-0d1490d60a530f8e",
+      "sha256": "bf61142515669a5ac82665a1e1b7173d22869118675cbaaf96875d9a426d0102"
+    },
+    {
+      "bytes": 3372,
+      "compatibleStructureRevision": "s-618de1dd32b43463",
+      "countryCode": "CN",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/CN.json",
+      "revision": "l-6a6d98125099f7ce",
+      "sha256": "11b126f20c4a4c9d0454b628bb7611dfc2b2b490b70bc304d14ff155b04d16a9"
+    },
+    {
+      "bytes": 266539,
+      "compatibleStructureRevision": "s-618de1dd32b43463",
+      "countryCode": "CN",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/CN.json",
+      "revision": "l-c3de0800b4cbf1ff",
+      "sha256": "049254dfad811621f89ae67e81cbf5403f6562288a1f617bea23da1b96236081"
+    },
+    {
+      "bytes": 881,
+      "compatibleStructureRevision": "s-618de1dd32b43463",
+      "countryCode": "CN",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/CN.json",
+      "revision": "l-617feae0ae85cc17",
+      "sha256": "9e1c1367cfda7834e0b0c85d083444334845a50e8a6c8297289733d7b3d403f5"
+    },
+    {
+      "bytes": 1037814,
+      "countryCode": "CN",
+      "kind": "structure",
+      "path": "regions/CN.json",
+      "revision": "s-618de1dd32b43463",
+      "sha256": "9012f60c429220188ab6ed536e770d229df1a5816a5fc943904b22e46349dd0b"
+    }
+  ],
+  "revision": "m-8ede306189fcef4c"
+}

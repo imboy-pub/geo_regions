@@ -1,0 +1,602 @@
+{
+  "countryCode": "US",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "US",
+      "id": "cc:US",
+      "kind": "country",
+      "name": "United States",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-AK",
+      "id": "iso3166-2:US-AK",
+      "kind": "subdivision",
+      "name": "Alaska",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-AL",
+      "id": "iso3166-2:US-AL",
+      "kind": "subdivision",
+      "name": "Alabama",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-AR",
+      "id": "iso3166-2:US-AR",
+      "kind": "subdivision",
+      "name": "Arkansas",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-AS",
+      "id": "iso3166-2:US-AS",
+      "kind": "subdivision",
+      "name": "American Samoa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-AZ",
+      "id": "iso3166-2:US-AZ",
+      "kind": "subdivision",
+      "name": "Arizona",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-CA",
+      "id": "iso3166-2:US-CA",
+      "kind": "subdivision",
+      "name": "California",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-CO",
+      "id": "iso3166-2:US-CO",
+      "kind": "subdivision",
+      "name": "Colorado",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-CT",
+      "id": "iso3166-2:US-CT",
+      "kind": "subdivision",
+      "name": "Connecticut",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-DC",
+      "id": "iso3166-2:US-DC",
+      "kind": "subdivision",
+      "name": "Washington DC",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-DE",
+      "id": "iso3166-2:US-DE",
+      "kind": "subdivision",
+      "name": "Delaware",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-FL",
+      "id": "iso3166-2:US-FL",
+      "kind": "subdivision",
+      "name": "Florida",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-GA",
+      "id": "iso3166-2:US-GA",
+      "kind": "subdivision",
+      "name": "Georgia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-GU",
+      "id": "iso3166-2:US-GU",
+      "kind": "subdivision",
+      "name": "Guam",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-HI",
+      "id": "iso3166-2:US-HI",
+      "kind": "subdivision",
+      "name": "Hawaii",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-IA",
+      "id": "iso3166-2:US-IA",
+      "kind": "subdivision",
+      "name": "Iowa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-ID",
+      "id": "iso3166-2:US-ID",
+      "kind": "subdivision",
+      "name": "Idaho",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-IL",
+      "id": "iso3166-2:US-IL",
+      "kind": "subdivision",
+      "name": "Illinois",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-IN",
+      "id": "iso3166-2:US-IN",
+      "kind": "subdivision",
+      "name": "Indiana",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-KS",
+      "id": "iso3166-2:US-KS",
+      "kind": "subdivision",
+      "name": "Kansas",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-KY",
+      "id": "iso3166-2:US-KY",
+      "kind": "subdivision",
+      "name": "Kentucky",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-LA",
+      "id": "iso3166-2:US-LA",
+      "kind": "subdivision",
+      "name": "Louisiana",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MA",
+      "id": "iso3166-2:US-MA",
+      "kind": "subdivision",
+      "name": "Massachusetts",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MD",
+      "id": "iso3166-2:US-MD",
+      "kind": "subdivision",
+      "name": "Maryland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-ME",
+      "id": "iso3166-2:US-ME",
+      "kind": "subdivision",
+      "name": "Maine",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MI",
+      "id": "iso3166-2:US-MI",
+      "kind": "subdivision",
+      "name": "Michigan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MN",
+      "id": "iso3166-2:US-MN",
+      "kind": "subdivision",
+      "name": "Minnesota",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MO",
+      "id": "iso3166-2:US-MO",
+      "kind": "subdivision",
+      "name": "Missouri",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MP",
+      "id": "iso3166-2:US-MP",
+      "kind": "subdivision",
+      "name": "Northern Mariana Islands",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MS",
+      "id": "iso3166-2:US-MS",
+      "kind": "subdivision",
+      "name": "Mississippi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-MT",
+      "id": "iso3166-2:US-MT",
+      "kind": "subdivision",
+      "name": "Montana",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NC",
+      "id": "iso3166-2:US-NC",
+      "kind": "subdivision",
+      "name": "North Carolina",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-ND",
+      "id": "iso3166-2:US-ND",
+      "kind": "subdivision",
+      "name": "North Dakota",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NE",
+      "id": "iso3166-2:US-NE",
+      "kind": "subdivision",
+      "name": "Nebraska",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NH",
+      "id": "iso3166-2:US-NH",
+      "kind": "subdivision",
+      "name": "New Hampshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NJ",
+      "id": "iso3166-2:US-NJ",
+      "kind": "subdivision",
+      "name": "New Jersey",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NM",
+      "id": "iso3166-2:US-NM",
+      "kind": "subdivision",
+      "name": "New Mexico",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NV",
+      "id": "iso3166-2:US-NV",
+      "kind": "subdivision",
+      "name": "Nevada",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-NY",
+      "id": "iso3166-2:US-NY",
+      "kind": "subdivision",
+      "name": "New York",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-OH",
+      "id": "iso3166-2:US-OH",
+      "kind": "subdivision",
+      "name": "Ohio",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-OK",
+      "id": "iso3166-2:US-OK",
+      "kind": "subdivision",
+      "name": "Oklahoma",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-OR",
+      "id": "iso3166-2:US-OR",
+      "kind": "subdivision",
+      "name": "Oregon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-PA",
+      "id": "iso3166-2:US-PA",
+      "kind": "subdivision",
+      "name": "Pennsylvania",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-PR",
+      "id": "iso3166-2:US-PR",
+      "kind": "subdivision",
+      "name": "Puerto Rico",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-RI",
+      "id": "iso3166-2:US-RI",
+      "kind": "subdivision",
+      "name": "Rhode Island",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-SC",
+      "id": "iso3166-2:US-SC",
+      "kind": "subdivision",
+      "name": "South Carolina",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-SD",
+      "id": "iso3166-2:US-SD",
+      "kind": "subdivision",
+      "name": "South Dakota",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-TN",
+      "id": "iso3166-2:US-TN",
+      "kind": "subdivision",
+      "name": "Tennessee",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-TX",
+      "id": "iso3166-2:US-TX",
+      "kind": "subdivision",
+      "name": "Texas",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-UM",
+      "id": "iso3166-2:US-UM",
+      "kind": "subdivision",
+      "name": "U.S. Outlying Islands",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-UT",
+      "id": "iso3166-2:US-UT",
+      "kind": "subdivision",
+      "name": "Utah",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-VA",
+      "id": "iso3166-2:US-VA",
+      "kind": "subdivision",
+      "name": "Virginia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-VI",
+      "id": "iso3166-2:US-VI",
+      "kind": "subdivision",
+      "name": "U.S. Virgin Islands",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-VT",
+      "id": "iso3166-2:US-VT",
+      "kind": "subdivision",
+      "name": "Vermont",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-WA",
+      "id": "iso3166-2:US-WA",
+      "kind": "subdivision",
+      "name": "Washington",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-WI",
+      "id": "iso3166-2:US-WI",
+      "kind": "subdivision",
+      "name": "Wisconsin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-WV",
+      "id": "iso3166-2:US-WV",
+      "kind": "subdivision",
+      "name": "West Virginia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "US-WY",
+      "id": "iso3166-2:US-WY",
+      "kind": "subdivision",
+      "name": "Wyoming",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:US"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-65edb4a623631538",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

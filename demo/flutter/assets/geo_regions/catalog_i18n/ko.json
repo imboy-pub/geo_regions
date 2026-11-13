@@ -1,0 +1,38 @@
+{
+  "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+  "coverage": {
+    "qualityMeaning": "CLDR JSON export threshold is contributed or approved; no project review claimed.",
+    "status": "research-seed",
+    "translationQualityById": {
+      "CN": "cldr-json-qualified",
+      "DE": "cldr-json-qualified",
+      "FR": "cldr-json-qualified",
+      "GB": "cldr-json-qualified",
+      "IT": "cldr-json-qualified",
+      "JP": "cldr-json-qualified",
+      "KR": "cldr-json-qualified",
+      "RU": "cldr-json-qualified",
+      "SA": "cldr-json-qualified",
+      "US": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ko",
+  "names": {
+    "CN": "중국",
+    "DE": "독일",
+    "FR": "프랑스",
+    "GB": "영국",
+    "IT": "이탈리아",
+    "JP": "일본",
+    "KR": "대한민국",
+    "RU": "러시아",
+    "SA": "사우디아라비아",
+    "US": "미국"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-0d946502326246f1",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ko.json"
+  ]
+}

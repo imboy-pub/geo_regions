@@ -1,0 +1,50 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 11,
+    "missingNames": 6,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 10,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "provisional",
+      "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BY": "provisional",
+      "iso3166-2:DE-HB": "provisional",
+      "iso3166-2:DE-HE": "provisional",
+      "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-SL": "provisional",
+      "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-TH": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ja",
+  "names": {
+    "cc:DE": "ドイツ",
+    "iso3166-2:DE-BB": "ブランデンブルク州",
+    "iso3166-2:DE-BE": "ベルリン",
+    "iso3166-2:DE-BY": "バイエルン自由州",
+    "iso3166-2:DE-HB": "ブレーメン州",
+    "iso3166-2:DE-HE": "ヘッセン州",
+    "iso3166-2:DE-HH": "ハンブルク",
+    "iso3166-2:DE-NI": "ニーダーザクセン州",
+    "iso3166-2:DE-SL": "ザールラント州",
+    "iso3166-2:DE-SN": "ザクセン州",
+    "iso3166-2:DE-TH": "テューリンゲン州"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-a37fa93382e024f7",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ja.json",
+    "sources/raw/cldr/subdivisions-ja.xml"
+  ]
+}

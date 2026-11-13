@@ -1,0 +1,2242 @@
+{
+  "countryCode": "GB",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "GB",
+      "id": "cc:GB",
+      "kind": "country",
+      "name": "United Kingdom",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ABC",
+      "id": "iso3166-2:GB-ABC",
+      "kind": "subdivision",
+      "name": "Armagh, Banbridge and Craigavon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ABD",
+      "id": "iso3166-2:GB-ABD",
+      "kind": "subdivision",
+      "name": "Aberdeenshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ABE",
+      "id": "iso3166-2:GB-ABE",
+      "kind": "subdivision",
+      "name": "Aberdeen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-AGB",
+      "id": "iso3166-2:GB-AGB",
+      "kind": "subdivision",
+      "name": "Argyll and Bute",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-AGY",
+      "id": "iso3166-2:GB-AGY",
+      "kind": "subdivision",
+      "name": "Anglesey",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-AND",
+      "id": "iso3166-2:GB-AND",
+      "kind": "subdivision",
+      "name": "Ards and North Down",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ANN",
+      "id": "iso3166-2:GB-ANN",
+      "kind": "subdivision",
+      "name": "Antrim and Newtownabbey",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ANS",
+      "id": "iso3166-2:GB-ANS",
+      "kind": "subdivision",
+      "name": "Angus",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BAS",
+      "id": "iso3166-2:GB-BAS",
+      "kind": "subdivision",
+      "name": "Bath and North East Somerset",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BBD",
+      "id": "iso3166-2:GB-BBD",
+      "kind": "subdivision",
+      "name": "Blackburn with Darwen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BCP",
+      "id": "iso3166-2:GB-BCP",
+      "kind": "subdivision",
+      "name": "Bournemouth, Christchurch and Poole",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BDF",
+      "id": "iso3166-2:GB-BDF",
+      "kind": "subdivision",
+      "name": "Bedford",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BDG",
+      "id": "iso3166-2:GB-BDG",
+      "kind": "subdivision",
+      "name": "Barking and Dagenham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BEN",
+      "id": "iso3166-2:GB-BEN",
+      "kind": "subdivision",
+      "name": "Brent",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BEX",
+      "id": "iso3166-2:GB-BEX",
+      "kind": "subdivision",
+      "name": "Bexley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BFS",
+      "id": "iso3166-2:GB-BFS",
+      "kind": "subdivision",
+      "name": "Belfast",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BGE",
+      "id": "iso3166-2:GB-BGE",
+      "kind": "subdivision",
+      "name": "Bridgend",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BGW",
+      "id": "iso3166-2:GB-BGW",
+      "kind": "subdivision",
+      "name": "Blaenau Gwent",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BIR",
+      "id": "iso3166-2:GB-BIR",
+      "kind": "subdivision",
+      "name": "Birmingham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BKM",
+      "id": "iso3166-2:GB-BKM",
+      "kind": "subdivision",
+      "name": "Buckinghamshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BNE",
+      "id": "iso3166-2:GB-BNE",
+      "kind": "subdivision",
+      "name": "Barnet",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BNH",
+      "id": "iso3166-2:GB-BNH",
+      "kind": "subdivision",
+      "name": "Brighton and Hove",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BNS",
+      "id": "iso3166-2:GB-BNS",
+      "kind": "subdivision",
+      "name": "Barnsley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BOL",
+      "id": "iso3166-2:GB-BOL",
+      "kind": "subdivision",
+      "name": "Bolton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BPL",
+      "id": "iso3166-2:GB-BPL",
+      "kind": "subdivision",
+      "name": "Blackpool",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BRC",
+      "id": "iso3166-2:GB-BRC",
+      "kind": "subdivision",
+      "name": "Bracknell Forest",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BRD",
+      "id": "iso3166-2:GB-BRD",
+      "kind": "subdivision",
+      "name": "Bradford",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BRY",
+      "id": "iso3166-2:GB-BRY",
+      "kind": "subdivision",
+      "name": "Bromley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BST",
+      "id": "iso3166-2:GB-BST",
+      "kind": "subdivision",
+      "name": "Bristol",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-BUR",
+      "id": "iso3166-2:GB-BUR",
+      "kind": "subdivision",
+      "name": "Bury",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CAM",
+      "id": "iso3166-2:GB-CAM",
+      "kind": "subdivision",
+      "name": "Cambridgeshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CAY",
+      "id": "iso3166-2:GB-CAY",
+      "kind": "subdivision",
+      "name": "Caerphilly",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CBF",
+      "id": "iso3166-2:GB-CBF",
+      "kind": "subdivision",
+      "name": "Central Bedfordshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CCG",
+      "id": "iso3166-2:GB-CCG",
+      "kind": "subdivision",
+      "name": "Causeway Coast and Glens",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CGN",
+      "id": "iso3166-2:GB-CGN",
+      "kind": "subdivision",
+      "name": "Ceredigion",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CHE",
+      "id": "iso3166-2:GB-CHE",
+      "kind": "subdivision",
+      "name": "Cheshire East",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CHW",
+      "id": "iso3166-2:GB-CHW",
+      "kind": "subdivision",
+      "name": "Cheshire West and Chester",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CLD",
+      "id": "iso3166-2:GB-CLD",
+      "kind": "subdivision",
+      "name": "Calderdale",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CLK",
+      "id": "iso3166-2:GB-CLK",
+      "kind": "subdivision",
+      "name": "Clackmannanshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CMA",
+      "id": "iso3166-2:GB-CMA",
+      "kind": "subdivision",
+      "name": "Cumbria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CMD",
+      "id": "iso3166-2:GB-CMD",
+      "kind": "subdivision",
+      "name": "Camden",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CMN",
+      "id": "iso3166-2:GB-CMN",
+      "kind": "subdivision",
+      "name": "Carmarthenshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CON",
+      "id": "iso3166-2:GB-CON",
+      "kind": "subdivision",
+      "name": "Cornwall",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-COV",
+      "id": "iso3166-2:GB-COV",
+      "kind": "subdivision",
+      "name": "Coventry",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CRF",
+      "id": "iso3166-2:GB-CRF",
+      "kind": "subdivision",
+      "name": "Cardiff",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CRY",
+      "id": "iso3166-2:GB-CRY",
+      "kind": "subdivision",
+      "name": "Croydon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-CWY",
+      "id": "iso3166-2:GB-CWY",
+      "kind": "subdivision",
+      "name": "Conwy",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DAL",
+      "id": "iso3166-2:GB-DAL",
+      "kind": "subdivision",
+      "name": "Darlington",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DBY",
+      "id": "iso3166-2:GB-DBY",
+      "kind": "subdivision",
+      "name": "Derbyshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DEN",
+      "id": "iso3166-2:GB-DEN",
+      "kind": "subdivision",
+      "name": "Denbighshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DER",
+      "id": "iso3166-2:GB-DER",
+      "kind": "subdivision",
+      "name": "Derby",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DEV",
+      "id": "iso3166-2:GB-DEV",
+      "kind": "subdivision",
+      "name": "Devon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DGY",
+      "id": "iso3166-2:GB-DGY",
+      "kind": "subdivision",
+      "name": "Dumfries and Galloway",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DNC",
+      "id": "iso3166-2:GB-DNC",
+      "kind": "subdivision",
+      "name": "Doncaster",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DND",
+      "id": "iso3166-2:GB-DND",
+      "kind": "subdivision",
+      "name": "Dundee",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DOR",
+      "id": "iso3166-2:GB-DOR",
+      "kind": "subdivision",
+      "name": "Dorset",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DRS",
+      "id": "iso3166-2:GB-DRS",
+      "kind": "subdivision",
+      "name": "Derry and Strabane",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DUD",
+      "id": "iso3166-2:GB-DUD",
+      "kind": "subdivision",
+      "name": "Dudley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-DUR",
+      "id": "iso3166-2:GB-DUR",
+      "kind": "subdivision",
+      "name": "Durham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-EAL",
+      "id": "iso3166-2:GB-EAL",
+      "kind": "subdivision",
+      "name": "Ealing",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-EAY",
+      "id": "iso3166-2:GB-EAY",
+      "kind": "subdivision",
+      "name": "East Ayrshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-EDH",
+      "id": "iso3166-2:GB-EDH",
+      "kind": "subdivision",
+      "name": "Edinburgh",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-EDU",
+      "id": "iso3166-2:GB-EDU",
+      "kind": "subdivision",
+      "name": "East Dunbartonshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ELN",
+      "id": "iso3166-2:GB-ELN",
+      "kind": "subdivision",
+      "name": "East Lothian",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ELS",
+      "id": "iso3166-2:GB-ELS",
+      "kind": "subdivision",
+      "name": "Outer Hebrides",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ENF",
+      "id": "iso3166-2:GB-ENF",
+      "kind": "subdivision",
+      "name": "Enfield",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "GB-ENG",
+      "id": "iso3166-2:GB-ENG",
+      "kind": "subdivision",
+      "name": "England",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:GB"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ERW",
+      "id": "iso3166-2:GB-ERW",
+      "kind": "subdivision",
+      "name": "East Renfrewshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ERY",
+      "id": "iso3166-2:GB-ERY",
+      "kind": "subdivision",
+      "name": "East Riding of Yorkshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ESS",
+      "id": "iso3166-2:GB-ESS",
+      "kind": "subdivision",
+      "name": "Essex",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ESX",
+      "id": "iso3166-2:GB-ESX",
+      "kind": "subdivision",
+      "name": "East Sussex",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-FAL",
+      "id": "iso3166-2:GB-FAL",
+      "kind": "subdivision",
+      "name": "Falkirk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-FIF",
+      "id": "iso3166-2:GB-FIF",
+      "kind": "subdivision",
+      "name": "Fife",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-FLN",
+      "id": "iso3166-2:GB-FLN",
+      "kind": "subdivision",
+      "name": "Flintshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-FMO",
+      "id": "iso3166-2:GB-FMO",
+      "kind": "subdivision",
+      "name": "Fermanagh and Omagh",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-GAT",
+      "id": "iso3166-2:GB-GAT",
+      "kind": "subdivision",
+      "name": "Gateshead",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-GLG",
+      "id": "iso3166-2:GB-GLG",
+      "kind": "subdivision",
+      "name": "Glasgow",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-GLS",
+      "id": "iso3166-2:GB-GLS",
+      "kind": "subdivision",
+      "name": "Gloucestershire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-GRE",
+      "id": "iso3166-2:GB-GRE",
+      "kind": "subdivision",
+      "name": "Greenwich",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-GWN",
+      "id": "iso3166-2:GB-GWN",
+      "kind": "subdivision",
+      "name": "Gwynedd",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HAL",
+      "id": "iso3166-2:GB-HAL",
+      "kind": "subdivision",
+      "name": "Halton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HAM",
+      "id": "iso3166-2:GB-HAM",
+      "kind": "subdivision",
+      "name": "Hampshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HAV",
+      "id": "iso3166-2:GB-HAV",
+      "kind": "subdivision",
+      "name": "Havering",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HCK",
+      "id": "iso3166-2:GB-HCK",
+      "kind": "subdivision",
+      "name": "Hackney",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HEF",
+      "id": "iso3166-2:GB-HEF",
+      "kind": "subdivision",
+      "name": "Herefordshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HIL",
+      "id": "iso3166-2:GB-HIL",
+      "kind": "subdivision",
+      "name": "Hillingdon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HLD",
+      "id": "iso3166-2:GB-HLD",
+      "kind": "subdivision",
+      "name": "Highland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HMF",
+      "id": "iso3166-2:GB-HMF",
+      "kind": "subdivision",
+      "name": "Hammersmith and Fulham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HNS",
+      "id": "iso3166-2:GB-HNS",
+      "kind": "subdivision",
+      "name": "Hounslow",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HPL",
+      "id": "iso3166-2:GB-HPL",
+      "kind": "subdivision",
+      "name": "Hartlepool",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HRT",
+      "id": "iso3166-2:GB-HRT",
+      "kind": "subdivision",
+      "name": "Hertfordshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HRW",
+      "id": "iso3166-2:GB-HRW",
+      "kind": "subdivision",
+      "name": "Harrow",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-HRY",
+      "id": "iso3166-2:GB-HRY",
+      "kind": "subdivision",
+      "name": "Haringey",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-IOS",
+      "id": "iso3166-2:GB-IOS",
+      "kind": "subdivision",
+      "name": "Isles of Scilly",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-IOW",
+      "id": "iso3166-2:GB-IOW",
+      "kind": "subdivision",
+      "name": "Isle of Wight",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ISL",
+      "id": "iso3166-2:GB-ISL",
+      "kind": "subdivision",
+      "name": "Islington",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-IVC",
+      "id": "iso3166-2:GB-IVC",
+      "kind": "subdivision",
+      "name": "Inverclyde",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KEC",
+      "id": "iso3166-2:GB-KEC",
+      "kind": "subdivision",
+      "name": "Kensington and Chelsea",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KEN",
+      "id": "iso3166-2:GB-KEN",
+      "kind": "subdivision",
+      "name": "Kent",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KHL",
+      "id": "iso3166-2:GB-KHL",
+      "kind": "subdivision",
+      "name": "Kingston upon Hull",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KIR",
+      "id": "iso3166-2:GB-KIR",
+      "kind": "subdivision",
+      "name": "Kirklees",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KTT",
+      "id": "iso3166-2:GB-KTT",
+      "kind": "subdivision",
+      "name": "Kingston upon Thames",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-KWL",
+      "id": "iso3166-2:GB-KWL",
+      "kind": "subdivision",
+      "name": "Knowsley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LAN",
+      "id": "iso3166-2:GB-LAN",
+      "kind": "subdivision",
+      "name": "Lancashire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LBC",
+      "id": "iso3166-2:GB-LBC",
+      "kind": "subdivision",
+      "name": "Lisburn and Castlereagh",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LBH",
+      "id": "iso3166-2:GB-LBH",
+      "kind": "subdivision",
+      "name": "Lambeth",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LCE",
+      "id": "iso3166-2:GB-LCE",
+      "kind": "subdivision",
+      "name": "Leicester",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LDS",
+      "id": "iso3166-2:GB-LDS",
+      "kind": "subdivision",
+      "name": "Leeds",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LEC",
+      "id": "iso3166-2:GB-LEC",
+      "kind": "subdivision",
+      "name": "Leicestershire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LEW",
+      "id": "iso3166-2:GB-LEW",
+      "kind": "subdivision",
+      "name": "Lewisham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LIN",
+      "id": "iso3166-2:GB-LIN",
+      "kind": "subdivision",
+      "name": "Lincolnshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LIV",
+      "id": "iso3166-2:GB-LIV",
+      "kind": "subdivision",
+      "name": "Liverpool",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LND",
+      "id": "iso3166-2:GB-LND",
+      "kind": "subdivision",
+      "name": "London",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-LUT",
+      "id": "iso3166-2:GB-LUT",
+      "kind": "subdivision",
+      "name": "Luton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MAN",
+      "id": "iso3166-2:GB-MAN",
+      "kind": "subdivision",
+      "name": "Manchester",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MDB",
+      "id": "iso3166-2:GB-MDB",
+      "kind": "subdivision",
+      "name": "Middlesbrough",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MDW",
+      "id": "iso3166-2:GB-MDW",
+      "kind": "subdivision",
+      "name": "Medway",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MEA",
+      "id": "iso3166-2:GB-MEA",
+      "kind": "subdivision",
+      "name": "Mid and East Antrim",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MIK",
+      "id": "iso3166-2:GB-MIK",
+      "kind": "subdivision",
+      "name": "Milton Keynes",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MLN",
+      "id": "iso3166-2:GB-MLN",
+      "kind": "subdivision",
+      "name": "Midlothian",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MON",
+      "id": "iso3166-2:GB-MON",
+      "kind": "subdivision",
+      "name": "Monmouthshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MRT",
+      "id": "iso3166-2:GB-MRT",
+      "kind": "subdivision",
+      "name": "Merton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MRY",
+      "id": "iso3166-2:GB-MRY",
+      "kind": "subdivision",
+      "name": "Moray",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MTY",
+      "id": "iso3166-2:GB-MTY",
+      "kind": "subdivision",
+      "name": "Merthyr Tydfil",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-MUL",
+      "id": "iso3166-2:GB-MUL",
+      "kind": "subdivision",
+      "name": "Mid Ulster",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NAY",
+      "id": "iso3166-2:GB-NAY",
+      "kind": "subdivision",
+      "name": "North Ayrshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NBL",
+      "id": "iso3166-2:GB-NBL",
+      "kind": "subdivision",
+      "name": "Northumberland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NEL",
+      "id": "iso3166-2:GB-NEL",
+      "kind": "subdivision",
+      "name": "North East Lincolnshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NET",
+      "id": "iso3166-2:GB-NET",
+      "kind": "subdivision",
+      "name": "Newcastle upon Tyne",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NFK",
+      "id": "iso3166-2:GB-NFK",
+      "kind": "subdivision",
+      "name": "Norfolk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NGM",
+      "id": "iso3166-2:GB-NGM",
+      "kind": "subdivision",
+      "name": "Nottingham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "GB-NIR",
+      "id": "iso3166-2:GB-NIR",
+      "kind": "subdivision",
+      "name": "Northern Ireland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:GB"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NLK",
+      "id": "iso3166-2:GB-NLK",
+      "kind": "subdivision",
+      "name": "North Lanarkshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NLN",
+      "id": "iso3166-2:GB-NLN",
+      "kind": "subdivision",
+      "name": "North Lincolnshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NMD",
+      "id": "iso3166-2:GB-NMD",
+      "kind": "subdivision",
+      "name": "Newry, Mourne and Down",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-NIR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NNH",
+      "id": "iso3166-2:GB-NNH",
+      "kind": "subdivision",
+      "name": "North Northamptonshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NSM",
+      "id": "iso3166-2:GB-NSM",
+      "kind": "subdivision",
+      "name": "North Somerset",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NTL",
+      "id": "iso3166-2:GB-NTL",
+      "kind": "subdivision",
+      "name": "Neath Port Talbot",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NTT",
+      "id": "iso3166-2:GB-NTT",
+      "kind": "subdivision",
+      "name": "Nottinghamshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NTY",
+      "id": "iso3166-2:GB-NTY",
+      "kind": "subdivision",
+      "name": "North Tyneside",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NWM",
+      "id": "iso3166-2:GB-NWM",
+      "kind": "subdivision",
+      "name": "Newham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NWP",
+      "id": "iso3166-2:GB-NWP",
+      "kind": "subdivision",
+      "name": "Newport",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-NYK",
+      "id": "iso3166-2:GB-NYK",
+      "kind": "subdivision",
+      "name": "North Yorkshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-OLD",
+      "id": "iso3166-2:GB-OLD",
+      "kind": "subdivision",
+      "name": "Oldham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ORK",
+      "id": "iso3166-2:GB-ORK",
+      "kind": "subdivision",
+      "name": "Orkney Islands",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-OXF",
+      "id": "iso3166-2:GB-OXF",
+      "kind": "subdivision",
+      "name": "Oxfordshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-PEM",
+      "id": "iso3166-2:GB-PEM",
+      "kind": "subdivision",
+      "name": "Pembrokeshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-PKN",
+      "id": "iso3166-2:GB-PKN",
+      "kind": "subdivision",
+      "name": "Perth and Kinross",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-PLY",
+      "id": "iso3166-2:GB-PLY",
+      "kind": "subdivision",
+      "name": "Plymouth",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-POR",
+      "id": "iso3166-2:GB-POR",
+      "kind": "subdivision",
+      "name": "Portsmouth",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-POW",
+      "id": "iso3166-2:GB-POW",
+      "kind": "subdivision",
+      "name": "Powys",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-PTE",
+      "id": "iso3166-2:GB-PTE",
+      "kind": "subdivision",
+      "name": "Peter",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RCC",
+      "id": "iso3166-2:GB-RCC",
+      "kind": "subdivision",
+      "name": "Redcar and Cleveland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RCH",
+      "id": "iso3166-2:GB-RCH",
+      "kind": "subdivision",
+      "name": "Rochdale",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RCT",
+      "id": "iso3166-2:GB-RCT",
+      "kind": "subdivision",
+      "name": "Rhondda Cynon Taf",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RDB",
+      "id": "iso3166-2:GB-RDB",
+      "kind": "subdivision",
+      "name": "Redbridge",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RDG",
+      "id": "iso3166-2:GB-RDG",
+      "kind": "subdivision",
+      "name": "Reading",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RFW",
+      "id": "iso3166-2:GB-RFW",
+      "kind": "subdivision",
+      "name": "Renfrewshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RIC",
+      "id": "iso3166-2:GB-RIC",
+      "kind": "subdivision",
+      "name": "Richmond upon Thames",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ROT",
+      "id": "iso3166-2:GB-ROT",
+      "kind": "subdivision",
+      "name": "Rotherham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-RUT",
+      "id": "iso3166-2:GB-RUT",
+      "kind": "subdivision",
+      "name": "Rutland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SAW",
+      "id": "iso3166-2:GB-SAW",
+      "kind": "subdivision",
+      "name": "Sandwell",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SAY",
+      "id": "iso3166-2:GB-SAY",
+      "kind": "subdivision",
+      "name": "South Ayrshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SCB",
+      "id": "iso3166-2:GB-SCB",
+      "kind": "subdivision",
+      "name": "Scottish Borders",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "GB-SCT",
+      "id": "iso3166-2:GB-SCT",
+      "kind": "subdivision",
+      "name": "Scotland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:GB"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SFK",
+      "id": "iso3166-2:GB-SFK",
+      "kind": "subdivision",
+      "name": "Suffolk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SFT",
+      "id": "iso3166-2:GB-SFT",
+      "kind": "subdivision",
+      "name": "Sefton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SGC",
+      "id": "iso3166-2:GB-SGC",
+      "kind": "subdivision",
+      "name": "South Gloucestershire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SHF",
+      "id": "iso3166-2:GB-SHF",
+      "kind": "subdivision",
+      "name": "Sheffield",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SHN",
+      "id": "iso3166-2:GB-SHN",
+      "kind": "subdivision",
+      "name": "Saint Helens",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SHR",
+      "id": "iso3166-2:GB-SHR",
+      "kind": "subdivision",
+      "name": "Shropshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SKP",
+      "id": "iso3166-2:GB-SKP",
+      "kind": "subdivision",
+      "name": "Stockport",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SLF",
+      "id": "iso3166-2:GB-SLF",
+      "kind": "subdivision",
+      "name": "Salford",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SLG",
+      "id": "iso3166-2:GB-SLG",
+      "kind": "subdivision",
+      "name": "Slough",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SLK",
+      "id": "iso3166-2:GB-SLK",
+      "kind": "subdivision",
+      "name": "South Lanarkshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SND",
+      "id": "iso3166-2:GB-SND",
+      "kind": "subdivision",
+      "name": "Sunderland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SOL",
+      "id": "iso3166-2:GB-SOL",
+      "kind": "subdivision",
+      "name": "Solihull",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SOM",
+      "id": "iso3166-2:GB-SOM",
+      "kind": "subdivision",
+      "name": "Somerset",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SOS",
+      "id": "iso3166-2:GB-SOS",
+      "kind": "subdivision",
+      "name": "Southend-on-Sea",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SRY",
+      "id": "iso3166-2:GB-SRY",
+      "kind": "subdivision",
+      "name": "Surrey",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STE",
+      "id": "iso3166-2:GB-STE",
+      "kind": "subdivision",
+      "name": "Stoke-on-Trent",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STG",
+      "id": "iso3166-2:GB-STG",
+      "kind": "subdivision",
+      "name": "Stirling",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STH",
+      "id": "iso3166-2:GB-STH",
+      "kind": "subdivision",
+      "name": "Southampton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STN",
+      "id": "iso3166-2:GB-STN",
+      "kind": "subdivision",
+      "name": "Sutton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STS",
+      "id": "iso3166-2:GB-STS",
+      "kind": "subdivision",
+      "name": "Staffordshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STT",
+      "id": "iso3166-2:GB-STT",
+      "kind": "subdivision",
+      "name": "Stockton-on-Tees",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-STY",
+      "id": "iso3166-2:GB-STY",
+      "kind": "subdivision",
+      "name": "South Tyneside",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SWA",
+      "id": "iso3166-2:GB-SWA",
+      "kind": "subdivision",
+      "name": "Swansea",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SWD",
+      "id": "iso3166-2:GB-SWD",
+      "kind": "subdivision",
+      "name": "Swindon",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-SWK",
+      "id": "iso3166-2:GB-SWK",
+      "kind": "subdivision",
+      "name": "Southwark",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TAM",
+      "id": "iso3166-2:GB-TAM",
+      "kind": "subdivision",
+      "name": "Tameside",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TFW",
+      "id": "iso3166-2:GB-TFW",
+      "kind": "subdivision",
+      "name": "Telford and Wrekin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-THR",
+      "id": "iso3166-2:GB-THR",
+      "kind": "subdivision",
+      "name": "Thurrock",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TOB",
+      "id": "iso3166-2:GB-TOB",
+      "kind": "subdivision",
+      "name": "Torbay",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TOF",
+      "id": "iso3166-2:GB-TOF",
+      "kind": "subdivision",
+      "name": "Torfaen",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TRF",
+      "id": "iso3166-2:GB-TRF",
+      "kind": "subdivision",
+      "name": "Trafford",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-TWH",
+      "id": "iso3166-2:GB-TWH",
+      "kind": "subdivision",
+      "name": "Tower Hamlets",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-VGL",
+      "id": "iso3166-2:GB-VGL",
+      "kind": "subdivision",
+      "name": "Vale of Glamorgan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WAR",
+      "id": "iso3166-2:GB-WAR",
+      "kind": "subdivision",
+      "name": "Warwickshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WBK",
+      "id": "iso3166-2:GB-WBK",
+      "kind": "subdivision",
+      "name": "West Berkshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WDU",
+      "id": "iso3166-2:GB-WDU",
+      "kind": "subdivision",
+      "name": "West Dunbartonshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WFT",
+      "id": "iso3166-2:GB-WFT",
+      "kind": "subdivision",
+      "name": "Waltham Forest",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WGN",
+      "id": "iso3166-2:GB-WGN",
+      "kind": "subdivision",
+      "name": "Wigan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WIL",
+      "id": "iso3166-2:GB-WIL",
+      "kind": "subdivision",
+      "name": "Wiltshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WKF",
+      "id": "iso3166-2:GB-WKF",
+      "kind": "subdivision",
+      "name": "Wakefield",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WLL",
+      "id": "iso3166-2:GB-WLL",
+      "kind": "subdivision",
+      "name": "Walsall",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WLN",
+      "id": "iso3166-2:GB-WLN",
+      "kind": "subdivision",
+      "name": "West Lothian",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "GB-WLS",
+      "id": "iso3166-2:GB-WLS",
+      "kind": "subdivision",
+      "name": "Wales",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:GB"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WLV",
+      "id": "iso3166-2:GB-WLV",
+      "kind": "subdivision",
+      "name": "Wolverhampton",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WND",
+      "id": "iso3166-2:GB-WND",
+      "kind": "subdivision",
+      "name": "Wandsworth",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WNH",
+      "id": "iso3166-2:GB-WNH",
+      "kind": "subdivision",
+      "name": "West Northamptonshire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WNM",
+      "id": "iso3166-2:GB-WNM",
+      "kind": "subdivision",
+      "name": "Windsor and Maidenhead",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WOK",
+      "id": "iso3166-2:GB-WOK",
+      "kind": "subdivision",
+      "name": "Wokingham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WOR",
+      "id": "iso3166-2:GB-WOR",
+      "kind": "subdivision",
+      "name": "Worcestershire",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WRL",
+      "id": "iso3166-2:GB-WRL",
+      "kind": "subdivision",
+      "name": "Wirral",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WRT",
+      "id": "iso3166-2:GB-WRT",
+      "kind": "subdivision",
+      "name": "Warrington",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WRX",
+      "id": "iso3166-2:GB-WRX",
+      "kind": "subdivision",
+      "name": "Wrexham",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-WLS"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WSM",
+      "id": "iso3166-2:GB-WSM",
+      "kind": "subdivision",
+      "name": "Westminster",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-WSX",
+      "id": "iso3166-2:GB-WSX",
+      "kind": "subdivision",
+      "name": "West Sussex",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-YOR",
+      "id": "iso3166-2:GB-YOR",
+      "kind": "subdivision",
+      "name": "York",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-ENG"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "GB-ZET",
+      "id": "iso3166-2:GB-ZET",
+      "kind": "subdivision",
+      "name": "Shetland",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:GB-SCT"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-b6c4c44272f8f283",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

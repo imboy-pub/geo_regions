@@ -1,0 +1,38 @@
+{
+  "compatibleCatalogRevision": "c-0d1490d60a530f8e",
+  "coverage": {
+    "qualityMeaning": "CLDR JSON export threshold is contributed or approved; no project review claimed.",
+    "status": "research-seed",
+    "translationQualityById": {
+      "CN": "cldr-json-qualified",
+      "DE": "cldr-json-qualified",
+      "FR": "cldr-json-qualified",
+      "GB": "cldr-json-qualified",
+      "IT": "cldr-json-qualified",
+      "JP": "cldr-json-qualified",
+      "KR": "cldr-json-qualified",
+      "RU": "cldr-json-qualified",
+      "SA": "cldr-json-qualified",
+      "US": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "CN": "中國",
+    "DE": "德國",
+    "FR": "法國",
+    "GB": "英國",
+    "IT": "義大利",
+    "JP": "日本",
+    "KR": "南韓",
+    "RU": "俄羅斯",
+    "SA": "沙烏地阿拉伯",
+    "US": "美國"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-a0944c216c266803",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json"
+  ]
+}
