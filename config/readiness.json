@@ -1,5 +1,5 @@
 {
-  "productionSdkExpected": false,
-  "stage": "research-seed-and-demo",
-  "nextGate": "P1-08 must set productionSdkExpected to true before accepting the production SDK milestone."
+  "productionSdkExpected": true,
+  "stage": "production-sdk-implemented",
+  "nextGate": "P1-08 release candidate: package dry-run, payload audit and draft release materials."
 }

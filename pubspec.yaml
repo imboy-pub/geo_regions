@@ -1,7 +1,8 @@
 name: geo_regions
 description: Offline-first administrative region data and picker support for Flutter apps, with stable IDs, quality-visible localization, and injected loaders.
 version: 0.1.0-wip.1
-publish_to: none
+repository: https://github.com/imboy-pub/geo_regions
+issue_tracker: https://github.com/imboy-pub/geo_regions/issues
 environment:
   sdk: '>=3.13.0 <4.0.0'
   flutter: '>=3.47.0'
