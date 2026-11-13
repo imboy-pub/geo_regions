@@ -52,5 +52,14 @@ export 'src/names.dart';
 // Selection construction and semantic validation (PROTOCOL.md §8).
 export 'src/selection.dart';
 
+// Loading, caching, integrity and concurrency (P1-05). Injected host
+// contracts plus the repository that orchestrates cache → bundled asset →
+// remote fetches with SHA-256 verification before any decoding, request
+// deduplication, generation tokens and atomic manifest swaps (PRD §8).
+export 'src/load/contracts.dart';
+export 'src/load/bundled_loader.dart';
+export 'src/load/memory_store.dart';
+export 'src/load/repository.dart';
+
 /// Protocol version accepted by this SDK build (PROTOCOL.md §3).
 const String kGeoRegionsProtocolVersion = '1.0';
