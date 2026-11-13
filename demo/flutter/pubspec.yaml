@@ -3,13 +3,21 @@ publish_to: none
 description: A deterministic UI prototype for geo_regions, not the production SDK.
 version: 0.1.0+1
 environment:
-  sdk: '>=3.5.0 <4.0.0'
-  flutter: '>=3.24.0'
+  sdk: '>=3.13.0 <4.0.0'
+  flutter: '>=3.47.0'
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # Official Flutter-team packages that replace the deprecated
+  # flutter/material.dart library split (deprecated after v3.47.0).
+  cupertino_ui: ^1.1.6
+  material_ui: ^1.11.0
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
 flutter:
   uses-material-design: true

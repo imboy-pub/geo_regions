@@ -17,7 +17,9 @@ spec.loader.exec_module(geo)
 class DataToolsTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp.name) / "repo"
+        # macOS puts TMPDIR under /var, which is a symlink; resolve() gives the
+        # guard_output symlink-escape protection the real path it expects.
+        self.root = Path(self.temp.name).resolve() / "repo"
         self.root.mkdir()
         self.data = self.root / "data"
         self.countries = [{"code": code, "name": code, "rootId": "cc:" + code} for code in ("CN", "JP")]
