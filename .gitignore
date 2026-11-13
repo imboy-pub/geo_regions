@@ -15,6 +15,10 @@ demo/flutter/.flutter-plugins-dependencies
 .plans/geo-regions-v1/state.json
 .plans/geo-regions-v1/state.lock
 .plans/geo-regions-v1/evidence/
+.plans/geo-regions-source-audit-v1/
+
+# Transient task packages (workspace policy: never committed to any repo)
+_task_packages/
 
 # Local secrets and machine metadata
 .env
