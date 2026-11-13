@@ -11,5 +11,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+executables:
+  assets: assets
 flutter:
   uses-material-design: false

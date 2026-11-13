@@ -5,6 +5,10 @@ analyzer:
     - demo/**
     - build/**
     - .venv/**
+    - _task_packages/**
+    - _worktrees/**
+    - .worktrees/**
+    - _task_worktrees/**
 linter:
   rules:
     - always_declare_return_types
