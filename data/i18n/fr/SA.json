@@ -1,0 +1,56 @@
+{
+  "compatibleStructureRevision": "s-116ac088cb082ba7",
+  "countryCode": "SA",
+  "coverage": {
+    "explicitNames": 14,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 13,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:SA": "cldr-json-qualified",
+      "iso3166-2:SA-01": "provisional",
+      "iso3166-2:SA-02": "provisional",
+      "iso3166-2:SA-03": "provisional",
+      "iso3166-2:SA-04": "provisional",
+      "iso3166-2:SA-05": "provisional",
+      "iso3166-2:SA-06": "provisional",
+      "iso3166-2:SA-07": "provisional",
+      "iso3166-2:SA-08": "provisional",
+      "iso3166-2:SA-09": "provisional",
+      "iso3166-2:SA-10": "provisional",
+      "iso3166-2:SA-11": "provisional",
+      "iso3166-2:SA-12": "provisional",
+      "iso3166-2:SA-14": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "fr",
+  "names": {
+    "cc:SA": "Arabie saoudite",
+    "iso3166-2:SA-01": "Riyad (province)",
+    "iso3166-2:SA-02": "La Mecque",
+    "iso3166-2:SA-03": "Médine",
+    "iso3166-2:SA-04": "Ach-Charqiya",
+    "iso3166-2:SA-05": "Al Qasim",
+    "iso3166-2:SA-06": "Haïl",
+    "iso3166-2:SA-07": "Tabuk (province)",
+    "iso3166-2:SA-08": "Al-Hudud ach-Chamaliya",
+    "iso3166-2:SA-09": "Jizan",
+    "iso3166-2:SA-10": "Najran",
+    "iso3166-2:SA-11": "Al Bahah",
+    "iso3166-2:SA-12": "Al Jawf (province)",
+    "iso3166-2:SA-14": "Asir (province)"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-9e094434c22c195c",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-fr.json",
+    "sources/raw/cldr/subdivisions-fr.xml"
+  ]
+}

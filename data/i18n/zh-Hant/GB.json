@@ -1,0 +1,36 @@
+{
+  "compatibleStructureRevision": "s-b6c4c44272f8f283",
+  "countryCode": "GB",
+  "coverage": {
+    "explicitNames": 4,
+    "missingNames": 218,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 3,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:GB": "cldr-json-qualified",
+      "iso3166-2:GB-ENG": "approved-in-source",
+      "iso3166-2:GB-SCT": "approved-in-source",
+      "iso3166-2:GB-WLS": "approved-in-source"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "cc:GB": "英國",
+    "iso3166-2:GB-ENG": "英格蘭",
+    "iso3166-2:GB-SCT": "蘇格蘭",
+    "iso3166-2:GB-WLS": "威爾斯"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-9c2ec5fee3eb71f3",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json",
+    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+  ]
+}

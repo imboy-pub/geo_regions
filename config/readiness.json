@@ -1,0 +1,5 @@
+{
+  "productionSdkExpected": false,
+  "stage": "research-seed-and-demo",
+  "nextGate": "P1-08 must set productionSdkExpected to true before accepting the production SDK milestone."
+}

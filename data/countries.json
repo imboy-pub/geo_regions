@@ -1,0 +1,57 @@
+{
+  "countries": [
+    {
+      "code": "CN",
+      "name": "China",
+      "rootId": "cc:CN"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "rootId": "cc:JP"
+    },
+    {
+      "code": "KR",
+      "name": "South Korea",
+      "rootId": "cc:KR"
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "rootId": "cc:US"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "rootId": "cc:GB"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "rootId": "cc:DE"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "rootId": "cc:FR"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "rootId": "cc:IT"
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "rootId": "cc:RU"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "rootId": "cc:SA"
+    }
+  ],
+  "datasetId": "geo-regions-seed",
+  "protocolVersion": "1.0",
+  "revision": "c-0d1490d60a530f8e"
+}

@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: false
+        default: ''
+      force_flutter:
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  data:
+    name: Data and tooling
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      flutter: ${{ steps.scope.outputs.flutter }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tool/requirements-ci.txt
+      - id: scope
+        name: Select Flutter checks
+        env:
+          CI_EVENT: ${{ github.event_name }}
+          CI_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          CI_FORCE_FLUTTER: ${{ inputs.force_flutter || false }}
+        run: python3 tool/ci_scope.py
+      - name: Install schema checker
+        run: python3 -m pip install -r tool/requirements-ci.txt
+      - name: Enforce declared package readiness
+        run: python3 tool/check_readiness.py
+      - name: Reproduce data from pinned local sources
+        run: python3 tool/import_data.py --check
+      - name: Validate schema, graph, language compatibility and hashes
+        run: python3 tool/geo_data.py validate --schema --report build/reports/data-validation.json
+      - name: Validate persisted selection contract
+        run: python3 tool/geo_data.py selection --file samples/selection.JP.json --schema
+      - name: Exercise corruption and boundary cases
+        run: python3 -m unittest discover -s tests -v
+      - name: Check interactive design reference behavior
+        run: node demo/web_preview/test_logic.cjs
+      - name: Verify manifest and selected offline payload
+        run: |
+          python3 tool/geo_data.py manifest --check
+          python3 tool/geo_data.py offline --config config/offline.example.json --out build/offline-assets
+      - name: Preserve data evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: data-validation
+          path: build/reports/
+          if-no-files-found: warn
+          retention-days: 7
+
+  flutter:
+    name: Flutter demo and package
+    needs: data
+    if: needs.data.outputs.flutter == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.41.5'
+          channel: stable
+          cache: true
+      - name: Verify production package when implemented
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f pubspec.yaml ]]; then
+            flutter pub get
+            dart format --output=none --set-exit-if-changed lib test
+            flutter analyze --fatal-infos
+            flutter test
+            flutter pub publish --dry-run
+          else
+            echo 'Production SDK is not implemented yet; only the delivered demo is being verified.'
+          fi
+      - name: Bootstrap demo platform
+        run: bash demo/flutter/bootstrap.sh
+      - name: Analyze, test and build demo
+        working-directory: demo/flutter
+        run: |
+          dart format --output=none --set-exit-if-changed lib test
+          flutter analyze --fatal-infos
+          flutter test
+          flutter build web --release
+
+  gate:
+    name: Required gate
+    if: always()
+    needs: [data, flutter]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require all selected checks
+        env:
+          DATA_RESULT: ${{ needs.data.result }}
+          FLUTTER_SELECTED: ${{ needs.data.outputs.flutter }}
+          FLUTTER_RESULT: ${{ needs.flutter.result }}
+        run: |
+          test "$DATA_RESULT" = success
+          if [ "$FLUTTER_SELECTED" = true ]; then
+            test "$FLUTTER_RESULT" = success
+          else
+            test "$FLUTTER_RESULT" = skipped
+          fi

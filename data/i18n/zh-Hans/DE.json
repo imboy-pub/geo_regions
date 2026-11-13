@@ -1,0 +1,62 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 17,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 16,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "provisional",
+      "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BW": "provisional",
+      "iso3166-2:DE-BY": "provisional",
+      "iso3166-2:DE-HB": "provisional",
+      "iso3166-2:DE-HE": "provisional",
+      "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-MV": "provisional",
+      "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-NW": "provisional",
+      "iso3166-2:DE-RP": "provisional",
+      "iso3166-2:DE-SH": "provisional",
+      "iso3166-2:DE-SL": "provisional",
+      "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-ST": "provisional",
+      "iso3166-2:DE-TH": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hans",
+  "names": {
+    "cc:DE": "德国",
+    "iso3166-2:DE-BB": "勃兰登堡",
+    "iso3166-2:DE-BE": "柏林",
+    "iso3166-2:DE-BW": "巴登－符腾堡",
+    "iso3166-2:DE-BY": "巴伐利亚",
+    "iso3166-2:DE-HB": "不來梅州",
+    "iso3166-2:DE-HE": "黑森",
+    "iso3166-2:DE-HH": "汉堡",
+    "iso3166-2:DE-MV": "梅克伦堡－前波美拉尼亚",
+    "iso3166-2:DE-NI": "下萨克森",
+    "iso3166-2:DE-NW": "北莱茵－威斯特法伦",
+    "iso3166-2:DE-RP": "莱茵兰－普法尔茨",
+    "iso3166-2:DE-SH": "石勒苏益格-荷尔斯泰因",
+    "iso3166-2:DE-SL": "萨尔",
+    "iso3166-2:DE-SN": "萨克森自由州",
+    "iso3166-2:DE-ST": "萨克森－安哈尔特",
+    "iso3166-2:DE-TH": "图林根"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-951b9113f8c8033e",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh.json",
+    "sources/raw/cldr/subdivisions-zh.xml"
+  ]
+}

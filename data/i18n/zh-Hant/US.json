@@ -1,0 +1,30 @@
+{
+  "compatibleStructureRevision": "s-65edb4a623631538",
+  "countryCode": "US",
+  "coverage": {
+    "explicitNames": 1,
+    "missingNames": 57,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:US": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "cc:US": "美國"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-1028ef81d83fa964",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json",
+    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+  ]
+}

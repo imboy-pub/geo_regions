@@ -1,0 +1,62 @@
+{
+  "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 17,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 16,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:DE": "cldr-json-qualified",
+      "iso3166-2:DE-BB": "approved-in-source",
+      "iso3166-2:DE-BE": "approved-in-source",
+      "iso3166-2:DE-BW": "approved-in-source",
+      "iso3166-2:DE-BY": "approved-in-source",
+      "iso3166-2:DE-HB": "approved-in-source",
+      "iso3166-2:DE-HE": "approved-in-source",
+      "iso3166-2:DE-HH": "approved-in-source",
+      "iso3166-2:DE-MV": "approved-in-source",
+      "iso3166-2:DE-NI": "approved-in-source",
+      "iso3166-2:DE-NW": "approved-in-source",
+      "iso3166-2:DE-RP": "approved-in-source",
+      "iso3166-2:DE-SH": "approved-in-source",
+      "iso3166-2:DE-SL": "approved-in-source",
+      "iso3166-2:DE-SN": "approved-in-source",
+      "iso3166-2:DE-ST": "approved-in-source",
+      "iso3166-2:DE-TH": "approved-in-source"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "en",
+  "names": {
+    "cc:DE": "Germany",
+    "iso3166-2:DE-BB": "Brandenburg",
+    "iso3166-2:DE-BE": "Berlin",
+    "iso3166-2:DE-BW": "Baden-Württemberg",
+    "iso3166-2:DE-BY": "Bavaria",
+    "iso3166-2:DE-HB": "Bremen",
+    "iso3166-2:DE-HE": "Hesse",
+    "iso3166-2:DE-HH": "Hamburg",
+    "iso3166-2:DE-MV": "Mecklenburg-Vorpommern",
+    "iso3166-2:DE-NI": "Lower Saxony",
+    "iso3166-2:DE-NW": "North Rhine-Westphalia",
+    "iso3166-2:DE-RP": "Rhineland-Palatinate",
+    "iso3166-2:DE-SH": "Schleswig-Holstein",
+    "iso3166-2:DE-SL": "Saarland",
+    "iso3166-2:DE-SN": "Saxony",
+    "iso3166-2:DE-ST": "Saxony-Anhalt",
+    "iso3166-2:DE-TH": "Thuringia"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-f5b1a90b402dbd0d",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-en.json",
+    "sources/raw/cldr/subdivisions-en.xml"
+  ]
+}

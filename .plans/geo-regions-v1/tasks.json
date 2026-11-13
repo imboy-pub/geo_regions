@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "taskId": "geo-regions-v1",
+  "targetRepository": "https://github.com/imboy-pub/geo_regions",
+  "targetDirectory": "/Users/leeyi/project/imboy.pub/geo_regions",
+  "maxWorkers": 2,
+  "initialStatus": "pending",
+  "tasks": [
+    {
+      "id": "P1-01",
+      "phase": 1,
+      "titleZh": "可运行Demo与UI/UX验收",
+      "titleEn": "Runnable Demo and UI/UX acceptance",
+      "dependsOn": [],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-01/"
+    },
+    {
+      "id": "P1-02",
+      "phase": 1,
+      "titleZh": "固化协议与消费者契约",
+      "titleEn": "Freeze protocol and consumer contract",
+      "dependsOn": [
+        "P1-01"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-02/"
+    },
+    {
+      "id": "P1-03",
+      "phase": 1,
+      "titleZh": "十国数据与十语质量",
+      "titleEn": "Ten-country data and ten-locale quality",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-03/"
+    },
+    {
+      "id": "P1-04",
+      "phase": 1,
+      "titleZh": "SDK模型索引与名称解析",
+      "titleEn": "SDK models, index and name resolution",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-04/"
+    },
+    {
+      "id": "P1-05",
+      "phase": 1,
+      "titleZh": "加载缓存完整性与并发",
+      "titleEn": "Loading, caching, integrity and concurrency",
+      "dependsOn": [
+        "P1-04"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-05/"
+    },
+    {
+      "id": "P1-06",
+      "phase": 1,
+      "titleZh": "离线资产与Dart CLI",
+      "titleEn": "Offline assets and Dart CLI",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-06/"
+    },
+    {
+      "id": "P1-07",
+      "phase": 1,
+      "titleZh": "通用Picker与真实Demo",
+      "titleEn": "Reusable picker and real SDK demo",
+      "dependsOn": [
+        "P1-03",
+        "P1-04",
+        "P1-05",
+        "P1-06"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-07/"
+    },
+    {
+      "id": "P1-08",
+      "phase": 1,
+      "titleZh": "CI跨平台与发布候选",
+      "titleEn": "CI, platform acceptance and release candidate",
+      "dependsOn": [
+        "P1-03",
+        "P1-04",
+        "P1-05",
+        "P1-06",
+        "P1-07"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P1-08/"
+    },
+    {
+      "id": "P2-01",
+      "phase": 2,
+      "titleZh": "IMBoy真实基线盘点",
+      "titleEn": "Inspect current IMBoy baseline",
+      "dependsOn": [
+        "P1-02"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-01/"
+    },
+    {
+      "id": "P2-02",
+      "phase": 2,
+      "titleZh": "宿主适配与账号隔离",
+      "titleEn": "Host adapters and account isolation",
+      "dependsOn": [
+        "P1-08",
+        "P2-01"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-02/"
+    },
+    {
+      "id": "P2-03",
+      "phase": 2,
+      "titleZh": "资料协议与迁移",
+      "titleEn": "Profile contract and migration",
+      "dependsOn": [
+        "P1-08",
+        "P2-01"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-03/"
+    },
+    {
+      "id": "P2-04",
+      "phase": 2,
+      "titleZh": "数据源替换与导航兼容",
+      "titleEn": "Data replacement and navigation compatibility",
+      "dependsOn": [
+        "P2-02",
+        "P2-03"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-04/"
+    },
+    {
+      "id": "P2-05",
+      "phase": 2,
+      "titleZh": "全链路与跨端回归",
+      "titleEn": "End-to-end and cross-platform regression",
+      "dependsOn": [
+        "P2-04"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-05/"
+    },
+    {
+      "id": "P2-06",
+      "phase": 2,
+      "titleZh": "灰度文档与交接",
+      "titleEn": "Rollout, rollback and handoff",
+      "dependsOn": [
+        "P2-05"
+      ],
+      "evidenceDirectory": ".plans/geo-regions-v1/evidence/P2-06/"
+    }
+  ]
+}

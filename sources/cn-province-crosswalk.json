@@ -1,0 +1,407 @@
+{
+  "records": [
+    {
+      "aliasReplacement": "cnbj",
+      "cldrSubdivisionId": "cnbj",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-BJ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "11"
+    },
+    {
+      "aliasReplacement": "cntj",
+      "cldrSubdivisionId": "cntj",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-TJ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "12"
+    },
+    {
+      "aliasReplacement": "cnhe",
+      "cldrSubdivisionId": "cnhe",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HE",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "13"
+    },
+    {
+      "aliasReplacement": "cnsx",
+      "cldrSubdivisionId": "cnsx",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-SX",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "14"
+    },
+    {
+      "aliasReplacement": "cnmn",
+      "cldrSubdivisionId": "cnnm",
+      "method": "unique-exact-source-name-match",
+      "nodeId": "iso3166-2:CN-NM",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "15"
+    },
+    {
+      "aliasReplacement": "cnln",
+      "cldrSubdivisionId": "cnln",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-LN",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "21"
+    },
+    {
+      "aliasReplacement": "cnjl",
+      "cldrSubdivisionId": "cnjl",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-JL",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "22"
+    },
+    {
+      "aliasReplacement": "cnhl",
+      "cldrSubdivisionId": "cnhl",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HL",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "23"
+    },
+    {
+      "aliasReplacement": "cnsh",
+      "cldrSubdivisionId": "cnsh",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-SH",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "31"
+    },
+    {
+      "aliasReplacement": "cnjs",
+      "cldrSubdivisionId": "cnjs",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-JS",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "32"
+    },
+    {
+      "aliasReplacement": "cnzj",
+      "cldrSubdivisionId": "cnzj",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-ZJ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "33"
+    },
+    {
+      "aliasReplacement": "cnah",
+      "cldrSubdivisionId": "cnah",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-AH",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "34"
+    },
+    {
+      "aliasReplacement": "cnfj",
+      "cldrSubdivisionId": "cnfj",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-FJ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "35"
+    },
+    {
+      "aliasReplacement": "cnjx",
+      "cldrSubdivisionId": "cnjx",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-JX",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "36"
+    },
+    {
+      "aliasReplacement": "cnsd",
+      "cldrSubdivisionId": "cnsd",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-SD",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "37"
+    },
+    {
+      "aliasReplacement": "cnha",
+      "cldrSubdivisionId": "cnha",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HA",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "41"
+    },
+    {
+      "aliasReplacement": "cnhb",
+      "cldrSubdivisionId": "cnhb",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HB",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "42"
+    },
+    {
+      "aliasReplacement": "cnhn",
+      "cldrSubdivisionId": "cnhn",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HN",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "43"
+    },
+    {
+      "aliasReplacement": "cngd",
+      "cldrSubdivisionId": "cngd",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-GD",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "44"
+    },
+    {
+      "aliasReplacement": "cngx",
+      "cldrSubdivisionId": "cngx",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-GX",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "45"
+    },
+    {
+      "aliasReplacement": "cnhi",
+      "cldrSubdivisionId": "cnhi",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-HI",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "46"
+    },
+    {
+      "aliasReplacement": "cncq",
+      "cldrSubdivisionId": "cncq",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-CQ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "50"
+    },
+    {
+      "aliasReplacement": "cnsc",
+      "cldrSubdivisionId": "cnsc",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-SC",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "51"
+    },
+    {
+      "aliasReplacement": "cngz",
+      "cldrSubdivisionId": "cngz",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-GZ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "52"
+    },
+    {
+      "aliasReplacement": "cnyn",
+      "cldrSubdivisionId": "cnyn",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-YN",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "53"
+    },
+    {
+      "aliasReplacement": "cnxz",
+      "cldrSubdivisionId": "cnxz",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-XZ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "54"
+    },
+    {
+      "aliasReplacement": "cnsn",
+      "cldrSubdivisionId": "cnsn",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-SN",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "61"
+    },
+    {
+      "aliasReplacement": "cngs",
+      "cldrSubdivisionId": "cngs",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-GS",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "62"
+    },
+    {
+      "aliasReplacement": "cnqh",
+      "cldrSubdivisionId": "cnqh",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-QH",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "63"
+    },
+    {
+      "aliasReplacement": "cnnx",
+      "cldrSubdivisionId": "cnnx",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-NX",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "64"
+    },
+    {
+      "aliasReplacement": "cnxj",
+      "cldrSubdivisionId": "cnxj",
+      "method": "CLDR-subdivisionAlias",
+      "nodeId": "iso3166-2:CN-XJ",
+      "sourceRefs": [
+        "sources/raw/cldr/aliases.json",
+        "sources/raw/cldr/subdivisions-zh.xml",
+        "sources/raw/cldr/subdivisionContainment.json",
+        "sources/raw/modood/pca-code.json"
+      ],
+      "statisticalProvinceCode": "65"
+    }
+  ]
+}

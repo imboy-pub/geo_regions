@@ -1,0 +1,25 @@
+{
+  "profile": "imboy-cn-seed",
+  "structures": [
+    "CN"
+  ],
+  "locales": {
+    "CN": [
+      "zh-Hans",
+      "zh-Hant",
+      "en"
+    ]
+  },
+  "catalogLocales": [
+    "zh-Hans",
+    "zh-Hant",
+    "en",
+    "ja",
+    "ko",
+    "ru",
+    "de",
+    "fr",
+    "it",
+    "ar"
+  ]
+}

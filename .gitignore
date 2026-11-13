@@ -1,0 +1,23 @@
+# Local build products and dependencies
+**/.dart_tool/
+**/build/
+**/__pycache__/
+*.pyc
+.venv/
+node_modules/
+generated/
+staging/
+.data_staging/
+demo/flutter/web/
+demo/flutter/.flutter-plugins-dependencies
+
+# Conversation-local execution state; retain on disk across sessions
+.plans/geo-regions-v1/state.json
+.plans/geo-regions-v1/state.lock
+.plans/geo-regions-v1/evidence/
+
+# Local secrets and machine metadata
+.env
+.env.*
+!.env.example
+.DS_Store

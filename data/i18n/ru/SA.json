@@ -1,0 +1,56 @@
+{
+  "compatibleStructureRevision": "s-116ac088cb082ba7",
+  "countryCode": "SA",
+  "coverage": {
+    "explicitNames": 14,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 13,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:SA": "cldr-json-qualified",
+      "iso3166-2:SA-01": "provisional",
+      "iso3166-2:SA-02": "provisional",
+      "iso3166-2:SA-03": "provisional",
+      "iso3166-2:SA-04": "provisional",
+      "iso3166-2:SA-05": "provisional",
+      "iso3166-2:SA-06": "provisional",
+      "iso3166-2:SA-07": "provisional",
+      "iso3166-2:SA-08": "provisional",
+      "iso3166-2:SA-09": "provisional",
+      "iso3166-2:SA-10": "provisional",
+      "iso3166-2:SA-11": "provisional",
+      "iso3166-2:SA-12": "provisional",
+      "iso3166-2:SA-14": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ru",
+  "names": {
+    "cc:SA": "Саудовская Аравия",
+    "iso3166-2:SA-01": "Эр-Рияд",
+    "iso3166-2:SA-02": "Мекка",
+    "iso3166-2:SA-03": "Медина (провинция)",
+    "iso3166-2:SA-04": "Восточная провинция",
+    "iso3166-2:SA-05": "Эль-Касим",
+    "iso3166-2:SA-06": "Хаиль",
+    "iso3166-2:SA-07": "Табук",
+    "iso3166-2:SA-08": "Эль-Худуд-эш-Шамалия",
+    "iso3166-2:SA-09": "Джизан",
+    "iso3166-2:SA-10": "Наджран",
+    "iso3166-2:SA-11": "Эль-Баха",
+    "iso3166-2:SA-12": "Эль-Джауф",
+    "iso3166-2:SA-14": "Асир (провинция)"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-8b470579be1f66cf",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ru.json",
+    "sources/raw/cldr/subdivisions-ru.xml"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imboy-pub.github.io/geo_regions/schemas/selection.schema.json",
+  "title": "geo_regions selection v1.0",
+  "type": "object",
+  "properties": {
+    "protocolVersion": {
+      "const": "1.0"
+    },
+    "datasetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "dataRevision": {
+      "type": "string",
+      "pattern": "^s-[a-f0-9]{16}$"
+    },
+    "pathIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "displaySnapshot": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "displayLocale": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "protocolVersion",
+    "datasetId",
+    "countryCode",
+    "dataRevision",
+    "pathIds"
+  ],
+  "additionalProperties": false
+}

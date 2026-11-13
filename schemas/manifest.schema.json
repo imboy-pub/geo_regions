@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imboy-pub.github.io/geo_regions/schemas/manifest.schema.json",
+  "title": "geo_regions manifest v1.0",
+  "type": "object",
+  "properties": {
+    "protocolVersion": {
+      "const": "1.0"
+    },
+    "datasetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[sclm]-[a-f0-9]{16}$"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "countries",
+              "structure",
+              "locale",
+              "country-names"
+            ]
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[scl]-[a-f0-9]{16}$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "countryCode": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "locale": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255
+          },
+          "compatibleStructureRevision": {
+            "type": "string",
+            "pattern": "^s-[a-f0-9]{16}$"
+          },
+          "compatibleCatalogRevision": {
+            "type": "string",
+            "pattern": "^c-[a-f0-9]{16}$"
+          }
+        },
+        "required": [
+          "path",
+          "kind",
+          "revision",
+          "sha256",
+          "bytes"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "protocolVersion",
+    "datasetId",
+    "revision",
+    "resources"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-13",
+  "archive": "geo_regions_delivery_2026-11-13.zip",
+  "scope": "Checks executed in an extracted copy of the deliverable; Flutter and hosted GitHub not run. This report adds no claim of production readiness.",
+  "passed": true,
+  "checks": [
+    {
+      "check": "archive CRC, safe paths and all content hashes",
+      "passed": true
+    },
+    {
+      "command": [
+        "python3",
+        "tool/import_data.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": "{\n  \"status\": \"verified\",\n  \"sources\": 36,\n  \"outputs\": 124,\n  \"countries\": 10,\n  \"locales\": 10,\n  \"nodes\": 4143\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "validate",
+        "--schema"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": "{\n  \"datasetId\": \"geo-regions-seed\",\n  \"integrityStatus\": \"pass\",\n  \"profile\": \"seed-integrity\",\n  \"humanReviewVerified\": false,\n  \"countries\": 10,\n  \"structures\": 10,\n  \"nodes\": 4143,\n  \"localePacks\": 100,\n  \"catalogLocalePacks\": 10,\n  \"sourceFilesVerified\": 36\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "manifest",
+        "--check"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": "{\n  \"path\": \"/workspace/scratch/ff4cd07caa70/geo-regions-archive-kl0k0bvz/geo_regions_delivery/data/manifest.json\",\n  \"revision\": \"m-00f97c86c14ada75\",\n  \"resources\": 121,\n  \"checked\": true\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "selection",
+        "--file",
+        "samples/selection.JP.json",
+        "--schema"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": "{\n  \"status\": \"valid-identity-path\",\n  \"datasetId\": \"geo-regions-seed\",\n  \"countryCode\": \"JP\",\n  \"pathIds\": [\n    \"cc:JP\",\n    \"iso3166-2:JP-13\"\n  ],\n  \"dataRevision\": \"s-f6f89e0185926a48\",\n  \"businessSelectionPolicyChecked\": false\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": ") ... ok\ntest_unrecognized_quality_rejected_in_production (test_geo_data.DataToolsTests.test_unrecognized_quality_rejected_in_production) ... ok\ntest_valid_seed_and_missing_translation_count (test_geo_data.DataToolsTests.test_valid_seed_and_missing_translation_count) ... ok\ntest_declared_package_missing_fails (test_readiness.ReadinessTests.test_declared_package_missing_fails) ... ok\ntest_present_package_without_tests_fails_even_before_milestone (test_readiness.ReadinessTests.test_present_package_without_tests_fails_even_before_milestone) ... ok\n\n----------------------------------------------------------------------\nRan 44 tests in 1.823s\n\nOK\n"
+    },
+    {
+      "command": [
+        "node",
+        "demo/web_preview/test_logic.cjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": "ses the dialog without discarding the draft\nPASS discard confirmation restores the last confirmed selection\nPASS theme control exposes its toggled state\nPASS all ten language controls preserve the draft path\nPASS rerender preserves focus on the selected country control\nPASS uncached country fails when offline\nPASS retry recovers and caches downloaded fixture\nPASS cached fixture remains available offline\nPASS obsolete request cannot overwrite country or mutate cache\nPASS failure scenario is reachable\nPASS bundled fixture retries successfully\n22 behavior checks passed. Layout, focus geometry and Flutter execution are NOT verified by this test.\n"
+    },
+    {
+      "command": [
+        "bash",
+        "-n",
+        "demo/flutter/bootstrap.sh"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "resultTail": ""
+    }
+  ]
+}

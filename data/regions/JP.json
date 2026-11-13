@@ -1,0 +1,502 @@
+{
+  "countryCode": "JP",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "JP",
+      "id": "cc:JP",
+      "kind": "country",
+      "name": "Japan",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-01",
+      "id": "iso3166-2:JP-01",
+      "kind": "subdivision",
+      "name": "Hokkaidō",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-02",
+      "id": "iso3166-2:JP-02",
+      "kind": "subdivision",
+      "name": "Aomori",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-03",
+      "id": "iso3166-2:JP-03",
+      "kind": "subdivision",
+      "name": "Iwate",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-04",
+      "id": "iso3166-2:JP-04",
+      "kind": "subdivision",
+      "name": "Miyagi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-05",
+      "id": "iso3166-2:JP-05",
+      "kind": "subdivision",
+      "name": "Akita",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-06",
+      "id": "iso3166-2:JP-06",
+      "kind": "subdivision",
+      "name": "Yamagata",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-07",
+      "id": "iso3166-2:JP-07",
+      "kind": "subdivision",
+      "name": "Fukushima",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-08",
+      "id": "iso3166-2:JP-08",
+      "kind": "subdivision",
+      "name": "Ibaraki",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-09",
+      "id": "iso3166-2:JP-09",
+      "kind": "subdivision",
+      "name": "Tochigi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-10",
+      "id": "iso3166-2:JP-10",
+      "kind": "subdivision",
+      "name": "Gunma",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-11",
+      "id": "iso3166-2:JP-11",
+      "kind": "subdivision",
+      "name": "Saitama",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-12",
+      "id": "iso3166-2:JP-12",
+      "kind": "subdivision",
+      "name": "Chiba",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-13",
+      "id": "iso3166-2:JP-13",
+      "kind": "subdivision",
+      "name": "Tokyo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-14",
+      "id": "iso3166-2:JP-14",
+      "kind": "subdivision",
+      "name": "Kanagawa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-15",
+      "id": "iso3166-2:JP-15",
+      "kind": "subdivision",
+      "name": "Niigata",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-16",
+      "id": "iso3166-2:JP-16",
+      "kind": "subdivision",
+      "name": "Toyama",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-17",
+      "id": "iso3166-2:JP-17",
+      "kind": "subdivision",
+      "name": "Ishikawa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-18",
+      "id": "iso3166-2:JP-18",
+      "kind": "subdivision",
+      "name": "Fukui",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-19",
+      "id": "iso3166-2:JP-19",
+      "kind": "subdivision",
+      "name": "Yamanashi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-20",
+      "id": "iso3166-2:JP-20",
+      "kind": "subdivision",
+      "name": "Nagano",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-21",
+      "id": "iso3166-2:JP-21",
+      "kind": "subdivision",
+      "name": "Gifu",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-22",
+      "id": "iso3166-2:JP-22",
+      "kind": "subdivision",
+      "name": "Shizuoka",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-23",
+      "id": "iso3166-2:JP-23",
+      "kind": "subdivision",
+      "name": "Aichi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-24",
+      "id": "iso3166-2:JP-24",
+      "kind": "subdivision",
+      "name": "Mie",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-25",
+      "id": "iso3166-2:JP-25",
+      "kind": "subdivision",
+      "name": "Shiga",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-26",
+      "id": "iso3166-2:JP-26",
+      "kind": "subdivision",
+      "name": "Kyōto",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-27",
+      "id": "iso3166-2:JP-27",
+      "kind": "subdivision",
+      "name": "Ōsaka",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-28",
+      "id": "iso3166-2:JP-28",
+      "kind": "subdivision",
+      "name": "Hyōgo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-29",
+      "id": "iso3166-2:JP-29",
+      "kind": "subdivision",
+      "name": "Nara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-30",
+      "id": "iso3166-2:JP-30",
+      "kind": "subdivision",
+      "name": "Wakayama",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-31",
+      "id": "iso3166-2:JP-31",
+      "kind": "subdivision",
+      "name": "Tottori",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-32",
+      "id": "iso3166-2:JP-32",
+      "kind": "subdivision",
+      "name": "Shimane",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-33",
+      "id": "iso3166-2:JP-33",
+      "kind": "subdivision",
+      "name": "Okayama",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-34",
+      "id": "iso3166-2:JP-34",
+      "kind": "subdivision",
+      "name": "Hiroshima",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-35",
+      "id": "iso3166-2:JP-35",
+      "kind": "subdivision",
+      "name": "Yamaguchi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-36",
+      "id": "iso3166-2:JP-36",
+      "kind": "subdivision",
+      "name": "Tokushima",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-37",
+      "id": "iso3166-2:JP-37",
+      "kind": "subdivision",
+      "name": "Kagawa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-38",
+      "id": "iso3166-2:JP-38",
+      "kind": "subdivision",
+      "name": "Ehime",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-39",
+      "id": "iso3166-2:JP-39",
+      "kind": "subdivision",
+      "name": "Kōchi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-40",
+      "id": "iso3166-2:JP-40",
+      "kind": "subdivision",
+      "name": "Fukuoka",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-41",
+      "id": "iso3166-2:JP-41",
+      "kind": "subdivision",
+      "name": "Saga",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-42",
+      "id": "iso3166-2:JP-42",
+      "kind": "subdivision",
+      "name": "Nagasaki",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-43",
+      "id": "iso3166-2:JP-43",
+      "kind": "subdivision",
+      "name": "Kumamoto",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-44",
+      "id": "iso3166-2:JP-44",
+      "kind": "subdivision",
+      "name": "Ōita",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-45",
+      "id": "iso3166-2:JP-45",
+      "kind": "subdivision",
+      "name": "Miyazaki",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-46",
+      "id": "iso3166-2:JP-46",
+      "kind": "subdivision",
+      "name": "Kagoshima",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "JP-47",
+      "id": "iso3166-2:JP-47",
+      "kind": "subdivision",
+      "name": "Okinawa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:JP"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-f6f89e0185926a48",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

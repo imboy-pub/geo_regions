@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imboy-pub.github.io/geo_regions/schemas/structure.schema.json",
+  "title": "geo_regions structure v1.0",
+  "type": "object",
+  "properties": {
+    "protocolVersion": {
+      "const": "1.0"
+    },
+    "datasetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[sclm]-[a-f0-9]{16}$"
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nativeLocale": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255
+          },
+          "childrenStatus": {
+            "enum": [
+              "complete",
+              "partial",
+              "unknown"
+            ]
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "nameLocale": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255
+          },
+          "nameQuality": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "parentId",
+          "kind",
+          "name",
+          "childrenStatus"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "protocolVersion",
+    "datasetId",
+    "revision",
+    "countryCode",
+    "nodes"
+  ],
+  "additionalProperties": false
+}

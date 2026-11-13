@@ -1,0 +1,1214 @@
+{
+  "catalogLocalePacks": 10,
+  "countries": 10,
+  "coverage": [
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "ar",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "de",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "en",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 30,
+        "cldr-json-qualified": 1,
+        "provisional": 1
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "fr",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "it",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "ja",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "ko",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 32,
+      "locale": "ru",
+      "missingNames": 3398,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 31
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 3430,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "source-native": 3429
+      }
+    },
+    {
+      "country": "CN",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 3429,
+      "nodes": 3430,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 16,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "it",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 11,
+      "locale": "ja",
+      "missingNames": 6,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 10
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "ru",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 17,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 16
+      }
+    },
+    {
+      "country": "DE",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 16,
+      "nodes": 17,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "ar",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "de",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 125,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 124,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "fr",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "it",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 71,
+      "locale": "ja",
+      "missingNames": 54,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 70
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "ko",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 113,
+      "locale": "ru",
+      "missingNames": 12,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 112
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 116,
+      "locale": "zh-Hans",
+      "missingNames": 9,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 115
+      }
+    },
+    {
+      "country": "FR",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 124,
+      "nodes": 125,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 136,
+      "locale": "ar",
+      "missingNames": 86,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 132
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 219,
+      "locale": "de",
+      "missingNames": 3,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 215
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 222,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 221,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 220,
+      "locale": "fr",
+      "missingNames": 2,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 216
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 218,
+      "locale": "it",
+      "missingNames": 4,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 214
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 220,
+      "locale": "ja",
+      "missingNames": 2,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 216
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 214,
+      "locale": "ko",
+      "missingNames": 8,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 210
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 218,
+      "locale": "ru",
+      "missingNames": 4,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 214
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 218,
+      "locale": "zh-Hans",
+      "missingNames": 4,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1,
+        "provisional": 214
+      }
+    },
+    {
+      "country": "GB",
+      "explicitNames": 4,
+      "locale": "zh-Hant",
+      "missingNames": 218,
+      "nodes": 222,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 3,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 126,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "it",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 121,
+      "locale": "ja",
+      "missingNames": 6,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 120
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 125,
+      "locale": "ru",
+      "missingNames": 2,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 124
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 127,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 126
+      }
+    },
+    {
+      "country": "IT",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 126,
+      "nodes": 127,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 47,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "it",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "ja",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "ru",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 48,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 47
+      }
+    },
+    {
+      "country": "JP",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 47,
+      "nodes": 48,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 17,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "it",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "ja",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "ru",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 18,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 17
+      }
+    },
+    {
+      "country": "KR",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 17,
+      "nodes": 18,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 83,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "it",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "ja",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "ru",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 84,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 83
+      }
+    },
+    {
+      "country": "RU",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 83,
+      "nodes": 84,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "ar",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "de",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 13,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "fr",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 13,
+      "locale": "it",
+      "missingNames": 1,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 12
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "ja",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "ko",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "ru",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 14,
+      "locale": "zh-Hans",
+      "missingNames": 0,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 13
+      }
+    },
+    {
+      "country": "SA",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 13,
+      "nodes": 14,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "ar",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "de",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 58,
+      "locale": "en",
+      "missingNames": 0,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "approved-in-source": 57,
+        "cldr-json-qualified": 1
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "fr",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "it",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "ja",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 51,
+      "locale": "ko",
+      "missingNames": 7,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 50
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "ru",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 52,
+      "locale": "zh-Hans",
+      "missingNames": 6,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1,
+        "provisional": 51
+      }
+    },
+    {
+      "country": "US",
+      "explicitNames": 1,
+      "locale": "zh-Hant",
+      "missingNames": 57,
+      "nodes": 58,
+      "projectReviewVerifiedByThisTool": false,
+      "sourceQualityCounts": {
+        "cldr-json-qualified": 1
+      }
+    }
+  ],
+  "datasetId": "geo-regions-seed",
+  "humanReviewVerified": false,
+  "integrityStatus": "pass",
+  "localePacks": 100,
+  "nodes": 4143,
+  "profile": "seed-integrity",
+  "sourceFilesVerified": 36,
+  "structures": 10
+}

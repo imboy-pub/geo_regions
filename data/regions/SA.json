@@ -1,0 +1,162 @@
+{
+  "countryCode": "SA",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "SA",
+      "id": "cc:SA",
+      "kind": "country",
+      "name": "Saudi Arabia",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-01",
+      "id": "iso3166-2:SA-01",
+      "kind": "subdivision",
+      "name": "Riyadh",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-02",
+      "id": "iso3166-2:SA-02",
+      "kind": "subdivision",
+      "name": "Makkah",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-03",
+      "id": "iso3166-2:SA-03",
+      "kind": "subdivision",
+      "name": "Al Madinah",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-04",
+      "id": "iso3166-2:SA-04",
+      "kind": "subdivision",
+      "name": "Eastern",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-05",
+      "id": "iso3166-2:SA-05",
+      "kind": "subdivision",
+      "name": "Al-Qassim",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-06",
+      "id": "iso3166-2:SA-06",
+      "kind": "subdivision",
+      "name": "Ha’il",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-07",
+      "id": "iso3166-2:SA-07",
+      "kind": "subdivision",
+      "name": "Tabuk",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-08",
+      "id": "iso3166-2:SA-08",
+      "kind": "subdivision",
+      "name": "Northern Borders",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-09",
+      "id": "iso3166-2:SA-09",
+      "kind": "subdivision",
+      "name": "Jizan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-10",
+      "id": "iso3166-2:SA-10",
+      "kind": "subdivision",
+      "name": "Najran",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-11",
+      "id": "iso3166-2:SA-11",
+      "kind": "subdivision",
+      "name": "Al Bahah",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-12",
+      "id": "iso3166-2:SA-12",
+      "kind": "subdivision",
+      "name": "Al Jawf",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "SA-14",
+      "id": "iso3166-2:SA-14",
+      "kind": "subdivision",
+      "name": "Asir",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:SA"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-116ac088cb082ba7",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

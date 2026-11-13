@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "locales": [
+    "zh-Hans",
+    "zh-Hant",
+    "en",
+    "ja",
+    "ko",
+    "ru",
+    "de",
+    "fr",
+    "it",
+    "ar"
+  ],
+  "localeAliases": {
+    "zh-CN": "zh-Hans",
+    "zh-SG": "zh-Hans",
+    "zh-TW": "zh-Hant",
+    "zh-HK": "zh-Hant",
+    "en-US": "en",
+    "ja-JP": "ja",
+    "ko-KR": "ko",
+    "ru-RU": "ru",
+    "de-DE": "de",
+    "fr-FR": "fr",
+    "it-IT": "it",
+    "ar-SA": "ar"
+  },
+  "requiredCountries": [
+    "CN",
+    "JP",
+    "KR",
+    "US",
+    "GB",
+    "DE",
+    "FR",
+    "IT",
+    "RU",
+    "SA"
+  ],
+  "requiredCatalogLocales": [
+    "zh-Hans",
+    "zh-Hant",
+    "en",
+    "ja",
+    "ko",
+    "ru",
+    "de",
+    "fr",
+    "it",
+    "ar"
+  ],
+  "requireEveryCountryLocalePack": true
+}

@@ -1,0 +1,56 @@
+{
+  "compatibleStructureRevision": "s-116ac088cb082ba7",
+  "countryCode": "SA",
+  "coverage": {
+    "explicitNames": 14,
+    "missingNames": 0,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 13,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:SA": "cldr-json-qualified",
+      "iso3166-2:SA-01": "provisional",
+      "iso3166-2:SA-02": "provisional",
+      "iso3166-2:SA-03": "provisional",
+      "iso3166-2:SA-04": "provisional",
+      "iso3166-2:SA-05": "provisional",
+      "iso3166-2:SA-06": "provisional",
+      "iso3166-2:SA-07": "provisional",
+      "iso3166-2:SA-08": "provisional",
+      "iso3166-2:SA-09": "provisional",
+      "iso3166-2:SA-10": "provisional",
+      "iso3166-2:SA-11": "provisional",
+      "iso3166-2:SA-12": "provisional",
+      "iso3166-2:SA-14": "provisional"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "ko",
+  "names": {
+    "cc:SA": "사우디아라비아",
+    "iso3166-2:SA-01": "리야드 주",
+    "iso3166-2:SA-02": "메카 주",
+    "iso3166-2:SA-03": "메디나 주",
+    "iso3166-2:SA-04": "동부 주",
+    "iso3166-2:SA-05": "카심 주",
+    "iso3166-2:SA-06": "하일 주",
+    "iso3166-2:SA-07": "타부크 주",
+    "iso3166-2:SA-08": "북부 변경 주",
+    "iso3166-2:SA-09": "지잔 주",
+    "iso3166-2:SA-10": "나즈란 주",
+    "iso3166-2:SA-11": "바하 주",
+    "iso3166-2:SA-12": "자우프 주 (사우디아라비아)",
+    "iso3166-2:SA-14": "아시르 주"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-546ca94ff6bf480c",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-ko.json",
+    "sources/raw/cldr/subdivisions-ko.xml"
+  ]
+}

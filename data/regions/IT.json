@@ -1,0 +1,1292 @@
+{
+  "countryCode": "IT",
+  "coverage": {
+    "cldrRelease": "49.0.0",
+    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
+    "missingDefaultNames": [],
+    "profile": "CLDR-49-subdivision-containment",
+    "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
+    "status": "research-seed"
+  },
+  "datasetId": "geo-regions-seed",
+  "nodes": [
+    {
+      "childrenStatus": "complete",
+      "code": "IT",
+      "id": "cc:IT",
+      "kind": "country",
+      "name": "Italy",
+      "nameLocale": "en",
+      "nameQuality": "cldr-json-qualified",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-21",
+      "id": "iso3166-2:IT-21",
+      "kind": "subdivision",
+      "name": "Piedmont",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-23",
+      "id": "iso3166-2:IT-23",
+      "kind": "subdivision",
+      "name": "Aosta Valley",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-25",
+      "id": "iso3166-2:IT-25",
+      "kind": "subdivision",
+      "name": "Lombardy",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-32",
+      "id": "iso3166-2:IT-32",
+      "kind": "subdivision",
+      "name": "Trentino-South Tyrol",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-34",
+      "id": "iso3166-2:IT-34",
+      "kind": "subdivision",
+      "name": "Veneto",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-36",
+      "id": "iso3166-2:IT-36",
+      "kind": "subdivision",
+      "name": "Friuli–Venezia Giulia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-42",
+      "id": "iso3166-2:IT-42",
+      "kind": "subdivision",
+      "name": "Liguria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-45",
+      "id": "iso3166-2:IT-45",
+      "kind": "subdivision",
+      "name": "Emilia-Romagna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-52",
+      "id": "iso3166-2:IT-52",
+      "kind": "subdivision",
+      "name": "Tuscany",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-55",
+      "id": "iso3166-2:IT-55",
+      "kind": "subdivision",
+      "name": "Umbria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-57",
+      "id": "iso3166-2:IT-57",
+      "kind": "subdivision",
+      "name": "Marche",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-62",
+      "id": "iso3166-2:IT-62",
+      "kind": "subdivision",
+      "name": "Lazio",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-65",
+      "id": "iso3166-2:IT-65",
+      "kind": "subdivision",
+      "name": "Abruzzo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-67",
+      "id": "iso3166-2:IT-67",
+      "kind": "subdivision",
+      "name": "Molise",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-72",
+      "id": "iso3166-2:IT-72",
+      "kind": "subdivision",
+      "name": "Campania",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-75",
+      "id": "iso3166-2:IT-75",
+      "kind": "subdivision",
+      "name": "Apulia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-77",
+      "id": "iso3166-2:IT-77",
+      "kind": "subdivision",
+      "name": "Basilicata",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-78",
+      "id": "iso3166-2:IT-78",
+      "kind": "subdivision",
+      "name": "Calabria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-82",
+      "id": "iso3166-2:IT-82",
+      "kind": "subdivision",
+      "name": "Sicily",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "complete",
+      "code": "IT-88",
+      "id": "iso3166-2:IT-88",
+      "kind": "subdivision",
+      "name": "Sardinia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "cc:IT"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AG",
+      "id": "iso3166-2:IT-AG",
+      "kind": "subdivision",
+      "name": "Agrigento",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AL",
+      "id": "iso3166-2:IT-AL",
+      "kind": "subdivision",
+      "name": "Alessandria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AN",
+      "id": "iso3166-2:IT-AN",
+      "kind": "subdivision",
+      "name": "Ancona",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-57"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AP",
+      "id": "iso3166-2:IT-AP",
+      "kind": "subdivision",
+      "name": "Ascoli Piceno",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-57"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AQ",
+      "id": "iso3166-2:IT-AQ",
+      "kind": "subdivision",
+      "name": "L’Aquila",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-65"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AR",
+      "id": "iso3166-2:IT-AR",
+      "kind": "subdivision",
+      "name": "Arezzo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AT",
+      "id": "iso3166-2:IT-AT",
+      "kind": "subdivision",
+      "name": "Asti",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-AV",
+      "id": "iso3166-2:IT-AV",
+      "kind": "subdivision",
+      "name": "Avellino",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-72"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BA",
+      "id": "iso3166-2:IT-BA",
+      "kind": "subdivision",
+      "name": "Bari",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BG",
+      "id": "iso3166-2:IT-BG",
+      "kind": "subdivision",
+      "name": "Bergamo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BI",
+      "id": "iso3166-2:IT-BI",
+      "kind": "subdivision",
+      "name": "Biella",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BL",
+      "id": "iso3166-2:IT-BL",
+      "kind": "subdivision",
+      "name": "Belluno",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BN",
+      "id": "iso3166-2:IT-BN",
+      "kind": "subdivision",
+      "name": "Benevento",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-72"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BO",
+      "id": "iso3166-2:IT-BO",
+      "kind": "subdivision",
+      "name": "Bologna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BR",
+      "id": "iso3166-2:IT-BR",
+      "kind": "subdivision",
+      "name": "Brindisi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BS",
+      "id": "iso3166-2:IT-BS",
+      "kind": "subdivision",
+      "name": "Brescia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BT",
+      "id": "iso3166-2:IT-BT",
+      "kind": "subdivision",
+      "name": "Barletta-Andria-Trani",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-BZ",
+      "id": "iso3166-2:IT-BZ",
+      "kind": "subdivision",
+      "name": "South Tyrol",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-32"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CA",
+      "id": "iso3166-2:IT-CA",
+      "kind": "subdivision",
+      "name": "Cagliari",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-88"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CB",
+      "id": "iso3166-2:IT-CB",
+      "kind": "subdivision",
+      "name": "Campobasso",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-67"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CE",
+      "id": "iso3166-2:IT-CE",
+      "kind": "subdivision",
+      "name": "Caserta",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-72"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CH",
+      "id": "iso3166-2:IT-CH",
+      "kind": "subdivision",
+      "name": "Chieti",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-65"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CL",
+      "id": "iso3166-2:IT-CL",
+      "kind": "subdivision",
+      "name": "Caltanissetta",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CN",
+      "id": "iso3166-2:IT-CN",
+      "kind": "subdivision",
+      "name": "Cuneo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CO",
+      "id": "iso3166-2:IT-CO",
+      "kind": "subdivision",
+      "name": "Como",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CR",
+      "id": "iso3166-2:IT-CR",
+      "kind": "subdivision",
+      "name": "Cremona",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CS",
+      "id": "iso3166-2:IT-CS",
+      "kind": "subdivision",
+      "name": "Cosenza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-78"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CT",
+      "id": "iso3166-2:IT-CT",
+      "kind": "subdivision",
+      "name": "Catania",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-CZ",
+      "id": "iso3166-2:IT-CZ",
+      "kind": "subdivision",
+      "name": "Catanzaro",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-78"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-EN",
+      "id": "iso3166-2:IT-EN",
+      "kind": "subdivision",
+      "name": "Enna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FC",
+      "id": "iso3166-2:IT-FC",
+      "kind": "subdivision",
+      "name": "Forlì-Cesena",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FE",
+      "id": "iso3166-2:IT-FE",
+      "kind": "subdivision",
+      "name": "Ferrara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FG",
+      "id": "iso3166-2:IT-FG",
+      "kind": "subdivision",
+      "name": "Foggia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FI",
+      "id": "iso3166-2:IT-FI",
+      "kind": "subdivision",
+      "name": "Florence",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FM",
+      "id": "iso3166-2:IT-FM",
+      "kind": "subdivision",
+      "name": "Fermo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-57"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-FR",
+      "id": "iso3166-2:IT-FR",
+      "kind": "subdivision",
+      "name": "Frosinone",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-62"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-GE",
+      "id": "iso3166-2:IT-GE",
+      "kind": "subdivision",
+      "name": "Genoa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-GO",
+      "id": "iso3166-2:IT-GO",
+      "kind": "subdivision",
+      "name": "Gorizia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-36"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-GR",
+      "id": "iso3166-2:IT-GR",
+      "kind": "subdivision",
+      "name": "Grosseto",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-IM",
+      "id": "iso3166-2:IT-IM",
+      "kind": "subdivision",
+      "name": "Imperia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-IS",
+      "id": "iso3166-2:IT-IS",
+      "kind": "subdivision",
+      "name": "Isernia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-67"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-KR",
+      "id": "iso3166-2:IT-KR",
+      "kind": "subdivision",
+      "name": "Crotone",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-78"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LC",
+      "id": "iso3166-2:IT-LC",
+      "kind": "subdivision",
+      "name": "Lecco",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LE",
+      "id": "iso3166-2:IT-LE",
+      "kind": "subdivision",
+      "name": "Lecce",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LI",
+      "id": "iso3166-2:IT-LI",
+      "kind": "subdivision",
+      "name": "Livorno",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LO",
+      "id": "iso3166-2:IT-LO",
+      "kind": "subdivision",
+      "name": "Lodi",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LT",
+      "id": "iso3166-2:IT-LT",
+      "kind": "subdivision",
+      "name": "Latina",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-62"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-LU",
+      "id": "iso3166-2:IT-LU",
+      "kind": "subdivision",
+      "name": "Lucca",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MB",
+      "id": "iso3166-2:IT-MB",
+      "kind": "subdivision",
+      "name": "Monza and Brianza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MC",
+      "id": "iso3166-2:IT-MC",
+      "kind": "subdivision",
+      "name": "Macerata",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-57"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-ME",
+      "id": "iso3166-2:IT-ME",
+      "kind": "subdivision",
+      "name": "Messina",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MI",
+      "id": "iso3166-2:IT-MI",
+      "kind": "subdivision",
+      "name": "Milan",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MN",
+      "id": "iso3166-2:IT-MN",
+      "kind": "subdivision",
+      "name": "Mantua",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MO",
+      "id": "iso3166-2:IT-MO",
+      "kind": "subdivision",
+      "name": "Modena",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MS",
+      "id": "iso3166-2:IT-MS",
+      "kind": "subdivision",
+      "name": "Massa and Carrara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-MT",
+      "id": "iso3166-2:IT-MT",
+      "kind": "subdivision",
+      "name": "Matera",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-77"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-NA",
+      "id": "iso3166-2:IT-NA",
+      "kind": "subdivision",
+      "name": "Naples",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-72"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-NO",
+      "id": "iso3166-2:IT-NO",
+      "kind": "subdivision",
+      "name": "Novara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-NU",
+      "id": "iso3166-2:IT-NU",
+      "kind": "subdivision",
+      "name": "Nuoro",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-88"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-OR",
+      "id": "iso3166-2:IT-OR",
+      "kind": "subdivision",
+      "name": "Oristano",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-88"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PA",
+      "id": "iso3166-2:IT-PA",
+      "kind": "subdivision",
+      "name": "Palermo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PC",
+      "id": "iso3166-2:IT-PC",
+      "kind": "subdivision",
+      "name": "Piacenza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PD",
+      "id": "iso3166-2:IT-PD",
+      "kind": "subdivision",
+      "name": "Padua",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PE",
+      "id": "iso3166-2:IT-PE",
+      "kind": "subdivision",
+      "name": "Pescara",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-65"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PG",
+      "id": "iso3166-2:IT-PG",
+      "kind": "subdivision",
+      "name": "Perugia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-55"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PI",
+      "id": "iso3166-2:IT-PI",
+      "kind": "subdivision",
+      "name": "Pisa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PN",
+      "id": "iso3166-2:IT-PN",
+      "kind": "subdivision",
+      "name": "Pordenone",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-36"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PO",
+      "id": "iso3166-2:IT-PO",
+      "kind": "subdivision",
+      "name": "Prato",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PR",
+      "id": "iso3166-2:IT-PR",
+      "kind": "subdivision",
+      "name": "Parma",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PT",
+      "id": "iso3166-2:IT-PT",
+      "kind": "subdivision",
+      "name": "Pistoia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PU",
+      "id": "iso3166-2:IT-PU",
+      "kind": "subdivision",
+      "name": "Pesaro and Urbino",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-57"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PV",
+      "id": "iso3166-2:IT-PV",
+      "kind": "subdivision",
+      "name": "Pavia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-PZ",
+      "id": "iso3166-2:IT-PZ",
+      "kind": "subdivision",
+      "name": "Potenza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-77"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RA",
+      "id": "iso3166-2:IT-RA",
+      "kind": "subdivision",
+      "name": "Ravenna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RC",
+      "id": "iso3166-2:IT-RC",
+      "kind": "subdivision",
+      "name": "Reggio Calabria",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-78"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RE",
+      "id": "iso3166-2:IT-RE",
+      "kind": "subdivision",
+      "name": "Reggio Emilia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RG",
+      "id": "iso3166-2:IT-RG",
+      "kind": "subdivision",
+      "name": "Ragusa",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RI",
+      "id": "iso3166-2:IT-RI",
+      "kind": "subdivision",
+      "name": "Rieti",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-62"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RM",
+      "id": "iso3166-2:IT-RM",
+      "kind": "subdivision",
+      "name": "Rome",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-62"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RN",
+      "id": "iso3166-2:IT-RN",
+      "kind": "subdivision",
+      "name": "Rimini",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-RO",
+      "id": "iso3166-2:IT-RO",
+      "kind": "subdivision",
+      "name": "Rovigo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SA",
+      "id": "iso3166-2:IT-SA",
+      "kind": "subdivision",
+      "name": "Salerno",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-72"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SI",
+      "id": "iso3166-2:IT-SI",
+      "kind": "subdivision",
+      "name": "Siena",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-52"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SO",
+      "id": "iso3166-2:IT-SO",
+      "kind": "subdivision",
+      "name": "Sondrio",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SP",
+      "id": "iso3166-2:IT-SP",
+      "kind": "subdivision",
+      "name": "La Spezia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SR",
+      "id": "iso3166-2:IT-SR",
+      "kind": "subdivision",
+      "name": "Syracuse",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SS",
+      "id": "iso3166-2:IT-SS",
+      "kind": "subdivision",
+      "name": "Sassari",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-88"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SU",
+      "id": "iso3166-2:IT-SU",
+      "kind": "subdivision",
+      "name": "Sud Sardegna",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-88"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-SV",
+      "id": "iso3166-2:IT-SV",
+      "kind": "subdivision",
+      "name": "Savona",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TA",
+      "id": "iso3166-2:IT-TA",
+      "kind": "subdivision",
+      "name": "Taranto",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-75"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TE",
+      "id": "iso3166-2:IT-TE",
+      "kind": "subdivision",
+      "name": "Teramo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-65"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TN",
+      "id": "iso3166-2:IT-TN",
+      "kind": "subdivision",
+      "name": "Trentino",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-32"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TO",
+      "id": "iso3166-2:IT-TO",
+      "kind": "subdivision",
+      "name": "Turin",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TP",
+      "id": "iso3166-2:IT-TP",
+      "kind": "subdivision",
+      "name": "Trapani",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-82"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TR",
+      "id": "iso3166-2:IT-TR",
+      "kind": "subdivision",
+      "name": "Terni",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-55"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TS",
+      "id": "iso3166-2:IT-TS",
+      "kind": "subdivision",
+      "name": "Trieste",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-36"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-TV",
+      "id": "iso3166-2:IT-TV",
+      "kind": "subdivision",
+      "name": "Treviso",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-UD",
+      "id": "iso3166-2:IT-UD",
+      "kind": "subdivision",
+      "name": "Udine",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-36"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VA",
+      "id": "iso3166-2:IT-VA",
+      "kind": "subdivision",
+      "name": "Varese",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-25"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VB",
+      "id": "iso3166-2:IT-VB",
+      "kind": "subdivision",
+      "name": "Verbano-Cusio-Ossola",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VC",
+      "id": "iso3166-2:IT-VC",
+      "kind": "subdivision",
+      "name": "Vercelli",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-21"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VE",
+      "id": "iso3166-2:IT-VE",
+      "kind": "subdivision",
+      "name": "Venice",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VI",
+      "id": "iso3166-2:IT-VI",
+      "kind": "subdivision",
+      "name": "Vicenza",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VR",
+      "id": "iso3166-2:IT-VR",
+      "kind": "subdivision",
+      "name": "Verona",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-34"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VT",
+      "id": "iso3166-2:IT-VT",
+      "kind": "subdivision",
+      "name": "Viterbo",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-62"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "IT-VV",
+      "id": "iso3166-2:IT-VV",
+      "kind": "subdivision",
+      "name": "Vibo Valentia",
+      "nameLocale": "en",
+      "nameQuality": "approved-in-source",
+      "parentId": "iso3166-2:IT-78"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-fa8d4c05a82b07c6",
+  "sourceRefs": [
+    "sources/raw/cldr/subdivisionContainment.json",
+    "sources/raw/cldr/subdivisions-en.xml",
+    "sources/raw/cldr/territories-en.json"
+  ]
+}

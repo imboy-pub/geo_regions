@@ -1,0 +1,1485 @@
+{
+  "runAtUtc": "2026-11-13T03:47:34.931662+00:00",
+  "scope": "Executed local developer-tool, data and release-assembly checks; not Flutter, browser layout, hosted GitHub CI or publication.",
+  "passed": true,
+  "counts": {
+    "catalogLocalePacks": 10,
+    "countries": 10,
+    "coverage": [
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "ar",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "de",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "en",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 30,
+          "cldr-json-qualified": 1,
+          "provisional": 1
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "fr",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "it",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "ja",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "ko",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 32,
+        "locale": "ru",
+        "missingNames": 3398,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 31
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 3430,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "source-native": 3429
+        }
+      },
+      {
+        "country": "CN",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 3429,
+        "nodes": 3430,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 16,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "it",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 11,
+        "locale": "ja",
+        "missingNames": 6,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 10
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "ru",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 17,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 16
+        }
+      },
+      {
+        "country": "DE",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 16,
+        "nodes": 17,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "ar",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "de",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 125,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 124,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "fr",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "it",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 71,
+        "locale": "ja",
+        "missingNames": 54,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 70
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "ko",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 113,
+        "locale": "ru",
+        "missingNames": 12,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 112
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 116,
+        "locale": "zh-Hans",
+        "missingNames": 9,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 115
+        }
+      },
+      {
+        "country": "FR",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 124,
+        "nodes": 125,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 136,
+        "locale": "ar",
+        "missingNames": 86,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 132
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 219,
+        "locale": "de",
+        "missingNames": 3,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 215
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 222,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 221,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 220,
+        "locale": "fr",
+        "missingNames": 2,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 216
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 218,
+        "locale": "it",
+        "missingNames": 4,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 214
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 220,
+        "locale": "ja",
+        "missingNames": 2,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 216
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 214,
+        "locale": "ko",
+        "missingNames": 8,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 210
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 218,
+        "locale": "ru",
+        "missingNames": 4,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 214
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 218,
+        "locale": "zh-Hans",
+        "missingNames": 4,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1,
+          "provisional": 214
+        }
+      },
+      {
+        "country": "GB",
+        "explicitNames": 4,
+        "locale": "zh-Hant",
+        "missingNames": 218,
+        "nodes": 222,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 3,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 126,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "it",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 121,
+        "locale": "ja",
+        "missingNames": 6,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 120
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 125,
+        "locale": "ru",
+        "missingNames": 2,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 124
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 127,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 126
+        }
+      },
+      {
+        "country": "IT",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 126,
+        "nodes": 127,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 47,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "it",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "ja",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "ru",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 48,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 47
+        }
+      },
+      {
+        "country": "JP",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 47,
+        "nodes": 48,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 17,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "it",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "ja",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "ru",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 18,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 17
+        }
+      },
+      {
+        "country": "KR",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 17,
+        "nodes": 18,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 83,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "it",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "ja",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "ru",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 84,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 83
+        }
+      },
+      {
+        "country": "RU",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 83,
+        "nodes": 84,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "ar",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "de",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 13,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "fr",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 13,
+        "locale": "it",
+        "missingNames": 1,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 12
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "ja",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "ko",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "ru",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 14,
+        "locale": "zh-Hans",
+        "missingNames": 0,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 13
+        }
+      },
+      {
+        "country": "SA",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 13,
+        "nodes": 14,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "ar",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "de",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 58,
+        "locale": "en",
+        "missingNames": 0,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "approved-in-source": 57,
+          "cldr-json-qualified": 1
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "fr",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "it",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "ja",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 51,
+        "locale": "ko",
+        "missingNames": 7,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 50
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "ru",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 52,
+        "locale": "zh-Hans",
+        "missingNames": 6,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1,
+          "provisional": 51
+        }
+      },
+      {
+        "country": "US",
+        "explicitNames": 1,
+        "locale": "zh-Hant",
+        "missingNames": 57,
+        "nodes": 58,
+        "projectReviewVerifiedByThisTool": false,
+        "sourceQualityCounts": {
+          "cldr-json-qualified": 1
+        }
+      }
+    ],
+    "datasetId": "geo-regions-seed",
+    "humanReviewVerified": false,
+    "integrityStatus": "pass",
+    "localePacks": 100,
+    "nodes": 4143,
+    "profile": "seed-integrity",
+    "sourceFilesVerified": 36,
+    "structures": 10
+  },
+  "checks": [
+    {
+      "name": "pinned source offline reproducibility",
+      "command": [
+        "python3",
+        "tool/import_data.py",
+        "--check"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"status\": \"verified\",\n  \"sources\": 36,\n  \"outputs\": 124,\n  \"countries\": 10,\n  \"locales\": 10,\n  \"nodes\": 4143\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "schema and data integrity",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "validate",
+        "--schema",
+        "--report",
+        "reports/data-validation.json"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"datasetId\": \"geo-regions-seed\",\n  \"integrityStatus\": \"pass\",\n  \"profile\": \"seed-integrity\",\n  \"humanReviewVerified\": false,\n  \"countries\": 10,\n  \"structures\": 10,\n  \"nodes\": 4143,\n  \"localePacks\": 100,\n  \"catalogLocalePacks\": 10,\n  \"sourceFilesVerified\": 36\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "manifest matches all resources",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "manifest",
+        "--check"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"path\": \"/workspace/scratch/ff4cd07caa70/geo_regions_delivery/data/manifest.json\",\n  \"revision\": \"m-00f97c86c14ada75\",\n  \"resources\": 121,\n  \"checked\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "actual Japan persisted selection",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "selection",
+        "--file",
+        "samples/selection.JP.json",
+        "--schema"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"status\": \"valid-identity-path\",\n  \"datasetId\": \"geo-regions-seed\",\n  \"countryCode\": \"JP\",\n  \"pathIds\": [\n    \"cc:JP\",\n    \"iso3166-2:JP-13\"\n  ],\n  \"dataRevision\": \"s-f6f89e0185926a48\",\n  \"businessSelectionPolicyChecked\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "tooling boundary tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": "test_installer_conflict_aborts_entire_batch_before_writing (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_conflict_aborts_entire_batch_before_writing) ... ok\ntest_installer_creates_missing_files_and_excludes_shared_state (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_creates_missing_files_and_excludes_shared_state) ... ok\ntest_installer_rejects_destination_ancestor_symlink (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_rejects_destination_ancestor_symlink) ... ok\ntest_installer_rejects_other_origin_without_writes (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_rejects_other_origin_without_writes) ... ok\ntest_installer_rejects_source_symlink (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_rejects_source_symlink) ... ok\ntest_installer_rejects_symlink_target_repository_root (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_rejects_symlink_target_repository_root) ... ok\ntest_installer_rerun_preserves_bytes_mtimes_and_inodes (test_delivery_helpers.DeliveryHelperSafetyTests.test_installer_rerun_preserves_bytes_mtimes_and_inodes) ... ok\ntest_plan_cannot_block_completed_prerequisite_without_reopen (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_cannot_block_completed_prerequisite_without_reopen) ... ok\ntest_plan_complete_records_existing_evidence_hash (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_complete_records_existing_evidence_hash) ... ok\ntest_plan_complete_rejects_empty_evidence (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_complete_rejects_empty_evidence) ... ok\ntest_plan_complete_requires_evidence_argument (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_complete_requires_evidence_argument) ... ok\ntest_plan_init_creates_pending_state (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_init_creates_pending_state) ... ok\ntest_plan_init_preserves_existing_state (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_init_preserves_existing_state) ... ok\ntest_plan_refuses_symlink_metadata_directory_and_outside_writes (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_refuses_symlink_metadata_directory_and_outside_writes) ... ok\ntest_plan_reopen_invalidates_transitive_dependents (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_reopen_invalidates_transitive_dependents) ... ok\ntest_plan_start_rejects_unfinished_dependency (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_start_rejects_unfinished_dependency) ... ok\ntest_plan_verify_evidence_rejects_external_symlink_substitution (test_delivery_helpers.DeliveryHelperSafetyTests.test_plan_verify_evidence_rejects_external_symlink_substitution) ... ok\ntest_add_language_never_changes_structure (test_geo_data.DataToolsTests.test_add_language_never_changes_structure) ... ok\ntest_country_name_key_rejected (test_geo_data.DataToolsTests.test_country_name_key_rejected) ... ok\ntest_cross_country_parent_rejected (test_geo_data.DataToolsTests.test_cross_country_parent_rejected) ... ok\ntest_cycle_rejected (test_geo_data.DataToolsTests.test_cycle_rejected) ... ok\ntest_dangling_translation_rejected (test_geo_data.DataToolsTests.test_dangling_translation_rejected) ... ok\ntest_default_name_cannot_bypass_quality_filter (test_geo_data.DataToolsTests.test_default_name_cannot_bypass_quality_filter) ... ok\ntest_dry_run_has_no_output (test_geo_data.DataToolsTests.test_dry_run_has_no_output) ... ok\ntest_duplicate_ids_rejected (test_geo_data.DataToolsTests.test_duplicate_ids_rejected) ... ok\ntest_duplicate_json_keys_rejected (test_geo_data.DataToolsTests.test_duplicate_json_keys_rejected) ... ok\ntest_failed_offline_build_preserves_old_assets (test_geo_data.DataToolsTests.test_failed_offline_build_preserves_old_assets) ... ok\ntest_hash_damage_rejected (test_geo_data.DataToolsTests.test_hash_damage_rejected) ... ok\ntest_home_project_output_allowed_but_home_itself_protected (test_geo_data.DataToolsTests.test_home_project_output_allowed_but_home_itself_protected) ... ok\ntest_manifest_path_traversal_rejected (test_geo_data.DataToolsTests.test_manifest_path_traversal_rejected) ... ok\ntest_offline_subset_and_safe_replacement (test_geo_data.DataToolsTests.test_offline_subset_and_safe_replacement) ... ok\ntest_percent_encoded_manifest_path_rejected (test_geo_data.DataToolsTests.test_percent_encoded_manifest_path_rejected) ... ok\ntest_production_requires_explicit_maturity (test_geo_data.DataToolsTests.test_production_requires_explicit_maturity) ... ok\ntest_production_requires_provenance (test_geo_data.DataToolsTests.test_production_requires_provenance) ... ok\ntest_removed_id_requires_migration (test_geo_data.DataToolsTests.test_removed_id_requires_migration) ... ok\ntest_resource_symlink_rejected (test_geo_data.DataToolsTests.test_resource_symlink_rejected) ... ok\ntest_seed_cannot_be_claimed_as_production (test_geo_data.DataToolsTests.test_seed_cannot_be_claimed_as_production) ... ok\ntest_selection_checks_complete_parent_path (test_geo_data.DataToolsTests.test_selection_checks_complete_parent_path) ... ok\ntest_selection_rejects_stale_revision (test_geo_data.DataToolsTests.test_selection_rejects_stale_revision) ... ok\ntest_stale_locale_structure_revision_rejected (test_geo_data.DataToolsTests.test_stale_locale_structure_revision_rejected) ... ok\ntest_unrecognized_quality_rejected_in_production (test_geo_data.DataToolsTests.test_unrecognized_quality_rejected_in_production) ... ok\ntest_valid_seed_and_missing_translation_count (test_geo_data.DataToolsTests.test_valid_seed_and_missing_translation_count) ... ok\ntest_declared_package_missing_fails (test_readiness.ReadinessTests.test_declared_package_missing_fails) ... ok\ntest_present_package_without_tests_fails_even_before_milestone (test_readiness.ReadinessTests.test_present_package_without_tests_fails_even_before_milestone) ... ok\n\n----------------------------------------------------------------------\nRan 44 tests in 1.803s\n\nOK\n",
+      "testCount": 44
+    },
+    {
+      "name": "declared package readiness",
+      "command": [
+        "python3",
+        "tool/check_readiness.py"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"productionSdkExpected\": false,\n  \"productionPackagePresent\": false,\n  \"mode\": \"research-seed-and-demo-only\",\n  \"productionComplete\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "production seed rejection expected",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "validate",
+        "--production"
+      ],
+      "expectedExit": 1,
+      "actualExit": 1,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: catalog_i18n/ar.json: explicit reviewed/production maturity required; research-seed or missing status is not production data\n"
+    },
+    {
+      "name": "selected offline payload",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "offline",
+        "--config",
+        "config/offline.example.json",
+        "--out",
+        "build/offline-assets",
+        "--replace"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"output\": \"/workspace/scratch/ff4cd07caa70/geo_regions_delivery/build/offline-assets\",\n  \"assetPrefix\": \"build/offline-assets\",\n  \"resources\": [\n    \"catalog_i18n/ar.json\",\n    \"catalog_i18n/de.json\",\n    \"catalog_i18n/en.json\",\n    \"catalog_i18n/fr.json\",\n    \"catalog_i18n/it.json\",\n    \"catalog_i18n/ja.json\",\n    \"catalog_i18n/ko.json\",\n    \"catalog_i18n/ru.json\",\n    \"catalog_i18n/zh-Hans.json\",\n    \"catalog_i18n/zh-Hant.json\",\n    \"countries.json\",\n    \"i18n/en/CN.json\",\n    \"i18n/zh-Hans/CN.json\",\n    \"i18n/zh-Hant/CN.json\",\n    \"regions/CN.json\"\n  ],\n  \"resourceBytes\": 1320132,\n  \"assetFileCount\": 21,\n  \"dryRun\": false,\n  \"assetBytes\": 1385100\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "reference demo behavior (not Flutter or browser)",
+      "command": [
+        "node",
+        "demo/web_preview/test_logic.cjs"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "PASS ten countries and complete primary UI label tables\nPASS deep selection produces complete ancestry\nPASS Arabic applies RTL without changing IDs\nPASS confirmation emits fixture namespace and stable path\nPASS unchanged confirmed selection cannot be submitted repeatedly\nPASS missing search gives empty-result state\nPASS clear control restores the current level\nPASS back control removes exactly one draft level\nPASS discard dialog isolates the background and focuses its safe action\nPASS dialog Shift+Tab wraps to its last action\nPASS dialog Tab wraps to its first action\nPASS Escape closes the dialog without discarding the draft\nPASS discard confirmation restores the last confirmed selection\nPASS theme control exposes its toggled state\nPASS all ten language controls preserve the draft path\nPASS rerender preserves focus on the selected country control\nPASS uncached country fails when offline\nPASS retry recovers and caches downloaded fixture\nPASS cached fixture remains available offline\nPASS obsolete request cannot overwrite country or mutate cache\nPASS failure scenario is reachable\nPASS bundled fixture retries successfully\n22 behavior checks passed. Layout, focus geometry and Flutter execution are NOT verified by this test.\n",
+      "stderr": ""
+    },
+    {
+      "name": "YAML syntax parse (not hosted workflow execution)",
+      "passed": true,
+      "files": [
+        ".github/dependabot.yml",
+        ".github/workflows/ci.yml",
+        ".github/workflows/release-data.yml"
+      ]
+    },
+    {
+      "name": "explicit asset entries and license notices",
+      "passed": true,
+      "assetFiles": 21,
+      "assetBytes": 1385100
+    },
+    {
+      "name": "data release assembly",
+      "command": [
+        "python3",
+        "tool/package_release.py",
+        "--tag",
+        "data-v2026.11.13.1",
+        "--out",
+        "/workspace/scratch/ff4cd07caa70/geo_regions_delivery/build/release-check-nziglznu/dist"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "created /workspace/scratch/ff4cd07caa70/geo_regions_delivery/build/release-check-nziglznu/dist/geo_regions-data-v2026.11.13.1.zip (965656 bytes); sha256=fd58c0cdcd032359d9c455542a69302ecd5a642e7f4a8db19cbd11eebe4cb672\n",
+      "stderr": ""
+    },
+    {
+      "name": "data release extracted offline reproducibility",
+      "command": [
+        "python3",
+        "tool/import_data.py",
+        "--check"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"status\": \"verified\",\n  \"sources\": 36,\n  \"outputs\": 124,\n  \"countries\": 10,\n  \"locales\": 10,\n  \"nodes\": 4143\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "data release extracted schema and integrity",
+      "command": [
+        "python3",
+        "tool/geo_data.py",
+        "validate",
+        "--schema"
+      ],
+      "expectedExit": 0,
+      "actualExit": 0,
+      "passed": true,
+      "stdout": "{\n  \"datasetId\": \"geo-regions-seed\",\n  \"integrityStatus\": \"pass\",\n  \"profile\": \"seed-integrity\",\n  \"humanReviewVerified\": false,\n  \"countries\": 10,\n  \"structures\": 10,\n  \"nodes\": 4143,\n  \"localePacks\": 100,\n  \"catalogLocalePacks\": 10,\n  \"sourceFilesVerified\": 36\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "release ZIP checks",
+      "passed": true,
+      "files": 179,
+      "sha256": "fd58c0cdcd032359d9c455542a69302ecd5a642e7f4a8db19cbd11eebe4cb672",
+      "bytes": 965656,
+      "testedCommit": null,
+      "note": "Local artifact check; no hosted CI commit is claimed."
+    },
+    {
+      "name": "CI scope selection from real temporary Git commits",
+      "passed": true,
+      "method": "Each case is a committed single-file diff from the same temporary-repository baseline; CI_EVENT=push and CI_BASE=baseline. No user repository changed.",
+      "cases": [
+        {
+          "changedFile": "schemas/locale.schema.json",
+          "expectedFlutter": true,
+          "actualFlutter": true,
+          "output": "flutter=true; Flutter/build/contract inputs changed; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "config/data_policy.json",
+          "expectedFlutter": true,
+          "actualFlutter": true,
+          "output": "flutter=true; Flutter/build/contract inputs changed; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "tool/import_data.py",
+          "expectedFlutter": true,
+          "actualFlutter": true,
+          "output": "flutter=true; Flutter/build/contract inputs changed; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "data/regions/JP.json",
+          "expectedFlutter": false,
+          "actualFlutter": false,
+          "output": "flutter=false; data content, unrelated tools, or documentation changes only; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "docs/README.md",
+          "expectedFlutter": false,
+          "actualFlutter": false,
+          "output": "flutter=false; data content, unrelated tools, or documentation changes only; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "tool/add_country.py",
+          "expectedFlutter": false,
+          "actualFlutter": false,
+          "output": "flutter=false; data content, unrelated tools, or documentation changes only; changedFiles=1",
+          "passed": true
+        },
+        {
+          "changedFile": "lib/geo_regions.dart",
+          "expectedFlutter": true,
+          "actualFlutter": true,
+          "output": "flutter=true; Flutter/build/contract inputs changed; changedFiles=1",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "notExecuted": [
+    "Flutter format/analyze/widget tests/Web build",
+    "Hosted GitHub Actions",
+    "Repository settings or tag ruleset changes",
+    "Public release or pub.dev publication",
+    "Human geographic/linguistic/legal review",
+    "Authenticated remote tag check and GitHub release creation"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "protocolVersion": "1.0",
+  "datasetId": "geo-regions-seed",
+  "countryCode": "JP",
+  "dataRevision": "s-f6f89e0185926a48",
+  "pathIds": [
+    "cc:JP",
+    "iso3166-2:JP-13"
+  ],
+  "displaySnapshot": [
+    "日本",
+    "東京都"
+  ],
+  "displayLocale": "ja"
+}

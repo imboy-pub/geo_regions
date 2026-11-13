@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imboy-pub.github.io/geo_regions/schemas/country-names.schema.json",
+  "title": "geo_regions country-names v1.0",
+  "type": "object",
+  "properties": {
+    "protocolVersion": {
+      "const": "1.0"
+    },
+    "datasetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[sclm]-[a-f0-9]{16}$"
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "locale": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    },
+    "compatibleCatalogRevision": {
+      "type": "string",
+      "pattern": "^c-[a-f0-9]{16}$"
+    },
+    "names": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "protocolVersion",
+    "datasetId",
+    "revision",
+    "locale",
+    "compatibleCatalogRevision",
+    "names"
+  ],
+  "additionalProperties": false
+}

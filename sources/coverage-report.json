@@ -1,0 +1,1135 @@
+{
+  "countries": [
+    {
+      "countryCode": "CN",
+      "kinds": {
+        "country": 1,
+        "statistical-county": 2974,
+        "statistical-group": 9,
+        "statistical-prefecture": 333,
+        "statistical-township": 82,
+        "subdivision": 31
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 30,
+          "sourceNative": 0,
+          "sourceProvisional": 1,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 32,
+          "missingNames": 3398,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 31,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 3430,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 3429,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 3429,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 3430,
+      "rootChildren": 31,
+      "subdivisionNodes": 3429
+    },
+    {
+      "countryCode": "JP",
+      "kinds": {
+        "country": 1,
+        "subdivision": 47
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 47,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 48,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 47,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 47,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 48,
+      "rootChildren": 47,
+      "subdivisionNodes": 47
+    },
+    {
+      "countryCode": "KR",
+      "kinds": {
+        "country": 1,
+        "subdivision": 17
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 17,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 18,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 17,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 17,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 18,
+      "rootChildren": 17,
+      "subdivisionNodes": 17
+    },
+    {
+      "countryCode": "US",
+      "kinds": {
+        "country": 1,
+        "subdivision": 57
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 58,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 57,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 51,
+          "missingNames": 7,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 50,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 52,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 51,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 57,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 58,
+      "rootChildren": 57,
+      "subdivisionNodes": 57
+    },
+    {
+      "countryCode": "GB",
+      "kinds": {
+        "country": 1,
+        "subdivision": 221
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 136,
+          "missingNames": 86,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 132,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 219,
+          "missingNames": 3,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 215,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 222,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 221,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 220,
+          "missingNames": 2,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 216,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 218,
+          "missingNames": 4,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 214,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 220,
+          "missingNames": 2,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 216,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 214,
+          "missingNames": 8,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 210,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 218,
+          "missingNames": 4,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 214,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 218,
+          "missingNames": 4,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 214,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 4,
+          "missingNames": 218,
+          "projectReviewed": 0,
+          "sourceApproved": 3,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 222,
+      "rootChildren": 4,
+      "subdivisionNodes": 221
+    },
+    {
+      "countryCode": "DE",
+      "kinds": {
+        "country": 1,
+        "subdivision": 16
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 16,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 11,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 10,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 17,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 16,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 16,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 17,
+      "rootChildren": 16,
+      "subdivisionNodes": 16
+    },
+    {
+      "countryCode": "FR",
+      "kinds": {
+        "country": 1,
+        "subdivision": 124
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 125,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 124,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 71,
+          "missingNames": 54,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 70,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 113,
+          "missingNames": 12,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 112,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 116,
+          "missingNames": 9,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 115,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 124,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 125,
+      "rootChildren": 26,
+      "subdivisionNodes": 124
+    },
+    {
+      "countryCode": "IT",
+      "kinds": {
+        "country": 1,
+        "subdivision": 126
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 126,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 121,
+          "missingNames": 6,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 120,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 125,
+          "missingNames": 2,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 124,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 127,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 126,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 126,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 127,
+      "rootChildren": 20,
+      "subdivisionNodes": 126
+    },
+    {
+      "countryCode": "RU",
+      "kinds": {
+        "country": 1,
+        "subdivision": 83
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 83,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 84,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 83,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 83,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 84,
+      "rootChildren": 83,
+      "subdivisionNodes": 83
+    },
+    {
+      "countryCode": "SA",
+      "kinds": {
+        "country": 1,
+        "subdivision": 13
+      },
+      "locales": {
+        "ar": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "de": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "en": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 13,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "fr": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "it": {
+          "explicitNames": 13,
+          "missingNames": 1,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 12,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ja": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ko": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "ru": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hans": {
+          "explicitNames": 14,
+          "missingNames": 0,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 13,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        },
+        "zh-Hant": {
+          "explicitNames": 1,
+          "missingNames": 13,
+          "projectReviewed": 0,
+          "sourceApproved": 0,
+          "sourceNative": 0,
+          "sourceProvisional": 0,
+          "sourceQualified": 1,
+          "sourceUnconfirmed": 0
+        }
+      },
+      "nodes": 14,
+      "rootChildren": 13,
+      "subdivisionNodes": 13
+    }
+  ],
+  "countryCount": 10,
+  "countryNamesPerLocale": 10,
+  "datasetId": "geo-regions-seed",
+  "localeCount": 10,
+  "protocolVersion": "1.0",
+  "status": "research-seed",
+  "totalNodes": 4143
+}

@@ -1,0 +1,30 @@
+{
+  "compatibleStructureRevision": "s-116ac088cb082ba7",
+  "countryCode": "SA",
+  "coverage": {
+    "explicitNames": 1,
+    "missingNames": 13,
+    "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
+    "projectReviewed": 0,
+    "sourceApproved": 0,
+    "sourceNative": 0,
+    "sourceProvisional": 0,
+    "sourceQualified": 1,
+    "sourceUnconfirmed": 0,
+    "status": "research-seed",
+    "translationQualityById": {
+      "cc:SA": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-seed",
+  "locale": "zh-Hant",
+  "names": {
+    "cc:SA": "沙烏地阿拉伯"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-738f83da305c618b",
+  "sourceRefs": [
+    "sources/raw/cldr/territories-zh-Hant.json",
+    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+  ]
+}
