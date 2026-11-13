@@ -49,9 +49,9 @@ Node 只用于不依赖浏览器的参考原型行为测试，由 GitHub 托管 
 
 The runner's Node runtime is used only for the design reference's browser-independent behavior tests. Those checks do not replace Dart, Widget or browser tests.
 
-Flutter job 固定 `3.41.5`：先按 `demo/flutter/bootstrap.sh` 创建 Web 平台文件，再 format 检查、analyze、Widget tests、Web release build。该固定版本已通过 Flutter 官方 GitHub tag 核对，commit 为 `2c9eb20739dfec95e2c74bd3dfa4601b0a8a36aa`。
+Flutter job 固定 `3.50.0`（2026-11-14 由 3.41.5 调整，与统一 SDK 决策对齐）：先按 `demo/flutter/bootstrap.sh` 创建 Web 平台文件，再 format 检查、analyze、Widget tests、Web release build。该固定版本已通过 Flutter 官方 GitHub tag 核对，commit 为 `ab2912035e160d9cad6306df307576da6128ebdb`。
 
-The Flutter job uses `3.41.5`, bootstraps Web platform files, and runs formatting checks, analysis, Widget tests and a release Web build. The official Flutter tag resolves to commit `2c9eb20739dfec95e2c74bd3dfa4601b0a8a36aa`.
+The Flutter job uses `3.50.0` (changed from 3.41.5 on 2026-11-14 to follow the unified SDK decision), bootstraps Web platform files, and runs formatting checks, analysis, Widget tests and a release Web build. The official Flutter tag resolves to commit `ab2912035e160d9cad6306df307576da6128ebdb`.
 
 ```bash
 bash demo/flutter/bootstrap.sh
@@ -149,7 +149,7 @@ Local data/schema/semantic/manifest, boundary, offline-subset and ZIP checks wer
 - [GitHub Actions workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)
 - [GitHub secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
 - [Dart automated publication requirements](https://dart.dev/tools/pub/automated-publishing)
-- [Flutter 3.41.5 official tag](https://github.com/flutter/flutter/tree/3.41.5)
+- [Flutter 3.50.0 official tag](https://github.com/flutter/flutter/tree/3.50.0)
 - [checkout pin](https://github.com/actions/checkout/commit/11bd71901bbe5b1630ceea73d27597364c9af683)
 - [setup-python pin](https://github.com/actions/setup-python/commit/a26af69be951a213d495a4c3e4e4022e16d87065)
 - [upload-artifact pin](https://github.com/actions/upload-artifact/commit/ea165f8d65b6e75b540449e92b4886f43607fa02)
