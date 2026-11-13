@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imboy-pub.github.io/geo_regions/config/assets.schema.json",
+  "title": "geo_regions offline assets config v1.0",
+  "description": "Input for `dart run geo_regions:assets`. Structures, per-country locales and catalog locales are configured independently so that adding a locale never changes structure payload selection.",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable profile name recorded in the audit report."
+    },
+    "structures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      },
+      "uniqueItems": true,
+      "description": "Country structures bundled offline. Empty array = online-only (descriptor payload stays out of the build)."
+    },
+    "locales": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 2
+        },
+        "uniqueItems": true
+      },
+      "description": "Region name packs per country code. Keys must be a subset of structures."
+    },
+    "catalogLocales": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "uniqueItems": true,
+      "description": "Country-catalog name packs bundled offline (small; independent of structures)."
+    }
+  },
+  "required": [
+    "structures",
+    "locales",
+    "catalogLocales"
+  ],
+  "additionalProperties": false
+}

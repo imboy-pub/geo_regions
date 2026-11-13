@@ -1,0 +1,17 @@
+{
+  "profile": "full-offline",
+  "structures": ["CN", "JP", "KR", "US", "GB", "DE", "FR", "IT", "RU", "SA"],
+  "locales": {
+    "CN": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "JP": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "KR": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "US": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "GB": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "DE": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "FR": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "IT": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "RU": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"],
+    "SA": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"]
+  },
+  "catalogLocales": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"]
+}

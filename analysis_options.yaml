@@ -1,0 +1,12 @@
+# Root package analysis options. The demo app and generated build trees are
+# separate packages and are excluded from SDK analysis.
+analyzer:
+  exclude:
+    - demo/**
+    - build/**
+    - .venv/**
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_empty_else
+    - prefer_final_locals
