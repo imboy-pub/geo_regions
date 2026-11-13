@@ -131,6 +131,12 @@ class DataToolsTests(unittest.TestCase):
         with self.assertRaisesRegex(geo.DataError, "path traversal"):
             geo.verify_manifest(self.data, manifest)
 
+    def test_manifest_unsorted_resources_rejected(self):
+        manifest = geo.load_json(self.data / "manifest.json")
+        manifest["resources"].reverse()
+        with self.assertRaisesRegex(geo.DataError, "sorted by path"):
+            geo.verify_manifest(self.data, manifest)
+
     def test_resource_symlink_rejected(self):
         path = self.data / "regions/CN.json"
         external = self.root / "external.json"

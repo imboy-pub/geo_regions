@@ -348,6 +348,11 @@ def verify_manifest(data, manifest, require_complete=False):
     metadata(manifest, "manifest")
     resources = manifest.get("resources")
     require(isinstance(resources, list), "manifest.resources must be array")
+    declared = [entry.get("path") for entry in resources]
+    require(
+        declared == sorted(declared),
+        "manifest resources must be sorted by path",
+    )
     paths = set()
     for entry in resources:
         relative = entry.get("path")
