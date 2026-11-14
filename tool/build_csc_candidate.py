@@ -543,8 +543,10 @@ def main():
         # covers (tool/gen_candidate_rule_transcriptions.py; eval-gated,
         # deterministic tables, humanReviewVerified=false).
         RULE_STAGED = {
-            "RU": [("staging/ai-cand/ru-ja-transcriptions.json", "ja",
-                    "staging/ai-cand/ru-ja-transcriptions.json (rule-table Cyrillic->katakana transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")],
+            "RU": [("staging/ai-cand/ru-transcriptions.json", "ja",
+                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)"),
+                   ("staging/ai-cand/ru-transcriptions.json", "ko",
+                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
@@ -566,7 +568,8 @@ def main():
                         packs[rule_locale][nid] = nfc(label)
                         rule_filled.add(nid)
                         rule_pairs.add((nid, rule_locale))
-                rule_refs.append(rule_ref)
+                if rule_ref not in rule_refs:
+                    rule_refs.append(rule_ref)
             if rule_filled:
                 packs["_rule_pairs"] = rule_pairs
                 packs["_rule_refs"] = rule_refs
