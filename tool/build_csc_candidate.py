@@ -543,10 +543,9 @@ def main():
         # covers (tool/gen_candidate_rule_transcriptions.py; eval-gated,
         # deterministic tables, humanReviewVerified=false).
         RULE_STAGED = {
-            "RU": [("staging/ai-cand/ru-transcriptions.json", "ja",
-                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)"),
-                   ("staging/ai-cand/ru-transcriptions.json", "ko",
-                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")],
+            "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
+                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
+                   for loc in ("ja", "ko", "de", "fr")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
@@ -646,8 +645,9 @@ def main():
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
         "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
         "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
-        "- RU ja/ko: rule-table Cyrillic->katakana/hangul transcriptions "
-        "(machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)\n"
+        "- RU ja/ko/de/fr: rule-table Cyrillic->katakana/hangul/Latin "
+        "transcriptions (machine-candidate, eval-gated, "
+        "tool/gen_candidate_rule_transcriptions.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"

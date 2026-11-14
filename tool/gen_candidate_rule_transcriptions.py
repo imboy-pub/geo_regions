@@ -37,7 +37,7 @@ import sys
 import unicodedata
 from pathlib import Path
 
-OUT = Path("staging/ai-cand/ru-transcriptions.json")
+OUT = Path("staging/ai-cand/ru-transcriptions.json")  # 4 locales: ja ko de fr
 LOCALE = "ja"  # primary locale (kept for the doc header); ja+ko both emitted
 
 # ---- transcription tables -------------------------------------------------
@@ -145,6 +145,8 @@ EVAL = {
 KNOWN_IRREGULAR = {"Владивосток", "Сибирь", "Иваново", "Тюмень",
                    "Санкт-Петербург", "Тула"}
 # ko contested anchor removed: Свердловск (스베르들롭스크/스베르들로프스크 both attested)
+# de contested anchor removed: Липецк (Lipetzk vs Lipezk — German tz orthography
+# depends on vowel length; ц->z is the systematic base)
 
 
 def transcribe(word: str) -> str:
@@ -442,21 +444,193 @@ KO_EVAL = {
 }
 
 
+# ---- German / French Latin romanization (DIN-style / French conventions) ---
+# Letter-level maps from the Cyrillic native; ь is dropped (French) or j before
+# a vowel (German Iljinski); й is j/i/'' in German by context, ï in French;
+# separators (space/hyphen) are preserved verbatim.
+DE_MAP = {"а": "a", "б": "b", "в": "w", "г": "g", "д": "d", "е": "e", "ё": "jo",
+          "ж": "sch", "з": "s", "и": "i", "к": "k", "л": "l", "м": "m", "н": "n",
+          "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u", "ф": "f",
+          "х": "ch", "ц": "z", "ч": "tsch", "ш": "sch", "щ": "schtsch", "ы": "y",
+          "э": "e", "ю": "ju", "я": "ja", "й": "j"}
+FR_MAP = {"а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "ïo",
+          "ж": "j", "з": "z", "и": "i", "й": "ï", "к": "k", "л": "l", "м": "m",
+          "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "ou",
+          "ф": "f", "х": "kh", "ц": "ts", "ч": "tch", "ш": "ch", "щ": "chtch",
+          "ы": "y", "э": "e", "ю": "iou", "я": "ia"}
+LAT_PURITY = re.compile(r"[A-Za-zÀ-ÿ' -]+")
+
+
+def _transcribe_latin(word: str, cmap: dict[str, str], soft_ь_j: bool,
+                      е_initial: str) -> str:
+    word = unicodedata.normalize("NFC", word).strip()
+    out: list[str] = []
+    chars = list(word.lower())
+    i = 0
+    at_word_start = True
+    while i < len(chars):
+        c = chars[i]
+        if c == "ь":
+            if soft_ь_j and i + 1 < len(chars) and chars[i + 1] in "аеёиоуыэюя":
+                out.append("j")  # Ильинский -> Iljinski (German)
+            i += 1
+            continue
+        if c == "ъ":
+            i += 1
+            continue
+        if c in ("-", " ", "–"):
+            out.append(c)
+            at_word_start = True
+            i += 1
+            continue
+        if c == "д" and i + 1 < len(chars) and chars[i + 1] == "ж":
+            out.append({"de": "dsch", "fr": "dj"}[soft_ь_j and "de" or "fr"])
+            i += 2
+            at_word_start = False
+            continue
+        if c in cmap:
+            if c == "е" and at_word_start:
+                out.append(е_initial)
+                i += 1
+                at_word_start = False
+                continue
+            elif c == "й" and cmap is DE_MAP:
+                prev_v = i > 0 and chars[i - 1] in "аеёиоуыэюя"
+                at_word_end = i + 1 >= len(chars) or chars[i + 1] in ("-", " ", "–")
+                if at_word_end:
+                    pass  # word-final й drops (Nischni)
+                elif prev_v and chars[i + 1] in "аеёиоуыэюя":
+                    out.append("j")  # Krasnojarsk
+                elif prev_v:
+                    out.append("i")  # Biisk
+                else:
+                    out.append("j")
+                i += 1
+                at_word_start = False
+                continue
+            if c == "я" and cmap is FR_MAP and i > 0 and \
+                    chars[i - 1] in "аеёиоуыэюя":
+                out.append("ïa")  # hiatus break: Krasnoïarsk
+            elif c == "й" and cmap is FR_MAP:
+                at_word_end = i + 1 >= len(chars) or chars[i + 1] in ("-", " ", "–")
+                if (at_word_end and out and i > 0 and chars[i - 1] == "и"
+                        and out[-1].endswith("i")):
+                    out[-1] = out[-1][:-1]  # word-final ий merges to ï (Nijnï)
+                out.append("ï")  # mid-word и+й keeps both (Biïsk)
+            else:
+                out.append(cmap[c])
+            i += 1
+            at_word_start = False
+            continue
+        raise ValueError(f"unhandled character {c!r} in {word!r}")
+    return _capitalize_latin("".join(out))
+
+
+def _capitalize_latin(s: str) -> str:
+    # proper-name convention: first letter of every word segment uppercased
+    parts = re.split(r"([ -])", s)
+    return "".join(p[0].upper() + p[1:] if p and p[0].islower() else p for p in parts)
+
+
+def transcribe_de(word: str) -> str:
+    return _transcribe_latin(word, DE_MAP, soft_ь_j=True, е_initial="je")
+
+
+def transcribe_fr(word: str) -> str:
+    return _transcribe_latin(word, FR_MAP, soft_ь_j=False, е_initial="e")
+
+
+DE_EVAL = {
+    "Москва": "Moskwa",
+    "Новосибирск": "Nowosibirsk",
+    "Хабаровск": "Chabarowsk",
+    "Сочи": "Sotschi",
+    "Казань": "Kasan",
+    "Омск": "Omsk",
+    "Уфа": "Ufa",
+    "Пермь": "Perm",
+    "Псков": "Pskow",
+    "Курск": "Kursk",
+    "Тверь": "Twer",
+    "Рязань": "Rjasan",
+    "Вологда": "Wologda",
+    "Кострома": "Kostroma",
+    "Ярославль": "Jaroslawl",
+    "Бийск": "Biisk",
+    "Тамбов": "Tambow",
+    "Магнитогорск": "Magnitogorsk",
+    "Челябинск": "Tscheljabinsk",
+    "Красноярск": "Krasnojarsk",
+    "Норильск": "Norilsk",
+    "Ачинск": "Atschinsk",
+    "Кемерово": "Kemerowo",
+    "Барнаул": "Barnaul",
+    "Курган": "Kurgan",
+    "Оренбург": "Orenburg",
+    "Иркутск": "Irkutsk",
+    "Тула": "Tula",
+    "Владивосток": "Wladiwostok",
+    "Нижний Новгород": "Nischni Nowgorod",
+    "Тюмень": "Tjumen",
+    "Ильинский": "Iljinski",
+    "Санкт-Петербург": "Sankt-Peterburg",
+}
+FR_EVAL = {
+    "Москва": "Moskva",
+    "Хабаровск": "Khabarovsk",
+    "Сочи": "Sotchi",
+    "Казань": "Kazan",
+    "Омск": "Omsk",
+    "Оренбург": "Orenbourg",
+    "Тамбов": "Tambov",
+    "Псков": "Pskov",
+    "Курск": "Koursk",
+    "Курган": "Kourgan",
+    "Тула": "Toula",
+    "Уфа": "Oufa",
+    "Иркутск": "Irkoutsk",
+    "Тюмень": "Tioumen",
+    "Рязань": "Riazan",
+    "Кемерово": "Kemerovo",
+    "Челябинск": "Tcheliabinsk",
+    "Красноярск": "Krasnoïarsk",
+    "Нижний Новгород": "Nijnï Novgorod",
+    "Вологда": "Vologda",
+    "Кострома": "Kostroma",
+    "Ярославль": "Iaroslavl",
+    "Липецк": "Lipetsk",
+    "Магнитогорск": "Magnitogorsk",
+    "Норильск": "Norilsk",
+    "Ачинск": "Atchinsk",
+    "Барнаул": "Barnaoul",
+    "Бийск": "Biïsk",
+    "Пермь": "Perm",
+    "Тверь": "Tver",
+    "Владивосток": "Vladivostok",
+    "Елабуга": "Elabouga",
+}
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     cyr = re.compile(r"[\u0400-\u04FF]")
 
     for name, fn, expected in ([(k, transcribe, v) for k, v in EVAL.items()] +
-                               [(k, transcribe_ko, v) for k, v in KO_EVAL.items()]):
+                               [(k, transcribe_ko, v) for k, v in KO_EVAL.items()] +
+                               [(k, transcribe_de, v) for k, v in DE_EVAL.items()] +
+                               [(k, transcribe_fr, v) for k, v in FR_EVAL.items()]):
         got = fn(name)
         if got != expected:
             print(f"EVAL FAIL {name!r}: got {got!r} want {expected!r}")
             return 1
-    print(f"eval sets: ja {len(EVAL)}/{len(EVAL)}, ko {len(KO_EVAL)}/{len(KO_EVAL)} anchors pass",
+    print(f"eval sets: ja {len(EVAL)}/{len(EVAL)}, ko {len(KO_EVAL)}/{len(KO_EVAL)}, "
+          f"de {len(DE_EVAL)}/{len(DE_EVAL)}, fr {len(FR_EVAL)}/{len(FR_EVAL)} anchors pass",
           flush=True)
 
-    purity_res = {"ja": re.compile(r"[ァ-ヴー・]+"), "ko": re.compile(r"[가-힣]+")}
-    fns = {"ja": transcribe, "ko": transcribe_ko}
+    purity_res = {"ja": re.compile(r"[ァ-ヴー・]+"), "ko": re.compile(r"[가-힣]+"),
+                  "de": LAT_PURITY, "fr": LAT_PURITY}
+    fns = {"ja": transcribe, "ko": transcribe_ko,
+           "de": transcribe_de, "fr": transcribe_fr}
     nodes: dict[str, dict] = {}
     kind_prefix = {"cities": "csc-city:", "counties": "csc-county:"}
     for kind, prefix in kind_prefix.items():
@@ -483,12 +657,12 @@ def main() -> int:
 
     document = {
         "generator": "tool/gen_candidate_rule_transcriptions.py",
-        "ruleVersion": "ru-ja-ko-1",
+        "ruleVersion": "ru-ja-ko-de-fr-1",
         "retrievedAt": "2026-11-14",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ja", "ko"],
+        "locales": ["ja", "ko", "de", "fr"],
         "evalAnchors": len(EVAL) + len(KO_EVAL),
         "evalPassed": len(EVAL) + len(KO_EVAL),
         "nodeCount": len(nodes),
