@@ -8,7 +8,7 @@
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:DE": "machine-candidate",
+      "cc:DE": "cldr-json-qualified",
       "csc-city:153640": "machine-candidate",
       "csc-city:153781": "machine-candidate",
       "csc-city:153784": "machine-candidate",
@@ -7094,7 +7094,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
-    "cc:DE": "德国",
+    "cc:DE": "德國",
     "csc-city:153640": "德紹-羅斯勞",
     "csc-city:153781": "倫施泰格山麓羅森塔爾",
     "csc-city:153784": "諾伊林根",
@@ -9005,7 +9005,7 @@
     "csc-city:25368": "加勒爾",
     "csc-city:25369": "因河畔加爾斯",
     "csc-city:25370": "加爾斯特",
-    "csc-city:25371": "花园城",
+    "csc-city:25371": "花園城",
     "csc-city:25372": "加爾托",
     "csc-city:25373": "加茨",
     "csc-city:25374": "加爾茨",
@@ -9910,7 +9910,7 @@
     "csc-city:26280": "韋德",
     "csc-city:26281": "哈格爾芬",
     "csc-city:26282": "胡伊斯海姆",
-    "csc-city:26283": "洪堡学院",
+    "csc-city:26283": "洪堡學院",
     "csc-city:26284": "胡默爾斯比特爾",
     "csc-city:26285": "亨德多夫",
     "csc-city:26286": "洪德斯哈根",
@@ -14176,7 +14176,7 @@
     "iso3166-2:DE-TH": "圖林根州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-a36178a8f797ee3b",
+  "revision": "l-f76f78ab274f826a",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

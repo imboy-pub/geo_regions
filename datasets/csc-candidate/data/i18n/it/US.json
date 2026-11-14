@@ -19825,7 +19825,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "it",
   "names": {
-    "cc:US": "Stati Uniti D'America",
+    "cc:US": "Stati Uniti",
     "csc-city:110965": "Abbeville",
     "csc-city:110966": "Abbeville",
     "csc-city:110967": "Abbeville",
@@ -39641,7 +39641,7 @@
     "iso3166-2:US-WY": "Wyoming"
   },
   "protocolVersion": "1.0",
-  "revision": "l-4796f4b60f002eb2",
+  "revision": "l-6103dfe01376bd3b",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

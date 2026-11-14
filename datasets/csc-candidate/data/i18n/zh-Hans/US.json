@@ -6,7 +6,7 @@
     "missingNames": 7762,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:US": "provisional",
+      "cc:US": "cldr-json-qualified",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -38129,7 +38129,7 @@
     "iso3166-2:US-WY": "怀俄明州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f1cf07bb9aae60bb",
+  "revision": "l-1a6132be685dde5b",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

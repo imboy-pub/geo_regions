@@ -204,10 +204,13 @@ def main():
         packs = {locale: {} for locale in LOCALES}
         packs["en"][root_id] = country["name"]
         country_trans = country.get("translations") or {}
-        for locale, key in TRANSLATION_LOCALES.items():
-            v = country_trans.get(key)
+        for locale in LOCALES:
+            # CLDR catalog names win (higher-trust source); CSC translations fallback
+            v = catalog_files[locale]["names"].get(cc) or country_trans.get(TRANSLATION_LOCALES.get(locale, ""))
             if v:
                 packs[locale][root_id] = nfc(v)
+                if locale in ("zh-Hans", "zh-Hant"):
+                    packs.setdefault("_hant_qualified", set()).add(root_id)
 
         state_ids = {}
         kr_fix = None
@@ -284,8 +287,8 @@ def main():
             nodes = [node(root_id, None, "country", cc, nfc(country["name"]), "en", "source-native", "partial")]
             packs = {locale: {} for locale in LOCALES}
             packs["en"][root_id] = nfc(country["name"])
-            for locale, key in TRANSLATION_LOCALES.items():
-                v = country_trans.get(key)
+            for locale in LOCALES:
+                v = catalog_files[locale]["names"].get(cc) or country_trans.get(TRANSLATION_LOCALES.get(locale, ""))
                 if v:
                     packs[locale][root_id] = nfc(v)
             csc_idx = csc_translation_index(cc)
@@ -366,6 +369,11 @@ def main():
         hant_names, hant_quality = {}, {}
         conversion_stats = {"convertedChars": 0, "names": 0, "kanjiDirectJP": 0}
         for nid, node_row in ((n["id"], n) for n in nodes):
+            if nid in packs["zh-Hant"]:
+                # CLDR catalog direct value (roots) wins over conversion
+                hant_names[nid] = packs["zh-Hant"][nid]
+                hant_quality[nid] = "cldr-json-qualified"
+                continue
             hans = packs["zh-Hans"].get(nid)
             fix = ZH_HANT_FIXES.get((cc, node_row["name"]))
             if fix:
@@ -419,9 +427,11 @@ def main():
                     "sourceRefs": [CSC_SOURCE], "names": packs[locale],
                     "coverage": {"status": "research-seed",
                                  "translationQualityById": {
-                                     nid: ("machine-candidate" if locale in ("zh-Hant",)
+                                     nid: ("machine-candidate" if locale == "zh-Hant" and nid not in packs.get("_hant_qualified", set())
                                            or (locale == "zh-Hans" and nid in packs.get("_zh_fixed", {}))
-                                           else "source-native" if locale == "en" else "provisional")
+                                           else "source-native" if locale == "en"
+                                           else "cldr-json-qualified" if nid == root_id and locale in ("zh-Hans", "zh-Hant")
+                                           else "provisional")
                                      for nid in packs[locale]},
                                  "explicitNames": len(packs[locale]),
                                  "missingNames": len(nodes) - len(packs[locale]),

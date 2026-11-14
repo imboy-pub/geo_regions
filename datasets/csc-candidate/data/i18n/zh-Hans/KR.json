@@ -6,7 +6,7 @@
     "missingNames": 1,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:KR": "provisional",
+      "cc:KR": "cldr-json-qualified",
       "csc-city:65260": "provisional",
       "csc-city:65261": "provisional",
       "csc-city:65262": "provisional",
@@ -665,7 +665,7 @@
     "iso3166-2:KR-50": "世宗特别行政区"
   },
   "protocolVersion": "1.0",
-  "revision": "l-2d380964808b6096",
+  "revision": "l-e7799cee58c1745c",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

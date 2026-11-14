@@ -6,7 +6,7 @@
     "missingNames": 415,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:IT": "provisional",
+      "cc:IT": "cldr-json-qualified",
       "csc-city:135235": "provisional",
       "csc-city:135236": "provisional",
       "csc-city:135237": "provisional",
@@ -19875,7 +19875,7 @@
     "iso3166-2:IT-VV": "维博瓦伦蒂亚"
   },
   "protocolVersion": "1.0",
-  "revision": "l-62eb3280d3fcf51a",
+  "revision": "l-ffff84cc16c93b93",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

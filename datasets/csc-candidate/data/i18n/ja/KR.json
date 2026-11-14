@@ -337,7 +337,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
-    "cc:KR": "大韓民国",
+    "cc:KR": "韓国",
     "csc-city:65260": "安東市",
     "csc-city:65261": "安東市",
     "csc-city:65262": "安山市",
@@ -665,7 +665,7 @@
     "iso3166-2:KR-50": "世宗市"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d921b19083bc2f0b",
+  "revision": "l-774aed996c1b4d17",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

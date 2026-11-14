@@ -5295,7 +5295,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
-    "cc:RU": "ロシア連邦",
+    "cc:RU": "ロシア",
     "csc-city:100000": "ムリーノ",
     "csc-city:100001": "ムロフカ",
     "csc-city:100002": "ムムラ",
@@ -10581,7 +10581,7 @@
     "iso3166-2:RU-ZAB": "ザバイカルスキー"
   },
   "protocolVersion": "1.0",
-  "revision": "l-056d32a7ea6f4015",
+  "revision": "l-53521c7835b2c813",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

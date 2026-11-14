@@ -6,7 +6,7 @@
     "missingNames": 462,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:DE": "provisional",
+      "cc:DE": "cldr-json-qualified",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -14173,7 +14173,7 @@
     "iso3166-2:DE-TH": "图林根州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d3689f8313b22dab",
+  "revision": "l-08077ad8689f2a82",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

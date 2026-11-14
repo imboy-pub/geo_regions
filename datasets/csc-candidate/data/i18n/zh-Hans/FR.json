@@ -6,7 +6,7 @@
     "missingNames": 24356,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:FR": "provisional",
+      "cc:FR": "cldr-json-qualified",
       "fr-commune:01004": "provisional",
       "fr-commune:01005": "provisional",
       "fr-commune:01007": "provisional",
@@ -21381,7 +21381,7 @@
     "fr-region:94": "科西嘉"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d77a875ccfd68d04",
+  "revision": "l-1449ea702eebae75",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

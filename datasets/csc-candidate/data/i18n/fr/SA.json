@@ -417,7 +417,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "fr",
   "names": {
-    "cc:SA": "Arabie Saoudite",
+    "cc:SA": "Arabie saoudite",
     "csc-city:102804": "Abha",
     "csc-city:102805": "Abqaïq",
     "csc-city:102806": "Abū ‘Arīsh",
@@ -825,7 +825,7 @@
     "iso3166-2:SA-14": "Asir"
   },
   "protocolVersion": "1.0",
-  "revision": "l-dafe3dbf61282ef3",
+  "revision": "l-2286cf5d7e546b8d",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

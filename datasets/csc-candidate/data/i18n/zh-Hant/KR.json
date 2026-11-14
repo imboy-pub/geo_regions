@@ -8,7 +8,7 @@
     "proofreadFixesApplied": 2,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:KR": "machine-candidate",
+      "cc:KR": "cldr-json-qualified",
       "csc-city:65260": "machine-candidate",
       "csc-city:65261": "machine-candidate",
       "csc-city:65262": "machine-candidate",
@@ -340,7 +340,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
-    "cc:KR": "韓国",
+    "cc:KR": "南韓",
     "csc-city:65260": "安東市",
     "csc-city:65261": "安東市",
     "csc-city:65262": "安山市",
@@ -349,7 +349,7 @@
     "csc-city:65265": "阿桑",
     "csc-city:65266": "牙山市",
     "csc-city:65267": "伐桥",
-    "csc-city:65268": "报恩郡",
+    "csc-city:65268": "報恩郡",
     "csc-city:65269": "奉化郡",
     "csc-city:65270": "保寧",
     "csc-city:65271": "保寧市",
@@ -413,8 +413,8 @@
     "csc-city:65330": "衿川區",
     "csc-city:65331": "金井區",
     "csc-city:65332": "錦山郡",
-    "csc-city:65333": "机张",
-    "csc-city:65334": "机张郡",
+    "csc-city:65333": "机張",
+    "csc-city:65334": "机張郡",
     "csc-city:65335": "金泉市",
     "csc-city:65336": "金泉市",
     "csc-city:65337": "金海市",
@@ -637,7 +637,7 @@
     "csc-city:65554": "永同郡",
     "csc-city:65555": "靈光",
     "csc-city:65556": "靈光郡",
-    "csc-city:65557": "荣州市",
+    "csc-city:65557": "榮州市",
     "csc-city:65558": "英陽郡",
     "csc-city:65559": "延日",
     "csc-city:65560": "延寿區",
@@ -668,7 +668,7 @@
     "iso3166-2:KR-50": "世宗特别行政區"
   },
   "protocolVersion": "1.0",
-  "revision": "l-050d953e6aa39112",
+  "revision": "l-54659e18bd97dd5e",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

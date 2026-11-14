@@ -6,7 +6,7 @@
     "missingNames": 280,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:GB": "provisional",
+      "cc:GB": "cldr-json-qualified",
       "csc-city:153932": "provisional",
       "csc-city:166594": "provisional",
       "csc-city:166596": "provisional",
@@ -7719,7 +7719,7 @@
     "iso3166-2:GB-ZET": "设得兰群岛"
   },
   "protocolVersion": "1.0",
-  "revision": "l-7130c001b17950dc",
+  "revision": "l-d7c15c56f83afc57",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

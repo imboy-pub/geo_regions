@@ -6,7 +6,7 @@
     "missingNames": 1973,
     "status": "research-seed",
     "translationQualityById": {
-      "cc:RU": "provisional",
+      "cc:RU": "cldr-json-qualified",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -5156,7 +5156,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hans",
   "names": {
-    "cc:RU": "俄罗斯联邦",
+    "cc:RU": "俄罗斯",
     "csc-city:100000": "穆利诺",
     "csc-city:100001": "穆洛夫卡",
     "csc-city:100002": "穆姆拉",
@@ -10303,7 +10303,7 @@
     "iso3166-2:RU-ZAB": "外贝加尔地区"
   },
   "protocolVersion": "1.0",
-  "revision": "l-6967cfe87bc00470",
+  "revision": "l-b093ea1e7cfcff78",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -335,7 +335,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
-    "cc:KR": "Южная Корея",
+    "cc:KR": "Республика Корея",
     "csc-city:65260": "Андон",
     "csc-city:65261": "Андон",
     "csc-city:65262": "Ансан",
@@ -661,7 +661,7 @@
     "iso3166-2:KR-50": "Город Седжон"
   },
   "protocolVersion": "1.0",
-  "revision": "l-334e555ed20f2c70",
+  "revision": "l-1b61f702f6315291",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
