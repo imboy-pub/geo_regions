@@ -458,6 +458,17 @@
    "retrievedAt": "2026-11-14",
    "note": "Derived committed extract: labels in the ten project locales for every non-CN subdivision node, joined by exact P300 ISO 3166-2 code. Codes claimed by more than one Wikidata item (FR-69, FR-6AE) are dropped, never guessed. Regenerate only with the recorded query.",
    "upstreamQuery": "Recorded verbatim inside the extract (query field): P300 exact-join SPARQL over the non-CN subdivision codes, labels filtered to the ten project locales."
+  },
+  {
+   "localPath": "sources/raw/wikidata/cn-node-labels.json",
+   "sha256": "14bc3ac9ad4c9538170d7c7ae10f8a53f179886190c5d6d7e8112955522afc28",
+   "sizeBytes": 765340,
+   "license": "CC0-1.0",
+   "generator": "tool/fetch_wikidata_cn_labels.py",
+   "upstreamUrl": "https://query.wikidata.org/sparql",
+   "upstreamQuery": "Recorded inside the extract: P300 (CN-AH.. province ISO codes) plus P13971 China division code by MCA joins over batched VALUES lists; 4-digit prefecture codes pad with trailing 00; ambiguous codes dropped.",
+   "retrievedAt": "2026-11-14",
+   "note": "Derived committed extract keyed by seed node id (3,206/3,338 matched, 0 ambiguous, 1 nameDrift flagged for review). Regenerate only with the recorded queries."
   }
  ]
 }

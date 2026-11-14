@@ -31,6 +31,7 @@ CN_EXCLUSIONS = {'cnhk', 'cnmo', 'cntw'}
 # any tampering shows up as stale-generated-output in --check.
 GEONAMES_CN_ROWS = 'sources/raw/geonames/cn-adm-rows.json'
 WIKIDATA_LABELS = 'sources/raw/wikidata/subdivision-labels.json'
+WIKIDATA_CN_LABELS = 'sources/raw/wikidata/cn-node-labels.json'
 # GeoNames uses FIPS codes for the four municipalities' admin1 (GB codes 11/12/31/50).
 GEONAMES_FIPS_MUNICIPALITIES = {'11': '22', '12': '28', '31': '23', '50': '33'}
 # Pinyin admin suffixes stripped from the display name ONLY when the bare form
@@ -331,6 +332,12 @@ def build(root):
         counts = wd_extract['matchCount']
         if counts != len(wd_extract['labels']):
             raise ValueError('Wikidata extract matchCount disagrees with its rows')
+    cn_path = root / WIKIDATA_CN_LABELS
+    cn_extract = read_json(cn_path) if cn_path.is_file() else None
+    if cn_extract is not None:
+        counts = cn_extract['matchCount']
+        if counts != len(cn_extract['nodes']):
+            raise ValueError('Wikidata CN extract matchCount disagrees with its rows')
     raw = root / 'sources/raw/cldr'
     containment = read_json(raw / 'subdivisionContainment.json')['supplemental']['subdivisionContainment']
     aliases = read_json(raw / 'aliases.json')['supplemental']['metadata']['alias']['subdivisionAlias']
@@ -391,6 +398,8 @@ def build(root):
         node_by_id = {n['id']: n for n in nodes}
         wd_labels = wd_extract['labels'] if wd_extract else {}
         wd_match = wd_extract['matchCount'] if wd_extract else 0
+        cn_wd_nodes = cn_extract['nodes'] if cn_extract else {}
+        cn_wd_match = cn_extract['matchCount'] if cn_extract else 0
         zh_hans_names = {'cc:' + cc: territories['zh-Hans'][cc]}
         for code in index:
             if code in translations['zh-Hans']:
@@ -439,7 +448,11 @@ def build(root):
             for nid, node in node_by_id.items():
                 if nid in names or node['kind'] == 'country':
                     continue
-                label = wd_labels.get(node['code'], {}).get('labels', {}).get(locale)
+                if cc == 'CN':
+                    entry = cn_wd_nodes.get(nid)
+                    label = entry['labels'].get(locale) if entry else None
+                else:
+                    label = wd_labels.get(node['code'], {}).get('labels', {}).get(locale)
                 if label:
                     wd_overlay[nid] = label
             if wd_overlay:
@@ -454,10 +467,16 @@ def build(root):
                     'filled': len(territory_overlay),
                     'note': 'Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality.'}
             if wd_overlay:
-                locale_coverage['wikidataLabelOverlay'] = {
-                    'source': WIKIDATA_LABELS, 'license': 'CC0-1.0',
-                    'filled': len(wd_overlay), 'matchCount': wd_match,
-                    'note': 'Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.'}
+                if cc == 'CN':
+                    locale_coverage['wikidataLabelOverlay'] = {
+                        'source': WIKIDATA_CN_LABELS, 'license': 'CC0-1.0',
+                        'filled': len(wd_overlay), 'matchCount': cn_wd_match,
+                        'note': 'Wikidata community labels fetched via exact code joins (P300 for provinces, P13971 MCA codes for prefecture/county); provisional quality, not human-reviewed.'}
+                else:
+                    locale_coverage['wikidataLabelOverlay'] = {
+                        'source': WIKIDATA_LABELS, 'license': 'CC0-1.0',
+                        'filled': len(wd_overlay), 'matchCount': wd_match,
+                        'note': 'Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.'}
             if gn_applied:
                 locale_coverage['geoNamesLatinOverlay'] = dict(gn_meta, source=GEONAMES_CN_ROWS,
                     license='CC-BY-4.0', locales=list(GEONAMES_LOCALES),

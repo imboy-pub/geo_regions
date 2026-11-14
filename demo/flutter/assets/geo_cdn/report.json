@@ -2,7 +2,7 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "demo/flutter/tools/geo_cdn.config.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-14T06:24:14.699354Z",
+  "generatedAt": "2026-11-14T06:40:37.402415Z",
   "profile": "demo-simulated-cdn-full",
   "replace": true,
   "resources": [
@@ -73,10 +73,10 @@
       "sha256": "bf61142515669a5ac82665a1e1b7173d22869118675cbaaf96875d9a426d0102"
     },
     {
-      "bytes": 3387,
-      "gzipBytes": 961,
+      "bytes": 71647,
+      "gzipBytes": 11129,
       "path": "i18n/ar/CN.json",
-      "sha256": "fc4ded10ac23af1b126cd3aa76e88ec1fb10d4438709a29666dd72e58c8863ef"
+      "sha256": "7e3e30ea4460a863ab99d969b8d77c885337a5d3562349d694a47164c18a19fa"
     },
     {
       "bytes": 2292,
@@ -133,10 +133,10 @@
       "sha256": "fc7fc1aa86a7c82424a6b85f0573949ea391574dbc97a134d36e242806b52e17"
     },
     {
-      "bytes": 225608,
-      "gzipBytes": 32517,
+      "bytes": 235024,
+      "gzipBytes": 34041,
       "path": "i18n/de/CN.json",
-      "sha256": "9aa81db9db9cad0d514d0c598e61487eb4834a678ece079b9a63b57f56e13f8b"
+      "sha256": "06e2f18a79e5867df0a77599954f163c321d102cbd373387f4b59760a697d7f1"
     },
     {
       "bytes": 2128,
@@ -193,10 +193,10 @@
       "sha256": "776989678b941e71af95d2a2ac76a79d3cdf043d6716e02a9886709dc84f5406"
     },
     {
-      "bytes": 225802,
-      "gzipBytes": 32556,
+      "bytes": 236672,
+      "gzipBytes": 34295,
       "path": "i18n/en/CN.json",
-      "sha256": "9e3106d71d2e8276c16dc15acdc318feb30ef9868f510a47584e4c7d733d5eaa"
+      "sha256": "d4b6206163a6ade306083bd9c551bdfb3118c0d81d53e7bef3101e11ff33f5d9"
     },
     {
       "bytes": 2240,
@@ -253,10 +253,10 @@
       "sha256": "b38273fa1893bedf291957864e68853a4ea87cd7b48c531b1565611d139ea59a"
     },
     {
-      "bytes": 225618,
-      "gzipBytes": 32540,
+      "bytes": 234886,
+      "gzipBytes": 34169,
       "path": "i18n/fr/CN.json",
-      "sha256": "c3490d45824a249d065ad2873fa8f8533f9b0c2a083678978ced20b515b36b4f"
+      "sha256": "fcde8957ebc884cca031ab5312f0e0cea4f4409399576230209bd160f1e14e4f"
     },
     {
       "bytes": 2137,
@@ -313,10 +313,10 @@
       "sha256": "5f953793583321bc1c4a3b2201bbcfb5ed2b5644ec258acef8944fc75597c9c9"
     },
     {
-      "bytes": 225614,
-      "gzipBytes": 32529,
+      "bytes": 234716,
+      "gzipBytes": 34107,
       "path": "i18n/it/CN.json",
-      "sha256": "fed8562a32bf691ee3c3b2d6f0dd42d54359a5552065454191e15c38f7851e66"
+      "sha256": "d4fd1771bfd56592f7b04a2a27e96c43091a8314a97d2797dd4fe730fbb6b654"
     },
     {
       "bytes": 2151,
@@ -373,10 +373,10 @@
       "sha256": "6e7250269d4a9db156f2b4e6dd7f32822c4d2a91e58b1354e80035987f3fe003"
     },
     {
-      "bytes": 3302,
-      "gzipBytes": 999,
+      "bytes": 242294,
+      "gzipBytes": 38210,
       "path": "i18n/ja/CN.json",
-      "sha256": "6b6dfcfef3c3aef9415bfcd79df33d62fb488dd9061579c10aecf8eb90a43c7e"
+      "sha256": "83e193fc4f50bc8f378cd3e20d7de7bed38b13afcae2ca48d10d1b9ba016ef29"
     },
     {
       "bytes": 2926,
@@ -433,10 +433,10 @@
       "sha256": "49c51dc6cf640a691397d1609a4a087feb7ec19da721f169eff2d65e04d2585e"
     },
     {
-      "bytes": 3356,
-      "gzipBytes": 994,
+      "bytes": 244439,
+      "gzipBytes": 36135,
       "path": "i18n/ko/CN.json",
-      "sha256": "61f640944ead75403b8388b1e3ec5719116344c1ebfbe5beec829d8e756971e3"
+      "sha256": "cf01fbd8f90cf51911b72dec5cc25980ab14f428e2b3d2cf9bf3d800782c8b10"
     },
     {
       "bytes": 2245,
@@ -493,10 +493,10 @@
       "sha256": "2e04a8bda9a52fb86cfa04ff1a3e4b3addd13a19e4e531103646d5fc671a4e75"
     },
     {
-      "bytes": 3559,
-      "gzipBytes": 1037,
+      "bytes": 256464,
+      "gzipBytes": 35251,
       "path": "i18n/ru/CN.json",
-      "sha256": "55adefdefc6c464dd658fa7b5545f439644f6ccd0fa25992c14caf5168d0cb4c"
+      "sha256": "65730ff4cc674b3d6c5bb5cbb0c7d388e782aba78c8e325478f29e0b648a771a"
     },
     {
       "bytes": 2326,
@@ -747,8 +747,8 @@
   },
   "totals": {
     "fragmentFileCount": 123,
-    "gzipBytes": 444333,
+    "gzipBytes": 567537,
     "resourceFileCount": 121,
-    "uncompressedBytes": 3367692
+    "uncompressedBytes": 4207588
   }
 }
