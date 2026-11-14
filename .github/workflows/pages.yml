@@ -42,12 +42,12 @@ jobs:
         working-directory: demo/flutter
         run: flutter build web --release --base-href /geo_regions/
       - name: Add static UI prototype under /preview/
-        run: cp -r demo/web_preview build/web/preview
+        run: cp -r demo/web_preview demo/flutter/build/web/preview
       - name: Disable Jekyll processing
-        run: touch build/web/.nojekyll
+        run: touch demo/flutter/build/web/.nojekyll
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
-          path: build/web
+          path: demo/flutter/build/web
 
   deploy:
     needs: build
