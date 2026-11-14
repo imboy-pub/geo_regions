@@ -466,31 +466,49 @@ def main():
         # (community labels, humanReviewVerified=false).
         WD_STAGED = {
             "FR": [("staging/wikidata-fr/fr-labels.json",
-                    "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)")],
+                    "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)"),
+                   ("staging/geonames-alt/fr-labels.json",
+                    "staging/geonames-alt/fr-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "JP": [("staging/wikidata-cand/jp-labels.json",
-                    "staging/wikidata-cand/jp-labels.json (Wikidata P429 dantai-code + P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)")],
+                    "staging/wikidata-cand/jp-labels.json (Wikidata P429 dantai-code + P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+                   ("staging/geonames-alt/jp-labels.json",
+                    "staging/geonames-alt/jp-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "GB": [("staging/wikidata-cand/gb-labels.json",
                     "staging/wikidata-cand/gb-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
                    ("staging/wikidata-qid/gb-labels.json",
-                    "staging/wikidata-qid/gb-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/gb-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/gb-labels.json",
+                    "staging/geonames-alt/gb-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "IT": [("staging/wikidata-cand/it-labels.json",
                     "staging/wikidata-cand/it-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
                    ("staging/wikidata-qid/it-labels.json",
-                    "staging/wikidata-qid/it-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/it-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/it-labels.json",
+                    "staging/geonames-alt/it-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "RU": [("staging/wikidata-cand/ru-labels.json",
                     "staging/wikidata-cand/ru-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
                    ("staging/wikidata-qid/ru-labels.json",
-                    "staging/wikidata-qid/ru-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/ru-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/ru-labels.json",
+                    "staging/geonames-alt/ru-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "DE": [("staging/wikidata-cand/de-labels.json",
                     "staging/wikidata-cand/de-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
                    ("staging/wikidata-qid/de-labels.json",
-                    "staging/wikidata-qid/de-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/de-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/de-labels.json",
+                    "staging/geonames-alt/de-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "US": [("staging/wikidata-qid/us-labels.json",
-                    "staging/wikidata-qid/us-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/us-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/us-labels.json",
+                    "staging/geonames-alt/us-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "SA": [("staging/wikidata-qid/sa-labels.json",
-                    "staging/wikidata-qid/sa-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/sa-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/sa-labels.json",
+                    "staging/geonames-alt/sa-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
             "KR": [("staging/wikidata-qid/kr-labels.json",
-                    "staging/wikidata-qid/kr-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+                    "staging/wikidata-qid/kr-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)"),
+                   ("staging/geonames-alt/kr-labels.json",
+                    "staging/geonames-alt/kr-labels.json (GeoNames alternateNamesV2 join via CSC wikiDataId->wkdt rows, CC-BY-4.0, tool/fetch_geonames_alt_names.py)")],
         }
         if cc in WD_STAGED:
             wd_filled = set()
@@ -585,6 +603,8 @@ def main():
         "(CC0-1.0, staged extract, provisional)\n"
         "- US/DE/IT/GB/RU/SA/KR: Wikidata labels joined by the snapshot rows' "
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
+        "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
+        "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"

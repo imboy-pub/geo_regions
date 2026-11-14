@@ -40,9 +40,10 @@
 多轮修值与官方层切换后，正文中的轮次快照数字已过时。当前实测：
 
 - **节点总数 93,683**（FR 35,040 / JP 1,946 / KR 327 / 其余 CSC 层）
-- 十语覆盖（四轮证据 join + CSC 翻译桥：FR=P374 INSEE / JP=P429 dantai / GB/IT/RU/DE=P300 ISO / 七国 CSC wikiDataId QID 直取 / FR·JP 行翻译经 QID 桥二次接回）：en 93,683 (100%) / zh-Hans **83,867** / zh-Hant **83,888** / ja **63,496** / ko **60,078** / ru **72,727** / de **85,560** / fr **85,534** / it **85,514** / ar **61,403**（累计闭合 ~162k 缺口格）
+- 十语覆盖（五级证据链全部应用：FR=P374 INSEE / JP=P429 dantai / GB/IT/RU/DE=P300 ISO / 七国 CSC wikiDataId QID 直取 / FR·JP 行翻译 qid 桥 / GeoNames alternateNamesV2 wkdt 行）：en 93,683 (100%) / zh-Hans **83,868** / zh-Hant **83,889** / ja **63,497** / ko **60,078** / ru **73,332** / de **85,560** / fr **85,534** / it **85,514** / ar **61,403**（累计闭合 ~163k 缺口格）
 - QID 直取卷明细：US 提取件 20,051 节点（zh-Hans 17,462/de 18,684/fr 19,757/ru 10,589/ja 11,461/ko 6,921/ar 16,689）、DE 7,370 行 QID 97%、IT 9,896 行 96%、GB 3,460 行 88%、RU 5,878 行 83%
 - CSC 翻译桥（2026-11-14）：FR/JP 层按名字归一化继承 CSC 翻译会静默漏接拼写分歧的行；行内 wikiDataId ↔ staged Wikidata 抽取件 qid 构成精确二次 join，桥回 FR 367 节点 + JP 268 节点的漏接译文（+1,043 格）；52 个散落未填格为 ZH_GARBAGE_DROPS 有意治理（如 The Acreage→面积、LMS→学习管理系统等机器直译），非漏接
-- 残余缺口 161,080 格 = **长尾**：小市镇在目标语维基无标签且 CSC 无译文、或行无 QID（US ~7.5k/语、FR ja/ko/ar、JP 494 无条目市村等）——证据通道已穷尽；出路 = 离线批量 AI 生成工程（非会话级）或人工贡献；候选层审阅不受阻
+- GeoNames alternateNamesV2 通道（2026-11-14，最后一个证据通道，已关闭）：alternateNamesV2.zip（205MB，sha256 bfc309fa…）含 `wkdt` 行=Wikidata QID 本身，CSC wikiDataId 直换 geonameid 免 SPARQL；**15,333/83,523 QID 命中**（FR 市镇仅 16 节点带 wkdt——GeoNames 对法国小市镇几乎无 wkdt 同步）；fill-missing 实收 **+608 格**（US ru 604 / DE zh 2 / IT ru 1），JP/FR 桥接节点标签已被 Wikidata 全覆盖、GeoNames 零增量；提取件 id 空间教训：FR/JP 必须走桥（fr-commune:*/jp-city:*），直接行 csc-city:* 键为幻影（首轮误报 2,180 可填格）
+- 残余缺口 160,472 格 = **长尾**：小市镇在目标语维基无标签、CSC 无译文、GeoNames 无对应语别名、或行无 QID（US ~7k/语、FR ja/ko/ar ~23k/语、JP 无条目市村等）——**五个证据通道全部应用并关闭**；出路 = 离线批量 AI 生成工程（非会话级）或人工贡献；候选层审阅不受阻
 - 已知错误模式残留：**0**（suffix/latin/garbage/混体全部规则化进生成器）
 - 权威汇总文件：`translation_coverage.json`、`verification_p300_batch.json`（selfCorrections 台账）、staged 取数件 `staging/wikidata-fr/fr-labels.json`（CC0，sha256 记录于生成日志）
