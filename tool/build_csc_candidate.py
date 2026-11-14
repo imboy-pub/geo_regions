@@ -646,7 +646,7 @@ def main():
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
         "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
         "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
-        "- RU ja: rule-table Cyrillic->katakana transcriptions "
+        "- RU ja/ko: rule-table Cyrillic->katakana/hangul transcriptions "
         "(machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "

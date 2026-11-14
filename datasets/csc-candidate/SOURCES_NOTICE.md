@@ -5,7 +5,7 @@
 - FR x9 locales: Wikidata P374 community labels fill missing cells (CC0-1.0, staged extract, provisional)
 - US/DE/IT/GB/RU/SA/KR: Wikidata labels joined by the snapshot rows' own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)
 - GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows (CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)
-- RU ja: rule-table Cyrillic->katakana transcriptions (machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)
+- RU ja/ko: rule-table Cyrillic->katakana/hangul transcriptions (machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)
 - FR/JP: CSC upstream translations re-joined through the staged qid->nid bridge for rows the name-matching inheritance missed (ODbL-1.0, provisional)
 - zh-Hant: zh-Hant is s2t-derived machine-candidate + FR wikidata community labels
 - All non-en translations are provisional; AI proof-reading samples do not flip quality words
