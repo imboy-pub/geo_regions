@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9961,
@@ -9843,7 +9843,6 @@
       "csc-city:62287": "provisional",
       "csc-city:62288": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9865,6 +9864,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19809,7 +19809,6 @@
     "csc-city:62287": "Цунгри",
     "csc-city:62288": "Зуни",
     "iso3166-2:IT-21": "Пьемонт",
-    "iso3166-2:IT-23": "Валле-д’Аоста",
     "iso3166-2:IT-25": "Ломбардия",
     "iso3166-2:IT-32": "Трентино-Южный Тироль",
     "iso3166-2:IT-34": "Венето",
@@ -19831,6 +19830,7 @@
     "iso3166-2:IT-AG": "Агридженто",
     "iso3166-2:IT-AL": "Алессандрия",
     "iso3166-2:IT-AN": "Анкона",
+    "iso3166-2:IT-AO": "Валле-д’Аоста",
     "iso3166-2:IT-AP": "Асколи-Пичено",
     "iso3166-2:IT-AQ": "Л'Акуила",
     "iso3166-2:IT-AR": "Ареццо",
@@ -19935,7 +19935,7 @@
     "iso3166-2:IT-VV": "Вибо Валентия"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f7b259caacf36fec",
+  "revision": "l-9617bd81b5881a42",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

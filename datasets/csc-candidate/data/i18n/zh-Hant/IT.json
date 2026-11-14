@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9935,
@@ -9820,7 +9820,6 @@
       "csc-city:62287": "machine-candidate",
       "csc-city:62288": "machine-candidate",
       "iso3166-2:IT-21": "machine-candidate",
-      "iso3166-2:IT-23": "machine-candidate",
       "iso3166-2:IT-25": "machine-candidate",
       "iso3166-2:IT-32": "machine-candidate",
       "iso3166-2:IT-34": "machine-candidate",
@@ -9842,6 +9841,7 @@
       "iso3166-2:IT-AG": "machine-candidate",
       "iso3166-2:IT-AL": "machine-candidate",
       "iso3166-2:IT-AN": "machine-candidate",
+      "iso3166-2:IT-AO": "machine-candidate",
       "iso3166-2:IT-AP": "machine-candidate",
       "iso3166-2:IT-AQ": "machine-candidate",
       "iso3166-2:IT-AR": "machine-candidate",
@@ -19761,7 +19761,6 @@
     "csc-city:62287": "尊格里",
     "csc-city:62288": "祖尼",
     "iso3166-2:IT-21": "皮埃蒙特",
-    "iso3166-2:IT-23": "瓦萊達奧斯塔",
     "iso3166-2:IT-25": "倫巴第",
     "iso3166-2:IT-32": "特倫蒂諾-南蒂羅爾",
     "iso3166-2:IT-34": "威尼托",
@@ -19783,6 +19782,7 @@
     "iso3166-2:IT-AG": "阿格里真托",
     "iso3166-2:IT-AL": "亞歷山德里亞",
     "iso3166-2:IT-AN": "安科納",
+    "iso3166-2:IT-AO": "瓦萊達奧斯塔",
     "iso3166-2:IT-AP": "阿斯科利皮切諾",
     "iso3166-2:IT-AQ": "拉奎拉",
     "iso3166-2:IT-AR": "阿雷佐",
@@ -19886,7 +19886,7 @@
     "iso3166-2:IT-VV": "維博瓦倫蒂亞"
   },
   "protocolVersion": "1.0",
-  "revision": "l-32b2cc8e3fa79c03",
+  "revision": "l-67ae9dc8ed386b00",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

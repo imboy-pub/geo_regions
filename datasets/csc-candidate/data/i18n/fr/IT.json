@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9975,
@@ -9857,7 +9857,6 @@
       "csc-city:62287": "provisional",
       "csc-city:62288": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9879,6 +9878,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19837,7 +19837,6 @@
     "csc-city:62287": "Zungri",
     "csc-city:62288": "Zuni",
     "iso3166-2:IT-21": "Piémont",
-    "iso3166-2:IT-23": "Vallée d'Aoste",
     "iso3166-2:IT-25": "Lombardie",
     "iso3166-2:IT-32": "Trentin-Tyrol du Sud",
     "iso3166-2:IT-34": "Vénétie",
@@ -19859,6 +19858,7 @@
     "iso3166-2:IT-AG": "Agrigente",
     "iso3166-2:IT-AL": "Alexandrie",
     "iso3166-2:IT-AN": "Ancône",
+    "iso3166-2:IT-AO": "Vallée d'Aoste",
     "iso3166-2:IT-AP": "Ascoli Piceno",
     "iso3166-2:IT-AQ": "L'Aquila",
     "iso3166-2:IT-AR": "Arezzo",
@@ -19963,7 +19963,7 @@
     "iso3166-2:IT-VV": "Vibo Valentia"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c3db4d9831fe0eb2",
+  "revision": "l-e63de13fc2d5f791",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

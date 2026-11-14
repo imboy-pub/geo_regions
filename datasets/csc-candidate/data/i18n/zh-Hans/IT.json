@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9935,
@@ -9818,7 +9818,6 @@
       "csc-city:62287": "provisional",
       "csc-city:62288": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9840,6 +9839,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19758,7 +19758,6 @@
     "csc-city:62287": "尊格里",
     "csc-city:62288": "祖尼",
     "iso3166-2:IT-21": "皮埃蒙特",
-    "iso3166-2:IT-23": "瓦莱达奥斯塔",
     "iso3166-2:IT-25": "伦巴第",
     "iso3166-2:IT-32": "特伦蒂诺-南蒂罗尔",
     "iso3166-2:IT-34": "威尼托",
@@ -19780,6 +19779,7 @@
     "iso3166-2:IT-AG": "阿格里真托",
     "iso3166-2:IT-AL": "亚历山德里亚",
     "iso3166-2:IT-AN": "安科纳",
+    "iso3166-2:IT-AO": "瓦莱达奥斯塔",
     "iso3166-2:IT-AP": "阿斯科利皮切诺",
     "iso3166-2:IT-AQ": "拉奎拉",
     "iso3166-2:IT-AR": "阿雷佐",
@@ -19883,7 +19883,7 @@
     "iso3166-2:IT-VV": "维博瓦伦蒂亚"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e21e40e5356bb059",
+  "revision": "l-7b3ef20d5754077d",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

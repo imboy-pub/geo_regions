@@ -38,6 +38,14 @@ TRANSLATION_LOCALES = {"zh-Hans": "zh-CN", "ja": "ja", "ko": "ko", "ru": "ru",
 # Everything lands as machine-candidate — never upstream, never approved.
 # Upstream machine-translation leakage: city names rendered as common nouns
 # (RU "Sistema"→系统, FR "Tagliatelle"→扁面条 …). Dropped; missing stays missing.
+# IT state-code form fix: one retired numeric code → current ISO letter code
+# (Wikidata: IT-AO = provincia di Aosta; CSC used the retired IT-23).
+# NOTE: IT-S5830..S5833 are Sardinian internal-reform consortia (Gallura
+# Nord-Est etc.) whose exact current ISO counterparts need the ISTAT file —
+# mapping them (e.g. S5830 → IT-SU Sud Sardegna) was WRONG and reverted:
+# S5830's entity is Gallura Nord-Est, not Sud Sardegna. OPEN pending ISTAT.
+# Sardinia's four abolished provinces (CI/OG/OT/VS) are correctly ABSENT.
+IT_CODE_FIXES = {"IT-23": "IT-AO"}
 ZH_GARBAGE_DROPS = {
     "csc-city:112126", "csc-city:112127", "csc-city:127553",  # US 钟声/面积
     "fr-commune:2B143",                                        # FR 扁面条
@@ -193,6 +201,8 @@ def main():
             # corrections carry their provenance in the node rows below
         for row in sorted(states_by_cc.get(cc, []), key=lambda r: r["id"]):
             iso_tag = row.get("iso3166_2") or ""
+            if cc == "IT":
+                iso_tag = IT_CODE_FIXES.get(iso_tag, iso_tag)
             nid = f"iso3166-2:{iso_tag}" if iso_tag else f"csc-state:{row['id']}"
             state_ids[row["id"]] = nid
             nodes.append(node(nid, root_id, "subdivision", iso_tag or f"{cc}-S{row['id']}",

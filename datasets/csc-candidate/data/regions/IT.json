@@ -444,8 +444,8 @@
     },
     {
       "childrenStatus": "unknown",
-      "code": "IT-23",
-      "id": "iso3166-2:IT-23",
+      "code": "IT-AO",
+      "id": "iso3166-2:IT-AO",
       "kind": "subdivision",
       "name": "Aosta Valley",
       "nameLocale": "en",
@@ -2220,7 +2220,7 @@
       "name": "Paquier",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -3590,7 +3590,7 @@
       "name": "Perloz",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -4050,7 +4050,7 @@
       "name": "Petit Fenis",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -6610,7 +6610,7 @@
       "name": "Plan d'Introd",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -7250,7 +7250,7 @@
       "name": "Pollein",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -7560,7 +7560,7 @@
       "name": "Pont-Bozet",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -7580,7 +7580,7 @@
       "name": "Pont-Saint-Martin",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -8100,7 +8100,7 @@
       "name": "Pontey",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -10340,7 +10340,7 @@
       "name": "Pré-Saint-Didier",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -10660,7 +10660,7 @@
       "name": "Quart",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -10850,7 +10850,7 @@
       "name": "Quincod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -11910,7 +11910,7 @@
       "name": "Rhêmes-Notre-Dame",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -11920,7 +11920,7 @@
       "name": "Rhêmes-Saint-Georges",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15670,7 +15670,7 @@
       "name": "Saint-Marcel",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15680,7 +15680,7 @@
       "name": "Saint Maurice",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15690,7 +15690,7 @@
       "name": "Saint-Christophe",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15700,7 +15700,7 @@
       "name": "Saint-Denis",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15710,7 +15710,7 @@
       "name": "Saint-Nicolas",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15720,7 +15720,7 @@
       "name": "Saint-Oyen",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15730,7 +15730,7 @@
       "name": "Saint-Pierre",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15740,7 +15740,7 @@
       "name": "Saint-Rhémy-en-Bosses",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -15750,7 +15750,7 @@
       "name": "Saint-Vincent",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -18700,7 +18700,7 @@
       "name": "San Leonardo",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -31680,7 +31680,7 @@
       "name": "Torgnon",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -35150,7 +35150,7 @@
       "name": "Valgrisenche",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -35320,7 +35320,7 @@
       "name": "Valle d'Aosta",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -35730,7 +35730,7 @@
       "name": "Valpelline",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -35760,7 +35760,7 @@
       "name": "Valsavarenche",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -35820,7 +35820,7 @@
       "name": "Valtournenche",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -37030,7 +37030,7 @@
       "name": "Verrayes",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -37040,7 +37040,7 @@
       "name": "Verrès",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -38830,7 +38830,7 @@
       "name": "Villa-Nabian",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -39120,7 +39120,7 @@
       "name": "Villair-Amerique",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -39850,7 +39850,7 @@
       "name": "Ville Sur Sarre",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -39860,7 +39860,7 @@
       "name": "Villefranche",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -39870,7 +39870,7 @@
       "name": "Villeneuve",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -43070,7 +43070,7 @@
       "name": "Allein",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -44020,7 +44020,7 @@
       "name": "Antagnod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -44070,7 +44070,7 @@
       "name": "Antey-Saint-André",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -44210,7 +44210,7 @@
       "name": "Aosta",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -45090,7 +45090,7 @@
       "name": "Arnad",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -45360,7 +45360,7 @@
       "name": "Arvier",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -46030,7 +46030,7 @@
       "name": "Avise",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -46070,7 +46070,7 @@
       "name": "Ayas",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -46080,7 +46080,7 @@
       "name": "Aymavilles",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -47290,7 +47290,7 @@
       "name": "Bard",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -48880,7 +48880,7 @@
       "name": "Berriat",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -49460,7 +49460,7 @@
       "name": "Bionaz",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -52690,7 +52690,7 @@
       "name": "Brusson",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65180,7 +65180,7 @@
       "name": "Challand-Saint-Anselme",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65190,7 +65190,7 @@
       "name": "Challand-Saint-Victor",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65200,7 +65200,7 @@
       "name": "Chambave",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65210,7 +65210,7 @@
       "name": "Chamois",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65220,7 +65220,7 @@
       "name": "Champdepraz",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65230,7 +65230,7 @@
       "name": "Champorcher",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65240,7 +65240,7 @@
       "name": "Charvensod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65250,7 +65250,7 @@
       "name": "Châtillon",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -65260,7 +65260,7 @@
       "name": "Chef-Lieu",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -67320,7 +67320,7 @@
       "name": "Cogne",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -70060,7 +70060,7 @@
       "name": "Courmayeur",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -71920,7 +71920,7 @@
       "name": "Donnas",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -72120,7 +72120,7 @@
       "name": "Doues",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -72460,7 +72460,7 @@
       "name": "Emarèse",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -72790,7 +72790,7 @@
       "name": "Etroubles",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -74810,7 +74810,7 @@
       "name": "Fontainemore",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -76550,7 +76550,7 @@
       "name": "Fénis",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -76610,7 +76610,7 @@
       "name": "Gaby",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -78490,7 +78490,7 @@
       "name": "Gignod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -79520,7 +79520,7 @@
       "name": "Grand Brissogne",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -79780,7 +79780,7 @@
       "name": "Gressan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -79790,7 +79790,7 @@
       "name": "Gressoney-La-Trinité",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -79800,7 +79800,7 @@
       "name": "Gressoney-Saint-Jean",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -80760,7 +80760,7 @@
       "name": "Hône",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81000,7 +81000,7 @@
       "name": "Introd",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81500,7 +81500,7 @@
       "name": "Issime",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81520,7 +81520,7 @@
       "name": "Issogne",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81710,7 +81710,7 @@
       "name": "Jovençan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81780,7 +81780,7 @@
       "name": "La Cretaz-Roisan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81820,7 +81820,7 @@
       "name": "La Magdeleine",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81870,7 +81870,7 @@
       "name": "La Place",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81910,7 +81910,7 @@
       "name": "La Salle",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -81940,7 +81940,7 @@
       "name": "La Thuile",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -82710,7 +82710,7 @@
       "name": "Lassolaz",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -84020,7 +84020,7 @@
       "name": "Lillianes",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -91750,7 +91750,7 @@
       "name": "Mongnod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -92240,7 +92240,7 @@
       "name": "Montan-Angelin-Arensod",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -94630,7 +94630,7 @@
       "name": "Montjovet",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -95000,7 +95000,7 @@
       "name": "Morgex",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -97460,7 +97460,7 @@
       "name": "Nus",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -97930,7 +97930,7 @@
       "name": "Ollomont",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -99460,7 +99460,7 @@
       "name": "Oyace",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -100170,7 +100170,7 @@
       "name": "Brissogne",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -100180,7 +100180,7 @@
       "name": "Pontboset",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -100190,7 +100190,7 @@
       "name": "Roisan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -100200,7 +100200,7 @@
       "name": "Sarre",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:IT-23"
+      "parentId": "iso3166-2:IT-AO"
     },
     {
       "childrenStatus": "unknown",
@@ -103464,7 +103464,7 @@
     }
   ],
   "protocolVersion": "1.0",
-  "revision": "s-35c2e691fdead242",
+  "revision": "s-400d741e2717e473",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

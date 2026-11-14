@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9933,
@@ -9815,7 +9815,6 @@
       "csc-city:62287": "provisional",
       "csc-city:62288": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9837,6 +9836,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19753,7 +19753,6 @@
     "csc-city:62287": "준그리",
     "csc-city:62288": "주니 말",
     "iso3166-2:IT-21": "피에몬테",
-    "iso3166-2:IT-23": "아오스타 밸리",
     "iso3166-2:IT-25": "롬바르디아",
     "iso3166-2:IT-32": "트렌티노-남티롤",
     "iso3166-2:IT-34": "베네토",
@@ -19775,6 +19774,7 @@
     "iso3166-2:IT-AG": "아그리젠토",
     "iso3166-2:IT-AL": "알레산드리아",
     "iso3166-2:IT-AN": "안코나",
+    "iso3166-2:IT-AO": "아오스타 밸리",
     "iso3166-2:IT-AP": "아스콜리 피체노",
     "iso3166-2:IT-AQ": "라퀼라",
     "iso3166-2:IT-AR": "아레초",
@@ -19879,7 +19879,7 @@
     "iso3166-2:IT-VV": "비보 발렌티아"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d4b6d590ded14e92",
+  "revision": "l-b1217ffd862285c8",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

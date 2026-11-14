@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9965,
@@ -9847,7 +9847,6 @@
       "csc-city:62287": "provisional",
       "csc-city:62288": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9869,6 +9868,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19817,7 +19817,6 @@
     "csc-city:62287": "ズングリ",
     "csc-city:62288": "ズニ族",
     "iso3166-2:IT-21": "ピエモンテ",
-    "iso3166-2:IT-23": "ヴァッレ・ダオスタ",
     "iso3166-2:IT-25": "ロンバルディア",
     "iso3166-2:IT-32": "トレンティーノ＝南チロル",
     "iso3166-2:IT-34": "ヴェネト",
@@ -19839,6 +19838,7 @@
     "iso3166-2:IT-AG": "アグリジェント",
     "iso3166-2:IT-AL": "アレッサンドリア",
     "iso3166-2:IT-AN": "アンコーナ",
+    "iso3166-2:IT-AO": "ヴァッレ・ダオスタ",
     "iso3166-2:IT-AP": "アスコリ・ピチェーノ",
     "iso3166-2:IT-AQ": "ラクイラ",
     "iso3166-2:IT-AR": "アレッツォ",
@@ -19943,7 +19943,7 @@
     "iso3166-2:IT-VV": "ヴィボ・ヴァレンティア"
   },
   "protocolVersion": "1.0",
-  "revision": "l-25b9703b52b136ef",
+  "revision": "l-d71e8944d99acd05",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

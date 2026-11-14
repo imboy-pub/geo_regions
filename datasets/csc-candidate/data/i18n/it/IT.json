@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-35c2e691fdead242",
+  "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
     "explicitNames": 9983,
@@ -9865,7 +9865,6 @@
       "csc-state:5832": "provisional",
       "csc-state:5833": "provisional",
       "iso3166-2:IT-21": "provisional",
-      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -9887,6 +9886,7 @@
       "iso3166-2:IT-AG": "provisional",
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
+      "iso3166-2:IT-AO": "provisional",
       "iso3166-2:IT-AP": "provisional",
       "iso3166-2:IT-AQ": "provisional",
       "iso3166-2:IT-AR": "provisional",
@@ -19853,7 +19853,6 @@
     "csc-state:5832": "Medio Campidano",
     "csc-state:5833": "Sulcis Iglesiente",
     "iso3166-2:IT-21": "Piemonte",
-    "iso3166-2:IT-23": "Valle d'Aosta",
     "iso3166-2:IT-25": "Lombardia",
     "iso3166-2:IT-32": "Trentino-Alto Adige",
     "iso3166-2:IT-34": "Veneto",
@@ -19875,6 +19874,7 @@
     "iso3166-2:IT-AG": "Agrigento",
     "iso3166-2:IT-AL": "Alessandria",
     "iso3166-2:IT-AN": "Ancona",
+    "iso3166-2:IT-AO": "Valle d'Aosta",
     "iso3166-2:IT-AP": "Ascoli Piceno",
     "iso3166-2:IT-AQ": "L'Aquila",
     "iso3166-2:IT-AR": "Arezzo",
@@ -19979,7 +19979,7 @@
     "iso3166-2:IT-VV": "Vibo Valentia"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8153f9628e690998",
+  "revision": "l-0f30e904d50a8005",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
