@@ -37,6 +37,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import fr_g2p
+
 OUT = Path("staging/ai-cand/ru-transcriptions.json")  # 4 locales: ja ko de fr
 LOCALE = "ja"  # primary locale (kept for the doc header); ja+ko both emitted
 
@@ -928,8 +931,53 @@ ZH_EVAL = {
 # branch then renders the vowel standalone — acceptable systematic output).
 
 
+def emit_fr_ko(root: Path) -> int:
+    """FR communes (INSEE LIBELLE) -> rule-transcription ko extract."""
+    fails = fr_g2p.selfcheck()
+    if fails:
+        print(f"FR g2p eval fails: {fails}")
+        return 1
+    import csv
+    nodes: dict[str, dict] = {}
+    purity = re.compile(r"[가-힣 ]+")
+    skipped = 0
+    with (root / "staging/FR-insee-cog/commune_depuis_1943.csv").open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["TYPECOM"] not in ("COM", "ARM") or row["DATE_FIN"]:
+                continue
+            name = row["LIBELLE"].strip()
+            try:
+                ko = fr_g2p.transcribe_fr_ko(name)
+            except ValueError:
+                skipped += 1
+                continue
+            if not purity.fullmatch(ko):
+                skipped += 1
+                continue
+            nodes[f"fr-commune:{row['COM']}"] = {"source": name, "labels": {"ko": ko}}
+    document = {
+        "generator": "tool/fr_g2p.py",
+        "ruleVersion": "fr-ko-1",
+        "retrievedAt": "2026-11-14",
+        "quality": "machine-candidate",
+        "humanReviewVerified": False,
+        "license": "self-generated (rule-table transcription, no upstream bytes)",
+        "locales": ["ko"],
+        "nodeCount": len(nodes),
+        "skipped": skipped,
+        "nodes": nodes,
+    }
+    out = root / "staging/ai-cand/fr-transcriptions.json"
+    out.write_text(json.dumps(document, ensure_ascii=False, sort_keys=True,
+                              separators=(",", ":")), encoding="utf-8")
+    print(f"wrote {out} ({out.stat().st_size:,} bytes): nodes={len(nodes)} skipped={skipped}")
+    return 0
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
+    if emit_fr_ko(root) != 0:
+        return 1
     cyr = re.compile(r"[\u0400-\u04FF]")
 
     for name, fn, expected in ([(k, transcribe, v) for k, v in EVAL.items()] +

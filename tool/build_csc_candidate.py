@@ -431,6 +431,8 @@ def main():
             "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
                     "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
                    for loc in ("ja", "ko", "de", "fr", "it", "ar", "zh-Hans")],
+            "FR": [("staging/ai-cand/fr-transcriptions.json", "ko",
+                    "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul transcription, machine-candidate, tool/fr_g2p.py)")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
