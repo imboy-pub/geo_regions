@@ -40,9 +40,8 @@
 多轮修值与官方层切换后，正文中的轮次快照数字已过时。当前实测：
 
 - **节点总数 93,683**（FR 35,040 / JP 1,946 / KR 327 / 其余 CSC 层）
-- 十语覆盖（Wikidata 证据 join：FR=P374 INSEE / JP=P429 dantai / GB/IT/RU/DE=P300 ISO）：en 93,683 (100%) / zh-Hans **81,738** / zh-Hant **81,757** / ja **62,004** / ko **59,167** / ru **71,615** / de **83,496** / fr **83,502** / it **83,498** / ar **60,108**（两轮证据 join 累计闭合 ~176k 缺口格）
-- FR 覆盖明细：zh-Hans 34,360/35,040 (98%)、zh-Hant 34,361、de 35,022、it 35,018、ru 22,555、ja 13,977、ko 11,353、ar 12,604
-- JP 覆盖明细：wikidata overlay 823 节点填充（P429 dantai 74.6% + P300 都道府县 47/47）
-- 残余缺口 165,574 格：全部位于**合成码节点**（csc-city/csc-county 无上游外部码——US 县市、RU 州内区划、DE/IT/GB 市镇、FR ja/ko/ar 维基覆盖极限）→ 后续通道 = AI 生成（seed 先例）或 P131 链式匹配；不阻塞候选层审阅
+- 十语覆盖（三轮 Wikidata 证据 join：FR=P374 INSEE / JP=P429 dantai / GB/IT/RU/DE=P300 ISO / 七国 CSC wikiDataId QID 直取）：en 93,683 (100%) / zh-Hans **83,860** / zh-Hant **83,881** / ja **63,267** / ko **59,762** / ru **72,567** / de **85,560** / fr **85,532** / it **85,514** / ar **61,081**（累计闭合 ~161k 缺口格）
+- QID 直取卷明细：US 提取件 20,051 节点（zh-Hans 17,462/de 18,684/fr 19,757/ru 10,589/ja 11,461/ko 6,921/ar 16,689）、DE 7,370 行 QID 97%、IT 9,896 行 96%、GB 3,460 行 88%、RU 5,878 行 83%
+- 残余缺口 162,123 格 = **长尾**：小市镇在目标语维基无标签且 CSC 无译文、或行无 QID（US ~7.5k/语、FR ja/ko/ar、JP 494 无条目市村等）——证据通道已穷尽；出路 = 离线批量 AI 生成工程（非会话级）或人工贡献；候选层审阅不受阻
 - 已知错误模式残留：**0**（suffix/latin/garbage/混体全部规则化进生成器）
 - 权威汇总文件：`translation_coverage.json`、`verification_p300_batch.json`（selfCorrections 台账）、staged 取数件 `staging/wikidata-fr/fr-labels.json`（CC0，sha256 记录于生成日志）

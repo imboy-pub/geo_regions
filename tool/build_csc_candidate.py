@@ -419,36 +419,58 @@ def main():
         # DE: P300 ISO). Fill-missing only; quality stays provisional
         # (community labels, humanReviewVerified=false).
         WD_STAGED = {
-            "FR": ("staging/wikidata-fr/fr-labels.json",
-                   "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)"),
-            "JP": ("staging/wikidata-cand/jp-labels.json",
-                   "staging/wikidata-cand/jp-labels.json (Wikidata P429 dantai-code + P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
-            "GB": ("staging/wikidata-cand/gb-labels.json",
-                   "staging/wikidata-cand/gb-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
-            "IT": ("staging/wikidata-cand/it-labels.json",
-                   "staging/wikidata-cand/it-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
-            "RU": ("staging/wikidata-cand/ru-labels.json",
-                   "staging/wikidata-cand/ru-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
-            "DE": ("staging/wikidata-cand/de-labels.json",
-                   "staging/wikidata-cand/de-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+            "FR": [("staging/wikidata-fr/fr-labels.json",
+                    "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)")],
+            "JP": [("staging/wikidata-cand/jp-labels.json",
+                    "staging/wikidata-cand/jp-labels.json (Wikidata P429 dantai-code + P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)")],
+            "GB": [("staging/wikidata-cand/gb-labels.json",
+                    "staging/wikidata-cand/gb-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+                   ("staging/wikidata-qid/gb-labels.json",
+                    "staging/wikidata-qid/gb-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "IT": [("staging/wikidata-cand/it-labels.json",
+                    "staging/wikidata-cand/it-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+                   ("staging/wikidata-qid/it-labels.json",
+                    "staging/wikidata-qid/it-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "RU": [("staging/wikidata-cand/ru-labels.json",
+                    "staging/wikidata-cand/ru-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+                   ("staging/wikidata-qid/ru-labels.json",
+                    "staging/wikidata-qid/ru-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "DE": [("staging/wikidata-cand/de-labels.json",
+                    "staging/wikidata-cand/de-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+                   ("staging/wikidata-qid/de-labels.json",
+                    "staging/wikidata-qid/de-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "US": [("staging/wikidata-qid/us-labels.json",
+                    "staging/wikidata-qid/us-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "SA": [("staging/wikidata-qid/sa-labels.json",
+                    "staging/wikidata-qid/sa-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
+            "KR": [("staging/wikidata-qid/kr-labels.json",
+                    "staging/wikidata-qid/kr-labels.json (Wikidata labels by CSC wikiDataId QID, CC0-1.0, tool/fetch_wikidata_by_qid.py)")],
         }
-        if cc in WD_STAGED and (REPO / WD_STAGED[cc][0]).is_file():
-            wd_data = json.loads((REPO / WD_STAGED[cc][0]).read_text(encoding="utf-8"))
+        if cc in WD_STAGED:
             wd_filled = set()
-            for n_row in nodes:
-                nid = n_row["id"]
-                entry = wd_data["nodes"].get(nid)
-                if not entry:
+            wd_refs = []
+            for wd_path, wd_ref in WD_STAGED[cc]:
+                if not (REPO / wd_path).is_file():
                     continue
-                for locale in list(TRANSLATION_LOCALES) + ["zh-Hant"]:
-                    if nid in packs[locale]:
+                wd_data = json.loads((REPO / wd_path).read_text(encoding="utf-8"))
+                for n_row in nodes:
+                    nid = n_row["id"]
+                    entry = wd_data["nodes"].get(nid)
+                    if not entry:
                         continue
-                    label = entry["labels"].get(locale)
-                    if label:
-                        packs[locale][nid] = nfc(label)
-                        wd_filled.add(nid)
-            packs["_wd_filled"] = wd_filled
-            print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled")
+                    for locale in list(TRANSLATION_LOCALES) + ["zh-Hant"]:
+                        if nid in packs[locale]:
+                            continue
+                        label = entry["labels"].get(locale)
+                        if label:
+                            packs[locale][nid] = nfc(label)
+                            wd_filled.add(nid)
+                wd_refs.append(wd_ref)
+            if wd_filled:
+                packs["_wd_filled"] = wd_filled
+                packs["_wd_refs"] = wd_refs
+            print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled, "
+                  f"{len(wd_refs)} staged sources applied")
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,
@@ -458,10 +480,10 @@ def main():
         structure["revision"] = geo.revision("s", nodes)
         geo.write_json(OUT / f"data/regions/{cc}.json", structure)
         for locale in LOCALES:
-            if packs.get("_wd_filled") and cc in WD_STAGED:
-                fr_refs = [CSC_SOURCE, WD_STAGED[cc][1]]
-            else:
-                fr_refs = [CSC_SOURCE]
+            fr_refs = [CSC_SOURCE]
+            if cc == "FR":
+                fr_refs.append(INSEE_SOURCE)
+            fr_refs.extend(packs.get("_wd_refs", []))
             pack = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                     "countryCode": cc, "locale": locale,
                     "compatibleStructureRevision": structure["revision"],
