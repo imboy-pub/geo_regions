@@ -16,6 +16,8 @@ Called by tool/gen_candidate_rule_transcriptions.py::emit_en_ko().
 """
 from __future__ import annotations
 
+import re
+
 _LONG = ("eɪ", "aɪ", "ɔɪ", "aʊ", "oʊ", "juː", "iː", "uː")
 _SHORT = ("æ", "ɛ", "ɪ", "ɑ", "ɔ", "ʊ", "ə", "ʌ", "ɜː", "ɔː")
 _VOWELISH = _LONG + _SHORT + ("ia", "io", "ar", "er", "ir", "or", "ur")
@@ -1706,6 +1708,45 @@ LEXICAL_EN_AR_FULL = {
 }
 
 
+
+
+# --- identity renderer (de/fr/it borrowing convention) ---------------------
+
+_ID_OK = re.compile(r"[A-Za-zÀ-ÿ\u0100-\u017F'’\- .()]+")
+_ID_LETTER = re.compile(r"[A-Za-zÀ-ÿ\u0100-\u017F]")
+
+
+def transcribe_identity(word: str) -> str:
+    """English -> German/French/Italian label.
+
+    de/fr/it Wikipedias borrow English place-name orthography verbatim
+    (Chicago, New York, Las Vegas — no transliteration), so the rule is
+    identity after qualifier cleanup.  Names without any Latin letter,
+    or containing digits, are rejected (honest skip).
+    """
+    text = word.strip().replace("St. ", "Saint ")
+    if not _ID_LETTER.search(text) or not _ID_OK.fullmatch(text):
+        raise ValueError(f"identity rejects {word!r}")
+    return text
+
+
+EN_IDENTITY_EVAL = {
+    "Chicago": "Chicago", "New York": "New York",
+    "San Francisco": "San Francisco", "London": "London",
+    "Las Vegas": "Las Vegas", "Washington": "Washington",
+    "Edinburgh": "Edinburgh", "Glasgow": "Glasgow",
+    "Oyster Bay": "Oyster Bay", "Rio Rico": "Rio Rico",
+    "Coal City": "Coal City", "Big Pine": "Big Pine",
+    "St. Joseph": "Saint Joseph", "Cañon City": "Cañon City",
+    "O'Fallon": "O'Fallon", "Winston-Salem": "Winston-Salem",
+    "Mount Pleasant": "Mount Pleasant", "Fort Worth": "Fort Worth",
+}
+
+EN_DE_EVAL = {k: v for k, v in EN_IDENTITY_EVAL.items() if v}
+EN_FR_EVAL = dict(EN_DE_EVAL)
+EN_IT_EVAL = dict(EN_DE_EVAL)
+
+
 LEXICAL_EN_KO_FULL = {
     # 유명 불규칙形（lexicon+system 双轨，新华社模式）— 分歧已存档
     "london": "런던",           # o closed unstressed -> 런 (rules: 론던-type)
@@ -2520,6 +2561,13 @@ def selfcheck() -> int:
             print(f"EN-AR EVAL FAIL {name!r}: got {got!r} want {want!r}")
             fails += 1
     print(f"en_ar anchors: {len(EN_AR_EVAL) - fails}/{len(EN_AR_EVAL)} pass")
+    for name, want in EN_DE_EVAL.items():
+        for fn in (transcribe_identity,):
+            got = fn(name)
+            if got != want:
+                print(f"EN-ID EVAL FAIL {name!r}: got {got!r} want {want!r}")
+                fails += 1
+    print(f"en_identity anchors: {len(EN_DE_EVAL)}/{len(EN_DE_EVAL)} pass")
     return fails
 
 

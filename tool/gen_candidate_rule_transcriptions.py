@@ -973,7 +973,7 @@ def emit_fr_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko", "ja", "ru", "ar"],
+        "locales": ["ko", "ja", "ru", "ar", "de", "fr", "it"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,
@@ -1003,6 +1003,9 @@ def emit_en_ko(root: Path) -> int:
     purity_ja = re.compile(r"[ァ-ヴー・]+")
     purity_ru = re.compile(r"[А-яЁё\- ]+")
     purity_ar = re.compile(r"[\u0600-\u06FF ]+")
+    purity_de = re.compile(r"[A-Za-zÀ-ÿ\u0100-\u017F'’\- .]+")
+    purity_fr = purity_de
+    purity_it = purity_de
     for cc in ("US", "GB"):
         for kind, prefix in (("cities", "csc-city"), ("counties", "csc-county")):
             path = root / f"staging/csc-snapshot/contributions/{kind}/{cc}.json"
@@ -1029,7 +1032,10 @@ def emit_en_ko(root: Path) -> int:
                         ("ko", en_g2p.transcribe_en_ko, purity_ko),
                         ("ja", en_g2p.transcribe_en_ja, purity_ja),
                         ("ru", en_g2p.transcribe_en_ru, purity_ru),
-                        ("ar", en_g2p.transcribe_en_ar, purity_ar)):
+                        ("ar", en_g2p.transcribe_en_ar, purity_ar),
+                        ("de", en_g2p.transcribe_identity, purity_de),
+                        ("fr", en_g2p.transcribe_identity, purity_fr),
+                        ("it", en_g2p.transcribe_identity, purity_it)):
                     try:
                         value = fn(core)
                     except ValueError:
@@ -1052,7 +1058,7 @@ def emit_en_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko", "ja", "ru", "ar"],
+        "locales": ["ko", "ja", "ru", "ar", "de", "fr", "it"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,

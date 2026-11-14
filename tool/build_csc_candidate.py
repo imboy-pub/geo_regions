@@ -436,10 +436,10 @@ def main():
                    for loc in ("ko", "ja", "ru", "ar")],
             "US": [(f"staging/ai-cand/en-transcriptions.json", loc,
                     "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana transcription, machine-candidate, tool/en_g2p.py)")
-                   for loc in ("ko", "ja", "ru", "ar")],
+                   for loc in ("ko", "ja", "ru", "ar", "de", "fr", "it")],
             "GB": [(f"staging/ai-cand/en-transcriptions.json", loc,
-                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Cyrillic/Arabic transcription, machine-candidate, tool/en_g2p.py)")
-                   for loc in ("ko", "ja", "ru", "ar")],
+                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Cyrillic/Arabic + Latin borrowing transcription, machine-candidate, tool/en_g2p.py)")
+                   for loc in ("ko", "ja", "ru", "ar", "de", "fr", "it")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
