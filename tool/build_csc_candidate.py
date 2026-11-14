@@ -36,6 +36,14 @@ TRANSLATION_LOCALES = {"zh-Hans": "zh-CN", "ja": "ja", "ko": "ko", "ru": "ru",
 # zh-Hant path A (GSA-03 memo): JP kanji direct reuse, KR/other convert from
 # zh-Hans, with explicit fixes for upstream errors found in proof-reading.
 # Everything lands as machine-candidate — never upstream, never approved.
+# Upstream machine-translation leakage: city names rendered as common nouns
+# (RU "Sistema"→系统, FR "Tagliatelle"→扁面条 …). Dropped; missing stays missing.
+ZH_GARBAGE_DROPS = {
+    "csc-city:112126", "csc-city:112127", "csc-city:127553",  # US 钟声/面积
+    "fr-commune:2B143",                                        # FR 扁面条
+    "csc-city:137393",                                         # IT 系列
+    "csc-city:101733", "csc-city:102272", "csc-city:99529",    # RU 系统/上系统/学习管理系统
+}
 ZH_HANT_FIXES = {
     ("KR", "Seoul"): "首爾",
     ("RU", "Jewish"): "猶太自治州",
@@ -183,7 +191,7 @@ def main():
             packs["en"][nid] = nfc(row["name"])
             for locale, key in TRANSLATION_LOCALES.items():
                 value = (row.get("translations") or {}).get(key)
-                if value:
+                if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
 
         for row in sorted(counties_by_cc.get(cc, []), key=lambda r: r["id"]):
@@ -194,7 +202,7 @@ def main():
             packs["en"][nid] = nfc(row["name"])
             for locale, key in TRANSLATION_LOCALES.items():
                 value = (row.get("translations") or {}).get(key)
-                if value:
+                if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
 
         county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
@@ -212,7 +220,7 @@ def main():
                              or csc_idx.get(en_name.lower()) or {})
                 for locale, key in TRANSLATION_LOCALES.items():
                     value = inherited.get(key)
-                    if value:
+                    if value and nid not in ZH_GARBAGE_DROPS:
                         packs[locale][nid] = nfc(value)
             stats_jp_note = {"jpMunisGeolonia": len(jp_munis)}
             # JP uses no CSC city rows
@@ -268,7 +276,7 @@ def main():
                 packs["en"][nid] = nfc(row["LIBELLE"])
                 for locale, key in TRANSLATION_LOCALES.items():
                     v = (csc_idx.get(row["NCCENR"].lower()) or csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
-                    if v:
+                    if v and nid not in ZH_GARBAGE_DROPS:
                         packs[locale][nid] = nfc(v)
             cities_by_cc[cc] = []
             counties_by_cc[cc] = []

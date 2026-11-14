@@ -17080,7 +17080,7 @@
     "csc-city:59594": "龍切洛",
     "csc-city:59595": "龍基瓦爾蘇加納",
     "csc-city:59596": "龍基-代萊焦納里",
-    "csc-city:59597": "钟樓",
+    "csc-city:59597": "鐘樓",
     "csc-city:59598": "龍基斯",
     "csc-city:59599": "龍奇廖內",
     "csc-city:59600": "朗科",
@@ -19888,7 +19888,7 @@
     "iso3166-2:IT-VV": "維博瓦倫蒂亞"
   },
   "protocolVersion": "1.0",
-  "revision": "l-eb94066c1b86684a",
+  "revision": "l-0b5ab0d20516be46",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

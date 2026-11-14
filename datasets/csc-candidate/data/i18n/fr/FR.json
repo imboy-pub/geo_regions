@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10688,
-    "missingNames": 24352,
+    "explicitNames": 10687,
+    "missingNames": 24353,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2543,7 +2543,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13236,7 +13235,6 @@
     "fr-commune:2B137": "Lano",
     "fr-commune:2B138": "Lavatoggio",
     "fr-commune:2B140": "Lento",
-    "fr-commune:2B143": "Linguizzetta",
     "fr-commune:2B145": "Loreto-di-Casinca",
     "fr-commune:2B147": "Lozzi",
     "fr-commune:2B148": "Lucciana",
@@ -21389,7 +21387,7 @@
     "fr-region:94": "Corse"
   },
   "protocolVersion": "1.0",
-  "revision": "l-da58147da8fa1dc8",
+  "revision": "l-fe1d3640ff5b934a",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

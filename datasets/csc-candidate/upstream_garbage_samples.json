@@ -1,0 +1,50 @@
+[
+ {
+  "cc": "US",
+  "locale": "zh-Hans",
+  "id": "csc-city:112126",
+  "value": "钟声"
+ },
+ {
+  "cc": "US",
+  "locale": "zh-Hans",
+  "id": "csc-city:112127",
+  "value": "钟声"
+ },
+ {
+  "cc": "US",
+  "locale": "zh-Hans",
+  "id": "csc-city:127553",
+  "value": "面积"
+ },
+ {
+  "cc": "FR",
+  "locale": "zh-Hans",
+  "id": "fr-commune:2B143",
+  "value": "扁面条"
+ },
+ {
+  "cc": "IT",
+  "locale": "zh-Hans",
+  "id": "csc-city:137393",
+  "value": "系列"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:101733",
+  "value": "系统"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:102272",
+  "value": "上系统"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:99529",
+  "value": "学习管理系统"
+ }
+]

@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10647,
-    "missingNames": 24393,
+    "explicitNames": 10646,
+    "missingNames": 24394,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2538,7 +2538,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13190,7 +13189,6 @@
     "fr-commune:2B137": "Лано",
     "fr-commune:2B138": "Лаватоджо",
     "fr-commune:2B140": "Ленто",
-    "fr-commune:2B143": "Лингуиццетта",
     "fr-commune:2B145": "Лорето-ди-Казинка",
     "fr-commune:2B147": "Лоцци",
     "fr-commune:2B148": "Луччиана",
@@ -21307,7 +21305,7 @@
     "fr-region:94": "Корсика"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c5d99cbf9b0487ed",
+  "revision": "l-d1d5b1a394ce71aa",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

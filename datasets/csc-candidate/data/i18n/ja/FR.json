@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10619,
-    "missingNames": 24421,
+    "explicitNames": 10618,
+    "missingNames": 24422,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2529,7 +2529,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13153,7 +13152,6 @@
     "fr-commune:2B137": "ラノ",
     "fr-commune:2B138": "ラヴァトッジョ",
     "fr-commune:2B140": "レント",
-    "fr-commune:2B143": "リンギゼッタ",
     "fr-commune:2B145": "ロレト・ディ・カシンカ",
     "fr-commune:2B147": "ロッツィ",
     "fr-commune:2B148": "ルシアナ",
@@ -21251,7 +21249,7 @@
     "fr-region:94": "コルシカ島"
   },
   "protocolVersion": "1.0",
-  "revision": "l-464d36ba9ea42d25",
+  "revision": "l-a6b38b08144044e4",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

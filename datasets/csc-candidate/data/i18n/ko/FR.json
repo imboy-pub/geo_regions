@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10600,
-    "missingNames": 24440,
+    "explicitNames": 10599,
+    "missingNames": 24441,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2525,7 +2525,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13130,7 +13129,6 @@
     "fr-commune:2B137": "라노",
     "fr-commune:2B138": "라바토지오",
     "fr-commune:2B140": "렌토",
-    "fr-commune:2B143": "링귀제타",
     "fr-commune:2B145": "로레토-디-카신카",
     "fr-commune:2B147": "로지",
     "fr-commune:2B148": "루치아나",
@@ -21213,7 +21211,7 @@
     "fr-region:94": "코르스"
   },
   "protocolVersion": "1.0",
-  "revision": "l-521b387621bbea6c",
+  "revision": "l-132c5bb45bd62b8d",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

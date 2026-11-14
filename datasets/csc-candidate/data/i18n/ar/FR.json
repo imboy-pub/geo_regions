@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10582,
-    "missingNames": 24458,
+    "explicitNames": 10581,
+    "missingNames": 24459,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2522,7 +2522,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13109,7 +13108,6 @@
     "fr-commune:2B137": "لانو",
     "fr-commune:2B138": "لافاتوجيو",
     "fr-commune:2B140": "لينتو",
-    "fr-commune:2B143": "لينغيزيتا",
     "fr-commune:2B145": "لوريتو دي كاسينكا",
     "fr-commune:2B147": "لوزي",
     "fr-commune:2B148": "لوسيانا",
@@ -21177,7 +21175,7 @@
     "fr-region:94": "كورس"
   },
   "protocolVersion": "1.0",
-  "revision": "l-ec5e18a70fe86bb9",
+  "revision": "l-8e4e6720a41b1e55",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

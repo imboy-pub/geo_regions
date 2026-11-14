@@ -497,7 +497,7 @@
     "csc-city:65416": "鎮川郡",
     "csc-city:65417": "珍島郡",
     "csc-city:65418": "晋州市",
-    "csc-city:65419": "钟路區",
+    "csc-city:65419": "鐘路區",
     "csc-city:65420": "中區",
     "csc-city:65421": "中區",
     "csc-city:65422": "中區",
@@ -666,7 +666,7 @@
     "iso3166-2:KR-50": "世宗特别行政區"
   },
   "protocolVersion": "1.0",
-  "revision": "l-0d45af13626308e4",
+  "revision": "l-a817cfe14737535c",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

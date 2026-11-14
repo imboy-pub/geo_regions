@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10685,
-    "missingNames": 24355,
+    "explicitNames": 10684,
+    "missingNames": 24356,
     "status": "research-seed",
     "translationQualityById": {
       "fr-commune:01004": "provisional",
@@ -2543,7 +2543,6 @@
       "fr-commune:2B137": "provisional",
       "fr-commune:2B138": "provisional",
       "fr-commune:2B140": "provisional",
-      "fr-commune:2B143": "provisional",
       "fr-commune:2B145": "provisional",
       "fr-commune:2B147": "provisional",
       "fr-commune:2B148": "provisional",
@@ -13233,7 +13232,6 @@
     "fr-commune:2B137": "拉诺",
     "fr-commune:2B138": "拉瓦托焦",
     "fr-commune:2B140": "慢板",
-    "fr-commune:2B143": "扁面条",
     "fr-commune:2B145": "洛雷托迪卡辛卡",
     "fr-commune:2B147": "洛齐",
     "fr-commune:2B148": "卢恰娜",
@@ -21383,7 +21381,7 @@
     "fr-region:94": "科西嘉"
   },
   "protocolVersion": "1.0",
-  "revision": "l-7e9434f0ff8c8bd6",
+  "revision": "l-7a4a1165249544c7",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

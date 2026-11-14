@@ -20056,8 +20056,8 @@
     "csc-city:112123": "貝爾莫爾",
     "csc-city:112124": "貝爾羅斯菲爾斯",
     "csc-city:112125": "貝爾波特",
-    "csc-city:112126": "钟声",
-    "csc-city:112127": "钟声",
+    "csc-city:112126": "鐘声",
+    "csc-city:112127": "鐘声",
     "csc-city:112128": "貝爾維尤",
     "csc-city:112129": "貝爾維爾",
     "csc-city:112130": "貝爾伍德",
@@ -38146,7 +38146,7 @@
     "iso3166-2:US-WY": "懷俄明州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-44ffc98f1d212be3",
+  "revision": "l-110aa4bab380d035",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
