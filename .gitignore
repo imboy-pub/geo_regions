@@ -20,6 +20,16 @@ demo/flutter/.flutter-plugins-dependencies
 # Transient task packages (workspace policy: never committed to any repo)
 _task_packages/
 
+# Candidate-dataset derived body: regenerate with tool/build_csc_candidate.py
+# (真源 = generator + staging/csc-snapshot; only documents & evidence stay in git)
+datasets/csc-candidate/data/
+datasets/csc-candidate/config/
+datasets/csc-candidate/proofreading_samples.json
+datasets/csc-candidate/proofreading_samples_cities.json
+datasets/csc-candidate/proofreading_states_round3.json
+datasets/csc-candidate/translation_coverage.json
+datasets/csc-candidate/catalog_root_consistency.json
+
 # Local secrets and machine metadata
 .env
 .env.*
