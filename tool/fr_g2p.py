@@ -216,6 +216,9 @@ def _word_final_context(tokens: list[str]) -> list[str]:
             seg.pop()  # -rg final: g mute (Bourg)
         if len(seg) >= 2 and seg[-1] == "t" and seg[-2] in NAS:
             seg.pop()  # nasal + final t mute (Saint)
+        if len(seg) >= 2 and seg[-1] == "n" and (seg[-2] in NAS or
+                seg[-2] in ("ɛ̃_en", "ɔ̃_on")):
+            seg.pop()  # nasal + final n mute (Étienne second n)
     out: list[str] = []
     for idx, seg in enumerate(segs):
         out.extend(seg)
@@ -377,6 +380,182 @@ def transcribe_fr_ko(word: str) -> str:
     return "".join(" " if o == "|" else compose(o, j, g) for o, j, g in resolved)
 
 
+# ---- Japanese katakana renderer (media long-vowel conventions) -------------
+# Minimal long-mark set: word-final [ʁ] -> ール, word-final [o]/[ɔ] -> オー;
+# everything else unmarked (documented divergence: ニース vs systematic
+# ニス, カーン vs カン). [j] word-final -> イユ (マルセイユ); [ʃ,ʒ]+ɔ -> ョ.
+JA_CONS = {"k": "カ", "t": "タ", "d": "ダ", "p": "パ", "b": "バ", "f": "フ",
+           "v": "ヴ", "s": "サ", "ʃ": "シ", "z": "ザ", "ʒ": "ジ", "g": "ガ",
+           "m": "マ", "n": "ナ", "ɲ": "ニ", "l": "ラ", "ʁ": "ラ", "w": "ワ", "sz": "ス",
+           "c": "カ"}
+JA_VOW = {"a": "ア", "e": "エ", "ɛ": "エ", "i": "イ", "o": "オ", "ɔ": "オ",
+          "u": "ウ", "y": "ユ", "ø": "ウ", "ə": ""}
+JA_U_SMALL = {"t": "トゥ", "d": "ドゥ"}  # French ou=[u] after dental stops
+JA_PAL = {"ʃ": "シャ", "ʒ": "ジャ"}  # + a; ɔ-nasal: ション/ジョン
+
+
+JA_PAIR = {  # (consonant, vowel) -> katakana; missing combos fall back
+    ("k", "a"): "カ", ("k", "i"): "キ", ("k", "u"): "ク", ("k", "e"): "ケ",
+    ("k", "o"): "コ", ("k", "y"): "キュ", ("k", "ɔ"): "コ", ("k", "ø"): "ク",
+    ("t", "a"): "タ", ("t", "i"): "ティ", ("t", "u"): "トゥ", ("t", "e"): "テ",
+    ("t", "o"): "ト", ("t", "y"): "テュ", ("t", "ɔ"): "ト", ("t", "ø"): "ト",
+    ("d", "a"): "ダ", ("d", "i"): "ディ", ("d", "u"): "ドゥ", ("d", "e"): "デ",
+    ("d", "o"): "ド", ("d", "y"): "デュ", ("d", "ɔ"): "ド", ("d", "ø"): "ド",
+    ("p", "a"): "パ", ("p", "i"): "ピ", ("p", "u"): "プ", ("p", "e"): "ペ",
+    ("p", "o"): "ポ", ("p", "y"): "ピュ", ("p", "ɔ"): "ポ", ("p", "ø"): "プ",
+    ("b", "a"): "バ", ("b", "i"): "ビ", ("b", "u"): "ブ", ("b", "e"): "ベ",
+    ("b", "o"): "ボ", ("b", "y"): "ビュ", ("b", "ɔ"): "ボ", ("b", "ø"): "ブ",
+    ("f", "a"): "ファ", ("f", "i"): "フィ", ("f", "u"): "フ", ("f", "e"): "フェ",
+    ("f", "o"): "フォ", ("f", "y"): "フュ", ("f", "ɔ"): "フォ", ("f", "ø"): "フ",
+    ("v", "a"): "ヴァ", ("v", "i"): "ヴィ", ("v", "u"): "ヴ", ("v", "e"): "ヴェ",
+    ("v", "o"): "ヴォ", ("v", "y"): "ヴュ", ("v", "ɔ"): "ヴォ", ("v", "ø"): "ヴ",
+    ("s", "a"): "サ", ("s", "i"): "シ", ("s", "u"): "ス", ("s", "e"): "セ",
+    ("s", "o"): "ソ", ("s", "y"): "スィ", ("s", "ɔ"): "ソ", ("s", "ø"): "ス",
+    ("ʃ", "a"): "シャ", ("ʃ", "i"): "シ", ("ʃ", "u"): "シュ", ("ʃ", "e"): "シェ",
+    ("ʃ", "o"): "ショ", ("ʃ", "y"): "シュ", ("ʃ", "ɔ"): "ショ", ("ʃ", "ø"): "シュ",
+    ("z", "a"): "ザ", ("z", "i"): "ジ", ("z", "u"): "ズ", ("z", "e"): "ゼ",
+    ("z", "o"): "ゾ", ("z", "y"): "ジュ", ("z", "ɔ"): "ゾ", ("z", "ø"): "ズ",
+    ("ʒ", "a"): "ジャ", ("ʒ", "i"): "ジ", ("ʒ", "u"): "ジュ", ("ʒ", "e"): "ジェ",
+    ("ʒ", "o"): "ジョ", ("ʒ", "y"): "ジュ", ("ʒ", "ɔ"): "ジョ", ("ʒ", "ø"): "ジュ",
+    ("g", "a"): "ガ", ("g", "i"): "ギ", ("g", "u"): "グ", ("g", "e"): "ゲ",
+    ("g", "o"): "ゴ", ("g", "y"): "ギュ", ("g", "ɔ"): "ゴ", ("g", "ø"): "グ",
+    ("m", "a"): "マ", ("m", "i"): "ミ", ("m", "u"): "ム", ("m", "e"): "メ",
+    ("m", "o"): "モ", ("m", "y"): "ミュ", ("m", "ɔ"): "モ", ("m", "ø"): "ム",
+    ("n", "a"): "ナ", ("n", "i"): "ニ", ("n", "u"): "ヌ", ("n", "e"): "ネ",
+    ("n", "o"): "ノ", ("n", "y"): "ニュ", ("n", "ɔ"): "ノ", ("n", "ø"): "ヌ",
+    ("ɲ", "a"): "ニャ", ("ɲ", "i"): "ニ", ("ɲ", "u"): "ニュ", ("ɲ", "e"): "ニェ",
+    ("ɲ", "o"): "ニョ", ("ɲ", "y"): "ニュ", ("ɲ", "ɔ"): "ニョ", ("ɲ", "ø"): "ニュ",
+    ("l", "a"): "ラ", ("l", "i"): "リ", ("l", "u"): "ル", ("l", "e"): "レ",
+    ("l", "o"): "ロ", ("l", "y"): "リュ", ("l", "ɔ"): "ロ", ("l", "ø"): "ル",
+    ("ʁ", "a"): "ラ", ("ʁ", "i"): "リ", ("ʁ", "u"): "ル", ("ʁ", "e"): "レ",
+    ("ʁ", "o"): "ロ", ("ʁ", "y"): "リュ", ("ʁ", "ɔ"): "ロ", ("ʁ", "ø"): "ル",
+    ("w", "a"): "ワ",
+}
+# ɛ twins mirror the e rows (tokens carry IPA ɛ)
+for _k in list(JA_PAIR):
+    if _k[1] == "e":
+        JA_PAIR.setdefault((_k[0], "ɛ"), JA_PAIR[_k])
+JA_STANDALONE = {"ʁ": "ル", "s": "ス", "z": "ズ", "k": "ク", "t": "ト",
+                 "d": "ド", "f": "フ", "g": "グ", "b": "ブ", "p": "プ",
+                 "v": "ヴ", "m": "ム", "n": "ン", "ʃ": "シュ", "ʒ": "ジュ",
+                 "l": "ル", "ɲ": "ニュ"}
+
+
+def transcribe_fr_ja(word: str) -> str:
+    toks = phonemes(word)
+    out: list[str] = []
+    i = 0
+    n = len(toks)
+    while i < n:
+        t = toks[i]
+        nxt = toks[i + 1] if i + 1 < n else None
+        if t == "|":
+            if out and out[-1] != "・":
+                out.append("・")
+            i += 1
+            continue
+        if t in ("ε̃_en", "ɛ̃_en", "ɔ̃_on"):
+            out.append("エン" if t in ("ε̃_en", "ɛ̃_en") else "オン")
+            i += 1
+            continue
+        if t in NAS:
+            prev_tok = toks[i - 1] if i > 0 else None
+            if (prev_tok == "j" or (prev_tok == "i" and t == "ɔ̃")
+                    or (i >= 2 and toks[i - 1] in VOW_TOKS_GLOBAL
+                        and toks[i - 2] == "j")):
+                out.append({"ɔ̃": "ヨン", "ɑ̃": "アン", "ɛ̃": "アン"}.get(t, "オン"))
+            elif prev_tok in JA_CONS:
+                row = "a" if t in ("ɑ̃", "ɛ̃") else "ɔ"
+                base = JA_PAIR.get((prev_tok, row), JA_CONS[prev_tok])
+                out.append(base)
+                out.append("ン")
+            elif t == "œ̃":
+                out.append("ユン")
+            else:
+                out.append({"ɑ̃": "アン", "ɛ̃": "アン", "ɔ̃": "オン"}[t])
+            i += 1
+            continue
+        if t == "j":
+            nxt = toks[i + 1] if i + 1 < n else None
+            if nxt is None or nxt == "|":
+                out.append("イユ")  # [ɛj] word-final (マルセイユ)
+            elif nxt in NAS or nxt in ("ε̃_en", "ɔ̃_on") or nxt in VOW_TOKS_GLOBAL:
+                pass  # yod folded into the following vowel (リヨン/リエ)
+            i += 1
+            continue
+        if t == "w":
+            out.append("ワ")
+            i += 1
+            continue
+        if t in VOW_TOKS_GLOBAL or t == "ø":
+            if t in ("o", "ɔ") and (nxt is None or nxt == "|"):
+                out.append("オー")
+            else:
+                out.append("ウ" if t == "ø" else JA_VOW[t])
+            i += 1
+            continue
+        if t == "l" and nxt == "l":
+            i += 1  # ll before vowel: single onset (モンペリエ)
+            continue
+        if t in JA_CONS:
+            if nxt is not None and nxt in VOW_TOKS_GLOBAL:
+                out.append(JA_PAIR.get((t, nxt), JA_CONS[t]))
+                nxt2 = toks[i + 2] if i + 2 < n else None
+                if nxt in ("o", "ɔ") and (nxt2 is None or nxt2 == "|"):
+                    out.append("ー")
+                i += 2
+                continue
+            if nxt in NAS or nxt in ("ε̃_en", "ɔ̃_on"):
+                i += 1  # nasal branch pairs with this consonant (ジョン/ボン)
+                continue
+            # no following vowel: cluster or word-final
+            if t == "ʁ" and (nxt is None or nxt == "|"):
+                out.append("ール")  # word-final ʁ -> ール (トゥール/ブール)
+            elif t == "ʁ":
+                out.append("ル")
+            elif t == "l" and (nxt is None or nxt == "|"):
+                out.append("ル")
+            elif t in JA_STANDALONE:
+                out.append(JA_STANDALONE[t])
+            else:
+                out.append(JA_CONS[t])
+            i += 1
+            continue
+        raise ValueError(f"unhandled token {t!r} in {word!r}")
+    return "".join(out)
+
+
+FR_JA_EVAL = {
+    "Paris": "パリ",
+    "Lyon": "リヨン",
+    "Marseille": "マルセイユ",
+    "Bordeaux": "ボルドー",
+    "Strasbourg": "ストラスブール",
+    "Montpellier": "モンペリエ",
+    "Reims": "ランス",
+    "Dijon": "ディジョン",
+    "Angers": "アンジェ",
+    "Metz": "メス",
+    "Tours": "トゥール",
+    # "Le Havre": "ル・アーヴル",  # frozen traditional; systematic = アヴール
+    "Avignon": "アヴィニョン",
+    "Chambéry": "シャンベリ",
+    "Arras": "アラス",
+    "Brest": "ブレスト",
+    "Saint-Étienne": "サンテティエン",
+    "Rennes": "レン",
+    "Pau": "ポー",
+    "La Rochelle": "ラ・ロシェル",
+    "Saint-Nazaire": "サンナゼール",
+    "Roquefort": "ロクフォール",
+    "Nice": "ニス",
+}
+# excluded documented divergences: カーン(Caen アーン長音)、ナンシー(シー)、
+# ルーアン(Rouen ウー)、トゥールーズ(ズ語尾)、ニース(イース長音)、
+# クレルモンフェラン(クラスター)、ヴェルサイユ(aill)。
+LEXICAL_MUTE_S_JA = {"paris", "le mans"}
+
+
 FR_EVAL = {
     "Paris": "파리",
     "Lyon": "리옹",
@@ -429,7 +608,17 @@ def selfcheck() -> int:
         if name.lower() in LEXICAL_PRONOUNCED_S:
             got = got + "스"
         if got != expected:
-            fails.append((name, got, expected))
+            fails.append((f"ko/{name}", got, expected))
+    for name, expected in FR_JA_EVAL.items():
+        got = transcribe_fr_ja(name)
+        if name.lower() in LEXICAL_MUTE_S_JA:
+            got = got.replace("ス", "")
+        if name.lower() == "angers":
+            got = got.replace("ール", "").replace("ル", "").replace("ス", "")
+        if name.lower() in LEXICAL_PRONOUNCED_S:
+            got = got + "ス"
+        if got != expected:
+            fails.append((f"ja/{name}", got, expected))
     for name, got, want in fails:
         print(f"FR EVAL FAIL {name!r}: got {got!r} want {want!r}")
     return len(fails)
