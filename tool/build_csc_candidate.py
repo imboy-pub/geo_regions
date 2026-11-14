@@ -93,7 +93,6 @@ ZH_HANT_FIXES = {
 INSEE_SOURCE = "staging/FR-insee-cog (INSEE Code Officiel Geographique millesime 2026, Licence Ouverte 2.0, current as of 2026-01-01)"
 GEOLONIA_SOURCE = "staging/JP-geolonia (japanese-addresses-v2 ja.json, CC-BY-4.0, generated 2024-12-25; municipalities stable through 2026)"
 CSC_SOURCE = "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
-WD_FR_SOURCE = "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)"
 CLDR_SOURCE = "_task_packages/geo_regions_source_audit_2026-11-13/data/catalog_i18n (CLDR 49 pinned, Unicode-3.0)"
 
 
@@ -414,17 +413,31 @@ def main():
                 packs["zh-Hans"][nid] = nfc(fixed)
                 packs.setdefault("_zh_fixed", {})[nid] = True
 
-        # Wikidata P374 community-label overlay (CC0, staged extract): fills
-        # the 9 translation locales for FR nodes whose INSEE code matches —
-        # the largest candidate gap (FR x9 ~220k cells) with community
-        # evidence instead of generation. Fill-missing only; quality stays
-        # provisional (community labels, humanReviewVerified=false).
-        if cc == "FR" and (REPO / "staging/wikidata-fr/fr-labels.json").is_file():
-            wd_fr = json.loads((REPO / "staging/wikidata-fr/fr-labels.json").read_text(encoding="utf-8"))
+        # Wikidata community-label overlays (CC0, staged extracts): fill the
+        # 9 translation locales where a node's external code matches an
+        # upstream record (FR: P374 INSEE; JP: P429 dantai + P300; GB/IT/RU/
+        # DE: P300 ISO). Fill-missing only; quality stays provisional
+        # (community labels, humanReviewVerified=false).
+        WD_STAGED = {
+            "FR": ("staging/wikidata-fr/fr-labels.json",
+                   "staging/wikidata-fr/fr-labels.json (Wikidata P374 INSEE-code label join, CC0-1.0, tool/fetch_wikidata_fr_labels.py)"),
+            "JP": ("staging/wikidata-cand/jp-labels.json",
+                   "staging/wikidata-cand/jp-labels.json (Wikidata P429 dantai-code + P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+            "GB": ("staging/wikidata-cand/gb-labels.json",
+                   "staging/wikidata-cand/gb-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+            "IT": ("staging/wikidata-cand/it-labels.json",
+                   "staging/wikidata-cand/it-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+            "RU": ("staging/wikidata-cand/ru-labels.json",
+                   "staging/wikidata-cand/ru-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+            "DE": ("staging/wikidata-cand/de-labels.json",
+                   "staging/wikidata-cand/de-labels.json (Wikidata P300 label join, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)"),
+        }
+        if cc in WD_STAGED and (REPO / WD_STAGED[cc][0]).is_file():
+            wd_data = json.loads((REPO / WD_STAGED[cc][0]).read_text(encoding="utf-8"))
             wd_filled = set()
             for n_row in nodes:
                 nid = n_row["id"]
-                entry = wd_fr["nodes"].get(nid)
+                entry = wd_data["nodes"].get(nid)
                 if not entry:
                     continue
                 for locale in list(TRANSLATION_LOCALES) + ["zh-Hant"]:
@@ -435,7 +448,7 @@ def main():
                         packs[locale][nid] = nfc(label)
                         wd_filled.add(nid)
             packs["_wd_filled"] = wd_filled
-            print(f"FR wikidata overlay: {len(wd_filled)} nodes filled")
+            print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled")
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,
@@ -445,7 +458,10 @@ def main():
         structure["revision"] = geo.revision("s", nodes)
         geo.write_json(OUT / f"data/regions/{cc}.json", structure)
         for locale in LOCALES:
-            fr_refs = ([CSC_SOURCE, WD_FR_SOURCE] if cc == "FR" and packs.get("_wd_filled") else [CSC_SOURCE])
+            if packs.get("_wd_filled") and cc in WD_STAGED:
+                fr_refs = [CSC_SOURCE, WD_STAGED[cc][1]]
+            else:
+                fr_refs = [CSC_SOURCE]
             pack = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                     "countryCode": cc, "locale": locale,
                     "compatibleStructureRevision": structure["revision"],

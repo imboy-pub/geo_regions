@@ -59,4 +59,4 @@ audited CSC snapshot with official 2026 layers for FR (INSEE) and JP (Geolonia))
   data lives only in the product layer. Any adoption goes through
   `docs/UPDATE_RUNBOOK.md` contracts.
 
-Ten-locale coverage (after the Wikidata P374 INSEE join for FR): en 100%, zh-Hans 80,913 / zh-Hant 80,931 / de 82,673 / fr 82,679 / it 82,675 / ru 70,792 / ja 61,181 / ko 58,344 / ar 59,313 of 93,683 — all provisional with honest quality words (`humanReviewVerified=false`); FR community labels are CC0, staged extract not committed.
+Ten-locale coverage (after two Wikidata evidence rounds: FR P374 INSEE, JP P429 dantai, GB/IT/RU/DE P300 ISO): en 100%, zh-Hans 81,738 / zh-Hant 81,757 / de 83,496 / fr 83,502 / it 83,498 / ru 71,615 / ja 62,004 / ko 59,167 / ar 60,108 of 93,683 — all provisional with honest quality words (`humanReviewVerified=false`); community labels are CC0, staged extracts not committed. Residual 165,574 cells sit on synthetic-code nodes (no upstream external code) — AI-generation or P131 chain-matching track, queued.
