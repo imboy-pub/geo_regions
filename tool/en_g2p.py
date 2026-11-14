@@ -146,13 +146,16 @@ def _resolve_plain(sub: list[str]) -> list[str]:
     # magic-e pre-pass: lake -> [l, eɪ, k] (C stays word-final; e dropped)
     for j in range(len(sub) - 2):
         v = sub[j]
-        if v in _MAGIC and sub[j + 1] in "bdfglkmnpsvz" \
+        if j == 1 and sub[0] == "wh":
+            continue                                  # wh+magic handled below
+        if v in _MAGIC and sub[j + 1] in "bcdfglkmpstvz" \
                 and sub[j + 2] == "e":
+            soft_c = sub[j + 1] == "c"
             if j + 3 == len(sub):
-                sub = sub[:j] + [_MAGIC[v], sub[j + 1]]
+                sub = sub[:j] + [_MAGIC[v], "s" if soft_c else sub[j + 1]]
                 break
             if j + 4 == len(sub) and sub[j + 3] == "s":
-                sub = sub[:j] + [_MAGIC[v], sub[j + 1], "s"]
+                sub = sub[:j] + [_MAGIC[v], "s" if soft_c else sub[j + 1], "s"]
                 break
     # silent word-final e: doubled/palatal clusters (ville/cambridge-type)
     if len(sub) >= 2 and sub[-1] == "e":
@@ -167,17 +170,17 @@ def _resolve_plain(sub: list[str]) -> list[str]:
         nxt = sub[i + 1] if i + 1 < n else None
         nxt2 = sub[i + 2] if i + 2 < n else None
         prev = out[-1] if out else None
-        if tok in _MAGIC and nxt and nxt in "bdfglkmnpsvz" \
+        if tok in _MAGIC and nxt and nxt in "bcdfglkmpstvz" \
                 and nxt2 == "e" and i + 3 >= n:
             out.append(_MAGIC[tok])               # lake 레이크-type
             i += 3
             continue
-        if tok in _MAGIC and nxt and nxt in "bdfglkmnpsvz" \
+        if tok in _MAGIC and nxt and nxt in "bcdfglkmpstvz" \
                 and nxt2 == "e" and i + 3 == n - 1 and sub[n - 1] == "s":
             out.append(_MAGIC[tok])               # lakes 레이크스-type
             i += 4
             continue
-        if tok in _MAGIC and nxt and nxt in "bdfglkmnpsvz" \
+        if tok in _MAGIC and nxt and nxt in "bcdfglkmpstvz" \
                 and nxt2 == "l" and i + 3 == n - 1 and sub[n - 1] == "e":
             out.append(_MAGIC[tok])               # table 테이블-type
             i += 1
@@ -330,12 +333,9 @@ def _resolve_plain(sub: list[str]) -> list[str]:
             i += 1
             continue
         if tok == "wh" and nxt in _MAGIC and i + 3 <= n \
-                and sub[i + 2] in "bdfglkmnpsvz" and sub[i + 2] != "r":
-            out.extend(("wA", "ɪ"))                        # white 화이트
-            if i + 4 == n and sub[i + 3] == "s":
-                i += 4                                     # whites-type
-            else:
-                i += 3
+                and sub[i + 2] in "bcdfglkmpstvz" and sub[i + 2] != "r":
+            out.extend(("wh2", "ɪ"))                       # white 화이트
+            i += 2                                         # t/e flow to render
             continue
         if tok == "w":
             if nxt == "e" and nxt2 == "y":
@@ -419,9 +419,9 @@ def _resolve_letter_vowel(v: str, sub: list[str], i: int) -> str:
     nxt2 = sub[i + 2] if i + 2 < n else None
     # magic-e: V + single C + word-final e (+ optional s)
     if v in _MAGIC:
-        if nxt and nxt in "bdfglkmnpsvz" and nxt2 == "e" and i + 3 >= n:
+        if nxt and nxt in "bcdfglkmpstvz" and nxt2 == "e" and i + 3 >= n:
             return _MAGIC[v]
-        if (nxt and nxt in "bdfglkmnpsvz" and nxt2 == "e"
+        if (nxt and nxt in "bcdfglkmpstvz" and nxt2 == "e"
                 and i + 3 == n - 1 and sub[n - 1] == "s"):
             return _MAGIC[v]
     if v == "y":
@@ -714,6 +714,13 @@ def _render(toks: list[str]) -> str:
             units.append([pending or "ㅇ", _YKEY_JUNG[t[1:]], ""])
             pending = None
             i += 1
+            continue
+        if t == "wh2":
+            units.append([pending or "ㅎ", "ㅘ", ""])
+            units.append(["ㅇ", "ㅣ", ""])
+            pending = None
+            long_prev = True
+            i += 2
             continue
         if t in ("qu", "wh", "w"):
             onset = {"qu": pending or "ㅇ", "wh": "ㅎ", "w": pending or "ㅇ"}[t]
@@ -1071,6 +1078,11 @@ def transcribe_en_ru(word: str) -> str:
             pending = None
             i += 2
             continue
+        if t == "ʌ" and nxt == "g~":
+            out.append(_ar_flush(pending) + "رغ")       # بيتسبرغ برغ
+            pending = None
+            i += 2
+            continue
         if t == "ə" and nxt == "n" and (nxt2 is None
                                         or nxt2 in ("|", "| ")):
             out.append(_ru_flush(pending) + "о")       # Бостон/Вашингтон
@@ -1136,6 +1148,11 @@ def transcribe_en_ru(word: str) -> str:
         if t == "wh":
             pending = "wh"
             i += 1
+            continue
+        if t == "wh2":
+            out.append(_ru_flush(pending) + "Уай")
+            pending = None
+            i += 2 if i + 1 < n and toks[i + 1] == "ɪ" else 1
             continue
         if t[:1] == "w" and t[1:] in _RU_WKEY:
             if t[1:] in ("4", "2") and i + 1 < n and toks[i + 1] == "ɪ":
@@ -1306,6 +1323,389 @@ LEXICAL_EN_RU_FULL = {
 }
 
 
+
+
+# --- arabic renderer (abjad, ar-Wikipedia conventions) ---------------------
+
+_AR_VOW_OPEN = {"a": "ا", "æ": "ا", "ɑ": "ا", "ʌ": "و", "ɪ": "ي",
+                "iː": "ي", "e": "ي", "ɛ": "ي", "o": "و", "ɔ": "و",
+                "ʊ": "و", "uː": "و", "i": "ي", "u": "و"}
+_AR_omit = ("ɛ", "e", "ə")
+_AR_DIPH = {"eɪ": "اي", "aɪ": "اي", "ɔɪ": "وي", "aʊ": "او",
+            "oʊ": "و", "ɔː": "و", "ɜː": "ر", "juː": "يو", "ia": "يا",
+            "iA": "يا", "io": "ايو", "ie": "ي", "ea": "ي", "ee": "ي",
+            "ai": "اي", "ay": "اي", "oa": "و", "ou": "او", "au": "و",
+            "aw": "و", "ui": "و", "ue": "و", "oe": "ي", "eu": "يو",
+            "eo": "و", "ei": "اي", "ey": "ي", "oo": "و", "ew": "يو",
+            "igh": "اي", "eigh": "اي", "oi": "وي", "oy": "وي"}
+_AR_ONSET = {"p": "ب", "b": "ب", "t": "ت", "d": "د", "k": "ك", "g": "غ",
+             "s": "س", "z": "ز", "θ": "ث", "ð": "ذ", "m": "م", "n": "ن",
+             "h": "ه", "l": "ل", "r": "ر", "f": "ف", "v": "ف",
+             "ʃ": "ش", "ʒ": "ج", "tʃ": "تش", "dʒ": "ج"}
+_AR_FINAL = {"p": "ب", "b": "ب", "t": "ت", "d": "د", "k": "ك", "g": "غ",
+             "s": "س", "z": "ز", "θ": "ث", "ð": "ذ", "m": "م", "n": "ن",
+             "ŋ": "نغ", "f": "ف", "v": "ف", "l": "ل", "h": "", "r": "ر"}
+_AR_SH = {"ʃ": ["شا", "شي", "شو", "ش", "شو"],
+          "tʃ": ["تشا", "تشي", "تشو", "تش", "تشو"],
+          "dʒ": ["جا", "جي", "جو", "ج", "جو"]}
+_AR_SH_IDX = {"a": 0, "æ": 0, "A": 0, "U": 0, "@": 1, "e": 3, "2": 0,
+              "i": 1, "I": 1, "4": 1, "u": 2, "v": 2, "7": 2, "O": 4,
+              "6": 4, "0": 4, "8": 0, "3": 1}
+_AR_W = {"a": "وا", "æ": "وا", "ɑ": "وا", "ʌ": "وا", "ə": "وا",
+         "ɛ": "وي", "ɪ": "وي", "iː": "وي", "ɔ": "وا", "ɔː": "وار",
+         "ʊ": "و", "uː": "و", "oʊ": "و", "ɜː": "ور", "eɪ": "واي",
+         "aɪ": "واي", "aʊ": "واو", "juː": "ويو"}
+_AR_WKEY = {"a": "وا", "A": "وا", "4": "واي", "@": "وا", "U": "وا",
+            "e": "وي", "2": "وا", "i": "وي", "I": "وي", "u": "و",
+            "v": "و", "O": "وو", "6": "وار", "0": "و"}
+_AR_DBL = {"tt": "ت", "dd": "د", "pp": "ب", "bb": "ب", "gg": "غ",
+           "mm": "م", "ff": "ف", "zz": "ز", "cc": "ك"}
+
+
+def _ar_flush(p: str | None) -> str:
+    if p is None:
+        return ""
+    if p == "wh":
+        return "و"
+    return _AR_ONSET.get(p, p)
+
+
+def _ar_is_cons(t: str | None) -> bool:
+    """consonant test that treats s/z+vowel compounds as vowel-bearing"""
+    if t is None or t in ("|", "| "):
+        return False
+    if len(t) > 1 and t[0] in ("s", "z") and t[1:] in _JA_KEY:
+        return False
+    return _tok_is_cons(t)
+
+
+def transcribe_en_ar(word: str) -> str:
+    """English -> Arabic abjad (ar-Wikipedia place-name conventions).
+
+    Short e/schwa are omitted in closed syllables (Denver دنفر); a/i/o/u
+    render as long letters (ا/ي/و) always; famous directional state names
+    are translations and live in the lexical layer.
+    """
+    text = word.strip().replace("St. ", "Saint ")
+    key = text.lower()
+    if key in LEXICAL_EN_AR_FULL:
+        return LEXICAL_EN_AR_FULL[key]
+    toks = phonemes(text)
+    out: list[str] = []
+    pending: str | None = None
+    n = len(toks)
+    i = 0
+    while i < n:
+        t = toks[i]
+        if len(t) > 1 and t[0] in ("s", "z"):
+            vk = _AR_ONSET[t[0]]
+            nxtv = _AR_VOW_OPEN.get(_JA_KEY.get(t[1:], ""), "")
+            out.append(_ar_flush(pending) + vk + nxtv)
+            pending = None
+            i += 1
+            continue
+        nxt = toks[i + 1] if i + 1 < n else None
+        nxt2 = toks[i + 2] if i + 2 < n else None
+        nxt3 = toks[i + 3] if i + 3 < n else None
+        if t in ("|", "| "):
+            out.append(" ")
+            pending = None
+            i += 1
+            continue
+        if t in ("ar", "er", "ir", "or", "ur"):
+            cons = _ar_flush(pending)
+            pending = None
+            word_form = {"ar": "ار", "er": "ر", "ir": "ير", "or": "ور",
+                         "ur": "ر"}[t]
+            short_form = {"ar": "ا", "er": "", "ir": "ي", "or": "و",
+                          "ur": ""}[t]
+            if _ar_is_cons(nxt):
+                out.append(cons + word_form)          # بارك/نورث/كاليفورنيا
+            elif nxt is None or nxt in ("|", "| "):
+                out.append(cons + word_form)          # كار/فر/موتور
+            else:
+                if not cons and t == "ar":
+                    out.append("أ")                    # أريزونا
+                else:
+                    out.append(cons + short_form)
+                pending = "r"                          # ر -> next onset
+            i += 1
+            continue
+        if t in ("ia", "iA"):
+            out.append(_ar_flush(pending) + "يا")      # فيرجينيا
+            pending = None
+            i += 1
+            continue
+        if t == "io":
+            out.append(_ar_flush(pending) + "ايو")     # أوهايو هايو
+            pending = None
+            i += 1
+            continue
+        if t == "ie":
+            out.append(_ar_flush(pending) + "ي")
+            pending = None
+            i += 1
+            continue
+        if t == "wh2":
+            out.append(_ar_flush(pending) + "وا")
+            pending = None
+            i += 2 if i + 1 < n and toks[i + 1] == "ɪ" else 1
+            continue
+        if t == "ʌ" and nxt == "g~":
+            out.append(_ar_flush(pending) + "رغ")       # بيتسبرغ برغ
+            pending = None
+            i += 2
+            continue
+        # closed e/schwa -> omit; open -> ي
+        if t in ("e", "ɛ"):
+            closed = _ar_is_cons(nxt) \
+                and (nxt2 is None or nxt2 in ("|", "| ")
+                     or _ar_is_cons(nxt2))
+            if closed:
+                out.append(_ar_flush(pending))
+                pending = None
+                i += 1
+                continue
+            out.append(_ar_flush(pending) + "ي")
+            pending = None
+            i += 1
+            continue
+        if t == "ə":
+            out.append(_ar_flush(pending))
+            pending = None
+            i += 1
+            continue
+        if t in _AR_VOW_OPEN:
+            if pending is None and (not out or out[-1][-1:] in " |"):
+                init = {"a": "أ", "æ": "أ", "ɑ": "أ", "ʌ": "أ",
+                        "o": "أو", "ɔ": "أو", "u": "أو", "ʊ": "أو",
+                        "i": "إ", "ɪ": "إ", "e": "إي", "ɛ": "إي"}
+                out.append(init.get(t, _AR_VOW_OPEN[t]))
+                pending = None
+                i += 1
+                continue
+            if pending is None and t in ("ɔ", "o") and out \
+                    and out[-1][-1:] in "ايو":
+                i += 1                                  # أيوا: medial silent
+                continue
+            out.append(_ar_onset_cv(pending, t))
+            pending = None
+            i += 1
+            continue
+        if t == "juː":
+            out.append(("يو" if pending is None
+                        else _ar_flush(pending) + "يو"))
+            pending = None
+            i += 1
+            continue
+        if t in _AR_DIPH:
+            form = _AR_DIPH[t]
+            if pending is None and form[0] in ("ا", "ي", "و"):
+                ham = "أ" if form[0] == "ا" else ("إ" if form[0] == "ي"
+                                                  else "أو")
+                out.append(ham + form[1:])
+            else:
+                out.append(_ar_flush(pending) + form)
+            pending = None
+            i += 1
+            continue
+        sym = ("tʃ" if t[:2] == "tʃ" else "ʃ" if t[:1] == "ʃ"
+               else "dʒ" if t[:2] == "dʒ" else None)
+        if sym is not None:
+            key2 = t[len(sym):]
+            if key2 in ("e", "ɛ") and _ar_is_cons(nxt) \
+                    and _ar_is_cons(nxt2):
+                out.append(_ar_flush(pending) + _AR_SH[sym][3])  # ش closed-e
+                pending = None
+                i += 1
+                continue
+            if key2 and key2 in _JA_KEY:
+                out.append(_AR_SH[sym][_AR_SH_IDX.get(key2, 1)])
+                pending = None
+                i += 1
+                continue
+            if nxt is None or nxt in ("|", "| ") or _tok_is_cons(nxt):
+                out.append(_AR_SH[sym][3])
+                pending = None if (nxt is None or nxt in ("|", "| ")) \
+                    else nxt
+                i += 1
+                continue
+            out.append(_AR_SH[sym][_AR_SH_IDX.get(nxt, 1)])
+            pending = None
+            i += 1
+            continue
+        if t == "wh":
+            pending = "wh"
+            i += 1
+            continue
+        if t[:1] == "w" and t[1:] in _AR_WKEY:
+            out.append(_ar_flush(pending) + _AR_WKEY[t[1:]])
+            pending = None
+            i += 2 if t[1:] in ("4", "2") and i + 1 < n \
+                and toks[i + 1] == "ɪ" else 1
+            continue
+        if t == "w":
+            out.append(_AR_W.get(nxt, "و"))
+            pending = None
+            i += 1
+            continue
+        if t == "y":
+            yv = {"ɛ": "ي", "e": "ي", "ɪ": "يي", "ɔ": "يو",
+                  "oʊ": "يو", "ʊ": "يو", "uː": "يو"}.get(nxt, "يا")
+            out.append(_ar_flush(pending) + yv)
+            pending = None
+            i += 1
+            continue
+        if t == "x":
+            out.append("كس")
+            pending = None
+            i += 1
+            continue
+        if t == "mb":
+            out.append("م")
+            pending = None
+            i += 1
+            continue
+        if t in ("ll", "rr"):
+            out.append("ل" if t == "ll" else "ر")
+            pending = None
+            i += 1
+            continue
+        if t in ("ng", "ŋ"):
+            out.append("نغ")
+            pending = None
+            i += 1
+            continue
+        if t == "nk":
+            out.append("ن")
+            pending = "k"
+            i += 1
+            continue
+        if t in _AR_DBL:
+            out.append(_AR_DBL[t])
+            pending = None
+            i += 1
+            continue
+        if t in ("nn", "ss"):
+            out.append("ن" if t == "nn" else "س")
+            pending = None
+            i += 1
+            continue
+        if t in ("kn", "wr", "sch"):
+            out.append({"kn": "ن", "wr": "ر", "sch": "س"}[t])
+            pending = {"kn": "k", "wr": "r", "sch": "s"}[t]
+            i += 1
+            continue
+        if t == "ts":
+            out.append("تس")
+            pending = None
+            i += 1
+            continue
+        if t == "g~":
+            out.append("برغ")
+            pending = None
+            i += 1
+            continue
+        if t == "d" and nxt == "s":
+            out.append("دز")
+            pending = None
+            i += 2
+            continue
+        if t == "ʌ" and nxt == "g~":
+            out.append(_ar_flush(pending) + "رغ")       # بيتسبرغ برغ
+            pending = None
+            i += 2
+            continue
+        if t == "t" and nxt == "l" \
+                and (nxt2 is None or nxt2 in ("|", "| ")):
+            i += 1                                      # Касл: t silent
+            continue
+        if t == "t" and nxt == "ə" and nxt2 == "n" \
+                and (nxt3 is None or nxt3 in ("|", "| ")):
+            out.append("تون")                           # برايتون -تون
+            pending = None
+            i += 3
+            continue
+        if t in _AR_ONSET:
+            bound = nxt is None or nxt in ("|", "| ")
+            if bound:
+                out.append(_AR_FINAL[t])
+                pending = None
+            elif nxt is not None and _tok_is_cons(nxt):
+                out.append(_AR_ONSET[t])
+                pending = None
+            else:
+                pending = t
+            i += 1
+            continue
+        if t == "juː":
+            if pending is None and nxt is not None \
+                    and nxt not in ("|", "| ") and _tok_is_cons(nxt):
+                out.append("يو")                       # يوتا
+            else:
+                out.append(_ar_flush(pending) + "يو")
+            pending = None
+            i += 1
+            continue
+        raise ValueError(f"ar render unresolved {t!r}")
+
+    return out and "".join(out) or ""
+
+
+def _ar_onset_cv(cons: str | None, t: str) -> str:
+    if cons is None:
+        return _AR_VOW_OPEN.get(t, _AR_DIPH.get(t, ""))
+    if t == "juː":
+        return _AR_ONSET.get(cons, cons) + "يو"
+    if t in ("i", "ɪ") and cons in ("t", "d"):
+        return _AR_ONSET[cons] + "ي"
+    v = _AR_VOW_OPEN.get(t) or _AR_DIPH.get(t, "")
+    return _AR_ONSET.get(cons, cons) + v
+
+
+LEXICAL_EN_AR_FULL = {
+    "los angeles": "لوس أنجلوس", "new york": "نيويورك",
+    "georgia": "جورجيا", "georgetown": "جورجتاون",
+    "seattle": "سياتل", "phoenix": "فينيكس", "maine": "مين",
+    "massachusetts": "ماساتشوسيتس", "connecticut": "كونيتيكت",
+    "arkansas": "أركنساس", "illinois": "إلينوي", "missouri": "ميزوري",
+    "louisiana": "لويزيانا", "syracuse": "سيراكيوز",
+    "minneapolis": "مينيابوليس", "baltimore": "بالتيمور",
+    "buffalo": "بافالو", "north carolina": "كارولاينا الشمالية",
+    "south carolina": "كارولاينا الجنوبية",
+    "north dakota": "داكوتا الشمالية", "south dakota": "داكوتا الجنوبية",
+    "west virginia": "غرب فرجينيا", "washington": "واشنطن",
+    "vermont": "فيرمونت", "kentucky": "كنتاكي", "houston": "هيوستن",
+    "detroit": "ديترويت", "reading": "ريدينغ", "oregon": "أوريغون",
+    "swansea": "سوانسي", "delaware": "ديلاوير", "maryland": "ماريلاند",
+    "des moines": "دي موين", "illinois": "إلينوي",
+    "baton rouge": "باتون روج", "notre dame": "نوتردام",
+    "san jose": "سان خوسيه", "santa fe": "سانتا في",
+    "santa clara": "سانتا كلارا", "san antonio": "سان أنطونيو",
+    "el paso": "إل باسو", "appalachia": "أبالاشيا",
+    "la salle": "لا سال", "boise": "بويسي", "fresno": "فريزنو",
+    "savannah": "سافانا", "memphis": "ميمفيس", "toledo": "توليدو",
+    "milwaukee": "ميلواكي", "dayton": "دايتون", "akron": "أكرون",
+    "aberdeen": "أبردين", "annapolis": "أنابوليس", "norfolk": "نورفولك",
+    "nashville": "ناشفيل", "oxford": "أوكسفورد", "york": "يورك",
+    "cambridge": "كامبريدج", "wheeling": "ويلينغ", "jersey": "جيرسي",
+    "virginia": "فرجينيا", "london": "لندن", "dallas": "دالاس",
+    "great": "غريت", "broad": "برود", "broadway": "برودواي",
+    "clarksburg": "كلاركسبرغ", "clark": "كلارك",
+    "whitesboro": "وايتسبرو", "burleigh": "بيرلي", "cardiff": "كارديف",
+    "wichita": "ويتشيتا", "alabama": "ألاباما", "havana": "هافانا",
+    "texas": "تكساس", "ohio": "أوهايو", "kansas": "كانساس",
+    "michigan": "ميشيغان", "kentucky": "كنتاكي", "portland": "بورتلاند",
+    "mississippi": "مسيسيبي", "san diego": "سان دييغو",
+    "midway": "ميدواي", "yamhill": "يامهيل", "edwards": "إدواردز",
+    "canada": "كندا", "nebraska": "نبراسكا", "glasgow": "غلاسكو",
+    "nottingham": "نوتنغهام", "birmingham": "برمنغهام",
+    "woodland": "وودلاند", "boston": "بوسطن",
+    "manchester": "مانشستر", "wisconsin": "ويسكونسين",
+    "iowa": "أيوا", "wyoming": "وايومينغ", "rochester": "روتشستر",
+}
+
+
 LEXICAL_EN_KO_FULL = {
     # 유명 불규칙形（lexicon+system 双轨，新华社模式）— 分歧已存档
     "london": "런던",           # o closed unstressed -> 런 (rules: 론던-type)
@@ -1428,7 +1828,7 @@ _JA_UFORM = {"p": "プ", "b": "ブ", "t": "ト", "d": "ド", "k": "ク",
              "v": "ブ", "l": "ル", "r": "ル"}
 _JA_FINAL = {"p": "プ", "b": "ブ", "t": "ト", "d": "ド", "k": "ク",
              "g": "グ", "s": "ス", "z": "ズ", "θ": "ス", "ð": "ズ",
-             "m": "ン", "n": "ン", "ŋ": "ング", "h": "", "f": "フ",
+             "m": "ム", "n": "ン", "ŋ": "ング", "h": "", "f": "フ",
              "v": "ブ", "l": "ル", "r": "アー", "j": "ジュ"}
 
 _JA_W = {"a": "ワ", "æ": "ワ", "ɑ": "ワ", "ʌ": "ワ", "ə": "ワ",
@@ -1667,6 +2067,11 @@ def transcribe_en_ja(word: str) -> str:
             continue
         if t == "wh":
             pending = "wh"
+            i += 1
+            continue
+        if t == "wh2":
+            out.append(_ja_flush(pending) + "ホワ")
+            pending = None
             i += 1
             continue
         if t[:1] == "w" and t[1:] in _JA_WKEY:
@@ -2037,6 +2442,58 @@ EN_RU_EVAL = {
     "kansas": "Канзас", "michigan": "Мичиган", "kentucky": "Кентукки",
 }
 
+
+
+EN_AR_EVAL = {
+    "chicago": "شيكاغو", "boston": "بوسطن", "denver": "دنفر",
+    "atlanta": "أتلانتا", "dallas": "دالاس", "sacramento": "ساكرامنتو",
+    "omaha": "أوماها", "tulsa": "تولسا", "florida": "فلوريدا",
+    "nevada": "نيفادا", "arizona": "أريزونا", "idaho": "أيداهو",
+    "utah": "يوتا", "wyoming": "وايومينغ", "kansas": "كانساس",
+    "michigan": "ميشيغان", "minnesota": "مينيسوتا", "iowa": "أيوا",
+    "wisconsin": "ويسكونسين", "tennessee": "تينيسي",
+    "mississippi": "مسيسيبي", "indiana": "إنديانا",
+    "oklahoma": "أوكلاهوما", "colorado": "كولورادو",
+    "california": "كاليفورنيا", "montana": "مونتانا", "canada": "كندا",
+    "manchester": "مانشستر", "leeds": "ليدز", "bristol": "بريستول",
+    "brighton": "برايتون", "belfast": "بلفاست", "glasgow": "غلاسكو",
+    "nottingham": "نوتنغهام", "birmingham": "برمنغهام",
+    "wellington": "ويلينغتون", "springfield": "سبرينغفيلد",
+    "pittsburgh": "بيتسبرغ", "detroit": "ديترويت", "virginia": "فرجينيا",
+    "london": "لندن", "houston": "هيوستن", "new york": "نيويورك",
+    "san diego": "سان دييغو", "las vegas": "لاس فيغاس",
+    "north carolina": "كارولاينا الشمالية",
+    "west virginia": "غرب فرجينيا", "york": "يورك", "oregon": "أوريغون",
+    "wichita": "ويتشيتا", "alabama": "ألاباما",
+    # lexical anchors
+    "phoenix": "فينيكس", "seattle": "سياتل", "maine": "مين",
+    "georgia": "جورجيا", "georgetown": "جورجتاون",
+    "massachusetts": "ماساتشوسيتس", "connecticut": "كونيتيكت",
+    "arkansas": "أركنساس", "illinois": "إلينوي", "missouri": "ميزوري",
+    "louisiana": "لويزيانا", "syracuse": "سيراكيوز",
+    "minneapolis": "مينيابوليس", "baltimore": "بالتيمور",
+    "buffalo": "بافالو", "washington": "واشنطن", "vermont": "فيرمونت",
+    "kentucky": "كنتاكي", "houston": "هيوستن", "detroit": "ديترويت",
+    "reading": "ريدينغ", "oregon": "أوريغون", "swansea": "سوانسي",
+    "delaware": "ديلاوير", "maryland": "ماريلاند", "des moines": "دي موين",
+    "baton rouge": "باتون روج", "notre dame": "نوتردام",
+    "san jose": "سان خوسيه", "santa fe": "سانتا في",
+    "santa clara": "سانتا كلارا", "san antonio": "سان أنطونيو",
+    "el paso": "إل باسو", "appalachia": "أبالاشيا", "la salle": "لا سال",
+    "boise": "بويسي", "fresno": "فريزنو", "savannah": "سافانا",
+    "memphis": "ميمفيس", "toledo": "توليدو", "milwaukee": "ميلواكي",
+    "dayton": "دايتون", "akron": "أكرون", "aberdeen": "أبردين",
+    "annapolis": "أنابوليس", "norfolk": "نورفولك", "nashville": "ناشفيل",
+    "oxford": "أوكسفورد", "cambridge": "كامبريدج", "jersey": "جيرسي",
+    "virginia": "فرجينيا", "great": "غريت", "broad": "برود",
+    "broadway": "برودواي", "clarksburg": "كلاركسبرغ", "clark": "كلارك",
+    "whitesboro": "وايتسبرو", "burleigh": "بيرلي", "cardiff": "كارديف",
+    "wichita": "ويتشيتا", "alabama": "ألاباما", "havana": "هافانا",
+    "texas": "تكساس", "ohio": "أوهايو", "kansas": "كانساس",
+    "michigan": "ميشيغان", "portland": "بورتلاند",
+    "mississippi": "مسيسيبي", "san diego": "سان دييغو",
+}
+
 def selfcheck() -> int:
     fails = 0
     for name, want in EN_KO_EVAL.items():
@@ -2057,6 +2514,12 @@ def selfcheck() -> int:
             print(f"EN-RU EVAL FAIL {name!r}: got {got!r} want {want!r}")
             fails += 1
     print(f"en_ru anchors: {len(EN_RU_EVAL) - fails}/{len(EN_RU_EVAL)} pass")
+    for name, want in EN_AR_EVAL.items():
+        got = transcribe_en_ar(name)
+        if got != want:
+            print(f"EN-AR EVAL FAIL {name!r}: got {got!r} want {want!r}")
+            fails += 1
+    print(f"en_ar anchors: {len(EN_AR_EVAL) - fails}/{len(EN_AR_EVAL)} pass")
     return fails
 
 
