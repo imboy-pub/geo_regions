@@ -43,6 +43,11 @@ ZH_HANT_FIXES = {
     ("RU", "Khanty-Mansi"): "漢特-曼西自治區",
     ("US", "Texas"): "得克薩斯州",
 }
+# 2026-current official layers (GSA-02 staged, sha256-pinned) replace the
+# stale/partial CSC layers for FR (12% pre-merger communes) and JP (only
+# ~65% of municipalities, kana-contaminated ja field).
+INSEE_SOURCE = "staging/FR-insee-cog (INSEE Code Officiel Geographique millesime 2026, Licence Ouverte 2.0, current as of 2026-01-01)"
+GEOLONIA_SOURCE = "staging/JP-geolonia (japanese-addresses-v2 ja.json, CC-BY-4.0, generated 2024-12-25; municipalities stable through 2026)"
 CSC_SOURCE = "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
 CLDR_SOURCE = "_task_packages/geo_regions_source_audit_2026-11-13/data/catalog_i18n (CLDR 49 pinned, Unicode-3.0)"
 
@@ -59,6 +64,44 @@ def nfc(value):
 def node(nid, parent, kind, code, name, locale, quality, status="unknown"):
     return {"id": nid, "parentId": parent, "kind": kind, "code": code, "name": name,
             "nameLocale": locale, "nameQuality": quality, "childrenStatus": status}
+
+
+def csc_translation_index(cc):
+    """Map normalized names (ja/native/en) to CSC translations for inheritance."""
+    idx = {}
+    import unicodedata
+    norm = lambda s: unicodedata.normalize("NFC", (s or "")).strip().lower()
+    for row in load(f"contributions/cities/{cc}.json"):
+        trans = row.get("translations") or {}
+        for key in (row.get("name"), row.get("native"), trans.get("ja")):
+            if key and norm(key) not in idx:
+                idx[norm(key)] = trans
+    return idx
+
+
+def official_2026_layers():
+    """Load INSEE FR (region/dept/commune) and Geolonia JP municipalities."""
+    import csv
+    import unicodedata
+    nfc = lambda s: unicodedata.normalize("NFC", s)
+    regions, depts, communes = [], [], []
+    with (SNAP.parent / "FR-insee-cog/region_2026.csv").open(encoding="utf-8") as f:
+        regions = list(csv.DictReader(f))
+    with (SNAP.parent / "FR-insee-cog/departement_2026.csv").open(encoding="utf-8") as f:
+        depts = list(csv.DictReader(f))
+    with (SNAP.parent / "FR-insee-cog/commune_depuis_1943.csv").open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["TYPECOM"] in ("COM", "ARM") and not row["DATE_FIN"]:
+                communes.append(row)
+    geo = json.loads((SNAP.parent / "JP-geolonia/ja.json").read_text(encoding="utf-8"))
+    jp_munis = []
+    for i, pref in enumerate(geo["data"]):
+        iso = f"JP-{i+1:02d}"
+        for city in pref.get("cities", []):
+            jp_munis.append({"iso": iso, "code": str(city["code"]), "city": city["city"],
+                             "romaji": city.get("city_r"), "kana": city.get("city_k"),
+                             "point": city.get("point")})
+    return nfc, regions, depts, communes, jp_munis
 
 
 def main():
@@ -99,6 +142,7 @@ def main():
         "requiredCountries": targets, "requiredCatalogLocales": LOCALES,
         "requireEveryCountryLocalePack": True})
 
+    nfc, insee_regions, insee_depts, insee_communes, jp_munis = official_2026_layers()
     stats = {}
     for cc in targets:
         country = by_iso2[cc]
@@ -131,6 +175,70 @@ def main():
                 if value:
                     packs[locale][nid] = nfc(value)
 
+        county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
+        if cc == "JP":
+            csc_idx = csc_translation_index(cc)
+            source_refs_jp = [GEOLONIA_SOURCE, CSC_SOURCE]
+            for m in sorted(jp_munis, key=lambda r: r["code"]):
+                nid = f"jp-city:{m['code']}"
+                en_name = m["romaji"] or m["city"]
+                nodes.append(node(nid, f"iso3166-2:{m['iso']}", "subdivision",
+                                  f"JP-{m['code'][-2:]}" if False else f"JP-{m['code']}",
+                                  nfc(en_name), "en", "source-native", "unknown"))
+                packs["en"][nid] = nfc(en_name)
+                inherited = (csc_idx.get(m["city"].lower()) or csc_idx.get(m.get("kana", "").lower())
+                             or csc_idx.get(en_name.lower()) or {})
+                for locale, key in TRANSLATION_LOCALES.items():
+                    value = inherited.get(key)
+                    if value:
+                        packs[locale][nid] = nfc(value)
+            stats_jp_note = {"jpMunisGeolonia": len(jp_munis)}
+            # JP uses no CSC city rows
+            cities_by_cc[cc] = []
+        if cc == "FR":
+            # FR wholesale replacement: region/dept/commune from INSEE 2026
+            source_refs_fr = [INSEE_SOURCE, CSC_SOURCE]
+            nodes = [node(root_id, None, "country", cc, nfc(country["name"]), "en", "source-native", "partial")]
+            packs = {locale: {} for locale in LOCALES}
+            packs["en"][root_id] = nfc(country["name"])
+            csc_idx = csc_translation_index(cc)
+            reg_ids = {}
+            for row in sorted(insee_regions, key=lambda r: r["REG"]):
+                nid = f"fr-region:{row['REG']}"
+                reg_ids[row["REG"]] = nid
+                nodes.append(node(nid, root_id, "subdivision", row["REG"],
+                                  nfc(row["LIBELLE"]), "fr", "source-native", "unknown"))
+                packs["en"][nid] = nfc(row["LIBELLE"])
+                for locale, key in TRANSLATION_LOCALES.items():
+                    v = (csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
+                    if v:
+                        packs[locale][nid] = nfc(v)
+            dept_ids = {}
+            for row in sorted(insee_depts, key=lambda r: r["DEP"]):
+                nid = f"fr-dept:{row['DEP']}"
+                parent = reg_ids.get(row["REG"], root_id)
+                dept_ids[row["DEP"]] = nid
+                nodes.append(node(nid, parent, "subdivision", row["DEP"],
+                                  nfc(row["LIBELLE"]), "fr", "source-native", "unknown"))
+                packs["en"][nid] = nfc(row["LIBELLE"])
+                for locale, key in TRANSLATION_LOCALES.items():
+                    v = (csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
+                    if v:
+                        packs[locale][nid] = nfc(v)
+            for row in sorted(insee_communes, key=lambda r: r["COM"]):
+                nid = f"fr-commune:{row['COM']}"
+                dept_code = row["COM"][:2] if not row["COM"].startswith(("97", "98")) else row["COM"][:3]
+                parent = dept_ids.get(dept_code, root_id)
+                nodes.append(node(nid, parent, "subdivision", row["COM"],
+                                  nfc(row["LIBELLE"]), "fr", "source-native", "unknown"))
+                packs["en"][nid] = nfc(row["LIBELLE"])
+                for locale, key in TRANSLATION_LOCALES.items():
+                    v = (csc_idx.get(row["NCCENR"].lower()) or csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
+                    if v:
+                        packs[locale][nid] = nfc(v)
+            cities_by_cc[cc] = []
+            counties_by_cc[cc] = []
+            states_by_cc[cc] = []
         county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
         for row in sorted(cities_by_cc.get(cc), key=lambda r: r["id"]):
             nid = f"csc-city:{row['id']}"
@@ -178,7 +286,10 @@ def main():
             TRANSLATION_LOCALES_SET = set(TRANSLATION_LOCALES)  # noqa: F841
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
-                     "countryCode": cc, "sourceRefs": [CSC_SOURCE], "nodes": nodes}
+                     "countryCode": cc,
+                     "sourceRefs": ([INSEE_SOURCE, CSC_SOURCE] if cc == "FR" else
+                                    [GEOLONIA_SOURCE, CSC_SOURCE] if cc == "JP" else [CSC_SOURCE]),
+                     "nodes": nodes}
         structure["revision"] = geo.revision("s", nodes)
         geo.write_json(OUT / f"data/regions/{cc}.json", structure)
         for locale in LOCALES:
