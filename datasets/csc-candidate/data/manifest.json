@@ -830,44 +830,44 @@
       "sha256": "9ccd71b68589949558d444a357b54011181ce9b7d442ec514cb568cebfd38c16"
     },
     {
-      "bytes": 879006,
+      "bytes": 878930,
       "compatibleStructureRevision": "s-88369795891891a4",
       "countryCode": "FR",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/FR.json",
-      "revision": "l-df5373384228e84e",
-      "sha256": "018bff5291a3d934a08b808db22b3ef49eab52c1e90c38b90bcaf37d93c5222d"
+      "revision": "l-d77a875ccfd68d04",
+      "sha256": "953efbf8e562cf9c05dd46a9a336b47671481f255e6d0b2842284782ca53a650"
     },
     {
-      "bytes": 298899,
+      "bytes": 298831,
       "compatibleStructureRevision": "s-fc231222360974cc",
       "countryCode": "GB",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/GB.json",
-      "revision": "l-f38be5033f0a25bd",
-      "sha256": "e2535728f7bd5ca0e9d59ef77e2853251c33a91f340e7bdff74e41b77c228fc8"
+      "revision": "l-7130c001b17950dc",
+      "sha256": "10e29e7dc64ea900141db6f199b9d607e7e27ca7093983a2df7b653a2c54e244"
     },
     {
-      "bytes": 810032,
+      "bytes": 809601,
       "compatibleStructureRevision": "s-400d741e2717e473",
       "countryCode": "IT",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/IT.json",
-      "revision": "l-50565ba51a7f73bf",
-      "sha256": "1d9c09c1bf81e0f9401fe69e31e9266b15bd6f7ded108b6b1c08bae1b3bdd6c2"
+      "revision": "l-62eb3280d3fcf51a",
+      "sha256": "b713761aad738ca87f3237352c83f4d85078e2dc2633e73c4e2f8ad7fa3ddea1"
     },
     {
-      "bytes": 56564,
+      "bytes": 56870,
       "compatibleStructureRevision": "s-35e5eecb1c3ae325",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/JP.json",
-      "revision": "l-dd60d754b88cde8c",
-      "sha256": "b1e3bb565cba1f79dd4370f1af333e3cdfb6df5a7dec852cc5ac662407805a83"
+      "revision": "l-7c20c22f7fb25b78",
+      "sha256": "4031c6c5cd64d091651cc743122646b418def06c3d7a299ae63b71dcbf2c8278"
     },
     {
       "bytes": 24405,
@@ -880,34 +880,34 @@
       "sha256": "b91f782e7c3fc9e071109468a42e3e061dba6005c20280d00c2f527037946d3f"
     },
     {
-      "bytes": 419422,
+      "bytes": 419009,
       "compatibleStructureRevision": "s-979283308bb6efcb",
       "countryCode": "RU",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/RU.json",
-      "revision": "l-1f0098dd6a71f42c",
-      "sha256": "151f7ba86c13cb30e0230ef57e8641c72c6f469a4336a8189c879648fe1917d1"
+      "revision": "l-6967cfe87bc00470",
+      "sha256": "49b9f996c2b3d05c73973f6c10e8fcd3acb9e7e69f39078790d6352f620d9a53"
     },
     {
-      "bytes": 31848,
+      "bytes": 31772,
       "compatibleStructureRevision": "s-2ef87c0eb67e641a",
       "countryCode": "SA",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/SA.json",
-      "revision": "l-c869aea172a1ab02",
-      "sha256": "d15e8be63fcfbb03f7eb938827782ed45eabcb300ae3d59150e04f0aa236da53"
+      "revision": "l-20e66ca748b93d89",
+      "sha256": "fd26c887a29103351d6797e238d054d387c53101e86a6d3bfaf67753f1b643a2"
     },
     {
-      "bytes": 1501994,
+      "bytes": 1501598,
       "compatibleStructureRevision": "s-b50434f0cdd22130",
       "countryCode": "US",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/US.json",
-      "revision": "l-d2dddb4fe6a77431",
-      "sha256": "e2cc9fcbd11737a9cd5cce9d97fe4e432dd0af4f9cb86566470e0dcb2bea63f1"
+      "revision": "l-f1cf07bb9aae60bb",
+      "sha256": "baf5070453481add4c779745a49397231641ff559a6f9f141500679b1e088bab"
     },
     {
       "bytes": 601877,
@@ -956,8 +956,8 @@
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/JP.json",
-      "revision": "l-f4b8d4f1d72b996f",
-      "sha256": "c35e4ab7ecbd787dbb68d7842f2b9e5cc85ec7ace4f86b04b4506d2fad6bf586"
+      "revision": "l-c5eb91a292223231",
+      "sha256": "628f8458a4b58ba06b93fadd9cae28f6139bc2cb9bd137c374857deb2b62a2ab"
     },
     {
       "bytes": 26461,
@@ -1072,5 +1072,5 @@
       "sha256": "334ffbf34cce4a2d6322b64bfbf6cf5bc54919da86e16dd95a1d97562fceb9be"
     }
   ],
-  "revision": "m-b147a1478e584656"
+  "revision": "m-a54e8a263d33d218"
 }

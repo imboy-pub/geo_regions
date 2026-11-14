@@ -46,6 +46,20 @@ TRANSLATION_LOCALES = {"zh-Hans": "zh-CN", "ja": "ja", "ko": "ko", "ru": "ru",
 # S5830's entity is Gallura Nord-Est, not Sud Sardegna. OPEN pending ISTAT.
 # Sardinia's four abolished provinces (CI/OG/OT/VS) are correctly ABSENT.
 IT_CODE_FIXES = {"IT-23": "IT-AO"}
+def fix_zh_suffix(en_name: str, zh_value: str):
+    """Round-1 rules, now in-generator so regeneration keeps them:
+    'Ageo Shi'→上尾史 becomes 上尾市; 'X Gun' 枪→郡; latin pass-through
+    posing as zh is returned as None (missing stays missing)."""
+    import re as _re
+    if zh_value == en_name and _re.fullmatch(r"[A-Za-z `'\u2019\-]+", zh_value):
+        return None
+    if _re.search(r"[-_ ]?shi$", en_name, _re.I) and zh_value.endswith(("史", "士")):
+        return zh_value[:-1] + "市"
+    if _re.search(r"[-_ ]?gun$", en_name, _re.I) and zh_value.endswith("枪"):
+        return zh_value[:-1] + "郡"
+    return zh_value
+
+
 ZH_GARBAGE_DROPS = {
     "csc-city:112126", "csc-city:112127", "csc-city:127553",  # US 钟声/面积
     "fr-commune:2B143",                                        # FR 扁面条
@@ -379,6 +393,17 @@ def main():
         packs["zh-Hant"] = hant_names
         if hant_names:
             TRANSLATION_LOCALES_SET = set(TRANSLATION_LOCALES)  # noqa: F841
+
+        # finalize zh-Hans pack with the rule-based fixes (idempotent)
+        en_by_id = {n["id"]: n["name"] for n in nodes}
+        for nid in list(packs["zh-Hans"]):
+            fixed = fix_zh_suffix(en_by_id.get(nid, ""), packs["zh-Hans"][nid])
+            if fixed is None:
+                del packs["zh-Hans"][nid]
+                packs["zh-Hans"].pop(nid, None)
+            elif fixed != packs["zh-Hans"][nid]:
+                packs["zh-Hans"][nid] = nfc(fixed)
+                packs.setdefault("_zh_fixed", {})[nid] = True
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,

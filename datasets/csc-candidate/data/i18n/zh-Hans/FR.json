@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10685,
-    "missingNames": 24355,
+    "explicitNames": 10684,
+    "missingNames": 24356,
     "status": "research-seed",
     "translationQualityById": {
       "cc:FR": "provisional",
@@ -2513,7 +2513,6 @@
       "fr-commune:2B082": "provisional",
       "fr-commune:2B083": "provisional",
       "fr-commune:2B084": "provisional",
-      "fr-commune:2B086": "provisional",
       "fr-commune:2B087": "provisional",
       "fr-commune:2B088": "provisional",
       "fr-commune:2B093": "provisional",
@@ -13203,7 +13202,6 @@
     "fr-commune:2B082": "卡斯蒂内塔",
     "fr-commune:2B083": "卡斯蒂尔拉",
     "fr-commune:2B084": "卡特里",
-    "fr-commune:2B086": "Centuri",
     "fr-commune:2B087": "切尔维奥内",
     "fr-commune:2B088": "奇亚特拉",
     "fr-commune:2B093": "科尔巴拉",
@@ -21383,7 +21381,7 @@
     "fr-region:94": "科西嘉"
   },
   "protocolVersion": "1.0",
-  "revision": "l-df5373384228e84e",
+  "revision": "l-d77a875ccfd68d04",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

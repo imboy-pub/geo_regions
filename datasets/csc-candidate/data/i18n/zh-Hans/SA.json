@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 398,
-    "missingNames": 13,
+    "explicitNames": 397,
+    "missingNames": 14,
     "status": "research-seed",
     "translationQualityById": {
       "cc:SA": "provisional",
@@ -305,7 +305,6 @@
       "csc-city:148949": "provisional",
       "csc-city:148950": "provisional",
       "csc-city:148951": "provisional",
-      "csc-city:148952": "provisional",
       "csc-city:148954": "provisional",
       "csc-city:148955": "provisional",
       "csc-city:148958": "provisional",
@@ -708,7 +707,6 @@
     "csc-city:148949": "阿什·沙米亚",
     "csc-city:148950": "阿什·沙拉伊",
     "csc-city:148951": "阿什·谢比",
-    "csc-city:148952": "Ash Shi`b",
     "csc-city:148954": "阿什·舒迈西",
     "csc-city:148955": "阿什·舒韦比特",
     "csc-city:148958": "图尔奇",
@@ -809,7 +807,7 @@
     "iso3166-2:SA-14": "阿西尔"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c869aea172a1ab02",
+  "revision": "l-20e66ca748b93d89",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

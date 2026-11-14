@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3854,
-    "missingNames": 279,
+    "explicitNames": 3853,
+    "missingNames": 280,
     "status": "research-seed",
     "translationQualityById": {
       "cc:GB": "provisional",
@@ -2551,7 +2551,6 @@
       "csc-city:50850": "provisional",
       "csc-city:50851": "provisional",
       "csc-city:50852": "provisional",
-      "csc-city:50853": "provisional",
       "csc-city:50854": "provisional",
       "csc-city:50855": "provisional",
       "csc-city:50856": "provisional",
@@ -6410,7 +6409,6 @@
     "csc-city:50850": "潘努尔",
     "csc-city:50851": "潘特",
     "csc-city:50852": "帕普沃斯·埃弗拉德",
-    "csc-city:50853": "Par",
     "csc-city:50854": "帕博尔德",
     "csc-city:50855": "帕克斯通",
     "csc-city:50856": "帕汀顿",
@@ -7721,7 +7719,7 @@
     "iso3166-2:GB-ZET": "设得兰群岛"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f38be5033f0a25bd",
+  "revision": "l-7130c001b17950dc",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
