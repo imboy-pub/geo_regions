@@ -458,7 +458,7 @@ FR_MAP = {"а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё"
           "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "ou",
           "ф": "f", "х": "kh", "ц": "ts", "ч": "tch", "ш": "ch", "щ": "chtch",
           "ы": "y", "э": "e", "ю": "iou", "я": "ia"}
-LAT_PURITY = re.compile(r"[A-Za-zÀ-ÿ' -]+")
+LAT_PURITY = re.compile(r"[A-Za-zÀ-ÿ\u0100-\u017F' -]+")
 
 
 def _transcribe_latin(word: str, cmap: dict[str, str], soft_ь_j: bool,
@@ -610,6 +610,81 @@ FR_EVAL = {
     "Елабуга": "Elabouga",
 }
 
+# ---- Italian (improved scholarly transcription, it.wikipedia convention) ---
+# č/š/ž for ж/ч/ш/щ, х -> ch (Italian /k/ spelling), ц -> c, yod -> j,
+# soft sign kept as apostrophe (Perm', Tver', Kazan'), separators verbatim.
+IT_MAP = {"а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "jo",
+          "ж": "ž", "з": "z", "и": "i", "й": "j", "к": "k", "л": "l", "м": "m",
+          "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+          "ф": "f", "х": "ch", "ц": "c", "ч": "č", "ш": "š", "щ": "šč",
+          "ы": "y", "э": "e", "ю": "ju", "я": "ja"}
+
+
+def transcribe_it(word: str) -> str:
+    word = unicodedata.normalize("NFC", word).strip()
+    out: list[str] = []
+    chars = list(word.lower())
+    i = 0
+    at_word_start = True
+    while i < len(chars):
+        c = chars[i]
+        if c == "ь":
+            out.append("'")
+            i += 1
+            continue
+        if c == "ъ":
+            i += 1
+            continue
+        if c in ("-", " ", "–"):
+            out.append(c)
+            at_word_start = True
+            i += 1
+            continue
+        if c in IT_MAP:
+            out.append(IT_MAP[c])
+            i += 1
+            at_word_start = False
+            continue
+        raise ValueError(f"unhandled character {c!r} in {word!r}")
+    return _capitalize_latin("".join(out))
+
+
+IT_EVAL = {
+    "Новосибирск": "Novosibirsk",
+    "Хабаровск": "Chabarovsk",
+    "Красноярск": "Krasnojarsk",
+    "Иркутск": "Irkutsk",
+    "Волгоград": "Volgograd",
+    "Челябинск": "Čeljabinsk",
+    "Ярославль": "Jaroslavl'",
+    "Псков": "Pskov",
+    "Тамбов": "Tambov",
+    "Тула": "Tula",
+    "Уфа": "Ufa",
+    "Пермь": "Perm'",
+    "Тверь": "Tver'",
+    "Курск": "Kursk",
+    "Курган": "Kurgan",
+    "Барнаул": "Barnaul",
+    "Кемерово": "Kemerovo",
+    "Норильск": "Noril'sk",
+    "Ачинск": "Ačinsk",
+    "Рязань": "Rjazan'",
+    "Казань": "Kazan'",
+    "Вологда": "Vologda",
+    "Кострома": "Kostroma",
+    "Липецк": "Lipeck",
+    "Магнитогорск": "Magnitogorsk",
+    "Оренбург": "Orenburg",
+    "Владивосток": "Vladivostok",
+    "Сочи": "Soči",
+    "Бийск": "Bijsk",
+    "Нижний Новгород": "Nižnij Novgorod",
+    "Санкт-Петербург": "Sankt-Peterburg",
+    "Елабуга": "Elabuga",
+    "Тюмень": "Tjumen'",
+}
+
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
@@ -618,19 +693,20 @@ def main() -> int:
     for name, fn, expected in ([(k, transcribe, v) for k, v in EVAL.items()] +
                                [(k, transcribe_ko, v) for k, v in KO_EVAL.items()] +
                                [(k, transcribe_de, v) for k, v in DE_EVAL.items()] +
-                               [(k, transcribe_fr, v) for k, v in FR_EVAL.items()]):
+                               [(k, transcribe_fr, v) for k, v in FR_EVAL.items()] +
+                               [(k, transcribe_it, v) for k, v in IT_EVAL.items()]):
         got = fn(name)
         if got != expected:
             print(f"EVAL FAIL {name!r}: got {got!r} want {expected!r}")
             return 1
     print(f"eval sets: ja {len(EVAL)}/{len(EVAL)}, ko {len(KO_EVAL)}/{len(KO_EVAL)}, "
-          f"de {len(DE_EVAL)}/{len(DE_EVAL)}, fr {len(FR_EVAL)}/{len(FR_EVAL)} anchors pass",
-          flush=True)
+          f"de {len(DE_EVAL)}/{len(DE_EVAL)}, fr {len(FR_EVAL)}/{len(FR_EVAL)}, "
+          f"it {len(IT_EVAL)}/{len(IT_EVAL)} anchors pass", flush=True)
 
     purity_res = {"ja": re.compile(r"[ァ-ヴー・]+"), "ko": re.compile(r"[가-힣]+"),
-                  "de": LAT_PURITY, "fr": LAT_PURITY}
+                  "de": LAT_PURITY, "fr": LAT_PURITY, "it": LAT_PURITY}
     fns = {"ja": transcribe, "ko": transcribe_ko,
-           "de": transcribe_de, "fr": transcribe_fr}
+           "de": transcribe_de, "fr": transcribe_fr, "it": transcribe_it}
     nodes: dict[str, dict] = {}
     kind_prefix = {"cities": "csc-city:", "counties": "csc-county:"}
     for kind, prefix in kind_prefix.items():
@@ -657,12 +733,12 @@ def main() -> int:
 
     document = {
         "generator": "tool/gen_candidate_rule_transcriptions.py",
-        "ruleVersion": "ru-ja-ko-de-fr-1",
+        "ruleVersion": "ru-ja-ko-de-fr-it-1",
         "retrievedAt": "2026-11-14",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ja", "ko", "de", "fr"],
+        "locales": ["ja", "ko", "de", "fr", "it"],
         "evalAnchors": len(EVAL) + len(KO_EVAL),
         "evalPassed": len(EVAL) + len(KO_EVAL),
         "nodeCount": len(nodes),
