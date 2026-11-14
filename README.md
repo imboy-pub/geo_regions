@@ -19,7 +19,7 @@ Phase 1 is complete (2026-11-14, local main). Code is BSD-3-Clause, data licensi
 | 覆盖与来源 / Coverage and sources | [docs/DATA_COVERAGE.md](docs/DATA_COVERAGE.md), [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) |
 | 工具与扩展 / Tooling and extension | [docs/TOOLING.md](docs/TOOLING.md), [docs/DATA_RULES.md](docs/DATA_RULES.md), [docs/DATA_WORKPACKAGES.md](docs/DATA_WORKPACKAGES.md) |
 | **源更新合同 / Update contract** | [docs/UPDATE_RUNBOOK.md](docs/UPDATE_RUNBOOK.md) |
-| Phase 1 发布候选 / Release candidate | [docs/RELEASE_CANDIDATE_P1.md](docs/RELEASE_CANDIDATE_P1.md) |
+| Phase 1 发布候选 / Release candidate | [docs/RELEASE_CANDIDATE_P1.md](docs/RELEASE_CANDIDATE_P1.md), [docs/RELEASE_NOTES_TEMPLATE.md](docs/RELEASE_NOTES_TEMPLATE.md) |
 | **九国候选数据集 / Candidate dataset** | [datasets/csc-candidate/README.md](datasets/csc-candidate/README.md) |
 | ZCODE 启动 / Start | [prompts/ZCODE_START.zh-CN.md](prompts/ZCODE_START.zh-CN.md) |
 | 新会话续跑 / Resume | [prompts/ZCODE_RESUME.zh-CN.md](prompts/ZCODE_RESUME.zh-CN.md) |
