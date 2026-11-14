@@ -59,7 +59,4 @@ audited CSC snapshot with official 2026 layers for FR (INSEE) and JP (Geolonia))
   data lives only in the product layer. Any adoption goes through
   `docs/UPDATE_RUNBOOK.md` contracts.
 
-Ten-locale coverage: en 100% (source-native), zh-Hant 57,255 machine-candidate
-(conservative s2t + kanji-direct for JP + proof-read fixes), zh-Hans/ja/ko/ru/de/
-fr/it/ar 83-86% provisional (upstream CSC translations), all with honest quality
-words (`humanReviewVerified=false`).
+Ten-locale coverage (after the Wikidata P374 INSEE join for FR): en 100%, zh-Hans 80,913 / zh-Hant 80,931 / de 82,673 / fr 82,679 / it 82,675 / ru 70,792 / ja 61,181 / ko 58,344 / ar 59,313 of 93,683 — all provisional with honest quality words (`humanReviewVerified=false`); FR community labels are CC0, staged extract not committed.

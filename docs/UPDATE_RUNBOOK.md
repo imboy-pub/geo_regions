@@ -31,6 +31,9 @@ python3 tool/update_rehearsal.py --selftest
      - **查询型提取件**（`upstreamQuery` 钉，如 Wikidata）：重跑记录的查询并刷新钉
        （`python3 tool/fetch_wikidata_labels.py` / `tool/fetch_wikidata_cn_labels.py`）。
        Query-derived extracts: re-run the recorded query and refresh the pin.
+     - **候选层 FR 卷**（staged，不入 git）：`python3 tool/fetch_wikidata_fr_labels.py`
+       （P374 INSEE join，141 批断点续跑）→ `python3 tool/build_csc_candidate.py`
+       重生候选体并应用 overlay。
      - **AI 生成件**（`generatedSources` 钉）：重跑记录的生成器
        （`python3 tool/gen_seed_residuals.py`），QA 门禁失败不落盘。
        AI-generated extracts: re-run the recorded generator; QA failures block the write.

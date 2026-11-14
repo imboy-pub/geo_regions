@@ -40,6 +40,7 @@
 多轮修值与官方层切换后，正文中的轮次快照数字已过时。当前实测：
 
 - **节点总数 93,683**（FR 35,040 / JP 1,946 / KR 327 / 其余 CSC 层）
-- 十语覆盖：en 93,683 (100%) / zh-Hans 57,237 / zh-Hant **57,255**（machine-candidate+CLDR root）/ ja 57,823 / ko 57,591 / ru 58,884 / de 58,339 / fr 58,336 / it 58,345 / ar 57,291
+- 十语覆盖（FR 卷经 Wikidata P374 INSEE join 补齐后）：en 93,683 (100%) / zh-Hans **80,913** / zh-Hant **80,931** / ja 61,181 / ko 58,344 / ru **70,792** / de **82,673** / fr **82,679** / it **82,675** / ar 59,313（对比补齐前：zh-Hans 57,115 / ja 57,689 / de 58,207 等——FR 单卷闭合 ~154k 缺口格）
+- FR 覆盖明细：zh-Hans 34,360/35,040 (98%)、zh-Hant 34,361、de 35,022、it 35,018、ru 22,555、ja 13,977、ko 11,353、ar 12,604（ja/ko/ar 残缺为对应语种维基对法国市镇的覆盖极限，provisional 如实标注）
 - 已知错误模式残留：**0**（suffix/latin/garbage/混体全部规则化进生成器）
-- 权威汇总文件：`translation_coverage.json`、`verification_p300_batch.json`（selfCorrections 台账）
+- 权威汇总文件：`translation_coverage.json`、`verification_p300_batch.json`（selfCorrections 台账）、staged 取数件 `staging/wikidata-fr/fr-labels.json`（CC0，sha256 记录于生成日志）
