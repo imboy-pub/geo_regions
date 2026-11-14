@@ -910,94 +910,94 @@
       "sha256": "22b95e22d5586cbf3bf8071d52edd9ba3436e6847dcd7b6b121aa3dbe3752893"
     },
     {
-      "bytes": 473,
+      "bytes": 601818,
       "compatibleStructureRevision": "s-08b9a26f9093c7de",
       "countryCode": "DE",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/DE.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "b733c5ead4e0b87887e8591712c68297c8d7ecf4365639357f6d611dd94b48b4"
+      "revision": "l-afd1e5ac4e0837fe",
+      "sha256": "90a86c6d6835112cc68e16bef3c8f3dc507db0cb2440e5c13324d2c3bf58e258"
     },
     {
-      "bytes": 474,
+      "bytes": 890167,
       "compatibleStructureRevision": "s-44805c08690983fc",
       "countryCode": "FR",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/FR.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "f064fe3b23570162019990d02a7f0b3ce267e0e565ff1cb9f2056a52dedfc826"
+      "revision": "l-63bfa2573c81b362",
+      "sha256": "1c9a125ca8d6b287f7bb1560305e7fd3c97bcb7461491e4c8b2ac21a2b1b56f3"
     },
     {
-      "bytes": 473,
+      "bytes": 322076,
       "compatibleStructureRevision": "s-fc231222360974cc",
       "countryCode": "GB",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/GB.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "35492be7cd3af5f7ecc04df37c7aa274f78c027771ad5d8a73a1941ccf8cfa68"
+      "revision": "l-16488ff2030675b0",
+      "sha256": "f3ba11a2eb00f2aea440e40af52c3977d870af528ef82dff5b8a51d047075b25"
     },
     {
-      "bytes": 474,
+      "bytes": 869777,
       "compatibleStructureRevision": "s-35c2e691fdead242",
       "countryCode": "IT",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/IT.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "b996154567d56e8c658f1c68f0dabe0dc08a76e75621ed80471aae7866181a9a"
+      "revision": "l-eb94066c1b86684a",
+      "sha256": "b5a480c3e1d534d5f550a107cc176b15cdde8e2dfa5cc13e9edf0c84274065d0"
     },
     {
-      "bytes": 473,
+      "bytes": 101512,
       "compatibleStructureRevision": "s-8110b4fd40a52f6a",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/JP.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "5e14ba193cdde4c3ab381e07c9d438f1d526705cc5421441647e645a60dc3176"
+      "revision": "l-1f536c5708cdb654",
+      "sha256": "5df876c742033108ed1116b4839cc57840dc18903c38cc401a68af6ed971139a"
     },
     {
-      "bytes": 472,
+      "bytes": 26238,
       "compatibleStructureRevision": "s-0a15ac21379fe168",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/KR.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "2e0f3d9d4a3a6ac852515ded3ff12b670d2ac3160f68e503531f24d1bcfe5621"
+      "revision": "l-896233797e529b13",
+      "sha256": "0cc6279f5185138a459f4bee1b3edaed3a3cc7992dd478da668be1090af36621"
     },
     {
-      "bytes": 473,
+      "bytes": 450598,
       "compatibleStructureRevision": "s-979283308bb6efcb",
       "countryCode": "RU",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/RU.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "5479b68545a8ca2ac40cb94de662a5afa3ff5c2ef449b5d5e50802fe21596788"
+      "revision": "l-360df032be273c89",
+      "sha256": "181d4cb7230b6708e799334c3cbbf410b962b1f7a303c3b48e5ce3d78929bdf6"
     },
     {
-      "bytes": 472,
+      "bytes": 34280,
       "compatibleStructureRevision": "s-2ef87c0eb67e641a",
       "countryCode": "SA",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/SA.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "309c957330cc26e819ef816279d5d825392015280b52a61c32c9d3248a88b97a"
+      "revision": "l-940d76bd02d351a6",
+      "sha256": "7007bfa8cb488fb341e88a046c78631fa1f0de7ec8d2d55112380c572bda6169"
     },
     {
-      "bytes": 474,
+      "bytes": 1616632,
       "compatibleStructureRevision": "s-b50434f0cdd22130",
       "countryCode": "US",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/US.json",
-      "revision": "l-7d01933edb0760c0",
-      "sha256": "b5f2f4e0a792768ce78cc08d8fa393f058376657d8eaeeb8f4489236e041c091"
+      "revision": "l-44ffc98f1d212be3",
+      "sha256": "ad2d37e86c32dcb24a76ed69487f981a4417915cb34cdb01975fe35015d48cc9"
     },
     {
       "bytes": 1976074,
@@ -1072,5 +1072,5 @@
       "sha256": "334ffbf34cce4a2d6322b64bfbf6cf5bc54919da86e16dd95a1d97562fceb9be"
     }
   ],
-  "revision": "m-e963c943588f684e"
+  "revision": "m-28375cc10cbee076"
 }

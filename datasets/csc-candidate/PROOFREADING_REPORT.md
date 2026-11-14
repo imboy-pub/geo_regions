@@ -1,34 +1,33 @@
-# 翻译校对报告 / AI proof-reading report（2026-11-14）
 
-范围：`proofreading_samples.json` 108 条（9 国 states 层，zh-Hans + ja 双语对照）。
-口径：AI 校对 ≠ 人工审签（humanReviewVerified=false 不变）；质量词保持 provisional 不回写；本报告是人工审校的**底稿**。
+---
 
-## 1. 发现的真实错误（修正建议，未回写包）
+# 第二轮：cities 层校对（180 条，每国 20）+ zh-Hant 生成记录（2026-11-14）
 
-| ID | 层 | 语言 | CSC 值 | 判定 | 修正建议 |
-|---|---|---|---|---|---|
-| iso3166-2:KR-11（Seoul） | state | zh-Hans | **汉城** | **错误**：2005 年后规范译名为"首尔" | 首尔 |
-| csc-state:RU-Jewish | state | zh-Hans | **犹太人** | **错误**：行政区名被截断成族群名（Jewish Autonomous Oblast=犹太自治州） | 犹太自治州 |
-| csc-state:RU-Nenets | state | zh-Hans | **涅涅茨人** | **错误**：同上（Nenets Autonomous Okrug=涅涅茨自治区） | 涅涅茨自治区 |
-| csc-state:RU-Khanty-Mansi | state | ja | **ハンティ・マンシ語** | **错误**：带"語"（语言）后缀，Wikidata 类交叉污染 | ハンティ・マンシ |
-| csc-state:SA-Northern Borders | state | ja | **北部国境** | 存疑：日语无此直译习惯 | 国境地方（需日方资料确认） |
-| csc-state:US-Texas | state | zh-Hans | 德克萨斯州 | 规范偏差：大陆现行规范"得克萨斯州" | 得克萨斯州（规范库核对） |
+## 1. zh-Hant machine-candidate 包（GSA-03 路径 A 落地）
 
-## 2. 风格不一致（不判错，建议统一审校）
+- **57,512 条 zh-Hant 候选**，全部 `machine-candidate` 质量（绝不冒充上游/审校）：
+  - JP：CSC ja 汉字名直用 + 日体字归一（対→對、沢→澤、瀬→瀨 等确定映射）
+  - KR/其余 7 国：zh-Hans 简转繁（保守映射表 ~420 对，模糊字台/里/后/干/松/系等**不映射保留并计数**）
+  - 5 处校对修正直接生效：首爾、猶太自治州、涅涅茨自治區、漢特-曼西自治區、得克薩斯州
+- 发现并修复**转换表两轮缺口**：第一轮漏字导致混体（聖玛爾特：玛→瑪缺失）；补 ~150 对后全部混体消除；杨→楊 等高频补齐
+- 质量词不回写为 approved：转换候选 = 审校底稿（humanReviewVerified=false 不变）
 
-- **JP "县"后缀混用**：岛根县/爱知县/兵库县 带"县"，冈山/千叶/东京 等不带（抽样 3/12）
-- **US "州"后缀混用**：特拉华州/堪萨斯州/犹他州 带"州"，新罕布什尔/佛蒙特/夏威夷 不带（4/12）
-- **SA "省"后缀混用**：哈伊勒省 带，利雅得/麦加 等不带
-- DE 不判：柏林/汉堡/不来梅为城市州，德语习惯本就不带 Land；巴伐利亚两译并存
-- 同类截断风险（未在抽样内全查）：RU 自治区/边疆区系列名可能被 CSC 截断（Khanty-Mansi→"汉特-曼西"缺"自治区"）
+## 2. cities 层新发现（180 条实测）
 
-## 3. 校对通过判定（抽样内）
+| 类 | 例 | 判定 |
+|---|---|---|
+| CSC 上游错误 | JP Ichikikushikino zh=**一串串木野史**（Ichiki-kushikino 拆解错误+Shi 音译成"史"）；Rishiri Gun zh=**利尻枪**（Gun=枪）；Minamiawaji Shi zh=南淡路**士**；KR Kimje=**金杰**（金堤）、Puan=**普安**（扶安）；SA "City Ghran" zh=**城市格兰**（City 直译） | **wrong**：日英后缀被音译成实义字；修正记录为审校底稿 |
+| zh-Hans/hant 通道错位 | JP Buzen zh=丰前市 vs hant=豊前（ja 不带"市"）；Ōhara 大原町 vs 大原 | inconsistent：JP 双通道风格需统一审校 |
+| 日体字借字 | 対馬市/野沢温泉/岩瀬（首輪 kanji-direct） | 已修：對馬市/野澤温泉/岩瀨 |
+| 音译质量 | US Smithland=史密斯**蓝德**（兰）、Big Timber=大廷伯 | uncertain：音译规范需译名库核对 |
+| 数据质量（非翻译） | US 名单含 Ingenio（意大利式名）；SA Ash Shi`b 未翻译保留原文 | 记录为 CSC 上游数据质量问题 |
+| 缺译保留 | IT Gemini / US Pocopson 等 zh=None | **正确行为**（不虚构） |
 
-- JP 9/12、KR 11/12、GB 9/9、IT 11/12（Latina zh=None 为缺译保留——协议正确行为）、FR 12/12、DE 12/12、SA 10/12、RU 10/12、US 8/12
-- ja 除 RU/SA 2 条外全部通过（含 KR Seoul→ソウル 正确音译）
+## 3. 十语矩阵（更新后）
 
-## 4. 缺口与下一步
-
-- zh-Hant：CSC 上游 0 条——候选数据集如实保留缺失；生产繁中走 GSA-03 备忘三路径（DP-01 审校 backlog）
-- 8 语覆盖 83-86%（57k-59k/68,866）；缺译保留缺失不虚构
-- 本报告 + 108 条样本是人工审校底稿；审校完成后按 UPDATE_RUNBOOK 合同逐条迁移质量词
+| locale | 覆盖 | 质量 |
+|---|---|---|
+| en | 68,866 (100%) | source-native |
+| zh-Hans/ja/ko/ru/de/fr/it/ar | 57k-59k (83-86%) | provisional（上游 CSC 翻译） |
+| **zh-Hant** | **57,512 (83.5%)** | **machine-candidate（本轮生成：JP kanji-direct + 8 国 s2t + 5 处修正）** |
+| 校对状态 | states 108 条 + cities 180 条 = 288 条 AI 校对 | humanReviewVerified=false 不变 |

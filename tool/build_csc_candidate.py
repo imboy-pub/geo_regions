@@ -25,6 +25,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tool"))
 import geo_data as geo  # noqa: E402
+import s2t_places  # noqa: E402
 
 SNAP = REPO / "staging/csc-snapshot"
 OUT = REPO / "datasets/csc-candidate"
@@ -32,6 +33,16 @@ COUNTRIES = ["JP", "KR", "US", "GB", "DE", "FR", "IT", "RU", "SA"]
 LOCALES = ["en", "zh-Hans", "zh-Hant", "ja", "ko", "ru", "de", "fr", "it", "ar"]
 TRANSLATION_LOCALES = {"zh-Hans": "zh-CN", "ja": "ja", "ko": "ko", "ru": "ru",
                        "de": "de", "fr": "fr", "it": "it", "ar": "ar"}
+# zh-Hant path A (GSA-03 memo): JP kanji direct reuse, KR/other convert from
+# zh-Hans, with explicit fixes for upstream errors found in proof-reading.
+# Everything lands as machine-candidate — never upstream, never approved.
+ZH_HANT_FIXES = {
+    ("KR", "Seoul"): "首爾",
+    ("RU", "Jewish"): "猶太自治州",
+    ("RU", "Nenets"): "涅涅茨自治區",
+    ("RU", "Khanty-Mansi"): "漢特-曼西自治區",
+    ("US", "Texas"): "得克薩斯州",
+}
 CSC_SOURCE = "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
 CLDR_SOURCE = "_task_packages/geo_regions_source_audit_2026-11-13/data/catalog_i18n (CLDR 49 pinned, Unicode-3.0)"
 
@@ -134,6 +145,38 @@ def main():
                 if value:
                     packs[locale][nid] = nfc(value)
 
+        # derive zh-Hant pack (machine-candidate)
+        hant_names, hant_quality = {}, {}
+        conversion_stats = {"convertedChars": 0, "names": 0, "kanjiDirectJP": 0}
+        for nid, node_row in ((n["id"], n) for n in nodes):
+            hans = packs["zh-Hans"].get(nid)
+            fix = ZH_HANT_FIXES.get((cc, node_row["name"]))
+            if fix:
+                value, source = fix, "proofread-fix"
+            elif cc == "JP":
+                ja_value = packs["ja"].get(nid)
+                if ja_value and not s2t_places.has_kana(ja_value):
+                    # kanji direct reuse + shinjitai→traditional normalization
+                    value, source = s2t_places.convert(ja_value)[0], "kanji-direct"
+                    conversion_stats["kanjiDirectJP"] += 1
+                elif hans:
+                    value, source = s2t_places.convert(hans)[0], "s2t-convert"
+                else:
+                    value, source = None, None
+            elif hans:
+                value, source = s2t_places.convert(hans)[0], "s2t-convert"
+            else:
+                value, source = None, None
+            if value:
+                hant_names[nid] = nfc(value)
+                hant_quality[nid] = "machine-candidate"
+                conversion_stats["names"] += 1
+                if source == "s2t-convert":
+                    conversion_stats["convertedChars"] += s2t_places.convert(hans)[1]
+        packs["zh-Hant"] = hant_names
+        if hant_names:
+            TRANSLATION_LOCALES_SET = set(TRANSLATION_LOCALES)  # noqa: F841
+
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc, "sourceRefs": [CSC_SOURCE], "nodes": nodes}
         structure["revision"] = geo.revision("s", nodes)
@@ -145,10 +188,15 @@ def main():
                     "sourceRefs": [CSC_SOURCE], "names": packs[locale],
                     "coverage": {"status": "research-seed",
                                  "translationQualityById": {
-                                     nid: ("source-native" if locale == "en" else "provisional")
+                                     nid: ("machine-candidate" if locale == "zh-Hant"
+                                           else "source-native" if locale == "en" else "provisional")
                                      for nid in packs[locale]},
                                  "explicitNames": len(packs[locale]),
-                                 "missingNames": len(nodes) - len(packs[locale])}}
+                                 "missingNames": len(nodes) - len(packs[locale]),
+                                 **({"machineCandidate": True,
+                                     "zhHantStrategy": ("kanji-direct-JP" if cc == "JP" else "s2t-convert-from-zh-Hans"),
+                                     "proofreadFixesApplied": sum(1 for nid in hant_names if ZH_HANT_FIXES.get((cc, next(n2["name"] for n2 in nodes if n2["id"] == nid))))
+                                     } if locale == "zh-Hant" else {})}}
             pack["revision"] = geo.locale_revision(pack["names"], pack["coverage"]["translationQualityById"])
             geo.write_json(OUT / f"data/i18n/{locale}/{cc}.json", pack)
         stats[cc] = {"nodes": len(nodes), "states": len(states_by_cc.get(cc, [])),
