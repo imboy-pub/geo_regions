@@ -52,3 +52,13 @@ en 93,682(100%) / zh-Hans 30,554+ / zh-Hant 56,742+ / ja / ko / ru / de / fr / i
 - **高置信通过**：US（99% counties）、RU（83 自洽）、SA（13）、DE 州级（16/16）
 - **缺口如实**：IT cities 层（待 ISTAT）、DE 县级（待 Destatis）、GB（待 ONS）、RU cities（无独立源）、KR 光州 4 区 CSC 缺失
 - 每节点的 sourceRefs 与时点标注使 2026 达成度可审计
+
+## 7. 第八轮收口探测（2026-11-14）
+
+| 项 | 结果 |
+|---|---|
+| **DE 市镇覆盖** | Wikidata Q26266 计数 **10,178** vs CSC 7,107 → **CSC 仅 ~70% 覆盖**（定量确认，与 JP 同类上游缺口）；Destatis 官方源接入仍是唯一根治路径（BLOCKED_ENV） |
+| **KR 光州 4 区** | CSC KR-18 仅 2 子（Gwangju/Gwangsan-gu），Wikidata 查询限流未能二次证实——上游缺口记录维持 |
+| **GB-ENG** | England 实体+码**完整在场**（iso3166-2:GB-ENG）——连续三轮的"England 缺失"疑虑彻底关闭 |
+
+翻译侧第七轮后无新增已知错误类别：五类模式全量扫描干净、修值规则全部进生成器（重生成保持）、模糊字/日体字残留归零。
