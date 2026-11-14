@@ -1,0 +1,1076 @@
+{
+  "datasetId": "geo-regions-csc-candidate",
+  "protocolVersion": "1.0",
+  "resources": [
+    {
+      "bytes": 1052,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "ar",
+      "path": "catalog_i18n/ar.json",
+      "revision": "l-bbe3c439856639de",
+      "sha256": "1404fe076a2afb31526d4e21aa605e58f836613e1e6299c0384645f3010b4439"
+    },
+    {
+      "bytes": 961,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "de",
+      "path": "catalog_i18n/de.json",
+      "revision": "l-67842a21ae3db814",
+      "sha256": "1cd7d019e7f24f729f3d23b0e0f12001af810db967a63f076da7ed7d4d12d15d"
+    },
+    {
+      "bytes": 936,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "en",
+      "path": "catalog_i18n/en.json",
+      "revision": "l-ab87ed90e0a1e0b0",
+      "sha256": "8a0404314a08feecbfd94be1ed775704eace0fde485c044c5d64a3da188c5333"
+    },
+    {
+      "bytes": 939,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "fr",
+      "path": "catalog_i18n/fr.json",
+      "revision": "l-50c983778f813d04",
+      "sha256": "da8aa9d4fde4fba3313fe83dc41ad72ff7cd3325bf1c6088ba7f7ba5adb0af3b"
+    },
+    {
+      "bytes": 941,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "it",
+      "path": "catalog_i18n/it.json",
+      "revision": "l-6b81a70f47dc8777",
+      "sha256": "04ecc6ef5777946400abfe9da778d01e84a59a0d917579131181625a57bce62d"
+    },
+    {
+      "bytes": 965,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "ja",
+      "path": "catalog_i18n/ja.json",
+      "revision": "l-d8f028c5d467c311",
+      "sha256": "6386b93de14435019b471d229fb1711aa7d06bb86b7c6679cf34974f2b2f0059"
+    },
+    {
+      "bytes": 944,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "ko",
+      "path": "catalog_i18n/ko.json",
+      "revision": "l-192b6784dd992343",
+      "sha256": "5cc274b95076953d50cd866471874a91e829a2f5c809d71c840c36b4599988fe"
+    },
+    {
+      "bytes": 1048,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "ru",
+      "path": "catalog_i18n/ru.json",
+      "revision": "l-6ea149750b20dfc5",
+      "sha256": "96c525068fd4722dcdf0cf7e895aa834af4e1f641635aa1110bee368f6a60338"
+    },
+    {
+      "bytes": 931,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "zh-Hans",
+      "path": "catalog_i18n/zh-Hans.json",
+      "revision": "l-86540a67cf8f1223",
+      "sha256": "891344d86b2e4d4e300034f8de078839452c92095f459d71659e486ef199e51a"
+    },
+    {
+      "bytes": 934,
+      "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+      "kind": "country-names",
+      "locale": "zh-Hant",
+      "path": "catalog_i18n/zh-Hant.json",
+      "revision": "l-336aed26c239e3b4",
+      "sha256": "611affc9ee080fdc295a92c41632d18212331d56ed856e82909be9a71bc52762"
+    },
+    {
+      "bytes": 997,
+      "kind": "countries",
+      "path": "countries.json",
+      "revision": "c-961f55cbaf2c5ca8",
+      "sha256": "0e9cf30ed266d6c09fb3b2971a0e06d06e5256478581d705d6a03d6ea8e0b968"
+    },
+    {
+      "bytes": 577946,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/DE.json",
+      "revision": "l-559f31f829a017df",
+      "sha256": "312636c67c3c5f0fdc7189537b5ad4ed30dd8aad944992a24ccc142c91c7578b"
+    },
+    {
+      "bytes": 851951,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/FR.json",
+      "revision": "l-ca3462a1c27965e3",
+      "sha256": "7254b0ad92086d1ca79f3493bb23f421913df661bd636dcd41d0698fd11cea02"
+    },
+    {
+      "bytes": 313462,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/GB.json",
+      "revision": "l-775bfd61715dc0dd",
+      "sha256": "279ed31da0e555f8ae7e57f61306ae252a36a1036b6995011ed4c1d0eb6022a7"
+    },
+    {
+      "bytes": 855146,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/IT.json",
+      "revision": "l-cf088853434a2763",
+      "sha256": "ace7313f298d3aaf4eba753c703a3ed27592a5e67924e95872092a6defb34efb"
+    },
+    {
+      "bytes": 102973,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/JP.json",
+      "revision": "l-0b519255573963fc",
+      "sha256": "e3eac00122f656e8ca355fdd9311e3236c1abd16f82fc420d4e9f1079939402e"
+    },
+    {
+      "bytes": 26831,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/KR.json",
+      "revision": "l-5d87be3f53a3f6ce",
+      "sha256": "ce5878bac293451c80c62a2523ba6acee32708e3dabebe1aa1bd4dc21fa13248"
+    },
+    {
+      "bytes": 449101,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/RU.json",
+      "revision": "l-abf533566f5d1f58",
+      "sha256": "301b397f34030e8691d7887cad68603a244697fff684b18d9c7a8177a1ae0230"
+    },
+    {
+      "bytes": 32938,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/SA.json",
+      "revision": "l-1c998b5c7525d5a1",
+      "sha256": "d226b7c238166f4146c220e12d5623d0455f23b74253157158419f5f9a4d3335"
+    },
+    {
+      "bytes": 1611371,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "ar",
+      "path": "i18n/ar/US.json",
+      "revision": "l-e46073f38572f60b",
+      "sha256": "4540b6292c3024fe9e5688511c96cb20fedfc2ee54f48adfca8c538a33cfca46"
+    },
+    {
+      "bytes": 533887,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/DE.json",
+      "revision": "l-07cf26b030f5db67",
+      "sha256": "b614e35cb3c4904c895ad4fdedde1c310f8f5e7eaeadf553cf48020481985ef0"
+    },
+    {
+      "bytes": 812656,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/FR.json",
+      "revision": "l-1fde49010f1ca60e",
+      "sha256": "c9383f968570be119dd9e75199d91a4b4155e1b30163cc659126cce459dd6e33"
+    },
+    {
+      "bytes": 296140,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/GB.json",
+      "revision": "l-e475b160a1ef20cc",
+      "sha256": "0609e27864899891254be02dc43f1a6e64cba32f11c8af0e512a6e2583117624"
+    },
+    {
+      "bytes": 771344,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/IT.json",
+      "revision": "l-3f6a2df8b4fe8f2d",
+      "sha256": "65b920bd884c4284c806445edf6c696b1e40c5e9795e475dbed0b1ee5cd80667"
+    },
+    {
+      "bytes": 94039,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/JP.json",
+      "revision": "l-eecc9131ff17d3e1",
+      "sha256": "ad2f2569f8d95f24f843faf52da9a574476ab4cbc6ee2765ecfc0b30c175546d"
+    },
+    {
+      "bytes": 24303,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/KR.json",
+      "revision": "l-cc92991976f83afb",
+      "sha256": "a3d39e54e34f4a5c0615fa29c2acdd236ff4a158e9888a2cd80f09e44f85c131"
+    },
+    {
+      "bytes": 407442,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/RU.json",
+      "revision": "l-8ce8de9415bb630c",
+      "sha256": "e6c968d4160f82fb497f0a7a23ff752f88114eaec6ec00415c3f3b2ca117491f"
+    },
+    {
+      "bytes": 31346,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/SA.json",
+      "revision": "l-c8774692db33a6af",
+      "sha256": "0eb29e9f62ea12fca12970739d5ec2a55468021ce3028898f8fad4d6d513cc31"
+    },
+    {
+      "bytes": 1530760,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "de",
+      "path": "i18n/de/US.json",
+      "revision": "l-90f4e1c159f96481",
+      "sha256": "0573f78345921924bd3966de6f7472ea73c02d1992592ca7d029b52acd84f87a"
+    },
+    {
+      "bytes": 582107,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/DE.json",
+      "revision": "l-95fd471c2811730c",
+      "sha256": "0404e976446dbcec624f555d8cc72229eee07d8c7bfcd5580c0c51ae56b8f01d"
+    },
+    {
+      "bytes": 872262,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/FR.json",
+      "revision": "l-c558f814bcecba91",
+      "sha256": "27e5bfb745372fddf325108d33a65f90db0592982b7e8807b288d7a46b7d4918"
+    },
+    {
+      "bytes": 317885,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/GB.json",
+      "revision": "l-826f575c5c071972",
+      "sha256": "db6c48599b891611320d077b2e2bb9d41397060598478ab94887f0b3fa68c7b3"
+    },
+    {
+      "bytes": 821489,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/IT.json",
+      "revision": "l-c64c8b8caa428fc2",
+      "sha256": "e3021b911fea61e985516c365c3703554a32852e2073a1d9e82bb917b0c47f27"
+    },
+    {
+      "bytes": 97643,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/JP.json",
+      "revision": "l-e7dd30277f364b50",
+      "sha256": "0ce770d207c46125240407f916a21d6b8dee3e45ca437a07ffa078c8e683c282"
+    },
+    {
+      "bytes": 25258,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/KR.json",
+      "revision": "l-e6ae3950ad2da9d1",
+      "sha256": "cb8e6328b3c0a5e896382e4ba8b5df701bf0ef88e1eff9dc7ac4bc8d491fe09b"
+    },
+    {
+      "bytes": 589019,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/RU.json",
+      "revision": "l-cdca45e16f045b33",
+      "sha256": "da91d10518addbda0c886cf4ea97f011fc745aa015d3eece91cbda2c4a84ef7d"
+    },
+    {
+      "bytes": 32512,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/SA.json",
+      "revision": "l-90709e307e56e29c",
+      "sha256": "99329cd4062d7e612ffbe34f8027d43fd3e83c0ee161ba303246298a8838031e"
+    },
+    {
+      "bytes": 2094627,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "en",
+      "path": "i18n/en/US.json",
+      "revision": "l-f190fb8c22aba932",
+      "sha256": "3c83da00e80d24f8f79b87aeca0d1c1e9bfb2ee32c00361d71b9f324c7264507"
+    },
+    {
+      "bytes": 535113,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/DE.json",
+      "revision": "l-4c11656d31143284",
+      "sha256": "b8e457c5ac2dfd31f6596fb51a2adf44f8887050e3049858cd34cb8b6bfcbd5c"
+    },
+    {
+      "bytes": 813465,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/FR.json",
+      "revision": "l-9a7b8d8757a1beab",
+      "sha256": "83009b849a9a1653e50690b6fbe51f626ce53deb5ad658a607e98e9c22d18317"
+    },
+    {
+      "bytes": 296160,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/GB.json",
+      "revision": "l-9919c7a0cc7b5e74",
+      "sha256": "fa8081c38a82006dfa5f64ad992e03679d6ed2bc39f394965675068cad52f4f4"
+    },
+    {
+      "bytes": 770878,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/IT.json",
+      "revision": "l-d553c3c7c13f5264",
+      "sha256": "66411877c8e4b80fad616b950b430f8b58748963d1aa0c0fb73e04d7a68564d3"
+    },
+    {
+      "bytes": 94356,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/JP.json",
+      "revision": "l-0d3f0ba75650024e",
+      "sha256": "5234106fdcce24af5b1b17ffc703433d65e0906b7a962b51e01fd5b89652cca7"
+    },
+    {
+      "bytes": 24905,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/KR.json",
+      "revision": "l-a78c846efd856578",
+      "sha256": "b90da78bfaa3dc45883f35b4b93c51d80e4304e551468b694920f491a2523f23"
+    },
+    {
+      "bytes": 408003,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/RU.json",
+      "revision": "l-95fe89971e5256a5",
+      "sha256": "a0940c3438ca9305e285f2bd110ec0a30088e620cbab9a925c4efe4213b7c51e"
+    },
+    {
+      "bytes": 31247,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/SA.json",
+      "revision": "l-32c41bc1698dde7b",
+      "sha256": "36489e738085b3e07974489f90eb231172d017325f1277bfe792259fdb88526a"
+    },
+    {
+      "bytes": 1537406,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "fr",
+      "path": "i18n/fr/US.json",
+      "revision": "l-54a79b8c1c5c93a7",
+      "sha256": "ca9636669bf343c717a367fd702eec643d6df884e83b4897a51ac692d4662807"
+    },
+    {
+      "bytes": 534616,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/DE.json",
+      "revision": "l-ca2bc99a2d15adc8",
+      "sha256": "24a7a14a865efe6d747341db05432db69ebfc6e2f43763cd7751d42d1a5046de"
+    },
+    {
+      "bytes": 813752,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/FR.json",
+      "revision": "l-e2fc73bdfc4342bd",
+      "sha256": "8d96cce8dfaa5bc00bf9bfcdffacecfac1d802d38e30b886de5071fd0bf98943"
+    },
+    {
+      "bytes": 296164,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/GB.json",
+      "revision": "l-cdad1e73b3590d19",
+      "sha256": "2aa910ef32d1391b1fb31daba78552b1edf35b5e4d9d0b733872590d87983ea1"
+    },
+    {
+      "bytes": 771415,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/IT.json",
+      "revision": "l-cc497748671463c4",
+      "sha256": "072b7f7307e799e0cb05f38b7387357c440e600b4e523a31963801d2bec97ea5"
+    },
+    {
+      "bytes": 94042,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/JP.json",
+      "revision": "l-a5b454a21e49e58f",
+      "sha256": "0764b5e0e1bf0f7b40d1999e78654dc93ba4f576a1ab3a568d4292e808e29804"
+    },
+    {
+      "bytes": 24426,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/KR.json",
+      "revision": "l-a4ea05aa5abbb257",
+      "sha256": "1b9927aadab98955efb6f874991143c73ac3b90c0822fbe45f4fdd6432fd6799"
+    },
+    {
+      "bytes": 406762,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/RU.json",
+      "revision": "l-243d7bfbc385e443",
+      "sha256": "c135d9d13977d8593fc9ef7f2ad4ddc7e1d988ceea6a2c1e3c2adb6ac7c65b4d"
+    },
+    {
+      "bytes": 31264,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/SA.json",
+      "revision": "l-da958e3fe39d0c1c",
+      "sha256": "b6cf7b1d07788b11119c13580f31946172f0c62bde0b5f50fc6405bb1d7e35dc"
+    },
+    {
+      "bytes": 1537535,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "it",
+      "path": "i18n/it/US.json",
+      "revision": "l-15623a081af1842a",
+      "sha256": "9d006d5ded5610918765c79bd74b4677c927daeff7ce9c76073bd8c35a68b87b"
+    },
+    {
+      "bytes": 624060,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/DE.json",
+      "revision": "l-9aa33e2840190d09",
+      "sha256": "a5d957c4615a5d4172332a2327d1a69e5d09f043cbc0344024cbb4bcba854358"
+    },
+    {
+      "bytes": 897305,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/FR.json",
+      "revision": "l-5ebd1ba8b07f02dd",
+      "sha256": "0b495ae61b6f57787a4c8c323ade7dd5bd741cd2b6cfcfc0e8cc0991033dcdbc"
+    },
+    {
+      "bytes": 337868,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/GB.json",
+      "revision": "l-68a2bce06e576fbb",
+      "sha256": "9c3983522ae764cae65538372009aa32fa85786634dd41b53bb1d40f98f419b5"
+    },
+    {
+      "bytes": 898187,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/IT.json",
+      "revision": "l-9e20099b71da5860",
+      "sha256": "dc0a2d2f290e306d0a8f48d065cbbff9a0104cb4bf7faada96aeb782d7af0e0b"
+    },
+    {
+      "bytes": 93999,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/JP.json",
+      "revision": "l-acf750acf7826348",
+      "sha256": "96623a8f1b5cb0309f392a76616b9e6a0ce21911fff75c4ac94ecb3fcd33990c"
+    },
+    {
+      "bytes": 24390,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/KR.json",
+      "revision": "l-c55753f424088548",
+      "sha256": "8cb58e3c58e94f2bd051efe57d7eaada69a9ea039f4fcfd3ace1a08bda8d5b6c"
+    },
+    {
+      "bytes": 460889,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/RU.json",
+      "revision": "l-0b68896c50dcf515",
+      "sha256": "2e8330f4d07b5ca9077e135cf8501b9cfc1a3e1cda8ee767e70f65b18c71ce4b"
+    },
+    {
+      "bytes": 34197,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/SA.json",
+      "revision": "l-8e9f9913c3ff3328",
+      "sha256": "c42d41f86c5d0479ec5a598a35a49b6773ce3fb51684123000eaa77920882e35"
+    },
+    {
+      "bytes": 1666235,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "ja",
+      "path": "i18n/ja/US.json",
+      "revision": "l-5dd9b5724c587ca6",
+      "sha256": "e2806a4622f907ad9eccfc26435fa28fdf9995e481f93ec0ba34e7044ca466a9"
+    },
+    {
+      "bytes": 564408,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/DE.json",
+      "revision": "l-af529a5a67e5c4fa",
+      "sha256": "f502e01db385ecaab2df1dc08dad74aa9c09cbc4622a7d2d9e593744482e977a"
+    },
+    {
+      "bytes": 803405,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/FR.json",
+      "revision": "l-938fe7f50d3f1a91",
+      "sha256": "778b3259aee8e7843f0974baed592ebec1e7f16ba2bfad9fdce3e2d2f598a196"
+    },
+    {
+      "bytes": 305950,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/GB.json",
+      "revision": "l-aa8cde155b9a9cc9",
+      "sha256": "f7c671448995dc61377f5cabc81b103db53ef38eb96906d84321c9c343753601"
+    },
+    {
+      "bytes": 816061,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/IT.json",
+      "revision": "l-26caeec63fa71f2a",
+      "sha256": "a3371cdb58cc2242a98a1f835d835d5011e165a578679442bd2003cd8c4a9210"
+    },
+    {
+      "bytes": 99394,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/JP.json",
+      "revision": "l-131de4cc852e15a6",
+      "sha256": "06dd3adab23af93d2dd02c989cc5b8a810229aa2319371f6ec2cca01794a6a67"
+    },
+    {
+      "bytes": 24105,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/KR.json",
+      "revision": "l-8118db4e887ca125",
+      "sha256": "96fc1487959baa1d0744e43d495733c122b2607851d674d911c11670da6493a7"
+    },
+    {
+      "bytes": 436343,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/RU.json",
+      "revision": "l-2d163aa69f97890f",
+      "sha256": "9651ab20b42ae9300144ada2ab6ae38b18cf4f148c27cabbd8c05a404c375c3c"
+    },
+    {
+      "bytes": 31010,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/SA.json",
+      "revision": "l-b5be75683d02e4df",
+      "sha256": "4b4e98fd3cb514b4809f2fb7b10d8e06feef36f4197144ded72754fb936d7eb8"
+    },
+    {
+      "bytes": 1549217,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "ko",
+      "path": "i18n/ko/US.json",
+      "revision": "l-d2d0e67d17f6b045",
+      "sha256": "fa803ee75a5dc1bc513984f0fc43f52f8a9c269a6d6070a760348cdb4bf3257b"
+    },
+    {
+      "bytes": 595257,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/DE.json",
+      "revision": "l-aaf32df27e303128",
+      "sha256": "5710f794a84685308d1b66714eba47d520fe6a5f56dc92eaa88769a85f29aeb6"
+    },
+    {
+      "bytes": 874433,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/FR.json",
+      "revision": "l-a582e375d939021e",
+      "sha256": "a0b43f4a1c9435551e380cc374279b4274d02a35b8418c168e899c3552950c0b"
+    },
+    {
+      "bytes": 321482,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/GB.json",
+      "revision": "l-f52823dc396063f6",
+      "sha256": "b2bf8555e75de094b51ad54454cab845f1359e77619c0ee3f7032a0a981b7ca2"
+    },
+    {
+      "bytes": 871712,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/IT.json",
+      "revision": "l-a95fa6353da2d303",
+      "sha256": "6b06c43e54a9e76b0eeca4e036da9f0fb2b60c5d3f999cc4dd724f5695e0b2f2"
+    },
+    {
+      "bytes": 102053,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/JP.json",
+      "revision": "l-f1ba837dd9afa452",
+      "sha256": "30e7e19e2b1df04fa4278fb474367544b6d1f9c93f2285be4b4eb4e2659e3f31"
+    },
+    {
+      "bytes": 26232,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/KR.json",
+      "revision": "l-b479bb542b2cdb24",
+      "sha256": "18c8c6baab9746dc5907d781856ebc9ff3ee86f91b247170312bb76dd4fd6455"
+    },
+    {
+      "bytes": 660411,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/RU.json",
+      "revision": "l-6fd8ba1c09827465",
+      "sha256": "4f9b8c55367c70503f26c2833031ae2cf1d366213bf1714ef73b9c35ba738908"
+    },
+    {
+      "bytes": 33710,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/SA.json",
+      "revision": "l-385f20046dff721b",
+      "sha256": "d0bc27ed072002bf9143a2f45a196031a14ccba2216cc0954be689095e40ed50"
+    },
+    {
+      "bytes": 1595520,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "ru",
+      "path": "i18n/ru/US.json",
+      "revision": "l-8828109cae81141a",
+      "sha256": "df67e91a59b7cc9b1d4847757b82d02d59887c9fb0a1827cf073562ac6c8b4ba"
+    },
+    {
+      "bytes": 559232,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/DE.json",
+      "revision": "l-1dbb49e1fc5652f3",
+      "sha256": "0e967fabce8acf7d362c7103c615f1c52a35c8fa39eec7b1d2c708bccb436901"
+    },
+    {
+      "bytes": 827433,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/FR.json",
+      "revision": "l-0455250ff12e4bbe",
+      "sha256": "d02738f47d5639b1b1f9e8f1b944f1d72fd027f8111aa950b9f82ab016468bd7"
+    },
+    {
+      "bytes": 298846,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/GB.json",
+      "revision": "l-2578e27f1c260421",
+      "sha256": "f533e4349721a8cd159c1d5671ecf5ce031f2ed1698cf164a321a360a869098b"
+    },
+    {
+      "bytes": 810049,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/IT.json",
+      "revision": "l-aaab344799d555dd",
+      "sha256": "5ee934c0a8064818acb0f8bdde333a117bebed3861e7ff4d10d64b6707fc8628"
+    },
+    {
+      "bytes": 94518,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/JP.json",
+      "revision": "l-80e812cea67630a2",
+      "sha256": "bc18d53cf0e5df49c94c784d8a4e9eeeede57ee8f8453d28c02bfb4e9426a16d"
+    },
+    {
+      "bytes": 24188,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/KR.json",
+      "revision": "l-09b5a47ebc539d93",
+      "sha256": "fed0181e62f3468cea6bebe90cc5a40b750818e2cac37ebf5aec1570cb8f8133"
+    },
+    {
+      "bytes": 419553,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/RU.json",
+      "revision": "l-cdd7c21329eb83e7",
+      "sha256": "9afeb4d729175fc1f20de81cc3dd085b0314ffb8e512f58ac7ac95c07c3a33c5"
+    },
+    {
+      "bytes": 31786,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/SA.json",
+      "revision": "l-fcf3cafcd365f897",
+      "sha256": "ed88d1db7c5b9faff9eb99b91b8a4ee0541ce445a299363e2c0429678a9e0030"
+    },
+    {
+      "bytes": 1501802,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "zh-Hans",
+      "path": "i18n/zh-Hans/US.json",
+      "revision": "l-efc497de7d224eb0",
+      "sha256": "22b95e22d5586cbf3bf8071d52edd9ba3436e6847dcd7b6b121aa3dbe3752893"
+    },
+    {
+      "bytes": 473,
+      "compatibleStructureRevision": "s-08b9a26f9093c7de",
+      "countryCode": "DE",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/DE.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "b733c5ead4e0b87887e8591712c68297c8d7ecf4365639357f6d611dd94b48b4"
+    },
+    {
+      "bytes": 474,
+      "compatibleStructureRevision": "s-44805c08690983fc",
+      "countryCode": "FR",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/FR.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "f064fe3b23570162019990d02a7f0b3ce267e0e565ff1cb9f2056a52dedfc826"
+    },
+    {
+      "bytes": 473,
+      "compatibleStructureRevision": "s-fc231222360974cc",
+      "countryCode": "GB",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/GB.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "35492be7cd3af5f7ecc04df37c7aa274f78c027771ad5d8a73a1941ccf8cfa68"
+    },
+    {
+      "bytes": 474,
+      "compatibleStructureRevision": "s-35c2e691fdead242",
+      "countryCode": "IT",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/IT.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "b996154567d56e8c658f1c68f0dabe0dc08a76e75621ed80471aae7866181a9a"
+    },
+    {
+      "bytes": 473,
+      "compatibleStructureRevision": "s-8110b4fd40a52f6a",
+      "countryCode": "JP",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/JP.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "5e14ba193cdde4c3ab381e07c9d438f1d526705cc5421441647e645a60dc3176"
+    },
+    {
+      "bytes": 472,
+      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "countryCode": "KR",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/KR.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "2e0f3d9d4a3a6ac852515ded3ff12b670d2ac3160f68e503531f24d1bcfe5621"
+    },
+    {
+      "bytes": 473,
+      "compatibleStructureRevision": "s-979283308bb6efcb",
+      "countryCode": "RU",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/RU.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "5479b68545a8ca2ac40cb94de662a5afa3ff5c2ef449b5d5e50802fe21596788"
+    },
+    {
+      "bytes": 472,
+      "compatibleStructureRevision": "s-2ef87c0eb67e641a",
+      "countryCode": "SA",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/SA.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "309c957330cc26e819ef816279d5d825392015280b52a61c32c9d3248a88b97a"
+    },
+    {
+      "bytes": 474,
+      "compatibleStructureRevision": "s-b50434f0cdd22130",
+      "countryCode": "US",
+      "kind": "locale",
+      "locale": "zh-Hant",
+      "path": "i18n/zh-Hant/US.json",
+      "revision": "l-7d01933edb0760c0",
+      "sha256": "b5f2f4e0a792768ce78cc08d8fa393f058376657d8eaeeb8f4489236e041c091"
+    },
+    {
+      "bytes": 1976074,
+      "countryCode": "DE",
+      "kind": "structure",
+      "path": "regions/DE.json",
+      "revision": "s-08b9a26f9093c7de",
+      "sha256": "479ad17d906743d88c1092b1ac0dc871ccd49f6d072962ec321c4a27c169aa99"
+    },
+    {
+      "bytes": 2883636,
+      "countryCode": "FR",
+      "kind": "structure",
+      "path": "regions/FR.json",
+      "revision": "s-44805c08690983fc",
+      "sha256": "7c17c3a47321d838187e69bd9dd0630f6d50babe6d9fcf07f5b941c1c8eb7ed6"
+    },
+    {
+      "bytes": 1081422,
+      "countryCode": "GB",
+      "kind": "structure",
+      "path": "regions/GB.json",
+      "revision": "s-fc231222360974cc",
+      "sha256": "fa121f0e5022a945cefcdb1fe2cdc163a921b461f14c87e1a44af006e09341b9"
+    },
+    {
+      "bytes": 2733246,
+      "countryCode": "IT",
+      "kind": "structure",
+      "path": "regions/IT.json",
+      "revision": "s-35c2e691fdead242",
+      "sha256": "29984554a6fdd112a999dbb4470235b9c5d12ae67d3c76f060149fe6b2e9633d"
+    },
+    {
+      "bytes": 334066,
+      "countryCode": "JP",
+      "kind": "structure",
+      "path": "regions/JP.json",
+      "revision": "s-8110b4fd40a52f6a",
+      "sha256": "85de4735421b8cda3140112ac88ed164dee0569cfab3134e418876ac7585ee46"
+    },
+    {
+      "bytes": 85102,
+      "countryCode": "KR",
+      "kind": "structure",
+      "path": "regions/KR.json",
+      "revision": "s-0a15ac21379fe168",
+      "sha256": "4bb96e317897ce82317aff493caef88ce5235efb603edc02d8b54ec90f79e48c"
+    },
+    {
+      "bytes": 1905134,
+      "countryCode": "RU",
+      "kind": "structure",
+      "path": "regions/RU.json",
+      "revision": "s-979283308bb6efcb",
+      "sha256": "394cf3703b1def2d6511ee18d4289a81568489d7e55c778f2f848c89116d6069"
+    },
+    {
+      "bytes": 108126,
+      "countryCode": "SA",
+      "kind": "structure",
+      "path": "regions/SA.json",
+      "revision": "s-2ef87c0eb67e641a",
+      "sha256": "afe3a0918c47df71cdb605151829cc3d0d02ed61f2bcc50481f12c5464dc566b"
+    },
+    {
+      "bytes": 7041779,
+      "countryCode": "US",
+      "kind": "structure",
+      "path": "regions/US.json",
+      "revision": "s-b50434f0cdd22130",
+      "sha256": "334ffbf34cce4a2d6322b64bfbf6cf5bc54919da86e16dd95a1d97562fceb9be"
+    }
+  ],
+  "revision": "m-e963c943588f684e"
+}

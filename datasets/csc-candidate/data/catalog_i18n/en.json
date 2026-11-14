@@ -1,0 +1,35 @@
+{
+  "compatibleCatalogRevision": "c-961f55cbaf2c5ca8",
+  "coverage": {
+    "status": "research-seed",
+    "translationQualityById": {
+      "DE": "cldr-json-qualified",
+      "FR": "cldr-json-qualified",
+      "GB": "cldr-json-qualified",
+      "IT": "cldr-json-qualified",
+      "JP": "cldr-json-qualified",
+      "KR": "cldr-json-qualified",
+      "RU": "cldr-json-qualified",
+      "SA": "cldr-json-qualified",
+      "US": "cldr-json-qualified"
+    }
+  },
+  "datasetId": "geo-regions-csc-candidate",
+  "locale": "en",
+  "names": {
+    "DE": "Germany",
+    "FR": "France",
+    "GB": "United Kingdom",
+    "IT": "Italy",
+    "JP": "Japan",
+    "KR": "South Korea",
+    "RU": "Russia",
+    "SA": "Saudi Arabia",
+    "US": "United States"
+  },
+  "protocolVersion": "1.0",
+  "revision": "l-ab87ed90e0a1e0b0",
+  "sourceRefs": [
+    "_task_packages/geo_regions_source_audit_2026-11-13/data/catalog_i18n (CLDR 49 pinned, Unicode-3.0)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "compatibleStructureRevision": "s-08b9a26f9093c7de",
+  "countryCode": "DE",
+  "coverage": {
+    "explicitNames": 0,
+    "missingNames": 7542,
+    "status": "research-seed",
+    "translationQualityById": {}
+  },
+  "datasetId": "geo-regions-csc-candidate",
+  "locale": "zh-Hant",
+  "names": {},
+  "protocolVersion": "1.0",
+  "revision": "l-7d01933edb0760c0",
+  "sourceRefs": [
+    "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
+  ]
+}

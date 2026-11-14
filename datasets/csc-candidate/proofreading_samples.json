@@ -1,0 +1,866 @@
+[
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-33",
+  "en": "Okayama",
+  "zh": "冈山",
+  "ja": "岡山",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-12",
+  "en": "Chiba",
+  "zh": "千叶",
+  "ja": "千葉",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-44",
+  "en": "Ōita",
+  "zh": "大分",
+  "ja": "大分",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-13",
+  "en": "Tokyo",
+  "zh": "东京",
+  "ja": "東京",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-29",
+  "en": "Nara",
+  "zh": "奈良",
+  "ja": "奈良",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-22",
+  "en": "Shizuoka",
+  "zh": "静冈",
+  "ja": "静岡",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-32",
+  "en": "Shimane",
+  "zh": "岛根县",
+  "ja": "島根",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-23",
+  "en": "Aichi",
+  "zh": "爱知县",
+  "ja": "愛知",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-34",
+  "en": "Hiroshima",
+  "zh": "广岛",
+  "ja": "広島",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-05",
+  "en": "Akita",
+  "zh": "秋田",
+  "ja": "秋田",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-17",
+  "en": "Ishikawa",
+  "zh": "石川",
+  "ja": "石川",
+  "level": "state"
+ },
+ {
+  "cc": "JP",
+  "id": "iso3166-2:JP-28",
+  "en": "Hyōgo",
+  "zh": "兵库县",
+  "ja": "兵庫県",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-27",
+  "en": "Daegu",
+  "zh": "大邱",
+  "ja": "大邱",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-41",
+  "en": "Gyeonggi",
+  "zh": "京畿道",
+  "ja": "京畿道",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-28",
+  "en": "Incheon",
+  "zh": "仁川",
+  "ja": "仁川",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-11",
+  "en": "Seoul",
+  "zh": "汉城",
+  "ja": "ソウル",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-30",
+  "en": "Daejeon",
+  "zh": "大田",
+  "ja": "大田",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-45",
+  "en": "North Jeolla",
+  "zh": "全罗北道",
+  "ja": "全羅北道",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-31",
+  "en": "Ulsan",
+  "zh": "蔚山",
+  "ja": "蔚山",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-49",
+  "en": "Jeju",
+  "zh": "济州岛",
+  "ja": "済州島",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-43",
+  "en": "North Chungcheong",
+  "zh": "忠清北道",
+  "ja": "忠清北道",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-47",
+  "en": "North Gyeongsang",
+  "zh": "庆尚北道",
+  "ja": "慶尚北道",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-48",
+  "en": "South Gyeongsang",
+  "zh": "庆尚南道",
+  "ja": "慶尚南道",
+  "level": "state"
+ },
+ {
+  "cc": "KR",
+  "id": "iso3166-2:KR-44",
+  "en": "South Chungcheong",
+  "zh": "忠清南道",
+  "ja": "忠清南道",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-DE",
+  "en": "Delaware",
+  "zh": "特拉华州",
+  "ja": "デラウェア州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-AK",
+  "en": "Alaska",
+  "zh": "阿拉斯加州",
+  "ja": "アラスカ",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-MD",
+  "en": "Maryland",
+  "zh": "马里兰州",
+  "ja": "メリーランド州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-NH",
+  "en": "New Hampshire",
+  "zh": "新罕布什尔",
+  "ja": "ニューハンプシャー州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-KS",
+  "en": "Kansas",
+  "zh": "堪萨斯州",
+  "ja": "カンザス州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-TX",
+  "en": "Texas",
+  "zh": "德克萨斯州",
+  "ja": "テキサス",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-NE",
+  "en": "Nebraska",
+  "zh": "内布拉斯加州",
+  "ja": "ネブラスカ州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-VT",
+  "en": "Vermont",
+  "zh": "佛蒙特",
+  "ja": "バーモント州",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-HI",
+  "en": "Hawaii",
+  "zh": "夏威夷",
+  "ja": "ハワイ",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-GU",
+  "en": "Guam",
+  "zh": "关岛",
+  "ja": "グアム",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-VI",
+  "en": "United States Virgin Islands",
+  "zh": "美属维尔京群岛",
+  "ja": "アメリカ領ヴァージン諸島",
+  "level": "state"
+ },
+ {
+  "cc": "US",
+  "id": "iso3166-2:US-UT",
+  "en": "Utah",
+  "zh": "犹他州",
+  "ja": "ユタ州",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-IOW",
+  "en": "Isle of Wight",
+  "zh": "怀特岛",
+  "ja": "ワイト島",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-SHN",
+  "en": "St Helens",
+  "zh": "圣海伦斯",
+  "ja": "セントヘレンズ",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-BEN",
+  "en": "Brent",
+  "zh": "布伦特",
+  "ja": "ブレント",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-WLL",
+  "en": "Walsall",
+  "zh": "沃尔索尔",
+  "ja": "ウォルソール",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-TRF",
+  "en": "Trafford",
+  "zh": "特拉福德",
+  "ja": "トラフォード",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-STH",
+  "en": "City of Southampton",
+  "zh": "南安普敦市",
+  "ja": "サウサンプトン市",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-SHF",
+  "en": "Sheffield",
+  "zh": "谢菲尔德",
+  "ja": "シェフィールド",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-WSX",
+  "en": "West Sussex",
+  "zh": "西萨塞克斯郡",
+  "ja": "ウェストサセックス",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-PTE",
+  "en": "Peterborough",
+  "zh": "彼得伯勒",
+  "ja": "ピーターバラ",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-CAY",
+  "en": "Caerphilly",
+  "zh": "卡菲利",
+  "ja": "ケアフィリー",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-VGL",
+  "en": "Vale of Glamorgan",
+  "zh": "格拉摩根谷",
+  "ja": "グラモーガン渓谷",
+  "level": "state"
+ },
+ {
+  "cc": "GB",
+  "id": "iso3166-2:GB-ZET",
+  "en": "Shetland Islands",
+  "zh": "设得兰群岛",
+  "ja": "シェトランド諸島",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-SH",
+  "en": "Schleswig-Holstein",
+  "zh": "石勒苏益格-荷尔斯泰因州",
+  "ja": "シュレスヴィヒ＝ホルシュタイン州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-BW",
+  "en": "Baden-Württemberg",
+  "zh": "巴登-符腾堡州",
+  "ja": "バーデン＝ヴュルテンベルク州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-MV",
+  "en": "Mecklenburg-Vorpommern",
+  "zh": "梅克伦堡-前波莫瑞州",
+  "ja": "メクレンブルク＝フォアポンメルン州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-NI",
+  "en": "Lower Saxony",
+  "zh": "下萨克森州",
+  "ja": "ニーダーザクセン州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-BY",
+  "en": "Bavaria",
+  "zh": "巴伐利亚",
+  "ja": "バイエルン",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-BE",
+  "en": "Berlin",
+  "zh": "柏林",
+  "ja": "ベルリン",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-ST",
+  "en": "Saxony-Anhalt",
+  "zh": "萨克森-安哈特州",
+  "ja": "ザクセン＝アンハルト州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-BB",
+  "en": "Brandenburg",
+  "zh": "勃兰登堡",
+  "ja": "ブランデンブルク",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-HB",
+  "en": "Bremen",
+  "zh": "不来梅",
+  "ja": "ブレーメン",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-TH",
+  "en": "Thuringia",
+  "zh": "图林根州",
+  "ja": "テューリンゲン州",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-HH",
+  "en": "Hamburg",
+  "zh": "汉堡",
+  "ja": "ハンブルク",
+  "level": "state"
+ },
+ {
+  "cc": "DE",
+  "id": "iso3166-2:DE-NW",
+  "en": "North Rhine-Westphalia",
+  "zh": "北莱茵-威斯特法伦州",
+  "ja": "ノルトライン＝ヴェストファーレン州",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-BL",
+  "en": "Saint-Barthélemy",
+  "zh": "圣巴泰勒米",
+  "ja": "サン・バルテルミー島",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-NAQ",
+  "en": "Nouvelle-Aquitaine",
+  "zh": "新阿基坦",
+  "ja": "ヌーヴェル・アキテーヌ",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-IDF",
+  "en": "Île-de-France",
+  "zh": "法兰西岛",
+  "ja": "イル・ド・フランス",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-976",
+  "en": "Mayotte",
+  "zh": "马约特岛",
+  "ja": "マヨット",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-ARA",
+  "en": "Auvergne-Rhône-Alpes",
+  "zh": "奥弗涅-罗讷-阿尔卑斯大区",
+  "ja": "オーヴェルニュ＝ローヌ＝アルプ",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-OCC",
+  "en": "Occitanie",
+  "zh": "奥克西塔尼",
+  "ja": "オクシタニー",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-PDL",
+  "en": "Pays-de-la-Loire",
+  "zh": "卢瓦尔河地区",
+  "ja": "ペイ・ド・ラ・ロワール",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-NOR",
+  "en": "Normandie",
+  "zh": "诺曼底",
+  "ja": "ノルマンディー",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-20R",
+  "en": "Corse",
+  "zh": "科西嘉岛",
+  "ja": "コルシカ島",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-BRE",
+  "en": "Bretagne",
+  "zh": "布列塔尼",
+  "ja": "ブルターニュ",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-MF",
+  "en": "Saint-Martin",
+  "zh": "圣马丁",
+  "ja": "サン・マルタン",
+  "level": "state"
+ },
+ {
+  "cc": "FR",
+  "id": "iso3166-2:FR-WF",
+  "en": "Wallis and Futuna",
+  "zh": "瓦利斯和富图纳群岛",
+  "ja": "ウォリス・フツナ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-52",
+  "en": "Tuscany",
+  "zh": "托斯卡纳",
+  "ja": "トスカーナ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-PD",
+  "en": "Padua",
+  "zh": "帕多瓦",
+  "ja": "パドヴァ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-PR",
+  "en": "Parma",
+  "zh": "帕尔马",
+  "ja": "パルマ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-SR",
+  "en": "Siracusa",
+  "zh": "锡拉库萨",
+  "ja": "シラクーサ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-PA",
+  "en": "Palermo",
+  "zh": "巴勒莫",
+  "ja": "パレルモ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-72",
+  "en": "Campania",
+  "zh": "坎帕尼亚",
+  "ja": "カンパニア",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-57",
+  "en": "Marche",
+  "zh": "马尔凯",
+  "ja": "マルケ州",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-AN",
+  "en": "Ancona",
+  "zh": "安科纳",
+  "ja": "アンコーナ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-LT",
+  "en": "Latina",
+  "zh": null,
+  "ja": "ラティーナ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-LE",
+  "en": "Lecce",
+  "zh": "莱切",
+  "ja": "レッチェ",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-PV",
+  "en": "Pavia",
+  "zh": "帕维亚",
+  "ja": "パヴィア",
+  "level": "state"
+ },
+ {
+  "cc": "IT",
+  "id": "iso3166-2:IT-LC",
+  "en": "Lecco",
+  "zh": "莱科",
+  "ja": "レッコ",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-PRI",
+  "en": "Primorsky",
+  "zh": "滨海边疆区",
+  "ja": "沿海地方",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-NGR",
+  "en": "Novgorod",
+  "zh": "诺夫哥罗德",
+  "ja": "ノヴゴロド",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-YEV",
+  "en": "Jewish",
+  "zh": "犹太人",
+  "ja": "ユダヤ人",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-NEN",
+  "en": "Nenets",
+  "zh": "涅涅茨人",
+  "ja": "ネネツ人",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-ROS",
+  "en": "Rostov",
+  "zh": "罗斯托夫",
+  "ja": "ロストフ",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-KHM",
+  "en": "Khanty-Mansi",
+  "zh": "汉特-曼西",
+  "ja": "ハンティ・マンシ語",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-MAG",
+  "en": "Magadan",
+  "zh": "马加丹",
+  "ja": "マガダン",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-KYA",
+  "en": "Krasnoyarsk",
+  "zh": "克拉斯诺亚尔斯克",
+  "ja": "クラスノヤルスク",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-KR",
+  "en": "Karelia",
+  "zh": "卡累利阿",
+  "ja": "カレリア",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-BU",
+  "en": "Buryatia",
+  "zh": "布里亚特共和国",
+  "ja": "ブリヤート",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-MUR",
+  "en": "Murmansk",
+  "zh": "摩尔曼斯克",
+  "ja": "ムルマンスク",
+  "level": "state"
+ },
+ {
+  "cc": "RU",
+  "id": "iso3166-2:RU-KLU",
+  "en": "Kaluga",
+  "zh": "卡卢加",
+  "ja": "カルーガ",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-01",
+  "en": "Riyadh",
+  "zh": "利雅得",
+  "ja": "リヤド",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-02",
+  "en": "Makkah",
+  "zh": "麦加",
+  "ja": "メッカ",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-03",
+  "en": "Al Madinah",
+  "zh": "麦地那",
+  "ja": "アル・マディーナ",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-07",
+  "en": "Tabuk",
+  "zh": "塔布克",
+  "ja": "タブク",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-14",
+  "en": "Asir",
+  "zh": "阿西尔",
+  "ja": "アシル",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-08",
+  "en": "Northern Borders",
+  "zh": "北部边界",
+  "ja": "北部国境",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-06",
+  "en": "Ha'il",
+  "zh": "哈伊勒省",
+  "ja": "ハーイル州",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-04",
+  "en": "Eastern Province",
+  "zh": "东部省",
+  "ja": "東部州",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-12",
+  "en": "Al Jawf",
+  "zh": "焦夫",
+  "ja": "アル・ジャウフ",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-09",
+  "en": "Jizan",
+  "zh": "吉赞",
+  "ja": "ジザン",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-11",
+  "en": "Al Bahah",
+  "zh": "艾尔巴哈",
+  "ja": "アル・バハ",
+  "level": "state"
+ },
+ {
+  "cc": "SA",
+  "id": "iso3166-2:SA-10",
+  "en": "Najran",
+  "zh": "纳季兰",
+  "ja": "ナジュラン",
+  "level": "state"
+ }
+]

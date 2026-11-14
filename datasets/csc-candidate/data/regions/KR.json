@@ -1,0 +1,3271 @@
+{
+  "countryCode": "KR",
+  "datasetId": "geo-regions-csc-candidate",
+  "nodes": [
+    {
+      "childrenStatus": "partial",
+      "code": "KR",
+      "id": "cc:KR",
+      "kind": "country",
+      "name": "South Korea",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": null
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-27",
+      "id": "iso3166-2:KR-27",
+      "kind": "subdivision",
+      "name": "Daegu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-41",
+      "id": "iso3166-2:KR-41",
+      "kind": "subdivision",
+      "name": "Gyeonggi",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-28",
+      "id": "iso3166-2:KR-28",
+      "kind": "subdivision",
+      "name": "Incheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-11",
+      "id": "iso3166-2:KR-11",
+      "kind": "subdivision",
+      "name": "Seoul",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-30",
+      "id": "iso3166-2:KR-30",
+      "kind": "subdivision",
+      "name": "Daejeon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-45",
+      "id": "iso3166-2:KR-45",
+      "kind": "subdivision",
+      "name": "North Jeolla",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-31",
+      "id": "iso3166-2:KR-31",
+      "kind": "subdivision",
+      "name": "Ulsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-49",
+      "id": "iso3166-2:KR-49",
+      "kind": "subdivision",
+      "name": "Jeju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-43",
+      "id": "iso3166-2:KR-43",
+      "kind": "subdivision",
+      "name": "North Chungcheong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-47",
+      "id": "iso3166-2:KR-47",
+      "kind": "subdivision",
+      "name": "North Gyeongsang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-48",
+      "id": "iso3166-2:KR-48",
+      "kind": "subdivision",
+      "name": "South Gyeongsang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-44",
+      "id": "iso3166-2:KR-44",
+      "kind": "subdivision",
+      "name": "South Chungcheong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-26",
+      "id": "iso3166-2:KR-26",
+      "kind": "subdivision",
+      "name": "Busan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-50",
+      "id": "iso3166-2:KR-50",
+      "kind": "subdivision",
+      "name": "Sejong City",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-42",
+      "id": "iso3166-2:KR-42",
+      "kind": "subdivision",
+      "name": "Gangwon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-12",
+      "id": "iso3166-2:KR-12",
+      "kind": "subdivision",
+      "name": "Jeonnam-Gwangju Integrated Special City",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65260",
+      "id": "csc-city:65260",
+      "kind": "subdivision",
+      "name": "Andong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65261",
+      "id": "csc-city:65261",
+      "kind": "subdivision",
+      "name": "Andong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65262",
+      "id": "csc-city:65262",
+      "kind": "subdivision",
+      "name": "Ansan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65263",
+      "id": "csc-city:65263",
+      "kind": "subdivision",
+      "name": "Anseong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65264",
+      "id": "csc-city:65264",
+      "kind": "subdivision",
+      "name": "Anyang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65265",
+      "id": "csc-city:65265",
+      "kind": "subdivision",
+      "name": "Asan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65266",
+      "id": "csc-city:65266",
+      "kind": "subdivision",
+      "name": "Asan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65267",
+      "id": "csc-city:65267",
+      "kind": "subdivision",
+      "name": "Beolgyo",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65268",
+      "id": "csc-city:65268",
+      "kind": "subdivision",
+      "name": "Boeun-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65269",
+      "id": "csc-city:65269",
+      "kind": "subdivision",
+      "name": "Bonghwa-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65270",
+      "id": "csc-city:65270",
+      "kind": "subdivision",
+      "name": "Boryeong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65271",
+      "id": "csc-city:65271",
+      "kind": "subdivision",
+      "name": "Boryeong-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65272",
+      "id": "csc-city:65272",
+      "kind": "subdivision",
+      "name": "Boseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65273",
+      "id": "csc-city:65273",
+      "kind": "subdivision",
+      "name": "Buan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65274",
+      "id": "csc-city:65274",
+      "kind": "subdivision",
+      "name": "Bucheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65275",
+      "id": "csc-city:65275",
+      "kind": "subdivision",
+      "name": "Buk-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65276",
+      "id": "csc-city:65276",
+      "kind": "subdivision",
+      "name": "Buk-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65277",
+      "id": "csc-city:65277",
+      "kind": "subdivision",
+      "name": "Bupyeong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65278",
+      "id": "csc-city:65278",
+      "kind": "subdivision",
+      "name": "Busan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65279",
+      "id": "csc-city:65279",
+      "kind": "subdivision",
+      "name": "Buyeo",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65280",
+      "id": "csc-city:65280",
+      "kind": "subdivision",
+      "name": "Buyeo-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65281",
+      "id": "csc-city:65281",
+      "kind": "subdivision",
+      "name": "Changnyeong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65282",
+      "id": "csc-city:65282",
+      "kind": "subdivision",
+      "name": "Changnyeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65283",
+      "id": "csc-city:65283",
+      "kind": "subdivision",
+      "name": "Changsu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65284",
+      "id": "csc-city:65284",
+      "kind": "subdivision",
+      "name": "Changwon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65285",
+      "id": "csc-city:65285",
+      "kind": "subdivision",
+      "name": "Changwon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65286",
+      "id": "csc-city:65286",
+      "kind": "subdivision",
+      "name": "Cheonan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65287",
+      "id": "csc-city:65287",
+      "kind": "subdivision",
+      "name": "Cheonan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65288",
+      "id": "csc-city:65288",
+      "kind": "subdivision",
+      "name": "Cheongdo-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65289",
+      "id": "csc-city:65289",
+      "kind": "subdivision",
+      "name": "Cheongju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65290",
+      "id": "csc-city:65290",
+      "kind": "subdivision",
+      "name": "Cheongsong gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65292",
+      "id": "csc-city:65292",
+      "kind": "subdivision",
+      "name": "Cheongyang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65293",
+      "id": "csc-city:65293",
+      "kind": "subdivision",
+      "name": "Cheorwon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65294",
+      "id": "csc-city:65294",
+      "kind": "subdivision",
+      "name": "Chilgok-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65295",
+      "id": "csc-city:65295",
+      "kind": "subdivision",
+      "name": "Chinch'ŏn",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65296",
+      "id": "csc-city:65296",
+      "kind": "subdivision",
+      "name": "Chinju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65297",
+      "id": "csc-city:65297",
+      "kind": "subdivision",
+      "name": "Chuncheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65298",
+      "id": "csc-city:65298",
+      "kind": "subdivision",
+      "name": "Chuncheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65299",
+      "id": "csc-city:65299",
+      "kind": "subdivision",
+      "name": "Chungju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65300",
+      "id": "csc-city:65300",
+      "kind": "subdivision",
+      "name": "Daegu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65301",
+      "id": "csc-city:65301",
+      "kind": "subdivision",
+      "name": "Daejeon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65302",
+      "id": "csc-city:65302",
+      "kind": "subdivision",
+      "name": "Dalseo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65303",
+      "id": "csc-city:65303",
+      "kind": "subdivision",
+      "name": "Dalseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65304",
+      "id": "csc-city:65304",
+      "kind": "subdivision",
+      "name": "Damyang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65305",
+      "id": "csc-city:65305",
+      "kind": "subdivision",
+      "name": "Danyang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65306",
+      "id": "csc-city:65306",
+      "kind": "subdivision",
+      "name": "Dobong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65307",
+      "id": "csc-city:65307",
+      "kind": "subdivision",
+      "name": "Dong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65308",
+      "id": "csc-city:65308",
+      "kind": "subdivision",
+      "name": "Dong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65309",
+      "id": "csc-city:65309",
+      "kind": "subdivision",
+      "name": "Dongdaemun-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65310",
+      "id": "csc-city:65310",
+      "kind": "subdivision",
+      "name": "Dongducheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65311",
+      "id": "csc-city:65311",
+      "kind": "subdivision",
+      "name": "Donghae-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65312",
+      "id": "csc-city:65312",
+      "kind": "subdivision",
+      "name": "Dongjak-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65313",
+      "id": "csc-city:65313",
+      "kind": "subdivision",
+      "name": "Dongnae-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65314",
+      "id": "csc-city:65314",
+      "kind": "subdivision",
+      "name": "Eisen",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65315",
+      "id": "csc-city:65315",
+      "kind": "subdivision",
+      "name": "Eumseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65316",
+      "id": "csc-city:65316",
+      "kind": "subdivision",
+      "name": "Eunpyeong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65317",
+      "id": "csc-city:65317",
+      "kind": "subdivision",
+      "name": "Gaigeturi",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65318",
+      "id": "csc-city:65318",
+      "kind": "subdivision",
+      "name": "Gangbuk-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65319",
+      "id": "csc-city:65319",
+      "kind": "subdivision",
+      "name": "Gangdong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65320",
+      "id": "csc-city:65320",
+      "kind": "subdivision",
+      "name": "Gangjin-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65321",
+      "id": "csc-city:65321",
+      "kind": "subdivision",
+      "name": "Gangnam-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65322",
+      "id": "csc-city:65322",
+      "kind": "subdivision",
+      "name": "Gangneung",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65323",
+      "id": "csc-city:65323",
+      "kind": "subdivision",
+      "name": "Gangneung-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65324",
+      "id": "csc-city:65324",
+      "kind": "subdivision",
+      "name": "Gangseo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65325",
+      "id": "csc-city:65325",
+      "kind": "subdivision",
+      "name": "Gangseo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65326",
+      "id": "csc-city:65326",
+      "kind": "subdivision",
+      "name": "Gapyeong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65327",
+      "id": "csc-city:65327",
+      "kind": "subdivision",
+      "name": "Gapyeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65328",
+      "id": "csc-city:65328",
+      "kind": "subdivision",
+      "name": "Geochang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65329",
+      "id": "csc-city:65329",
+      "kind": "subdivision",
+      "name": "Geoje-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65330",
+      "id": "csc-city:65330",
+      "kind": "subdivision",
+      "name": "Geumcheon-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65331",
+      "id": "csc-city:65331",
+      "kind": "subdivision",
+      "name": "Geumjeong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65332",
+      "id": "csc-city:65332",
+      "kind": "subdivision",
+      "name": "Geumsan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65333",
+      "id": "csc-city:65333",
+      "kind": "subdivision",
+      "name": "Gijang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65334",
+      "id": "csc-city:65334",
+      "kind": "subdivision",
+      "name": "Gijang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65335",
+      "id": "csc-city:65335",
+      "kind": "subdivision",
+      "name": "Gimcheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65336",
+      "id": "csc-city:65336",
+      "kind": "subdivision",
+      "name": "Gimcheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65337",
+      "id": "csc-city:65337",
+      "kind": "subdivision",
+      "name": "Gimhae-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65338",
+      "id": "csc-city:65338",
+      "kind": "subdivision",
+      "name": "Gimje-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65339",
+      "id": "csc-city:65339",
+      "kind": "subdivision",
+      "name": "Gimpo-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65340",
+      "id": "csc-city:65340",
+      "kind": "subdivision",
+      "name": "Gochang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65341",
+      "id": "csc-city:65341",
+      "kind": "subdivision",
+      "name": "Goesan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65342",
+      "id": "csc-city:65342",
+      "kind": "subdivision",
+      "name": "Goheung-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65343",
+      "id": "csc-city:65343",
+      "kind": "subdivision",
+      "name": "Gokseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65344",
+      "id": "csc-city:65344",
+      "kind": "subdivision",
+      "name": "Gongju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65345",
+      "id": "csc-city:65345",
+      "kind": "subdivision",
+      "name": "Gongju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65346",
+      "id": "csc-city:65346",
+      "kind": "subdivision",
+      "name": "Goryeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65347",
+      "id": "csc-city:65347",
+      "kind": "subdivision",
+      "name": "Goseong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65348",
+      "id": "csc-city:65348",
+      "kind": "subdivision",
+      "name": "Goseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65349",
+      "id": "csc-city:65349",
+      "kind": "subdivision",
+      "name": "Goseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65350",
+      "id": "csc-city:65350",
+      "kind": "subdivision",
+      "name": "Goyang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65351",
+      "id": "csc-city:65351",
+      "kind": "subdivision",
+      "name": "Gumi-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65352",
+      "id": "csc-city:65352",
+      "kind": "subdivision",
+      "name": "Gunpo-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65353",
+      "id": "csc-city:65353",
+      "kind": "subdivision",
+      "name": "Gunsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65354",
+      "id": "csc-city:65354",
+      "kind": "subdivision",
+      "name": "Gunsan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65355",
+      "id": "csc-city:65355",
+      "kind": "subdivision",
+      "name": "Gunwi-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65356",
+      "id": "csc-city:65356",
+      "kind": "subdivision",
+      "name": "Guri-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65357",
+      "id": "csc-city:65357",
+      "kind": "subdivision",
+      "name": "Guro-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65358",
+      "id": "csc-city:65358",
+      "kind": "subdivision",
+      "name": "Gurye-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65359",
+      "id": "csc-city:65359",
+      "kind": "subdivision",
+      "name": "Gwacheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65360",
+      "id": "csc-city:65360",
+      "kind": "subdivision",
+      "name": "Gwanak-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65361",
+      "id": "csc-city:65361",
+      "kind": "subdivision",
+      "name": "Gwangjin-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65362",
+      "id": "csc-city:65362",
+      "kind": "subdivision",
+      "name": "Gwangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65363",
+      "id": "csc-city:65363",
+      "kind": "subdivision",
+      "name": "Gwangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65364",
+      "id": "csc-city:65364",
+      "kind": "subdivision",
+      "name": "Gwangju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65365",
+      "id": "csc-city:65365",
+      "kind": "subdivision",
+      "name": "Gwangmyeong-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65366",
+      "id": "csc-city:65366",
+      "kind": "subdivision",
+      "name": "Gwangsan-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65367",
+      "id": "csc-city:65367",
+      "kind": "subdivision",
+      "name": "Gwangyang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65368",
+      "id": "csc-city:65368",
+      "kind": "subdivision",
+      "name": "Gwangyang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65369",
+      "id": "csc-city:65369",
+      "kind": "subdivision",
+      "name": "Gyeongju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65370",
+      "id": "csc-city:65370",
+      "kind": "subdivision",
+      "name": "Gyeongsan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65371",
+      "id": "csc-city:65371",
+      "kind": "subdivision",
+      "name": "Gyeryong-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65372",
+      "id": "csc-city:65372",
+      "kind": "subdivision",
+      "name": "Hadong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65373",
+      "id": "csc-city:65373",
+      "kind": "subdivision",
+      "name": "Haenam",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65374",
+      "id": "csc-city:65374",
+      "kind": "subdivision",
+      "name": "Haenam-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65375",
+      "id": "csc-city:65375",
+      "kind": "subdivision",
+      "name": "Haeundae-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65376",
+      "id": "csc-city:65376",
+      "kind": "subdivision",
+      "name": "Haman-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65377",
+      "id": "csc-city:65377",
+      "kind": "subdivision",
+      "name": "Hampyeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65378",
+      "id": "csc-city:65378",
+      "kind": "subdivision",
+      "name": "Hanam",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65379",
+      "id": "csc-city:65379",
+      "kind": "subdivision",
+      "name": "Hanam",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65380",
+      "id": "csc-city:65380",
+      "kind": "subdivision",
+      "name": "Hapcheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65381",
+      "id": "csc-city:65381",
+      "kind": "subdivision",
+      "name": "Hayang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65382",
+      "id": "csc-city:65382",
+      "kind": "subdivision",
+      "name": "Heunghae",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65383",
+      "id": "csc-city:65383",
+      "kind": "subdivision",
+      "name": "Hoengseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65384",
+      "id": "csc-city:65384",
+      "kind": "subdivision",
+      "name": "Hongcheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65385",
+      "id": "csc-city:65385",
+      "kind": "subdivision",
+      "name": "Hongch’ŏn",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65386",
+      "id": "csc-city:65386",
+      "kind": "subdivision",
+      "name": "Hongseong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65387",
+      "id": "csc-city:65387",
+      "kind": "subdivision",
+      "name": "Hongseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65388",
+      "id": "csc-city:65388",
+      "kind": "subdivision",
+      "name": "Hwacheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65389",
+      "id": "csc-city:65389",
+      "kind": "subdivision",
+      "name": "Hwacheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65390",
+      "id": "csc-city:65390",
+      "kind": "subdivision",
+      "name": "Hwado",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65391",
+      "id": "csc-city:65391",
+      "kind": "subdivision",
+      "name": "Hwaseong-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65392",
+      "id": "csc-city:65392",
+      "kind": "subdivision",
+      "name": "Hwasun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65393",
+      "id": "csc-city:65393",
+      "kind": "subdivision",
+      "name": "Hwasun-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65394",
+      "id": "csc-city:65394",
+      "kind": "subdivision",
+      "name": "Hwawŏn",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65395",
+      "id": "csc-city:65395",
+      "kind": "subdivision",
+      "name": "Icheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65396",
+      "id": "csc-city:65396",
+      "kind": "subdivision",
+      "name": "Iksan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65397",
+      "id": "csc-city:65397",
+      "kind": "subdivision",
+      "name": "Iksan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65398",
+      "id": "csc-city:65398",
+      "kind": "subdivision",
+      "name": "Imsil",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65399",
+      "id": "csc-city:65399",
+      "kind": "subdivision",
+      "name": "Imsil-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65400",
+      "id": "csc-city:65400",
+      "kind": "subdivision",
+      "name": "Incheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65401",
+      "id": "csc-city:65401",
+      "kind": "subdivision",
+      "name": "Inje-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65402",
+      "id": "csc-city:65402",
+      "kind": "subdivision",
+      "name": "Jangheung-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65403",
+      "id": "csc-city:65403",
+      "kind": "subdivision",
+      "name": "Jangseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65404",
+      "id": "csc-city:65404",
+      "kind": "subdivision",
+      "name": "Jangsu-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65405",
+      "id": "csc-city:65405",
+      "kind": "subdivision",
+      "name": "Jecheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65406",
+      "id": "csc-city:65406",
+      "kind": "subdivision",
+      "name": "Jeju City",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65407",
+      "id": "csc-city:65407",
+      "kind": "subdivision",
+      "name": "Jeju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65408",
+      "id": "csc-city:65408",
+      "kind": "subdivision",
+      "name": "Jenzan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65409",
+      "id": "csc-city:65409",
+      "kind": "subdivision",
+      "name": "Jeongeup",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65410",
+      "id": "csc-city:65410",
+      "kind": "subdivision",
+      "name": "Jeongeup-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65411",
+      "id": "csc-city:65411",
+      "kind": "subdivision",
+      "name": "Jeongseon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65412",
+      "id": "csc-city:65412",
+      "kind": "subdivision",
+      "name": "Jeonju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65413",
+      "id": "csc-city:65413",
+      "kind": "subdivision",
+      "name": "Jeonju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65414",
+      "id": "csc-city:65414",
+      "kind": "subdivision",
+      "name": "Jeungpyeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65415",
+      "id": "csc-city:65415",
+      "kind": "subdivision",
+      "name": "Jinan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65416",
+      "id": "csc-city:65416",
+      "kind": "subdivision",
+      "name": "Jincheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65417",
+      "id": "csc-city:65417",
+      "kind": "subdivision",
+      "name": "Jindo-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65418",
+      "id": "csc-city:65418",
+      "kind": "subdivision",
+      "name": "Jinju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65419",
+      "id": "csc-city:65419",
+      "kind": "subdivision",
+      "name": "Jongno-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65420",
+      "id": "csc-city:65420",
+      "kind": "subdivision",
+      "name": "Jung-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65421",
+      "id": "csc-city:65421",
+      "kind": "subdivision",
+      "name": "Jung-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65422",
+      "id": "csc-city:65422",
+      "kind": "subdivision",
+      "name": "Jung-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65423",
+      "id": "csc-city:65423",
+      "kind": "subdivision",
+      "name": "Jung-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65424",
+      "id": "csc-city:65424",
+      "kind": "subdivision",
+      "name": "Jungnang-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65425",
+      "id": "csc-city:65425",
+      "kind": "subdivision",
+      "name": "Kimhae",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65426",
+      "id": "csc-city:65426",
+      "kind": "subdivision",
+      "name": "Kimje",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65427",
+      "id": "csc-city:65427",
+      "kind": "subdivision",
+      "name": "Kinzan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65428",
+      "id": "csc-city:65428",
+      "kind": "subdivision",
+      "name": "Koch'ang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65429",
+      "id": "csc-city:65429",
+      "kind": "subdivision",
+      "name": "Koesan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65430",
+      "id": "csc-city:65430",
+      "kind": "subdivision",
+      "name": "Kosong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65431",
+      "id": "csc-city:65431",
+      "kind": "subdivision",
+      "name": "Kunwi",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65432",
+      "id": "csc-city:65432",
+      "kind": "subdivision",
+      "name": "Kurye",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65433",
+      "id": "csc-city:65433",
+      "kind": "subdivision",
+      "name": "Kwangmyŏng",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65434",
+      "id": "csc-city:65434",
+      "kind": "subdivision",
+      "name": "Kwangyang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65435",
+      "id": "csc-city:65435",
+      "kind": "subdivision",
+      "name": "Kyosai",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65436",
+      "id": "csc-city:65436",
+      "kind": "subdivision",
+      "name": "Mapo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65437",
+      "id": "csc-city:65437",
+      "kind": "subdivision",
+      "name": "Masan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65438",
+      "id": "csc-city:65438",
+      "kind": "subdivision",
+      "name": "Michuhol",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65439",
+      "id": "csc-city:65439",
+      "kind": "subdivision",
+      "name": "Miryang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65440",
+      "id": "csc-city:65440",
+      "kind": "subdivision",
+      "name": "Miryang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65441",
+      "id": "csc-city:65441",
+      "kind": "subdivision",
+      "name": "Mokpo",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65442",
+      "id": "csc-city:65442",
+      "kind": "subdivision",
+      "name": "Mokpo-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65443",
+      "id": "csc-city:65443",
+      "kind": "subdivision",
+      "name": "Muan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65444",
+      "id": "csc-city:65444",
+      "kind": "subdivision",
+      "name": "Muan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65445",
+      "id": "csc-city:65445",
+      "kind": "subdivision",
+      "name": "Muju-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65446",
+      "id": "csc-city:65446",
+      "kind": "subdivision",
+      "name": "Mungyeong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65447",
+      "id": "csc-city:65447",
+      "kind": "subdivision",
+      "name": "Mungyeong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65448",
+      "id": "csc-city:65448",
+      "kind": "subdivision",
+      "name": "Munsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65449",
+      "id": "csc-city:65449",
+      "kind": "subdivision",
+      "name": "Naesŏ",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65450",
+      "id": "csc-city:65450",
+      "kind": "subdivision",
+      "name": "Naju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65451",
+      "id": "csc-city:65451",
+      "kind": "subdivision",
+      "name": "Naju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65452",
+      "id": "csc-city:65452",
+      "kind": "subdivision",
+      "name": "Nam-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65453",
+      "id": "csc-city:65453",
+      "kind": "subdivision",
+      "name": "Nam-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65454",
+      "id": "csc-city:65454",
+      "kind": "subdivision",
+      "name": "Namhae-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65455",
+      "id": "csc-city:65455",
+      "kind": "subdivision",
+      "name": "Namwon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65456",
+      "id": "csc-city:65456",
+      "kind": "subdivision",
+      "name": "Namyangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65457",
+      "id": "csc-city:65457",
+      "kind": "subdivision",
+      "name": "Namyangju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65458",
+      "id": "csc-city:65458",
+      "kind": "subdivision",
+      "name": "Nangen",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65459",
+      "id": "csc-city:65459",
+      "kind": "subdivision",
+      "name": "Neietsu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65460",
+      "id": "csc-city:65460",
+      "kind": "subdivision",
+      "name": "Nonsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65461",
+      "id": "csc-city:65461",
+      "kind": "subdivision",
+      "name": "Nonsan-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65462",
+      "id": "csc-city:65462",
+      "kind": "subdivision",
+      "name": "Nowon-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65463",
+      "id": "csc-city:65463",
+      "kind": "subdivision",
+      "name": "Okcheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65464",
+      "id": "csc-city:65464",
+      "kind": "subdivision",
+      "name": "Okcheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65465",
+      "id": "csc-city:65465",
+      "kind": "subdivision",
+      "name": "Osan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65466",
+      "id": "csc-city:65466",
+      "kind": "subdivision",
+      "name": "Osan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65467",
+      "id": "csc-city:65467",
+      "kind": "subdivision",
+      "name": "Paju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65468",
+      "id": "csc-city:65468",
+      "kind": "subdivision",
+      "name": "Pocheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65469",
+      "id": "csc-city:65469",
+      "kind": "subdivision",
+      "name": "Pohang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65470",
+      "id": "csc-city:65470",
+      "kind": "subdivision",
+      "name": "Pohang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65471",
+      "id": "csc-city:65471",
+      "kind": "subdivision",
+      "name": "Puan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65472",
+      "id": "csc-city:65472",
+      "kind": "subdivision",
+      "name": "Pubal",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65473",
+      "id": "csc-city:65473",
+      "kind": "subdivision",
+      "name": "Pyeongchang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65474",
+      "id": "csc-city:65474",
+      "kind": "subdivision",
+      "name": "Pyeongchang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65475",
+      "id": "csc-city:65475",
+      "kind": "subdivision",
+      "name": "Pyeongtaek",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65476",
+      "id": "csc-city:65476",
+      "kind": "subdivision",
+      "name": "Sacheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65477",
+      "id": "csc-city:65477",
+      "kind": "subdivision",
+      "name": "Saha-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65478",
+      "id": "csc-city:65478",
+      "kind": "subdivision",
+      "name": "Samcheok-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65479",
+      "id": "csc-city:65479",
+      "kind": "subdivision",
+      "name": "Sancheong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65480",
+      "id": "csc-city:65480",
+      "kind": "subdivision",
+      "name": "Sangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65481",
+      "id": "csc-city:65481",
+      "kind": "subdivision",
+      "name": "Santyoku",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65482",
+      "id": "csc-city:65482",
+      "kind": "subdivision",
+      "name": "Sasang-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65483",
+      "id": "csc-city:65483",
+      "kind": "subdivision",
+      "name": "Sejong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-50"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65484",
+      "id": "csc-city:65484",
+      "kind": "subdivision",
+      "name": "Seo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65485",
+      "id": "csc-city:65485",
+      "kind": "subdivision",
+      "name": "Seo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65486",
+      "id": "csc-city:65486",
+      "kind": "subdivision",
+      "name": "Seo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65487",
+      "id": "csc-city:65487",
+      "kind": "subdivision",
+      "name": "Seocheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65488",
+      "id": "csc-city:65488",
+      "kind": "subdivision",
+      "name": "Seocho-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65489",
+      "id": "csc-city:65489",
+      "kind": "subdivision",
+      "name": "Seodaemun-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65490",
+      "id": "csc-city:65490",
+      "kind": "subdivision",
+      "name": "Seogwipo",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65491",
+      "id": "csc-city:65491",
+      "kind": "subdivision",
+      "name": "Seongbuk-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65492",
+      "id": "csc-city:65492",
+      "kind": "subdivision",
+      "name": "Seongdong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65493",
+      "id": "csc-city:65493",
+      "kind": "subdivision",
+      "name": "Seonghwan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65494",
+      "id": "csc-city:65494",
+      "kind": "subdivision",
+      "name": "Seongju-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65495",
+      "id": "csc-city:65495",
+      "kind": "subdivision",
+      "name": "Seongnam-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65496",
+      "id": "csc-city:65496",
+      "kind": "subdivision",
+      "name": "Seosan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65497",
+      "id": "csc-city:65497",
+      "kind": "subdivision",
+      "name": "Seosan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65498",
+      "id": "csc-city:65498",
+      "kind": "subdivision",
+      "name": "Seoul",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65499",
+      "id": "csc-city:65499",
+      "kind": "subdivision",
+      "name": "Siheung",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65500",
+      "id": "csc-city:65500",
+      "kind": "subdivision",
+      "name": "Sinan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65501",
+      "id": "csc-city:65501",
+      "kind": "subdivision",
+      "name": "Sinan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65502",
+      "id": "csc-city:65502",
+      "kind": "subdivision",
+      "name": "Sinhyeon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65503",
+      "id": "csc-city:65503",
+      "kind": "subdivision",
+      "name": "Sintansin",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65504",
+      "id": "csc-city:65504",
+      "kind": "subdivision",
+      "name": "Sokcho",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65505",
+      "id": "csc-city:65505",
+      "kind": "subdivision",
+      "name": "Sokcho-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65506",
+      "id": "csc-city:65506",
+      "kind": "subdivision",
+      "name": "Songgangdong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65507",
+      "id": "csc-city:65507",
+      "kind": "subdivision",
+      "name": "Songpa-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65508",
+      "id": "csc-city:65508",
+      "kind": "subdivision",
+      "name": "Sunchang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65509",
+      "id": "csc-city:65509",
+      "kind": "subdivision",
+      "name": "Suncheon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65510",
+      "id": "csc-city:65510",
+      "kind": "subdivision",
+      "name": "Suncheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65511",
+      "id": "csc-city:65511",
+      "kind": "subdivision",
+      "name": "Suseong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65512",
+      "id": "csc-city:65512",
+      "kind": "subdivision",
+      "name": "Suwon",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65513",
+      "id": "csc-city:65513",
+      "kind": "subdivision",
+      "name": "Suyeong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65514",
+      "id": "csc-city:65514",
+      "kind": "subdivision",
+      "name": "Taean-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65515",
+      "id": "csc-city:65515",
+      "kind": "subdivision",
+      "name": "Taebaek-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65516",
+      "id": "csc-city:65516",
+      "kind": "subdivision",
+      "name": "Taesal-li",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65517",
+      "id": "csc-city:65517",
+      "kind": "subdivision",
+      "name": "Tangjin",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65518",
+      "id": "csc-city:65518",
+      "kind": "subdivision",
+      "name": "Tonghae",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65519",
+      "id": "csc-city:65519",
+      "kind": "subdivision",
+      "name": "T’aebaek",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65520",
+      "id": "csc-city:65520",
+      "kind": "subdivision",
+      "name": "Uijeongbu-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65521",
+      "id": "csc-city:65521",
+      "kind": "subdivision",
+      "name": "Uiryeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65522",
+      "id": "csc-city:65522",
+      "kind": "subdivision",
+      "name": "Uiseong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65523",
+      "id": "csc-city:65523",
+      "kind": "subdivision",
+      "name": "Uiwang-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65524",
+      "id": "csc-city:65524",
+      "kind": "subdivision",
+      "name": "Uljin-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65525",
+      "id": "csc-city:65525",
+      "kind": "subdivision",
+      "name": "Ulju-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65526",
+      "id": "csc-city:65526",
+      "kind": "subdivision",
+      "name": "Ulleung-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65527",
+      "id": "csc-city:65527",
+      "kind": "subdivision",
+      "name": "Ulsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65528",
+      "id": "csc-city:65528",
+      "kind": "subdivision",
+      "name": "Ungsang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65529",
+      "id": "csc-city:65529",
+      "kind": "subdivision",
+      "name": "Wabu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65530",
+      "id": "csc-city:65530",
+      "kind": "subdivision",
+      "name": "Waegwan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65531",
+      "id": "csc-city:65531",
+      "kind": "subdivision",
+      "name": "Wando-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65532",
+      "id": "csc-city:65532",
+      "kind": "subdivision",
+      "name": "Wanju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65533",
+      "id": "csc-city:65533",
+      "kind": "subdivision",
+      "name": "Wonju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65534",
+      "id": "csc-city:65534",
+      "kind": "subdivision",
+      "name": "Wŏnju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65535",
+      "id": "csc-city:65535",
+      "kind": "subdivision",
+      "name": "Yangcheon-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65536",
+      "id": "csc-city:65536",
+      "kind": "subdivision",
+      "name": "Yanggu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65537",
+      "id": "csc-city:65537",
+      "kind": "subdivision",
+      "name": "Yanggu-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65538",
+      "id": "csc-city:65538",
+      "kind": "subdivision",
+      "name": "Yangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65539",
+      "id": "csc-city:65539",
+      "kind": "subdivision",
+      "name": "Yangju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65540",
+      "id": "csc-city:65540",
+      "kind": "subdivision",
+      "name": "Yangp'yŏng",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65541",
+      "id": "csc-city:65541",
+      "kind": "subdivision",
+      "name": "Yangpyeong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65542",
+      "id": "csc-city:65542",
+      "kind": "subdivision",
+      "name": "Yangsan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65543",
+      "id": "csc-city:65543",
+      "kind": "subdivision",
+      "name": "Yangyang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65544",
+      "id": "csc-city:65544",
+      "kind": "subdivision",
+      "name": "Yecheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65545",
+      "id": "csc-city:65545",
+      "kind": "subdivision",
+      "name": "Yeoju",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65546",
+      "id": "csc-city:65546",
+      "kind": "subdivision",
+      "name": "Yeoncheon-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65547",
+      "id": "csc-city:65547",
+      "kind": "subdivision",
+      "name": "Yeongam",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65548",
+      "id": "csc-city:65548",
+      "kind": "subdivision",
+      "name": "Yeongam-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65549",
+      "id": "csc-city:65549",
+      "kind": "subdivision",
+      "name": "Yeongcheon-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65550",
+      "id": "csc-city:65550",
+      "kind": "subdivision",
+      "name": "Yeongdeok-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65551",
+      "id": "csc-city:65551",
+      "kind": "subdivision",
+      "name": "Yeongdeungpo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65552",
+      "id": "csc-city:65552",
+      "kind": "subdivision",
+      "name": "Yeongdo-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65553",
+      "id": "csc-city:65553",
+      "kind": "subdivision",
+      "name": "Yeongdong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65554",
+      "id": "csc-city:65554",
+      "kind": "subdivision",
+      "name": "Yeongdong-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65555",
+      "id": "csc-city:65555",
+      "kind": "subdivision",
+      "name": "Yeonggwang",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65556",
+      "id": "csc-city:65556",
+      "kind": "subdivision",
+      "name": "Yeonggwang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65557",
+      "id": "csc-city:65557",
+      "kind": "subdivision",
+      "name": "Yeongju-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65558",
+      "id": "csc-city:65558",
+      "kind": "subdivision",
+      "name": "Yeongyang-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65559",
+      "id": "csc-city:65559",
+      "kind": "subdivision",
+      "name": "Yeonil",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65560",
+      "id": "csc-city:65560",
+      "kind": "subdivision",
+      "name": "Yeonsu-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65561",
+      "id": "csc-city:65561",
+      "kind": "subdivision",
+      "name": "Yeosu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-12"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65562",
+      "id": "csc-city:65562",
+      "kind": "subdivision",
+      "name": "Yesan",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65563",
+      "id": "csc-city:65563",
+      "kind": "subdivision",
+      "name": "Yesan-gun",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65564",
+      "id": "csc-city:65564",
+      "kind": "subdivision",
+      "name": "Yongin-si",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65565",
+      "id": "csc-city:65565",
+      "kind": "subdivision",
+      "name": "Yongsan-dong",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65566",
+      "id": "csc-city:65566",
+      "kind": "subdivision",
+      "name": "Yongsan-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65567",
+      "id": "csc-city:65567",
+      "kind": "subdivision",
+      "name": "Yuseong-gu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X65568",
+      "id": "csc-city:65568",
+      "kind": "subdivision",
+      "name": "Yŏnmu",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-X165147",
+      "id": "csc-city:165147",
+      "kind": "subdivision",
+      "name": "Jumunjin",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    }
+  ],
+  "protocolVersion": "1.0",
+  "revision": "s-0a15ac21379fe168",
+  "sourceRefs": [
+    "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
+  ]
+}
