@@ -1,0 +1,61 @@
+name: Pages
+
+# Demo site: https://imboy-pub.github.io/geo_regions/
+# - /            → Flutter web demo (release build, base-href /geo_regions/)
+# - /preview/    → self-contained static UI prototype (demo/web_preview)
+# One-time repo setting: Settings → Pages → Build and deployment →
+# Source = GitHub Actions. Requires no other configuration.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "demo/**"
+      - "lib/**"
+      - "pubspec.yaml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+      - name: Build Flutter web demo (release, project-pages base href)
+        working-directory: demo/flutter
+        run: flutter build web --release --base-href /geo_regions/
+      - name: Add static UI prototype under /preview/
+        run: cp -r demo/web_preview build/web/preview
+      - name: Disable Jekyll processing
+        run: touch build/web/.nojekyll
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b7192 # v3.0.1
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0fe3045b9e6a81c # v4.2.5
