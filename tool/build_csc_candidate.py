@@ -434,6 +434,10 @@ def main():
             "FR": [(f"staging/ai-cand/fr-transcriptions.json", loc,
                     "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana/Cyrillic transcription, machine-candidate, tool/fr_g2p.py)")
                    for loc in ("ko", "ja", "ru", "ar")],
+            "US": [(f"staging/ai-cand/en-transcriptions.json", "ko",
+                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul transcription, machine-candidate, tool/en_g2p.py)")],
+            "GB": [(f"staging/ai-cand/en-transcriptions.json", "ko",
+                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul transcription, machine-candidate, tool/en_g2p.py)")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()

@@ -38,6 +38,7 @@ import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import en_g2p
 import fr_g2p
 
 OUT = Path("staging/ai-cand/ru-transcriptions.json")  # 4 locales: ja ko de fr
@@ -984,8 +985,79 @@ def emit_fr_ko(root: Path) -> int:
     return 0
 
 
+
+
+_US_QUALIFIER_DROP = ("city", "town", "village", "township", "borough",
+                      "plantation", "municipio")
+
+
+def emit_en_ko(root: Path) -> int:
+    """US/GB rows (CSC snapshot) -> English g2p ko extract."""
+    fails = en_g2p.selfcheck()
+    if fails:
+        print(f"EN g2p eval fails: {fails}")
+        return 1
+    nodes: dict[str, dict] = {}
+    skipped = 0
+    purity = re.compile(r"[가-힣 ]+")
+    for cc in ("US", "GB"):
+        for kind, prefix in (("cities", "csc-city"), ("counties", "csc-county")):
+            path = root / f"staging/csc-snapshot/contributions/{kind}/{cc}.json"
+            for row in json.loads(path.read_text(encoding="utf-8")):
+                name = row["name"].strip()
+                low = name.lower()
+                # Louisiana parishes keep the 교구 translation convention —
+                # a 패리시 transcription would pollute the style; skip honestly
+                if low.endswith(" parish"):
+                    skipped += 1
+                    continue
+                core = name
+                county = False
+                if low.endswith(" county"):
+                    core = name[:-7]
+                    county = True
+                else:
+                    for q in _US_QUALIFIER_DROP:
+                        if low.endswith(f" {q}"):
+                            core = name[: -(len(q) + 1)]
+                            break
+                try:
+                    value = en_g2p.transcribe_en_ko(core)
+                except ValueError:
+                    skipped += 1
+                    continue
+                if not purity.fullmatch(value):
+                    skipped += 1
+                    continue
+                if county:
+                    value = f"{value} 카운티"
+                if not purity.fullmatch(value):
+                    skipped += 1
+                    continue
+                nodes[f"{prefix}:{row['id']}"] = {"source": name, "labels": {"ko": value}}
+    document = {
+        "generator": "tool/en_g2p.py",
+        "ruleVersion": "en-ko-1",
+        "retrievedAt": "2026-11-15",
+        "quality": "machine-candidate",
+        "humanReviewVerified": False,
+        "license": "self-generated (rule-table transcription, no upstream bytes)",
+        "locales": ["ko"],
+        "nodeCount": len(nodes),
+        "skipped": skipped,
+        "nodes": nodes,
+    }
+    out = root / "staging/ai-cand/en-transcriptions.json"
+    out.write_text(json.dumps(document, ensure_ascii=False, sort_keys=True,
+                              separators=(",", ":")), encoding="utf-8")
+    print(f"wrote {out} ({out.stat().st_size:,} bytes): nodes={len(nodes)} skipped={skipped}")
+    return 0
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
+    if emit_en_ko(root) != 0:
+        return 1
     if emit_fr_ko(root) != 0:
         return 1
     cyr = re.compile(r"[\u0400-\u04FF]")
