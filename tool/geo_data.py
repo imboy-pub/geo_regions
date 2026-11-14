@@ -179,6 +179,17 @@ def verify_sources(root):
         text_value(entry.get("license"), f"{relative}.license")
         require(entry.get("upstreamSha256") or entry.get("upstreamQuery"),
                 f"derived source missing upstream pin: {relative}")
+    # AI-generated extracts: byte-pinned project content with no upstream at
+    # all — provenance is the recorded generation run inside the file.
+    for entry in lock.get("generatedSources", []):
+        relative = entry.get("localPath")
+        require(relative not in known, f"duplicate source path: {relative}")
+        known.add(relative)
+        path = safe_resource(root, relative)
+        require(sha256(path) == entry.get("sha256"), f"generated source hash mismatch: {relative}")
+        require(path.stat().st_size == entry.get("sizeBytes"), f"generated source byte count mismatch: {relative}")
+        text_value(entry.get("license"), f"{relative}.license")
+        require(entry.get("reviewStatus"), f"generated source missing review status: {relative}")
     return known
 
 

@@ -6425,6 +6425,6 @@
   "sourceRefs": [
     "sources/raw/cldr/territories-ru.json",
     "sources/raw/cldr/subdivisions-ru.xml",
-    "sources/raw/wikidata/subdivision-labels.json"
+    "sources/raw/wikidata/cn-node-labels.json"
   ]
 }

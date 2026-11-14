@@ -6435,6 +6435,6 @@
   "sourceRefs": [
     "sources/raw/cldr/territories-ko.json",
     "sources/raw/cldr/subdivisions-ko.xml",
-    "sources/raw/wikidata/subdivision-labels.json"
+    "sources/raw/wikidata/cn-node-labels.json"
   ]
 }

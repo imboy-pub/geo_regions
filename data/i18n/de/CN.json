@@ -6452,6 +6452,6 @@
     "sources/raw/cldr/territories-de.json",
     "sources/raw/cldr/subdivisions-de.xml",
     "sources/raw/geonames/cn-adm-rows.json",
-    "sources/raw/wikidata/subdivision-labels.json"
+    "sources/raw/wikidata/cn-node-labels.json"
   ]
 }

@@ -2,13 +2,18 @@
   "compatibleStructureRevision": "s-b6c4c44272f8f283",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 220,
-    "missingNames": 2,
+    "aiTranslationOverlay": {
+      "filled": 2,
+      "note": "AI-generated translations (recorded generation run, deterministic QA); provisional quality, humanReviewVerified=false, queued for human review.",
+      "source": "sources/raw/ai-translations/seed-residuals.json"
+    },
+    "explicitNames": 222,
+    "missingNames": 0,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 3,
     "sourceNative": 0,
-    "sourceProvisional": 216,
+    "sourceProvisional": 218,
     "sourceQualified": 1,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
@@ -149,6 +154,7 @@
       "iso3166-2:GB-NLK": "provisional",
       "iso3166-2:GB-NLN": "provisional",
       "iso3166-2:GB-NMD": "provisional",
+      "iso3166-2:GB-NNH": "provisional",
       "iso3166-2:GB-NSM": "provisional",
       "iso3166-2:GB-NTL": "provisional",
       "iso3166-2:GB-NTT": "provisional",
@@ -223,6 +229,7 @@
       "iso3166-2:GB-WLS": "approved-in-source",
       "iso3166-2:GB-WLV": "provisional",
       "iso3166-2:GB-WND": "provisional",
+      "iso3166-2:GB-WNH": "provisional",
       "iso3166-2:GB-WNM": "provisional",
       "iso3166-2:GB-WOK": "provisional",
       "iso3166-2:GB-WOR": "provisional",
@@ -374,6 +381,7 @@
     "iso3166-2:GB-NLK": "ノース・ラナークシャー",
     "iso3166-2:GB-NLN": "ノース・リンカンシャー",
     "iso3166-2:GB-NMD": "ニューリー・モーン・アンド・ダウン",
+    "iso3166-2:GB-NNH": "ノースノーサンプトンシャー",
     "iso3166-2:GB-NSM": "ノース・サマセット",
     "iso3166-2:GB-NTL": "ニース・ポート・タルボット",
     "iso3166-2:GB-NTT": "ノッティンガムシャー",
@@ -448,6 +456,7 @@
     "iso3166-2:GB-WLS": "ウェールズ",
     "iso3166-2:GB-WLV": "ウォルヴァーハンプトン",
     "iso3166-2:GB-WND": "ワンズワース・ロンドン特別区",
+    "iso3166-2:GB-WNH": "ウェストノーサンプトンシャー",
     "iso3166-2:GB-WNM": "ウィンザー・アンド・メイデンヘッド",
     "iso3166-2:GB-WOK": "ウォーキンハム",
     "iso3166-2:GB-WOR": "ウスターシャー",
@@ -460,9 +469,10 @@
     "iso3166-2:GB-ZET": "シェトランド諸島"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e354c3b1979edc64",
+  "revision": "l-ac3903b1cd760b8d",
   "sourceRefs": [
     "sources/raw/cldr/territories-ja.json",
-    "sources/raw/cldr/subdivisions-ja.xml"
+    "sources/raw/cldr/subdivisions-ja.xml",
+    "sources/raw/ai-translations/seed-residuals.json"
   ]
 }

@@ -6443,6 +6443,6 @@
   "sourceRefs": [
     "sources/raw/cldr/territories-ja.json",
     "sources/raw/cldr/subdivisions-ja.xml",
-    "sources/raw/wikidata/subdivision-labels.json"
+    "sources/raw/wikidata/cn-node-labels.json"
   ]
 }

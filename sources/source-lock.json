@@ -470,5 +470,18 @@
    "retrievedAt": "2026-11-14",
    "note": "Derived committed extract keyed by seed node id (3,206/3,338 matched, 0 ambiguous, 1 nameDrift flagged for review). Regenerate only with the recorded queries."
   }
+ ],
+ "generatedSources": [
+  {
+   "localPath": "sources/raw/ai-translations/seed-residuals.json",
+   "sha256": "4dcfd966044537fc0ab473352239b88f0f807ea9bf79c52dbc67a606731e1214",
+   "sizeBytes": 99507,
+   "license": "Generated content of this project",
+   "generator": "tool/gen_seed_residuals.py",
+   "generatedAt": "2026-11-14",
+   "model": "GLM (ZCode session)",
+   "reviewStatus": "AI-generated and AI-checked only; humanReviewVerified=false; provisional quality; queued for human review",
+   "note": "Deterministic syllable-table transliteration over GeoNames pinyin evidence (CN ar) plus name-by-name generation (CN hand track, GB ar/ko/ja). QA gates: Arabic-script purity, same-name consistency, table-vs-community agreement report. Regenerate only with the recorded generator; edits show as stale-generated-output."
+  }
  ]
 }

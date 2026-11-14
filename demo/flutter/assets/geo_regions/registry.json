@@ -112,14 +112,14 @@
     },
     {
       "bundled": true,
-      "bytes": 71647,
+      "bytes": 254462,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "ar",
       "path": "i18n/ar/CN.json",
-      "revision": "l-4ffc0d622436ce35",
-      "sha256": "7e3e30ea4460a863ab99d969b8d77c885337a5d3562349d694a47164c18a19fa"
+      "revision": "l-6de23fd7d13dd82c",
+      "sha256": "f7215116832a80632f42d5c90b76b803bf987ae874d16cb6b16a8e49cd048118"
     },
     {
       "bundled": false,
@@ -145,14 +145,14 @@
     },
     {
       "bundled": false,
-      "bytes": 13235,
+      "bytes": 21223,
       "compatibleStructureRevision": "s-b6c4c44272f8f283",
       "countryCode": "GB",
       "kind": "locale",
       "locale": "ar",
       "path": "i18n/ar/GB.json",
-      "revision": "l-f18f2498c9dd690e",
-      "sha256": "87dfccc2849235dd303e61a9f4099fbfd6004d981995c107bc879f31e69cf97d"
+      "revision": "l-b82a8d804089299f",
+      "sha256": "9062a12775da141ee50d7ddcf8f1bc7a7c961f1fe6378ccb750da70af03098dd"
     },
     {
       "bundled": false,
@@ -222,14 +222,14 @@
     },
     {
       "bundled": true,
-      "bytes": 235024,
+      "bytes": 235020,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "de",
       "path": "i18n/de/CN.json",
       "revision": "l-ecde02a07cf09e6f",
-      "sha256": "06e2f18a79e5867df0a77599954f163c321d102cbd373387f4b59760a697d7f1"
+      "sha256": "37510949304a390c667d8c71f318201511726c37665a26b2c135f02a9a9b629b"
     },
     {
       "bundled": false,
@@ -332,14 +332,14 @@
     },
     {
       "bundled": true,
-      "bytes": 236672,
+      "bytes": 236668,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "en",
       "path": "i18n/en/CN.json",
       "revision": "l-d2737449f6508502",
-      "sha256": "d4b6206163a6ade306083bd9c551bdfb3118c0d81d53e7bef3101e11ff33f5d9"
+      "sha256": "a96164d01ebced13a47ae60dbe7b55c4d38898cf5dd6ba3416557740de798200"
     },
     {
       "bundled": false,
@@ -442,14 +442,14 @@
     },
     {
       "bundled": true,
-      "bytes": 234886,
+      "bytes": 234882,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "fr",
       "path": "i18n/fr/CN.json",
       "revision": "l-5059d5fe13455fc8",
-      "sha256": "fcde8957ebc884cca031ab5312f0e0cea4f4409399576230209bd160f1e14e4f"
+      "sha256": "57925781db48e5854038c705add6b3308c760406ce195bd8255a6edba6d5df4a"
     },
     {
       "bundled": false,
@@ -552,14 +552,14 @@
     },
     {
       "bundled": true,
-      "bytes": 234716,
+      "bytes": 234712,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "it",
       "path": "i18n/it/CN.json",
       "revision": "l-8a39a030e815838f",
-      "sha256": "d4fd1771bfd56592f7b04a2a27e96c43091a8314a97d2797dd4fe730fbb6b654"
+      "sha256": "60ece09ca9a57bf6e31a34576771103fcf0f856ac576cb6d59dc67439e5216dd"
     },
     {
       "bundled": false,
@@ -662,14 +662,14 @@
     },
     {
       "bundled": true,
-      "bytes": 242294,
+      "bytes": 242290,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "ja",
       "path": "i18n/ja/CN.json",
       "revision": "l-3f8f3527ce4b2c14",
-      "sha256": "83e193fc4f50bc8f378cd3e20d7de7bed38b13afcae2ca48d10d1b9ba016ef29"
+      "sha256": "673e8719c74b41f40718d996f0b9c14649794cb4598b108d0c566fd220eaf50a"
     },
     {
       "bundled": false,
@@ -695,14 +695,14 @@
     },
     {
       "bundled": false,
-      "bytes": 22763,
+      "bytes": 23320,
       "compatibleStructureRevision": "s-b6c4c44272f8f283",
       "countryCode": "GB",
       "kind": "locale",
       "locale": "ja",
       "path": "i18n/ja/GB.json",
-      "revision": "l-e354c3b1979edc64",
-      "sha256": "c709651a726a01eebc4deea547ff2d216737a0c97144b6975d3b8dd1e3f8777f"
+      "revision": "l-ac3903b1cd760b8d",
+      "sha256": "6692fccb636e895df6e8eb23314a15b6d5672a24be77acd2d0e2383b32d2fb09"
     },
     {
       "bundled": false,
@@ -772,14 +772,14 @@
     },
     {
       "bundled": true,
-      "bytes": 244439,
+      "bytes": 244435,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "ko",
       "path": "i18n/ko/CN.json",
       "revision": "l-d91a72276be6d336",
-      "sha256": "cf01fbd8f90cf51911b72dec5cc25980ab14f428e2b3d2cf9bf3d800782c8b10"
+      "sha256": "3c5942fe681673f2bd8c4e6391aa1972c5ec132385f74bf38a112311fcbda0f0"
     },
     {
       "bundled": false,
@@ -805,14 +805,14 @@
     },
     {
       "bundled": false,
-      "bytes": 19141,
+      "bytes": 20210,
       "compatibleStructureRevision": "s-b6c4c44272f8f283",
       "countryCode": "GB",
       "kind": "locale",
       "locale": "ko",
       "path": "i18n/ko/GB.json",
-      "revision": "l-0794eced65ddff92",
-      "sha256": "88d85c0a98c67b74b3f93bb65140d31de290f71d8f483a1a8b73a18b180a6137"
+      "revision": "l-3e73e3a95508274d",
+      "sha256": "181d84f95cfa79d4c48d93a87b3cf413027d0e91dc375497c155dab7c861cbbe"
     },
     {
       "bundled": false,
@@ -882,14 +882,14 @@
     },
     {
       "bundled": true,
-      "bytes": 256464,
+      "bytes": 256460,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "ru",
       "path": "i18n/ru/CN.json",
       "revision": "l-8c4722f9a3be9646",
-      "sha256": "65730ff4cc674b3d6c5bb5cbb0c7d388e782aba78c8e325478f29e0b648a771a"
+      "sha256": "c0a4f50c314e0b568fdf50467b389e127415df14f7c921f7cf85c73d819ff31b"
     },
     {
       "bundled": false,
@@ -1301,5 +1301,5 @@
       "sha256": "c0394850813532327317ddaffe3c9ba2ede44d3f95f2025e1b239a591e4bd78b"
     }
   ],
-  "revision": "m-05eca0a199a5e90b"
+  "revision": "m-cd3490c8198ac4f3"
 }

@@ -24,7 +24,9 @@
 | Original tooling, demo, future SDK / 原创工具、Demo、SDK | BSD-3-Clause | Root LICENSE |
 | Unicode CLDR data and derived names/containment | Unicode-3.0 | `licenses/third_party/Unicode-3.0.txt`, commit/hash/source records |
 | modood CN source and derived statistical hierarchy | WTFPL v2 | `licenses/third_party/WTFPL.txt`, historical source/profile notice |
+| AI-generated residual translations / AI 生成残余译名 | 项目生成内容（无上游许可）/ project-generated content | `sources/raw/ai-translations/seed-residuals.json` provenance + `sources/source-lock.json` `generatedSources` pin；`humanReviewVerified=false` |
 | Wikidata labels (via committed P300 extract) / Wikidata 标签（经提交版 P300 提取件） | CC0-1.0 | `licenses/third_party/CC0-1.0.txt`, `sources/raw/wikidata/subdivision-labels.json` provenance + `sources/source-lock.json` `derivedSources` pin |
+| AI-generated residual translations / AI 生成残余译名 | 项目生成内容（无上游许可）/ project-generated content | `sources/raw/ai-translations/seed-residuals.json` provenance + `sources/source-lock.json` `generatedSources` pin；`humanReviewVerified=false` |
 | GeoNames CN dump (via committed ADM2/ADM3 extract) / GeoNames CN dump（经提交版 ADM2/ADM3 提取件） | CC-BY-4.0 | `licenses/third_party/CC-BY-4.0.txt`, `sources/raw/geonames/cn-adm-rows.json` provenance + `sources/source-lock.json` `derivedSources` pin |
 
 根目录BSD不能把CLDR或modood数据重新统一授权为BSD。数据混合文件的来源列表必须完整。复制数据到另一个仓库、转JSON或改字段名不会自动消除上游义务。

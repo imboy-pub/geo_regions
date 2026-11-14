@@ -28,6 +28,12 @@ python3 tool/update_rehearsal.py --selftest
      再更新 `derivedSources` 条目的 sha256/sizeBytes；dump 本体永不入 git。
      Derived extracts: regenerate from the pinned dump with the recorded
      generator, then refresh the pin — the dump itself never enters git.
+     - **查询型提取件**（`upstreamQuery` 钉，如 Wikidata）：重跑记录的查询并刷新钉
+       （`python3 tool/fetch_wikidata_labels.py` / `tool/fetch_wikidata_cn_labels.py`）。
+       Query-derived extracts: re-run the recorded query and refresh the pin.
+     - **AI 生成件**（`generatedSources` 钉）：重跑记录的生成器
+       （`python3 tool/gen_seed_residuals.py`），QA 门禁失败不落盘。
+       AI-generated extracts: re-run the recorded generator; QA failures block the write.
 2. 在旧 root 拷贝上重跑生成/导入流程，更新受影响数据
    - 正式层一键链：`python3 tool/import_data.py && python3 tool/geo_data.py manifest`
 3. 一键合同检查（把当前 HEAD 固定为 old-root，工作树为 new-root，或显式传两目录）：

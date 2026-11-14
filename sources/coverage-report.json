@@ -12,12 +12,12 @@
       },
       "locales": {
         "ar": {
-          "explicitNames": 878,
-          "missingNames": 2552,
+          "explicitNames": 3207,
+          "missingNames": 223,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 877,
+          "sourceProvisional": 3206,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -460,12 +460,12 @@
       },
       "locales": {
         "ar": {
-          "explicitNames": 137,
-          "missingNames": 85,
+          "explicitNames": 222,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 133,
+          "sourceProvisional": 218,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -510,22 +510,22 @@
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 220,
-          "missingNames": 2,
+          "explicitNames": 222,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 216,
+          "sourceProvisional": 218,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
         "ko": {
-          "explicitNames": 214,
-          "missingNames": 8,
+          "explicitNames": 222,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 210,
+          "sourceProvisional": 218,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },

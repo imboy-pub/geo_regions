@@ -32,6 +32,7 @@ CN_EXCLUSIONS = {'cnhk', 'cnmo', 'cntw'}
 GEONAMES_CN_ROWS = 'sources/raw/geonames/cn-adm-rows.json'
 WIKIDATA_LABELS = 'sources/raw/wikidata/subdivision-labels.json'
 WIKIDATA_CN_LABELS = 'sources/raw/wikidata/cn-node-labels.json'
+AI_TRANSLATIONS = 'sources/raw/ai-translations/seed-residuals.json'
 # GeoNames uses FIPS codes for the four municipalities' admin1 (GB codes 11/12/31/50).
 GEONAMES_FIPS_MUNICIPALITIES = {'11': '22', '12': '28', '31': '23', '50': '33'}
 # Pinyin admin suffixes stripped from the display name ONLY when the bare form
@@ -111,6 +112,15 @@ def verify_sources(root, download=False):
         content = path.read_bytes()
         if len(content) != source['sizeBytes'] or hashlib.sha256(content).hexdigest() != source['sha256']:
             raise ValueError(f'Derived source verification failed: {source["localPath"]}')
+    return lock
+    # AI-generated extracts: byte-pinned, provenance inside the file.
+    for source in lock.get('generatedSources', []):
+        path = ensure_under(root, source['localPath'])
+        if not path.is_file():
+            raise ValueError(f'Missing generated snapshot: {source["localPath"]}')
+        content = path.read_bytes()
+        if len(content) != source['sizeBytes'] or hashlib.sha256(content).hexdigest() != source['sha256']:
+            raise ValueError(f'Generated source verification failed: {source["localPath"]}')
     return lock
 
 
@@ -338,6 +348,8 @@ def build(root):
         counts = cn_extract['matchCount']
         if counts != len(cn_extract['nodes']):
             raise ValueError('Wikidata CN extract matchCount disagrees with its rows')
+    ai_path = root / AI_TRANSLATIONS
+    ai_extract = read_json(ai_path) if ai_path.is_file() else None
     raw = root / 'sources/raw/cldr'
     containment = read_json(raw / 'subdivisionContainment.json')['supplemental']['subdivisionContainment']
     aliases = read_json(raw / 'aliases.json')['supplemental']['metadata']['alias']['subdivisionAlias']
@@ -400,6 +412,7 @@ def build(root):
         wd_match = wd_extract['matchCount'] if wd_extract else 0
         cn_wd_nodes = cn_extract['nodes'] if cn_extract else {}
         cn_wd_match = cn_extract['matchCount'] if cn_extract else 0
+        ai_translations = ai_extract['translations'] if ai_extract else {}
         zh_hans_names = {'cc:' + cc: territories['zh-Hans'][cc]}
         for code in index:
             if code in translations['zh-Hans']:
@@ -458,7 +471,18 @@ def build(root):
             if wd_overlay:
                 names.update(wd_overlay)
                 quality.update({k: 'provisional' for k in wd_overlay})
-                refs.append(WIKIDATA_LABELS)
+                refs.append(WIKIDATA_LABELS if cc != 'CN' else WIKIDATA_CN_LABELS)
+            ai_overlay = {}
+            for nid, node in node_by_id.items():
+                if nid in names or node['kind'] == 'country':
+                    continue
+                label = ai_translations.get(nid, {}).get(locale)
+                if label:
+                    ai_overlay[nid] = label
+            if ai_overlay:
+                names.update(ai_overlay)
+                quality.update({k: 'provisional' for k in ai_overlay})
+                refs.append(AI_TRANSLATIONS)
             stats = quality_stats(names, quality, len(nodes))
             locale_coverage = dict(stats, status='research-seed', translationQualityById=quality,
                 policy='Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.')
@@ -477,6 +501,11 @@ def build(root):
                         'source': WIKIDATA_LABELS, 'license': 'CC0-1.0',
                         'filled': len(wd_overlay), 'matchCount': wd_match,
                         'note': 'Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.'}
+            if ai_overlay:
+                locale_coverage['aiTranslationOverlay'] = {
+                    'source': AI_TRANSLATIONS,
+                    'filled': len(ai_overlay),
+                    'note': 'AI-generated translations (recorded generation run, deterministic QA); provisional quality, humanReviewVerified=false, queued for human review.'}
             if gn_applied:
                 locale_coverage['geoNamesLatinOverlay'] = dict(gn_meta, source=GEONAMES_CN_ROWS,
                     license='CC-BY-4.0', locales=list(GEONAMES_LOCALES),
@@ -555,7 +584,7 @@ def coverage_markdown(report):
               '7. CLDR cn15 alias指向cnmn，但同版containment与名称表使用cnnm。导入器只在唯一完全相同源中文名的条件下关联“内蒙古自治区”，并写入`sources/cn-province-crosswalk.json`。 / One source inconsistency is recorded and deterministically resolved by a unique exact source-name match.',
               '8. 结构默认名也携带nameLocale/nameQuality，必须经过与语言包相同的质量策略；不能先过滤provisional译名，再从默认名绕过过滤。没有可信名称时仅展示identifier状态的ID/代码。 / Apply quality policy to default names as well as locale packs.',
               '9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.',
-              '10. CN市/县级英文名是GeoNames机器匹配的罗马字（provisional，CC-BY-4.0），未经人工审校；匹配失败的城市开发区等节点保持缺失，不伪造。 / CN prefecture/county English names are machine-matched GeoNames romanizations (provisional, CC-BY-4.0); unmatched nodes (development zones etc.) stay missing.', '',
+              '10. CN市/县级非中文名按四层证据栈叠加：GeoNames罗马字（CC-BY-4.0）→Wikidata P300/P13971社区标签（CC0）→AI生成残余（记录式生成运行）；全部provisional、未经人工审校；无上游实体的乡镇/统计分组/开发区保持缺失。 / CN non-Chinese names stack four evidence layers: GeoNames romanizations (CC-BY-4.0), Wikidata community labels (CC0, P300/P13971 exact joins), AI-generated residuals (recorded run); all provisional, not human-reviewed; nodes without any upstream entity stay missing.', '',
               '## 下一版可并行补齐 / Parallel completion tracks', '',
               '| Track | Scope | Required evidence before merge |', '|---|---|---|',
               '| CN-current | 2023快照后的撤并/更名，港澳台独立profile | 官方变更来源、可再分发许可、ID迁移；不得用旧快照冒充现势 |',
