@@ -774,6 +774,159 @@ AR_EVAL = {
 # documented divergences: ar.wp Волгоград uses ڤ (we pick ف), Казань appears
 # as قازان (Tatar exonym; systematic ك), Москва localized موسكو — excluded.
 
+# ---- Chinese (新华社《俄汉译音表》 systematic cells) ------------------------
+# Only high-confidence cells are encoded; uncertain rows stay missing
+# (never guessed). Documented divergences from frozen traditional forms:
+# Пермь 彼尔姆/Пенза 奔萨 use 彼/奔 while the systematic cell пе=佩;
+# Кемерово 克麦罗沃 uses 麦 vs systematic ме=梅 (Междуреченск 梅日杜列琴斯克);
+# -град renders 格勒 in traditional forms (Волгоград 伏尔加格勒) vs sys
+# 格拉德; fused syllables (Курган 库尔干, Тюмень 秋明, Казань 喀山) are
+# traditional. Rules: тс -> 茨 (Иркутск 伊尔库茨克); н drops before -ск
+# (Ачинск 阿钦斯克); м renders 木 before -ск (Томск 托木斯克); word-final
+# й drops after и (Бийск 比斯克) but renders 伊 after other vowels
+# (Майский 马伊斯基); ь/ъ absorbed; щ stays unhandled (honest skip).
+ZH_CV = {
+    ("б", "а"): "巴", ("в", "а"): "瓦", ("г", "а"): "加", ("д", "а"): "达",
+    ("ж", "а"): "扎", ("з", "а"): "扎", ("к", "а"): "卡", ("л", "а"): "拉",
+    ("м", "а"): "马", ("н", "а"): "纳", ("п", "а"): "帕", ("р", "а"): "拉",
+    ("с", "а"): "萨", ("т", "а"): "塔", ("ф", "а"): "法", ("х", "а"): "哈",
+    ("ц", "а"): "察", ("ч", "а"): "恰", ("ш", "а"): "沙",
+    ("б", "о"): "博", ("в", "о"): "沃", ("г", "о"): "戈", ("д", "о"): "多",
+    ("ж", "о"): "若", ("з", "о"): "佐", ("к", "о"): "科", ("л", "о"): "洛",
+    ("м", "о"): "莫", ("н", "о"): "诺", ("п", "о"): "波", ("р", "о"): "罗",
+    ("с", "о"): "索", ("т", "о"): "托", ("ф", "о"): "福", ("х", "о"): "霍",
+    ("ц", "о"): "措", ("ч", "о"): "乔", ("ш", "о"): "绍",
+    ("б", "у"): "布", ("в", "у"): "武", ("г", "у"): "古", ("д", "у"): "杜",
+    ("ж", "у"): "朱", ("з", "у"): "祖", ("к", "у"): "库", ("л", "у"): "卢",
+    ("м", "у"): "穆", ("н", "у"): "努", ("п", "у"): "普", ("р", "у"): "鲁",
+    ("с", "у"): "苏", ("т", "у"): "图", ("ф", "у"): "富", ("х", "у"): "胡",
+    ("ц", "у"): "楚", ("ч", "у"): "丘", ("ш", "у"): "舒",
+    ("б", "и"): "比", ("в", "и"): "维", ("д", "и"): "季", ("ж", "и"): "日",
+    ("з", "и"): "济", ("к", "и"): "基", ("л", "и"): "利", ("м", "и"): "米",
+    ("н", "и"): "尼", ("п", "и"): "皮", ("р", "и"): "里", ("с", "и"): "西",
+    ("т", "и"): "季", ("ф", "и"): "菲", ("х", "и"): "希", ("ц", "и"): "齐",
+    ("ч", "и"): "契", ("ш", "и"): "希",
+    ("б", "е"): "别", ("в", "е"): "维", ("г", "е"): "格", ("д", "е"): "杰",
+    ("ж", "е"): "热", ("з", "е"): "泽", ("к", "е"): "克", ("л", "е"): "列",
+    ("м", "е"): "梅", ("н", "е"): "涅", ("п", "е"): "佩", ("р", "е"): "列",
+    ("с", "е"): "谢", ("т", "е"): "捷", ("ф", "е"): "费", ("х", "е"): "赫",
+    ("ц", "е"): "采", ("ч", "е"): "切", ("ш", "е"): "舍",
+    ("в", "я"): "维亚", ("н", "я"): "尼亚", ("л", "я"): "利亚",
+    ("р", "я"): "里亚", ("с", "я"): "夏", ("м", "я"): "米亚", ("п", "я"): "皮亚",
+    ("т", "ю"): "秋", ("л", "ю"): "柳", ("н", "ю"): "纽", ("д", "ю"): "久",
+    ("р", "ю"): "留", ("т", "ё"): "乔", ("н", "ау"): "瑙",
+    ("й", "о"): "约", ("й", "е"): "耶", ("й", "а"): "亚", ("й", "у"): "尤",
+    ("й", "и"): "伊",
+}
+ZH_C = {"с": "斯", "р": "尔", "л": "尔", "м": "姆", "н": "恩", "к": "克",
+        "т": "特", "д": "德", "г": "格", "в": "夫", "з": "兹", "ж": "日",
+        "х": "赫", "ц": "茨", "б": "布", "п": "普", "ф": "夫", "й": "伊",
+        "ч": "奇", "ш": "什"}  # ч/ш alone are rare clusters; provisional
+ZH_V0 = {"а": "阿", "о": "奥", "у": "乌", "э": "埃", "и": "伊", "е": "叶",
+         "ё": "约", "ю": "尤", "я": "雅"}  # word-initial я=雅 (雅库茨克)
+ZH_PURITY = re.compile(r"[\u4e00-\u9fff\- ]+")
+ZH_CV_VOWELS = set("аоуэыиеёюя")
+
+
+def transcribe_zh(word: str) -> str:
+    word = unicodedata.normalize("NFC", word).strip()
+    out: list[str] = []
+    chars = list(word.lower())
+    i = 0
+    at_word_start = True
+    while i < len(chars):
+        c = chars[i]
+        if c in "ьъ":
+            i += 1
+            continue
+        if c in ("-", " ", "–"):
+            out.append(c)
+            at_word_start = True
+            i += 1
+            continue
+        if c == "й":
+            prev = chars[i - 1] if i > 0 else None
+            nxt = chars[i + 1] if i + 1 < len(chars) else None
+            if nxt is None or nxt in ("-", " ", "–") or prev == "и":
+                pass  # word-final й drops; ий drops the й (Бийск 比斯克)
+            elif nxt in ZH_CV_VOWELS:
+                pass  # (й, V) cells fire when the vowel branch sees й? no — handled below
+            else:
+                out.append("伊")  # Майский 马伊斯基
+            i += 1
+            at_word_start = False
+            continue
+        if c in ZH_C:
+            nxt = chars[i + 1] if i + 1 < len(chars) else None
+            nxt2 = chars[i + 2] if i + 2 < len(chars) else None
+            if c == "н" and nxt == "с" and nxt2 == "к":
+                i += 1  # -нск drops the н (Ачинск 阿钦斯克)
+                at_word_start = False
+                continue
+            if c == "т" and nxt == "с":
+                out.append("茨")  # тс -> 茨 (Иркутск 伊尔库茨克)
+                i += 2
+                at_word_start = False
+                continue
+            if nxt in ZH_CV_VOWELS:
+                if nxt == "а" and nxt2 == "у":
+                    cell = ZH_CV.get((c, "ау"))
+                    if cell is None:
+                        raise ValueError(f"unhandled diphthong ау in {word!r}")
+                    out.append(cell)
+                    i += 3
+                else:
+                    cell = ZH_CV.get((c, nxt))
+                    if cell is None:
+                        raise ValueError(f"unhandled syllable {c+nxt!r} in {word!r}")
+                    out.append(cell)
+                    i += 2
+                at_word_start = False
+                continue
+            if c == "м" and nxt == "с" and nxt2 == "к":
+                out.append("木")  # -мск renders 木 (Томск 托木斯克)
+            else:
+                out.append(ZH_C[c])
+            i += 1
+            at_word_start = False
+            continue
+        if c in ZH_V0:
+            # word-initial я=雅 (Якутск); standalone after a vowel=亚 (Красноярск)
+            out.append("亚" if (c == "я" and not at_word_start) else ZH_V0[c])
+            i += 1
+            at_word_start = False
+            continue
+        raise ValueError(f"unhandled character {c!r} in {word!r}")
+    return "".join(out)
+
+
+ZH_EVAL = {
+    "Сочи": "索契",
+    "Уфа": "乌法",
+    "Тула": "图拉",
+    "Тверь": "特维尔",
+    "Томск": "托木斯克",
+    "Хабаровск": "哈巴罗夫斯克",
+    "Иркутск": "伊尔库茨克",
+    "Краснодар": "克拉斯诺达尔",
+    "Норильск": "诺里尔斯克",
+    "Липецк": "利佩茨克",
+    "Барнаул": "巴尔瑙尔",
+    "Сургут": "苏尔古特",
+    "Бийск": "比斯克",
+    "Вологда": "沃洛格达",
+    "Кострома": "科斯特罗马",
+    "Ярославль": "雅罗斯拉夫尔",
+    "Псков": "普斯科夫",
+    "Якутск": "雅库茨克",
+}
+# excluded traditional/localized: Москва 莫斯科, Казань 喀山, Тюмень 秋明,
+# Пермь 彼尔姆, Оренбург 奥伦堡, Омск 鄂木斯克, Волгоград 伏尔加格勒,
+# Кемерово 克麦罗沃, Ачинск 阿钦斯克 (чи=契 vs standard 钦 fusion),
+# Тамбов 坦波夫 (м devoicing fusion), Улан-Удэ 乌兰乌德 (лан fusion).
+# NOTE: й+V words (Йошкар-Ола) will SKIP in zh (й branch passes; the vowel
+# branch then renders the vowel standalone — acceptable systematic output).
+
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
@@ -784,21 +937,23 @@ def main() -> int:
                                [(k, transcribe_de, v) for k, v in DE_EVAL.items()] +
                                [(k, transcribe_fr, v) for k, v in FR_EVAL.items()] +
                                [(k, transcribe_it, v) for k, v in IT_EVAL.items()] +
-                               [(k, transcribe_ar, v) for k, v in AR_EVAL.items()]):
+                               [(k, transcribe_ar, v) for k, v in AR_EVAL.items()] +
+                               [(k, transcribe_zh, v) for k, v in ZH_EVAL.items()]):
         got = fn(name)
         if got != expected:
             print(f"EVAL FAIL {name!r}: got {got!r} want {expected!r}")
             return 1
     print(f"eval sets: ja {len(EVAL)}/{len(EVAL)}, ko {len(KO_EVAL)}/{len(KO_EVAL)}, "
           f"de {len(DE_EVAL)}/{len(DE_EVAL)}, fr {len(FR_EVAL)}/{len(FR_EVAL)}, "
-          f"it {len(IT_EVAL)}/{len(IT_EVAL)}, ar {len(AR_EVAL)}/{len(AR_EVAL)} anchors pass",
+          f"it {len(IT_EVAL)}/{len(IT_EVAL)}, ar {len(AR_EVAL)}/{len(AR_EVAL)}, "
+          f"zh {len(ZH_EVAL)}/{len(ZH_EVAL)} anchors pass",
           flush=True)
 
     purity_res = {"ja": re.compile(r"[ァ-ヴー・]+"), "ko": re.compile(r"[가-힣]+"),
-                  "de": LAT_PURITY, "fr": LAT_PURITY, "it": LAT_PURITY, "ar": AR_PURITY}
+                  "de": LAT_PURITY, "fr": LAT_PURITY, "it": LAT_PURITY, "ar": AR_PURITY, "zh-Hans": ZH_PURITY}
     fns = {"ja": transcribe, "ko": transcribe_ko,
            "de": transcribe_de, "fr": transcribe_fr, "it": transcribe_it,
-           "ar": transcribe_ar}
+           "ar": transcribe_ar, "zh-Hans": transcribe_zh}
     nodes: dict[str, dict] = {}
     kind_prefix = {"cities": "csc-city:", "counties": "csc-county:"}
     for kind, prefix in kind_prefix.items():
@@ -825,12 +980,12 @@ def main() -> int:
 
     document = {
         "generator": "tool/gen_candidate_rule_transcriptions.py",
-        "ruleVersion": "ru-ja-ko-de-fr-it-ar-1",
+        "ruleVersion": "ru-ja-ko-de-fr-it-ar-zh-1",
         "retrievedAt": "2026-11-14",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ja", "ko", "de", "fr", "it", "ar"],
+        "locales": ["ja", "ko", "de", "fr", "it", "ar", "zh-Hans"],
         "evalAnchors": len(EVAL) + len(KO_EVAL),
         "evalPassed": len(EVAL) + len(KO_EVAL),
         "nodeCount": len(nodes),

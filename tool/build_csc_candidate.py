@@ -411,6 +411,53 @@ def main():
                 packs["_bridge_refs"] = [ref for p, ref in bridge_paths if (REPO / p).is_file()]
                 print(f"{cc} csc-translations qid bridge: {bridged_nodes} nodes filled")
 
+        # finalize zh-Hans pack with the rule-based fixes (idempotent)
+        en_by_id = {n["id"]: n["name"] for n in nodes}
+        for nid in list(packs["zh-Hans"]):
+            fixed = fix_zh_suffix(en_by_id.get(nid, ""), packs["zh-Hans"][nid])
+            if fixed is None:
+                del packs["zh-Hans"][nid]
+                packs["zh-Hans"].pop(nid, None)
+            elif fixed != packs["zh-Hans"][nid]:
+                packs["zh-Hans"][nid] = nfc(fixed)
+                packs.setdefault("_zh_fixed", {})[nid] = True
+
+
+        # rule-transcription overlay (last fill-missing stage): derived
+        # machine-candidate transcriptions for cells no evidence source
+        # covers (tool/gen_candidate_rule_transcriptions.py; eval-gated,
+        # deterministic tables, humanReviewVerified=false).
+        RULE_STAGED = {
+            "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
+                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
+                   for loc in ("ja", "ko", "de", "fr", "it", "ar", "zh-Hans")],
+        }
+        if cc in RULE_STAGED:
+            rule_filled = set()
+            rule_pairs = set()
+            rule_refs = []
+            for rule_path, rule_locale, rule_ref in RULE_STAGED[cc]:
+                if not (REPO / rule_path).is_file():
+                    continue
+                rule_data = json.loads((REPO / rule_path).read_text(encoding="utf-8"))
+                for n_row in nodes:
+                    nid = n_row["id"]
+                    entry = rule_data["nodes"].get(nid)
+                    if not entry:
+                        continue
+                    if nid in packs[rule_locale]:
+                        continue
+                    label = entry["labels"].get(rule_locale)
+                    if label:
+                        packs[rule_locale][nid] = nfc(label)
+                        rule_filled.add(nid)
+                        rule_pairs.add((nid, rule_locale))
+                if rule_ref not in rule_refs:
+                    rule_refs.append(rule_ref)
+            if rule_filled:
+                packs["_rule_pairs"] = rule_pairs
+                packs["_rule_refs"] = rule_refs
+            print(f"{cc} rule-transcription overlay: {len(rule_filled)} nodes filled")
         # derive zh-Hant pack (machine-candidate)
         hant_names, hant_quality = {}, {}
         conversion_stats = {"convertedChars": 0, "names": 0, "kanjiDirectJP": 0}
@@ -447,17 +494,6 @@ def main():
         packs["zh-Hant"] = hant_names
         if hant_names:
             TRANSLATION_LOCALES_SET = set(TRANSLATION_LOCALES)  # noqa: F841
-
-        # finalize zh-Hans pack with the rule-based fixes (idempotent)
-        en_by_id = {n["id"]: n["name"] for n in nodes}
-        for nid in list(packs["zh-Hans"]):
-            fixed = fix_zh_suffix(en_by_id.get(nid, ""), packs["zh-Hans"][nid])
-            if fixed is None:
-                del packs["zh-Hans"][nid]
-                packs["zh-Hans"].pop(nid, None)
-            elif fixed != packs["zh-Hans"][nid]:
-                packs["zh-Hans"][nid] = nfc(fixed)
-                packs.setdefault("_zh_fixed", {})[nid] = True
 
         # Wikidata community-label overlays (CC0, staged extracts): fill the
         # 9 translation locales where a node's external code matches an
@@ -538,41 +574,6 @@ def main():
             print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled, "
                   f"{len(wd_refs)} staged sources applied")
 
-        # rule-transcription overlay (last fill-missing stage): derived
-        # machine-candidate transcriptions for cells no evidence source
-        # covers (tool/gen_candidate_rule_transcriptions.py; eval-gated,
-        # deterministic tables, humanReviewVerified=false).
-        RULE_STAGED = {
-            "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
-                    "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
-                   for loc in ("ja", "ko", "de", "fr", "it", "ar")],
-        }
-        if cc in RULE_STAGED:
-            rule_filled = set()
-            rule_pairs = set()
-            rule_refs = []
-            for rule_path, rule_locale, rule_ref in RULE_STAGED[cc]:
-                if not (REPO / rule_path).is_file():
-                    continue
-                rule_data = json.loads((REPO / rule_path).read_text(encoding="utf-8"))
-                for n_row in nodes:
-                    nid = n_row["id"]
-                    entry = rule_data["nodes"].get(nid)
-                    if not entry:
-                        continue
-                    if nid in packs[rule_locale]:
-                        continue
-                    label = entry["labels"].get(rule_locale)
-                    if label:
-                        packs[rule_locale][nid] = nfc(label)
-                        rule_filled.add(nid)
-                        rule_pairs.add((nid, rule_locale))
-                if rule_ref not in rule_refs:
-                    rule_refs.append(rule_ref)
-            if rule_filled:
-                packs["_rule_pairs"] = rule_pairs
-                packs["_rule_refs"] = rule_refs
-            print(f"{cc} rule-transcription overlay: {len(rule_filled)} nodes filled")
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,
@@ -645,9 +646,9 @@ def main():
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
         "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
         "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
-        "- RU ja/ko/de/fr/it/ar: rule-table Cyrillic->katakana/hangul/Latin/"
-        "Arabic transcriptions (machine-candidate, eval-gated, "
-        "tool/gen_candidate_rule_transcriptions.py)\n"
+        "- RU ja/ko/de/fr/it/ar/zh-Hans: rule-table Cyrillic->katakana/"
+        "hangul/Latin/Arabic/Hanzi transcriptions (machine-candidate, "
+        "eval-gated, tool/gen_candidate_rule_transcriptions.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"
