@@ -2,8 +2,8 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "config/assets.hybrid-cn.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-14T06:40:37.158278Z",
-  "profile": "hybrid-cn-online-rest",
+  "generatedAt": "2026-11-14T06:51:48.031562Z",
+  "profile": "hybrid-cn-full-offline",
   "replace": true,
   "resources": [
     {
@@ -73,10 +73,52 @@
       "sha256": "bf61142515669a5ac82665a1e1b7173d22869118675cbaaf96875d9a426d0102"
     },
     {
+      "bytes": 71647,
+      "gzipBytes": 11129,
+      "path": "i18n/ar/CN.json",
+      "sha256": "7e3e30ea4460a863ab99d969b8d77c885337a5d3562349d694a47164c18a19fa"
+    },
+    {
+      "bytes": 235024,
+      "gzipBytes": 34041,
+      "path": "i18n/de/CN.json",
+      "sha256": "06e2f18a79e5867df0a77599954f163c321d102cbd373387f4b59760a697d7f1"
+    },
+    {
       "bytes": 236672,
       "gzipBytes": 34295,
       "path": "i18n/en/CN.json",
       "sha256": "d4b6206163a6ade306083bd9c551bdfb3118c0d81d53e7bef3101e11ff33f5d9"
+    },
+    {
+      "bytes": 234886,
+      "gzipBytes": 34169,
+      "path": "i18n/fr/CN.json",
+      "sha256": "fcde8957ebc884cca031ab5312f0e0cea4f4409399576230209bd160f1e14e4f"
+    },
+    {
+      "bytes": 234716,
+      "gzipBytes": 34107,
+      "path": "i18n/it/CN.json",
+      "sha256": "d4fd1771bfd56592f7b04a2a27e96c43091a8314a97d2797dd4fe730fbb6b654"
+    },
+    {
+      "bytes": 242294,
+      "gzipBytes": 38210,
+      "path": "i18n/ja/CN.json",
+      "sha256": "83e193fc4f50bc8f378cd3e20d7de7bed38b13afcae2ca48d10d1b9ba016ef29"
+    },
+    {
+      "bytes": 244439,
+      "gzipBytes": 36135,
+      "path": "i18n/ko/CN.json",
+      "sha256": "cf01fbd8f90cf51911b72dec5cc25980ab14f428e2b3d2cf9bf3d800782c8b10"
+    },
+    {
+      "bytes": 256464,
+      "gzipBytes": 35251,
+      "path": "i18n/ru/CN.json",
+      "sha256": "65730ff4cc674b3d6c5bb5cbb0c7d388e782aba78c8e325478f29e0b648a771a"
     },
     {
       "bytes": 266539,
@@ -101,9 +143,9 @@
     "CN": "s-618de1dd32b43463"
   },
   "totals": {
-    "fragmentFileCount": 17,
-    "gzipBytes": 173788,
-    "resourceFileCount": 15,
-    "uncompressedBytes": 1812898
+    "fragmentFileCount": 24,
+    "gzipBytes": 396830,
+    "resourceFileCount": 22,
+    "uncompressedBytes": 3332368
   }
 }

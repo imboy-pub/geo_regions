@@ -111,7 +111,7 @@
       "sha256": "bf61142515669a5ac82665a1e1b7173d22869118675cbaaf96875d9a426d0102"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 71647,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -221,7 +221,7 @@
       "sha256": "fc7fc1aa86a7c82424a6b85f0573949ea391574dbc97a134d36e242806b52e17"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 235024,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -441,7 +441,7 @@
       "sha256": "b38273fa1893bedf291957864e68853a4ea87cd7b48c531b1565611d139ea59a"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 234886,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -551,7 +551,7 @@
       "sha256": "5f953793583321bc1c4a3b2201bbcfb5ed2b5644ec258acef8944fc75597c9c9"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 234716,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -661,7 +661,7 @@
       "sha256": "6e7250269d4a9db156f2b4e6dd7f32822c4d2a91e58b1354e80035987f3fe003"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 242294,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -771,7 +771,7 @@
       "sha256": "49c51dc6cf640a691397d1609a4a087feb7ec19da721f169eff2d65e04d2585e"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 244439,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
@@ -881,7 +881,7 @@
       "sha256": "2e04a8bda9a52fb86cfa04ff1a3e4b3addd13a19e4e531103646d5fc671a4e75"
     },
     {
-      "bundled": false,
+      "bundled": true,
       "bytes": 256464,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",

@@ -1,8 +1,32 @@
 {
-  "profile": "hybrid-cn-online-rest",
-  "structures": ["CN"],
+  "profile": "hybrid-cn-full-offline",
+  "structures": [
+    "CN"
+  ],
   "locales": {
-    "CN": ["zh-Hans", "zh-Hant", "en"]
+    "CN": [
+      "zh-Hans",
+      "zh-Hant",
+      "en",
+      "ja",
+      "ko",
+      "ru",
+      "de",
+      "fr",
+      "it",
+      "ar"
+    ]
   },
-  "catalogLocales": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "ru", "de", "fr", "it", "ar"]
+  "catalogLocales": [
+    "zh-Hans",
+    "zh-Hant",
+    "en",
+    "ja",
+    "ko",
+    "ru",
+    "de",
+    "fr",
+    "it",
+    "ar"
+  ]
 }
