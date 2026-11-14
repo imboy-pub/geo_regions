@@ -1,5 +1,6 @@
 {
   "productionSdkExpected": true,
   "stage": "production-sdk-implemented",
-  "nextGate": "P1-08 release candidate: package dry-run, payload audit and draft release materials."
+  "nextGate": "P1-08 release candidate: package dry-run, payload audit and draft release materials.",
+  "expectedProductionGateRefusal": true
 }
