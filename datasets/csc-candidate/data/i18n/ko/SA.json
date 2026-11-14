@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 384,
-    "missingNames": 27,
+    "explicitNames": 385,
+    "missingNames": 26,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -395,6 +396,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:SA": "사우디아라비아",
     "csc-city:102804": "아브하",
     "csc-city:102805": "아브카이크",
     "csc-city:102806": "아부 아리쉬",
@@ -781,7 +783,7 @@
     "iso3166-2:SA-14": "아시르"
   },
   "protocolVersion": "1.0",
-  "revision": "l-b5be75683d02e4df",
+  "revision": "l-12793b099bf69ab3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

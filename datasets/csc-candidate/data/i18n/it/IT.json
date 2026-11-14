@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9983,
-    "missingNames": 363,
+    "explicitNames": 9984,
+    "missingNames": 362,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:IT": "provisional",
       "csc-city:135235": "provisional",
       "csc-city:135236": "provisional",
       "csc-city:135237": "provisional",
@@ -9994,6 +9995,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "it",
   "names": {
+    "cc:IT": "Italia",
     "csc-city:135235": "Abano Terme",
     "csc-city:135236": "Abbadia Cerreto",
     "csc-city:135237": "Abbadia Lariana",
@@ -19979,7 +19981,7 @@
     "iso3166-2:IT-VV": "Vibo Valentia"
   },
   "protocolVersion": "1.0",
-  "revision": "l-0f30e904d50a8005",
+  "revision": "l-54e14639948a2c68",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

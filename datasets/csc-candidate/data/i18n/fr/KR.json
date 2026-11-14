@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 323,
-    "missingNames": 4,
+    "explicitNames": 324,
+    "missingNames": 3,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:KR": "provisional",
       "csc-city:65260": "provisional",
       "csc-city:65261": "provisional",
       "csc-city:65262": "provisional",
@@ -334,6 +335,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "fr",
   "names": {
+    "cc:KR": "Corée du Sud",
     "csc-city:65260": "Andong",
     "csc-city:65261": "Andong",
     "csc-city:65262": "Ansan",
@@ -659,7 +661,7 @@
     "iso3166-2:KR-50": "Ville de Sejong"
   },
   "protocolVersion": "1.0",
-  "revision": "l-a78c846efd856578",
+  "revision": "l-a19f51e814638188",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

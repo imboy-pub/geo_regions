@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-35e5eecb1c3ae325",
   "countryCode": "JP",
   "coverage": {
-    "explicitNames": 762,
-    "missingNames": 1184,
+    "explicitNames": 763,
+    "missingNames": 1183,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:JP": "provisional",
       "iso3166-2:JP-01": "provisional",
       "iso3166-2:JP-02": "provisional",
       "iso3166-2:JP-03": "provisional",
@@ -773,6 +774,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:JP": "اليابان",
     "iso3166-2:JP-01": "هوكايدو",
     "iso3166-2:JP-02": "أوموري",
     "iso3166-2:JP-03": "إيواتي",
@@ -1537,7 +1539,7 @@
     "jp-city:92169": "شيموتسوكي-شي"
   },
   "protocolVersion": "1.0",
-  "revision": "l-95e428f8a3667872",
+  "revision": "l-40d1af9ef18661ac",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

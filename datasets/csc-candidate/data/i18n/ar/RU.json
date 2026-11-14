@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5256,
-    "missingNames": 1862,
+    "explicitNames": 5257,
+    "missingNames": 1861,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "provisional",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -5267,6 +5268,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:RU": "روسيا",
     "csc-city:100000": "مولينو",
     "csc-city:100001": "مولوفكا",
     "csc-city:100002": "مومرا",
@@ -10525,7 +10527,7 @@
     "iso3166-2:RU-ZAB": "زابايكالسكي"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d31df1413e803727",
+  "revision": "l-bd2b9ed1ae7702c3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

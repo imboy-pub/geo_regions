@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7114,
-    "missingNames": 428,
+    "explicitNames": 7115,
+    "missingNames": 427,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "provisional",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -7125,6 +7126,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:DE": "독일",
     "csc-city:153640": "데사우-로슬라우",
     "csc-city:153781": "렌스타이크의 로젠탈",
     "csc-city:153784": "노이링겐",
@@ -14241,7 +14243,7 @@
     "iso3166-2:DE-TH": "튀링겐"
   },
   "protocolVersion": "1.0",
-  "revision": "l-af529a5a67e5c4fa",
+  "revision": "l-0f710944b388c1fe",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

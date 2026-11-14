@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19813,
-    "missingNames": 7007,
+    "explicitNames": 19814,
+    "missingNames": 7006,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "provisional",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -19824,6 +19825,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "it",
   "names": {
+    "cc:US": "Stati Uniti D'America",
     "csc-city:110965": "Abbeville",
     "csc-city:110966": "Abbeville",
     "csc-city:110967": "Abbeville",
@@ -39639,7 +39641,7 @@
     "iso3166-2:US-WY": "Wyoming"
   },
   "protocolVersion": "1.0",
-  "revision": "l-b3e316c078e9ac98",
+  "revision": "l-4796f4b60f002eb2",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

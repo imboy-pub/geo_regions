@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3903,
-    "missingNames": 230,
+    "explicitNames": 3904,
+    "missingNames": 229,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:GB": "provisional",
       "csc-city:153932": "provisional",
       "csc-city:166593": "provisional",
       "csc-city:166594": "provisional",
@@ -3914,6 +3915,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:GB": "Великобритания",
     "csc-city:153932": "Саутгемптон",
     "csc-city:166593": "Барнсли",
     "csc-city:166594": "Бедфорд",
@@ -7819,7 +7821,7 @@
     "iso3166-2:GB-ZET": "Шетландские острова"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f52823dc396063f6",
+  "revision": "l-a2dcc535a749770a",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-35e5eecb1c3ae325",
   "countryCode": "JP",
   "coverage": {
-    "explicitNames": 762,
-    "missingNames": 1184,
+    "explicitNames": 763,
+    "missingNames": 1183,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:JP": "provisional",
       "iso3166-2:JP-01": "provisional",
       "iso3166-2:JP-02": "provisional",
       "iso3166-2:JP-03": "provisional",
@@ -773,6 +774,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:JP": "日本",
     "iso3166-2:JP-01": "北海道",
     "iso3166-2:JP-02": "青森",
     "iso3166-2:JP-03": "岩手",
@@ -1537,7 +1539,7 @@
     "jp-city:92169": "下野市"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f9f4da4dbcfcff5a",
+  "revision": "l-25e641246d2f0bb5",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

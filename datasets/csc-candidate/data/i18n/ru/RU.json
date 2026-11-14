@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 7063,
-    "missingNames": 55,
+    "explicitNames": 7064,
+    "missingNames": 54,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "provisional",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -7074,6 +7075,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:RU": "Россия",
     "csc-city:100000": "Мулино",
     "csc-city:100001": "Мулловка",
     "csc-city:100002": "Мумра",
@@ -14139,7 +14141,7 @@
     "iso3166-2:RU-ZAB": "Забайкальский"
   },
   "protocolVersion": "1.0",
-  "revision": "l-05d7d4de64b003f2",
+  "revision": "l-ac5beba7635a74b3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

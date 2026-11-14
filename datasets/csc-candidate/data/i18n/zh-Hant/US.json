@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19062,
+    "explicitNames": 19063,
     "machineCandidate": true,
-    "missingNames": 7758,
+    "missingNames": 7757,
     "proofreadFixesApplied": 7,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "machine-candidate",
       "csc-city:110965": "machine-candidate",
       "csc-city:110966": "machine-candidate",
       "csc-city:110967": "machine-candidate",
@@ -19076,6 +19077,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:US": "美国",
     "csc-city:110965": "阿比維爾",
     "csc-city:110966": "阿布維爾",
     "csc-city:110967": "阿布維爾",
@@ -38140,7 +38142,7 @@
     "iso3166-2:US-WY": "懷俄明州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-ddb2eb7bfcea566a",
+  "revision": "l-977d4fe627258137",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

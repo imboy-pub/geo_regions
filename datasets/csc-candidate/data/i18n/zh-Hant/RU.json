@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5149,
+    "explicitNames": 5150,
     "machineCandidate": true,
-    "missingNames": 1969,
+    "missingNames": 1968,
     "proofreadFixesApplied": 3,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "machine-candidate",
       "csc-city:100000": "machine-candidate",
       "csc-city:100001": "machine-candidate",
       "csc-city:100002": "machine-candidate",
@@ -5163,6 +5164,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:RU": "俄羅斯聯邦",
     "csc-city:100000": "穆利諾",
     "csc-city:100001": "穆洛夫卡",
     "csc-city:100002": "穆姆拉",
@@ -10314,7 +10316,7 @@
     "iso3166-2:RU-ZAB": "外貝加爾地區"
   },
   "protocolVersion": "1.0",
-  "revision": "l-05805a9e83b12e60",
+  "revision": "l-da1d8603203dd77b",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

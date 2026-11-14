@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9933,
-    "missingNames": 413,
+    "explicitNames": 9934,
+    "missingNames": 412,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:IT": "provisional",
       "csc-city:135235": "provisional",
       "csc-city:135236": "provisional",
       "csc-city:135237": "provisional",
@@ -9944,6 +9945,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:IT": "이탈리아",
     "csc-city:135235": "아바노테르메",
     "csc-city:135236": "아바디아 세레토",
     "csc-city:135237": "아바디아 라리아나",
@@ -19879,7 +19881,7 @@
     "iso3166-2:IT-VV": "비보 발렌티아"
   },
   "protocolVersion": "1.0",
-  "revision": "l-b1217ffd862285c8",
+  "revision": "l-b5c0d35745bb3457",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

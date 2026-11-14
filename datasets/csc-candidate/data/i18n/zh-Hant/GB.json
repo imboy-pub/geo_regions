@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3853,
+    "explicitNames": 3854,
     "machineCandidate": true,
-    "missingNames": 280,
+    "missingNames": 279,
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:GB": "machine-candidate",
       "csc-city:153932": "machine-candidate",
       "csc-city:166594": "machine-candidate",
       "csc-city:166596": "machine-candidate",
@@ -3867,6 +3868,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:GB": "英国",
     "csc-city:153932": "南安普敦",
     "csc-city:166594": "貝德福德",
     "csc-city:166596": "布拉德福德",
@@ -7722,7 +7724,7 @@
     "iso3166-2:GB-ZET": "設得蘭群島"
   },
   "protocolVersion": "1.0",
-  "revision": "l-16488ff2030675b0",
+  "revision": "l-3c9bee15930251d1",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

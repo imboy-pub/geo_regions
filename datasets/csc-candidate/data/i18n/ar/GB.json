@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3854,
-    "missingNames": 279,
+    "explicitNames": 3855,
+    "missingNames": 278,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:GB": "provisional",
       "csc-city:153932": "provisional",
       "csc-city:166593": "provisional",
       "csc-city:166594": "provisional",
@@ -3865,6 +3866,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:GB": "المملكة المتحدة",
     "csc-city:153932": "ساوثهامبتون",
     "csc-city:166593": "بارنسلي",
     "csc-city:166594": "بيدفورد",
@@ -7721,7 +7723,7 @@
     "iso3166-2:GB-ZET": "جزر شيتلاند"
   },
   "protocolVersion": "1.0",
-  "revision": "l-775bfd61715dc0dd",
+  "revision": "l-3f009299caa50dab",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7118,
-    "missingNames": 424,
+    "explicitNames": 7119,
+    "missingNames": 423,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "provisional",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -7129,6 +7130,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:DE": "Германия",
     "csc-city:153640": "Дессау-Рослау",
     "csc-city:153781": "Розенталь-ам-Ренштайг",
     "csc-city:153784": "Нойлинген",
@@ -14249,7 +14251,7 @@
     "iso3166-2:DE-TH": "Тюрингия"
   },
   "protocolVersion": "1.0",
-  "revision": "l-aaf32df27e303128",
+  "revision": "l-5cbef9923c5420ae",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

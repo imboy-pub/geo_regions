@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 325,
-    "missingNames": 2,
+    "explicitNames": 326,
+    "missingNames": 1,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:KR": "provisional",
       "csc-city:65260": "provisional",
       "csc-city:65261": "provisional",
       "csc-city:65262": "provisional",
@@ -336,6 +337,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:KR": "대한민국",
     "csc-city:65260": "안동",
     "csc-city:65261": "안동시",
     "csc-city:65262": "안산시",
@@ -663,7 +665,7 @@
     "iso3166-2:KR-50": "세종시"
   },
   "protocolVersion": "1.0",
-  "revision": "l-945bb6126e9ea9e2",
+  "revision": "l-6b691ad1663f97b4",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

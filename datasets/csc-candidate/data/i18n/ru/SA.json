@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 399,
-    "missingNames": 12,
+    "explicitNames": 400,
+    "missingNames": 11,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -410,6 +411,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:SA": "Саудовская Аравия",
     "csc-city:102804": "Абха",
     "csc-city:102805": "Абкайк",
     "csc-city:102806": "Абу Ариш",
@@ -811,7 +813,7 @@
     "iso3166-2:SA-14": "Асир"
   },
   "protocolVersion": "1.0",
-  "revision": "l-385f20046dff721b",
+  "revision": "l-e0889f95498a90cc",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

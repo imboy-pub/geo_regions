@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5281,
-    "missingNames": 1837,
+    "explicitNames": 5282,
+    "missingNames": 1836,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "provisional",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -5292,6 +5293,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:RU": "러시아",
     "csc-city:100000": "무리노",
     "csc-city:100001": "물로브카",
     "csc-city:100002": "뭄라",
@@ -10575,7 +10577,7 @@
     "iso3166-2:RU-ZAB": "자바이칼스키"
   },
   "protocolVersion": "1.0",
-  "revision": "l-bb96e516bbde2ebd",
+  "revision": "l-8c3ea35e0650c9e3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

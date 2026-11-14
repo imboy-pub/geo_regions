@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7111,
-    "missingNames": 431,
+    "explicitNames": 7112,
+    "missingNames": 430,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "provisional",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -7122,6 +7123,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:DE": "ドイツ",
     "csc-city:153640": "デッサウ＝ロスラウ",
     "csc-city:153781": "ローゼンタール・アム・レンシュタイク",
     "csc-city:153784": "ノイリンゲン",
@@ -14235,7 +14237,7 @@
     "iso3166-2:DE-TH": "テューリンゲン州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-9aa33e2840190d09",
+  "revision": "l-0d2c64de4027e9d3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

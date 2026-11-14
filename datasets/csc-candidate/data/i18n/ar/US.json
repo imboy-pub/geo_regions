@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19098,
-    "missingNames": 7722,
+    "explicitNames": 19099,
+    "missingNames": 7721,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "provisional",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -19109,6 +19110,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:US": "الولايات المتحدة",
     "csc-city:110965": "أبفيل",
     "csc-city:110966": "أبفيل",
     "csc-city:110967": "أبفيل",
@@ -38209,7 +38211,7 @@
     "iso3166-2:US-WY": "وايومنغ"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c0e87795533b83a0",
+  "revision": "l-de79410f4b8f9ad9",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

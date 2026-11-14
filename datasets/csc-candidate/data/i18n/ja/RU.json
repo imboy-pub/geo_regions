@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5283,
-    "missingNames": 1835,
+    "explicitNames": 5284,
+    "missingNames": 1834,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "provisional",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -5294,6 +5295,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:RU": "ロシア連邦",
     "csc-city:100000": "ムリーノ",
     "csc-city:100001": "ムロフカ",
     "csc-city:100002": "ムムラ",
@@ -10538,7 +10540,7 @@
     "iso3166-2:RU-MOS": "モスクワ",
     "iso3166-2:RU-MOW": "モスクワ",
     "iso3166-2:RU-MUR": "ムルマンスク",
-    "iso3166-2:RU-NEN": "ネネツ人",
+    "iso3166-2:RU-NEN": "ネネツ自治管区",
     "iso3166-2:RU-NGR": "ノヴゴロド",
     "iso3166-2:RU-NIZ": "ニジニ・ノヴゴロド",
     "iso3166-2:RU-NVS": "ノボシビルスク",
@@ -10575,11 +10577,11 @@
     "iso3166-2:RU-VOR": "ヴォロネジ",
     "iso3166-2:RU-YAN": "ヤマロ・ネネツ",
     "iso3166-2:RU-YAR": "ヤロスラヴリ",
-    "iso3166-2:RU-YEV": "ユダヤ人",
+    "iso3166-2:RU-YEV": "ユダヤ自治州",
     "iso3166-2:RU-ZAB": "ザバイカルスキー"
   },
   "protocolVersion": "1.0",
-  "revision": "l-57c562cbbeada564",
+  "revision": "l-056d32a7ea6f4015",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

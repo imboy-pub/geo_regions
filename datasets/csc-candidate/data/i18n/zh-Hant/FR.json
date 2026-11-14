@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10684,
+    "explicitNames": 10685,
     "machineCandidate": true,
-    "missingNames": 24356,
+    "missingNames": 24355,
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:FR": "machine-candidate",
       "fr-commune:01004": "machine-candidate",
       "fr-commune:01005": "machine-candidate",
       "fr-commune:01007": "machine-candidate",
@@ -10698,6 +10699,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:FR": "法国",
     "fr-commune:01004": "昂貝略昂比熱",
     "fr-commune:01005": "栋布地區昂貝略",
     "fr-commune:01007": "昂布羅奈",
@@ -21384,7 +21386,7 @@
     "fr-region:94": "科西嘉"
   },
   "protocolVersion": "1.0",
-  "revision": "l-928ec07644eacd7d",
+  "revision": "l-2c0307d93291a8fc",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

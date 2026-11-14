@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9965,
-    "missingNames": 381,
+    "explicitNames": 9966,
+    "missingNames": 380,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:IT": "provisional",
       "csc-city:135235": "provisional",
       "csc-city:135236": "provisional",
       "csc-city:135237": "provisional",
@@ -9976,6 +9977,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:IT": "イタリア",
     "csc-city:135235": "アーバノ・テルメ",
     "csc-city:135236": "アッバディーア・チェッレート",
     "csc-city:135237": "アッバディーア・ラリアーナ",
@@ -19943,7 +19945,7 @@
     "iso3166-2:IT-VV": "ヴィボ・ヴァレンティア"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d71e8944d99acd05",
+  "revision": "l-a63325c463947fea",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

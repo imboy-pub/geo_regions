@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 397,
-    "missingNames": 14,
+    "explicitNames": 398,
+    "missingNames": 13,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -408,6 +409,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hans",
   "names": {
+    "cc:SA": "沙特阿拉伯",
     "csc-city:102804": "艾卜哈",
     "csc-city:102805": "布盖格",
     "csc-city:102806": "阿布·阿里什",
@@ -807,7 +809,7 @@
     "iso3166-2:SA-14": "阿西尔"
   },
   "protocolVersion": "1.0",
-  "revision": "l-fcf3cafcd365f897",
+  "revision": "l-c869aea172a1ab02",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

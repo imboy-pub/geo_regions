@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10687,
-    "missingNames": 24353,
+    "explicitNames": 10688,
+    "missingNames": 24352,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:FR": "provisional",
       "fr-commune:01004": "provisional",
       "fr-commune:01005": "provisional",
       "fr-commune:01007": "provisional",
@@ -10698,6 +10699,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "fr",
   "names": {
+    "cc:FR": "France",
     "fr-commune:01004": "Ambérieu-en-Bugey",
     "fr-commune:01005": "Ambérieux-en-Dombes",
     "fr-commune:01007": "Ambronay",
@@ -21387,7 +21389,7 @@
     "fr-region:94": "Corse"
   },
   "protocolVersion": "1.0",
-  "revision": "l-fe1d3640ff5b934a",
+  "revision": "l-d2d8c398728ea819",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

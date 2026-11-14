@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 323,
-    "missingNames": 4,
+    "explicitNames": 324,
+    "missingNames": 3,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:KR": "provisional",
       "csc-city:65260": "provisional",
       "csc-city:65261": "provisional",
       "csc-city:65262": "provisional",
@@ -334,6 +335,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:KR": "كوريا الجنوبية",
     "csc-city:65260": "آندونغ",
     "csc-city:65261": "آندونغ",
     "csc-city:65262": "أنسان",
@@ -659,7 +661,7 @@
     "iso3166-2:KR-50": "مدينة سيجونغ"
   },
   "protocolVersion": "1.0",
-  "revision": "l-5d87be3f53a3f6ce",
+  "revision": "l-dac37e53e7ef4e96",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

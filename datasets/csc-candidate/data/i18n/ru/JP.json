@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-35e5eecb1c3ae325",
   "countryCode": "JP",
   "coverage": {
-    "explicitNames": 762,
-    "missingNames": 1184,
+    "explicitNames": 763,
+    "missingNames": 1183,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:JP": "provisional",
       "iso3166-2:JP-01": "provisional",
       "iso3166-2:JP-02": "provisional",
       "iso3166-2:JP-03": "provisional",
@@ -773,6 +774,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:JP": "Япония",
     "iso3166-2:JP-01": "Хоккайдо",
     "iso3166-2:JP-02": "Аомори",
     "iso3166-2:JP-03": "Иватэ",
@@ -1537,7 +1539,7 @@
     "jp-city:92169": "Симоцукэ-ши"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d9920af2d7f0f0ed",
+  "revision": "l-91207aa62a5b05f0",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

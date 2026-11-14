@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 398,
-    "missingNames": 13,
+    "explicitNames": 399,
+    "missingNames": 12,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -409,6 +410,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:SA": "サウジアラビア",
     "csc-city:102804": "アブハ",
     "csc-city:102805": "アブカイク",
     "csc-city:102806": "アブー・アリシュ",
@@ -809,7 +811,7 @@
     "iso3166-2:SA-14": "アシル"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8e9f9913c3ff3328",
+  "revision": "l-823de96f18ccc624",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

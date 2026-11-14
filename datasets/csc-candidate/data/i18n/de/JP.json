@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-35e5eecb1c3ae325",
   "countryCode": "JP",
   "coverage": {
-    "explicitNames": 762,
-    "missingNames": 1184,
+    "explicitNames": 763,
+    "missingNames": 1183,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:JP": "provisional",
       "iso3166-2:JP-01": "provisional",
       "iso3166-2:JP-02": "provisional",
       "iso3166-2:JP-03": "provisional",
@@ -773,6 +774,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "de",
   "names": {
+    "cc:JP": "Japan",
     "iso3166-2:JP-01": "Hokkaidō",
     "iso3166-2:JP-02": "Aomori",
     "iso3166-2:JP-03": "Iwate",
@@ -1537,7 +1539,7 @@
     "jp-city:92169": "Shimotsuke-shi"
   },
   "protocolVersion": "1.0",
-  "revision": "l-2798853373d41c5f",
+  "revision": "l-95ccf893c030a459",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

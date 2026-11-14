@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7084,
-    "missingNames": 458,
+    "explicitNames": 7085,
+    "missingNames": 457,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "provisional",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -7095,6 +7096,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:DE": "ألمانيا",
     "csc-city:153640": "دساو روسلاو",
     "csc-city:153781": "روزنتال أم رينشتايغ",
     "csc-city:153784": "نولينغن",
@@ -14181,7 +14183,7 @@
     "iso3166-2:DE-TH": "تورينجيا"
   },
   "protocolVersion": "1.0",
-  "revision": "l-559f31f829a017df",
+  "revision": "l-0b678583c047b311",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

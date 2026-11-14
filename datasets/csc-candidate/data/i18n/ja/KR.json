@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 325,
-    "missingNames": 2,
+    "explicitNames": 326,
+    "missingNames": 1,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:KR": "provisional",
       "csc-city:65260": "provisional",
       "csc-city:65261": "provisional",
       "csc-city:65262": "provisional",
@@ -336,6 +337,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:KR": "大韓民国",
     "csc-city:65260": "安東市",
     "csc-city:65261": "安東市",
     "csc-city:65262": "安山市",
@@ -663,7 +665,7 @@
     "iso3166-2:KR-50": "世宗市"
   },
   "protocolVersion": "1.0",
-  "revision": "l-21f038bcf72fd724",
+  "revision": "l-d921b19083bc2f0b",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

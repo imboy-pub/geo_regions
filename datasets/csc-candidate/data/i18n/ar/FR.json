@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10581,
-    "missingNames": 24459,
+    "explicitNames": 10582,
+    "missingNames": 24458,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:FR": "provisional",
       "fr-commune:01004": "provisional",
       "fr-commune:01005": "provisional",
       "fr-commune:01007": "provisional",
@@ -10592,6 +10593,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:FR": "فرنسا",
     "fr-commune:01004": "أمبيريو-أون-بوغي",
     "fr-commune:01005": "أمبيريو-أون-دومب",
     "fr-commune:01007": "أمبروناي",
@@ -21175,7 +21177,7 @@
     "fr-region:94": "كورس"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8e4e6720a41b1e55",
+  "revision": "l-63110882bedc20e4",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

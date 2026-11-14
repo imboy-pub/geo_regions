@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7119,
-    "missingNames": 423,
+    "explicitNames": 7120,
+    "missingNames": 422,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "provisional",
       "csc-city:153640": "provisional",
       "csc-city:153781": "provisional",
       "csc-city:153784": "provisional",
@@ -7130,6 +7131,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "de",
   "names": {
+    "cc:DE": "Deutschland",
     "csc-city:153640": "Dessau-Roßlau",
     "csc-city:153781": "Rosenthal am Rennsteig",
     "csc-city:153784": "Neulingen",
@@ -14251,7 +14253,7 @@
     "iso3166-2:DE-TH": "Thüringen"
   },
   "protocolVersion": "1.0",
-  "revision": "l-07cf26b030f5db67",
+  "revision": "l-419b394b669f0f52",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

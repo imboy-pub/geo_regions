@@ -54,6 +54,11 @@ ZH_GARBAGE_DROPS = {
 }
 # Confirmed upstream errors in zh-Hans packs (AI proof-reading round 1/3):
 # values rewritten and quality flipped to machine-candidate — never approved.
+# Japanese sisters of the RU truncation errors (same proof-reading rounds)
+JA_FIXES = {
+    ("RU", "Jewish"): "ユダヤ自治州",
+    ("RU", "Nenets"): "ネネツ自治管区",
+}
 ZH_HANS_FIXES = {
     ("KR", "Seoul"): "首尔",
     ("RU", "Jewish"): "犹太自治州",
@@ -184,6 +189,11 @@ def main():
         nodes = [node(root_id, None, "country", cc, country["name"], "en", "source-native", "partial")]
         packs = {locale: {} for locale in LOCALES}
         packs["en"][root_id] = country["name"]
+        country_trans = country.get("translations") or {}
+        for locale, key in TRANSLATION_LOCALES.items():
+            v = country_trans.get(key)
+            if v:
+                packs[locale][root_id] = nfc(v)
 
         state_ids = {}
         kr_fix = None
@@ -209,10 +219,15 @@ def main():
                               nfc(row["name"]), "en", "source-native", "unknown"))
             packs["en"][nid] = nfc(row["name"])
             hans_fix = ZH_HANS_FIXES.get((cc, row["name"]))
+            ja_fix = JA_FIXES.get((cc, row["name"]))
             for locale, key in TRANSLATION_LOCALES.items():
                 if locale == "zh-Hans" and hans_fix:
                     packs[locale][nid] = nfc(hans_fix)
                     packs.setdefault("_zh_fixed", {})[nid] = True
+                    continue
+                if locale == "ja" and ja_fix:
+                    packs[locale][nid] = nfc(ja_fix)
+                    packs.setdefault("_ja_fixed", {})[nid] = True
                     continue
                 value = (row.get("translations") or {}).get(key)
                 if value and nid not in ZH_GARBAGE_DROPS:
@@ -255,6 +270,10 @@ def main():
             nodes = [node(root_id, None, "country", cc, nfc(country["name"]), "en", "source-native", "partial")]
             packs = {locale: {} for locale in LOCALES}
             packs["en"][root_id] = nfc(country["name"])
+            for locale, key in TRANSLATION_LOCALES.items():
+                v = country_trans.get(key)
+                if v:
+                    packs[locale][root_id] = nfc(v)
             csc_idx = csc_translation_index(cc)
             reg_ids = {}
             FR_REGION_ZH = {"Guadeloupe": "瓜德罗普", "Martinique": "马提尼克", "Guyane": "圭亚那",

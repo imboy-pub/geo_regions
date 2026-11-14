@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19402,
-    "missingNames": 7418,
+    "explicitNames": 19403,
+    "missingNames": 7417,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "provisional",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -19413,6 +19414,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:US": "アメリカ合衆国",
     "csc-city:110965": "アベヴィル",
     "csc-city:110966": "アビーヴィル",
     "csc-city:110967": "アビーヴィル",
@@ -38817,7 +38819,7 @@
     "iso3166-2:US-WY": "ワイオミング州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d6e7d65c53711ee9",
+  "revision": "l-42d4b672673be3c5",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

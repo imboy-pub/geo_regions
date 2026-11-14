@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 404,
-    "missingNames": 7,
+    "explicitNames": 405,
+    "missingNames": 6,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -415,6 +416,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ar",
   "names": {
+    "cc:SA": "المملكة العربية السعودية",
     "csc-city:102804": "أبها",
     "csc-city:102805": "بقيق",
     "csc-city:102806": "أبو عريش",
@@ -821,7 +823,7 @@
     "iso3166-2:SA-14": "عسير"
   },
   "protocolVersion": "1.0",
-  "revision": "l-1c998b5c7525d5a1",
+  "revision": "l-f2081951861324a5",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 18700,
-    "missingNames": 8120,
+    "explicitNames": 18701,
+    "missingNames": 8119,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "provisional",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -18711,6 +18712,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:US": "Соединенные Штаты",
     "csc-city:110965": "Аббевилл",
     "csc-city:110966": "Аббевилл",
     "csc-city:110967": "Аббевилл",
@@ -37413,7 +37415,7 @@
     "iso3166-2:US-WY": "Вайоминг"
   },
   "protocolVersion": "1.0",
-  "revision": "l-ca6f7f4270019d24",
+  "revision": "l-deff03d7ded2cfc5",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

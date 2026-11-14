@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3946,
-    "missingNames": 187,
+    "explicitNames": 3947,
+    "missingNames": 186,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:GB": "provisional",
       "csc-city:153932": "provisional",
       "csc-city:166593": "provisional",
       "csc-city:166594": "provisional",
@@ -3957,6 +3958,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:GB": "영국",
     "csc-city:153932": "사우샘프턴",
     "csc-city:166593": "반즐리",
     "csc-city:166594": "베드포드",
@@ -7905,7 +7907,7 @@
     "iso3166-2:GB-ZET": "셰틀랜드 제도"
   },
   "protocolVersion": "1.0",
-  "revision": "l-aa8cde155b9a9cc9",
+  "revision": "l-70051fa079212c4d",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

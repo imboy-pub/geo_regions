@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10646,
-    "missingNames": 24394,
+    "explicitNames": 10647,
+    "missingNames": 24393,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:FR": "provisional",
       "fr-commune:01004": "provisional",
       "fr-commune:01005": "provisional",
       "fr-commune:01007": "provisional",
@@ -10657,6 +10658,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:FR": "Франция",
     "fr-commune:01004": "Амберьё-ан-Бюже",
     "fr-commune:01005": "Амберьё-ан-Домб",
     "fr-commune:01007": "Амброне",
@@ -21305,7 +21307,7 @@
     "fr-region:94": "Корсика"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d1d5b1a394ce71aa",
+  "revision": "l-1cc403e7202ef708",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

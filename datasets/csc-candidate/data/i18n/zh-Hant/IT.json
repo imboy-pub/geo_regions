@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9935,
+    "explicitNames": 9936,
     "machineCandidate": true,
-    "missingNames": 411,
+    "missingNames": 410,
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:IT": "machine-candidate",
       "csc-city:135235": "machine-candidate",
       "csc-city:135236": "machine-candidate",
       "csc-city:135237": "machine-candidate",
@@ -9949,6 +9950,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:IT": "意大利",
     "csc-city:135235": "阿巴諾泰爾梅",
     "csc-city:135236": "阿巴迪亞切雷托",
     "csc-city:135237": "阿巴迪亞拉里亞納",
@@ -19886,7 +19888,7 @@
     "iso3166-2:IT-VV": "維博瓦倫蒂亞"
   },
   "protocolVersion": "1.0",
-  "revision": "l-67ae9dc8ed386b00",
+  "revision": "l-63095a181d541401",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

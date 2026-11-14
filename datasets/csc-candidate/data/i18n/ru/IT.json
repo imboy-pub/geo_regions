@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-400d741e2717e473",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9961,
-    "missingNames": 385,
+    "explicitNames": 9962,
+    "missingNames": 384,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:IT": "provisional",
       "csc-city:135235": "provisional",
       "csc-city:135236": "provisional",
       "csc-city:135237": "provisional",
@@ -9972,6 +9973,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ru",
   "names": {
+    "cc:IT": "Италия",
     "csc-city:135235": "Абано-Терме",
     "csc-city:135236": "Аббадия-Черрето",
     "csc-city:135237": "Аббадия Лариана",
@@ -19935,7 +19937,7 @@
     "iso3166-2:IT-VV": "Вибо Валентия"
   },
   "protocolVersion": "1.0",
-  "revision": "l-9617bd81b5881a42",
+  "revision": "l-f84ecaf04786f146",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

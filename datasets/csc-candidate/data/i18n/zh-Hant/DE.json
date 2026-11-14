@@ -2,12 +2,13 @@
   "compatibleStructureRevision": "s-08b9a26f9093c7de",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 7079,
+    "explicitNames": 7080,
     "machineCandidate": true,
-    "missingNames": 463,
+    "missingNames": 462,
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:DE": "machine-candidate",
       "csc-city:153640": "machine-candidate",
       "csc-city:153781": "machine-candidate",
       "csc-city:153784": "machine-candidate",
@@ -7093,6 +7094,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "zh-Hant",
   "names": {
+    "cc:DE": "德国",
     "csc-city:153640": "德紹-羅斯勞",
     "csc-city:153781": "倫施泰格山麓羅森塔爾",
     "csc-city:153784": "諾伊林根",
@@ -14174,7 +14176,7 @@
     "iso3166-2:DE-TH": "圖林根州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-afd1e5ac4e0837fe",
+  "revision": "l-a36178a8f797ee3b",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

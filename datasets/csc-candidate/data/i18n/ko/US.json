@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19238,
-    "missingNames": 7582,
+    "explicitNames": 19239,
+    "missingNames": 7581,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:US": "provisional",
       "csc-city:110965": "provisional",
       "csc-city:110966": "provisional",
       "csc-city:110967": "provisional",
@@ -19249,6 +19250,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ko",
   "names": {
+    "cc:US": "미국",
     "csc-city:110965": "애비빌",
     "csc-city:110966": "애비빌",
     "csc-city:110967": "애비빌",
@@ -38489,7 +38491,7 @@
     "iso3166-2:US-WY": "와이오밍"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e5c1aa67a438aa55",
+  "revision": "l-c2bde3eafd4fbad0",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

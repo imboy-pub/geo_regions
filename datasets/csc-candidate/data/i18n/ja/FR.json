@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-88369795891891a4",
   "countryCode": "FR",
   "coverage": {
-    "explicitNames": 10618,
-    "missingNames": 24422,
+    "explicitNames": 10619,
+    "missingNames": 24421,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:FR": "provisional",
       "fr-commune:01004": "provisional",
       "fr-commune:01005": "provisional",
       "fr-commune:01007": "provisional",
@@ -10629,6 +10630,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "ja",
   "names": {
+    "cc:FR": "フランス",
     "fr-commune:01004": "アンベリュー＝アン＝ビュジェ",
     "fr-commune:01005": "アンベリュー＝アン＝ドンブ",
     "fr-commune:01007": "アンブロネ",
@@ -21249,7 +21251,7 @@
     "fr-region:94": "コルシカ島"
   },
   "protocolVersion": "1.0",
-  "revision": "l-a6b38b08144044e4",
+  "revision": "l-cc43d884b50e2a67",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-fc231222360974cc",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 3957,
-    "missingNames": 176,
+    "explicitNames": 3958,
+    "missingNames": 175,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:GB": "provisional",
       "csc-city:153932": "provisional",
       "csc-city:166593": "provisional",
       "csc-city:166594": "provisional",
@@ -3968,6 +3969,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "it",
   "names": {
+    "cc:GB": "Regno Unito",
     "csc-city:153932": "Southampton",
     "csc-city:166593": "Barnsley",
     "csc-city:166594": "Bedford",
@@ -7927,7 +7929,7 @@
     "iso3166-2:GB-ZET": "Isole Shetland"
   },
   "protocolVersion": "1.0",
-  "revision": "l-cdad1e73b3590d19",
+  "revision": "l-e500edf9ee2b39d3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

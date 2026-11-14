@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5286,
-    "missingNames": 1832,
+    "explicitNames": 5287,
+    "missingNames": 1831,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:RU": "provisional",
       "csc-city:100000": "provisional",
       "csc-city:100001": "provisional",
       "csc-city:100002": "provisional",
@@ -5297,6 +5298,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "fr",
   "names": {
+    "cc:RU": "Russie",
     "csc-city:100000": "Mulino",
     "csc-city:100001": "Moullovka",
     "csc-city:100002": "Mumra",
@@ -10585,7 +10587,7 @@
     "iso3166-2:RU-ZAB": "Zabaykalsky"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d1dda04e7eab7aa4",
+  "revision": "l-741e7e33a271a084",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

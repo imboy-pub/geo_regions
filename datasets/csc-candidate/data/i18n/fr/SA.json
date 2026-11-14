@@ -2,10 +2,11 @@
   "compatibleStructureRevision": "s-2ef87c0eb67e641a",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 405,
-    "missingNames": 6,
+    "explicitNames": 406,
+    "missingNames": 5,
     "status": "research-seed",
     "translationQualityById": {
+      "cc:SA": "provisional",
       "csc-city:102804": "provisional",
       "csc-city:102805": "provisional",
       "csc-city:102806": "provisional",
@@ -416,6 +417,7 @@
   "datasetId": "geo-regions-csc-candidate",
   "locale": "fr",
   "names": {
+    "cc:SA": "Arabie Saoudite",
     "csc-city:102804": "Abha",
     "csc-city:102805": "Abqaïq",
     "csc-city:102806": "Abū ‘Arīsh",
@@ -823,7 +825,7 @@
     "iso3166-2:SA-14": "Asir"
   },
   "protocolVersion": "1.0",
-  "revision": "l-32c41bc1698dde7b",
+  "revision": "l-dafe3dbf61282ef3",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
