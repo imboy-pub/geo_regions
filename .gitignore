@@ -8,7 +8,6 @@ node_modules/
 generated/
 staging/
 .data_staging/
-demo/flutter/web/
 demo/flutter/.flutter-plugins-dependencies
 
 # Conversation-local execution state; retain on disk across sessions
