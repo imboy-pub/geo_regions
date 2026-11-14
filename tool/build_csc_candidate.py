@@ -512,6 +512,7 @@ def main():
         }
         if cc in WD_STAGED:
             wd_filled = set()
+            wd_pairs = set()
             wd_refs = []
             for wd_path, wd_ref in WD_STAGED[cc]:
                 if not (REPO / wd_path).is_file():
@@ -529,12 +530,47 @@ def main():
                         if label:
                             packs[locale][nid] = nfc(label)
                             wd_filled.add(nid)
+                            wd_pairs.add((nid, locale))
                 wd_refs.append(wd_ref)
             if wd_filled:
-                packs["_wd_filled"] = wd_filled
+                packs["_wd_pairs"] = wd_pairs
                 packs["_wd_refs"] = wd_refs
             print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled, "
                   f"{len(wd_refs)} staged sources applied")
+
+        # rule-transcription overlay (last fill-missing stage): derived
+        # machine-candidate transcriptions for cells no evidence source
+        # covers (tool/gen_candidate_rule_transcriptions.py; eval-gated,
+        # deterministic tables, humanReviewVerified=false).
+        RULE_STAGED = {
+            "RU": [("staging/ai-cand/ru-ja-transcriptions.json", "ja",
+                    "staging/ai-cand/ru-ja-transcriptions.json (rule-table Cyrillic->katakana transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")],
+        }
+        if cc in RULE_STAGED:
+            rule_filled = set()
+            rule_pairs = set()
+            rule_refs = []
+            for rule_path, rule_locale, rule_ref in RULE_STAGED[cc]:
+                if not (REPO / rule_path).is_file():
+                    continue
+                rule_data = json.loads((REPO / rule_path).read_text(encoding="utf-8"))
+                for n_row in nodes:
+                    nid = n_row["id"]
+                    entry = rule_data["nodes"].get(nid)
+                    if not entry:
+                        continue
+                    if nid in packs[rule_locale]:
+                        continue
+                    label = entry["labels"].get(rule_locale)
+                    if label:
+                        packs[rule_locale][nid] = nfc(label)
+                        rule_filled.add(nid)
+                        rule_pairs.add((nid, rule_locale))
+                rule_refs.append(rule_ref)
+            if rule_filled:
+                packs["_rule_pairs"] = rule_pairs
+                packs["_rule_refs"] = rule_refs
+            print(f"{cc} rule-transcription overlay: {len(rule_filled)} nodes filled")
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,
@@ -549,14 +585,16 @@ def main():
                 fr_refs.append(INSEE_SOURCE)
             fr_refs.extend(packs.get("_wd_refs", []))
             fr_refs.extend(packs.get("_bridge_refs", []))
+            fr_refs.extend(packs.get("_rule_refs", []))
             pack = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                     "countryCode": cc, "locale": locale,
                     "compatibleStructureRevision": structure["revision"],
                     "sourceRefs": fr_refs, "names": packs[locale],
                     "coverage": {"status": "research-seed",
                                  "translationQualityById": {
-                                     nid: ("provisional" if nid in packs.get("_wd_filled", set())
-                                           else "machine-candidate" if locale == "zh-Hant" and nid not in packs.get("_hant_qualified", set())
+                                     nid: ("provisional" if (nid, locale) in packs.get("_wd_pairs", set())
+                                           else "machine-candidate" if (nid, locale) in packs.get("_rule_pairs", set())
+                                           or locale == "zh-Hant" and nid not in packs.get("_hant_qualified", set())
                                            or (locale == "zh-Hans" and nid in packs.get("_zh_fixed", {}))
                                            else "source-native" if locale == "en"
                                            else "cldr-json-qualified" if nid == root_id and locale in ("zh-Hans", "zh-Hant")
@@ -605,6 +643,8 @@ def main():
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
         "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
         "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
+        "- RU ja: rule-table Cyrillic->katakana transcriptions "
+        "(machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"
