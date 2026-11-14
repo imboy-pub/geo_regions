@@ -1,8 +1,8 @@
 {
-  "compatibleStructureRevision": "s-0a15ac21379fe168",
+  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 326,
+    "explicitNames": 327,
     "missingNames": 0,
     "status": "research-seed",
     "translationQualityById": {
@@ -317,7 +317,8 @@
       "csc-city:65567": "source-native",
       "csc-city:65568": "source-native",
       "iso3166-2:KR-11": "source-native",
-      "iso3166-2:KR-12": "source-native",
+      "iso3166-2:KR-17": "source-native",
+      "iso3166-2:KR-18": "source-native",
       "iso3166-2:KR-26": "source-native",
       "iso3166-2:KR-27": "source-native",
       "iso3166-2:KR-28": "source-native",
@@ -648,7 +649,8 @@
     "csc-city:65567": "Yuseong-gu",
     "csc-city:65568": "Yŏnmu",
     "iso3166-2:KR-11": "Seoul",
-    "iso3166-2:KR-12": "Jeonnam-Gwangju Integrated Special City",
+    "iso3166-2:KR-17": "South Jeolla",
+    "iso3166-2:KR-18": "Gwangju",
     "iso3166-2:KR-26": "Busan",
     "iso3166-2:KR-27": "Daegu",
     "iso3166-2:KR-28": "Incheon",
@@ -665,7 +667,7 @@
     "iso3166-2:KR-50": "Sejong City"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e6ae3950ad2da9d1",
+  "revision": "l-f3523b2acc2f4eb7",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

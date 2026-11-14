@@ -1,9 +1,9 @@
 {
-  "compatibleStructureRevision": "s-0a15ac21379fe168",
+  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
   "countryCode": "KR",
   "coverage": {
     "explicitNames": 323,
-    "missingNames": 3,
+    "missingNames": 4,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:65260": "provisional",

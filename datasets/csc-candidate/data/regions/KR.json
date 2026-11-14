@@ -164,10 +164,20 @@
     },
     {
       "childrenStatus": "unknown",
-      "code": "KR-12",
-      "id": "iso3166-2:KR-12",
+      "code": "KR-17",
+      "id": "iso3166-2:KR-17",
       "kind": "subdivision",
-      "name": "Jeonnam-Gwangju Integrated Special City",
+      "name": "South Jeolla",
+      "nameLocale": "en",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "KR-18",
+      "id": "iso3166-2:KR-18",
+      "kind": "subdivision",
+      "name": "Gwangju",
       "nameLocale": "en",
       "nameQuality": "source-native",
       "parentId": "cc:KR"
@@ -250,7 +260,7 @@
       "name": "Beolgyo",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -300,7 +310,7 @@
       "name": "Boseong-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -610,7 +620,7 @@
       "name": "Damyang-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -770,7 +780,7 @@
       "name": "Gangjin-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -990,7 +1000,7 @@
       "name": "Goheung-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1000,7 +1010,7 @@
       "name": "Gokseong-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1150,7 +1160,7 @@
       "name": "Gurye-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1190,7 +1200,7 @@
       "name": "Gwangju",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-18"
     },
     {
       "childrenStatus": "unknown",
@@ -1230,7 +1240,7 @@
       "name": "Gwangsan-gu",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-18"
     },
     {
       "childrenStatus": "unknown",
@@ -1240,7 +1250,7 @@
       "name": "Gwangyang",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1250,7 +1260,7 @@
       "name": "Gwangyang-si",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1300,7 +1310,7 @@
       "name": "Haenam",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1310,7 +1320,7 @@
       "name": "Haenam-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1340,7 +1350,7 @@
       "name": "Hampyeong-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1490,7 +1500,7 @@
       "name": "Hwasun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1500,7 +1510,7 @@
       "name": "Hwasun-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1590,7 +1600,7 @@
       "name": "Jangheung-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1600,7 +1610,7 @@
       "name": "Jangseong-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1740,7 +1750,7 @@
       "name": "Jindo-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1890,7 +1900,7 @@
       "name": "Kurye",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1910,7 +1920,7 @@
       "name": "Kwangyang",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1940,7 +1950,7 @@
       "name": "Masan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1980,7 +1990,7 @@
       "name": "Mokpo",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -1990,7 +2000,7 @@
       "name": "Mokpo-si",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2000,7 +2010,7 @@
       "name": "Muan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2010,7 +2020,7 @@
       "name": "Muan-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2070,7 +2080,7 @@
       "name": "Naju",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2080,7 +2090,7 @@
       "name": "Naju-si",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2570,7 +2580,7 @@
       "name": "Sinan",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2580,7 +2590,7 @@
       "name": "Sinan-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2660,7 +2670,7 @@
       "name": "Suncheon",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2670,7 +2680,7 @@
       "name": "Suncheon-si",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -2880,7 +2890,7 @@
       "name": "Wando-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3040,7 +3050,7 @@
       "name": "Yeongam",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3050,7 +3060,7 @@
       "name": "Yeongam-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3120,7 +3130,7 @@
       "name": "Yeonggwang",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3130,7 +3140,7 @@
       "name": "Yeonggwang-gun",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3180,7 +3190,7 @@
       "name": "Yeosu",
       "nameLocale": "en",
       "nameQuality": "source-native",
-      "parentId": "iso3166-2:KR-12"
+      "parentId": "iso3166-2:KR-17"
     },
     {
       "childrenStatus": "unknown",
@@ -3264,7 +3274,7 @@
     }
   ],
   "protocolVersion": "1.0",
-  "revision": "s-0a15ac21379fe168",
+  "revision": "s-fa3ed9209836f2f6",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

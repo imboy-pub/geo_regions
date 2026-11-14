@@ -1,9 +1,9 @@
 {
-  "compatibleStructureRevision": "s-0a15ac21379fe168",
+  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 323,
-    "missingNames": 3,
+    "explicitNames": 325,
+    "missingNames": 2,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:65260": "provisional",
@@ -315,6 +315,8 @@
       "csc-city:65567": "provisional",
       "csc-city:65568": "provisional",
       "iso3166-2:KR-11": "provisional",
+      "iso3166-2:KR-17": "provisional",
+      "iso3166-2:KR-18": "provisional",
       "iso3166-2:KR-26": "provisional",
       "iso3166-2:KR-27": "provisional",
       "iso3166-2:KR-28": "provisional",
@@ -643,6 +645,8 @@
     "csc-city:65567": "유성구",
     "csc-city:65568": "연무",
     "iso3166-2:KR-11": "서울",
+    "iso3166-2:KR-17": "전라남도",
+    "iso3166-2:KR-18": "광주",
     "iso3166-2:KR-26": "부산",
     "iso3166-2:KR-27": "대구",
     "iso3166-2:KR-28": "인천",
@@ -659,7 +663,7 @@
     "iso3166-2:KR-50": "세종시"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8118db4e887ca125",
+  "revision": "l-c90aef655ffbdced",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

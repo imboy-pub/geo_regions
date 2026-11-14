@@ -156,6 +156,19 @@ def main():
         packs["en"][root_id] = country["name"]
 
         state_ids = {}
+        kr_fix = None
+        if cc == "KR":
+            fake = [r for r in states_by_cc[cc] if "Integrated" in r["name"]]
+            kr_fix = fake[0] if fake else None
+            states_by_cc[cc] = [r for r in states_by_cc[cc] if kr_fix is None or r["id"] != kr_fix["id"]]
+            states_by_cc[cc].extend([
+                {"id": 17000000, "name": "South Jeolla", "iso2": "17", "iso3166_2": "KR-17",
+                 "type": "province", "level": 1, "parent_id": None,
+                 "translations": {"zh-CN": "全罗南道", "ja": "全羅南道", "ko": "전라남도"}},
+                {"id": 18000000, "name": "Gwangju", "iso2": "18", "iso3166_2": "KR-18",
+                 "type": "metropolitan city", "level": 1, "parent_id": None,
+                 "translations": {"zh-CN": "光州", "ja": "光州", "ko": "광주"}}])
+            # corrections carry their provenance in the node rows below
         for row in sorted(states_by_cc.get(cc, []), key=lambda r: r["id"]):
             iso_tag = row.get("iso3166_2") or ""
             nid = f"iso3166-2:{iso_tag}" if iso_tag else f"csc-state:{row['id']}"
@@ -244,6 +257,11 @@ def main():
             counties_by_cc[cc] = []
             states_by_cc[cc] = []
         county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
+        if cc == "KR" and kr_fix:
+            gwangju_districts = {"Gwangju", "Gwangsan-gu", "Buk-gu", "Dong-gu", "Nam-gu", "Seo-gu"}
+            for row in cities_by_cc[cc]:
+                if row.get("state_id") == kr_fix["id"]:
+                    row["state_id"] = 18000000 if row["name"] in gwangju_districts else 17000000
         for row in sorted(cities_by_cc.get(cc), key=lambda r: r["id"]):
             nid = f"csc-city:{row['id']}"
             parent = state_ids.get(row.get("state_id"), root_id)

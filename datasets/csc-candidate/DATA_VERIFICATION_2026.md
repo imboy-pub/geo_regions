@@ -34,3 +34,21 @@
 ## 4. 十语矩阵（官方层切换后）
 
 en 93,682(100%) / zh-Hans 30,554+ / zh-Hant 56,742+ / ja / ko / ru / de / fr / it / ar 详见 translation_coverage.json；FR/JP 新层缺译（FR 70%、JP 60%）保留缺失，由后续翻译批次（machine-candidate）补齐。
+
+## 5. 第二轮现势对账（KR 虚构实体修复 + 六国盘点）
+
+| CC | 发现 | 处置 |
+|---|---|---|
+| **KR** | CSC states=16：**虚构实体 "Jeonnam-Gwangju Integrated Special City"**（2024 讨论未实施的整合市）且缺 Gwangju/全南分立；38 个子节点（全南郡市+光州区）混挂其下 | **已修**：删除虚构实体，拆出 iso3166-2:KR-17（South Jeolla/全罗南道）+ iso3166-2:KR-18（Gwangju/光州）两个真实 2026 广域团体（含 zh-Hans/ja/ko 名），38 子节点按 Gwangju/Gwangsan-gu→KR-18、其余→KR-17 分流；**KR 现为 17 广域团体、0 孤儿** |
+| **RU** | CSC 83 联邦主体 vs 2026 现行 85 | 自洽：83 = 85 − Crimea − Sevastopol（争议主体 CSC 上游有意排除）；短命名形态（Altai vs Altai Krai）非缺实体 |
+| **SA** | 13 regions | ✓ 与 2026 现势一致 |
+| **DE** | 16 州 ✓（Wikidata P300 对账 16/16）；Gemeinde 层 7,107 vs GV100 ~10k+ 覆盖缺口 | 州级通过；县级缺口如实（Destatis 直链 HTML 驱动） |
+| **IT** | 省级 CSC 129 vs Wikidata IT- 131 近对齐；cities 10,216 vs ISTAT 现势 ~7,900（**多出 ~2,300，疑含已合并/变更实体**）；ISTAT 官方 CSV 直链 404 | 省级初步通过；cities 层现势缺口**待 ISTAT 源接入**（SPARQL 间歇限流，深对账暂 BLOCKED_ENV） |
+| **GB** | 221 一级单位=4 国混合层级（unitary 82/metro 36/LB 32/county 23/council 32/district 11/country 3/province 1/city 1），England 国层级缺失 | 实体真实但结构口径杂；ONS 接入前如实保留 |
+
+## 6. 结论（2026 现势达成度）
+
+- **2026 现势已达成**：FR（INSEE 2026-01-01）、JP（Geolonia 最新）、KR（17 广域团体修正后）
+- **高置信通过**：US（99% counties）、RU（83 自洽）、SA（13）、DE 州级（16/16）
+- **缺口如实**：IT cities 层（待 ISTAT）、DE 县级（待 Destatis）、GB（待 ONS）、RU cities（无独立源）、KR 光州 4 区 CSC 缺失
+- 每节点的 sourceRefs 与时点标注使 2026 达成度可审计

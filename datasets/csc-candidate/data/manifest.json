@@ -151,13 +151,13 @@
     },
     {
       "bytes": 26831,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "ar",
       "path": "i18n/ar/KR.json",
       "revision": "l-5d87be3f53a3f6ce",
-      "sha256": "ce5878bac293451c80c62a2523ba6acee32708e3dabebe1aa1bd4dc21fa13248"
+      "sha256": "faace080c61d58ff77e66ec52d8ac428178accbfcdf5cb9443312f7167705641"
     },
     {
       "bytes": 449101,
@@ -241,13 +241,13 @@
     },
     {
       "bytes": 24303,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "de",
       "path": "i18n/de/KR.json",
       "revision": "l-cc92991976f83afb",
-      "sha256": "a3d39e54e34f4a5c0615fa29c2acdd236ff4a158e9888a2cd80f09e44f85c131"
+      "sha256": "a7580d6283d559252b5360c4a62f94a37211d2083135c7b6e2cb5200ea25bae0"
     },
     {
       "bytes": 407442,
@@ -330,14 +330,14 @@
       "sha256": "47e773bf69ee012dd31741f10e08889306a16e7a64d48f9b40f710653c16b5ac"
     },
     {
-      "bytes": 25258,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "bytes": 25307,
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "en",
       "path": "i18n/en/KR.json",
-      "revision": "l-e6ae3950ad2da9d1",
-      "sha256": "cb8e6328b3c0a5e896382e4ba8b5df701bf0ef88e1eff9dc7ac4bc8d491fe09b"
+      "revision": "l-f3523b2acc2f4eb7",
+      "sha256": "d607166b725563c84ab95adfedd7270ebbb082faf1ec62ac9d3cc7a80f44d6aa"
     },
     {
       "bytes": 589019,
@@ -421,13 +421,13 @@
     },
     {
       "bytes": 24905,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "fr",
       "path": "i18n/fr/KR.json",
       "revision": "l-a78c846efd856578",
-      "sha256": "b90da78bfaa3dc45883f35b4b93c51d80e4304e551468b694920f491a2523f23"
+      "sha256": "1aa9491bf1389519ab57e08b4d1a9003c48eda12ba6b5a5004efda8b84c20d20"
     },
     {
       "bytes": 408003,
@@ -511,13 +511,13 @@
     },
     {
       "bytes": 24426,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "it",
       "path": "i18n/it/KR.json",
       "revision": "l-a4ea05aa5abbb257",
-      "sha256": "1b9927aadab98955efb6f874991143c73ac3b90c0822fbe45f4fdd6432fd6799"
+      "sha256": "2b27b75c8ec7c330696cfc4df17133ab5c3d639ae4e9a6626355d4ae9e0e1616"
     },
     {
       "bytes": 406762,
@@ -600,14 +600,14 @@
       "sha256": "8b32c770447dd97ce7f70a325893ba1c850a7d95fed5c1c80f904485e3733761"
     },
     {
-      "bytes": 24390,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "bytes": 24542,
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "ja",
       "path": "i18n/ja/KR.json",
-      "revision": "l-c55753f424088548",
-      "sha256": "8cb58e3c58e94f2bd051efe57d7eaada69a9ea039f4fcfd3ace1a08bda8d5b6c"
+      "revision": "l-9799b8319a1458f9",
+      "sha256": "3deef9ec0d654c0d12cfb9c620783d280b7fd821f4547581e934f064d3ce57ba"
     },
     {
       "bytes": 460889,
@@ -690,14 +690,14 @@
       "sha256": "619bc934f5e2242cf945c43c37eb8bb957461e924a016620441530c40c620611"
     },
     {
-      "bytes": 24105,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "bytes": 24257,
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "ko",
       "path": "i18n/ko/KR.json",
-      "revision": "l-8118db4e887ca125",
-      "sha256": "96fc1487959baa1d0744e43d495733c122b2607851d674d911c11670da6493a7"
+      "revision": "l-c90aef655ffbdced",
+      "sha256": "2772b18787ff8867fdb4657020b764661b59a1aed1df3ac3ffc6776970862df1"
     },
     {
       "bytes": 436343,
@@ -781,13 +781,13 @@
     },
     {
       "bytes": 26232,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "ru",
       "path": "i18n/ru/KR.json",
       "revision": "l-b479bb542b2cdb24",
-      "sha256": "18c8c6baab9746dc5907d781856ebc9ff3ee86f91b247170312bb76dd4fd6455"
+      "sha256": "f0d98df98f90c67b209c5d170ff456a6b23c360416c58b4bbf99376d0cc7a081"
     },
     {
       "bytes": 660411,
@@ -870,14 +870,14 @@
       "sha256": "5b94f7fafa6ffe779b4f22c63ef66e8050f14b20e71905a0d0c5e167934fd48e"
     },
     {
-      "bytes": 24188,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "bytes": 24340,
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/KR.json",
-      "revision": "l-09b5a47ebc539d93",
-      "sha256": "fed0181e62f3468cea6bebe90cc5a40b750818e2cac37ebf5aec1570cb8f8133"
+      "revision": "l-83ef4fded3d83c6f",
+      "sha256": "d536ee4f35b023b2e54ec98d6aac55a46e03207a6798a4d1afc2a999c07c9b77"
     },
     {
       "bytes": 419553,
@@ -960,14 +960,14 @@
       "sha256": "3a4633ffde6749fecb6485561538da49b99516096573e80d58d621a0a5e21c56"
     },
     {
-      "bytes": 26238,
-      "compatibleStructureRevision": "s-0a15ac21379fe168",
+      "bytes": 26402,
+      "compatibleStructureRevision": "s-fa3ed9209836f2f6",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/KR.json",
-      "revision": "l-896233797e529b13",
-      "sha256": "0cc6279f5185138a459f4bee1b3edaed3a3cc7992dd478da668be1090af36621"
+      "revision": "l-ff1a6a4b3c9f91ec",
+      "sha256": "afbe3eacc0e407dca3c996be8f5026e5c9e0a7faf2a8088a820d271108aa2bce"
     },
     {
       "bytes": 450598,
@@ -1040,12 +1040,12 @@
       "sha256": "8b738685db08f4634d9825881508ff51b831fe2b08212968b2a9847942b211e0"
     },
     {
-      "bytes": 85102,
+      "bytes": 85321,
       "countryCode": "KR",
       "kind": "structure",
       "path": "regions/KR.json",
-      "revision": "s-0a15ac21379fe168",
-      "sha256": "4bb96e317897ce82317aff493caef88ce5235efb603edc02d8b54ec90f79e48c"
+      "revision": "s-fa3ed9209836f2f6",
+      "sha256": "6a8ada6739acfed89a49107cdbcd76fadf47705d11a4019c05206de1b27b4c10"
     },
     {
       "bytes": 1905134,
@@ -1072,5 +1072,5 @@
       "sha256": "334ffbf34cce4a2d6322b64bfbf6cf5bc54919da86e16dd95a1d97562fceb9be"
     }
   ],
-  "revision": "m-5d83334c48c540ec"
+  "revision": "m-be0e219b0221cd1b"
 }

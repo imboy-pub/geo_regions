@@ -1,0 +1,5 @@
+{
+ "note": "IT state layer: CSC 129 provinces vs Wikidata P300 IT- total 131 (first-pass query); near-parity, deeper reconciliation pending SPARQL availability. City layer 10,216 vs ISTAT ~7,900 needs the official ISTAT file (direct links 404 on 2026-11-14) \u2014 recorded as open gap.",
+ "cscIsoCount": 129,
+ "wikidataITTotal": 131
+}

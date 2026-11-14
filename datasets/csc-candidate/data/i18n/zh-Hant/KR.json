@@ -1,10 +1,10 @@
 {
-  "compatibleStructureRevision": "s-0a15ac21379fe168",
+  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
   "countryCode": "KR",
   "coverage": {
-    "explicitNames": 323,
+    "explicitNames": 325,
     "machineCandidate": true,
-    "missingNames": 3,
+    "missingNames": 2,
     "proofreadFixesApplied": 2,
     "status": "research-seed",
     "translationQualityById": {
@@ -317,6 +317,8 @@
       "csc-city:65567": "machine-candidate",
       "csc-city:65568": "machine-candidate",
       "iso3166-2:KR-11": "machine-candidate",
+      "iso3166-2:KR-17": "machine-candidate",
+      "iso3166-2:KR-18": "machine-candidate",
       "iso3166-2:KR-26": "machine-candidate",
       "iso3166-2:KR-27": "machine-candidate",
       "iso3166-2:KR-28": "machine-candidate",
@@ -646,6 +648,8 @@
     "csc-city:65567": "儒城區",
     "csc-city:65568": "雲木",
     "iso3166-2:KR-11": "首爾",
+    "iso3166-2:KR-17": "全羅南道",
+    "iso3166-2:KR-18": "光州",
     "iso3166-2:KR-26": "釜山",
     "iso3166-2:KR-27": "大邱",
     "iso3166-2:KR-28": "仁川",
@@ -662,7 +666,7 @@
     "iso3166-2:KR-50": "世宗特别行政區"
   },
   "protocolVersion": "1.0",
-  "revision": "l-896233797e529b13",
+  "revision": "l-ff1a6a4b3c9f91ec",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
