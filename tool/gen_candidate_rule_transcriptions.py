@@ -992,14 +992,15 @@ _US_QUALIFIER_DROP = ("city", "town", "village", "township", "borough",
 
 
 def emit_en_ko(root: Path) -> int:
-    """US/GB rows (CSC snapshot) -> English g2p ko extract."""
+    """US/GB rows (CSC snapshot) -> English g2p ko+ja extract."""
     fails = en_g2p.selfcheck()
     if fails:
         print(f"EN g2p eval fails: {fails}")
         return 1
     nodes: dict[str, dict] = {}
     skipped = 0
-    purity = re.compile(r"[가-힣 ]+")
+    purity_ko = re.compile(r"[가-힣 ]+")
+    purity_ja = re.compile(r"[ァ-ヴー・]+")
     for cc in ("US", "GB"):
         for kind, prefix in (("cities", "csc-city"), ("counties", "csc-county")):
             path = root / f"staging/csc-snapshot/contributions/{kind}/{cc}.json"
@@ -1021,20 +1022,25 @@ def emit_en_ko(root: Path) -> int:
                         if low.endswith(f" {q}"):
                             core = name[: -(len(q) + 1)]
                             break
-                try:
-                    value = en_g2p.transcribe_en_ko(core)
-                except ValueError:
+                labels = {}
+                for loc, fn, purity in (
+                        ("ko", en_g2p.transcribe_en_ko, purity_ko),
+                        ("ja", en_g2p.transcribe_en_ja, purity_ja)):
+                    try:
+                        value = fn(core)
+                    except ValueError:
+                        continue
+                    if county:
+                        value = (f"{value} 카운티" if loc == "ko"
+                                 else f"{value}郡")
+                    if not purity.fullmatch(value):
+                        continue
+                    labels[loc] = value
+                if not labels:
                     skipped += 1
                     continue
-                if not purity.fullmatch(value):
-                    skipped += 1
-                    continue
-                if county:
-                    value = f"{value} 카운티"
-                if not purity.fullmatch(value):
-                    skipped += 1
-                    continue
-                nodes[f"{prefix}:{row['id']}"] = {"source": name, "labels": {"ko": value}}
+                nodes[f"{prefix}:{row['id']}"] = {"source": name,
+                                                  "labels": labels}
     document = {
         "generator": "tool/en_g2p.py",
         "ruleVersion": "en-ko-1",
@@ -1042,7 +1048,7 @@ def emit_en_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko"],
+        "locales": ["ko", "ja"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,

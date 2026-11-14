@@ -1032,6 +1032,506 @@ LEXICAL_EN_KO_FULL = {
 }
 
 
+
+
+# --- katakana renderer (Hepburn conventions) -------------------------------
+
+_JA_VOW = {"æ": "ア", "ɛ": "エ", "ɪ": "イ", "ɑ": "ア", "ʌ": "ア",
+           "ə": "ア", "ɔ": "オ", "ʊ": "ウ", "iː": "イー", "uː": "ウー",
+           "ɔː": "オー", "oʊ": "オー", "ɜː": "アー", "eɪ": "エイ",
+           "aɪ": "アイ", "ɔɪ": "オイ", "aʊ": "アウ", "juː": "ユー"}
+
+_JA_ONSET = {"p": "パ", "b": "バ", "t": "タ", "d": "ダ", "k": "カ",
+             "g": "ガ", "s": "サ", "z": "ザ", "θ": "サ", "ð": "ザ",
+             "m": "マ", "n": "ナ", "h": "ハ", "l": "ラ", "r": "ラ",
+             "f": "フ", "v": "バ"}
+
+_JA_UFORM = {"p": "プ", "b": "ブ", "t": "ト", "d": "ド", "k": "ク",
+             "g": "グ", "s": "ス", "z": "ズ", "θ": "ス", "ð": "ザ",
+             "m": "ム", "n": "ン", "ŋ": "ン", "h": "フ", "f": "フ",
+             "v": "ブ", "l": "ル", "r": "ル"}
+_JA_FINAL = {"p": "プ", "b": "ブ", "t": "ト", "d": "ド", "k": "ク",
+             "g": "グ", "s": "ス", "z": "ズ", "θ": "ス", "ð": "ズ",
+             "m": "ン", "n": "ン", "ŋ": "ング", "h": "", "f": "フ",
+             "v": "ブ", "l": "ル", "r": "アー", "j": "ジュ"}
+
+_JA_W = {"a": "ワ", "æ": "ワ", "ɑ": "ワ", "ʌ": "ワ", "ə": "ワ",
+         "ɛ": "ウェ", "ɪ": "ウィ", "iː": "ウィ", "ɔ": "ウォ",
+         "ɔː": "ウォー", "ʊ": "ウ", "uː": "ウー", "oʊ": "ウォー",
+         "aɪ": "ワイ", "aʊ": "ワウ"}
+
+_JA_SH = {"ʃ": ["シャ", "シ", "シュ", "シェ", "ショ"],
+          "tʃ": ["チャ", "チ", "チュ", "チェ", "チョ"],
+          "dʒ": ["ジャ", "ジ", "ジュ", "ジェ", "ジョ"]}
+_JA_SH_KEY = {
+    "ʃ": {"a": "シャ", "A": "シャ", "U": "シャ", "@": "シャ", "e": "シェ",
+          "2": "シェイ", "i": "シ", "I": "シー", "4": "シャイ",
+          "u": "シュ", "v": "シュー", "7": "シュー", "O": "ショ",
+          "6": "ショー", "0": "ショー", "8": "シャウ", "3": "シャー"},
+    "tʃ": {"a": "チャ", "A": "チャ", "U": "チャ", "@": "チャ", "e": "チェ",
+           "2": "チェイ", "i": "チ", "I": "チー", "4": "チャイ",
+           "u": "チュ", "v": "チュー", "7": "チュー", "O": "チョ",
+           "6": "チョー", "0": "チョー", "8": "チャウ", "3": "チャー"},
+    "dʒ": {"a": "ジャ", "A": "ジャ", "U": "ジャ", "@": "ジャ", "e": "ジェ",
+           "2": "ジェイ", "i": "ジ", "I": "ジー", "4": "ジャイ",
+           "u": "ジュ", "v": "ジュー", "7": "ジュー", "O": "ジョ",
+           "6": "ジョー", "0": "ジョー", "8": "ジャウ", "3": "ジャー"}}
+
+
+def _ja_vowel_kana(t: str) -> str:
+    if t in _JA_VOW:
+        return _JA_VOW[t]
+    return {"ia": "イア", "iA": "イア", "io": "イオ", "ie": "イー",
+            "ea": "イー", "ee": "イー", "ai": "エイ", "ay": "エイ",
+            "oa": "オー", "ou": "アウ", "au": "オー", "aw": "オー",
+            "ui": "ウー", "ue": "ユー", "oe": "オー", "eu": "ユー",
+            "eo": "オー", "ei": "アイ", "ey": "エイ", "oo": "ウー",
+            "ew": "ユー", "igh": "アイ", "eigh": "エイ", "oi": "オイ",
+            "oy": "オイ"}.get(t, "ー")
+
+
+def _ja_pal(sym: str, nxt: str | None) -> str:
+    row = _JA_SH[sym]
+    idx = _JA_SH_IDX.get(nxt or "", 1)
+    return row[idx]
+
+
+_JA_COLS = {
+    #            A     I     U     E     O
+    "k": ("カ", "キ", "ク", "ケ", "コ"), "g": ("ガ", "ギ", "グ", "ゲ", "ゴ"),
+    "s": ("サ", "シ", "ス", "セ", "ソ"), "z": ("ザ", "ジ", "ズ", "ゼ", "ゾ"),
+    "t": ("タ", "チ", "ツ", "テ", "ト"), "d": ("ダ", "ジ", "ズ", "デ", "ド"),
+    "n": ("ナ", "ニ", "ヌ", "ネ", "ノ"), "h": ("ハ", "ヒ", "フ", "ヘ", "ホ"),
+    "b": ("バ", "ビ", "ブ", "ベ", "ボ"), "p": ("パ", "ピ", "プ", "ペ", "ポ"),
+    "m": ("マ", "ミ", "ム", "メ", "モ"), "l": ("ラ", "リ", "ル", "レ", "ロ"),
+    "r": ("ラ", "リ", "ル", "レ", "ロ"), "f": ("ファ", "フィ", "フ", "フェ", "フォ"),
+    "v": ("バ", "ビ", "ブ", "ベ", "ボ"), "θ": ("サ", "シ", "ス", "セ", "ソ"),
+    "ð": ("ザ", "ジ", "ズ", "ゼ", "ゾ"), "ʃ": ("シャ", "シ", "シュ", "シェ", "ショ"),
+    "tʃ": ("チャ", "チ", "チュ", "チェ", "チョ"),
+    "dʒ": ("ジャ", "ジ", "ジュ", "ジェ", "ジョ"),
+}
+# column selector per phoneme vowel token
+_JA_COLIDX = {"a": 0, "æ": 0, "ɑ": 0, "ʌ": 0, "ə": 4, "i": 1, "ɪ": 1,
+              "u": 2, "ʊ": 2, "e": 3, "ɛ": 3, "o": 4, "ɔ": 4}
+_JA_LONG = {"iː": (1, "ー"), "uː": (2, "ー"), "oʊ": (4, "ー"),
+            "ɔː": (4, "ー"), "ɜː": (0, "ー"), "oa": (4, "ー"),
+            "au": (4, "ー"), "aw": (4, "ー"), "eo": (4, "ー"),
+            "ee": (1, "ー"), "ea": (1, "ー"), "oo": (2, "ー")}
+_JA_DIPH = {"eɪ": (3, "イ"), "ai": (3, "イ"), "ay": (3, "イ"),
+            "aɪ": (0, "イ"), "ɔɪ": (4, "イ"), "oi": (4, "イ"),
+            "oy": (4, "イ"), "aʊ": (0, "ウ"), "ou": (0, "ウ"),
+            "ei": (0, "イ"), "igh": (0, "イ"), "eigh": (3, "イ"),
+            "ey": (3, "イ"), "ow": (4, "ー"), "ui": (2, "ー"),
+            "ue": (2, "ー"), "eu": (2, "ー"), "ew": (2, "ー")}
+_JA_JU = {"k": "キュー", "g": "ギュー", "s": "スー", "z": "ズー",
+          "t": "チュー", "d": "デュー", "n": "ニュー", "h": "ヒュー",
+          "m": "ミュー", "l": "リュー", "r": "リュー", "b": "ビュー",
+          "p": "ピュー", "f": "フュー", "v": "ビュー", "θ": "スー",
+          "ð": "ズー", "ʃ": "シュー", "tʃ": "チュー", "dʒ": "ジュー"}
+_JA_KEY = {"a": "æ", "A": "ɑ", "e": "ɛ", "i": "ɪ", "I": "iː", "O": "ɔ",
+           "u": "ʊ", "U": "ʌ", "@": "ə", "3": "ɜː", "6": "ɔː", "2": "eɪ",
+           "4": "aɪ", "8": "aʊ", "0": "oʊ", "7": "juː", "v": "uː"}
+_JA_WKEY = {"a": "ワ", "A": "ワ", "4": "ワ", "@": "ワ", "U": "ワ",
+            "e": "ウェ", "2": "ウェ", "i": "ウィ", "I": "ウィ",
+            "u": "ウ", "v": "ウ", "O": "ウォ", "6": "ウォー",
+            "0": "ウォー", "8": "ワウ", "7": "ウ"}
+_JA_WH_VOW = {"a": "ワ", "æ": "ワ", "ɑ": "ワ", "ʌ": "ワ", "ə": "ワ",
+              "i": "イ", "ɪ": "イ", "iː": "イー", "e": "エー", "ɛ": "エー",
+              "eɪ": "エー", "o": "ウォ", "ɔ": "ウォ", "oʊ": "ウォー",
+              "u": "ウ", "ʊ": "ウ", "aɪ": "ワイ", "aʊ": "ウ",
+              "ʌ ": "ワ"}
+
+
+def _ja_flush(p: str | None) -> str:
+    """pending consonant key -> kana prefix (consonant-branch prepends)"""
+    if p is None:
+        return ""
+    if p in _JA_COLS:
+        return _JA_UFORM[p]
+    if p == "l":
+        return "ル"
+    if p == "wh":
+        return "ホ"
+    return ""
+
+
+def _ja_cv(cons: str | None, t: str) -> str:
+    """consonant key + vowel token -> katakana"""
+    if cons is None:
+        stand = {"a": "ア", "æ": "ア", "ɑ": "ア", "ʌ": "ア", "ə": "ア",
+                 "i": "イ", "ɪ": "イ", "u": "ウ", "ʊ": "ウ", "e": "エ",
+                 "ɛ": "エ", "o": "オ", "ɔ": "オ"}
+        if t in stand:
+            return stand[t]
+        if t in _JA_LONG:
+            col, tail = _JA_LONG[t]
+            return ("アイウエオ"[col] if col < 5 else "") + tail
+        if t in _JA_DIPH:
+            col, tail = _JA_DIPH[t]
+            return "アイウエオ"[col] + tail
+        if t in ("ia", "iA"):
+            return "イア"
+        if t == "io":
+            return "イオ"
+        if t == "ie":
+            return "イー"
+        if t == "juː":
+            return "ユー"
+        return "ー"
+    if t == "juː":
+        return _JA_JU.get(cons, cons + "ュー")
+    if t in ("i", "ɪ") and cons in ("t", "d"):
+        return "ティ" if cons == "t" else "ディ"
+    if t in ("eɪ", "ai", "ay", "ey") and cons in ("t", "d"):
+        return ("テイ" if cons == "t" else "デイ")
+    if t in _JA_LONG:
+        col, tail = _JA_LONG[t]
+        return _JA_COLS[cons][col] + tail
+    if t in _JA_DIPH:
+        col, tail = _JA_DIPH[t]
+        return _JA_COLS[cons][col] + tail
+    col = _JA_COLIDX.get(t, 0)
+    return _JA_COLS[cons][col]
+
+
+def transcribe_en_ja(word: str) -> str:
+    """English -> katakana (Hepburn, ja-Wikipedia place-name conventions)."""
+    text = word.strip().replace("St. ", "Saint ")
+    key = text.lower()
+    if key in LEXICAL_EN_JA_FULL:
+        return LEXICAL_EN_JA_FULL[key]
+    toks = phonemes(text)
+    out: list[str] = []
+    pending: str | None = None        # consonant key | "wh" | "y"
+    n = len(toks)
+    i = 0
+    while i < n:
+        t = toks[i]
+        if len(t) > 1 and t[0] in ("s", "z") and t[1:] in _JA_KEY:
+            out.append(_ja_cv(t[0], _JA_KEY[t[1:]]))   # city シ/ザ compounds
+            pending = None
+            i += 1
+            continue
+        nxt = toks[i + 1] if i + 1 < n else None
+        nxt2 = toks[i + 2] if i + 2 < n else None
+        nxt3 = toks[i + 3] if i + 3 < n else None
+        if t in ("|", "| "):
+            pending = None
+            i += 1
+            continue
+        # r-coloured vowels
+        if t in ("ar", "er", "ir", "or", "ur"):
+            cons = "h" if pending == "wh" else pending
+            pending = None
+            if nxt is None or nxt in ("|", "| "):
+                out.append(("ホ" if cons == "h" and pending != "wh" else "")
+                           + _ja_cv(None if cons == "h" else cons, "ɜː"))
+            elif _tok_is_cons(nxt):
+                out.append(_ja_cv(cons, "ɔː" if t[0] == "o" else "ɜː"))
+            else:
+                # florida フロリダ / arizona アリゾナ: short オ/ア
+                out.append(_ja_cv(cons, "ɔ" if t[0] == "o" else "ɑ"))
+                pending = "l"                          # r -> next onset
+            i += 1
+            continue
+        if t in ("ia", "iA"):
+            out.append(_ja_cv(pending, "i"))
+            out.append("ア")                           # マイアミ/リア
+            pending = None
+            i += 1
+            continue
+        if t == "io":
+            out.append(_ja_cv(pending, "i"))
+            out.append("オ")                           # オハイオ ハイオ
+            pending = None
+            i += 1
+            continue
+        if t == "ie":
+            out.append(_ja_cv(pending, "iː"))
+            pending = None
+            i += 1
+            continue
+        # plain vowels / digraphs
+        vowel = _ja_vowel_kana(t)
+        if vowel != "ー" or t in ("ea", "ee", "oo", "ai", "ay", "oa", "ou",
+                                  "au", "aw", "ui", "ue", "oe", "eu", "eo",
+                                  "ei", "ey", "igh", "eigh", "oi", "oy"):
+            if t == "juː" and pending is None and nxt is not None \
+                    and nxt not in ("|", "| ") and _tok_is_cons(nxt):
+                out.append("ユ")                       # utah ユタ
+                pending = None
+                i += 1
+                continue
+            if pending == "wh":
+                out.append("ホ" + _JA_WH_VOW.get(t, "ワ"))
+                pending = None
+            elif t in ("ʃ", "tʃ", "dʒ"):
+                pass
+            else:
+                out.append(_ja_cv(pending, t))
+            pending = None
+            i += 1
+            continue
+        # consonants
+        sym = ("tʃ" if t[:2] == "tʃ"
+               else "ʃ" if t[:1] == "ʃ"
+               else "dʒ" if t[:2] == "dʒ" else None)
+        if sym is not None:
+            key2 = t[len(sym):]
+            if key2 == "" and (nxt is None or nxt in ("|", "| ")):
+                out.append(_ja_flush(pending) + _JA_COLS[sym][1])
+                pending = None
+            elif key2 == "" and nxt is not None and _tok_is_cons(nxt):
+                out.append(_ja_flush(pending) + _JA_COLS[sym][2])  # シュ-type
+                pending = nxt
+            else:
+                out.append(_ja_flush(pending) + _ja_cv(sym, key2 or "i"))
+            pending = None
+            i += 1
+            continue
+        if t == "wh":
+            pending = "wh"
+            i += 1
+            continue
+        if t[:1] == "w" and t[1:] in _JA_WKEY:
+            out.append(_ja_flush(pending) + _JA_WKEY[t[1:]])
+            pending = None
+            i += 1
+            continue
+        if t == "w":
+            out.append(_ja_flush(pending) + _JA_W.get(nxt, "ウ"))
+            pending = None
+            i += 1
+            continue
+        if t == "y":
+            if pending in ("t", "d"):
+                out.append(_ja_cv(pending, "i"))        # city シティ
+                pending = None
+                i += 1
+                continue
+            if pending in ("k", "g"):
+                out.append(_ja_cv(pending, "i") + "ー")  # ケンタッキー型
+                pending = None
+                i += 1
+                continue
+            if nxt in ("or", "ɔ", "ɔː", "oʊ") or nxt is None:
+                out.append(_ja_flush(pending) + "イー" if nxt is None
+                           and pending not in (None, "t", "d", "k", "g")
+                           else _ja_flush(pending) + ("ヨー" if nxt in ("or", "ɔ", "ɔː", "oʊ") else "イー"))
+                pending = None
+                i += 1
+                continue
+            yv = {"ɛ": "イエ", "e": "イエ", "ɪ": "イ", "i": "イ",
+                  "ʊ": "ユ", "uː": "ユー"}.get(nxt, "ヤ")
+            out.append(_ja_flush(pending) + yv)
+            pending = None
+            i += 1
+            continue
+        if t == "x":
+            out.append(_ja_flush(pending) + ("ックス" if out and out[-1]
+                                          and out[-1][-1] in "アイウエオー"
+                                          else "クス"))
+            pending = None
+            i += 1
+            continue
+        if t == "mb":
+            out.append(_ja_flush(pending) + "ン")
+            pending = None
+            i += 1
+            continue
+        if t in ("ll", "rr"):
+            if nxt is None or nxt in ("|", "| "):
+                out.append(_ja_flush(pending) + "ル")   # ville ル
+                pending = None
+            else:
+                pending = "l"
+            i += 1
+            continue
+        if t in ("ng", "ŋ"):
+            if nxt == "t" and nxt2 in ("ə", "ʌ", "ɑ") \
+                    and nxt3 == "n":
+                out.append(_ja_flush(pending) + "ン")     # ウェリントン
+            else:
+                out.append(_ja_flush(pending) + "ング")   # スプリング/キング
+            pending = None
+            i += 1
+            continue
+        if t == "nk":
+            out.append(_ja_flush(pending) + "ン")
+            pending = "k"
+            i += 1
+            continue
+        if t in _DOUBLE_KEY:
+            base = {"tt": "t", "dd": "d", "pp": "p", "bb": "b", "gg": "g",
+                    "mm": "m", "ff": "f", "zz": "z", "cc": "k"}[t]
+            if nxt is not None and _tok_is_cons(nxt):
+                if t == "tt" and nxt == "s":
+                    out.append(_ja_flush(pending) + "ッツ")  # ピッツバーグ
+                    pending = None
+                    i += 1
+                    continue
+                out.append(_ja_flush(pending) + _JA_UFORM[base])
+                pending = None
+            elif nxt is None or nxt in ("|", "| "):
+                out.append(_ja_flush(pending) + _JA_UFORM[base])  # カーディフ
+                pending = None
+            else:
+                if t in ("pp", "bb", "kk", "gg", "mm", "ff"):
+                    out.append(_ja_flush(pending) + "ッ")    # アップル
+                pending = base
+            i += 1
+            continue
+        if t in ("nn", "ss"):
+            pending = "n" if t == "nn" else "s"
+            i += 1
+            continue
+        if t in ("kn", "wr", "sch"):
+            out.append(_ja_flush(pending) +
+                       {"kn": "ノ", "wr": "ル", "sch": "ス"}[t])
+            pending = {"kn": "k", "wr": None, "sch": "s"}[t]
+            i += 1
+            continue
+        if t == "ts":
+            out.append("ツ")
+            pending = None
+            i += 1
+            continue
+        if t == "d" and nxt == "s":
+            out.append(_ja_flush(pending) + "ズ")
+            pending = None
+            i += 2
+            continue
+        if t == "g~":
+            out.append("ーバーグ"[:1] + "グ")           # ピッツバーグ(ー merge)
+            pending = None
+            i += 1
+            continue
+        if t in _JA_COLS:
+            bound = nxt is None or nxt in ("|", "| ")
+            if bound:
+                out.append(_ja_flush(pending) + _JA_FINAL[t])
+                pending = None
+            elif nxt is not None and _tok_is_cons(nxt):
+                out.append(_ja_flush(pending) + _JA_UFORM[t])
+                pending = None
+            else:
+                pending = t
+            i += 1
+            continue
+        if t == "juː":
+            if pending is None and nxt is not None \
+                    and nxt not in ("|", "| ") and _tok_is_cons(nxt):
+                out.append("ユ")                       # utah ユタ
+            else:
+                out.append(_ja_cv(pending, "juː"))
+            pending = None
+            i += 1
+            continue
+        raise ValueError(f"ja render unresolved {t!r}")
+
+    return "".join(out)
+
+LEXICAL_EN_JA_FULL = {
+    # 有名不規則形（lexicon+system 双轨）
+    "miami": "マイアミ",        # maɪ split (rules: ミアミ)
+    "los angeles": "ロサンゼルス",
+    "new york": "ニューヨーク",
+    "cambridge": "ケンブリッジ",
+    "edinburgh": "エディンバラ",
+    "liverpool": "リヴァプール",
+    "georgia": "ジョージア",
+    "georgetown": "ジョージタウン",
+    "seattle": "シアトル",
+    "phoenix": "フェニックス",
+    "connecticut": "コネチカット",
+    "massachusetts": "マサチューセッツ",
+    "arkansas": "アーカンソー",
+    "illinois": "イリノイ",
+    "missouri": "ミズーリ",
+    "louisiana": "ルイジアナ",
+    "new jersey": "ニュージャージー",
+    "carolina": "カロライナ",
+    "north carolina": "ノースカロライナ",
+    "south carolina": "サウスカロライナ",
+    "north dakota": "ノースダコタ",
+    "south dakota": "サウスダコタ",
+    "san francisco": "サンフランシスコ",
+    "san diego": "サンディエゴ",
+    "las vegas": "ラスベガス",
+    "dallas": "ダラス",
+    "london": "ロンドン",
+    "york": "ヨーク",
+    "oxford": "オックスフォード",
+    "syracuse": "シラキュース",
+    "rochester": "ロチェスター",
+    "minneapolis": "ミネアポリス",
+    "baltimore": "ボルチモア",
+    "buffalo": "バッファロー",
+    "albany": "オールバニー",
+    "savannah": "サバンナ",
+    "memphis": "メンフィス",
+    "toledo": "トレド",
+    "milwaukee": "ミルウォーキー",
+    "dayton": "デイトン",
+    "akron": "アクロン",
+    "aberdeen": "アバディーン",
+    "annapolis": "アナポリス",
+    "norfolk": "ノーフォーク",
+    "nashville": "ナッシュビル",
+    "oxford": "オックスフォード",
+    "worcester": "ウースター",
+    "leicester": "レスター",
+    "new hampshire": "ニューハンプシャー",
+    "pennsylvania": "ペンシルベニア",
+    "salt lake city": "ソルトレイクシティ",
+    "havana": "ハバナ",
+    "wichita": "ウィチタ",
+    "great": "グレート",
+    "broad": "ブロード",
+    "broadway": "ブロードウェイ",
+    "whitesboro": "ホワイツボロ",
+    "clarksburg": "クラークスバーグ",
+    "clark": "クラーク",
+    "reading": "レディング",
+    "oregon": "オレゴン",
+    "swansea": "スウォンジー",
+    "north": "ノース",
+    "south": "サウス",
+    "delaware": "デラウェア",
+    "maryland": "メリーランド",
+    "des moines": "デモイン",
+    "la salle": "ラサール",
+    "boise": "ボイシ",
+    "baton rouge": "バトンルージュ",
+    "appalachia": "アパラチア",
+    "worcester": "ウースター",
+    "fresno": "フレズノ",
+    "san jose": "サンノゼ",
+    "santa fe": "サンタフェ",
+    "santa clara": "サンタクララ",
+    "san antonio": "サンアントニオ",
+    "el paso": "エルパソ",
+    "notre dame": "ノートルダム",
+    "the dalles": "ザダルス",
+    "houston": "ヒューストン",
+    "texas": "テキサス",
+    "kansas": "カンザス",
+    "knox": "ノックス",
+    "valley": "バレー",
+    "nottingham": "ノッティンガム",
+    "birmingham": "バーミンガム",
+    "washington": "ワシントン",
+    "arlington": "アーリントン",
+    "lexington": "レキシントン",
+    "pittsburgh": "ピッツバーグ",
+    "cleveland": "クリーブランド",
+    "hunt": "ハント",
+    "jersey": "ジャージー",
+    "virginia": "バージニア",
+    "west virginia": "ウェストバージニア",
+    "cambridge": "ケンブリッジ",
+}
+
 def transcribe_en_ko(word: str) -> str:
     """English -> Hangul per 공식 표기법 (lexical layer wins)."""
     text = word.strip().replace("St. ", "Saint ")
@@ -1072,6 +1572,41 @@ EN_KO_EVAL = {
 }
 
 
+
+
+EN_JA_EVAL = {
+    "chicago": "シカゴ", "boston": "ボストン", "denver": "デンバー",
+    "atlanta": "アトランタ", "austin": "オースティン",
+    "portland": "ポートランド", "sacramento": "サクラメント",
+    "omaha": "オマハ", "tulsa": "タルサ", "texas": "テキサス",
+    "florida": "フロリダ", "nevada": "ネバダ", "arizona": "アリゾナ",
+    "idaho": "アイダホ", "ohio": "オハイオ", "utah": "ユタ",
+    "maine": "メイン", "vermont": "バーモント", "wyoming": "ワイオミング",
+    "kansas": "カンザス", "michigan": "ミシガン", "minnesota": "ミネソタ",
+    "iowa": "アイオワ", "wisconsin": "ウィスコンシン",
+    "tennessee": "テネシー", "mississippi": "ミシシッピ",
+    "oklahoma": "オクラホマ", "colorado": "コロラド", "montana": "モンタナ",
+    "canada": "カナダ", "manchester": "マンチェスター", "leeds": "リーズ",
+    "bristol": "ブリストル", "brighton": "ブライトン",
+    "cardiff": "カーディフ", "belfast": "ベルファスト",
+    "glasgow": "グラスゴー", "nottingham": "ノッティンガム",
+    "birmingham": "バーミンガム", "wellington": "ウェリントン",
+    "springfield": "スプリングフィールド", "pittsburgh": "ピッツバーグ",
+    "washington": "ワシントン", "detroit": "デトロイト",
+    "virginia": "バージニア", "dallas": "ダラス", "houston": "ヒューストン",
+    "cleveland": "クリーブランド", "oregon": "オレゴン",
+    # lexical anchors
+    "london": "ロンドン", "miami": "マイアミ",
+    "los angeles": "ロサンゼルス", "san diego": "サンディエゴ",
+    "las vegas": "ラスベガス", "seattle": "シアトル",
+    "phoenix": "フェニックス", "georgia": "ジョージア",
+    "new york": "ニューヨーク", "new jersey": "ニュージャージー",
+    "south dakota": "サウスダコタ", "san francisco": "サンフランシスコ",
+    "york": "ヨーク", "oxford": "オックスフォード",
+    "cambridge": "ケンブリッジ", "edinburgh": "エディンバラ",
+    "liverpool": "リヴァプール",
+}
+
 def selfcheck() -> int:
     fails = 0
     for name, want in EN_KO_EVAL.items():
@@ -1080,6 +1615,12 @@ def selfcheck() -> int:
             print(f"EN-KO EVAL FAIL {name!r}: got {got!r} want {want!r}")
             fails += 1
     print(f"en_ko anchors: {len(EN_KO_EVAL) - fails}/{len(EN_KO_EVAL)} pass")
+    for name, want in EN_JA_EVAL.items():
+        got = transcribe_en_ja(name)
+        if got != want:
+            print(f"EN-JA EVAL FAIL {name!r}: got {got!r} want {want!r}")
+            fails += 1
+    print(f"en_ja anchors: {len(EN_JA_EVAL) - fails}/{len(EN_JA_EVAL)} pass")
     return fails
 
 

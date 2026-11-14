@@ -6,8 +6,6 @@
 - US/DE/IT/GB/RU/SA/KR: Wikidata labels joined by the snapshot rows' own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)
 - GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows (CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)
 - RU ja/ko/de/fr/it/ar/zh-Hans: rule-table Cyrillic->katakana/hangul/Latin/Arabic/Hanzi transcriptions (machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)
-- FR ko/ja/ru/ar: rule-table French g2p transcriptions (machine-candidate, eval-gated, tool/fr_g2p.py)
-- US/GB ko: rule-table English->Hangul transcriptions per 외래어 표기법 영어 표기법 (machine-candidate, 68-anchor eval-gated, tool/en_g2p.py)
 - FR/JP: CSC upstream translations re-joined through the staged qid->nid bridge for rows the name-matching inheritance missed (ODbL-1.0, provisional)
 - zh-Hant: zh-Hant is s2t-derived machine-candidate + FR wikidata community labels
 - All non-en translations are provisional; AI proof-reading samples do not flip quality words
