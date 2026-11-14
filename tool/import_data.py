@@ -20,6 +20,31 @@ UPSTREAM_LOCALES = {loc: 'zh' if loc == 'zh-Hans' else loc for loc in LOCALES}
 DATASET_ID = 'geo-regions-seed'
 PROTOCOL_VERSION = '1.0'
 CN_EXCLUSIONS = {'cnhk', 'cnmo', 'cntw'}
+
+# English romanization overlay for CN statistical nodes (PROVISIONAL quality).
+# Source: GeoNames CN dump (CC-BY-4.0, attribution — no share-alike), reduced
+# by tool/extract_geonames_cn.py to a committed extract. The dump itself never
+# enters git; the extract carries its upstream URL + sha256 for provenance and
+# any tampering shows up as stale-generated-output in --check.
+GEONAMES_CN_ROWS = 'sources/raw/geonames/cn-adm-rows.json'
+# GeoNames uses FIPS codes for the four municipalities' admin1 (GB codes 11/12/31/50).
+GEONAMES_FIPS_MUNICIPALITIES = {'11': '22', '12': '28', '31': '23', '50': '33'}
+# Pinyin admin suffixes stripped from the display name ONLY when the bare form
+# exists in the row's Latin alternatenames (evidence-based, never invented).
+# English-word suffixes (District/Prefecture/City) are kept, mirroring how the
+# seed keeps "Fairfax County".
+GEONAMES_STRIP_SUFFIXES = (' Shi', ' Qu', ' Xian', ' Diqu', ' Zizhizhou', ' Meng', ' Qi')
+# Display overrides where GeoNames' own asciiname is an upstream quirk; the
+# replacement is evidenced inside the same row's Latin alternatenames:
+# - 1305 邢台市: GeoNames ADM2 asciiname is "Xingtai County" (county form on a
+#   prefecture row); "Xingtai" is among its alternatenames.
+# - 1411 吕梁市: GeoNames asciiname "Lueliang" is a ü→ue transliteration
+#   artifact; "Luliang" (Luliang Diqu) is among its alternatenames.
+GEONAMES_EN_FIXES = {'1305': 'Xingtai', '1411': 'Luliang'}
+# zh aliases where GeoNames lags an official rename: 襄樊市 → 襄阳市 (2010-12,
+# State Council approval; GeoNames ADM2 4206 still carries 襄樊/襄樊市 while
+# its Latin alternatenames already include Xiangyang).
+GEONAMES_ZH_ALIASES = {'4206': {'襄阳市': ['襄樊市', '襄樊']}}
 GROUP_NAMES = {'市辖区', '县', '省直辖县级行政区划', '自治区直辖县级行政区划'}
 BAD_NAMES = {'↑↑↑', '∅∅∅'}
 
@@ -66,6 +91,16 @@ def verify_sources(root, download=False):
         content = path.read_bytes()
         if len(content) != source['sizeBytes'] or hashlib.sha256(content).hexdigest() != source['sha256']:
             raise ValueError(f'Source verification failed: {source["localPath"]}')
+    # Derived extracts: byte-pinned like sources, no upstream commit / download
+    # semantics (regenerate with the recorded generator from the pinned dump).
+    for source in lock.get('derivedSources', []):
+        path = ensure_under(root, source['localPath'])
+        if not path.is_file():
+            raise ValueError(f'Missing derived snapshot: {source["localPath"]}; '
+                             f"regenerate with {source.get('generator', 'the recorded generator')}")
+        content = path.read_bytes()
+        if len(content) != source['sizeBytes'] or hashlib.sha256(content).hexdigest() != source['sha256']:
+            raise ValueError(f'Derived source verification failed: {source["localPath"]}')
     return lock
 
 
@@ -168,6 +203,109 @@ def add_cn(root, nodes, index, names, aliases):
     return crosswalk, native_names
 
 
+def _zh_keys(name):
+    """Match keys for a statistical node's Chinese name: the exact name first,
+    then progressively stripped admin suffixes (longest first)."""
+    keys = [name]
+    for suffix in ('自治州', '地区', '盟', '林区', '特区', '市', '区', '县'):
+        if name.endswith(suffix) and len(name) > len(suffix) + 1:
+            stripped = name[:-len(suffix)]
+            if stripped not in keys:
+                keys.append(stripped)
+    return sorted(keys, key=len, reverse=True)
+
+
+def _pick_row(rows, keys):
+    """Unique row whose zh alternatenames contain one of [keys], exact first.
+    Ambiguous or missing matches stay missing — never guess."""
+    for key in keys:
+        hits = [row for row in rows if key in row['zh']]
+        if len(hits) == 1:
+            return hits[0]
+        if hits:
+            return None
+    return None
+
+
+def _display_name(row):
+    ascii_name = row['ascii']
+    for suffix in GEONAMES_STRIP_SUFFIXES:
+        if ascii_name.endswith(suffix):
+            bare = ascii_name[:-len(suffix)].strip()
+            if bare in row['latin']:
+                return bare
+            break
+    return ascii_name
+
+
+def geonames_cn_overlay(nodes, root):
+    """Machine-matched English romanizations for CN statistical prefectures
+    and counties from the committed GeoNames extract.
+
+    Prefecture (4-digit GB code) → GeoNames ADM2 row with admin2 == code.
+    County (6-digit) → ADM3 rows with admin2 == code[:4]; when the parent is
+    a statistical grouping the row may sit elsewhere: municipality districts
+    carry GeoNames' FIPS admin1 instead of a GB admin2, and province-direct
+    counties (仙桃/济源/石河子…) are ADM3 rows with an empty admin2. Returns
+    (names, meta); unmatched nodes stay missing so the coverage counters
+    remain honest.
+    """
+    rows = read_json(root / GEONAMES_CN_ROWS)
+    counts = rows['rowCounts']
+    if counts['adm2'] != len(rows['adm2']) or counts['adm3'] != len(rows['adm3']):
+        raise ValueError('GeoNames extract rowCounts disagree with its rows')
+    by_admin2 = collections.defaultdict(list)
+    by_admin1 = collections.defaultdict(list)
+    by_province_direct = []
+    for row in rows['adm3']:
+        if row['a2']:
+            by_admin2[row['a2']].append(row)
+            by_admin1[row['a1']].append(row)
+        else:
+            by_province_direct.append(row)
+    node_by_id = {n['id']: n for n in nodes}
+    names = {}
+    meta = {'prefectureMatched': 0, 'countyMatched': 0, 'unmatched': 0}
+    for node in nodes:
+        kind = node['kind']
+        if kind not in ('statistical-prefecture', 'statistical-county'):
+            continue
+        keys = _zh_keys(node['name'])
+        for alias in GEONAMES_ZH_ALIASES.get(node['code'][:4], {}).get(node['name'], []):
+            keys.append(alias)
+        chosen = None
+        if kind == 'statistical-prefecture':
+            row = rows['adm2'].get(node['code'])
+            if row is not None:
+                chosen = _pick_row([row], keys)
+            if chosen is not None:
+                names[node['id']] = GEONAMES_EN_FIXES.get(node['code'],
+                                                          _display_name(chosen))
+                meta['prefectureMatched'] += 1
+                continue
+        else:
+            chosen = _pick_row(by_admin2.get(node['code'][:4], []), keys)
+            if chosen is None:
+                parent = node_by_id.get(node['parentId'])
+                if parent is not None and parent['kind'] == 'statistical-group':
+                    fips = GEONAMES_FIPS_MUNICIPALITIES.get(node['code'][:2])
+                    if fips is not None:
+                        chosen = _pick_row(by_admin1.get(fips, []), keys)
+                    if chosen is None:
+                        chosen = _pick_row(by_province_direct, keys)
+            if chosen is not None:
+                display = _display_name(chosen)
+                # A county whose bare name equals its matched prefecture's
+                # keeps the suffixed form (邢台市 "Xingtai" vs 邢台县 "Xingtai Xian").
+                if names.get(node['parentId']) == display:
+                    display = chosen['ascii']
+                names[node['id']] = display
+                meta['countyMatched'] += 1
+                continue
+        meta['unmatched'] += 1
+    return names, meta
+
+
 def quality_stats(names, quality, total):
     counts = collections.Counter(quality.values())
     return {'explicitNames': len(names), 'sourceApproved': counts['approved-in-source'],
@@ -246,12 +384,23 @@ def build(root):
                 names.update(native_names)
                 quality.update({k: 'source-native' for k in native_names})
                 refs.append('sources/raw/modood/pca-code.json')
+            overlay = {}
+            if cc == 'CN' and locale == 'en':
+                overlay, gn_meta = geonames_cn_overlay(nodes, root)
+                names.update(overlay)
+                quality.update({k: 'provisional' for k in overlay})
+                refs.append(GEONAMES_CN_ROWS)
             stats = quality_stats(names, quality, len(nodes))
+            locale_coverage = dict(stats, status='research-seed', translationQualityById=quality,
+                policy='Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.')
+            if overlay:
+                locale_coverage['geoNamesEnglishOverlay'] = dict(gn_meta, source=GEONAMES_CN_ROWS,
+                    license='CC-BY-4.0',
+                    meaning='Machine-matched GeoNames romanizations; provisional quality, not human-reviewed.')
             locale_doc = dict(common, countryCode=cc, locale=locale,
                 revision=revision('l', {'names': names, 'translationQualityById': quality}),
                 compatibleStructureRevision=country_revision, names=names,
-                coverage=dict(stats, status='research-seed', translationQualityById=quality,
-                    policy='Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.'),
+                coverage=locale_coverage,
                 sourceRefs=refs)
             out[f'data/i18n/{locale}/{cc}.json'] = encoded(locale_doc)
             report['locales'][locale] = stats
@@ -316,7 +465,8 @@ def coverage_markdown(report):
               '6. CLDR49繁中subdivision源仅有GB三条显式名称；本包没有用简体或英文复制来冒充繁中翻译。它可使用真实回退，待单独补全和审校。 / Traditional Chinese subdivision coverage is sparse and honestly reported.',
               '7. CLDR cn15 alias指向cnmn，但同版containment与名称表使用cnnm。导入器只在唯一完全相同源中文名的条件下关联“内蒙古自治区”，并写入`sources/cn-province-crosswalk.json`。 / One source inconsistency is recorded and deterministically resolved by a unique exact source-name match.',
               '8. 结构默认名也携带nameLocale/nameQuality，必须经过与语言包相同的质量策略；不能先过滤provisional译名，再从默认名绕过过滤。没有可信名称时仅展示identifier状态的ID/代码。 / Apply quality policy to default names as well as locale packs.',
-              '9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.', '',
+              '9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.',
+              '10. CN市/县级英文名是GeoNames机器匹配的罗马字（provisional，CC-BY-4.0），未经人工审校；匹配失败的城市开发区等节点保持缺失，不伪造。 / CN prefecture/county English names are machine-matched GeoNames romanizations (provisional, CC-BY-4.0); unmatched nodes (development zones etc.) stay missing.', '',
               '## 下一版可并行补齐 / Parallel completion tracks', '',
               '| Track | Scope | Required evidence before merge |', '|---|---|---|',
               '| CN-current | 2023快照后的撤并/更名，港澳台独立profile | 官方变更来源、可再分发许可、ID迁移；不得用旧快照冒充现势 |',

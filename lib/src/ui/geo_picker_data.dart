@@ -53,6 +53,29 @@ enum GeoSelectionPolicy {
   requireLeafWithinDeclared,
 }
 
+/// Resolved display label plus the honesty flags the picker may render.
+///
+/// Hosts that opt in to provisional names (AT-14) need more than the text:
+/// [isProvisional] marks tentatively-reviewed values and [isFallback] marks
+/// values served outside the requested locale's own chain.
+class GeoPickerLabelInfo {
+  /// Creates label info.
+  const GeoPickerLabelInfo({
+    required this.text,
+    this.isFallback = false,
+    this.isProvisional = false,
+  });
+
+  /// Display text; the stable ID when nothing passed the quality policy.
+  final String text;
+
+  /// The value came from a fallback (default locale, default name or ID).
+  final bool isFallback;
+
+  /// The value carries `provisional`/`unconfirmed` quality (AT-14).
+  final bool isProvisional;
+}
+
 /// One display row of the picker.
 class GeoPickerItem {
   /// Creates a display row.
@@ -60,6 +83,7 @@ class GeoPickerItem {
     required this.nodeId,
     required this.label,
     this.labelIsFallback = false,
+    this.labelIsProvisional = false,
     this.countryCode,
     this.isCountryRoot = false,
     this.childrenStatus = GeoChildrenStatus.unknown,
@@ -79,6 +103,10 @@ class GeoPickerItem {
   /// Whether [label] came from a fallback (default locale, default name or
   /// ID); hosts may style it differently but must not hide it.
   final bool labelIsFallback;
+
+  /// Whether [label] carries `provisional`/`unconfirmed` quality; hosts that
+  /// opt in must label tentative names (AT-14).
+  final bool labelIsProvisional;
 
   /// Country code; set for country rows and rows of an opened country.
   final String? countryCode;
@@ -107,11 +135,16 @@ class GeoPickerItem {
   /// Returns a copy with display fields replaced (identity fields — IDs,
   /// coverage, paths — never change; a locale switch must not change what
   /// the draft points at, only how it is spelled, UX-02).
-  GeoPickerItem copyWith({String? label, bool? labelIsFallback}) {
+  GeoPickerItem copyWith({
+    String? label,
+    bool? labelIsFallback,
+    bool? labelIsProvisional,
+  }) {
     return GeoPickerItem(
       nodeId: nodeId,
       label: label ?? this.label,
       labelIsFallback: labelIsFallback ?? this.labelIsFallback,
+      labelIsProvisional: labelIsProvisional ?? this.labelIsProvisional,
       countryCode: countryCode,
       isCountryRoot: isCountryRoot,
       childrenStatus: childrenStatus,
@@ -170,7 +203,9 @@ abstract class GeoRegionDataSource {
 
   /// Display labels for [nodeIds] in [locale]; lets the picker re-render a
   /// kept draft after a language switch without changing its IDs (UX-02).
-  Future<Map<String, String>> resolveLabels(
+  /// The value carries the honesty flags alongside the text so a locale
+  /// switch cannot leave stale fallback/provisional marks behind (AT-14).
+  Future<Map<String, GeoPickerLabelInfo>> resolveLabels(
     List<String> nodeIds,
     String locale,
   );
@@ -245,6 +280,7 @@ class GeoRepositoryDataSource implements GeoRegionDataSource {
           nodeId: entry.rootId,
           label: resolved.text ?? entry.code,
           labelIsFallback: resolved.isFallback,
+          labelIsProvisional: resolved.isTentative,
           countryCode: entry.code,
           isCountryRoot: true,
           hasChildren: true,
@@ -344,22 +380,30 @@ class GeoRepositoryDataSource implements GeoRegionDataSource {
   }
 
   @override
-  Future<Map<String, String>> resolveLabels(
+  Future<Map<String, GeoPickerLabelInfo>> resolveLabels(
     List<String> nodeIds,
     String locale,
   ) async {
     if (nodeIds.isEmpty) {
-      return const <String, String>{};
+      return const <String, GeoPickerLabelInfo>{};
     }
     final countryCode = nodeIds.first.substring(3);
     await repository.loadStructure(countryCode);
     await _ensurePacks(countryCode, locale);
     final resolver = _resolverOf(countryCode);
     final index = repository.index!;
-    return <String, String>{
+    return <String, GeoPickerLabelInfo>{
       for (final id in nodeIds)
-        id: resolver.resolve(index.requireNode(id), locale).text ?? id,
+        id: _labelInfo(resolver.resolve(index.requireNode(id), locale), id),
     };
+  }
+
+  GeoPickerLabelInfo _labelInfo(ResolvedName resolved, String nodeId) {
+    return GeoPickerLabelInfo(
+      text: resolved.text ?? nodeId,
+      isFallback: resolved.isFallback,
+      isProvisional: resolved.isTentative,
+    );
   }
 
   Future<List<String>> _displaySnapshot(
@@ -396,6 +440,7 @@ class GeoRepositoryDataSource implements GeoRegionDataSource {
       nodeId: node.id,
       label: resolved.text ?? node.id,
       labelIsFallback: resolved.isFallback,
+      labelIsProvisional: resolved.isTentative,
       countryCode: countryCode,
       isCountryRoot: node.isCountryRoot,
       childrenStatus: node.childrenStatus,
@@ -415,10 +460,12 @@ class GeoRepositoryDataSource implements GeoRegionDataSource {
       for (final id in hit.pathIds)
         resolver.resolve(index.requireNode(id), locale).text ?? id,
     ];
+    final resolved = resolver.resolve(hit.node, locale);
     return GeoPickerItem(
       nodeId: hit.node.id,
       label: labels.last,
-      labelIsFallback: resolver.resolve(hit.node, locale).isFallback,
+      labelIsFallback: resolved.isFallback,
+      labelIsProvisional: resolved.isTentative,
       countryCode: countryCode,
       isCountryRoot: hit.node.isCountryRoot,
       childrenStatus: hit.node.childrenStatus,
@@ -462,6 +509,7 @@ class GeoRepositoryDataSource implements GeoRegionDataSource {
           nodeId: entry.rootId,
           label: text,
           labelIsFallback: resolved.isFallback,
+          labelIsProvisional: resolved.isTentative,
           countryCode: entry.code,
           isCountryRoot: true,
           hasChildren: true,

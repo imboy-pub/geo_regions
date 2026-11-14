@@ -164,6 +164,11 @@ Future<DemoGeoHarness> buildDemoHarness() async {
     repository,
     defaultLocale: 'en',
     bundledCountries: kDemoBundledCountries,
+    // The demo is the SDK's research showcase: it opts in to provisional
+    // names (GeoNames romanizations for CN, CLDR draft translations) and
+    // the picker labels them tentative — AT-14's labeling duty, honored by
+    // the badge defaults in GeoPickerLabels.
+    optInProvisional: true,
   );
   return DemoGeoHarness(repository: repository, source: source, cdn: cdn);
 }

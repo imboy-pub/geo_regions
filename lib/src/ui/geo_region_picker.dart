@@ -445,7 +445,11 @@ class _GeoRegionPickerState extends State<GeoRegionPicker> {
         _draft = <GeoPickerItem>[
           for (final item in _draft)
             labels.containsKey(item.nodeId)
-                ? item.copyWith(label: labels[item.nodeId]!)
+                ? item.copyWith(
+                    label: labels[item.nodeId]!.text,
+                    labelIsFallback: labels[item.nodeId]!.isFallback,
+                    labelIsProvisional: labels[item.nodeId]!.isProvisional,
+                  )
                 : item,
         ];
       });

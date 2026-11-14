@@ -332,14 +332,14 @@
     },
     {
       "bundled": true,
-      "bytes": 3372,
+      "bytes": 225673,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "en",
       "path": "i18n/en/CN.json",
-      "revision": "l-6a6d98125099f7ce",
-      "sha256": "11b126f20c4a4c9d0454b628bb7611dfc2b2b490b70bc304d14ff155b04d16a9"
+      "revision": "l-99df8754537394fe",
+      "sha256": "5e5d3b305b90ffe4b4c034e2f1071f5bcf4f5f12da521e810ec90e4be418bbeb"
     },
     {
       "bundled": true,
@@ -1301,5 +1301,5 @@
       "sha256": "c0394850813532327317ddaffe3c9ba2ede44d3f95f2025e1b239a591e4bd78b"
     }
   ],
-  "revision": "m-00f97c86c14ada75"
+  "revision": "m-f5c00e018055121c"
 }

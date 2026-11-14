@@ -116,7 +116,7 @@ void publishedRevisionGroup() {
     expect(geoCatalogRevision(countries['countries']), countries['revision']);
 
     final manifest = loadDecodedData('manifest.json');
-    expect(geoManifestRevision(manifest['resources']), 'm-00f97c86c14ada75');
+    expect(geoManifestRevision(manifest['resources']), 'm-f5c00e018055121c');
     expect(geoManifestRevision(manifest['resources']), manifest['revision']);
   });
 }

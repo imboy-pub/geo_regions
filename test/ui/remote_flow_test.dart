@@ -66,7 +66,15 @@ void main() {
         find.byKey(const ValueKey('node-iso3166-2:JP-01')),
         findsOneWidget,
       );
-      expect(find.text('Tokyo'), findsOneWidget);
+      final tokyoRow = tester.widget<ListTile>(
+        find.byKey(const ValueKey('node-iso3166-2:JP-13')),
+      );
+      // Default-name fallback carries the honesty badge, so assert on the
+      // resolved label text instead of an exact Text widget.
+      final tokyoLabel = rowLabelText(tokyoRow.title)!;
+      expect(tokyoLabel.startsWith('Tokyo'), isTrue);
+      // Default-name fallback rows carry the honesty badge in the defaults.
+      expect(tokyoLabel.contains('未翻译'), isTrue);
       expect(
         tester.widget<Text>(find.byKey(const ValueKey('draft-id'))).data,
         'cc:JP',

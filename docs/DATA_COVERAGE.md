@@ -33,7 +33,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 
 | Country | zh-Hans | zh-Hant | en | ja | ko | ru | de | fr | it | ar |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| CN | 3430/3430 | 1/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 |
+| CN | 3430/3430 | 1/3430 | 3079/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 |
 | JP | 48/48 | 1/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 |
 | KR | 18/18 | 1/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 |
 | US | 52/58 | 1/58 | 58/58 | 52/58 | 51/58 | 52/58 | 52/58 | 52/58 | 52/58 | 52/58 |
@@ -50,7 +50,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | zh-Hans | 4124 | 3 | 10 | 682 | 0 | 3429 | 19 | 0 |
 | zh-Hant | 13 | 3 | 10 | 0 | 0 | 0 | 4130 | 0 |
-| en | 745 | 734 | 10 | 1 | 0 | 0 | 3398 | 0 |
+| en | 3792 | 734 | 10 | 3048 | 0 | 0 | 351 | 0 |
 | ja | 671 | 3 | 10 | 658 | 0 | 0 | 3472 | 0 |
 | ko | 721 | 3 | 10 | 708 | 0 | 0 | 3422 | 0 |
 | ru | 721 | 3 | 10 | 708 | 0 | 0 | 3422 | 0 |
@@ -78,6 +78,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 7. CLDR cn15 alias指向cnmn，但同版containment与名称表使用cnnm。导入器只在唯一完全相同源中文名的条件下关联“内蒙古自治区”，并写入`sources/cn-province-crosswalk.json`。 / One source inconsistency is recorded and deterministically resolved by a unique exact source-name match.
 8. 结构默认名也携带nameLocale/nameQuality，必须经过与语言包相同的质量策略；不能先过滤provisional译名，再从默认名绕过过滤。没有可信名称时仅展示identifier状态的ID/代码。 / Apply quality policy to default names as well as locale packs.
 9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.
+10. CN市/县级英文名是GeoNames机器匹配的罗马字（provisional，CC-BY-4.0），未经人工审校；匹配失败的城市开发区等节点保持缺失，不伪造。 / CN prefecture/county English names are machine-matched GeoNames romanizations (provisional, CC-BY-4.0); unmatched nodes (development zones etc.) stay missing.
 
 ## 下一版可并行补齐 / Parallel completion tracks
 

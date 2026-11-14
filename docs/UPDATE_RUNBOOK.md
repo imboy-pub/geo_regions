@@ -22,7 +22,14 @@ python3 tool/update_rehearsal.py --selftest
 ## 2. 真实更新步骤 / Real update
 
 1. 固定新快照入 `sources/raw/`，更新 `sources/source-lock.json`（commit/URL/sha256/sizeBytes/license）
+   - **派生提取件**（`derivedSources` 段，如 GeoNames CN 行）：先把新 dump 下载到
+     `staging/`，用记录在 `generator` 字段的生成器再生提取件（GeoNames：
+     `python3 tool/extract_geonames_cn.py --zip staging/geonames-cn/CN.zip`），
+     再更新 `derivedSources` 条目的 sha256/sizeBytes；dump 本体永不入 git。
+     Derived extracts: regenerate from the pinned dump with the recorded
+     generator, then refresh the pin — the dump itself never enters git.
 2. 在旧 root 拷贝上重跑生成/导入流程，更新受影响数据
+   - 正式层一键链：`python3 tool/import_data.py && python3 tool/geo_data.py manifest`
 3. 一键合同检查（把当前 HEAD 固定为 old-root，工作树为 new-root，或显式传两目录）：
 
 ```sh

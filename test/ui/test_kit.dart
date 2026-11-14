@@ -235,16 +235,27 @@ class FakePickerDataSource implements GeoRegionDataSource {
   }
 
   @override
-  Future<Map<String, String>> resolveLabels(
+  Future<Map<String, GeoPickerLabelInfo>> resolveLabels(
     List<String> nodeIds,
     String locale,
-  ) async => <String, String>{for (final id in nodeIds) id: '名:$id'};
+  ) async => <String, GeoPickerLabelInfo>{
+    for (final id in nodeIds) id: GeoPickerLabelInfo(text: '名:$id'),
+  };
 
   @override
   GeoPickerAvailability availabilityOf(String countryCode) =>
       countryCode == 'CN' || countryCode == 'ZZ'
       ? GeoPickerAvailability.bundled
       : GeoPickerAvailability.remote;
+}
+
+/// Plain text of a picker row title, whether it is a plain [Text] or the
+/// badge-appended rich text the honesty badges render.
+String? rowLabelText(Widget? title) {
+  if (title is Text) {
+    return title.data ?? title.textSpan?.toPlainText();
+  }
+  return null;
 }
 
 /// Pumps [picker] inside a scaffold; [direction], [textScale] and [size]

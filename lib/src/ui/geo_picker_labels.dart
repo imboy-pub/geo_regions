@@ -39,6 +39,8 @@ class GeoPickerLabels {
     required this.draft,
     required this.unsaved,
     required this.countries,
+    this.fallbackBadge,
+    this.tentativeBadge,
   });
 
   /// Search field placeholder.
@@ -102,6 +104,14 @@ class GeoPickerLabels {
   /// Breadcrumb root for the country screen (standalone picker).
   final String countries;
 
+  /// Optional badge appended to labels served outside the requested
+  /// locale's own chain (fallback). `null` disables the badge.
+  final String? fallbackBadge;
+
+  /// Optional badge appended to tentatively-reviewed names
+  /// (`provisional`/`unconfirmed`, AT-14). `null` disables the badge.
+  final String? tentativeBadge;
+
   /// Resolves [locale] to the built-in defaults (`zh-CN` maps to the
   /// `zh-Hans` column via the project alias table); falls back to English.
   static GeoPickerLabels forLocale(String locale) =>
@@ -132,6 +142,8 @@ class GeoPickerLabels {
     String? draft,
     String? unsaved,
     String? countries,
+    String? fallbackBadge,
+    String? tentativeBadge,
   }) {
     return GeoPickerLabels(
       searchHint: searchHint ?? this.searchHint,
@@ -180,6 +192,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: '当前路径',
     unsaved: '尚未确认',
     countries: '国家与地区',
+    fallbackBadge: '未翻译',
+    tentativeBadge: '暂定',
   ),
   'zh-Hant': GeoPickerLabels(
     searchHint: '搜尋名稱或 ID',
@@ -202,6 +216,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: '目前路徑',
     unsaved: '尚未確認',
     countries: '國家與地區',
+    fallbackBadge: '未翻譯',
+    tentativeBadge: '暫定',
   ),
   'en': GeoPickerLabels(
     searchHint: 'Search names or IDs',
@@ -224,6 +240,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'Current path',
     unsaved: 'Unconfirmed',
     countries: 'Countries & regions',
+    fallbackBadge: 'not translated',
+    tentativeBadge: 'provisional',
   ),
   'ja': GeoPickerLabels(
     searchHint: '名前・ID を検索',
@@ -246,6 +264,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: '現在の階層',
     unsaved: '未確定',
     countries: '国と地域',
+    fallbackBadge: '未翻訳',
+    tentativeBadge: '暫定',
   ),
   'ko': GeoPickerLabels(
     searchHint: '이름 또는 ID 검색',
@@ -268,6 +288,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: '현재 경로',
     unsaved: '확인 전',
     countries: '국가 및 지역',
+    fallbackBadge: '번역 없음',
+    tentativeBadge: '임시',
   ),
   'ru': GeoPickerLabels(
     searchHint: 'Поиск по названию или ID',
@@ -290,6 +312,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'Текущий путь',
     unsaved: 'Не подтверждено',
     countries: 'Страны и территории',
+    fallbackBadge: 'нет перевода',
+    tentativeBadge: 'предварительно',
   ),
   'de': GeoPickerLabels(
     searchHint: 'Namen oder IDs suchen',
@@ -312,6 +336,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'Aktueller Pfad',
     unsaved: 'Unbestätigt',
     countries: 'Länder und Gebiete',
+    fallbackBadge: 'nicht übersetzt',
+    tentativeBadge: 'vorläufig',
   ),
   'fr': GeoPickerLabels(
     searchHint: 'Rechercher un nom ou un ID',
@@ -334,6 +360,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'Chemin actuel',
     unsaved: 'Non confirmé',
     countries: 'Pays et territoires',
+    fallbackBadge: 'non traduit',
+    tentativeBadge: 'provisoire',
   ),
   'it': GeoPickerLabels(
     searchHint: 'Cerca nomi o ID',
@@ -356,6 +384,8 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'Percorso attuale',
     unsaved: 'Da confermare',
     countries: 'Paesi e territori',
+    fallbackBadge: 'non tradotto',
+    tentativeBadge: 'provvisorio',
   ),
   'ar': GeoPickerLabels(
     searchHint: 'ابحث بالاسم أو المعرّف',
@@ -378,5 +408,7 @@ const Map<String, GeoPickerLabels> _defaults = <String, GeoPickerLabels>{
     draft: 'المسار الحالي',
     unsaved: 'غير مؤكد',
     countries: 'الدول والمناطق',
+    fallbackBadge: 'غير مترجم',
+    tentativeBadge: 'مبدئي',
   ),
 };

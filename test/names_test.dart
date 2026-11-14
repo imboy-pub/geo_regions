@@ -219,18 +219,49 @@ void qualityFallbackGroup() {
       final resolver = GeoNameResolver(
         packs: <String, GeoLocalePack>{'en': enCn},
       );
-      final nanshan = _cn.nodes.firstWhere(
-        (node) => node.id == 'cn-stat:440305',
+      // cn-stat:340176 (合肥高新技术产业开发区) has no GeoNames row either, so
+      // the en pack keeps the node honestly missing.
+      final zone = _cn.nodes.firstWhere(
+        (node) => node.id == 'cn-stat:340176',
       );
-      expect(enCn.names.containsKey(nanshan.id), isFalse);
-      final name = resolver.resolve(nanshan, 'en-US');
+      expect(enCn.names.containsKey(zone.id), isFalse);
+      final name = resolver.resolve(zone, 'en-US');
       // en pack exists but lacks the node; default name is source-native
       // zh-Hans and passes the same quality policy.
-      expect(name.text, '南山区');
+      expect(name.text, '合肥高新技术产业开发区');
       expect(name.source, GeoNameSource.defaultName);
       expect(name.isFallback, isTrue);
       expect(name.resolvedLocale, 'zh-Hans');
       expect(name.quality, 'source-native');
+    });
+
+    test('GeoNames en overlay: provisional name serves only with opt-in', () {
+      final enCn = loadLocalePack('en', _cn);
+      final strict = GeoNameResolver(
+        packs: <String, GeoLocalePack>{'en': enCn},
+      );
+      final optedIn = GeoNameResolver(
+        packs: <String, GeoLocalePack>{'en': enCn},
+        optInProvisional: true,
+      );
+      final nanshan = _cn.nodes.firstWhere(
+        (node) => node.id == 'cn-stat:440305',
+      );
+      // The machine-matched GeoNames romanization is in the pack marked
+      // provisional; the default profile filters it and the labeled native
+      // fallback is served instead.
+      expect(enCn.names['cn-stat:440305'], 'Nanshan');
+      final filtered = strict.resolve(nanshan, 'en-US');
+      expect(filtered.text, '南山区');
+      expect(filtered.source, GeoNameSource.defaultName);
+      expect(filtered.isFallback, isTrue);
+
+      final served = optedIn.resolve(nanshan, 'en-US');
+      expect(served.text, 'Nanshan');
+      expect(served.quality, 'provisional');
+      expect(served.source, GeoNameSource.translation);
+      expect(served.isFallback, isFalse);
+      expect(served.isTentative, isTrue);
     });
   });
 }

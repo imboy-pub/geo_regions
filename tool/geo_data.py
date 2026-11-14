@@ -166,6 +166,18 @@ def verify_sources(root):
         require(path.stat().st_size == entry.get("sizeBytes"), f"source byte count mismatch: {relative}")
         require(re.fullmatch(r"[a-f0-9]{40}", entry.get("commit", "")), f"source not pinned to full commit: {relative}")
         text_value(entry.get("license"), f"{relative}.license")
+    # Derived extracts are committed reductions of an upstream dump (e.g. the
+    # GeoNames CN rows). They are byte-pinned like sources but have no upstream
+    # commit to point at; their provenance travels inside the file itself.
+    for entry in lock.get("derivedSources", []):
+        relative = entry.get("localPath")
+        require(relative not in known, f"duplicate source path: {relative}")
+        known.add(relative)
+        path = safe_resource(root, relative)
+        require(sha256(path) == entry.get("sha256"), f"derived source hash mismatch: {relative}")
+        require(path.stat().st_size == entry.get("sizeBytes"), f"derived source byte count mismatch: {relative}")
+        text_value(entry.get("license"), f"{relative}.license")
+        require(entry.get("upstreamSha256"), f"derived source missing upstream pin: {relative}")
     return known
 
 

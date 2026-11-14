@@ -393,7 +393,7 @@ void main() {
       final zhRow = tester.widget<ListTile>(
         find.byKey(const ValueKey('node-iso3166-2:CN-GD')),
       );
-      expect((zhRow.title! as Text).data, '广东省');
+      expect(rowLabelText(zhRow.title), '广东省');
 
       // ar: provisional translation filtered, en fallback pack drops the
       // node, provisional source name filtered → the stable ID is the only
@@ -410,7 +410,10 @@ void main() {
       final idRow = tester.widget<ListTile>(
         find.byKey(const ValueKey('node-iso3166-2:CN-GD')),
       );
-      expect((idRow.title! as Text).data, 'iso3166-2:CN-GD');
+      final idLabel = rowLabelText(idRow.title)!;
+      // The stable-ID fallback carries the honesty badge in the defaults.
+      expect(idLabel.startsWith('iso3166-2:CN-GD'), isTrue);
+      expect(idLabel.contains('غير مترجم'), isTrue);
 
       // With the explicit opt-in the provisional translation may be served
       // (hosts must label it tentative).
@@ -430,7 +433,10 @@ void main() {
       final optedRow = tester.widget<ListTile>(
         find.byKey(const ValueKey('node-iso3166-2:CN-GD')),
       );
-      expect((optedRow.title! as Text).data, 'غوانغدونغ');
+      final optedLabel = rowLabelText(optedRow.title)!;
+      expect(optedLabel.startsWith('غوانغدونغ'), isTrue);
+      // Opted-in provisional names must be labeled tentative (AT-14).
+      expect(optedLabel.contains('مبدئي'), isTrue);
     });
   });
 

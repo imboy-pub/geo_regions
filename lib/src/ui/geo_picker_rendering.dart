@@ -107,7 +107,7 @@ extension _GeoPickerRender on _GeoRegionPickerState {
             TextButton(
               key: ValueKey('breadcrumb-${_draft[i].nodeId}'),
               onPressed: i == _draft.length - 1 ? null : () => _truncateTo(i),
-              child: Text(_draft[i].label),
+              child: _labelText(_draft[i]),
             ),
           ],
         ],
@@ -226,7 +226,7 @@ extension _GeoPickerRender on _GeoRegionPickerState {
         item.isCountryRoot ? Icons.public : Icons.location_on_outlined,
         color: info.isDraftTarget ? pickerTheme.accentOf(scheme) : null,
       ),
-      title: Text(item.label),
+      title: _labelText(item),
       subtitle: _rowSubtitle(item, subtitleFromPath),
       trailing: _rowTrailing(item, countryOnly),
     );
@@ -382,12 +382,33 @@ extension _GeoPickerRender on _GeoRegionPickerState {
           ],
         ),
         const SizedBox(height: 8),
-        Text(
-          _draftLabels().isEmpty
-              ? _labels.countries
-              : _draftLabels().join(' / '),
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-        ),
+        if (_draftLabels().isEmpty)
+          Text(
+            _labels.countries,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          )
+        else
+          Text.rich(
+            TextSpan(
+              children: <InlineSpan>[
+                for (var i = 0; i < _draft.length; i++) ...<InlineSpan>[
+                  if (i > 0) const TextSpan(text: ' / '),
+                  TextSpan(text: _draft[i].label),
+                  if (_badgeFor(_draft[i]) case final badge? when badge.isNotEmpty)
+                    TextSpan(
+                      text: '  · $badge',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                ],
+              ],
+            ),
+            key: const ValueKey('draft-path'),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
         if (_draft.isNotEmpty) ...<Widget>[
           const SizedBox(height: 6),
           Directionality(
@@ -444,6 +465,43 @@ extension _GeoPickerRender on _GeoRegionPickerState {
   List<String> _draftLabels() => <String>[
     for (final item in _draft) item.label,
   ];
+
+  /// The honesty badge for [item], or null when the host disabled badges or
+  /// the label needs no mark. Tentative names win over fallback marks.
+  String? _badgeFor(GeoPickerItem item) {
+    if (item.labelIsProvisional) {
+      return _labels.tentativeBadge;
+    }
+    if (item.labelIsFallback) {
+      return _labels.fallbackBadge;
+    }
+    return null;
+  }
+
+  /// Label text with the honesty badge appended inline; a plain [Text] when
+  /// no badge applies, so hosts that disable badges see exactly the old UI.
+  Widget _labelText(GeoPickerItem item) {
+    final badge = _badgeFor(item);
+    if (badge == null || badge.isEmpty) {
+      return Text(item.label);
+    }
+    final scheme = Theme.of(context).colorScheme;
+    return Text.rich(
+      TextSpan(
+        children: <InlineSpan>[
+          TextSpan(text: item.label),
+          TextSpan(
+            text: '  · $badge',
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w500,
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   bool get _canBack =>
       _draft.length > 1 || (_draft.length == 1 && widget.countryCode == null);

@@ -441,7 +441,7 @@ void manifestBasicsGroup() {
   group('manifest parsing', () {
     test('accepts the real manifest', () {
       final manifest = loadManifest();
-      expect(manifest.revision, 'm-00f97c86c14ada75');
+      expect(manifest.revision, 'm-f5c00e018055121c');
       expect(manifest.resources.first.path, 'catalog_i18n/ar.json');
     });
 

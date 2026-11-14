@@ -2,9 +2,9 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "demo/flutter/tools/geo_cdn.config.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-13T16:45:26.178961Z",
+  "generatedAt": "2026-11-14T05:41:11.925910Z",
   "profile": "demo-simulated-cdn-full",
-  "replace": false,
+  "replace": true,
   "resources": [
     {
       "bytes": 1147,
@@ -193,10 +193,10 @@
       "sha256": "6db0c2764e3053ca995ec7f4b205778e7f808007c294ba29c881605f7b51c2c1"
     },
     {
-      "bytes": 3372,
-      "gzipBytes": 861,
+      "bytes": 225673,
+      "gzipBytes": 32494,
       "path": "i18n/en/CN.json",
-      "sha256": "11b126f20c4a4c9d0454b628bb7611dfc2b2b490b70bc304d14ff155b04d16a9"
+      "sha256": "5e5d3b305b90ffe4b4c034e2f1071f5bcf4f5f12da521e810ec90e4be418bbeb"
     },
     {
       "bytes": 2240,
@@ -747,8 +747,8 @@
   },
   "totals": {
     "fragmentFileCount": 123,
-    "gzipBytes": 255922,
+    "gzipBytes": 287555,
     "resourceFileCount": 121,
-    "uncompressedBytes": 2130387
+    "uncompressedBytes": 2352688
   }
 }
