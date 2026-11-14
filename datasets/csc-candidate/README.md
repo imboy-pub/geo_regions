@@ -37,3 +37,29 @@ python3 tool/geo_data.py validate datasets/csc-candidate
 候选层**永不直接并入** `data/`：datasetId、许可口径（ODbL share-alike）、成熟度
 （research-seed）三者都不同。未来若决策采纳某部分，须按 `docs/UPDATE_RUNBOOK.md`
 的更新合同逐项走迁移审校，且 CN 历史低层数据（`data/` 独有）不受影响。
+
+---
+
+## English Summary
+
+This directory holds the **review material** for the nine-country candidate dataset
+(`geo-regions-csc-candidate`, 93,683 nodes across states/counties/cities, built on the
+audited CSC snapshot with official 2026 layers for FR (INSEE) and JP (Geolonia)).
+
+- **What is tracked here**: sources & license notice, the full verification ledger
+  (nine rounds, incl. a self-corrections log), the AI proof-reading report (288
+  manually reviewed entries), and the P0-P3 human-review queue.
+- **What is NOT tracked**: the derived dataset body (`data/`, `config/`, ~72MB) and
+  regenerable JSONs. Regenerate with
+  `python3 tool/build_csc_candidate.py && python3 tool/geo_data.py validate datasets/csc-candidate`
+  (requires `staging/csc-snapshot/`, sha256-pinned by `fetch_manifest.json`).
+- **Boundary**: this layer never merges into the product layer (`data/`,
+  `geo-regions-seed`) directly — different datasetId (ODbL-dominant vs layered
+  CLDR/history), different maturity (research-seed), and CN historical low-level
+  data lives only in the product layer. Any adoption goes through
+  `docs/UPDATE_RUNBOOK.md` contracts.
+
+Ten-locale coverage: en 100% (source-native), zh-Hant 57,255 machine-candidate
+(conservative s2t + kanji-direct for JP + proof-read fixes), zh-Hans/ja/ko/ru/de/
+fr/it/ar 83-86% provisional (upstream CSC translations), all with honest quality
+words (`humanReviewVerified=false`).

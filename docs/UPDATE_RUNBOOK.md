@@ -46,3 +46,24 @@ python3 tool/update_rehearsal.py --old-root /tmp/geo-old-root --new-root .
 
 - 为 `geo-regions-seed` 数据集建立 node_metadata/identity_registry sidecar（当前无 sidecar，semantic_audit 对 seed 不适用）
 - 决定 seed 与 audit-sample 两条 datasetId 的合并/共存策略
+
+---
+
+## English Summary
+
+This runbook operationalizes the pinned-source update contract from the
+`geo-regions-source-audit-v1` task (GSA-04). Rehearse offline with
+`python3 tool/update_rehearsal.py --selftest` (synthetic fixtures prove an
+undeclared deletion is blocked and a fully evidenced retirement passes), and run
+the real contract against two data roots with
+`python3 tool/update_rehearsal.py --old-root A --new-root B`
+(check → check → stability; breaking changes need per-change migration evidence
+in `audit/migrations.json`; retired registry entries are never removed).
+
+The data-maturity tripwire lives in `config/readiness.json`
+(`expectedProductionGateRefusal`): research seeds MUST be refused by
+`tool/geo_data.py validate --production`, enforced in CI via
+`tool/check_readiness.py`; flip the switch only for reviewed production data.
+For the candidate dataset layer see `datasets/csc-candidate/README.md`;
+`semantic_audit.py` applies to roots carrying `audit/` sidecars (CLDR-sample
+shape) — the seed dataset's sidecars remain a Phase-2 decision.

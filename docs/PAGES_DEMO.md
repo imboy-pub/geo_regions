@@ -49,3 +49,27 @@ git push github main && git push origin main && git push gitcode main
   `datasets/csc-candidate/README.md` 与 `docs/UPDATE_RUNBOOK.md`
 - demo 使用 research-seed 数据（`data/`），页面已内嵌质量可见性与回退展示
   （P1-01 UX 验收：`?locale=ar&dark=1&semantics=1` 深链可用）
+
+---
+
+## English Summary
+
+Demo site: `https://imboy-pub.github.io/geo_regions/` — `/` serves the Flutter web
+demo (release build with `--base-href /geo_regions/`, the P1-01-accepted
+interactive demo), `/preview/` serves the self-contained static prototype
+(`demo/web_preview/index.html`). Deployment runs in
+`.github/workflows/pages.yml` on push to main (or manual dispatch) using the
+official upload/deploy-pages OIDC flow; one-time repo setting:
+**Settings → Pages → Source = GitHub Actions**.
+
+Gitee has a matching feature (**Gitee Pages**), but the free tier has been
+paused for new deployments since 2024-05 (verify on the repo page). Layered
+guidance: if available, push `demo/flutter/build/web/` to a `gh-pages` branch
+and select it in Pages settings (manual updates per release); otherwise keep
+gitee as a code mirror (origin already points there) and link the GitHub Pages
+URL from the repo README. SSH push from this machine has a known SIGPIPE
+issue — prefer HTTPS + credential helper.
+
+Scope: Pages serves the **demo layer** (research showcase) built from
+`data/` (research-seed); dataset layering is documented in
+`datasets/csc-candidate/README.md` and `docs/UPDATE_RUNBOOK.md`.
