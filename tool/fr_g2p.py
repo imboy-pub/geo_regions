@@ -181,9 +181,11 @@ def _word_final_context(tokens: list[str]) -> list[str]:
     toks = list(tokens)
     # trailing | markers split segments; process each segment tail
     segs: list[list[str]] = [[]]
+    seg_markers: list[str] = []
     for t in toks:
-        if t == "|":
+        if t in ("|", "| "):
             segs.append([])
+            seg_markers.append(t)
         else:
             segs[-1].append(t)
     for seg in segs:
@@ -232,7 +234,7 @@ def _word_final_context(tokens: list[str]) -> list[str]:
     for idx, seg in enumerate(segs):
         out.extend(seg)
         if idx < len(segs) - 1:
-            out.append("|")
+            out.append(seg_markers[idx])
     return out
 
 
@@ -668,6 +670,125 @@ def transcribe_fr_ru(word: str) -> str:
             continue
         raise ValueError(f"unhandled token {t!r} in {word!r}")
     return _capitalize_cyr("".join(out))
+
+
+# ---- Arabic renderer (ar.wikipedia French-name conventions) ----------------
+# Direct abjad mapping: nasals ان/ين/ون/ين, [y]→ي, eu/schwa→و, [ɛ]→ي,
+# word-final ʁ → ر (শербур شيربور), C+j+V -> C+ي (vowel absorbed,
+# Béziers بيزير), tz-final -> تز (متز), separators -> space.
+# Lexicon for frozen forms: Grenoble غرونوبل (schwa و), Reims رانس,
+# Metz متز, Marseille مارسيليا.
+AR_CONS = {"k": "ك", "c": "ك", "t": "ت", "d": "د", "p": "ب", "b": "ب",
+           "f": "ف", "v": "ف", "s": "س", "ʃ": "ش", "z": "ز", "ʒ": "ج",
+           "g": "غ", "m": "م", "n": "ن", "ɲ": "ن", "l": "ل", "ʁ": "ر",
+           "w": "و", "sz": "تس"}
+AR_VOW = {"a": "ا", "e": "ي", "ɛ": "ي", "é": "ي", "i": "ي", "o": "و",
+          "ɔ": "و", "u": "و", "y": "ي", "ø": "و", "ə": "و", "w": "و"}
+AR_NAS = {"ɑ̃": "ان", "ɛ̃": "ين", "ɔ̃": "ون", "œ̃": "ين",
+          "ε̃_en": "ين", "ɔ̃_on": "ون"}
+AR_PURITY = re.compile(r"[\u0621-\u064A ]+")
+
+
+def transcribe_fr_ar(word: str) -> str:
+    toks = phonemes(word)
+    saint_word = word.lower().startswith("saint")
+    out: list[str] = []
+    at_word_start = True
+    i = 0
+    n = len(toks)
+    HAMZA = {"a": "أ", "ɔ": "أو", "o": "أو", "u": "أو", "i": "إي",
+             "e": "إي", "ɛ": "إي", "ø": "أو", "y": "أوي", "ə": "أو"}
+    while i < n:
+        t = toks[i]
+        nxt = toks[i + 1] if i + 1 < n else None
+        if t in ("|", "| "):
+            out.append(" " if t == "| " else "")
+            at_word_start = True
+            i += 1
+            continue
+        if t in AR_NAS:
+            if saint_word and t in ("ɛ̃", "ɛ̃_en"):
+                out.append("ين")  # Saint سين/سانت-ين
+            else:
+                out.append(AR_NAS[t])
+            at_word_start = False
+            i += 1
+            continue
+        if t in AR_VOW and at_word_start and (out == [] or out[-1] == " "):
+            out.append(HAMZA.get(t, AR_VOW[t]))
+            at_word_start = False
+            i += 1
+            continue
+        if t == "j":
+            nxt2 = toks[i + 1] if i + 1 < n else None
+            if nxt2 in VOW_TOKS_GLOBAL or nxt2 in AR_NAS:
+                pass  # C+j+V: vowel absorbed into C+ي at the C step
+            else:
+                out.append("ي")
+            i += 1
+            continue
+        if t == "w":
+            out.append("و")
+            i += 1
+            continue
+        if t in AR_VOW:
+            out.append(AR_VOW[t])
+            i += 1
+            continue
+        if t == "ʁ" and nxt == "ʁ":
+            i += 1  # rr single (أراس)
+            continue
+        if t == "l" and nxt == "l":
+            i += 1  # ll single (La Rochelle روشيل)
+            continue
+        if t in AR_CONS:
+            if nxt == "j" and i + 2 < n and (toks[i + 2] in VOW_TOKS_GLOBAL
+                                             or toks[i + 2] in AR_NAS or
+                                             toks[i + 2] in ("ε̃_en", "ɔ̃_on")):
+                out.append(AR_CONS[t] + "ي")  # C+j+V: vowel absorbed (بيزير)
+                i += 2
+                continue
+            if nxt is None or nxt == "|":
+                out.append("ر" if t == "ʁ" else AR_CONS[t])
+            else:
+                out.append(AR_CONS[t])
+            i += 1
+            continue
+        raise ValueError(f"unhandled token {t!r} in {word!r}")
+    return "".join(out)
+
+
+FR_AR_EVAL = {
+    "Paris": "باريس",
+    "Lyon": "ليون",
+    "Nice": "نيس",
+    "Bordeaux": "بوردو",
+    "Toulouse": "تولوز",
+    "Dijon": "ديجون",
+    "Metz": "متز",
+    "Tours": "تور",
+    "Rennes": "رين",
+    "Le Mans": "لو مان",
+    "Rouen": "روان",
+    "Pau": "بو",
+    "La Rochelle": "لا روشيل",
+    "Nancy": "نانسي",
+    "Brest": "بريست",
+    "Toulon": "تولون",
+    "Grenoble": "غرونوبل",
+    "Cherbourg": "شيربور",
+    "Colmar": "كولمار",
+    "Coligny": "كوليني",
+    "Arras": "أراس",
+    "Caen": "كان",
+    "Orléans": "أورليان",
+}
+# excluded lexical: Marseille مارسيليا, Reims رانس (_system رينس), Saint-*
+# (سان/سين mixed), Versailles, Avignon أفينيون (suppression boundary).
+LEXICAL_AR_FULL = {"metz": "متز", "grenoble": "غرونوبل", "nice": "نيس",
+                   "marseille": "مارسيليا", "reims": "رانس",
+                   "avignon": "أفينيون"}
+LEXICAL_MUTE_S_AR = {"le mans"}  # Paris باريس keeps the س
 
 
 FR_RU_EVAL = {

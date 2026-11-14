@@ -946,22 +946,25 @@ def emit_fr_ko(root: Path) -> int:
             if row["TYPECOM"] not in ("COM", "ARM") or row["DATE_FIN"]:
                 continue
             name = row["LIBELLE"].strip()
-            ru_purity = re.compile(r"[А-яЁё\- ]+")
-            try:
-                ko = fr_g2p.transcribe_fr_ko(name)
-                ja = fr_g2p.transcribe_fr_ja(name)
-                ru = fr_g2p.transcribe_fr_ru(name)
-            except ValueError:
-                skipped += 1
-                continue
-            ja_purity = re.compile(r"[ァ-ヴー・]+")
-            if not purity.fullmatch(ko) or not ja_purity.fullmatch(ja) \
-                    or not ru_purity.fullmatch(ru):
+            labels: dict[str, str] = {}
+            for locale, fn, pr in (("ko", fr_g2p.transcribe_fr_ko, purity),
+                                   ("ja", fr_g2p.transcribe_fr_ja,
+                                    re.compile(r"[ァ-ヴー・]+")),
+                                   ("ru", fr_g2p.transcribe_fr_ru,
+                                    re.compile(r"[А-яЁё\- ]+")),
+                                   ("ar", fr_g2p.transcribe_fr_ar,
+                                    re.compile(r"[\u0621-\u064A ]+"))):
+                try:
+                    value = fn(name)
+                except ValueError:
+                    continue
+                if pr.fullmatch(value):
+                    labels[locale] = value
+            if not labels:
                 skipped += 1
                 continue
             nodes[f"fr-commune:{row['COM']}"] = {"source": name,
-                                                 "labels": {"ko": ko, "ja": ja,
-                                                            "ru": ru}}
+                                                 "labels": labels}
     document = {
         "generator": "tool/fr_g2p.py",
         "ruleVersion": "fr-ko-1",
@@ -969,7 +972,7 @@ def emit_fr_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko", "ja", "ru"],
+        "locales": ["ko", "ja", "ru", "ar"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,
