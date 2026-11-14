@@ -243,7 +243,7 @@
       "csc-city:65495": "provisional",
       "csc-city:65496": "provisional",
       "csc-city:65497": "provisional",
-      "csc-city:65498": "provisional",
+      "csc-city:65498": "machine-candidate",
       "csc-city:65499": "provisional",
       "csc-city:65500": "provisional",
       "csc-city:65501": "provisional",
@@ -314,7 +314,7 @@
       "csc-city:65566": "provisional",
       "csc-city:65567": "provisional",
       "csc-city:65568": "provisional",
-      "iso3166-2:KR-11": "provisional",
+      "iso3166-2:KR-11": "machine-candidate",
       "iso3166-2:KR-26": "provisional",
       "iso3166-2:KR-27": "provisional",
       "iso3166-2:KR-28": "provisional",
@@ -644,7 +644,7 @@
     "csc-city:65566": "龙山区",
     "csc-city:65567": "儒城区",
     "csc-city:65568": "云木",
-    "iso3166-2:KR-11": "汉城",
+    "iso3166-2:KR-11": "首尔",
     "iso3166-2:KR-26": "釜山",
     "iso3166-2:KR-27": "大邱",
     "iso3166-2:KR-28": "仁川",
@@ -663,7 +663,7 @@
     "iso3166-2:KR-50": "世宗特别行政区"
   },
   "protocolVersion": "1.0",
-  "revision": "l-2f190c92d26d6ff0",
+  "revision": "l-0ee3d0f59793d93c",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

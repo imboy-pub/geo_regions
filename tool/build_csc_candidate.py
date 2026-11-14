@@ -44,6 +44,15 @@ ZH_GARBAGE_DROPS = {
     "csc-city:137393",                                         # IT 系列
     "csc-city:101733", "csc-city:102272", "csc-city:99529",    # RU 系统/上系统/学习管理系统
 }
+# Confirmed upstream errors in zh-Hans packs (AI proof-reading round 1/3):
+# values rewritten and quality flipped to machine-candidate — never approved.
+ZH_HANS_FIXES = {
+    ("KR", "Seoul"): "首尔",
+    ("RU", "Jewish"): "犹太自治州",
+    ("RU", "Nenets"): "涅涅茨自治区",
+    ("RU", "Khanty-Mansi"): "汉特-曼西自治区",
+    ("US", "Texas"): "得克萨斯州",
+}
 ZH_HANT_FIXES = {
     ("KR", "Seoul"): "首爾",
     ("RU", "Jewish"): "猶太自治州",
@@ -189,7 +198,12 @@ def main():
             nodes.append(node(nid, root_id, "subdivision", iso_tag or f"{cc}-S{row['id']}",
                               nfc(row["name"]), "en", "source-native", "unknown"))
             packs["en"][nid] = nfc(row["name"])
+            hans_fix = ZH_HANS_FIXES.get((cc, row["name"]))
             for locale, key in TRANSLATION_LOCALES.items():
+                if locale == "zh-Hans" and hans_fix:
+                    packs[locale][nid] = nfc(hans_fix)
+                    packs.setdefault("_zh_fixed", {})[nid] = True
+                    continue
                 value = (row.get("translations") or {}).get(key)
                 if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
@@ -295,7 +309,12 @@ def main():
             nodes.append(node(nid, parent, "subdivision", f"{cc}-X{row['id']}", nfc(row["name"]),
                               "en", "source-native", "unknown"))
             packs["en"][nid] = nfc(row["name"])
+            hans_fix = ZH_HANS_FIXES.get((cc, row["name"]))
             for locale, key in TRANSLATION_LOCALES.items():
+                if locale == "zh-Hans" and hans_fix:
+                    packs[locale][nid] = nfc(hans_fix)
+                    packs.setdefault("_zh_fixed", {})[nid] = True
+                    continue
                 value = (row.get("translations") or {}).get(key)
                 if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
@@ -346,7 +365,8 @@ def main():
                     "sourceRefs": [CSC_SOURCE], "names": packs[locale],
                     "coverage": {"status": "research-seed",
                                  "translationQualityById": {
-                                     nid: ("machine-candidate" if locale == "zh-Hant"
+                                     nid: ("machine-candidate" if locale in ("zh-Hant",)
+                                           or (locale == "zh-Hans" and nid in packs.get("_zh_fixed", {}))
                                            else "source-native" if locale == "en" else "provisional")
                                      for nid in packs[locale]},
                                  "explicitNames": len(packs[locale]),

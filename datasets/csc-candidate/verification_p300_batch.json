@@ -86,9 +86,15 @@
    "SA 13/13"
   ],
   "gaps": {
-   "IT": "6 codes missing (IT-AO current; CI/OG/OT/VS are 2016-abolished Sardinian provinces — form-level issue)",
-   "GB": "33 missing (11 Northern Ireland district councils GB-ANT/ARD/ARM… + Scottish council areas) + 2 invalid codes (GB-NNH/GB-WNH)"
+   "IT": "RESOLVED AS FORM-GAP: entities are real and Sardinia abolitions already reflected (CI/OG/OT/VS absent, Sud Sardegna present as IT-S5830); but state codes use the RETIRED numeric form (IT-23 Aosta vs current IT-AO) — an ISO-letter-code mapping table is the actual todo, not entity gaps",
+   "GB": "RESOLVED AS FORM-GAP: GB-NNH/GB-WNH are LEGAL 2021-created North/West Northamptonshire codes (Wikidata code set lags, not a CSC error); Northern Ireland's 11 current district councils ARE present under merged names — the '33 missing' were 2015-abolished old codes"
   },
-  "foundOwnBug": "previous round's KR-17/KR-18 collided with historical ISO codes; fixed to current KR-46/KR-29"
+  "foundOwnBug": "previous round's KR-17/KR-18 collided with historical ISO codes; fixed to current KR-46/KR-29",
+  "selfCorrections": [
+   "round-5: KR-17/KR-18 self-bug fixed to KR-46/KR-29",
+   "round-5: GB 'England missing' corrected — England present (CSC type-field wording)",
+   "round-6: GB-NNH/WNH re-judged LEGAL (2021 counties; Wikidata lag); NI 11 present — '33 missing' was old-code form mismatch",
+   "round-6: IT '6 missing codes' re-judged as numeric→letter ISO form gap; Sardinia abolitions correctly absent in CSC"
+  ]
  }
 }

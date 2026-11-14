@@ -5098,7 +5098,7 @@
       "iso3166-2:RU-KGD": "provisional",
       "iso3166-2:RU-KGN": "provisional",
       "iso3166-2:RU-KHA": "provisional",
-      "iso3166-2:RU-KHM": "provisional",
+      "iso3166-2:RU-KHM": "machine-candidate",
       "iso3166-2:RU-KIR": "provisional",
       "iso3166-2:RU-KK": "provisional",
       "iso3166-2:RU-KL": "provisional",
@@ -5116,7 +5116,7 @@
       "iso3166-2:RU-MOS": "provisional",
       "iso3166-2:RU-MOW": "provisional",
       "iso3166-2:RU-MUR": "provisional",
-      "iso3166-2:RU-NEN": "provisional",
+      "iso3166-2:RU-NEN": "machine-candidate",
       "iso3166-2:RU-NGR": "provisional",
       "iso3166-2:RU-NIZ": "provisional",
       "iso3166-2:RU-NVS": "provisional",
@@ -5153,7 +5153,7 @@
       "iso3166-2:RU-VOR": "provisional",
       "iso3166-2:RU-YAN": "provisional",
       "iso3166-2:RU-YAR": "provisional",
-      "iso3166-2:RU-YEV": "provisional",
+      "iso3166-2:RU-YEV": "machine-candidate",
       "iso3166-2:RU-ZAB": "provisional"
     }
   },
@@ -10252,7 +10252,7 @@
     "iso3166-2:RU-KGD": "加里宁格勒",
     "iso3166-2:RU-KGN": "库尔干",
     "iso3166-2:RU-KHA": "哈巴罗夫斯克",
-    "iso3166-2:RU-KHM": "汉特-曼西",
+    "iso3166-2:RU-KHM": "汉特-曼西自治区",
     "iso3166-2:RU-KIR": "基洛夫",
     "iso3166-2:RU-KK": "哈卡斯",
     "iso3166-2:RU-KL": "卡尔梅克共和国",
@@ -10270,7 +10270,7 @@
     "iso3166-2:RU-MOS": "莫斯科",
     "iso3166-2:RU-MOW": "莫斯科",
     "iso3166-2:RU-MUR": "摩尔曼斯克",
-    "iso3166-2:RU-NEN": "涅涅茨人",
+    "iso3166-2:RU-NEN": "涅涅茨自治区",
     "iso3166-2:RU-NGR": "诺夫哥罗德",
     "iso3166-2:RU-NIZ": "下诺夫哥罗德",
     "iso3166-2:RU-NVS": "新西伯利亚",
@@ -10307,11 +10307,11 @@
     "iso3166-2:RU-VOR": "沃罗涅日",
     "iso3166-2:RU-YAN": "亚马尔-涅涅茨",
     "iso3166-2:RU-YAR": "雅罗斯拉夫尔",
-    "iso3166-2:RU-YEV": "犹太人",
+    "iso3166-2:RU-YEV": "犹太自治州",
     "iso3166-2:RU-ZAB": "外贝加尔地区"
   },
   "protocolVersion": "1.0",
-  "revision": "l-b0cd40c05a06e6c8",
+  "revision": "l-c84cad11a06fb5ac",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

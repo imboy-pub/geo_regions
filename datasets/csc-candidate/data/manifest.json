@@ -870,24 +870,24 @@
       "sha256": "5b94f7fafa6ffe779b4f22c63ef66e8050f14b20e71905a0d0c5e167934fd48e"
     },
     {
-      "bytes": 24340,
+      "bytes": 24352,
       "compatibleStructureRevision": "s-a9bf45a95bef4136",
       "countryCode": "KR",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/KR.json",
-      "revision": "l-2f190c92d26d6ff0",
-      "sha256": "976d377bbb09171cfa21f8817916d0c6c0079cc23ba03cb5a2e3582c39f240d4"
+      "revision": "l-0ee3d0f59793d93c",
+      "sha256": "691d5bccb4227859f9d7dc4ef8c7c7199626be979fed88ad07bb4c7139eebbaf"
     },
     {
-      "bytes": 419321,
+      "bytes": 419360,
       "compatibleStructureRevision": "s-979283308bb6efcb",
       "countryCode": "RU",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/RU.json",
-      "revision": "l-b0cd40c05a06e6c8",
-      "sha256": "ccc8f9948415de9bcb4fc2daacede693a24c69f3de870fa71e0e2886083af46e"
+      "revision": "l-c84cad11a06fb5ac",
+      "sha256": "93ec65698067b5831b20d7019469b9f5609a4e7ca9fb8267816aac22f66b0c7f"
     },
     {
       "bytes": 31786,
@@ -900,14 +900,14 @@
       "sha256": "ed88d1db7c5b9faff9eb99b91b8a4ee0541ce445a299363e2c0429678a9e0030"
     },
     {
-      "bytes": 1501583,
+      "bytes": 1501941,
       "compatibleStructureRevision": "s-b50434f0cdd22130",
       "countryCode": "US",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/US.json",
-      "revision": "l-4d29b274a0ee7ecc",
-      "sha256": "56192a3cf139cc448ed1a2839a51eb31e243da7d95bc0270cb5bfa9bb10a9a7b"
+      "revision": "l-4d3792f677ad1a35",
+      "sha256": "9c056407d184b6d6f2ceb00290c494e92aeb9b0aa57dfe2e02d44baea64ba000"
     },
     {
       "bytes": 601818,
@@ -1072,5 +1072,5 @@
       "sha256": "334ffbf34cce4a2d6322b64bfbf6cf5bc54919da86e16dd95a1d97562fceb9be"
     }
   ],
-  "revision": "m-38edceb26ee73890"
+  "revision": "m-30faeb1c17a9b35a"
 }

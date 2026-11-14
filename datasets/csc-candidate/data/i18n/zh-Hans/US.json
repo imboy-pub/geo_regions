@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19058,
-    "missingNames": 7762,
+    "explicitNames": 19062,
+    "missingNames": 7758,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:110965": "provisional",
@@ -15935,6 +15935,10 @@
       "csc-city:157017": "provisional",
       "csc-city:161557": "provisional",
       "csc-city:161558": "provisional",
+      "csc-city:181426": "machine-candidate",
+      "csc-city:182058": "machine-candidate",
+      "csc-city:182970": "machine-candidate",
+      "csc-city:187180": "machine-candidate",
       "csc-county:1": "provisional",
       "csc-county:10": "provisional",
       "csc-county:100": "provisional",
@@ -19054,7 +19058,7 @@
       "iso3166-2:US-SC": "provisional",
       "iso3166-2:US-SD": "provisional",
       "iso3166-2:US-TN": "provisional",
-      "iso3166-2:US-TX": "provisional",
+      "iso3166-2:US-TX": "machine-candidate",
       "iso3166-2:US-UM": "provisional",
       "iso3166-2:US-UT": "provisional",
       "iso3166-2:US-VA": "provisional",
@@ -34998,6 +35002,10 @@
     "csc-city:157017": "威尔明顿",
     "csc-city:161557": "法拉盛",
     "csc-city:161558": "奥本代尔",
+    "csc-city:181426": "得克萨斯州",
+    "csc-city:182058": "得克萨斯州",
+    "csc-city:182970": "得克萨斯州",
+    "csc-city:187180": "得克萨斯州",
     "csc-county:1": "阿卡迪亚教区",
     "csc-county:10": "亚当斯县",
     "csc-county:100": "阿沃耶尔斯教区",
@@ -38117,7 +38125,7 @@
     "iso3166-2:US-SC": "南卡罗来纳州",
     "iso3166-2:US-SD": "南达科他州",
     "iso3166-2:US-TN": "田纳西州",
-    "iso3166-2:US-TX": "德克萨斯州",
+    "iso3166-2:US-TX": "得克萨斯州",
     "iso3166-2:US-UM": "美国本土外小岛屿",
     "iso3166-2:US-UT": "犹他州",
     "iso3166-2:US-VA": "弗吉尼亚州",
@@ -38129,7 +38137,7 @@
     "iso3166-2:US-WY": "怀俄明州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-4d29b274a0ee7ecc",
+  "revision": "l-4d3792f677ad1a35",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
