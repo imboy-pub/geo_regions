@@ -431,10 +431,9 @@ def main():
             "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
                     "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
                    for loc in ("ja", "ko", "de", "fr", "it", "ar", "zh-Hans")],
-            "FR": [("staging/ai-cand/fr-transcriptions.json", "ko",
-                    "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana transcription, machine-candidate, tool/fr_g2p.py)"),
-                   ("staging/ai-cand/fr-transcriptions.json", "ja",
-                    "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana transcription, machine-candidate, tool/fr_g2p.py)")],
+            "FR": [(f"staging/ai-cand/fr-transcriptions.json", loc,
+                    "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana/Cyrillic transcription, machine-candidate, tool/fr_g2p.py)")
+                   for loc in ("ko", "ja", "ru")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()

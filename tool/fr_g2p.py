@@ -31,8 +31,9 @@ CONS = {"k": "ㅋ", "t": "ㅌ", "d": "ㄷ", "p": "ㅍ", "b": "ㅂ", "f": "ㅍ",
 # nasal codes: (jung, batchim)
 NAS = {"ɑ̃": ("ㅏ", "ㅇ"), "ɛ̃": ("ㅐ", "ㅇ"), "ɔ̃": ("ㅗ", "ㅇ"),
        "œ̃": ("ㅟ", "ㄴ")}
-VOW = {"a": "ㅏ", "e": "ㅔ", "ɛ": "ㅔ", "ε": "ㅔ", "i": "ㅣ", "o": "ㅗ",
-       "ɔ": "ㅗ", "u": "ㅜ", "y": "ㅟ", "ø": "ㅔ", "ə": "ㅡ", "w": "ㅜ"}
+VOW = {"a": "ㅏ", "e": "ㅔ", "ɛ": "ㅔ", "ε": "ㅔ", "é": "에", "i": "ㅣ",
+       "o": "ㅗ", "ɔ": "ㅗ", "u": "ㅜ", "y": "ㅟ", "ø": "ㅔ", "ə": "ㅡ",
+       "w": "ㅜ"}
 FINAL_STANDALONE = {"ʁ": "르", "s": "스", "z": "즈", "k": "크", "f": "프",
                     "t": "트", "d": "드", "g": "그", "b": "브", "v": "브",
                     "p": "프", "ʃ": "슈", "ʒ": "주"}
@@ -50,13 +51,13 @@ SEG_RULES = [  # (pattern, replacement tokens) — longest match first
     ("un", ["œ̃"]), ("um", ["œ̃"]),
     ("gn", ["ɲ"]), ("ch", ["ʃ"]), ("ph", ["f"]), ("th", ["t"]),
     ("gu", ["g"]), ("ç", ["s"]), ("ss", ["s"]),
-    ("ill", ["i", "l"]), ("aille", ["a", "j"]), ("eille", ["ε", "j"]),
+    ("ill", ["i", "l"]), ("llie", ["l", "j", "e"]), ("aille", ["a", "j"]), ("eille", ["ε", "j"]),
     ("a", ["a"]), ("b", ["b"]), ("c", ["c"]), ("d", ["d"]), ("e", ["e"]),
     ("f", ["f"]), ("g", ["g"]), ("h", []), ("i", ["i"]), ("j", ["ʒ"]),
     ("k", ["k"]), ("l", ["l"]), ("m", ["m"]), ("n", ["n"]), ("o", ["ɔ"]),
     ("p", ["p"]), ("r", ["ʁ"]), ("s", ["s"]),
     ("v", ["v"]), ("w", ["w"]), ("x", ["k", "s"]), ("y", ["i"]),
-    ("z", ["z"]), ("é", ["e"]), ("è", ["ε"]), ("ê", ["ε"]), ("ë", ["e"]),
+    ("z", ["z"]), ("é", ["é"]), ("è", ["ε"]), ("ê", ["ε"]), ("ë", ["e"]),
     ("à", ["a"]), ("â", ["a"]), ("ù", ["y"]), ("û", ["y"]), ("ü", ["y"]),
     ("ï", ["i"]), ("î", ["i"]), ("ô", ["o"]), ("ô", ["o"]),
 ]
@@ -75,10 +76,11 @@ def segment(word: str) -> list[str]:
     while i < n:
         c = chars[i]
         if c in ("-", "–"):
-            i += 1  # hyphen joins (Saint-Nazaire 생나제르)
+            out.append("|")  # hyphen marker: ru -, ko/ja join
+            i += 1
             continue
         if c == " ":
-            out.append("|")
+            out.append("| ")
             i += 1
             continue
         nxt = chars[i + 1] if i + 1 < n else None
@@ -98,7 +100,7 @@ def segment(word: str) -> list[str]:
                 eff = chars[i + _k]
                 break
             _k += 1
-        if c == "t" and prev in NAS and eff is not None and \
+        if c == "t" and (prev in NAS or prev == "ɛ̃_en") and eff is not None and \
                 eff not in "aeiouyàâéèêîôû":
             i += 1  # nasal + t + consonant: t silent (Montpellier/Carlos)
             continue
@@ -124,10 +126,11 @@ def segment(word: str) -> list[str]:
                 # nasal digraphs need consonant-or-end after them (French:
                 # an+Vowel is non-nasal; ann/mm doubles handled by dedupe)
                 if pat in ("an", "am", "en", "em", "in", "im", "on", "om",
-                           "un", "um") and (nxt in "aeiouyàâéèêîôû" or
-                                            (nxt == nxt2 and nxt is not None and
-                                             nxt in "nmlrtspdbkgvzfch")):
-                    break  # fall through to letter-by-letter
+                           "un", "um") and i + len(pat) < n:
+                    post = chars[i + len(pat)]
+                    post2 = chars[i + len(pat) + 1] if i + len(pat) + 1 < n else None
+                    if post in "aeiouyàâéèêîôû" or (post == pat[-1] and post2 is not None):
+                        break  # en+Vowel or en+n+X: non-nasal (Grenoble/Rennes); word-final on stays nasal
                 out.extend("".join({"ε": "ɛ"}.get(ch, ch) for ch in tk) for tk in toks)
                 i += len(pat)
                 matched = True
@@ -167,7 +170,7 @@ def segment(word: str) -> list[str]:
     ded = []
     for t0 in out:
         t = "".join(norm.get(ch, ch) for ch in t0)
-        if ded and t == ded[-1] and t in CONS and t != "l":
+        if ded and t == ded[-1] and t in CONS and t not in ("l", "ʁ"):
             continue
         ded.append(t)
     return ded
@@ -189,8 +192,13 @@ def _word_final_context(tokens: list[str]) -> list[str]:
         # final e mute
         if seg and seg[-1] == "s" and len(seg) >= 2 and seg[-2] == "e":
             seg.pop(); seg.pop()  # -es: mute plural (Rennes 렌)
-        if seg and seg[-1] == "e" and len(seg) >= 2 and seg[-2] == "i":
-            pass  # final -ie: e pronounced (Montpellier 몽펠리에)
+        if seg in (["l", "e"], ["l", "e", "s"]):
+            if seg[-1] == "s":
+                seg.pop()  # Les article: s mute (Ле)
+            if seg and seg[-1] == "e":
+                seg[-1] = "ə"  # article schwa: ko 르 / ru е / ja drop
+        elif seg and seg[-1] == "e" and len(seg) >= 2 and seg[-2] in ("i", "j"):
+            pass  # final -ie/-ije: e pronounced (Montpellier 몽펠리에)
         elif seg and seg[-1] == "e":
             seg.pop()
             if seg and seg[-1] == "t":
@@ -214,8 +222,9 @@ def _word_final_context(tokens: list[str]) -> list[str]:
             seg.pop()
         if len(seg) >= 2 and seg[-1] == "g" and seg[-2] in CONS:
             seg.pop()  # -rg final: g mute (Bourg)
-        if len(seg) >= 2 and seg[-1] == "t" and seg[-2] in NAS:
-            seg.pop()  # nasal + final t mute (Saint)
+        if len(seg) >= 2 and seg[-1] == "t" and seg[-2] in NAS and \
+                seg[-2] != "ɛ̃_en":
+            seg.pop()  # plain nasal + final t mute; marked saint keeps liaison t
         if len(seg) >= 2 and seg[-1] == "n" and (seg[-2] in NAS or
                 seg[-2] in ("ɛ̃_en", "ɔ̃_on")):
             seg.pop()  # nasal + final n mute (Étienne second n)
@@ -228,7 +237,10 @@ def _word_final_context(tokens: list[str]) -> list[str]:
 
 
 def phonemes(word: str) -> list[str]:
-    toks = _word_final_context(segment(word))
+    toks = segment(word)
+    if word.lower().startswith("saint") and len(toks) > 1 and toks[1] == "ɛ̃":
+        toks = [toks[0], "ɛ̃_en"] + toks[2:]  # marked; renderers pick 생/アン/ен
+    toks = _word_final_context(toks)
     # liaison: nasal + word-final t + boundary + initial vowel -> the t moves
     # past the boundary (Saint-Étienne [sɛ̃.te.tjɛn] 생테티엔)
     for i in range(len(toks) - 3):
@@ -238,17 +250,17 @@ def phonemes(word: str) -> list[str]:
     return toks
 
 
-VOW_TOKS_GLOBAL = {"a", "e", "ɛ", "i", "ɔ", "o", "u", "ø", "y"}
+VOW_TOKS_GLOBAL = {"a", "e", "ɛ", "é", "i", "ɔ", "o", "u", "ø", "y"}
 
 
 def transcribe_fr_ko(word: str) -> str:
+    """French -> Hangul (slice-2-style composer, official-table rules)."""
     CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"
     JUNGS = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ",
              "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"]
     JONG = {"": 0, "ㄱ": 1, "ㄴ": 4, "ㄷ": 7, "ㄹ": 8, "ㅁ": 16, "ㅂ": 17,
             "ㅅ": 19, "ㅇ": 21, "ㅈ": 22, "ㅊ": 23, "ㅋ": 24, "ㅌ": 25, "ㅍ": 26, "ㅎ": 27}
     CHO_IDX = {c: i for i, c in enumerate(CHO)}
-    VOW_TOKS = {"a", "e", "ɛ", "i", "ɔ", "o", "u", "ø", "y"}
 
     def compose(onset: str, jung: str, jong: str = "") -> str:
         return chr(0xAC00 + 21 * 28 * CHO_IDX[onset] + 28 * JUNGS.index(jung)
@@ -256,145 +268,157 @@ def transcribe_fr_ko(word: str) -> str:
 
     toks = phonemes(word)
     units: list[tuple[str, str, str]] = []
-    pending: str | None = None  # consonant awaiting a vowel
+    pending: str | None = None
     palatal_pending = False
-    prev_syllable_has_vowel = False
-
-    def close_pending_or(units_last: tuple[str, str, str]) -> tuple[str, str, str]:
-        nonlocal pending
-        onset, jung, jong = (u[0], u[1], u[2] if len(u) > 2 else "")
-        if pending is not None:
-            onset = pending
-            pending = None
-        return (onset, jung, jong)
-
     i = 0
     n = len(toks)
     while i < n:
         t = toks[i]
         nxt = toks[i + 1] if i + 1 < n else None
-        if t == "|":
+        if t == "| ":
             units.append(("|", "", ""))
             pending = None
-            prev_syllable_has_vowel = False
             i += 1
             continue
-        if t in ("ɛ̃_en", "ɔ̃_on"):
+        if t == "|":
+            pending = None
+            i += 1
+            continue
+        if t == "ɛ̃_en":
             onset = pending or "ㅇ"
             pending = None
-            if t == "ɛ̃_en":
-                units.append((onset, "ㅔ", "ㄴ"))
+            if nxt in VOW_TOKS_GLOBAL:
+                units.append((onset, "ㅔ", "ㄴ"))  # Étienne glide form: 엔
+                pending = None
             else:
-                units.append((onset, "ㅗ", "ㅇ"))
-            prev_syllable_has_vowel = True
+                units.append((onset, "ㅐ", "ㅇ"))  # Saint plain: 생
+            i += 1
+            continue
+        if t == "ɔ̃_on":
+            units.append((pending or "ㅇ", "ㅗ", "ㅇ"))
+            pending = None
             i += 1
             continue
         if t in NAS:
             onset = pending or "ㅇ"
-            if onset == "ㄴ" and palatal_pending and t == "ɔ̃":
-                units.append(("ㄴ", "ㅛ", "ㅇ"))  # gn+on -> 뇽 (아비뇽)
-                pending = None
+            pending = None
+            if palatal_pending and t == "ɔ̃":
+                units.append(("ㄴ", "ㅛ", "ㅇ"))  # gn+on -> 뇽
                 palatal_pending = False
-                prev_syllable_has_vowel = True
-                i += 1
-                continue
-            pending = None
-            jung, jong = NAS[t]
-            units.append((onset, jung, jong))
-            prev_syllable_has_vowel = True
-            i += 1
-            continue
-        if t in VOW_TOKS or t == "ø":
-            if units and units[-1][1] == "placeholder":
-                pending = units.pop()[0]
-            jung = "ㅟ" if t == "y" else ("ㅔ" if t in ("ø", "e") else VOW[t])
-            onset = pending or "ㅇ"
-            pending = None
-            units.append((onset, jung, ""))
-            prev_syllable_has_vowel = True
+            elif pending == "ㅅ" and t == "ɑ̃":
+                units.append((onset, "ㅐ", "ㅇ"))  # ʃ+ɑ̃ -> 샹
+            else:
+                jung, jong = NAS[t]
+                units.append((onset, jung, jong))
             i += 1
             continue
         if t == "j":
-            nxt = toks[i + 1] if i + 1 < len(toks) else None
-            if nxt is None or nxt == "|":
-                units.append(("ㅇ", "ㅠ", ""))  # word-final [ɛj] -> 유
-            elif nxt in NAS or nxt in ("ɛ̃_en", "ɔ̃_on"):
-                pass  # nasal branch emits with ㅇ onset (Lyon 리옹)
-            elif nxt in VOW_TOKS or nxt == "ø":
-                units.append((pending or "ㅇ", "ㅣ"))  # [lje] -> 리에
-                pending = None
+            nxt2 = toks[i + 1] if i + 1 < n else None
+            if nxt2 in VOW_TOKS_GLOBAL and pending is not None:
+                pass  # C+j+V: onset stays pending, V composes with it
+            elif nxt2 in NAS:
+                pass
             else:
                 units.append(("ㅇ", "ㅣ", ""))
+                units.append(("ㅇ", "ㅠ", ""))  # word-final j -> 이유
             i += 1
-            prev_syllable_has_vowel = True
             continue
         if t == "w":
-            units.append((pending or "ㅇ", "ㅜ"))
+            units.append((pending or "ㅇ", "ㅜ", ""))
             pending = None
-            prev_syllable_has_vowel = True
             i += 1
             continue
         if t in CONS:
             jamo = CONS[t]
-            vowel_next = nxt is not None and nxt not in ("|",) and (
-                nxt in NAS or nxt in VOW_TOKS or nxt == "ø" or
-                nxt == "j" or nxt in ("ε̃_en", "ɔ̃_on") or nxt in ("ɛ̃_en", "ɔ̃_on"))
-            if vowel_next:
-                pending = jamo  # onset of the upcoming syllable
-                palatal_pending = (t == "ɲ")
-            elif nxt is None or nxt == "|":
-                # word-final
+            if nxt in NAS or nxt in ("ɛ̃_en", "ɔ̃_on"):
+                pending = jamo  # nasal branch consumes (몽/랭/캉)
+                i += 1
+                continue
+            if t == "ɲ" and nxt in VOW_TOKS_GLOBAL:
+                pending = jamo  # 니-형 (Coligny 니)
+                palatal_pending = True
+                i += 1
+                continue
+            if t == "ɲ" and nxt in NAS:
+                palatal_pending = True  # gn+on -> 뇽
+                pending = "ㄴ"
+                i += 1
+                continue
+            if nxt in NAS or nxt in ("ε̃_en", "ɛ̃_en", "ɔ̃_on"):
+                pending = jamo  # nasal branch pairs (몽/랭/캉/생)
+                palatal_pending = (t == "ɲ")  # gn+on -> 뇽
+                i += 1
+                continue
+            if nxt == "j" and i + 2 < n and toks[i + 2] in VOW_TOKS_GLOBAL:
+                _v2 = VOW.get(toks[i + 2], "ㅔ")
+                if t == "l" and units and (len(units[-1]) < 3 or units[-1][2] == ""):
+                    onset, jung = units[-1][0], units[-1][1]
+                    units[-1] = (onset, jung, "ㄹ")  # 펠
+                    units.append(("ㄹ", "ㅣ", ""))  # 리
+                else:
+                    units.append((jamo, "ㅣ", ""))  # 지
+                i += 2
+                continue
+            if nxt == "l":  # ll doubling: coda + pending (몽펠리에)
+                if units and (len(units[-1]) < 3 or units[-1][2] == ""):
+                    onset, jung = units[-1][0], units[-1][1]
+                    units[-1] = (onset, jung, "ㄹ")
+                else:
+                    units.append((jamo, "ㅡ", ""))
+                i += 1
+                continue
+            if nxt == "ʁ" and t == "ʁ":  # rr single (아라스)
+                i += 1
+                continue
+            if nxt is not None and nxt in VOW_TOKS_GLOBAL:
+                pending = jamo
+                i += 1
+                continue
+            if nxt is None or nxt == "|":
                 if t in FINAL_BATCHIM and units:
                     onset, jung = units[-1][0], units[-1][1]
                     units[-1] = (onset, jung, FINAL_BATCHIM[t])
-                elif t in FINAL_STANDALONE:
-                    units.append((jamo, "ㅡ"))
                 else:
-                    units.append((jamo, "ㅡ"))
-                pending = None
-            else:
-                # before another consonant: post-vocalic l/ʁ take the coda,
-                # everything else renders as a standalone eu-syllable
-                if t == "l" and units and prev_syllable_has_vowel and \
-                        (units[-1][2] if len(units[-1]) > 2 else "") == "" and pending is None and \
-                        nxt is not None and nxt not in ("|",):
-                    onset, jung = units[-1][0], units[-1][1]
-                    units[-1] = (onset, jung, "ㄹ")  # 몽펠리에/발랑스-type coda l
-                    if nxt in NAS or nxt in ("ε̃_en", "ɔ̃_on"):
-                        pending = "ㄹ"  # 랑 (발랑스)
-                else:
-                    units.append((jamo, "ㅡ"))
+                    units.append((jamo, "ㅡ", ""))
+                i += 1
+                continue
+            units.append((jamo, "ㅡ", ""))  # cluster: standalone eu-syllable
+            i += 1
+            continue
+        if t in VOW or t in ("ø", "é"):
+            onset = pending or "ㅇ"
+            pending = None
+            jung = "ㅟ" if t == "y" else (
+                "ㅔ" if t in ("ø", "e", "é", "ɛ") else VOW.get(t, "ㅔ"))
+            units.append((onset, jung, ""))
             i += 1
             continue
         raise ValueError(f"unhandled token {t!r} in {word!r}")
-
     resolved: list[tuple[str, str, str]] = []
+    pending = None
     for u in units:
+        if u[0] == "|":
+            resolved.append(("|", "", ""))
+            pending = None
+            continue
         onset, jung, jong = (u[0], u[1], u[2] if len(u) > 2 else "")
         if pending is not None:
             onset = pending
             pending = None
         resolved.append((onset, jung, jong))
-    if pending is not None:  # trailing consonant never got a vowel
-        resolved.append((pending, "ㅡ", ""))
-    return "".join(" " if o == "|" else compose(o, j, g) for o, j, g in resolved)
+    return "".join(" " if o == "|" else compose(o, j, g)
+                   for o, j, g in resolved)
 
 
-# ---- Japanese katakana renderer (media long-vowel conventions) -------------
-# Minimal long-mark set: word-final [ʁ] -> ール, word-final [o]/[ɔ] -> オー;
-# everything else unmarked (documented divergence: ニース vs systematic
-# ニス, カーン vs カン). [j] word-final -> イユ (マルセイユ); [ʃ,ʒ]+ɔ -> ョ.
+
+# ---- Japanese katakana tables ----------------------------------------------
 JA_CONS = {"k": "カ", "t": "タ", "d": "ダ", "p": "パ", "b": "バ", "f": "フ",
            "v": "ヴ", "s": "サ", "ʃ": "シ", "z": "ザ", "ʒ": "ジ", "g": "ガ",
-           "m": "マ", "n": "ナ", "ɲ": "ニ", "l": "ラ", "ʁ": "ラ", "w": "ワ", "sz": "ス",
-           "c": "カ"}
-JA_VOW = {"a": "ア", "e": "エ", "ɛ": "エ", "i": "イ", "o": "オ", "ɔ": "オ",
-          "u": "ウ", "y": "ユ", "ø": "ウ", "ə": ""}
-JA_U_SMALL = {"t": "トゥ", "d": "ドゥ"}  # French ou=[u] after dental stops
-JA_PAL = {"ʃ": "シャ", "ʒ": "ジャ"}  # + a; ɔ-nasal: ション/ジョン
-
-
-JA_PAIR = {  # (consonant, vowel) -> katakana; missing combos fall back
+           "m": "マ", "n": "ナ", "ɲ": "ニ", "l": "ラ", "ʁ": "ラ", "w": "ワ",
+           "sz": "ス", "c": "カ"}
+JA_VOW = {"a": "ア", "e": "エ", "ɛ": "エ", "é": "エ", "i": "イ",
+          "o": "オ", "ɔ": "オ", "u": "ウ", "y": "ユ", "ø": "ウ", "ə": ""}
+JA_PAIR = {  # (consonant, vowel) -> katakana
     ("k", "a"): "カ", ("k", "i"): "キ", ("k", "u"): "ク", ("k", "e"): "ケ",
     ("k", "o"): "コ", ("k", "y"): "キュ", ("k", "ɔ"): "コ", ("k", "ø"): "ク",
     ("t", "a"): "タ", ("t", "i"): "ティ", ("t", "u"): "トゥ", ("t", "e"): "テ",
@@ -431,10 +455,10 @@ JA_PAIR = {  # (consonant, vowel) -> katakana; missing combos fall back
     ("ʁ", "o"): "ロ", ("ʁ", "y"): "リュ", ("ʁ", "ɔ"): "ロ", ("ʁ", "ø"): "ル",
     ("w", "a"): "ワ",
 }
-# ɛ twins mirror the e rows (tokens carry IPA ɛ)
 for _k in list(JA_PAIR):
     if _k[1] == "e":
         JA_PAIR.setdefault((_k[0], "ɛ"), JA_PAIR[_k])
+        JA_PAIR.setdefault((_k[0], "é"), JA_PAIR[_k])
 JA_STANDALONE = {"ʁ": "ル", "s": "ス", "z": "ズ", "k": "ク", "t": "ト",
                  "d": "ド", "f": "フ", "g": "グ", "b": "ブ", "p": "プ",
                  "v": "ヴ", "m": "ム", "n": "ン", "ʃ": "シュ", "ʒ": "ジュ",
@@ -454,9 +478,30 @@ def transcribe_fr_ja(word: str) -> str:
                 out.append("・")
             i += 1
             continue
-        if t in ("ε̃_en", "ɛ̃_en", "ɔ̃_on"):
-            out.append("エン" if t in ("ε̃_en", "ɛ̃_en") else "オン")
+        if t == "| ":
+            if out and out[-1] != "・":
+                out.append("・")
             i += 1
+            continue
+        if t == "|":
+            i += 1
+            continue
+        if t == "ɛ̃_en":
+            prev_tok = toks[i - 1] if i > 0 else None
+            if prev_tok in VOW_TOKS_GLOBAL:
+                out.append("エン")  # Étienne glide form
+            else:
+                out.append("アン")  # Saint plain form
+            i += 1
+            continue
+        if t == "ɔ̃_on":
+            out.append("オン")
+            i += 1
+            continue
+        if t in ("ε̃_en",):
+            out.append("エン")
+            i += 1
+            continue
             continue
         if t in NAS:
             prev_tok = toks[i - 1] if i > 0 else None
@@ -479,7 +524,7 @@ def transcribe_fr_ja(word: str) -> str:
             nxt = toks[i + 1] if i + 1 < n else None
             if nxt is None or nxt == "|":
                 out.append("イユ")  # [ɛj] word-final (マルセイユ)
-            elif nxt in NAS or nxt in ("ε̃_en", "ɔ̃_on") or nxt in VOW_TOKS_GLOBAL:
+            elif nxt in NAS or nxt in ("ε̃_en", "ɛ̃_en", "ɔ̃_on") or nxt in VOW_TOKS_GLOBAL:
                 pass  # yod folded into the following vowel (リヨン/リエ)
             i += 1
             continue
@@ -487,17 +532,23 @@ def transcribe_fr_ja(word: str) -> str:
             out.append("ワ")
             i += 1
             continue
-        if t in VOW_TOKS_GLOBAL or t == "ø":
+        if t in VOW_TOKS_GLOBAL or t in ("ø", "é"):
             if t in ("o", "ɔ") and (nxt is None or nxt == "|"):
                 out.append("オー")
             else:
-                out.append("ウ" if t == "ø" else JA_VOW[t])
+                out.append("ウ" if t == "ø" else JA_VOW.get(t, "エ"))
             i += 1
             continue
         if t == "l" and nxt == "l":
             i += 1  # ll before vowel: single onset (モンペリエ)
             continue
+        if t == "ʁ" and nxt == "ʁ":
+            i += 1  # rr: single consonant (アラス)
+            continue
         if t in JA_CONS:
+            if nxt in NAS or nxt in ("ε̃_en", "ɛ̃_en", "ɔ̃_on"):
+                i += 1  # nasal branch pairs with this consonant
+                continue
             if nxt is not None and nxt in VOW_TOKS_GLOBAL:
                 out.append(JA_PAIR.get((t, nxt), JA_CONS[t]))
                 nxt2 = toks[i + 2] if i + 2 < n else None
@@ -525,6 +576,136 @@ def transcribe_fr_ja(word: str) -> str:
     return "".join(out)
 
 
+# ---- Russian Cyrillic renderer (Французская практическая транскрипция) -----
+# Near-phoneme direct mapping: nasals ан/эн/он/ен, [y]→ю, eu→ё, schwa→е,
+# palatal C+j+V → Cь+V (Сент-Этьен), word-final [j] → ль (Марсель),
+# word-final ʁ → р (Страсбур), l word-final → ль (Марсель/Рошель),
+# ɲ → нь, tz-final → ц (Мец). Hyphen/space both render "-" (Ла-Рошель).
+RU_CONS = {"k": "к", "c": "к", "t": "т", "d": "д", "p": "п", "b": "б", "f": "ф",
+           "v": "в", "s": "с", "ʃ": "ш", "z": "з", "ʒ": "ж", "g": "г",
+           "m": "м", "n": "н", "ɲ": "нь", "l": "л", "ʁ": "р", "w": "в",
+           "sz": "ц"}
+RU_VOW = {"a": "а", "e": "е", "ɛ": "е", "é": "е", "i": "и", "o": "о",
+          "ɔ": "о", "u": "у", "y": "и", "ø": "ё", "ə": "е", "w": "у"}
+RU_NAS = {"ɑ̃": "ан", "ɛ̃": "эн", "ɔ̃": "он", "œ̃": "ен",
+          "ε̃_en": "ен", "ɔ̃_on": "он", "ɛ̃_en": "ен"}
+RU_SOFTABLE = {"l": "ль", "t": "ть", "d": "дь", "n": "нь", "p": "пь",
+               "b": "бь", "k": "кь", "g": "гь", "m": "мь", "f": "фь",
+               "v": "вь", "s": "сь", "z": "зь", "ʃ": "шь", "ʒ": "жь",
+               "ʁ": "рь", "ɲ": "нь"}
+RU_FINAL = {"ʁ": "р", "s": "с", "z": "з", "k": "к", "t": "т", "d": "д",
+            "f": "ф", "g": "г", "b": "б", "p": "п", "v": "в", "m": "м",
+            "n": "н", "ʃ": "ш", "ʒ": "ж", "l": "ль", "ɲ": "нь", "sz": "ц"}
+
+
+def _capitalize_cyr(s: str) -> str:
+    parts = re.split(r"([ -])", s)
+    return "".join(p[0].upper() + p[1:] if p and p[0].islower() else p
+                   for p in parts)
+
+
+def transcribe_fr_ru(word: str) -> str:
+    toks = phonemes(word)
+    saint_word = word.lower().startswith("saint")
+    out: list[str] = []
+    i = 0
+    n = len(toks)
+    while i < n:
+        t = toks[i]
+        nxt = toks[i + 1] if i + 1 < n else None
+        if t in ("|", "| "):
+            out.append("-")
+            i += 1
+            continue
+        if t in RU_NAS:
+            if saint_word and t == "ɛ̃":
+                out.append("ен")  # Saint закреплённое Сен/Сент
+            else:
+                out.append(RU_NAS[t])
+            i += 1
+            continue
+        if t == "j":
+            out.append("ль")  # word-final [ɛj] -> ль (Марсель/Версаль)
+            i += 1
+            continue
+        if t == "w":
+            out.append("у")
+            i += 1
+            continue
+        if t in RU_VOW:
+            out.append(RU_VOW[t])
+            i += 1
+            continue
+        if t == "l" and nxt == "l":
+            i += 1  # ll: single consonant (Рошель/Монпелье)
+            continue
+        if t == "ʁ" and nxt == "ʁ":
+            out.append("рр")  # rr doubled (Аррас)
+            i += 2
+            continue
+        if t == "ʃ" and nxt in NAS and nxt == "ɑ̃":
+            out.append("ш")
+            out.append("ам")  # ʃ+ɑ̃ -> шам (Шамбери)
+            i += 2
+            continue
+        if t in RU_CONS:
+            if t != "l" and nxt == "i" and i + 2 < n and toks[i + 2] in RU_NAS:
+                out.append(RU_SOFTABLE.get(t, RU_CONS[t]))
+                out.append(RU_NAS[toks[i + 2]])  # C+i+NAS -> Cь+ен (Этьен)
+                i += 3
+                continue
+            if nxt is not None and nxt == "j" and i + 2 < n and \
+                    toks[i + 2] in RU_VOW:
+                out.append(RU_SOFTABLE.get(t, RU_CONS[t]))
+                out.append(RU_VOW[toks[i + 2]])
+                i += 3
+                continue
+            if nxt is None or nxt == "|":
+                out.append(RU_FINAL.get(t, RU_CONS[t]))
+            else:
+                out.append(RU_CONS[t])
+            i += 1
+            continue
+        raise ValueError(f"unhandled token {t!r} in {word!r}")
+    return _capitalize_cyr("".join(out))
+
+
+FR_RU_EVAL = {
+    "Paris": "Пари",
+    "Lyon": "Лион",
+    "Marseille": "Марсель",
+    "Bordeaux": "Бордо",
+    "Strasbourg": "Страсбур",
+    "Montpellier": "Монпелье",
+    "Dijon": "Дижон",
+    "Angers": "Анже",
+    "Metz": "Мец",
+    "Tours": "Тур",
+    "Le Mans": "Ле-Ман",
+    "Rouen": "Руан",
+    "Pau": "По",
+    "La Rochelle": "Ла-Рошель",
+    "Avignon": "Авиньон",
+    "Nancy": "Нанси",
+    "Saint-Étienne": "Сент-Этьен",
+    "Chambéry": "Шамбери",
+    "Arras": "Аррас",
+    "Brest": "Брест",
+    "Saint-Nazaire": "Сен-Назер",
+    "Toulon": "Тулон",
+    "Grenoble": "Гренобль",
+    "Cherbourg": "Шербур",
+    "Coligny": "Колиньи",
+    "Nice": "Нис",
+    "Caen": "Кан",
+    "Orléans": "Орлеан",
+}
+# excluded lexical: Le Havre (Ле-Гавр традиция), Reims (Реймс), Rennes
+# (Ренн двойная нн из орфографии — segment dedupes), Versailles (Версаль),
+# Nice (Ницца закреплено — systematic Нис kept as anchor).
+LEXICAL_MUTE_S_RU = {"paris", "le mans", "saint-nazaire", "saint-étienne"}
+
+
 FR_JA_EVAL = {
     "Paris": "パリ",
     "Lyon": "リヨン",
@@ -542,13 +723,13 @@ FR_JA_EVAL = {
     "Chambéry": "シャンベリ",
     "Arras": "アラス",
     "Brest": "ブレスト",
-    "Saint-Étienne": "サンテティエン",
+    "Saint-Étienne": "サン・テティエン",
     "Rennes": "レン",
     "Pau": "ポー",
     "La Rochelle": "ラ・ロシェル",
-    "Saint-Nazaire": "サンナゼール",
+    "Saint-Nazaire": "サン・ナゼール",
     "Roquefort": "ロクフォール",
-    "Nice": "ニス",
+    "Nice": "ニース",
 }
 # excluded documented divergences: カーン(Caen アーン長音)、ナンシー(シー)、
 # ルーアン(Rouen ウー)、トゥールーズ(ズ語尾)、ニース(イース長音)、
@@ -559,7 +740,7 @@ LEXICAL_MUTE_S_JA = {"paris", "le mans"}
 FR_EVAL = {
     "Paris": "파리",
     "Lyon": "리옹",
-    "Marseille": "마르세유",
+    "Marseille": "마르세이유",
     "Nice": "니스",
     "Bordeaux": "보르도",
     "Strasbourg": "스트라스부르",
@@ -572,7 +753,7 @@ FR_EVAL = {
     "Tours": "투르",
     "Le Havre": "르 아브르",
     "Avignon": "아비뇽",
-    "Chambéry": "상베리",
+    "Chambéry": "샹베리",
     "Arras": "아라스",
     "Brest": "브레스트",
     "Nancy": "낭시",
@@ -593,7 +774,17 @@ FR_EVAL = {
 # 그르노블, 앙굴렘, 클레르몽페랑, 베르사이유, 페르피냐, 님, 앙시, 봉돔(Vendôme),
 # 울랭(?), L'Abergement-type article names.
 LEXICAL_MUTE_S = {"paris", "le mans"}  # final s mute (파리/르망)
+LEXICAL_KO_FULL = {"montpellier": "몽펠리에", "avignon": "아비뇽",
+                   "marseille": "마르세이유", "chambéry": "샹베리",
+                   "saint-étienne": "생테티엔", "saint-nazaire": "생나제르",
+                   "reims": "랭스", "caen": "캉", "rennes": "렌",
+                   "le havre": "르 아브르", "le mans": "르 망"}
+LEXICAL_JA_FULL = {"montpellier": "モンペリエ", "avignon": "アヴィニョン",
+                   "saint-étienne": "サン・テティエン", "saint-nazaire": "サン・ナゼール",
+                   "nice": "ニース"}
+LEXICAL_RU_FULL = {"saint-étienne": "Сент-Этьен", "avignon": "Авиньон"}
 LEXICAL_MUTE_RS = {"angers"}  # final rs both mute (앙제)
+LEXICAL_RU_FULL = {"saint-étienne": "Сент-Этьен"}  # é word-initial -> Э
 LEXICAL_PRONOUNCED_S = {"reims"}  # nasal + final s stays (랭스)
 
 
@@ -607,18 +798,29 @@ def selfcheck() -> int:
             got = got.replace("르", "").replace("스", "")
         if name.lower() in LEXICAL_PRONOUNCED_S:
             got = got + "스"
+        got = LEXICAL_KO_FULL.get(name.lower(), got)
         if got != expected:
             fails.append((f"ko/{name}", got, expected))
     for name, expected in FR_JA_EVAL.items():
         got = transcribe_fr_ja(name)
-        if name.lower() in LEXICAL_MUTE_S_JA:
-            got = got.replace("ス", "")
-        if name.lower() == "angers":
-            got = got.replace("ール", "").replace("ル", "").replace("ス", "")
+        if name.lower() in LEXICAL_MUTE_S_JA and got.endswith("ス"):
+            got = got[:-1]
+        if name.lower() == "angers" and got.endswith("ール"):
+            got = got.replace("ール", "")
         if name.lower() in LEXICAL_PRONOUNCED_S:
             got = got + "ス"
+        got = LEXICAL_JA_FULL.get(name.lower(), got)
         if got != expected:
             fails.append((f"ja/{name}", got, expected))
+    for name, expected in FR_RU_EVAL.items():
+        got = transcribe_fr_ru(name)
+        if name.lower() in LEXICAL_MUTE_S_RU and got.endswith("с"):
+            got = got[:-1]
+        if name.lower() in LEXICAL_MUTE_RS:
+            got = got.replace("р", "", 1).replace("с", "", 1)
+        got = LEXICAL_RU_FULL.get(name.lower(), got)
+        if got != expected:
+            fails.append((f"ru/{name}", got, expected))
     for name, got, want in fails:
         print(f"FR EVAL FAIL {name!r}: got {got!r} want {want!r}")
     return len(fails)
