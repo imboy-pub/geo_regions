@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-35c2e691fdead242",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9984,
-    "missingNames": 362,
+    "explicitNames": 9983,
+    "missingNames": 363,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:135235": "provisional",
@@ -2163,7 +2163,6 @@
       "csc-city:137390": "provisional",
       "csc-city:137391": "provisional",
       "csc-city:137392": "provisional",
-      "csc-city:137393": "provisional",
       "csc-city:137394": "provisional",
       "csc-city:137395": "provisional",
       "csc-city:137396": "provisional",
@@ -12152,7 +12151,6 @@
     "csc-city:137390": "Cataeggio",
     "csc-city:137391": "Catania",
     "csc-city:137392": "Catanzaro",
-    "csc-city:137393": "Catena",
     "csc-city:137394": "Catenanuova",
     "csc-city:137395": "Catignano",
     "csc-city:137396": "Cattolica",
@@ -19981,7 +19979,7 @@
     "iso3166-2:IT-VV": "Vibo Valentia"
   },
   "protocolVersion": "1.0",
-  "revision": "l-cc497748671463c4",
+  "revision": "l-8153f9628e690998",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19405,
-    "missingNames": 7415,
+    "explicitNames": 19402,
+    "missingNames": 7418,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:110965": "provisional",
@@ -990,8 +990,6 @@
       "csc-city:112123": "provisional",
       "csc-city:112124": "provisional",
       "csc-city:112125": "provisional",
-      "csc-city:112126": "provisional",
-      "csc-city:112127": "provisional",
       "csc-city:112128": "provisional",
       "csc-city:112129": "provisional",
       "csc-city:112130": "provisional",
@@ -13542,7 +13540,6 @@
       "csc-city:127549": "provisional",
       "csc-city:127550": "provisional",
       "csc-city:127551": "provisional",
-      "csc-city:127553": "provisional",
       "csc-city:127554": "provisional",
       "csc-city:127555": "provisional",
       "csc-city:127556": "provisional",
@@ -20400,8 +20397,6 @@
     "csc-city:112123": "ベルモア",
     "csc-city:112124": "ベローズ・フォールズ",
     "csc-city:112125": "ベルポート",
-    "csc-city:112126": "ベル",
-    "csc-city:112127": "ベル",
     "csc-city:112128": "ベルビュー",
     "csc-city:112129": "ベルヴィル",
     "csc-city:112130": "ベルウッド",
@@ -32952,7 +32947,6 @@
     "csc-city:127549": "テキシコ",
     "csc-city:127550": "サッチャー",
     "csc-city:127551": "セイヤー",
-    "csc-city:127553": "土地面積",
     "csc-city:127554": "ブロンクス区",
     "csc-city:127555": "コロニー",
     "csc-city:127556": "ザ・クロッシングス",
@@ -38823,7 +38817,7 @@
     "iso3166-2:US-WY": "ワイオミング州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-5dd9b5724c587ca6",
+  "revision": "l-d6e7d65c53711ee9",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

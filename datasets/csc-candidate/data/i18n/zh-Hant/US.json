@@ -2,9 +2,9 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19065,
+    "explicitNames": 19062,
     "machineCandidate": true,
-    "missingNames": 7755,
+    "missingNames": 7758,
     "proofreadFixesApplied": 7,
     "status": "research-seed",
     "translationQualityById": {
@@ -985,8 +985,6 @@
       "csc-city:112123": "machine-candidate",
       "csc-city:112124": "machine-candidate",
       "csc-city:112125": "machine-candidate",
-      "csc-city:112126": "machine-candidate",
-      "csc-city:112127": "machine-candidate",
       "csc-city:112128": "machine-candidate",
       "csc-city:112129": "machine-candidate",
       "csc-city:112130": "machine-candidate",
@@ -13268,7 +13266,6 @@
       "csc-city:127549": "machine-candidate",
       "csc-city:127550": "machine-candidate",
       "csc-city:127551": "machine-candidate",
-      "csc-city:127553": "machine-candidate",
       "csc-city:127554": "machine-candidate",
       "csc-city:127555": "machine-candidate",
       "csc-city:127556": "machine-candidate",
@@ -20056,8 +20053,6 @@
     "csc-city:112123": "貝爾莫爾",
     "csc-city:112124": "貝爾羅斯菲爾斯",
     "csc-city:112125": "貝爾波特",
-    "csc-city:112126": "鐘声",
-    "csc-city:112127": "鐘声",
     "csc-city:112128": "貝爾維尤",
     "csc-city:112129": "貝爾維爾",
     "csc-city:112130": "貝爾伍德",
@@ -32339,7 +32334,6 @@
     "csc-city:127549": "特克西科",
     "csc-city:127550": "撒切爾",
     "csc-city:127551": "塞耶",
-    "csc-city:127553": "面積",
     "csc-city:127554": "布朗克斯",
     "csc-city:127555": "歌洛莉",
     "csc-city:127556": "十字路口",
@@ -38146,7 +38140,7 @@
     "iso3166-2:US-WY": "懷俄明州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-110aa4bab380d035",
+  "revision": "l-ddb2eb7bfcea566a",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 7066,
-    "missingNames": 52,
+    "explicitNames": 7063,
+    "missingNames": 55,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:100000": "provisional",
@@ -1635,7 +1635,6 @@
       "csc-city:101730": "provisional",
       "csc-city:101731": "provisional",
       "csc-city:101732": "provisional",
-      "csc-city:101733": "provisional",
       "csc-city:101734": "provisional",
       "csc-city:101735": "provisional",
       "csc-city:101736": "provisional",
@@ -2143,7 +2142,6 @@
       "csc-city:102269": "provisional",
       "csc-city:102270": "provisional",
       "csc-city:102271": "provisional",
-      "csc-city:102272": "provisional",
       "csc-city:102273": "provisional",
       "csc-city:102274": "provisional",
       "csc-city:102275": "provisional",
@@ -4786,7 +4784,6 @@
       "csc-city:99526": "provisional",
       "csc-city:99527": "provisional",
       "csc-city:99528": "provisional",
-      "csc-city:99529": "provisional",
       "csc-city:99530": "provisional",
       "csc-city:99531": "provisional",
       "csc-city:99532": "provisional",
@@ -8706,7 +8703,6 @@
     "csc-city:101730": "Сырское",
     "csc-city:101731": "Сиртич",
     "csc-city:101732": "Сысертский район",
-    "csc-city:101733": "Сысерть",
     "csc-city:101734": "Сюмси",
     "csc-city:101735": "Сызрань",
     "csc-city:101736": "Табага",
@@ -9214,7 +9210,6 @@
     "csc-city:102269": "Верхняя Пышма",
     "csc-city:102270": "Верхняя Салда",
     "csc-city:102271": "Верхняя Синячиха",
-    "csc-city:102272": "Верхняя Сысерть",
     "csc-city:102273": "Верхняя Тишанка",
     "csc-city:102274": "Верхняя Тойма",
     "csc-city:102275": "Верхняя Тура",
@@ -11857,7 +11852,6 @@
     "csc-city:99526": "Кызыл-Хая",
     "csc-city:99527": "Кызыл-Мажалык",
     "csc-city:99528": "Кызыл-Октябрьский",
-    "csc-city:99529": "ЛМС",
     "csc-city:99530": "Лабинск",
     "csc-city:99531": "Лабытнанги",
     "csc-city:99532": "Ладовская Балка",
@@ -14145,7 +14139,7 @@
     "iso3166-2:RU-ZAB": "Забайкальский"
   },
   "protocolVersion": "1.0",
-  "revision": "l-6fd8ba1c09827465",
+  "revision": "l-05d7d4de64b003f2",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

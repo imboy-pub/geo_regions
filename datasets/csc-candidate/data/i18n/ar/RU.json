@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5259,
-    "missingNames": 1859,
+    "explicitNames": 5256,
+    "missingNames": 1862,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:100000": "provisional",
@@ -1631,7 +1631,6 @@
       "csc-city:101730": "provisional",
       "csc-city:101731": "provisional",
       "csc-city:101732": "provisional",
-      "csc-city:101733": "provisional",
       "csc-city:101734": "provisional",
       "csc-city:101735": "provisional",
       "csc-city:101736": "provisional",
@@ -2134,7 +2133,6 @@
       "csc-city:102269": "provisional",
       "csc-city:102270": "provisional",
       "csc-city:102271": "provisional",
-      "csc-city:102272": "provisional",
       "csc-city:102273": "provisional",
       "csc-city:102274": "provisional",
       "csc-city:102275": "provisional",
@@ -4745,7 +4743,6 @@
       "csc-city:99526": "provisional",
       "csc-city:99527": "provisional",
       "csc-city:99528": "provisional",
-      "csc-city:99529": "provisional",
       "csc-city:99530": "provisional",
       "csc-city:99531": "provisional",
       "csc-city:99532": "provisional",
@@ -6895,7 +6892,6 @@
     "csc-city:101730": "سيرسكوي",
     "csc-city:101731": "سيرتيش",
     "csc-city:101732": "رايون سيسيرتسكي",
-    "csc-city:101733": "سيسرت",
     "csc-city:101734": "سيومسي",
     "csc-city:101735": "سيزران",
     "csc-city:101736": "تاباجا",
@@ -7398,7 +7394,6 @@
     "csc-city:102269": "فيرخنيايا بيشما",
     "csc-city:102270": "فيرخنيايا سالدا",
     "csc-city:102271": "فيرخنيايا سينياتشيكا",
-    "csc-city:102272": "فيرخنيايا سيسرت",
     "csc-city:102273": "فيركنيايا تيشانكا",
     "csc-city:102274": "فيركنيايا تويما",
     "csc-city:102275": "فيرخنيايا تورا",
@@ -10009,7 +10004,6 @@
     "csc-city:99526": "كيزيل خيا",
     "csc-city:99527": "كيزيل-مازاليك",
     "csc-city:99528": "كيزيل-أوكتيابرسكي",
-    "csc-city:99529": "نظام إدارة التعلم",
     "csc-city:99530": "لاباينسك",
     "csc-city:99531": "لابيتنانغي",
     "csc-city:99532": "لادوفسكايا بالكا",
@@ -10531,7 +10525,7 @@
     "iso3166-2:RU-ZAB": "زابايكالسكي"
   },
   "protocolVersion": "1.0",
-  "revision": "l-abf533566f5d1f58",
+  "revision": "l-d31df1413e803727",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

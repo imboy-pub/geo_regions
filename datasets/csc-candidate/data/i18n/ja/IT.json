@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-35c2e691fdead242",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9966,
-    "missingNames": 380,
+    "explicitNames": 9965,
+    "missingNames": 381,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:135235": "provisional",
@@ -2161,7 +2161,6 @@
       "csc-city:137390": "provisional",
       "csc-city:137391": "provisional",
       "csc-city:137392": "provisional",
-      "csc-city:137393": "provisional",
       "csc-city:137394": "provisional",
       "csc-city:137395": "provisional",
       "csc-city:137396": "provisional",
@@ -12132,7 +12131,6 @@
     "csc-city:137390": "カタエッジョ",
     "csc-city:137391": "カターニア",
     "csc-city:137392": "カタンザーロ",
-    "csc-city:137393": "カテナ",
     "csc-city:137394": "カテナヌオーヴァ",
     "csc-city:137395": "カティニャーノ",
     "csc-city:137396": "カットーリカ",
@@ -19945,7 +19943,7 @@
     "iso3166-2:IT-VV": "ヴィボ・ヴァレンティア"
   },
   "protocolVersion": "1.0",
-  "revision": "l-9e20099b71da5860",
+  "revision": "l-25b9703b52b136ef",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

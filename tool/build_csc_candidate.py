@@ -297,7 +297,7 @@ def main():
             packs["en"][nid] = nfc(row["name"])
             for locale, key in TRANSLATION_LOCALES.items():
                 value = (row.get("translations") or {}).get(key)
-                if value:
+                if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
 
         # derive zh-Hant pack (machine-candidate)

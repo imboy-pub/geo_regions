@@ -2,9 +2,9 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5152,
+    "explicitNames": 5149,
     "machineCandidate": true,
-    "missingNames": 1966,
+    "missingNames": 1969,
     "proofreadFixesApplied": 3,
     "status": "research-seed",
     "translationQualityById": {
@@ -1594,7 +1594,6 @@
       "csc-city:101730": "machine-candidate",
       "csc-city:101731": "machine-candidate",
       "csc-city:101732": "machine-candidate",
-      "csc-city:101733": "machine-candidate",
       "csc-city:101734": "machine-candidate",
       "csc-city:101735": "machine-candidate",
       "csc-city:101736": "machine-candidate",
@@ -2092,7 +2091,6 @@
       "csc-city:102269": "machine-candidate",
       "csc-city:102270": "machine-candidate",
       "csc-city:102271": "machine-candidate",
-      "csc-city:102272": "machine-candidate",
       "csc-city:102273": "machine-candidate",
       "csc-city:102274": "machine-candidate",
       "csc-city:102275": "machine-candidate",
@@ -4645,7 +4643,6 @@
       "csc-city:99526": "machine-candidate",
       "csc-city:99527": "machine-candidate",
       "csc-city:99528": "machine-candidate",
-      "csc-city:99529": "machine-candidate",
       "csc-city:99530": "machine-candidate",
       "csc-city:99531": "machine-candidate",
       "csc-city:99532": "machine-candidate",
@@ -6752,7 +6749,6 @@
     "csc-city:101730": "瑟爾斯科耶",
     "csc-city:101731": "瑟爾蒂奇",
     "csc-city:101732": "瑟爾特斯基區",
-    "csc-city:101733": "系統",
     "csc-city:101734": "蘇姆西",
     "csc-city:101735": "賽茲蘭",
     "csc-city:101736": "塔巴加",
@@ -7250,7 +7246,6 @@
     "csc-city:102269": "上佩什馬",
     "csc-city:102270": "上薩爾達",
     "csc-city:102271": "上錫尼亞奇哈",
-    "csc-city:102272": "上系統",
     "csc-city:102273": "上蒂尚卡",
     "csc-city:102274": "上托伊馬",
     "csc-city:102275": "上圖拉",
@@ -9803,7 +9798,6 @@
     "csc-city:99526": "克孜勒哈亞",
     "csc-city:99527": "克孜勒-馬扎雷克",
     "csc-city:99528": "克孜勒-十月鎮",
-    "csc-city:99529": "学習管理系統",
     "csc-city:99530": "拉賓斯克",
     "csc-city:99531": "拉貝特南吉",
     "csc-city:99532": "拉多夫斯卡亞巴爾卡",
@@ -10320,7 +10314,7 @@
     "iso3166-2:RU-ZAB": "外貝加爾地區"
   },
   "protocolVersion": "1.0",
-  "revision": "l-360df032be273c89",
+  "revision": "l-05805a9e83b12e60",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

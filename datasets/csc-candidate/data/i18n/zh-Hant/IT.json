@@ -2,9 +2,9 @@
   "compatibleStructureRevision": "s-35c2e691fdead242",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 9936,
+    "explicitNames": 9935,
     "machineCandidate": true,
-    "missingNames": 410,
+    "missingNames": 411,
     "proofreadFixesApplied": 0,
     "status": "research-seed",
     "translationQualityById": {
@@ -2157,7 +2157,6 @@
       "csc-city:137390": "machine-candidate",
       "csc-city:137391": "machine-candidate",
       "csc-city:137392": "machine-candidate",
-      "csc-city:137393": "machine-candidate",
       "csc-city:137394": "machine-candidate",
       "csc-city:137395": "machine-candidate",
       "csc-city:137396": "machine-candidate",
@@ -12099,7 +12098,6 @@
     "csc-city:137390": "卡塔埃焦",
     "csc-city:137391": "卡塔尼亞",
     "csc-city:137392": "卡坦扎羅",
-    "csc-city:137393": "系列",
     "csc-city:137394": "卡泰納諾瓦",
     "csc-city:137395": "卡蒂尼亞諾",
     "csc-city:137396": "卡托利卡",
@@ -19888,7 +19886,7 @@
     "iso3166-2:IT-VV": "維博瓦倫蒂亞"
   },
   "protocolVersion": "1.0",
-  "revision": "l-0b5ab0d20516be46",
+  "revision": "l-32b2cc8e3fa79c03",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

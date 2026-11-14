@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5286,
-    "missingNames": 1832,
+    "explicitNames": 5283,
+    "missingNames": 1835,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:100000": "provisional",
@@ -1634,7 +1634,6 @@
       "csc-city:101730": "provisional",
       "csc-city:101731": "provisional",
       "csc-city:101732": "provisional",
-      "csc-city:101733": "provisional",
       "csc-city:101734": "provisional",
       "csc-city:101735": "provisional",
       "csc-city:101736": "provisional",
@@ -2139,7 +2138,6 @@
       "csc-city:102269": "provisional",
       "csc-city:102270": "provisional",
       "csc-city:102271": "provisional",
-      "csc-city:102272": "provisional",
       "csc-city:102273": "provisional",
       "csc-city:102274": "provisional",
       "csc-city:102275": "provisional",
@@ -4771,7 +4769,6 @@
       "csc-city:99526": "provisional",
       "csc-city:99527": "provisional",
       "csc-city:99528": "provisional",
-      "csc-city:99529": "provisional",
       "csc-city:99530": "provisional",
       "csc-city:99531": "provisional",
       "csc-city:99532": "provisional",
@@ -6925,7 +6922,6 @@
     "csc-city:101730": "シルスコエ",
     "csc-city:101731": "シルティク",
     "csc-city:101732": "シセルツキー・レーヨン",
-    "csc-city:101733": "Sysert’",
     "csc-city:101734": "シュムシ",
     "csc-city:101735": "シズラン",
     "csc-city:101736": "タバガ",
@@ -7430,7 +7426,6 @@
     "csc-city:102269": "ヴェルフナヤ・ピシュマ",
     "csc-city:102270": "ヴェルフニャヤ・サルダ",
     "csc-city:102271": "ヴェルフニャヤ・シニャチハ",
-    "csc-city:102272": "ヴェルフニャヤ・シセルト",
     "csc-city:102273": "ヴェルフニャヤ・ティシャンカ",
     "csc-city:102274": "ヴェルフナヤ・トイマ",
     "csc-city:102275": "ヴェルフニャヤ・トゥラ",
@@ -10062,7 +10057,6 @@
     "csc-city:99526": "キジル・カヤ",
     "csc-city:99527": "キジル・マジャリク",
     "csc-city:99528": "キジル・オクチャブリスキー",
-    "csc-city:99529": "LMS",
     "csc-city:99530": "ラビンスク",
     "csc-city:99531": "ラビトナンギ",
     "csc-city:99532": "ラドフスカヤ・バルカ",
@@ -10585,7 +10579,7 @@
     "iso3166-2:RU-ZAB": "ザバイカルスキー"
   },
   "protocolVersion": "1.0",
-  "revision": "l-0b68896c50dcf515",
+  "revision": "l-57c562cbbeada564",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

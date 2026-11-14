@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19101,
-    "missingNames": 7719,
+    "explicitNames": 19098,
+    "missingNames": 7722,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:110965": "provisional",
@@ -976,8 +976,6 @@
       "csc-city:112123": "provisional",
       "csc-city:112124": "provisional",
       "csc-city:112125": "provisional",
-      "csc-city:112126": "provisional",
-      "csc-city:112127": "provisional",
       "csc-city:112128": "provisional",
       "csc-city:112129": "provisional",
       "csc-city:112130": "provisional",
@@ -13289,7 +13287,6 @@
       "csc-city:127549": "provisional",
       "csc-city:127550": "provisional",
       "csc-city:127551": "provisional",
-      "csc-city:127553": "provisional",
       "csc-city:127554": "provisional",
       "csc-city:127555": "provisional",
       "csc-city:127556": "provisional",
@@ -20082,8 +20079,6 @@
     "csc-city:112123": "بيلمور",
     "csc-city:112124": "بولس فالس",
     "csc-city:112125": "بلبورت",
-    "csc-city:112126": "بيلز",
-    "csc-city:112127": "بيلز",
     "csc-city:112128": "بيلفيو",
     "csc-city:112129": "بيلفيل",
     "csc-city:112130": "بيلوود",
@@ -32395,7 +32390,6 @@
     "csc-city:127549": "تيكسيكو",
     "csc-city:127550": "تاتشر",
     "csc-city:127551": "ثاير",
-    "csc-city:127553": "المساحة",
     "csc-city:127554": "البرونكس",
     "csc-city:127555": "ذا كولوني",
     "csc-city:127556": "المعابر",
@@ -38215,7 +38209,7 @@
     "iso3166-2:US-WY": "وايومنغ"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e46073f38572f60b",
+  "revision": "l-c0e87795533b83a0",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

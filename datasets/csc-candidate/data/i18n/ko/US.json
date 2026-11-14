@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-b50434f0cdd22130",
   "countryCode": "US",
   "coverage": {
-    "explicitNames": 19241,
-    "missingNames": 7579,
+    "explicitNames": 19238,
+    "missingNames": 7582,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:110965": "provisional",
@@ -976,8 +976,6 @@
       "csc-city:112123": "provisional",
       "csc-city:112124": "provisional",
       "csc-city:112125": "provisional",
-      "csc-city:112126": "provisional",
-      "csc-city:112127": "provisional",
       "csc-city:112128": "provisional",
       "csc-city:112129": "provisional",
       "csc-city:112130": "provisional",
@@ -13387,7 +13385,6 @@
       "csc-city:127549": "provisional",
       "csc-city:127550": "provisional",
       "csc-city:127551": "provisional",
-      "csc-city:127553": "provisional",
       "csc-city:127554": "provisional",
       "csc-city:127555": "provisional",
       "csc-city:127556": "provisional",
@@ -20222,8 +20219,6 @@
     "csc-city:112123": "벨모어",
     "csc-city:112124": "벨로스폴스",
     "csc-city:112125": "벨포트",
-    "csc-city:112126": "종",
-    "csc-city:112127": "종",
     "csc-city:112128": "벨뷰",
     "csc-city:112129": "벨빌",
     "csc-city:112130": "벨우드",
@@ -32633,7 +32628,6 @@
     "csc-city:127549": "텍시코",
     "csc-city:127550": "대처",
     "csc-city:127551": "세이어",
-    "csc-city:127553": "에이커리지",
     "csc-city:127554": "브롱크스",
     "csc-city:127555": "식민지",
     "csc-city:127556": "크로싱스",
@@ -38495,7 +38489,7 @@
     "iso3166-2:US-WY": "와이오밍"
   },
   "protocolVersion": "1.0",
-  "revision": "l-d2d0e67d17f6b045",
+  "revision": "l-e5c1aa67a438aa55",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

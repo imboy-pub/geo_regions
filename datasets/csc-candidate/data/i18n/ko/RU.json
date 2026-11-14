@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5284,
-    "missingNames": 1834,
+    "explicitNames": 5281,
+    "missingNames": 1837,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:100000": "provisional",
@@ -1634,7 +1634,6 @@
       "csc-city:101730": "provisional",
       "csc-city:101731": "provisional",
       "csc-city:101732": "provisional",
-      "csc-city:101733": "provisional",
       "csc-city:101734": "provisional",
       "csc-city:101735": "provisional",
       "csc-city:101736": "provisional",
@@ -2139,7 +2138,6 @@
       "csc-city:102269": "provisional",
       "csc-city:102270": "provisional",
       "csc-city:102271": "provisional",
-      "csc-city:102272": "provisional",
       "csc-city:102273": "provisional",
       "csc-city:102274": "provisional",
       "csc-city:102275": "provisional",
@@ -4769,7 +4767,6 @@
       "csc-city:99526": "provisional",
       "csc-city:99527": "provisional",
       "csc-city:99528": "provisional",
-      "csc-city:99529": "provisional",
       "csc-city:99530": "provisional",
       "csc-city:99531": "provisional",
       "csc-city:99532": "provisional",
@@ -6923,7 +6920,6 @@
     "csc-city:101730": "시르스코예",
     "csc-city:101731": "시르티크",
     "csc-city:101732": "시세르츠키 레이온",
-    "csc-city:101733": "시스템",
     "csc-city:101734": "슘시",
     "csc-city:101735": "시즈란",
     "csc-city:101736": "타바가",
@@ -7428,7 +7424,6 @@
     "csc-city:102269": "베르흐냐야피시마",
     "csc-city:102270": "베르크냐야 살다",
     "csc-city:102271": "베르크냐야 신야치카",
-    "csc-city:102272": "베르크냐야 시세르트’",
     "csc-city:102273": "베르크냐야 티샨카",
     "csc-city:102274": "베르크냐야 토이마",
     "csc-city:102275": "베르크냐야 투라",
@@ -10058,7 +10053,6 @@
     "csc-city:99526": "키질-카야",
     "csc-city:99527": "키질-마잘릭",
     "csc-city:99528": "키질-옥티아브르스키",
-    "csc-city:99529": "LMS",
     "csc-city:99530": "라빈스크",
     "csc-city:99531": "라비트낭기",
     "csc-city:99532": "라도브스카야 발카",
@@ -10581,7 +10575,7 @@
     "iso3166-2:RU-ZAB": "자바이칼스키"
   },
   "protocolVersion": "1.0",
-  "revision": "l-2d163aa69f97890f",
+  "revision": "l-bb96e516bbde2ebd",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

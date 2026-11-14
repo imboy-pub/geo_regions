@@ -2,8 +2,8 @@
   "compatibleStructureRevision": "s-979283308bb6efcb",
   "countryCode": "RU",
   "coverage": {
-    "explicitNames": 5290,
-    "missingNames": 1828,
+    "explicitNames": 5287,
+    "missingNames": 1831,
     "status": "research-seed",
     "translationQualityById": {
       "csc-city:100000": "provisional",
@@ -1636,7 +1636,6 @@
       "csc-city:101730": "provisional",
       "csc-city:101731": "provisional",
       "csc-city:101732": "provisional",
-      "csc-city:101733": "provisional",
       "csc-city:101734": "provisional",
       "csc-city:101735": "provisional",
       "csc-city:101736": "provisional",
@@ -2141,7 +2140,6 @@
       "csc-city:102269": "provisional",
       "csc-city:102270": "provisional",
       "csc-city:102271": "provisional",
-      "csc-city:102272": "provisional",
       "csc-city:102273": "provisional",
       "csc-city:102274": "provisional",
       "csc-city:102275": "provisional",
@@ -4775,7 +4773,6 @@
       "csc-city:99526": "provisional",
       "csc-city:99527": "provisional",
       "csc-city:99528": "provisional",
-      "csc-city:99529": "provisional",
       "csc-city:99530": "provisional",
       "csc-city:99531": "provisional",
       "csc-city:99532": "provisional",
@@ -6931,7 +6928,6 @@
     "csc-city:101730": "Syrskoye",
     "csc-city:101731": "Sirtitsch",
     "csc-city:101732": "Sysertskiy Rayon",
-    "csc-city:101733": "Sysert’",
     "csc-city:101734": "Syumsi",
     "csc-city:101735": "Syzran’",
     "csc-city:101736": "Tabaga",
@@ -7436,7 +7432,6 @@
     "csc-city:102269": "Werchnjaja Pyschma",
     "csc-city:102270": "Werchnjaja Salda",
     "csc-city:102271": "Werchnjaja Sinjatschicha",
-    "csc-city:102272": "Verkhnyaya Sysert’",
     "csc-city:102273": "Verkhnyaya Tishanka",
     "csc-city:102274": "Werchnjaja Toima",
     "csc-city:102275": "Werchnjaja Tura",
@@ -10070,7 +10065,6 @@
     "csc-city:99526": "Kysyl-Chaja",
     "csc-city:99527": "Kysyl-Maschalyk",
     "csc-city:99528": "Kyzyl-Oktjabrski",
-    "csc-city:99529": "LMS",
     "csc-city:99530": "Labinsk",
     "csc-city:99531": "Labytnangi",
     "csc-city:99532": "Ladovskaya Balka",
@@ -10593,7 +10587,7 @@
     "iso3166-2:RU-ZAB": "Transbaikalien"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8ce8de9415bb630c",
+  "revision": "l-5ee71e81cbb5d7f8",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]
