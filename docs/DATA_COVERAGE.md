@@ -33,30 +33,30 @@ Cells count explicit source names / total nodes, including the country root. Pre
 
 | Country | zh-Hans | zh-Hant | en | ja | ko | ru | de | fr | it | ar |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| CN | 3430/3430 | 1/3430 | 3079/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 | 32/3430 |
-| JP | 48/48 | 1/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 |
-| KR | 18/18 | 1/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 |
-| US | 52/58 | 1/58 | 58/58 | 52/58 | 51/58 | 52/58 | 52/58 | 52/58 | 52/58 | 52/58 |
-| GB | 218/222 | 4/222 | 222/222 | 220/222 | 214/222 | 218/222 | 219/222 | 220/222 | 218/222 | 136/222 |
-| DE | 17/17 | 1/17 | 17/17 | 11/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 |
-| FR | 116/125 | 1/125 | 125/125 | 71/125 | 116/125 | 113/125 | 116/125 | 116/125 | 116/125 | 116/125 |
-| IT | 127/127 | 1/127 | 127/127 | 121/127 | 127/127 | 125/127 | 127/127 | 127/127 | 127/127 | 127/127 |
-| RU | 84/84 | 1/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 |
-| SA | 14/14 | 1/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 13/14 | 14/14 |
+| CN | 3430/3430 | 3430/3430 | 3079/3430 | 32/3430 | 32/3430 | 32/3430 | 3079/3430 | 3079/3430 | 3079/3430 | 32/3430 |
+| JP | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 | 48/48 |
+| KR | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 | 18/18 |
+| US | 52/58 | 52/58 | 58/58 | 52/58 | 51/58 | 52/58 | 52/58 | 52/58 | 52/58 | 52/58 |
+| GB | 218/222 | 218/222 | 222/222 | 220/222 | 214/222 | 218/222 | 219/222 | 220/222 | 218/222 | 136/222 |
+| DE | 17/17 | 17/17 | 17/17 | 11/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 |
+| FR | 116/125 | 116/125 | 125/125 | 71/125 | 116/125 | 113/125 | 116/125 | 116/125 | 116/125 | 116/125 |
+| IT | 127/127 | 127/127 | 127/127 | 121/127 | 127/127 | 125/127 | 127/127 | 127/127 | 127/127 | 127/127 |
+| RU | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 |
+| SA | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 13/14 | 14/14 |
 
 ## 上游质量统计 / Upstream quality counts
 
 | Locale | Explicit | Approved in XML | JSON-qualified / contributed | Provisional | Unconfirmed | Source-native | Missing | Project reviewed |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | zh-Hans | 4124 | 3 | 10 | 682 | 0 | 3429 | 19 | 0 |
-| zh-Hant | 13 | 3 | 10 | 0 | 0 | 0 | 4130 | 0 |
+| zh-Hant | 4124 | 3 | 10 | 4111 | 0 | 0 | 19 | 0 |
 | en | 3792 | 734 | 10 | 3048 | 0 | 0 | 351 | 0 |
 | ja | 671 | 3 | 10 | 658 | 0 | 0 | 3472 | 0 |
 | ko | 721 | 3 | 10 | 708 | 0 | 0 | 3422 | 0 |
 | ru | 721 | 3 | 10 | 708 | 0 | 0 | 3422 | 0 |
-| de | 727 | 3 | 10 | 714 | 0 | 0 | 3416 | 0 |
-| fr | 728 | 3 | 10 | 715 | 0 | 0 | 3415 | 0 |
-| it | 725 | 3 | 10 | 712 | 0 | 0 | 3418 | 0 |
+| de | 3774 | 3 | 10 | 3761 | 0 | 0 | 369 | 0 |
+| fr | 3775 | 3 | 10 | 3762 | 0 | 0 | 368 | 0 |
+| it | 3772 | 3 | 10 | 3759 | 0 | 0 | 371 | 0 |
 | ar | 644 | 3 | 10 | 631 | 0 | 0 | 3499 | 0 |
 
 ### 质量字段的准确含义 / Exact quality semantics
@@ -74,7 +74,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 3. “市辖区”“县”“省直辖县级行政区划”等是源中统计分组，标为statistical-group；不伪造城市或跳过真实路径。 / Statistical grouping nodes remain explicit.
 4. CN采用大陆starter profile；源containment的cnhk/cnmo/cntw被显式排除。HK/MO/TW未作为本次10个catalog条目发布，应另立可配置profile和补数任务。US/FR保留源内含的领地/海外条目。这些数据口径不构成主权判断。 / Scope follows declared source profiles, not a sovereignty assertion.
 5. `childrenStatus=unknown`表示源覆盖到此结束，不表示该地不存在下级行政区。complete只说明当前声明profile内的子项齐备。 / Unknown leaves are not proof of no lower divisions.
-6. CLDR49繁中subdivision源仅有GB三条显式名称；本包没有用简体或英文复制来冒充繁中翻译。它可使用真实回退，待单独补全和审校。 / Traditional Chinese subdivision coverage is sparse and honestly reported.
+6. zh-Hant显式名=zh-Hans名的记录式保守简繁转换（tool/s2t_places.py，provisional；歧义字台/咸/峰/里等保持原形走真实回退）。CLDR繁中subdivision源仅有GB三条显式名称，本包从未用简体复制冒充繁中翻译。 / zh-Hant names are a recorded conservative s2t conversion of zh-Hans (provisional); ambiguous glyphs stay unchanged with honest fallback — never simplified text posing as traditional.
 7. CLDR cn15 alias指向cnmn，但同版containment与名称表使用cnnm。导入器只在唯一完全相同源中文名的条件下关联“内蒙古自治区”，并写入`sources/cn-province-crosswalk.json`。 / One source inconsistency is recorded and deterministically resolved by a unique exact source-name match.
 8. 结构默认名也携带nameLocale/nameQuality，必须经过与语言包相同的质量策略；不能先过滤provisional译名，再从默认名绕过过滤。没有可信名称时仅展示identifier状态的ID/代码。 / Apply quality policy to default names as well as locale packs.
 9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.
@@ -89,7 +89,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 | US-GB | 县市与UK地区当前口径核对 | 标准代码、非树状关系处理、删除/重用差异 |
 | DE-FR-IT | 市镇/commune/comune | 跨层级规则、当前覆盖日期、许可证兼容 |
 | RU-SA | 更深行政层级与来源profile核对 | 不混用不同立场/年份的代码和名称 |
-| zh-Hant | 显式繁中名称补齐 | 来源记录或可审核的翻译贡献；禁止无记录简繁转换 |
+| zh-Hant | 人工审校机器转换的繁中条目 | 转换已由 tool/s2t_places.py 记录（167 个语料实测字对+歧义字保留清单）；补齐逐 ID 审校记录 |
 | locale-review | 其余9语的provisional条目审校 | 母语审校证据、原名称差异、逐IDreview metadata，不篡改CLDR原draft状态 |
 
 以上数据轨道按国家/语言文件拆分并行；仅由集成人生成全局manifest和覆盖报告。每条轨道必须通过源哈希、结构、跨文件、质量、打包选择与回归检查。

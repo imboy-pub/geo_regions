@@ -22,12 +22,12 @@
           "sourceUnconfirmed": 0
         },
         "de": {
-          "explicitNames": 32,
-          "missingNames": 3398,
+          "explicitNames": 3079,
+          "missingNames": 351,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 31,
+          "sourceProvisional": 3078,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -42,22 +42,22 @@
           "sourceUnconfirmed": 0
         },
         "fr": {
-          "explicitNames": 32,
-          "missingNames": 3398,
+          "explicitNames": 3079,
+          "missingNames": 351,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 31,
+          "sourceProvisional": 3078,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
         "it": {
-          "explicitNames": 32,
-          "missingNames": 3398,
+          "explicitNames": 3079,
+          "missingNames": 351,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 31,
+          "sourceProvisional": 3078,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -102,12 +102,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 3429,
+          "explicitNames": 3430,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 3429,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -214,12 +214,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 47,
+          "explicitNames": 48,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 47,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -326,12 +326,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 17,
+          "explicitNames": 18,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 17,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -438,12 +438,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 57,
+          "explicitNames": 52,
+          "missingNames": 6,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 51,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -550,12 +550,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 4,
-          "missingNames": 218,
+          "explicitNames": 218,
+          "missingNames": 4,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 214,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -662,12 +662,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 16,
+          "explicitNames": 17,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 16,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -774,12 +774,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 124,
+          "explicitNames": 116,
+          "missingNames": 9,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 115,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -886,12 +886,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 126,
+          "explicitNames": 127,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 126,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -998,12 +998,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 83,
+          "explicitNames": 84,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 83,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -1110,12 +1110,12 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 1,
-          "missingNames": 13,
+          "explicitNames": 14,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 0,
+          "sourceProvisional": 13,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }

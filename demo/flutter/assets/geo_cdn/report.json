@@ -2,7 +2,7 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "demo/flutter/tools/geo_cdn.config.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-14T05:41:11.925910Z",
+  "generatedAt": "2026-11-14T06:05:46.294410Z",
   "profile": "demo-simulated-cdn-full",
   "replace": true,
   "resources": [
@@ -133,10 +133,10 @@
       "sha256": "69fbb77d954f41de2259515ca2351248a6dfc417cf3b3a9a2cc5d441120c0baa"
     },
     {
-      "bytes": 3179,
-      "gzipBytes": 857,
+      "bytes": 225608,
+      "gzipBytes": 32517,
       "path": "i18n/de/CN.json",
-      "sha256": "2a5618818d87e933e33314879a3888cd1fdc05476e69fcecf72e6b6839116bfe"
+      "sha256": "9aa81db9db9cad0d514d0c598e61487eb4834a678ece079b9a63b57f56e13f8b"
     },
     {
       "bytes": 2128,
@@ -193,10 +193,10 @@
       "sha256": "6db0c2764e3053ca995ec7f4b205778e7f808007c294ba29c881605f7b51c2c1"
     },
     {
-      "bytes": 225673,
-      "gzipBytes": 32494,
+      "bytes": 225802,
+      "gzipBytes": 32556,
       "path": "i18n/en/CN.json",
-      "sha256": "5e5d3b305b90ffe4b4c034e2f1071f5bcf4f5f12da521e810ec90e4be418bbeb"
+      "sha256": "9e3106d71d2e8276c16dc15acdc318feb30ef9868f510a47584e4c7d733d5eaa"
     },
     {
       "bytes": 2240,
@@ -253,10 +253,10 @@
       "sha256": "b38273fa1893bedf291957864e68853a4ea87cd7b48c531b1565611d139ea59a"
     },
     {
-      "bytes": 3189,
-      "gzipBytes": 880,
+      "bytes": 225618,
+      "gzipBytes": 32540,
       "path": "i18n/fr/CN.json",
-      "sha256": "b160fc562324c4d72f55676ab9418a7c93d15be53c6c1cd6ba986cc104ef4490"
+      "sha256": "c3490d45824a249d065ad2873fa8f8533f9b0c2a083678978ced20b515b36b4f"
     },
     {
       "bytes": 2137,
@@ -313,10 +313,10 @@
       "sha256": "4fa9a20a25b41122e5e885cd9e3338a9be768bf59ec91e032a18dadc502868a1"
     },
     {
-      "bytes": 3185,
-      "gzipBytes": 862,
+      "bytes": 225614,
+      "gzipBytes": 32529,
       "path": "i18n/it/CN.json",
-      "sha256": "cb4f2ee56eca2c9584fbb21b964fc5d04c7dd073d474e46d3822eab562edc426"
+      "sha256": "fed8562a32bf691ee3c3b2d6f0dd42d54359a5552065454191e15c38f7851e66"
     },
     {
       "bytes": 2151,
@@ -613,64 +613,64 @@
       "sha256": "02cf41b1eee96c1e642c407c43765d4d7685b2b715ee3fa3e03c0ae93670582c"
     },
     {
-      "bytes": 881,
-      "gzipBytes": 490,
+      "bytes": 259972,
+      "gzipBytes": 40791,
       "path": "i18n/zh-Hant/CN.json",
-      "sha256": "9e1c1367cfda7834e0b0c85d083444334845a50e8a6c8297289733d7b3d403f5"
+      "sha256": "7deecf0143b9162403e407df802da92b9e030c312a404ebf714619b3a5319a03"
     },
     {
-      "bytes": 879,
-      "gzipBytes": 487,
+      "bytes": 2525,
+      "gzipBytes": 1053,
       "path": "i18n/zh-Hant/DE.json",
-      "sha256": "1e9cf406968074cd4db1904cdb066babb7035acade34e57a314dffd74d676e19"
+      "sha256": "aa2220d3393454c7709b62a8e3543f462b887f6fea3441b08ea2a43d0e6f6517"
     },
     {
-      "bytes": 880,
-      "gzipBytes": 488,
+      "bytes": 10582,
+      "gzipBytes": 2358,
       "path": "i18n/zh-Hant/FR.json",
-      "sha256": "64381d2ba20e3f8306cf2597dd70f586990286740b30c91e3a0ea317f5ed673b"
+      "sha256": "8231ce5d2eff0f1909ce13096d3727348494fd2f344db0c5ea9210beee57e3f9"
     },
     {
-      "bytes": 1135,
-      "gzipBytes": 582,
+      "bytes": 19426,
+      "gzipBytes": 4247,
       "path": "i18n/zh-Hant/GB.json",
-      "sha256": "179f79cf7dc37c20d33fe1c753d99b6aafe3619f0cc8985fd53514926d066411"
+      "sha256": "ae1c982c64d3aab3489d6ef285a7aa05ae0702bb67c66c348112b43707e067b5"
     },
     {
-      "bytes": 883,
-      "gzipBytes": 492,
+      "bytes": 11437,
+      "gzipBytes": 2642,
       "path": "i18n/zh-Hant/IT.json",
-      "sha256": "aef17d8631d91ed80e6bb164a642d835bb808677a5e3a8419925fe6c395a28b2"
+      "sha256": "98b32e2a842caf7cef0959dc840494cfa102007b3d882a1dba21b13b474ee39f"
     },
     {
-      "bytes": 879,
-      "gzipBytes": 491,
+      "bytes": 4778,
+      "gzipBytes": 1311,
       "path": "i18n/zh-Hant/JP.json",
-      "sha256": "a9ef6481fe12183c84ccc97ffcba4e8a08ac2eaba06a1ffcc9b19970cf5f11f0"
+      "sha256": "33059138f0b707dc1581828b3199d9c4b2c0a24e33eada5928a68dbb582348b9"
     },
     {
-      "bytes": 879,
-      "gzipBytes": 486,
+      "bytes": 2555,
+      "gzipBytes": 948,
       "path": "i18n/zh-Hant/KR.json",
-      "sha256": "ce9dbed172d623ed0a0269afea890514705109e5b5daf9998ef447e960ba1b1a"
+      "sha256": "52ae6523ca4818949497790ec632ff3c597a9f98bd2b35851d5516dc25df7567"
     },
     {
-      "bytes": 882,
-      "gzipBytes": 495,
+      "bytes": 8369,
+      "gzipBytes": 2091,
       "path": "i18n/zh-Hant/RU.json",
-      "sha256": "8c385f695e82c5c81549b5c35d7d4931fbbdd3e3b966a745c0473acfe211a7f0"
+      "sha256": "3082c3520a0abab53cdc281618509795b18f0b5128db88160d96d67708e4f352"
     },
     {
-      "bytes": 891,
-      "gzipBytes": 509,
+      "bytes": 2241,
+      "gzipBytes": 935,
       "path": "i18n/zh-Hant/SA.json",
-      "sha256": "323fb33e52f5192da6c6a2a11b2a505cad6e06b4f99a5f993af0d0cc65894fa4"
+      "sha256": "e9e3d66190edea6ce87f1475da758a6a909cafe46043de09f346f1b2e12a60a7"
     },
     {
-      "bytes": 879,
-      "gzipBytes": 491,
+      "bytes": 5337,
+      "gzipBytes": 1557,
       "path": "i18n/zh-Hant/US.json",
-      "sha256": "cb00962e11cbc96d28dafebb8fecb921da86593f2618d02df40f9d0b75d5a851"
+      "sha256": "fc24d2727146da3a08b5f76458dee91b51e21d3c2481f3bf6a55b06dcd5beaac"
     },
     {
       "bytes": 1037814,
@@ -747,8 +747,8 @@
   },
   "totals": {
     "fragmentFileCount": 123,
-    "gzipBytes": 287555,
+    "gzipBytes": 435526,
     "resourceFileCount": 121,
-    "uncompressedBytes": 2352688
+    "uncompressedBytes": 3338258
   }
 }

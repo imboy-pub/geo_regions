@@ -3,10 +3,16 @@
   "countryCode": "CN",
   "coverage": {
     "explicitNames": 3079,
-    "geoNamesEnglishOverlay": {
+    "geoNamesLatinOverlay": {
       "countyMatched": 2714,
       "license": "CC-BY-4.0",
-      "meaning": "Machine-matched GeoNames romanizations; provisional quality, not human-reviewed.",
+      "locales": [
+        "en",
+        "fr",
+        "de",
+        "it"
+      ],
+      "meaning": "Machine-matched GeoNames romanization shared by Latin-script locales for Chinese names; provisional quality, not human-reviewed.",
       "prefectureMatched": 333,
       "source": "sources/raw/geonames/cn-adm-rows.json",
       "unmatched": 260

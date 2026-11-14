@@ -38,7 +38,7 @@ The browser can open the self-contained prototype directly. The full Flutter dem
 
 ## 3. 两层数据 / Two data layers
 
-**正式层 `data/`（geo-regions-seed）**：10 国 4,143 节点，100 地区语言包，10 国家名录包，结构可变层级；CN 含统计分组与部分九位乡镇节点（2023-06-30 历史快照，不声称现势）。CN 市/县级英文名已叠加 GeoNames 机器匹配罗马字（3,062 条 `provisional`，CC-BY-4.0，提取件逐字节钉死）；demo 对 provisional 名明确 opt-in，UI 以徽标如实标注（未翻译回退 / provisional 暂定）。CLDR 49 的 provisional 译名默认被生产门禁过滤；所有 quality 与缺失数真实保留。
+**正式层 `data/`（geo-regions-seed）**：10 国 4,143 节点，100 地区语言包，10 国家名录包，结构可变层级；CN 含统计分组与部分九位乡镇节点（2023-06-30 历史快照，不声称现势）。CN 市/县级已叠加 GeoNames 机器匹配罗马字到全部拉丁语系（en/fr/de/it，3,062 条 `provisional`，CC-BY-4.0，提取件逐字节钉死）；zh-Hant 全线为 zh-Hans 的记录式保守简繁转换（tool/s2t_places.py，歧义字保持原形，`provisional`）；非拉丁语系（ja/ko/ru/ar）保持诚实回退待真实转写。demo 对 provisional 名明确 opt-in，UI 以徽标如实标注（未翻译回退 / provisional 暂定）。CLDR 49 的 provisional 译名默认被生产门禁过滤；所有 quality 与缺失数真实保留。
 
 **候选层 `datasets/csc-candidate/`（geo-regions-csc-candidate）**：9 国 93,683 节点三层（states/counties/cities），FR 已切 INSEE 2026 现势（34,920 commune）、JP 已切 Geolonia 全量市区町村、KR 已修 17 广域团体；十语覆盖 en 100% / zh-Hant 57,255 machine-candidate / 其余 83-86% provisional。**派生数据体不入 git**——由 [tool/build_csc_candidate.py](tool/build_csc_candidate.py) 从固定快照再生，层级边界与再生配方见 [datasets/csc-candidate/README.md](datasets/csc-candidate/README.md)。
 
