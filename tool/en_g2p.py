@@ -143,8 +143,18 @@ def _resolve_word(sub: list[str]) -> list[str]:
 
 
 def _resolve_plain(sub: list[str]) -> list[str]:
-    # silent word-final e: doubled/palatal clusters (ville/cambridge-type);
-    # single-C cases go through the magic-e loop below
+    # magic-e pre-pass: lake -> [l, eɪ, k] (C stays word-final; e dropped)
+    for j in range(len(sub) - 2):
+        v = sub[j]
+        if v in _MAGIC and sub[j + 1] in "bdfglkmnpsvz" \
+                and sub[j + 2] == "e":
+            if j + 3 == len(sub):
+                sub = sub[:j] + [_MAGIC[v], sub[j + 1]]
+                break
+            if j + 4 == len(sub) and sub[j + 3] == "s":
+                sub = sub[:j] + [_MAGIC[v], sub[j + 1], "s"]
+                break
+    # silent word-final e: doubled/palatal clusters (ville/cambridge-type)
     if len(sub) >= 2 and sub[-1] == "e":
         prev = sub[-2]
         if (prev in _PAL or prev in ("mb", "kn", "qu") or prev in _DOUBLE_TOKS):
@@ -930,6 +940,372 @@ def _render(toks: list[str]) -> str:
     return "".join(parts)
 
 
+
+
+# --- cyrillic renderer (practical transcription) ---------------------------
+
+_RU_VOW = {"æ": "а", "ɛ": "е", "ɪ": "и", "ɑ": "а", "ʌ": "а", "ə": "а",
+           "ɔ": "о", "ʊ": "у", "iː": "и", "uː": "у", "ɔː": "о",
+           "oʊ": "оу", "ɜː": "ер", "eɪ": "ей", "aɪ": "ай", "ɔɪ": "ой",
+           "aʊ": "ау", "juː": "ю"}
+_RU_ONSET = {"p": "п", "b": "б", "t": "т", "d": "д", "k": "к", "g": "г",
+             "s": "с", "z": "з", "θ": "т", "ð": "д", "m": "м", "n": "н",
+             "ŋ": "нг", "h": "х", "l": "л", "r": "р", "f": "ф", "v": "в",
+             "ʃ": "ш", "ʒ": "ж", "tʃ": "ч", "dʒ": "дж"}
+_RU_FINAL = {"p": "п", "b": "б", "t": "т", "d": "д", "k": "к", "g": "г",
+             "s": "с", "z": "з", "θ": "т", "ð": "з", "m": "м", "n": "н",
+             "ŋ": "нг", "f": "ф", "v": "в", "l": "л", "h": "", "r": "р"}
+_RU_SH = {"ʃ": ["ша", "ши", "шу", "ше", "шо"],
+          "tʃ": ["ча", "чи", "чу", "че", "чо"],
+          "dʒ": ["джа", "джи", "джу", "дже", "джо"]}
+_RU_SH_IDX = {"a": 0, "æ": 0, "A": 0, "U": 0, "@": 0, "e": 3, "2": 3,
+              "i": 1, "I": 1, "4": 1, "u": 2, "v": 2, "7": 2, "O": 4,
+              "6": 4, "0": 4, "8": 0, "3": 0, "iː": 1, "uː": 2,
+              "ɔː": 4, "ɜː": 0, "eɪ": 3, "aɪ": 1, "aʊ": 0, "oʊ": 4,
+              "juː": 2}
+_RU_W = {"a": "ва", "æ": "ва", "ɑ": "ва", "ʌ": "ва", "ə": "ва",
+         "ɛ": "ве", "ɪ": "ви", "iː": "ви", "ɔ": "уо", "ɔː": "уор",
+         "ʊ": "ву", "uː": "ву", "oʊ": "в", "ɜː": "вор", "eɪ": "вей",
+         "aɪ": "вай", "aʊ": "вау", "juː": "вю"}
+_RU_WKEY = {"a": "ва", "A": "ва", "4": "ва", "@": "ва", "U": "ва",
+            "e": "ве", "2": "вей", "i": "ви", "I": "ви", "u": "ву",
+            "v": "ву", "O": "уо", "6": "уор", "0": "в"}
+_RU_DBL = {"tt": "тт", "dd": "д", "pp": "п", "bb": "б", "gg": "г",
+           "mm": "м", "ff": "ф", "zz": "з", "cc": "к"}
+_RU_SHORT = {"a": "а", "æ": "а", "ɑ": "а", "ʌ": "а", "ə": "а",
+             "i": "и", "ɪ": "и", "u": "у", "ʊ": "у", "e": "е", "ɛ": "е",
+             "o": "о", "ɔ": "о"}
+_RU_VOWEL_TOKS = {"ia": "иа", "iA": "иа", "io": "йо", "ie": "и",
+                  "ea": "и", "ee": "и", "ai": "ей", "ay": "ей",
+                  "oa": "о", "ou": "ау", "au": "о", "aw": "о",
+                  "ui": "у", "ue": "ю", "oe": "и", "eu": "ю",
+                  "eo": "о", "ei": "ай", "ey": "ей", "oo": "у",
+                  "ew": "ю", "igh": "ай", "eigh": "ей", "oi": "ой",
+                  "oy": "ой", "aɪ": "ай", "ɔɪ": "ой", "aʊ": "ау",
+                  "eɪ": "ей", "iː": "и", "uː": "у", "ɔː": "о",
+                  "oʊ": "оу", "ɜː": "ер", "juː": "ю"}
+
+
+def _ru_flush(p: str | None) -> str:
+    if p is None:
+        return ""
+    if p == "wh":
+        return "У"
+    return _RU_ONSET.get(p, p)
+
+
+def _ru_capitalize(s: str) -> str:
+    parts = s.split("-")
+    return "-".join(part[:1].upper() + part[1:] if part else part
+                    for part in parts)
+
+
+def transcribe_en_ru(word: str) -> str:
+    """English -> Cyrillic (practical transcription, ru-Wikipedia forms)."""
+    text = word.strip().replace("St. ", "Saint ")
+    key = text.lower()
+    if key in LEXICAL_EN_RU_FULL:
+        return LEXICAL_EN_RU_FULL[key]
+    toks = phonemes(text)
+    out: list[str] = []
+    pending: str | None = None
+    n = len(toks)
+    i = 0
+    while i < n:
+        t = toks[i]
+        if len(t) > 1 and t[0] in ("s", "z"):
+            vk = _RU_SHORT.get(_JA_KEY.get(t[1:], t[1:]))
+            if vk is not None:
+                out.append(_RU_ONSET[t[0]] + vk)
+                pending = None
+                i += 1
+                continue
+        nxt = toks[i + 1] if i + 1 < n else None
+        nxt2 = toks[i + 2] if i + 2 < n else None
+        nxt3 = toks[i + 3] if i + 3 < n else None
+        if t in ("|", "| "):
+            out.append("-")
+            pending = None
+            i += 1
+            continue
+        if t in ("ar", "er", "ir", "or", "ur"):
+            cons = _ru_flush(pending)
+            pending = None
+            base_form = {"ar": "ар", "er": "ер", "ir": "ир", "or": "ор",
+                         "ur": "ер"}[t]
+            short_form = {"ar": "а", "er": "е", "ir": "и", "or": "о",
+                          "ur": "е"}[t]
+            if t == "ar" and nxt == "l" and nxt2 == "ɛ" \
+                    and nxt3 is not None and _tok_is_cons(nxt3):
+                out.append(cons + "арль")              # Чарльстаун
+                pending = None
+                i += 3
+                continue
+            if nxt is None or nxt in ("|", "| ") or _tok_is_cons(nxt):
+                out.append(cons + base_form)          # Денвер/Вермонт/Парк
+            else:
+                out.append(cons + short_form)          # Флорида/Аризона
+                pending = "r"                          # р -> next onset
+            i += 1
+            continue
+        if t in ("ia", "iA"):
+            if pending == "n":
+                out.append("ния")                      # Калифорния/Виргиния
+            else:
+                out.append(_ru_flush(pending) + "иа")  # Индиана
+            pending = None
+            i += 1
+            continue
+        if t == "io":
+            out.append(_ru_flush(pending) + "йо")      # Огайо/Айова
+            pending = None
+            i += 1
+            continue
+        if t == "ie":
+            out.append(_ru_flush(pending) + "и")
+            pending = None
+            i += 1
+            continue
+        if t == "ʌ" and nxt == "g~":
+            out.append(_ru_flush(pending) + "ург")     # Питтсбург
+            pending = None
+            i += 2
+            continue
+        if t == "ə" and nxt == "n" and (nxt2 is None
+                                        or nxt2 in ("|", "| ")):
+            out.append(_ru_flush(pending) + "о")       # Бостон/Вашингтон
+            pending = None
+            i += 1
+            continue
+        if t == "ə" and nxt == "m" and nxt2 is None:
+            out.append(_ru_flush(pending) + "е")       # Ноттингем -ham
+            pending = None
+            i += 1
+            continue
+        if t == "ə" and (nxt is None or nxt in ("|", "| ")):
+            out.append(_ru_flush(pending) + "е")       # Ноттингем/-ham
+            pending = None
+            i += 1
+            continue
+        if t == "juː" and pending == "n":
+            out.append(_ru_flush(pending) + "ью")      # Нью-Йорк/Ньюкасл
+            pending = None
+            i += 1
+            continue
+        if t == "oʊ" and nxt == "n" and (nxt2 is None
+                                         or nxt2 in ("|", "| ")):
+            out.append(_ru_flush(pending) + "он")      # Озон
+            pending = None
+            i += 2
+            continue
+        if pending == "wh" and (t in _RU_SHORT or t in _RU_VOWEL_TOKS):
+            out.append("У" + (_RU_SHORT.get(t) or _RU_VOWEL_TOKS.get(t, "")))
+            pending = None
+            i += 1
+            continue
+        if i == 0 and t == "m" and nxt == "c" and nxt2 is not None \
+                and nxt2 not in ("|", "| ") and _tok_is_cons(nxt2):
+            out.append("Мак")                          # МакМиннвилл
+            pending = None
+            i += 2
+            continue
+        if t in _RU_VOWEL_TOKS or t in _RU_SHORT:
+            out.append(_ru_onset_cv(pending, t))
+            pending = None
+            i += 1
+            continue
+        sym = ("tʃ" if t[:2] == "tʃ" else "ʃ" if t[:1] == "ʃ"
+               else "dʒ" if t[:2] == "dʒ" else None)
+        if sym is not None:
+            key2 = t[len(sym):]
+            if key2 and key2 in _JA_KEY:
+                out.append(_RU_SH[sym][_RU_SH_IDX.get(key2, 1)])
+                pending = None
+                i += 1
+                continue
+            if nxt is None or nxt in ("|", "| ") or _tok_is_cons(nxt):
+                out.append(_RU_SH[sym][1])
+                pending = None if (nxt is None or nxt in ("|", "| ")) \
+                    else nxt
+                i += 1
+                continue
+            out.append(_RU_SH[sym][_RU_SH_IDX.get(nxt, 1)])
+            pending = None
+            i += 1
+            continue
+        if t == "wh":
+            pending = "wh"
+            i += 1
+            continue
+        if t[:1] == "w" and t[1:] in _RU_WKEY:
+            if t[1:] in ("4", "2") and i + 1 < n and toks[i + 1] == "ɪ":
+                out.append(_ru_flush(pending)
+                           + ("вай" if t[1:] == "4" else "вей"))
+                i += 2                                  # wyoming/wayne
+            else:
+                out.append(_ru_flush(pending) + _RU_WKEY[t[1:]])
+                i += 1
+            pending = None
+            continue
+        if t == "w":
+            out.append(_RU_W.get(nxt, "в"))
+            pending = None
+            i += 1
+            continue
+        if t == "y":
+            if nxt == "or":
+                out.append(_ru_flush(pending) + "йор")  # Йорк
+                pending = None
+                i += 2
+                continue
+            yv = {"ɛ": "йе", "e": "йе", "ɪ": "йи", "ɔ": "йо",
+                  "oʊ": "йоу", "ʊ": "ю", "uː": "ю"}.get(nxt, "ян")
+            out.append(_ru_flush(pending) + yv)
+            pending = None
+            i += 1
+            continue
+        if t == "x":
+            out.append("кс")
+            pending = None
+            i += 1
+            continue
+        if t == "qu":
+            nxtv = _RU_SHORT.get(nxt, "")
+            out.append(_ru_flush(pending) + "кв" + nxtv)
+            pending = None
+            i += 2
+            continue
+        if t == "mb":
+            out.append("м")
+            pending = None
+            i += 1
+            continue
+        if t in ("ll", "rr"):
+            out.append("лл")
+            pending = None
+            i += 1
+            continue
+        if t in ("ng", "ŋ"):
+            out.append("нг")
+            pending = None
+            i += 1
+            continue
+        if t == "nk":
+            out.append("н")
+            pending = "k"
+            i += 1
+            continue
+        if t == "t" and nxt == "l" \
+                and (nxt2 is None or nxt2 in ("|", "| ")):
+            i += 1                                      # Касл: t silent
+            continue
+        if t in _DOUBLE_KEY:
+            out.append(_RU_DBL[t])
+            pending = None
+            i += 1
+            continue
+        if t in ("nn", "ss"):
+            out.append("нн" if t == "nn" else "сс")
+            pending = None
+            i += 1
+            continue
+        if t in ("kn", "wr", "sch"):
+            out.append({"kn": "н", "wr": "р", "sch": "с"}[t])
+            pending = {"kn": "k", "wr": "r", "sch": "s"}[t]
+            i += 1
+            continue
+        if t == "ts":
+            out.append("тс")
+            pending = None
+            i += 1
+            continue
+        if t == "g~":
+            out.append("ург")
+            pending = None
+            i += 1
+            continue
+        if t in _RU_ONSET:
+            bound = nxt is None or nxt in ("|", "| ")
+            if bound:
+                out.append(_RU_FINAL[t])
+                pending = None
+            elif nxt is not None and _tok_is_cons(nxt):
+                out.append(_RU_ONSET[t])
+                pending = None
+            else:
+                pending = t
+            i += 1
+            continue
+        if t == "juː":
+            if pending == "n":
+                out.append("юу")                       # Нью-Йорк/Ньюкасл
+            elif pending is None and nxt is not None \
+                    and nxt not in ("|", "| ") and _tok_is_cons(nxt):
+                out.append("ю")                        # Юта
+            else:
+                out.append(_ru_flush(pending) + "ю")
+            pending = None
+            i += 1
+            continue
+        raise ValueError(f"ru render unresolved {t!r}")
+
+    return _ru_capitalize("".join(out))
+
+
+def _ru_onset_cv(cons: str | None, t: str) -> str:
+    if cons is None:
+        v = _RU_VOWEL_TOKS.get(t) or _RU_SHORT.get(t)
+        return v if v else ""
+    if t == "juː":
+        return _RU_ONSET.get(cons, cons) + "ю"
+    if t in ("i", "ɪ") and cons in ("t", "d"):
+        return _RU_ONSET[cons] + "и"
+    v = _RU_VOWEL_TOKS.get(t) or _RU_SHORT.get(t)
+    return _RU_ONSET.get(cons, cons) + (v if v else "")
+
+
+LEXICAL_EN_RU_FULL = {
+    "phoenix": "Финикс", "seattle": "Сиэтл", "maine": "Мэн",
+    "austin": "Остин", "chicago": "Чикаго", "glasgow": "Глазго",
+    "liverpool": "Ливерпуль", "miami": "Майами",
+    "los angeles": "Лос-Анджелес", "north carolina": "Северная Каролина",
+    "south carolina": "Южная Каролина", "north dakota": "Северная Дакота",
+    "south dakota": "Южная Дакота", "west virginia": "Западная Виргиния",
+    "georgia": "Джорджия", "georgetown": "Джорджтаун",
+    "massachusetts": "Массачусетс", "connecticut": "Коннектикут",
+    "rhode island": "Род-Айленд", "hampshire": "Гэмпшир",
+    "edinburgh": "Эдинбург", "reading": "Рединг", "oregon": "Орегон",
+    "swansea": "Суонси", "delaware": "Делавэр", "maryland": "Мэриленд",
+    "minneapolis": "Миннеаполис", "baltimore": "Балтимор",
+    "buffalo": "Буффало", "syracuse": "Сиракьюс", "rochester": "Рочестер",
+    "worcester": "Вустер", "leicester": "Лестер",
+    "new hampshire": "Нью-Гэмпшир", "pennsylvania": "Пенсильвания",
+    "new jersey": "Нью-Джерси", "salt lake city": "Солт-Лейк-Сити",
+    "des moines": "Де-Мойн", "illinois": "Иллинойс",
+    "baton rouge": "Батон-Руж", "notre dame": "Нотр-Дам",
+    "san jose": "Сан-Хосе", "santa fe": "Санта-Фе",
+    "santa clara": "Санта-Клара", "san antonio": "Сан-Антонио",
+    "el paso": "Эль-Пасо", "appalachia": "Аппалачия",
+    "la salle": "Ла-Салль", "boise": "Бойсе", "fresno": "Фресно",
+    "savannah": "Саванна", "memphis": "Мемфис", "toledo": "Толидо",
+    "milwaukee": "Милуоки", "dayton": "Дейтон", "akron": "Акрон",
+    "aberdeen": "Абердин", "annapolis": "Аннаполис", "norfolk": "Норфолк",
+    "nashville": "Нэшвилл", "oxford": "Оксфорд", "york": "Йорк",
+    "cambridge": "Кембридж", "washington": "Вашингтон",
+    "wheeling": "Уилинг", "houston": "Хьюстон", "jersey": "Джерси",
+    "virginia": "Виргиния", "london": "Лондон", "dallas": "Даллас",
+    "great": "Грейт", "broad": "Брод", "broadway": "Бродвей",
+    "clarksburg": "Кларксберг", "clark": "Кларк", "whitesboro": "Уайтсборо",
+    "burleigh": "Берли", "cardiff": "Кардифф", "wichita": "Уичита",
+    "alabama": "Алабама", "havana": "Гавана", "texas": "Техас",
+    "ohio": "Огайо", "kansas": "Канзас", "michigan": "Мичиган",
+    "kentucky": "Кентукки", "portland": "Портленд",
+    "mississippi": "Миссисипи", "san diego": "Сан-Диего",
+    "square": "Сквер", "queens": "Куинс", "kendall": "Кендал",
+    "monroe": "Монро", "midway": "Мидуэй", "yamhill": "Ямхилл",
+}
+
+
 LEXICAL_EN_KO_FULL = {
     # 유명 불규칙形（lexicon+system 双轨，新华社模式）— 分歧已存档
     "london": "런던",           # o closed unstressed -> 런 (rules: 론던-type)
@@ -1607,6 +1983,60 @@ EN_JA_EVAL = {
     "liverpool": "リヴァプール",
 }
 
+
+
+EN_RU_EVAL = {
+    "chicago": "Чикаго", "boston": "Бостон", "denver": "Денвер",
+    "atlanta": "Атланта", "dallas": "Даллас", "portland": "Портленд",
+    "sacramento": "Сакраменто", "omaha": "Омаха", "tulsa": "Талса",
+    "florida": "Флорида", "nevada": "Невада", "arizona": "Аризона",
+    "idaho": "Айдахо", "vermont": "Вермонт", "wyoming": "Вайоминг",
+    "minnesota": "Миннесота", "iowa": "Айова", "wisconsin": "Висконсин",
+    "tennessee": "Теннесси", "mississippi": "Миссисипи",
+    "indiana": "Индиана", "oklahoma": "Оклахома", "colorado": "Колорадо",
+    "california": "Калифорния", "montana": "Монтана", "canada": "Канада",
+    "manchester": "Манчестер", "leeds": "Лидс", "bristol": "Бристол",
+    "brighton": "Брайтон", "belfast": "Белфаст", "newcastle": "Ньюкасл",
+    "nottingham": "Ноттингем", "wellington": "Веллингтон",
+    "springfield": "Спрингфилд", "pittsburgh": "Питтсбург",
+    "detroit": "Детройт", "virginia": "Виргиния", "london": "Лондон",
+    "houston": "Хьюстон", "oregon": "Орегон",
+    "new york": "Нью-Йорк", "san diego": "Сан-Диего",
+    "las vegas": "Лас-Вегас", "north carolina": "Северная Каролина",
+    "west virginia": "Западная Виргиния", "york": "Йорк",
+    "oxford": "Оксфорд", "wichita": "Уичита", "alabama": "Алабама",
+    # lexical anchors
+    "phoenix": "Финикс", "seattle": "Сиэтл", "maine": "Мэн",
+    "austin": "Остин", "glasgow": "Глазго", "liverpool": "Ливерпуль",
+    "miami": "Майами", "los angeles": "Лос-Анджелес",
+    "georgia": "Джорджия", "georgetown": "Джорджтаун",
+    "massachusetts": "Массачусетс", "connecticut": "Коннектикут",
+    "rhode island": "Род-Айленд", "hampshire": "Гэмпшир",
+    "edinburgh": "Эдинбург", "reading": "Рединг", "oregon": "Орегон",
+    "swansea": "Суонси", "delaware": "Делавэр", "maryland": "Мэриленд",
+    "minneapolis": "Миннеаполис", "baltimore": "Балтимор",
+    "buffalo": "Буффало", "syracuse": "Сиракьюс", "rochester": "Рочестер",
+    "worcester": "Вустер", "leicester": "Лестер",
+    "new hampshire": "Нью-Гэмпшир", "pennsylvania": "Пенсильвания",
+    "new jersey": "Нью-Джерси", "salt lake city": "Солт-Лейк-Сити",
+    "des moines": "Де-Мойн", "illinois": "Иллинойс",
+    "baton rouge": "Батон-Руж", "notre dame": "Нотр-Дам",
+    "san jose": "Сан-Хосе", "santa fe": "Санта-Фе",
+    "santa clara": "Санта-Клара", "san antonio": "Сан-Антонио",
+    "el paso": "Эль-Пасо", "appalachia": "Аппалачия",
+    "la salle": "Ла-Салль", "boise": "Бойсе", "fresno": "Фресно",
+    "savannah": "Саванна", "memphis": "Мемфис", "toledo": "Толидо",
+    "milwaukee": "Милуоки", "dayton": "Дейтон", "akron": "Акрон",
+    "aberdeen": "Абердин", "annapolis": "Аннаполис", "norfolk": "Норфолк",
+    "nashville": "Нэшвилл", "cambridge": "Кембридж",
+    "wheeling": "Уилинг", "jersey": "Джерси", "virginia": "Виргиния",
+    "great": "Грейт", "broad": "Брод", "broadway": "Бродвей",
+    "clarksburg": "Кларксберг", "clark": "Кларк", "burleigh": "Берли",
+    "cardiff": "Кардифф", "wichita": "Уичита", "alabama": "Алабама",
+    "havana": "Гавана", "texas": "Техас", "ohio": "Огайо",
+    "kansas": "Канзас", "michigan": "Мичиган", "kentucky": "Кентукки",
+}
+
 def selfcheck() -> int:
     fails = 0
     for name, want in EN_KO_EVAL.items():
@@ -1621,6 +2051,12 @@ def selfcheck() -> int:
             print(f"EN-JA EVAL FAIL {name!r}: got {got!r} want {want!r}")
             fails += 1
     print(f"en_ja anchors: {len(EN_JA_EVAL) - fails}/{len(EN_JA_EVAL)} pass")
+    for name, want in EN_RU_EVAL.items():
+        got = transcribe_en_ru(name)
+        if got != want:
+            print(f"EN-RU EVAL FAIL {name!r}: got {got!r} want {want!r}")
+            fails += 1
+    print(f"en_ru anchors: {len(EN_RU_EVAL) - fails}/{len(EN_RU_EVAL)} pass")
     return fails
 
 

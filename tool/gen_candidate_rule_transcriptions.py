@@ -1001,6 +1001,7 @@ def emit_en_ko(root: Path) -> int:
     skipped = 0
     purity_ko = re.compile(r"[가-힣 ]+")
     purity_ja = re.compile(r"[ァ-ヴー・]+")
+    purity_ru = re.compile(r"[А-яЁё\- ]+")
     for cc in ("US", "GB"):
         for kind, prefix in (("cities", "csc-city"), ("counties", "csc-county")):
             path = root / f"staging/csc-snapshot/contributions/{kind}/{cc}.json"
@@ -1025,7 +1026,8 @@ def emit_en_ko(root: Path) -> int:
                 labels = {}
                 for loc, fn, purity in (
                         ("ko", en_g2p.transcribe_en_ko, purity_ko),
-                        ("ja", en_g2p.transcribe_en_ja, purity_ja)):
+                        ("ja", en_g2p.transcribe_en_ja, purity_ja),
+                        ("ru", en_g2p.transcribe_en_ru, purity_ru)):
                     try:
                         value = fn(core)
                     except ValueError:
@@ -1048,7 +1050,7 @@ def emit_en_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko", "ja"],
+        "locales": ["ko", "ja", "ru"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,
