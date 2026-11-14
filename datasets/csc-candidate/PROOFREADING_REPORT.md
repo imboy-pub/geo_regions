@@ -31,3 +31,15 @@
 | zh-Hans/ja/ko/ru/de/fr/it/ar | 57k-59k (83-86%) | provisional（上游 CSC 翻译） |
 | **zh-Hant** | **57,512 (83.5%)** | **machine-candidate（本轮生成：JP kanji-direct + 8 国 s2t + 5 处修正）** |
 | 校对状态 | states 108 条 + cities 180 条 = 288 条 AI 校对 | humanReviewVerified=false 不变 |
+
+
+---
+
+## ⚡ LIVE FIGURES（最终重生成实测 2026-11-14，优先于正文历史快照）
+
+多轮修值与官方层切换后，正文中的轮次快照数字已过时。当前实测：
+
+- **节点总数 93,683**（FR 35,040 / JP 1,946 / KR 327 / 其余 CSC 层）
+- 十语覆盖：en 93,683 (100%) / zh-Hans 57,237 / zh-Hant **57,255**（machine-candidate+CLDR root）/ ja 57,823 / ko 57,591 / ru 58,884 / de 58,339 / fr 58,336 / it 58,345 / ar 57,291
+- 已知错误模式残留：**0**（suffix/latin/garbage/混体全部规则化进生成器）
+- 权威汇总文件：`translation_coverage.json`、`verification_p300_batch.json`（selfCorrections 台账）

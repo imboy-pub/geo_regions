@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-11-14",
+ "purpose": "executable review queue for human proof-reading (DP-01 backlog alignment)",
+ "humanReviewVerified": false,
+ "priorityTiers": [
+  {
+   "tier": "P0",
+   "desc": "confirmed-error corrections already applied — spot-check the generator fixes",
+   "items": [
+    "ZH_HANS_FIXES ×5 (首尔/犹太自治州/涅涅茨自治区/汉特-曼西自治区/得克萨斯州)",
+    "JA_FIXES ×2 (ユダヤ自治州/ネネツ自治管区)",
+    "ZH_HANT_FIXES ×5 (traditional counterparts)",
+    "fix_zh_suffix() JP batch (~51 entries, 史/士→市)",
+    "IT-23→IT-AO, KR-46/KR-29 code corrections"
+   ]
+  },
+  {
+   "tier": "P1",
+   "desc": "zh-Hant machine-candidate (57,255) — converted/kanji-direct names, review by country",
+   "order": [
+    "JP",
+    "KR",
+    "US",
+    "GB",
+    "DE",
+    "FR",
+    "IT",
+    "RU",
+    "SA"
+   ]
+  },
+  {
+   "tier": "P2",
+   "desc": "IT stale communes flagged via Wikidata (24%: ~2,350 names) — confirm against ISTAT before removal",
+   "evidence": "verification_it_comuni.json"
+  },
+  {
+   "tier": "P3",
+   "desc": "coverage gaps awaiting official sources: FR 24,368 new-name communes / DE 5,499 / JP ~514 municipalities / GB NI+Scotland codes",
+   "evidence": "verification_{fr,jp,us,de}_*.json"
+  }
+ ]
+}
