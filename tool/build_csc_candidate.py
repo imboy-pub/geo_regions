@@ -365,6 +365,52 @@ def main():
                 if value and nid not in ZH_GARBAGE_DROPS:
                     packs[locale][nid] = nfc(value)
 
+        # CSC-translations bridge for FR/JP (ODbL): these layers inherit CSC
+        # translations by normalized-name matching, which silently drops rows
+        # whose name diverges from the official layer (INSEE LIBELLE vs CSC
+        # spelling, Geolonia romaji vs CSC name). The rows' wikiDataId QIDs
+        # give an exact second join: CSC row -> QID -> staged Wikidata extract
+        # -> candidate nid. Fill-missing; garbage drops still apply; filled
+        # values flow through the s2t/fix_zh_suffix pipeline below like any
+        # other upstream translation.
+        if cc in ("FR", "JP"):
+            bridge_paths = {
+                "FR": [("staging/wikidata-fr/fr-labels.json",
+                        "staging/wikidata-fr/fr-labels.json (Wikidata P374 join reused as qid->nid bridge, CC0-1.0, tool/fetch_wikidata_fr_labels.py)")],
+                "JP": [("staging/wikidata-cand/jp-labels.json",
+                        "staging/wikidata-cand/jp-labels.json (Wikidata P429/P300 join reused as qid->nid bridge, CC0-1.0, tool/fetch_wikidata_candidate_labels.py)")],
+            }[cc]
+            qid_to_nid = {}
+            for wd_path, _ref in bridge_paths:
+                if not (REPO / wd_path).is_file():
+                    continue
+                wd_data = json.loads((REPO / wd_path).read_text(encoding="utf-8"))
+                for bridge_nid, bridge_entry in wd_data["nodes"].items():
+                    qid_to_nid.setdefault(bridge_entry.get("qid"), bridge_nid)
+            bridge_rows = load(f"contributions/cities/{cc}.json")
+            bridge_counties = SNAP / f"contributions/counties/{cc}.json"
+            if bridge_counties.is_file():
+                bridge_rows = bridge_rows + json.loads(bridge_counties.read_text(encoding="utf-8"))
+            bridged_nodes = 0
+            for row in bridge_rows:
+                bridge_nid = qid_to_nid.get((row.get("wikiDataId") or "").strip())
+                if not bridge_nid or bridge_nid in ZH_GARBAGE_DROPS:
+                    continue
+                trans = row.get("translations") or {}
+                filled = False
+                for locale, key in TRANSLATION_LOCALES.items():
+                    if bridge_nid in packs[locale]:
+                        continue
+                    value = trans.get(key)
+                    if value:
+                        packs[locale][bridge_nid] = nfc(value)
+                        filled = True
+                if filled:
+                    bridged_nodes += 1
+            if bridged_nodes:
+                packs["_bridge_refs"] = [ref for p, ref in bridge_paths if (REPO / p).is_file()]
+                print(f"{cc} csc-translations qid bridge: {bridged_nodes} nodes filled")
+
         # derive zh-Hant pack (machine-candidate)
         hant_names, hant_quality = {}, {}
         conversion_stats = {"convertedChars": 0, "names": 0, "kanjiDirectJP": 0}
@@ -484,6 +530,7 @@ def main():
             if cc == "FR":
                 fr_refs.append(INSEE_SOURCE)
             fr_refs.extend(packs.get("_wd_refs", []))
+            fr_refs.extend(packs.get("_bridge_refs", []))
             pack = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                     "countryCode": cc, "locale": locale,
                     "compatibleStructureRevision": structure["revision"],
@@ -536,6 +583,11 @@ def main():
         f"- catalog_i18n/* (10x10 country names): {CLDR_SOURCE}\n"
         "- FR x9 locales: Wikidata P374 community labels fill missing cells "
         "(CC0-1.0, staged extract, provisional)\n"
+        "- US/DE/IT/GB/RU/SA/KR: Wikidata labels joined by the snapshot rows' "
+        "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
+        "- FR/JP: CSC upstream translations re-joined through the staged "
+        "qid->nid bridge for rows the name-matching inheritance missed "
+        "(ODbL-1.0, provisional)\n"
         "- zh-Hant: zh-Hant is s2t-derived machine-candidate + FR wikidata "
         "community labels\n"
         "- All non-en translations are provisional; AI proof-reading samples do not flip quality words\n"
