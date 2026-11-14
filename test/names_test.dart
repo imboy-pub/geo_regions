@@ -33,6 +33,9 @@ void aliasTableGroup() {
   group('locale alias table', () {
     test('explicit aliases match CONSUMER_CONTRACT §3', () {
       expect(kGeoLocaleAliases['zh-CN'], 'zh-Hans');
+      expect(kGeoLocaleAliases['zh-SG'], 'zh-Hans');
+      expect(kGeoLocaleAliases['zh-TW'], 'zh-Hant');
+      expect(kGeoLocaleAliases['zh-HK'], 'zh-Hant');
       expect(kGeoLocaleAliases['zh-Hant'], 'zh-Hant');
       expect(kGeoLocaleAliases['en-US'], 'en');
       expect(kGeoLocaleAliases['ja-JP'], 'ja');
@@ -42,6 +45,9 @@ void aliasTableGroup() {
       expect(kGeoLocaleAliases['fr-FR'], 'fr');
       expect(kGeoLocaleAliases['it-IT'], 'it');
       expect(kGeoLocaleAliases['ar-SA'], 'ar');
+      // The Dart table must stay in lockstep with config/data_policy.json
+      // localeAliases (12 protocol entries + the zh-Hant identity entry).
+      expect(kGeoLocaleAliases.length, 13);
     });
   });
 }
@@ -56,6 +62,9 @@ void candidateChainGroup() {
 
     test('region subtags truncate, aliases apply first', () {
       expect(geoLocaleCandidates('zh-CN'), <String>['zh-CN', 'zh-Hans', 'zh']);
+      expect(geoLocaleCandidates('zh-TW'), <String>['zh-TW', 'zh-Hant', 'zh']);
+      expect(geoLocaleCandidates('zh-HK'), <String>['zh-HK', 'zh-Hant', 'zh']);
+      expect(geoLocaleCandidates('zh-SG'), <String>['zh-SG', 'zh-Hans', 'zh']);
       expect(geoLocaleCandidates('en-US'), <String>['en-US', 'en']);
       expect(geoLocaleCandidates('pt-BR'), <String>['pt-BR', 'pt']);
       expect(geoLocaleCandidates('zh-Hans-CN'), <String>[
@@ -135,6 +144,32 @@ void scriptSeparationGroup() {
       expect(simplified.text, '中国');
       expect(traditional.text, '中國');
       expect(traditional.resolvedLocale, 'zh-Hant');
+    });
+
+    test('zh-TW and zh-HK reach the zh-Hant pack through the alias table', () {
+      // Regression: these protocol aliases were missing from the Dart table,
+      // so zh-HK/zh-TW requests degraded to bare zh and lost the traditional
+      // pack while the Python reference resolved them.
+      final resolver = GeoNameResolver(
+        packs: <String, GeoLocalePack>{'zh-Hant': _zhHantCn},
+      );
+      for (final requested in const <String>['zh-TW', 'zh-HK']) {
+        final name = resolver.resolve(_cn.nodes.first, requested);
+        expect(name.text, '中國', reason: requested);
+        expect(name.resolvedLocale, 'zh-Hant', reason: requested);
+        expect(name.isFallback, isFalse, reason: requested);
+        expect(name.source, GeoNameSource.translation, reason: requested);
+      }
+    });
+
+    test('zh-SG reaches the zh-Hans pack through the alias table', () {
+      final resolver = GeoNameResolver(
+        packs: <String, GeoLocalePack>{'zh-Hans': _zhHansCn},
+      );
+      final name = resolver.resolve(_cn.nodes.first, 'zh-SG');
+      expect(name.text, '中国');
+      expect(name.resolvedLocale, 'zh-Hans');
+      expect(name.isFallback, isFalse);
     });
   });
 }

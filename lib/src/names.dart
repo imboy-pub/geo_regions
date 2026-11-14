@@ -20,6 +20,9 @@ import 'models.dart';
 /// silently resolves to `zh-Hans`, and `zh-Hans`/`zh-Hant` never mix.
 const Map<String, String> kGeoLocaleAliases = <String, String>{
   'zh-CN': 'zh-Hans',
+  'zh-SG': 'zh-Hans',
+  'zh-TW': 'zh-Hant',
+  'zh-HK': 'zh-Hant',
   'zh-Hant': 'zh-Hant',
   'en-US': 'en',
   'ja-JP': 'ja',
