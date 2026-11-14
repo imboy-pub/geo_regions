@@ -100,7 +100,20 @@ jobs:
             dart format --output=none --set-exit-if-changed lib test
             flutter analyze --fatal-infos
             flutter test
-            flutter pub publish --dry-run
+            # Dual-language repo: python tooling intentionally lives in tests/,
+            # docs/, samples/ — the ONLY accepted pub layout deviations. Fail
+            # on anything else (new validation errors stay blocking).
+            out=$(flutter pub publish --dry-run 2>&1) || {
+              echo "$out"
+              if grep -q 'Rename the top-level "tests"' <<< "$out" &&
+                 grep -q 'Rename the top-level "docs"' <<< "$out" &&
+                 grep -q 'Rename the top-level "samples"' <<< "$out" &&
+                 grep -q 'found the following 3 potential issues' <<< "$out"; then
+                echo 'known intentional layout deviations only — accepted'
+              else
+                exit 1
+              fi
+            }
           else
             echo 'Production SDK is not implemented yet; only the delivered demo is being verified.'
           fi
