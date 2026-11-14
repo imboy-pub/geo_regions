@@ -78,7 +78,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 7. CLDR cn15 alias指向cnmn，但同版containment与名称表使用cnnm。导入器只在唯一完全相同源中文名的条件下关联“内蒙古自治区”，并写入`sources/cn-province-crosswalk.json`。 / One source inconsistency is recorded and deterministically resolved by a unique exact source-name match.
 8. 结构默认名也携带nameLocale/nameQuality，必须经过与语言包相同的质量策略；不能先过滤provisional译名，再从默认名绕过过滤。没有可信名称时仅展示identifier状态的ID/代码。 / Apply quality policy to default names as well as locale packs.
 9. 地区ID中的ISO或统计码是固定快照映射。后续改名保留ID；代码重用、拆分和合并需人工确认迁移表，不能自动覆盖历史身份。 / Code reuse and boundary changes require explicit identity migration.
-10. CN市/县级英文名是GeoNames机器匹配的罗马字（provisional，CC-BY-4.0），未经人工审校；匹配失败的城市开发区等节点保持缺失，不伪造。 / CN prefecture/county English names are machine-matched GeoNames romanizations (provisional, CC-BY-4.0); unmatched nodes (development zones etc.) stay missing.
+10. CN市/县级非中文名按四层证据栈叠加：GeoNames罗马字（CC-BY-4.0）→Wikidata P300/P13971社区标签（CC0）→AI生成残余（记录式生成运行）；全部provisional、未经人工审校；无上游实体的乡镇/统计分组/开发区保持缺失。 / CN non-Chinese names stack four evidence layers: GeoNames romanizations (CC-BY-4.0), Wikidata community labels (CC0, P300/P13971 exact joins), AI-generated residuals (recorded run); all provisional, not human-reviewed; nodes without any upstream entity stay missing.
 
 ## 下一版可并行补齐 / Parallel completion tracks
 
