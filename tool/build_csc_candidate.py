@@ -126,8 +126,12 @@ def main():
         src = REPO / f"_task_packages/geo_regions_source_audit_2026-11-13/data/catalog_i18n/{locale}.json"
         catalog_files[locale] = json.loads(src.read_text(encoding="utf-8"))
 
-    if OUT.exists():
-        shutil.rmtree(OUT)
+    # Only clear generator-owned subtrees; root-level documents
+    # (PROOFREADING_REPORT.md, DATA_VERIFICATION_2026.md, samples) survive.
+    if (OUT / "data").exists():
+        shutil.rmtree(OUT / "data")
+    if (OUT / "config").exists():
+        shutil.rmtree(OUT / "config")
     (OUT / "data/regions").mkdir(parents=True)
     for locale in LOCALES:
         (OUT / f"data/i18n/{locale}").mkdir(parents=True)
