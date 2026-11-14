@@ -394,7 +394,8 @@ extension _GeoPickerRender on _GeoRegionPickerState {
                 for (var i = 0; i < _draft.length; i++) ...<InlineSpan>[
                   if (i > 0) const TextSpan(text: ' / '),
                   TextSpan(text: _draft[i].label),
-                  if (_badgeFor(_draft[i]) case final badge? when badge.isNotEmpty)
+                  if (_badgeFor(_draft[i]) case final badge?
+                      when badge.isNotEmpty)
                     TextSpan(
                       text: '  · $badge',
                       style: TextStyle(

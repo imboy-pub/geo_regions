@@ -62,7 +62,9 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('confirm-selection')));
     await tester.pumpAndSettle();
-    final json = tester.widget<SelectableText>(find.byKey(const ValueKey('selection-json'))).data!;
+    final json = tester
+        .widget<SelectableText>(find.byKey(const ValueKey('selection-json')))
+        .data!;
     expect(json, contains('"datasetId": "geo-regions-ui-fixture"'));
     expect(json, contains('"pathIds"'));
     expect(tester.takeException(), isNull);

@@ -550,8 +550,7 @@ class ResolvedName {
   /// Whether the served value carries a tentatively-reviewed quality
   /// (`provisional`/`unconfirmed`). Hosts that opt in to serving these
   /// (AT-14) must label them as tentative in the UI.
-  bool get isTentative =>
-      quality == 'provisional' || quality == 'unconfirmed';
+  bool get isTentative => quality == 'provisional' || quality == 'unconfirmed';
 
   /// Display text; `null` only for the ID fallback.
   final String? text;

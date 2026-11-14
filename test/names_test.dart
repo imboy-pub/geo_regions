@@ -221,9 +221,7 @@ void qualityFallbackGroup() {
       );
       // cn-stat:340176 (合肥高新技术产业开发区) has no GeoNames row either, so
       // the en pack keeps the node honestly missing.
-      final zone = _cn.nodes.firstWhere(
-        (node) => node.id == 'cn-stat:340176',
-      );
+      final zone = _cn.nodes.firstWhere((node) => node.id == 'cn-stat:340176');
       expect(enCn.names.containsKey(zone.id), isFalse);
       final name = resolver.resolve(zone, 'en-US');
       // en pack exists but lacks the node; default name is source-native
