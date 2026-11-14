@@ -2,13 +2,13 @@
   "compatibleStructureRevision": "s-b6c4c44272f8f283",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 218,
-    "missingNames": 4,
+    "explicitNames": 219,
+    "missingNames": 3,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 3,
     "sourceNative": 0,
-    "sourceProvisional": 214,
+    "sourceProvisional": 215,
     "sourceQualified": 1,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
@@ -138,6 +138,7 @@
       "iso3166-2:GB-MRT": "provisional",
       "iso3166-2:GB-MRY": "provisional",
       "iso3166-2:GB-MTY": "provisional",
+      "iso3166-2:GB-MUL": "provisional",
       "iso3166-2:GB-NAY": "provisional",
       "iso3166-2:GB-NBL": "provisional",
       "iso3166-2:GB-NEL": "provisional",
@@ -231,6 +232,13 @@
       "iso3166-2:GB-WSX": "provisional",
       "iso3166-2:GB-YOR": "provisional",
       "iso3166-2:GB-ZET": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 1,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     },
     "zhHantScriptConversion": {
       "changed": 91,
@@ -367,6 +375,7 @@
     "iso3166-2:GB-MRT": "默頓區",
     "iso3166-2:GB-MRY": "馬里",
     "iso3166-2:GB-MTY": "梅瑟蒂德菲爾郡級自治市",
+    "iso3166-2:GB-MUL": "中阿爾斯特",
     "iso3166-2:GB-NAY": "北艾爾郡",
     "iso3166-2:GB-NBL": "諾森伯蘭郡",
     "iso3166-2:GB-NEL": "東北林肯郡",
@@ -462,9 +471,10 @@
     "iso3166-2:GB-ZET": "設德蘭群島"
   },
   "protocolVersion": "1.0",
-  "revision": "l-715d6fc074d2df9d",
+  "revision": "l-adcb62cb253874f7",
   "sourceRefs": [
     "sources/raw/cldr/territories-zh-Hant.json",
-    "sources/raw/cldr/subdivisions-zh-Hant.xml"
+    "sources/raw/cldr/subdivisions-zh-Hant.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

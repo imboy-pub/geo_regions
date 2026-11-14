@@ -2,28 +2,45 @@
   "compatibleStructureRevision": "s-aa8bd2af2f7f9748",
   "countryCode": "DE",
   "coverage": {
-    "explicitNames": 11,
-    "missingNames": 6,
+    "cldrTerritoryNameFill": {
+      "filled": 4,
+      "note": "Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality."
+    },
+    "explicitNames": 17,
+    "missingNames": 0,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,
     "sourceNative": 0,
-    "sourceProvisional": 10,
-    "sourceQualified": 1,
+    "sourceProvisional": 12,
+    "sourceQualified": 5,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
     "translationQualityById": {
       "cc:DE": "cldr-json-qualified",
       "iso3166-2:DE-BB": "provisional",
       "iso3166-2:DE-BE": "provisional",
+      "iso3166-2:DE-BW": "cldr-json-qualified",
       "iso3166-2:DE-BY": "provisional",
       "iso3166-2:DE-HB": "provisional",
       "iso3166-2:DE-HE": "provisional",
       "iso3166-2:DE-HH": "provisional",
+      "iso3166-2:DE-MV": "cldr-json-qualified",
       "iso3166-2:DE-NI": "provisional",
+      "iso3166-2:DE-NW": "provisional",
+      "iso3166-2:DE-RP": "provisional",
+      "iso3166-2:DE-SH": "cldr-json-qualified",
       "iso3166-2:DE-SL": "provisional",
       "iso3166-2:DE-SN": "provisional",
+      "iso3166-2:DE-ST": "cldr-json-qualified",
       "iso3166-2:DE-TH": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 2,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -32,19 +49,26 @@
     "cc:DE": "ドイツ",
     "iso3166-2:DE-BB": "ブランデンブルク州",
     "iso3166-2:DE-BE": "ベルリン",
+    "iso3166-2:DE-BW": "ボツワナ",
     "iso3166-2:DE-BY": "バイエルン自由州",
     "iso3166-2:DE-HB": "ブレーメン州",
     "iso3166-2:DE-HE": "ヘッセン州",
     "iso3166-2:DE-HH": "ハンブルク",
+    "iso3166-2:DE-MV": "モルディブ",
     "iso3166-2:DE-NI": "ニーダーザクセン州",
+    "iso3166-2:DE-NW": "ノルトライン＝ヴェストファーレン州",
+    "iso3166-2:DE-RP": "ラインラント＝プファルツ州",
+    "iso3166-2:DE-SH": "セントヘレナ",
     "iso3166-2:DE-SL": "ザールラント州",
     "iso3166-2:DE-SN": "ザクセン州",
+    "iso3166-2:DE-ST": "サントメ・プリンシペ",
     "iso3166-2:DE-TH": "テューリンゲン州"
   },
   "protocolVersion": "1.0",
-  "revision": "l-a37fa93382e024f7",
+  "revision": "l-34dd017b79f3acab",
   "sourceRefs": [
     "sources/raw/cldr/territories-ja.json",
-    "sources/raw/cldr/subdivisions-ja.xml"
+    "sources/raw/cldr/subdivisions-ja.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

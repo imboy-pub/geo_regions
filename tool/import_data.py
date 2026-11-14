@@ -30,6 +30,7 @@ CN_EXCLUSIONS = {'cnhk', 'cnmo', 'cntw'}
 # enters git; the extract carries its upstream URL + sha256 for provenance and
 # any tampering shows up as stale-generated-output in --check.
 GEONAMES_CN_ROWS = 'sources/raw/geonames/cn-adm-rows.json'
+WIKIDATA_LABELS = 'sources/raw/wikidata/subdivision-labels.json'
 # GeoNames uses FIPS codes for the four municipalities' admin1 (GB codes 11/12/31/50).
 GEONAMES_FIPS_MUNICIPALITIES = {'11': '22', '12': '28', '31': '23', '50': '33'}
 # Pinyin admin suffixes stripped from the display name ONLY when the bare form
@@ -324,6 +325,12 @@ def quality_stats(names, quality, total):
 
 
 def build(root):
+    wd_path = root / WIKIDATA_LABELS
+    wd_extract = read_json(wd_path) if wd_path.is_file() else None
+    if wd_extract is not None:
+        counts = wd_extract['matchCount']
+        if counts != len(wd_extract['labels']):
+            raise ValueError('Wikidata extract matchCount disagrees with its rows')
     raw = root / 'sources/raw/cldr'
     containment = read_json(raw / 'subdivisionContainment.json')['supplemental']['subdivisionContainment']
     aliases = read_json(raw / 'aliases.json')['supplemental']['metadata']['alias']['subdivisionAlias']
@@ -381,6 +388,9 @@ def build(root):
                   'rootChildren': sum(n['parentId'] == 'cc:' + cc for n in nodes),
                   'kinds': dict(sorted(collections.Counter(n['kind'] for n in nodes).items())), 'locales': {}}
         gn_overlay, gn_meta = geonames_cn_overlay(nodes, root) if cc == 'CN' else ({}, {})
+        node_by_id = {n['id']: n for n in nodes}
+        wd_labels = wd_extract['labels'] if wd_extract else {}
+        wd_match = wd_extract['matchCount'] if wd_extract else 0
         zh_hans_names = {'cc:' + cc: territories['zh-Hans'][cc]}
         for code in index:
             if code in translations['zh-Hans']:
@@ -395,6 +405,16 @@ def build(root):
                     names[node_id(code)] = translations[locale][code]
                     quality[node_id(code)] = quality_maps[locale][code]
             refs = [f'sources/raw/cldr/territories-{upstream}.json', f'sources/raw/cldr/subdivisions-{upstream}.xml']
+            territory_overlay = {}
+            for nid, node in node_by_id.items():
+                if nid in names or node['kind'] == 'country':
+                    continue
+                tcode = node['code'].split('-', 1)[1] if '-' in node['code'] else None
+                if tcode and tcode in territories[locale]:
+                    territory_overlay[nid] = territories[locale][tcode]
+            if territory_overlay:
+                names.update(territory_overlay)
+                quality.update({k: 'cldr-json-qualified' for k in territory_overlay})
             if cc == 'CN' and locale == 'zh-Hans':
                 names.update(native_names)
                 quality.update({k: 'source-native' for k in native_names})
@@ -404,7 +424,7 @@ def build(root):
                 for nid, text in zh_hans_names.items():
                     if nid in names:
                         continue
-                    converted, changed = s2t_places.convert(text)
+                    converted, changed = s2t_places.convert_place_name(text)
                     s2t_overlay[nid] = converted
                     s2t_changed += 1 if changed else 0
                 names.update(s2t_overlay)
@@ -415,9 +435,29 @@ def build(root):
                 names.update(gn_applied)
                 quality.update({k: 'provisional' for k in gn_applied})
                 refs.append(GEONAMES_CN_ROWS)
+            wd_overlay = {}
+            for nid, node in node_by_id.items():
+                if nid in names or node['kind'] == 'country':
+                    continue
+                label = wd_labels.get(node['code'], {}).get('labels', {}).get(locale)
+                if label:
+                    wd_overlay[nid] = label
+            if wd_overlay:
+                names.update(wd_overlay)
+                quality.update({k: 'provisional' for k in wd_overlay})
+                refs.append(WIKIDATA_LABELS)
             stats = quality_stats(names, quality, len(nodes))
             locale_coverage = dict(stats, status='research-seed', translationQualityById=quality,
                 policy='Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.')
+            if territory_overlay:
+                locale_coverage['cldrTerritoryNameFill'] = {
+                    'filled': len(territory_overlay),
+                    'note': 'Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality.'}
+            if wd_overlay:
+                locale_coverage['wikidataLabelOverlay'] = {
+                    'source': WIKIDATA_LABELS, 'license': 'CC0-1.0',
+                    'filled': len(wd_overlay), 'matchCount': wd_match,
+                    'note': 'Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.'}
             if gn_applied:
                 locale_coverage['geoNamesLatinOverlay'] = dict(gn_meta, source=GEONAMES_CN_ROWS,
                     license='CC-BY-4.0', locales=list(GEONAMES_LOCALES),

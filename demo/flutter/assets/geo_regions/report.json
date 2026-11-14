@@ -2,7 +2,7 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "config/assets.hybrid-cn.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-14T06:05:46.025523Z",
+  "generatedAt": "2026-11-14T06:24:14.450503Z",
   "profile": "hybrid-cn-online-rest",
   "replace": true,
   "resources": [
@@ -85,10 +85,10 @@
       "sha256": "049254dfad811621f89ae67e81cbf5403f6562288a1f617bea23da1b96236081"
     },
     {
-      "bytes": 259972,
-      "gzipBytes": 40791,
+      "bytes": 260347,
+      "gzipBytes": 41087,
       "path": "i18n/zh-Hant/CN.json",
-      "sha256": "7deecf0143b9162403e407df802da92b9e030c312a404ebf714619b3a5319a03"
+      "sha256": "e54756e99473dd36ad8c403b5dba86b6a004ca5e3f9fa843a4eac56bed32fc88"
     },
     {
       "bytes": 1037814,
@@ -102,8 +102,8 @@
   },
   "totals": {
     "fragmentFileCount": 17,
-    "gzipBytes": 171753,
+    "gzipBytes": 172049,
     "resourceFileCount": 15,
-    "uncompressedBytes": 1801653
+    "uncompressedBytes": 1802028
   }
 }

@@ -172,6 +172,22 @@ S2T_PLACES = {
     "鸠": "鳩", "鸡": "雞", "鸭": "鴨", "鹤": "鶴", "鹰": "鷹",
 }
 
+# Whole-name overrides where the char-level table alone gives the wrong
+# form for a specific place name (recorded evidence, never guessed):
+# - 腾冲市: 冲 maps to 沖 in the char table (for Okinawa-style usage), but
+#   traditional usage for the Yunnan city is 騰衝.
+S2T_NAME_FIXES = {
+    "腾冲市": "騰衝市",
+}
+
+
+def convert_place_name(text: str):
+    """convert() plus recorded whole-name overrides; returns (text, changed)."""
+    if text in S2T_NAME_FIXES:
+        return S2T_NAME_FIXES[text], 1
+    return convert(text)
+
+
 def convert(text: str):
     """Return (converted, changed_count). Unmapped chars pass through unchanged."""
     out, changed = [], 0

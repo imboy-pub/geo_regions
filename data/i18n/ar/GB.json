@@ -2,13 +2,13 @@
   "compatibleStructureRevision": "s-b6c4c44272f8f283",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 136,
-    "missingNames": 86,
+    "explicitNames": 137,
+    "missingNames": 85,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 3,
     "sourceNative": 0,
-    "sourceProvisional": 132,
+    "sourceProvisional": 133,
     "sourceQualified": 1,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
@@ -67,6 +67,7 @@
       "iso3166-2:GB-HEF": "provisional",
       "iso3166-2:GB-HIL": "provisional",
       "iso3166-2:GB-HLD": "provisional",
+      "iso3166-2:GB-HMF": "provisional",
       "iso3166-2:GB-HNS": "provisional",
       "iso3166-2:GB-HRT": "provisional",
       "iso3166-2:GB-HRW": "provisional",
@@ -149,6 +150,13 @@
       "iso3166-2:GB-WSX": "provisional",
       "iso3166-2:GB-YOR": "provisional",
       "iso3166-2:GB-ZET": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 1,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -208,6 +216,7 @@
     "iso3166-2:GB-HEF": "هيرفوردشير",
     "iso3166-2:GB-HIL": "ناحية هيلينغدون في لندن",
     "iso3166-2:GB-HLD": "هایلند",
+    "iso3166-2:GB-HMF": "حي هامرسميث وفولهام في لندن",
     "iso3166-2:GB-HNS": "هونسلو",
     "iso3166-2:GB-HRT": "هارتفوردشير",
     "iso3166-2:GB-HRW": "حي هرو لندن",
@@ -292,9 +301,10 @@
     "iso3166-2:GB-ZET": "جزر شتلاند"
   },
   "protocolVersion": "1.0",
-  "revision": "l-8d52d8bfd30899c5",
+  "revision": "l-f18f2498c9dd690e",
   "sourceRefs": [
     "sources/raw/cldr/territories-ar.json",
-    "sources/raw/cldr/subdivisions-ar.xml"
+    "sources/raw/cldr/subdivisions-ar.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

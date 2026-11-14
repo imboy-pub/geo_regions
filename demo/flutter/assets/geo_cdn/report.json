@@ -2,7 +2,7 @@
   "catalogRevision": "c-0d1490d60a530f8e",
   "configPath": "demo/flutter/tools/geo_cdn.config.json",
   "datasetId": "geo-regions-seed",
-  "generatedAt": "2026-11-14T06:05:46.294410Z",
+  "generatedAt": "2026-11-14T06:24:14.699354Z",
   "profile": "demo-simulated-cdn-full",
   "replace": true,
   "resources": [
@@ -85,16 +85,16 @@
       "sha256": "f3343916fb31a5bbaf114d188578b38a97e3afafc190e79b4414ef9999cd4ecc"
     },
     {
-      "bytes": 10410,
-      "gzipBytes": 1988,
+      "bytes": 11500,
+      "gzipBytes": 2282,
       "path": "i18n/ar/FR.json",
-      "sha256": "55769ae5be63bfc2488999a3d6430ab4843693177b3ad50b55dab922eb018a23"
+      "sha256": "6a1f2248f3887bed96d7603d9952509c3c0c99f9835985c04e91bd40a9d8a3e9"
     },
     {
-      "bytes": 12766,
-      "gzipBytes": 2656,
+      "bytes": 13235,
+      "gzipBytes": 2831,
       "path": "i18n/ar/GB.json",
-      "sha256": "28c71e7ac8db5cdb3708b0ead0f1861d6f9e90f3110ac54d700c806b41c803ce"
+      "sha256": "87dfccc2849235dd303e61a9f4099fbfd6004d981995c107bc879f31e69cf97d"
     },
     {
       "bytes": 12548,
@@ -127,10 +127,10 @@
       "sha256": "a13fe5ffdd5e0bf527b4554ca451d995d4578d7cf62f468b8498cf4b757d0d4e"
     },
     {
-      "bytes": 5120,
-      "gzipBytes": 1286,
+      "bytes": 5993,
+      "gzipBytes": 1525,
       "path": "i18n/ar/US.json",
-      "sha256": "69fbb77d954f41de2259515ca2351248a6dfc417cf3b3a9a2cc5d441120c0baa"
+      "sha256": "fc7fc1aa86a7c82424a6b85f0573949ea391574dbc97a134d36e242806b52e17"
     },
     {
       "bytes": 225608,
@@ -145,10 +145,10 @@
       "sha256": "bd9f668bf871d68ba3066dd3291635e7466cf11d0dedcf1eacfdeca2fc62b971"
     },
     {
-      "bytes": 10965,
-      "gzipBytes": 2017,
+      "bytes": 11963,
+      "gzipBytes": 2304,
       "path": "i18n/de/FR.json",
-      "sha256": "4563d507a7e3179beb0b2eb840a2e76f5f10dda0ef43e9b3ed64dad15702ef8e"
+      "sha256": "b4ee9701ec79a1deb6d34e82c25c54bf843dd71c2051a4e54158f416849ed5b8"
     },
     {
       "bytes": 19520,
@@ -187,10 +187,10 @@
       "sha256": "8b8134c90ec5e7fcbb913ef54d3d86f709dddb57227a9d44a0e659247061d295"
     },
     {
-      "bytes": 4733,
-      "gzipBytes": 1141,
+      "bytes": 5532,
+      "gzipBytes": 1376,
       "path": "i18n/de/US.json",
-      "sha256": "6db0c2764e3053ca995ec7f4b205778e7f808007c294ba29c881605f7b51c2c1"
+      "sha256": "776989678b941e71af95d2a2ac76a79d3cdf043d6716e02a9886709dc84f5406"
     },
     {
       "bytes": 225802,
@@ -265,10 +265,10 @@
       "sha256": "da3faffda8d18b497c560e8629e800a26e729ed8c5bbc39a71c81fdafec05426"
     },
     {
-      "bytes": 9786,
-      "gzipBytes": 1920,
+      "bytes": 10779,
+      "gzipBytes": 2199,
       "path": "i18n/fr/FR.json",
-      "sha256": "811dd1d7706e635dda11aa57d2093ac80e9e0424e9358e71d42e67454c462c45"
+      "sha256": "9d208d002ceb7e4f423519a6caf8d6f53f88852268989d07b4c739fffb1d284a"
     },
     {
       "bytes": 19675,
@@ -307,10 +307,10 @@
       "sha256": "cabc1865bc6e5909c4103d40e6fa7252202ab6d29c7fd46bea72f52404725948"
     },
     {
-      "bytes": 4747,
-      "gzipBytes": 1157,
+      "bytes": 5564,
+      "gzipBytes": 1392,
       "path": "i18n/fr/US.json",
-      "sha256": "4fa9a20a25b41122e5e885cd9e3338a9be768bf59ec91e032a18dadc502868a1"
+      "sha256": "5f953793583321bc1c4a3b2201bbcfb5ed2b5644ec258acef8944fc75597c9c9"
     },
     {
       "bytes": 225614,
@@ -325,16 +325,16 @@
       "sha256": "177ff662586cf41a5169507b7f4b6e77e0d3444b8953a55083e8a62c10613384"
     },
     {
-      "bytes": 9741,
-      "gzipBytes": 1913,
+      "bytes": 10724,
+      "gzipBytes": 2184,
       "path": "i18n/it/FR.json",
-      "sha256": "32cb4cf90880b992e9cc88ddbaa843e0f5b43dbefc40405e4e9cc7608dd74a0a"
+      "sha256": "967d2df899a518116e3ba17316fa957bbfb77b4c8f6b4d424e791341a4c1bbd5"
     },
     {
-      "bytes": 19234,
-      "gzipBytes": 3652,
+      "bytes": 19670,
+      "gzipBytes": 3817,
       "path": "i18n/it/GB.json",
-      "sha256": "ddb00618c9c62b22a7ee1ee85602d93fb227cfdfd6254dc1b575abe612bf9ad0"
+      "sha256": "85e11dd1b997b91c16f4606ccb22cb1bc019ba5c72f6d5f019a63d6273c5f6d2"
     },
     {
       "bytes": 11733,
@@ -361,16 +361,16 @@
       "sha256": "d1b7bd75b99f9c0938414531ab518b64ca5f5eeeef02223c214f6b41f7a45294"
     },
     {
-      "bytes": 1791,
-      "gzipBytes": 663,
+      "bytes": 2213,
+      "gzipBytes": 815,
       "path": "i18n/it/SA.json",
-      "sha256": "a6621ae01fb40350fceac0c5f5336f4ec345737cfe49fac7b470ebbc1476cee2"
+      "sha256": "17227dca809686869e4ca39e95d35fe0b97f64f07f6636f7a4e45dbe74798d54"
     },
     {
-      "bytes": 4741,
-      "gzipBytes": 1144,
+      "bytes": 5550,
+      "gzipBytes": 1379,
       "path": "i18n/it/US.json",
-      "sha256": "d35edb43a64269f89765e6b30f3b798de09d72d10b2f5bc3409be5675ac50e91"
+      "sha256": "6e7250269d4a9db156f2b4e6dd7f32822c4d2a91e58b1354e80035987f3fe003"
     },
     {
       "bytes": 3302,
@@ -379,16 +379,16 @@
       "sha256": "6b6dfcfef3c3aef9415bfcd79df33d62fb488dd9061579c10aecf8eb90a43c7e"
     },
     {
-      "bytes": 1736,
-      "gzipBytes": 715,
+      "bytes": 2926,
+      "gzipBytes": 1122,
       "path": "i18n/ja/DE.json",
-      "sha256": "197ad531c01f773d5bc5c3b8a1ab939559fbe13ebf8409d58f6ba39c7a6b22e0"
+      "sha256": "2f317e1c0d0ec7ec4a392bf761a9238134ef8024f527708b9bc089530481b919"
     },
     {
-      "bytes": 6766,
-      "gzipBytes": 1483,
+      "bytes": 12669,
+      "gzipBytes": 2559,
       "path": "i18n/ja/FR.json",
-      "sha256": "a8c0733a8914c65a694d7832bfc1b271f4bb07abc626190a48e8776635caf22d"
+      "sha256": "61258765563edc2be517e68c5126a761395bb0172dbbd4a835aaa688ca4d3711"
     },
     {
       "bytes": 22763,
@@ -397,10 +397,10 @@
       "sha256": "c709651a726a01eebc4deea547ff2d216737a0c97144b6975d3b8dd1e3f8777f"
     },
     {
-      "bytes": 11163,
-      "gzipBytes": 2197,
+      "bytes": 12373,
+      "gzipBytes": 2596,
       "path": "i18n/ja/IT.json",
-      "sha256": "a1bebb9139666aa2bf6fc429a3c4f2f05e84bda99c420cc73b100e4fdc5834a1"
+      "sha256": "6221e7f9253eec45dac6a29b9b9e81d41feeee5e9e2ff9607f78e73f73485d90"
     },
     {
       "bytes": 4446,
@@ -427,10 +427,10 @@
       "sha256": "3d3a0af191539e1f0bb332cdbb75eeb9964e5d4db276f76231dd2d116ace912d"
     },
     {
-      "bytes": 5263,
-      "gzipBytes": 1325,
+      "bytes": 6068,
+      "gzipBytes": 1585,
       "path": "i18n/ja/US.json",
-      "sha256": "4b0c7435054b84311b92901ef7b70b7add44a13308807326d4b50913c69d21c7"
+      "sha256": "49c51dc6cf640a691397d1609a4a087feb7ec19da721f169eff2d65e04d2585e"
     },
     {
       "bytes": 3356,
@@ -445,10 +445,10 @@
       "sha256": "60a146c328a4ed057e64828539786c5b9f279c90dda9453b364fd999b215ab09"
     },
     {
-      "bytes": 10304,
-      "gzipBytes": 2077,
+      "bytes": 11310,
+      "gzipBytes": 2393,
       "path": "i18n/ko/FR.json",
-      "sha256": "5445ae65cb6f216a794274afc149ca14e2e4667733adb370ccee459a4587ca76"
+      "sha256": "f1f4adce800f3c7dfd681d2c525438f7cc1bcbd471326e3592d057db4e11977a"
     },
     {
       "bytes": 19141,
@@ -487,10 +487,10 @@
       "sha256": "97dafc6dda4f7a4b650bb2252d5c5b15e8f01ad551d2ba002fd8c08b4d4d8944"
     },
     {
-      "bytes": 5018,
-      "gzipBytes": 1319,
+      "bytes": 6263,
+      "gzipBytes": 1743,
       "path": "i18n/ko/US.json",
-      "sha256": "70700f7bbe43681b9c062002026fbbabae58585f9d635853bdf34c65132059b7"
+      "sha256": "2e04a8bda9a52fb86cfa04ff1a3e4b3addd13a19e4e531103646d5fc671a4e75"
     },
     {
       "bytes": 3559,
@@ -505,10 +505,10 @@
       "sha256": "3e666e03ec69e76da753515946f79a4aa7cb679c7c625e4a09ba28dd09c3df6b"
     },
     {
-      "bytes": 10343,
-      "gzipBytes": 2109,
+      "bytes": 12047,
+      "gzipBytes": 2589,
       "path": "i18n/ru/FR.json",
-      "sha256": "ad42c3a7404531d37d957e922e25ab67bd39c4479abe07bf808fc8a55e3e086f"
+      "sha256": "a00c11ee0d090685a05c9f1e17b51377c3d8cedc23e00536ec1f3433d713ff84"
     },
     {
       "bytes": 20467,
@@ -517,10 +517,10 @@
       "sha256": "97d092d82d887a637f058bcac1c607d16f9db0567130efd1ca37f90a52b0914f"
     },
     {
-      "bytes": 11097,
-      "gzipBytes": 2281,
+      "bytes": 11876,
+      "gzipBytes": 2595,
       "path": "i18n/ru/IT.json",
-      "sha256": "6f842167a4bf0a1946c6e13df37b7d363519f082ccbd3459933afaf81f8609e8"
+      "sha256": "fa8f73f7304a95542588a1129454d5945694e53815f509b1cd8121de0afecb8e"
     },
     {
       "bytes": 4584,
@@ -547,10 +547,10 @@
       "sha256": "1a7b7829a02f883e5a5889bc9242218b663c76921f98e8da882af1cd55b8015a"
     },
     {
-      "bytes": 5161,
-      "gzipBytes": 1363,
+      "bytes": 6040,
+      "gzipBytes": 1629,
       "path": "i18n/ru/US.json",
-      "sha256": "0fba5f4f5ebd13a1ba895ad341e98fd571e2c58fdc47ee987c107592681e50f8"
+      "sha256": "8f4b9031e4e0ec024109e4a8c1b4be3abc9cfe4be3c201d1317ede6d02987ced"
     },
     {
       "bytes": 266539,
@@ -565,16 +565,16 @@
       "sha256": "0fc6a347211c605dc9e9836cf1821f0522dbe347ade5b5ee08cc5d4e97388cd6"
     },
     {
-      "bytes": 10254,
-      "gzipBytes": 2195,
+      "bytes": 11248,
+      "gzipBytes": 2511,
       "path": "i18n/zh-Hans/FR.json",
-      "sha256": "2b8863e7249fc8f1c3ed08e96cdfd48c5dc8b2d291bf9b26fafe6196578502aa"
+      "sha256": "3bde7603dff34f45c1e97c84d0c5b9a71142804b61777e6a4170fb58890668b5"
     },
     {
-      "bytes": 19098,
-      "gzipBytes": 4103,
+      "bytes": 19532,
+      "gzipBytes": 4286,
       "path": "i18n/zh-Hans/GB.json",
-      "sha256": "23b56daac356f63ad467dd2be52393546c9dc4f8d46a72d4d75000e35e20909e"
+      "sha256": "fa26875609c5ef5e614215d9056c474498819dacdc27b7774a8537259f48c0b8"
     },
     {
       "bytes": 11109,
@@ -607,40 +607,40 @@
       "sha256": "7c92a2a9af88e92883ed8834510d606130d65b79d3e2b21241e3012fea0b3e49"
     },
     {
-      "bytes": 5010,
-      "gzipBytes": 1398,
+      "bytes": 5800,
+      "gzipBytes": 1661,
       "path": "i18n/zh-Hans/US.json",
-      "sha256": "02cf41b1eee96c1e642c407c43765d4d7685b2b715ee3fa3e03c0ae93670582c"
+      "sha256": "a41131631ecaba383390ff14e256fa26239967374682ef17d54242ff9504424c"
     },
     {
-      "bytes": 259972,
-      "gzipBytes": 40791,
+      "bytes": 260347,
+      "gzipBytes": 41087,
       "path": "i18n/zh-Hant/CN.json",
-      "sha256": "7deecf0143b9162403e407df802da92b9e030c312a404ebf714619b3a5319a03"
+      "sha256": "e54756e99473dd36ad8c403b5dba86b6a004ca5e3f9fa843a4eac56bed32fc88"
     },
     {
-      "bytes": 2525,
-      "gzipBytes": 1053,
+      "bytes": 2798,
+      "gzipBytes": 1153,
       "path": "i18n/zh-Hant/DE.json",
-      "sha256": "aa2220d3393454c7709b62a8e3543f462b887f6fea3441b08ea2a43d0e6f6517"
+      "sha256": "cde0d8de33c939b7a58d716914ac24af01013edca96f7e6d5e3c560ca4a42e11"
     },
     {
-      "bytes": 10582,
-      "gzipBytes": 2358,
+      "bytes": 11582,
+      "gzipBytes": 2664,
       "path": "i18n/zh-Hant/FR.json",
-      "sha256": "8231ce5d2eff0f1909ce13096d3727348494fd2f344db0c5ea9210beee57e3f9"
+      "sha256": "d4b577b423ac1d5ebc172e6c9ac77b66fc24e22aac932bc85bcbe722df98933e"
     },
     {
-      "bytes": 19426,
-      "gzipBytes": 4247,
+      "bytes": 19860,
+      "gzipBytes": 4400,
       "path": "i18n/zh-Hant/GB.json",
-      "sha256": "ae1c982c64d3aab3489d6ef285a7aa05ae0702bb67c66c348112b43707e067b5"
+      "sha256": "6cbf74ee535984a9a3e4f98a9b9469fd5c7c070d7f55d837bf5f6b89d955867b"
     },
     {
-      "bytes": 11437,
-      "gzipBytes": 2642,
+      "bytes": 12005,
+      "gzipBytes": 2882,
       "path": "i18n/zh-Hant/IT.json",
-      "sha256": "98b32e2a842caf7cef0959dc840494cfa102007b3d882a1dba21b13b474ee39f"
+      "sha256": "e2a25542a3f6cec836ba0818540f67934f3ebaf89a5dab31eaa8f40fba80e039"
     },
     {
       "bytes": 4778,
@@ -655,10 +655,10 @@
       "sha256": "52ae6523ca4818949497790ec632ff3c597a9f98bd2b35851d5516dc25df7567"
     },
     {
-      "bytes": 8369,
-      "gzipBytes": 2091,
+      "bytes": 8639,
+      "gzipBytes": 2287,
       "path": "i18n/zh-Hant/RU.json",
-      "sha256": "3082c3520a0abab53cdc281618509795b18f0b5128db88160d96d67708e4f352"
+      "sha256": "ef28a40f747c6c43089444a4b673523bc63b7582f551762964855e320725131c"
     },
     {
       "bytes": 2241,
@@ -667,10 +667,10 @@
       "sha256": "e9e3d66190edea6ce87f1475da758a6a909cafe46043de09f346f1b2e12a60a7"
     },
     {
-      "bytes": 5337,
-      "gzipBytes": 1557,
+      "bytes": 6223,
+      "gzipBytes": 1802,
       "path": "i18n/zh-Hant/US.json",
-      "sha256": "fc24d2727146da3a08b5f76458dee91b51e21d3c2481f3bf6a55b06dcd5beaac"
+      "sha256": "0fde07e55d35151dc6e84d16b8ddaee01efc2c494c43a3350fbfcaddcd57d5b7"
     },
     {
       "bytes": 1037814,
@@ -747,8 +747,8 @@
   },
   "totals": {
     "fragmentFileCount": 123,
-    "gzipBytes": 435526,
+    "gzipBytes": 444333,
     "resourceFileCount": 121,
-    "uncompressedBytes": 3338258
+    "uncompressedBytes": 3367692
   }
 }

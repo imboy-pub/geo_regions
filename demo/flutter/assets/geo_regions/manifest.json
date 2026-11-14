@@ -120,14 +120,14 @@
       "sha256": "049254dfad811621f89ae67e81cbf5403f6562288a1f617bea23da1b96236081"
     },
     {
-      "bytes": 259972,
+      "bytes": 260347,
       "compatibleStructureRevision": "s-618de1dd32b43463",
       "countryCode": "CN",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/CN.json",
-      "revision": "l-942c0c62e3886df8",
-      "sha256": "7deecf0143b9162403e407df802da92b9e030c312a404ebf714619b3a5319a03"
+      "revision": "l-0f4acaa5ded849a0",
+      "sha256": "e54756e99473dd36ad8c403b5dba86b6a004ca5e3f9fa843a4eac56bed32fc88"
     },
     {
       "bytes": 1037814,
@@ -138,5 +138,5 @@
       "sha256": "9012f60c429220188ab6ed536e770d229df1a5816a5fc943904b22e46349dd0b"
     }
   ],
-  "revision": "m-a9903d6c7669471f"
+  "revision": "m-b5d78242b3e81574"
 }

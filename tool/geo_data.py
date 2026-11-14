@@ -177,7 +177,8 @@ def verify_sources(root):
         require(sha256(path) == entry.get("sha256"), f"derived source hash mismatch: {relative}")
         require(path.stat().st_size == entry.get("sizeBytes"), f"derived source byte count mismatch: {relative}")
         text_value(entry.get("license"), f"{relative}.license")
-        require(entry.get("upstreamSha256"), f"derived source missing upstream pin: {relative}")
+        require(entry.get("upstreamSha256") or entry.get("upstreamQuery"),
+                f"derived source missing upstream pin: {relative}")
     return known
 
 

@@ -2,13 +2,13 @@
   "compatibleStructureRevision": "s-116ac088cb082ba7",
   "countryCode": "SA",
   "coverage": {
-    "explicitNames": 13,
-    "missingNames": 1,
+    "explicitNames": 14,
+    "missingNames": 0,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,
     "sourceNative": 0,
-    "sourceProvisional": 12,
+    "sourceProvisional": 13,
     "sourceQualified": 1,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
@@ -25,7 +25,15 @@
       "iso3166-2:SA-09": "provisional",
       "iso3166-2:SA-10": "provisional",
       "iso3166-2:SA-11": "provisional",
-      "iso3166-2:SA-12": "provisional"
+      "iso3166-2:SA-12": "provisional",
+      "iso3166-2:SA-14": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 1,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -43,12 +51,14 @@
     "iso3166-2:SA-09": "Jazan",
     "iso3166-2:SA-10": "Najran",
     "iso3166-2:SA-11": "Al-Baha",
-    "iso3166-2:SA-12": "Al-Jawf"
+    "iso3166-2:SA-12": "Al-Jawf",
+    "iso3166-2:SA-14": "'Asir"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c766a172ba4bdf05",
+  "revision": "l-632aa82e9e8b023a",
   "sourceRefs": [
     "sources/raw/cldr/territories-it.json",
-    "sources/raw/cldr/subdivisions-it.xml"
+    "sources/raw/cldr/subdivisions-it.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

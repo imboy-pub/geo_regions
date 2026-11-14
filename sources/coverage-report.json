@@ -107,8 +107,8 @@
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 3429,
-          "sourceQualified": 1,
+          "sourceProvisional": 3417,
+          "sourceQualified": 13,
           "sourceUnconfirmed": 0
         }
       },
@@ -348,23 +348,23 @@
       },
       "locales": {
         "ar": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "de": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "en": {
@@ -378,73 +378,73 @@
           "sourceUnconfirmed": 0
         },
         "fr": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "it": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "ko": {
-          "explicitNames": 51,
-          "missingNames": 7,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 50,
-          "sourceQualified": 1,
+          "sourceProvisional": 51,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "ru": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "zh-Hans": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceQualified": 7,
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 52,
-          "missingNames": 6,
+          "explicitNames": 58,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 51,
-          "sourceQualified": 1,
+          "sourceProvisional": 25,
+          "sourceQualified": 33,
           "sourceUnconfirmed": 0
         }
       },
@@ -460,12 +460,12 @@
       },
       "locales": {
         "ar": {
-          "explicitNames": 136,
-          "missingNames": 86,
+          "explicitNames": 137,
+          "missingNames": 85,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 132,
+          "sourceProvisional": 133,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -500,12 +500,12 @@
           "sourceUnconfirmed": 0
         },
         "it": {
-          "explicitNames": 218,
-          "missingNames": 4,
+          "explicitNames": 219,
+          "missingNames": 3,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 214,
+          "sourceProvisional": 215,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
@@ -540,22 +540,22 @@
           "sourceUnconfirmed": 0
         },
         "zh-Hans": {
-          "explicitNames": 218,
-          "missingNames": 4,
+          "explicitNames": 219,
+          "missingNames": 3,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 214,
+          "sourceProvisional": 215,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 218,
-          "missingNames": 4,
+          "explicitNames": 219,
+          "missingNames": 3,
           "projectReviewed": 0,
           "sourceApproved": 3,
           "sourceNative": 0,
-          "sourceProvisional": 214,
+          "sourceProvisional": 215,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         }
@@ -622,13 +622,13 @@
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 11,
-          "missingNames": 6,
+          "explicitNames": 17,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 10,
-          "sourceQualified": 1,
+          "sourceProvisional": 12,
+          "sourceQualified": 5,
           "sourceUnconfirmed": 0
         },
         "ko": {
@@ -667,8 +667,8 @@
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 16,
-          "sourceQualified": 1,
+          "sourceProvisional": 5,
+          "sourceQualified": 12,
           "sourceUnconfirmed": 0
         }
       },
@@ -684,23 +684,23 @@
       },
       "locales": {
         "ar": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "de": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "en": {
@@ -714,73 +714,73 @@
           "sourceUnconfirmed": 0
         },
         "fr": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "it": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 71,
-          "missingNames": 54,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 70,
-          "sourceQualified": 1,
+          "sourceProvisional": 115,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "ko": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "ru": {
-          "explicitNames": 113,
-          "missingNames": 12,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 112,
-          "sourceQualified": 1,
+          "sourceProvisional": 115,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "zh-Hans": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         },
         "zh-Hant": {
-          "explicitNames": 116,
-          "missingNames": 9,
+          "explicitNames": 124,
+          "missingNames": 1,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
           "sourceProvisional": 115,
-          "sourceQualified": 1,
+          "sourceQualified": 9,
           "sourceUnconfirmed": 0
         }
       },
@@ -846,13 +846,13 @@
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 121,
-          "missingNames": 6,
+          "explicitNames": 127,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 120,
-          "sourceQualified": 1,
+          "sourceProvisional": 124,
+          "sourceQualified": 3,
           "sourceUnconfirmed": 0
         },
         "ko": {
@@ -866,13 +866,13 @@
           "sourceUnconfirmed": 0
         },
         "ru": {
-          "explicitNames": 125,
-          "missingNames": 2,
+          "explicitNames": 127,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 124,
-          "sourceQualified": 1,
+          "sourceProvisional": 125,
+          "sourceQualified": 2,
           "sourceUnconfirmed": 0
         },
         "zh-Hans": {
@@ -891,8 +891,8 @@
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 126,
-          "sourceQualified": 1,
+          "sourceProvisional": 60,
+          "sourceQualified": 67,
           "sourceUnconfirmed": 0
         }
       },
@@ -1003,8 +1003,8 @@
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 83,
-          "sourceQualified": 1,
+          "sourceProvisional": 72,
+          "sourceQualified": 12,
           "sourceUnconfirmed": 0
         }
       },
@@ -1060,12 +1060,12 @@
           "sourceUnconfirmed": 0
         },
         "it": {
-          "explicitNames": 13,
-          "missingNames": 1,
+          "explicitNames": 14,
+          "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
-          "sourceProvisional": 12,
+          "sourceProvisional": 13,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },

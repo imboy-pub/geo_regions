@@ -2,13 +2,13 @@
   "compatibleStructureRevision": "s-b6c4c44272f8f283",
   "countryCode": "GB",
   "coverage": {
-    "explicitNames": 218,
-    "missingNames": 4,
+    "explicitNames": 219,
+    "missingNames": 3,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 3,
     "sourceNative": 0,
-    "sourceProvisional": 214,
+    "sourceProvisional": 215,
     "sourceQualified": 1,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
@@ -29,6 +29,7 @@
       "iso3166-2:GB-BDG": "provisional",
       "iso3166-2:GB-BEN": "provisional",
       "iso3166-2:GB-BEX": "provisional",
+      "iso3166-2:GB-BFS": "provisional",
       "iso3166-2:GB-BGE": "provisional",
       "iso3166-2:GB-BGW": "provisional",
       "iso3166-2:GB-BIR": "provisional",
@@ -231,6 +232,13 @@
       "iso3166-2:GB-WSX": "provisional",
       "iso3166-2:GB-YOR": "provisional",
       "iso3166-2:GB-ZET": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 1,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -252,6 +260,7 @@
     "iso3166-2:GB-BDG": "Barking e Dagenham",
     "iso3166-2:GB-BEN": "Borgo londinese di Brent",
     "iso3166-2:GB-BEX": "Bexley",
+    "iso3166-2:GB-BFS": "Città di Belfast",
     "iso3166-2:GB-BGE": "distretto di contea di Bridgend",
     "iso3166-2:GB-BGW": "distretto di contea di Blaenau Gwent",
     "iso3166-2:GB-BIR": "Birmingham",
@@ -456,9 +465,10 @@
     "iso3166-2:GB-ZET": "Isole Shetland"
   },
   "protocolVersion": "1.0",
-  "revision": "l-e2ff26c0a8c3d551",
+  "revision": "l-6d1a7a1c05e51387",
   "sourceRefs": [
     "sources/raw/cldr/territories-it.json",
-    "sources/raw/cldr/subdivisions-it.xml"
+    "sources/raw/cldr/subdivisions-it.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

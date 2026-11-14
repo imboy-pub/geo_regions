@@ -2,19 +2,24 @@
   "compatibleStructureRevision": "s-fa8d4c05a82b07c6",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 125,
-    "missingNames": 2,
+    "cldrTerritoryNameFill": {
+      "filled": 1,
+      "note": "Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality."
+    },
+    "explicitNames": 127,
+    "missingNames": 0,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,
     "sourceNative": 0,
-    "sourceProvisional": 124,
-    "sourceQualified": 1,
+    "sourceProvisional": 125,
+    "sourceQualified": 2,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
     "translationQualityById": {
       "cc:IT": "cldr-json-qualified",
       "iso3166-2:IT-21": "provisional",
+      "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
       "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
@@ -37,6 +42,7 @@
       "iso3166-2:IT-AL": "provisional",
       "iso3166-2:IT-AN": "provisional",
       "iso3166-2:IT-AP": "provisional",
+      "iso3166-2:IT-AQ": "cldr-json-qualified",
       "iso3166-2:IT-AR": "provisional",
       "iso3166-2:IT-AT": "provisional",
       "iso3166-2:IT-AV": "provisional",
@@ -138,6 +144,13 @@
       "iso3166-2:IT-VR": "provisional",
       "iso3166-2:IT-VT": "provisional",
       "iso3166-2:IT-VV": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 1,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -145,6 +158,7 @@
   "names": {
     "cc:IT": "Италия",
     "iso3166-2:IT-21": "Пьемонт",
+    "iso3166-2:IT-23": "Валле-д’Аоста",
     "iso3166-2:IT-25": "Ломбардия",
     "iso3166-2:IT-32": "Трентино — Альто-Адидже",
     "iso3166-2:IT-34": "Венеция",
@@ -167,6 +181,7 @@
     "iso3166-2:IT-AL": "Алессандрия",
     "iso3166-2:IT-AN": "Анкона",
     "iso3166-2:IT-AP": "Асколи-Пичено",
+    "iso3166-2:IT-AQ": "Антарктида",
     "iso3166-2:IT-AR": "Ареццо",
     "iso3166-2:IT-AT": "Асти",
     "iso3166-2:IT-AV": "Авеллино",
@@ -270,9 +285,10 @@
     "iso3166-2:IT-VV": "Вибо-Валентия"
   },
   "protocolVersion": "1.0",
-  "revision": "l-bc32a2c40bafaf7b",
+  "revision": "l-8529841baaa4ac4d",
   "sourceRefs": [
     "sources/raw/cldr/territories-ru.json",
-    "sources/raw/cldr/subdivisions-ru.xml"
+    "sources/raw/cldr/subdivisions-ru.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

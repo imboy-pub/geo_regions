@@ -2,14 +2,18 @@
   "compatibleStructureRevision": "s-fa8d4c05a82b07c6",
   "countryCode": "IT",
   "coverage": {
-    "explicitNames": 121,
-    "missingNames": 6,
+    "cldrTerritoryNameFill": {
+      "filled": 2,
+      "note": "Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality."
+    },
+    "explicitNames": 127,
+    "missingNames": 0,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,
     "sourceNative": 0,
-    "sourceProvisional": 120,
-    "sourceQualified": 1,
+    "sourceProvisional": 124,
+    "sourceQualified": 3,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
     "translationQualityById": {
@@ -17,8 +21,11 @@
       "iso3166-2:IT-21": "provisional",
       "iso3166-2:IT-23": "provisional",
       "iso3166-2:IT-25": "provisional",
+      "iso3166-2:IT-32": "provisional",
       "iso3166-2:IT-34": "provisional",
+      "iso3166-2:IT-36": "provisional",
       "iso3166-2:IT-42": "provisional",
+      "iso3166-2:IT-45": "provisional",
       "iso3166-2:IT-52": "provisional",
       "iso3166-2:IT-55": "provisional",
       "iso3166-2:IT-57": "provisional",
@@ -47,6 +54,7 @@
       "iso3166-2:IT-BO": "provisional",
       "iso3166-2:IT-BR": "provisional",
       "iso3166-2:IT-BS": "provisional",
+      "iso3166-2:IT-BT": "cldr-json-qualified",
       "iso3166-2:IT-BZ": "provisional",
       "iso3166-2:IT-CA": "provisional",
       "iso3166-2:IT-CB": "provisional",
@@ -60,6 +68,7 @@
       "iso3166-2:IT-CT": "provisional",
       "iso3166-2:IT-CZ": "provisional",
       "iso3166-2:IT-EN": "provisional",
+      "iso3166-2:IT-FC": "provisional",
       "iso3166-2:IT-FE": "provisional",
       "iso3166-2:IT-FG": "provisional",
       "iso3166-2:IT-FI": "provisional",
@@ -83,6 +92,7 @@
       "iso3166-2:IT-MI": "provisional",
       "iso3166-2:IT-MN": "provisional",
       "iso3166-2:IT-MO": "provisional",
+      "iso3166-2:IT-MS": "cldr-json-qualified",
       "iso3166-2:IT-MT": "provisional",
       "iso3166-2:IT-NA": "provisional",
       "iso3166-2:IT-NO": "provisional",
@@ -134,6 +144,13 @@
       "iso3166-2:IT-VR": "provisional",
       "iso3166-2:IT-VT": "provisional",
       "iso3166-2:IT-VV": "provisional"
+    },
+    "wikidataLabelOverlay": {
+      "filled": 4,
+      "license": "CC0-1.0",
+      "matchCount": 699,
+      "note": "Wikidata community labels fetched via exact P300 (ISO 3166-2) join; provisional quality, not human-reviewed.",
+      "source": "sources/raw/wikidata/subdivision-labels.json"
     }
   },
   "datasetId": "geo-regions-seed",
@@ -143,8 +160,11 @@
     "iso3166-2:IT-21": "ピエモンテ州",
     "iso3166-2:IT-23": "ヴァッレ・ダオスタ州",
     "iso3166-2:IT-25": "ロンバルディア州",
+    "iso3166-2:IT-32": "トレンティーノ＝アルト・アディジェ州",
     "iso3166-2:IT-34": "ヴェネト州",
+    "iso3166-2:IT-36": "フリウリ＝ヴェネツィア・ジュリア州",
     "iso3166-2:IT-42": "リグーリア州",
+    "iso3166-2:IT-45": "エミリア＝ロマーニャ州",
     "iso3166-2:IT-52": "トスカーナ州",
     "iso3166-2:IT-55": "ウンブリア州",
     "iso3166-2:IT-57": "マルケ州",
@@ -173,6 +193,7 @@
     "iso3166-2:IT-BO": "ボローニャ県",
     "iso3166-2:IT-BR": "ブリンディジ県",
     "iso3166-2:IT-BS": "ブレシア県",
+    "iso3166-2:IT-BT": "ブータン",
     "iso3166-2:IT-BZ": "ボルツァーノ自治県",
     "iso3166-2:IT-CA": "カリャリ県",
     "iso3166-2:IT-CB": "カンポバッソ県",
@@ -186,6 +207,7 @@
     "iso3166-2:IT-CT": "カターニア県",
     "iso3166-2:IT-CZ": "カタンザーロ県",
     "iso3166-2:IT-EN": "エンナ県",
+    "iso3166-2:IT-FC": "フォルリ＝チェゼーナ県",
     "iso3166-2:IT-FE": "フェラーラ県",
     "iso3166-2:IT-FG": "フォッジャ県",
     "iso3166-2:IT-FI": "フィレンツェ県",
@@ -209,6 +231,7 @@
     "iso3166-2:IT-MI": "ミラノ県",
     "iso3166-2:IT-MN": "マントヴァ県",
     "iso3166-2:IT-MO": "モデナ県",
+    "iso3166-2:IT-MS": "モントセラト",
     "iso3166-2:IT-MT": "マテーラ県",
     "iso3166-2:IT-NA": "ナポリ県",
     "iso3166-2:IT-NO": "ノヴァーラ県",
@@ -262,9 +285,10 @@
     "iso3166-2:IT-VV": "ヴィボ・ヴァレンツィア県"
   },
   "protocolVersion": "1.0",
-  "revision": "l-c1b41aec6d8bb1e4",
+  "revision": "l-ad2b17786c372ab5",
   "sourceRefs": [
     "sources/raw/cldr/territories-ja.json",
-    "sources/raw/cldr/subdivisions-ja.xml"
+    "sources/raw/cldr/subdivisions-ja.xml",
+    "sources/raw/wikidata/subdivision-labels.json"
   ]
 }

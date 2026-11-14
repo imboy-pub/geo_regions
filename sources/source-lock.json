@@ -446,6 +446,18 @@
    "upstreamVersion": "GeoNames CN dump, retrieved 2026-11-14",
    "retrievedAt": "2026-11-14",
    "note": "Derived committed extract (ADM2/ADM3 rows with zh/latin alternatenames) of the GeoNames CN dump; the ~32MB dump itself never enters git. Regenerate only from the pinned upstream bytes; edits show up as stale-generated-output in import_data --check."
+  },
+  {
+   "localPath": "sources/raw/wikidata/subdivision-labels.json",
+   "sha256": "43eb3b609510a9ff12b0d0576001e2b1c20596b0d31c5c58e5c37ecdefbccb5d",
+   "sizeBytes": 198988,
+   "license": "CC0-1.0",
+   "generator": "tool/fetch_wikidata_labels.py",
+   "upstreamUrl": "https://query.wikidata.org/sparql",
+   "upstreamVersion": "Wikidata SPARQL (P300 exact join), retrieved 2026-11-14; no dump revision exists — provenance is the recorded query",
+   "retrievedAt": "2026-11-14",
+   "note": "Derived committed extract: labels in the ten project locales for every non-CN subdivision node, joined by exact P300 ISO 3166-2 code. Codes claimed by more than one Wikidata item (FR-69, FR-6AE) are dropped, never guessed. Regenerate only with the recorded query.",
+   "upstreamQuery": "Recorded verbatim inside the extract (query field): P300 exact-join SPARQL over the non-CN subdivision codes, labels filtered to the ten project locales."
   }
  ]
 }
