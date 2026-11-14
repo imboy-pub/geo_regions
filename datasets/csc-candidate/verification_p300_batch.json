@@ -1,0 +1,94 @@
+{
+ "JP": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "KR": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "US": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "GB": {
+  "stale": [
+   "GB-NNH",
+   "GB-WNH"
+  ],
+  "wikidataMissing": [
+   "GB-ANT",
+   "GB-ARD",
+   "GB-ARM",
+   "GB-BLA",
+   "GB-BLY",
+   "GB-BMH",
+   "GB-BNB",
+   "GB-CGV",
+   "GB-CHS",
+   "GB-CKF",
+   "GB-CKT",
+   "GB-CLR",
+   "GB-CSR",
+   "GB-DGN",
+   "GB-DOW",
+   "GB-DRY",
+   "GB-EAW",
+   "GB-FER",
+   "GB-GBN",
+   "GB-JSY",
+   "GB-LMV",
+   "GB-LRN",
+   "GB-LSB",
+   "GB-MFT",
+   "GB-MYL",
+   "GB-NDN",
+   "GB-NTA",
+   "GB-NTH",
+   "GB-NYM",
+   "GB-OMH",
+   "GB-POL",
+   "GB-STB",
+   "GB-UKM"
+  ]
+ },
+ "DE": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "IT": {
+  "stale": [],
+  "wikidataMissing": [
+   "IT-AO",
+   "IT-CI",
+   "IT-OG",
+   "IT-OT",
+   "IT-SU",
+   "IT-VS"
+  ]
+ },
+ "RU": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "SA": {
+  "stale": [],
+  "wikidataMissing": []
+ },
+ "summary": {
+  "method": "one batch Wikidata P300 query, 9-country ISO codes, states layer only",
+  "clean": [
+   "JP 47/47",
+   "KR 17/17 (after KR-46/KR-29 fix)",
+   "US 57/57",
+   "DE 16/16",
+   "RU 83/83",
+   "SA 13/13"
+  ],
+  "gaps": {
+   "IT": "6 codes missing (IT-AO current; CI/OG/OT/VS are 2016-abolished Sardinian provinces — form-level issue)",
+   "GB": "33 missing (11 Northern Ireland district councils GB-ANT/ARD/ARM… + Scottish council areas) + 2 invalid codes (GB-NNH/GB-WNH)"
+  },
+  "foundOwnBug": "previous round's KR-17/KR-18 collided with historical ISO codes; fixed to current KR-46/KR-29"
+ }
+}

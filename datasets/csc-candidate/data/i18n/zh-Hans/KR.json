@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
+  "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
     "explicitNames": 325,
@@ -315,11 +315,10 @@
       "csc-city:65567": "provisional",
       "csc-city:65568": "provisional",
       "iso3166-2:KR-11": "provisional",
-      "iso3166-2:KR-17": "provisional",
-      "iso3166-2:KR-18": "provisional",
       "iso3166-2:KR-26": "provisional",
       "iso3166-2:KR-27": "provisional",
       "iso3166-2:KR-28": "provisional",
+      "iso3166-2:KR-29": "provisional",
       "iso3166-2:KR-30": "provisional",
       "iso3166-2:KR-31": "provisional",
       "iso3166-2:KR-41": "provisional",
@@ -327,6 +326,7 @@
       "iso3166-2:KR-43": "provisional",
       "iso3166-2:KR-44": "provisional",
       "iso3166-2:KR-45": "provisional",
+      "iso3166-2:KR-46": "provisional",
       "iso3166-2:KR-47": "provisional",
       "iso3166-2:KR-48": "provisional",
       "iso3166-2:KR-49": "provisional",
@@ -645,11 +645,10 @@
     "csc-city:65567": "儒城区",
     "csc-city:65568": "云木",
     "iso3166-2:KR-11": "汉城",
-    "iso3166-2:KR-17": "全罗南道",
-    "iso3166-2:KR-18": "光州",
     "iso3166-2:KR-26": "釜山",
     "iso3166-2:KR-27": "大邱",
     "iso3166-2:KR-28": "仁川",
+    "iso3166-2:KR-29": "光州",
     "iso3166-2:KR-30": "大田",
     "iso3166-2:KR-31": "蔚山",
     "iso3166-2:KR-41": "京畿道",
@@ -657,13 +656,14 @@
     "iso3166-2:KR-43": "忠清北道",
     "iso3166-2:KR-44": "忠清南道",
     "iso3166-2:KR-45": "全罗北道",
+    "iso3166-2:KR-46": "全罗南道",
     "iso3166-2:KR-47": "庆尚北道",
     "iso3166-2:KR-48": "庆尚南道",
     "iso3166-2:KR-49": "济州岛",
     "iso3166-2:KR-50": "世宗特别行政区"
   },
   "protocolVersion": "1.0",
-  "revision": "l-83ef4fded3d83c6f",
+  "revision": "l-2f190c92d26d6ff0",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

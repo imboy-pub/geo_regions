@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-fa3ed9209836f2f6",
+  "compatibleStructureRevision": "s-a9bf45a95bef4136",
   "countryCode": "KR",
   "coverage": {
     "explicitNames": 327,
@@ -317,11 +317,10 @@
       "csc-city:65567": "source-native",
       "csc-city:65568": "source-native",
       "iso3166-2:KR-11": "source-native",
-      "iso3166-2:KR-17": "source-native",
-      "iso3166-2:KR-18": "source-native",
       "iso3166-2:KR-26": "source-native",
       "iso3166-2:KR-27": "source-native",
       "iso3166-2:KR-28": "source-native",
+      "iso3166-2:KR-29": "source-native",
       "iso3166-2:KR-30": "source-native",
       "iso3166-2:KR-31": "source-native",
       "iso3166-2:KR-41": "source-native",
@@ -329,6 +328,7 @@
       "iso3166-2:KR-43": "source-native",
       "iso3166-2:KR-44": "source-native",
       "iso3166-2:KR-45": "source-native",
+      "iso3166-2:KR-46": "source-native",
       "iso3166-2:KR-47": "source-native",
       "iso3166-2:KR-48": "source-native",
       "iso3166-2:KR-49": "source-native",
@@ -649,11 +649,10 @@
     "csc-city:65567": "Yuseong-gu",
     "csc-city:65568": "Yŏnmu",
     "iso3166-2:KR-11": "Seoul",
-    "iso3166-2:KR-17": "South Jeolla",
-    "iso3166-2:KR-18": "Gwangju",
     "iso3166-2:KR-26": "Busan",
     "iso3166-2:KR-27": "Daegu",
     "iso3166-2:KR-28": "Incheon",
+    "iso3166-2:KR-29": "Gwangju",
     "iso3166-2:KR-30": "Daejeon",
     "iso3166-2:KR-31": "Ulsan",
     "iso3166-2:KR-41": "Gyeonggi",
@@ -661,13 +660,14 @@
     "iso3166-2:KR-43": "North Chungcheong",
     "iso3166-2:KR-44": "South Chungcheong",
     "iso3166-2:KR-45": "North Jeolla",
+    "iso3166-2:KR-46": "South Jeolla",
     "iso3166-2:KR-47": "North Gyeongsang",
     "iso3166-2:KR-48": "South Gyeongsang",
     "iso3166-2:KR-49": "Jeju",
     "iso3166-2:KR-50": "Sejong City"
   },
   "protocolVersion": "1.0",
-  "revision": "l-f3523b2acc2f4eb7",
+  "revision": "l-cf81734553f2583c",
   "sourceRefs": [
     "staging/csc-snapshot (dr5hn/countries-states-cities-database @ e9c4dec, ODbL-1.0)"
   ]

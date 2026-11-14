@@ -71,7 +71,12 @@ def csc_translation_index(cc):
     idx = {}
     import unicodedata
     norm = lambda s: unicodedata.normalize("NFC", (s or "")).strip().lower()
-    for row in load(f"contributions/cities/{cc}.json"):
+    rows = load(f"contributions/cities/{cc}.json")
+    states_path = SNAP / "contributions/states/states.json"
+    if states_path.is_file():
+        rows = rows + [r for r in json.loads(states_path.read_text(encoding="utf-8"))
+                       if r.get("country_code") == cc]
+    for row in rows:
         trans = row.get("translations") or {}
         for key in (row.get("name"), row.get("native"), trans.get("ja")):
             if key and norm(key) not in idx:
@@ -162,10 +167,10 @@ def main():
             kr_fix = fake[0] if fake else None
             states_by_cc[cc] = [r for r in states_by_cc[cc] if kr_fix is None or r["id"] != kr_fix["id"]]
             states_by_cc[cc].extend([
-                {"id": 17000000, "name": "South Jeolla", "iso2": "17", "iso3166_2": "KR-17",
+                {"id": 17000000, "name": "South Jeolla", "iso2": "17", "iso3166_2": "KR-46",
                  "type": "province", "level": 1, "parent_id": None,
                  "translations": {"zh-CN": "全罗南道", "ja": "全羅南道", "ko": "전라남도"}},
-                {"id": 18000000, "name": "Gwangju", "iso2": "18", "iso3166_2": "KR-18",
+                {"id": 18000000, "name": "Gwangju", "iso2": "18", "iso3166_2": "KR-29",
                  "type": "metropolitan city", "level": 1, "parent_id": None,
                  "translations": {"zh-CN": "光州", "ja": "光州", "ko": "광주"}}])
             # corrections carry their provenance in the node rows below
@@ -220,15 +225,27 @@ def main():
             packs["en"][root_id] = nfc(country["name"])
             csc_idx = csc_translation_index(cc)
             reg_ids = {}
+            FR_REGION_ZH = {"Guadeloupe": "瓜德罗普", "Martinique": "马提尼克", "Guyane": "圭亚那",
+                "La Réunion": "留尼汪", "Mayotte": "马约特", "Île-de-France": "法兰西岛",
+                "Centre-Val de Loire": "中央-卢瓦尔河谷", "Bourgogne-Franche-Comté": "勃艮第-弗朗什-孔泰",
+                "Normandie": "诺曼底", "Hauts-de-France": "上法兰西", "Grand Est": "大东部",
+                "Pays de la Loire": "卢瓦尔河地区", "Bretagne": "布列塔尼", "Nouvelle-Aquitaine": "新阿基坦",
+                "Occitanie": "奥克西塔尼", "Auvergne-Rhône-Alpes": "奥弗涅-罗讷-阿尔卑斯",
+                "Provence-Alpes-Côte d'Azur": "普罗旺斯-阿尔卑斯-蓝色海岸", "Corse": "科西嘉"}
             for row in sorted(insee_regions, key=lambda r: r["REG"]):
                 nid = f"fr-region:{row['REG']}"
                 reg_ids[row["REG"]] = nid
                 nodes.append(node(nid, root_id, "subdivision", row["REG"],
                                   nfc(row["LIBELLE"]), "fr", "source-native", "unknown"))
                 packs["en"][nid] = nfc(row["LIBELLE"])
+                zh_value = FR_REGION_ZH.get(row["LIBELLE"])
+                if zh_value:
+                    packs["zh-Hans"][nid] = nfc(zh_value)
+                    packs["zh-Hant"][nid] = nfc(s2t_places.convert(zh_value)[0])
+                    hant_q = packs.setdefault("_hant_quality", {})
                 for locale, key in TRANSLATION_LOCALES.items():
                     v = (csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
-                    if v:
+                    if v and locale not in ("zh-Hans", "zh-Hant"):
                         packs[locale][nid] = nfc(v)
             dept_ids = {}
             for row in sorted(insee_depts, key=lambda r: r["DEP"]):
