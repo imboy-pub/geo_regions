@@ -685,6 +685,95 @@ IT_EVAL = {
     "Тюмень": "Tjumen'",
 }
 
+# ---- Arabic (ar.wikipedia Russian-name conventions) ------------------------
+# Abjad mapping with documented divergences: ar.wp mixes ف/ڤ for в (we pick ف,
+# the majority: فلاديفوستوك) and ك/ق for к (we pick ك; قازان is the Tatar
+# exonym). Initial vowels carry hamza (أومسك/أوفا/إيركوتسك); word-initial е
+# -> يي (ييكاتيرينبورغ); ий merges to a single ي (Нижний->نيжني); ь/ъ drop
+# (Пермь->بيرم); separators stay spaces (نيجني نوفغورود).
+AR_CONS = {"б": "ب", "в": "ف", "г": "غ", "д": "د", "ж": "ج", "з": "ز",
+           "к": "ك", "л": "ل", "м": "م", "н": "ن", "п": "ب", "р": "ر",
+           "с": "س", "т": "ت", "ф": "ف", "х": "خ", "ц": "تس", "ч": "تش",
+           "ш": "ش", "щ": "شتش", "й": "ي"}
+AR_MEDIAL = {"а": "ا", "о": "و", "у": "و", "ы": "ي", "и": "ي", "е": "ي",
+             "э": "ه", "я": "يا", "ё": "يو", "ю": "يو"}
+AR_INITIAL = {"а": "أ", "о": "أو", "у": "أو", "и": "إي", "е": "يي",
+              "э": "إيه", "я": "يا", "ё": "يو", "ю": "يو"}
+AR_PURITY = re.compile(r"[\u0621-\u064A ]+")
+
+
+def transcribe_ar(word: str) -> str:
+    word = unicodedata.normalize("NFC", word).strip()
+    out: list[str] = []
+    chars = list(word.lower())
+    i = 0
+    at_word_start = True
+    while i < len(chars):
+        c = chars[i]
+        if c in "ьъ":
+            i += 1
+            continue
+        if c in ("-", " ", "–"):
+            out.append(" ")
+            at_word_start = True
+            i += 1
+            continue
+        if c == "и" and i + 1 < len(chars) and chars[i + 1] == "й":
+            out.append("ي")  # ий merges (Нижний->نيжни, Бийск->بيسك)
+            i += 2
+            at_word_start = False
+            continue
+        if c in AR_CONS:
+            out.append(AR_CONS[c])
+            i += 1
+            at_word_start = False
+            continue
+        if c in AR_MEDIAL:
+            out.append(AR_INITIAL.get(c, AR_MEDIAL[c]) if at_word_start else AR_MEDIAL[c])
+            i += 1
+            at_word_start = False
+            continue
+        raise ValueError(f"unhandled character {c!r} in {word!r}")
+    return "".join(out)
+
+
+AR_EVAL = {
+    "Омск": "أومسك",
+    "Уфа": "أوفا",
+    "Тула": "تولا",
+    "Казань": "كازان",
+    "Пермь": "بيرم",
+    "Тверь": "تفير",
+    "Тюмень": "تيومين",
+    "Рязань": "ريازان",
+    "Псков": "بسكوف",
+    "Хабаровск": "خاباروفسك",
+    "Сочи": "سوتشي",
+    "Новосибирск": "نوفوسيبيرسك",
+    "Красноярск": "كراسنويارسك",
+    "Иркутск": "إيركوتسك",
+    "Екатеринбург": "ييكاتيرينبورغ",
+    "Владивосток": "فلاديفوستوك",
+    "Кемерово": "كيميروفو",
+    "Магнитогорск": "ماغنيتوغورسك",
+    "Ачинск": "أتشينسك",
+    "Норильск": "نوريلسك",
+    "Липецк": "ليبيتسك",
+    "Барнаул": "بارناول",
+    "Курган": "كورغان",
+    "Оренбург": "أورينبورغ",
+    "Тамбов": "تامبوف",
+    "Курск": "كورسك",
+    "Бийск": "بيسك",
+    "Кострома": "كوستروما",
+    "Вологда": "فولوغدا",
+    "Ярославль": "ياروسلافل",
+    "Якутск": "ياكوتسك",
+    "Нижний Новгород": "نيجني نوفغورود",
+}
+# documented divergences: ar.wp Волгоград uses ڤ (we pick ف), Казань appears
+# as قازان (Tatar exonym; systematic ك), Москва localized موسكو — excluded.
+
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
@@ -694,19 +783,22 @@ def main() -> int:
                                [(k, transcribe_ko, v) for k, v in KO_EVAL.items()] +
                                [(k, transcribe_de, v) for k, v in DE_EVAL.items()] +
                                [(k, transcribe_fr, v) for k, v in FR_EVAL.items()] +
-                               [(k, transcribe_it, v) for k, v in IT_EVAL.items()]):
+                               [(k, transcribe_it, v) for k, v in IT_EVAL.items()] +
+                               [(k, transcribe_ar, v) for k, v in AR_EVAL.items()]):
         got = fn(name)
         if got != expected:
             print(f"EVAL FAIL {name!r}: got {got!r} want {expected!r}")
             return 1
     print(f"eval sets: ja {len(EVAL)}/{len(EVAL)}, ko {len(KO_EVAL)}/{len(KO_EVAL)}, "
           f"de {len(DE_EVAL)}/{len(DE_EVAL)}, fr {len(FR_EVAL)}/{len(FR_EVAL)}, "
-          f"it {len(IT_EVAL)}/{len(IT_EVAL)} anchors pass", flush=True)
+          f"it {len(IT_EVAL)}/{len(IT_EVAL)}, ar {len(AR_EVAL)}/{len(AR_EVAL)} anchors pass",
+          flush=True)
 
     purity_res = {"ja": re.compile(r"[ァ-ヴー・]+"), "ko": re.compile(r"[가-힣]+"),
-                  "de": LAT_PURITY, "fr": LAT_PURITY, "it": LAT_PURITY}
+                  "de": LAT_PURITY, "fr": LAT_PURITY, "it": LAT_PURITY, "ar": AR_PURITY}
     fns = {"ja": transcribe, "ko": transcribe_ko,
-           "de": transcribe_de, "fr": transcribe_fr, "it": transcribe_it}
+           "de": transcribe_de, "fr": transcribe_fr, "it": transcribe_it,
+           "ar": transcribe_ar}
     nodes: dict[str, dict] = {}
     kind_prefix = {"cities": "csc-city:", "counties": "csc-county:"}
     for kind, prefix in kind_prefix.items():
@@ -733,12 +825,12 @@ def main() -> int:
 
     document = {
         "generator": "tool/gen_candidate_rule_transcriptions.py",
-        "ruleVersion": "ru-ja-ko-de-fr-it-1",
+        "ruleVersion": "ru-ja-ko-de-fr-it-ar-1",
         "retrievedAt": "2026-11-14",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ja", "ko", "de", "fr", "it"],
+        "locales": ["ja", "ko", "de", "fr", "it", "ar"],
         "evalAnchors": len(EVAL) + len(KO_EVAL),
         "evalPassed": len(EVAL) + len(KO_EVAL),
         "nodeCount": len(nodes),

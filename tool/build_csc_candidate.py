@@ -545,7 +545,7 @@ def main():
         RULE_STAGED = {
             "RU": [(f"staging/ai-cand/ru-transcriptions.json", loc,
                     "staging/ai-cand/ru-transcriptions.json (rule-table Cyrillic->katakana/hangul/Latin transcription, machine-candidate, tool/gen_candidate_rule_transcriptions.py)")
-                   for loc in ("ja", "ko", "de", "fr", "it")],
+                   for loc in ("ja", "ko", "de", "fr", "it", "ar")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
@@ -645,8 +645,8 @@ def main():
         "own wikiDataId QIDs (CC0-1.0, staged extracts, provisional)\n"
         "- GeoNames alternateNamesV2 labels via CSC wikiDataId -> wkdt rows "
         "(CC-BY-4.0, staged extracts, provisional; fills what Wikidata lacks)\n"
-        "- RU ja/ko/de/fr/it: rule-table Cyrillic->katakana/hangul/Latin "
-        "transcriptions (machine-candidate, eval-gated, "
+        "- RU ja/ko/de/fr/it/ar: rule-table Cyrillic->katakana/hangul/Latin/"
+        "Arabic transcriptions (machine-candidate, eval-gated, "
         "tool/gen_candidate_rule_transcriptions.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
