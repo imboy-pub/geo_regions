@@ -544,6 +544,13 @@ def transcribe_fr_ja(word: str) -> str:
         if t == "l" and nxt == "l":
             i += 1  # ll before vowel: single onset (モンペリエ)
             continue
+        if t == "l" and nxt == "ə":
+            out.append("ル")                    # article le -> ル (ル・マン)
+            i += 2
+            continue
+        if t == "ə":
+            i += 1                              # article schwa drops (ja drop)
+            continue
         if t == "ʁ" and nxt == "ʁ":
             i += 1  # rr: single consonant (アラス)
             continue
@@ -851,6 +858,9 @@ FR_JA_EVAL = {
     "Saint-Nazaire": "サン・ナゼール",
     "Roquefort": "ロクフォール",
     "Nice": "ニース",
+    # article-schwa slice (2026-11-15): le -> ル, ə drops
+    "Le Mans": "ル・マン", "Bâgé-le-Châtel": "バゲ・ル・シャテル",
+    "Virieu-le-Grand": "ヴィリウ・ル・グランド",
 }
 # excluded documented divergences: カーン(Caen アーン長音)、ナンシー(シー)、
 # ルーアン(Rouen ウー)、トゥールーズ(ズ語尾)、ニース(イース長音)、
