@@ -62,9 +62,25 @@ _DOUBLE_TOKS = ("ll", "rr", "ss", "tt", "dd", "pp", "bb", "gg", "mm",
                 "nn", "ff", "zz", "cc")
 
 
+# diacritic pre-map applied before grapheme matching: Spanish/Hawaiian
+# borrowings in US geography (Cañon/Chávez/Hanapēpē).  Macrons (kahakō)
+# map to the plain vowel — ja/ko Hawaiian practice drops the length mark.
+_DIA = {"ā": "a", "ē": "e", "ī": "i", "ō": "o", "ū": "u",
+        "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
+        "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u",
+        "â": "a", "ê": "e", "î": "i", "ô": "o", "û": "u",
+        "ä": "a", "ë": "e", "ï": "i", "ö": "o", "ü": "u"}
+
+
+def _lex_key(text: str) -> str:
+    """accent-folded lexicon key (macron/acute folded; ñ kept verbatim)"""
+    return "".join(("ñ" if c == "ñ" else _DIA.get(c, c))
+                   for c in text.lower())
+
+
 def segment(word: str) -> list[str]:
     """Grapheme tokens; word boundaries '|' (join) and '| ' (space)."""
-    low = word.lower()
+    low = "".join(_DIA.get(c, c) for c in word.lower())
     out: list[str] = []
     i = 0
     n = len(low)
@@ -74,8 +90,13 @@ def segment(word: str) -> list[str]:
             out.append("| ")
             i += 1
             continue
-        if c in ("-", "'"):
+        if c in ("-", "'", "‘", "ʻ"):
+            # ʻokina = glottal stop -> syllable boundary (ʻAiea アイエア-type)
             out.append("|")
+            i += 1
+            continue
+        if c == "ñ":
+            out.append("ny")
             i += 1
             continue
         chunk = low[i:i + 4]
@@ -194,7 +215,11 @@ def _resolve_plain(sub: list[str]) -> list[str]:
             out.append(_resolve_letter_vowel(tok, sub, i))
             i += 1
             continue
-        if tok in ("ough", "augh"):
+        if tok == "augh":
+            out.append("ɔː")             # taught/wantagh/conemaugh 코너모
+            i += 1
+            continue
+        if tok == "ough":
             raise ValueError(f"ambiguous {tok!r}")
         if tok in ("ea", "ai", "ay", "oa", "ou", "ow", "au", "aw", "ui",
                    "ue", "oe", "ie", "eu", "eo", "ee", "oo", "ew",
@@ -335,8 +360,10 @@ def _resolve_plain(sub: list[str]) -> list[str]:
             i += 1
             continue
         if tok == "wh" and nxt in _MAGIC and i + 3 <= n \
-                and sub[i + 2] in "bcdfglkmpstvz" and sub[i + 2] != "r":
-            out.extend(("wh2", "ɪ"))                       # white 화이트
+                and sub[i + 2] in "bcdfglkmpstvz" and sub[i + 2] != "r" \
+                and i + 3 == n - 1 and sub[i + 3] == "e":
+            # wh+V+C+word-final e only: white 화이트; whitney 휘트니 is NOT
+            out.extend(("wh2", "ɪ"))
             i += 2                                         # t/e flow to render
             continue
         if tok == "w":
@@ -390,6 +417,10 @@ def _resolve_plain(sub: list[str]) -> list[str]:
             out.append("qu")
             i += 1
             continue
+        if tok == "q":
+            out.append("k")              # utqiagvik: Inuit q -> k (성문 파열음 대용)
+            i += 1
+            continue
         out.append(tok)
         i += 1
     return out
@@ -414,6 +445,13 @@ _PAL_KEY_JUNG = {
            "2": "ㅔ", "4": "ㅣ", "8": "ㅘ", "0": "ㅗ"},
 }
 
+# ñ (ny token) + vowel -> palatal-n jung: cañon 캐년 / doña 도냐 /
+# española 에스파뇰라 (표기법 스페인어장 ñ행)
+_NY_JUNG = {"ɑ": "ㅑ", "æ": "ㅑ", "a": "ㅑ", "ʌ": "ㅑ", "A": "ㅑ",
+            "ə": "ㅕ", "ɔ": "ㅕ", "e": "ㅔ", "ɛ": "ㅔ", "ɪ": "ㅣ",
+            "i": "ㅣ", "iː": "ㅣ", "ʊ": "ㅜ", "u": "ㅜ", "uː": "ㅜ",
+            "o": "ㅛ", "oʊ": "ㅛ", "ɔː": "ㅛ", "juː": "ㅠ"}
+
 
 def _resolve_letter_vowel(v: str, sub: list[str], i: int) -> str:
     n = len(sub)
@@ -437,7 +475,10 @@ def _resolve_letter_vowel(v: str, sub: list[str], i: int) -> str:
               and (nxt2 is None or _tok_is_cons(nxt2)
                    or (nxt2 == "y" and len(nxt) > 1)))
     if v == "u":
-        if closed:
+        # rabbit rule scoped to u: doubled consonant forces short ʌ
+        # (suffolk САФФОЛК/summit Саммит — u+ff+V is NOT the juː class)
+        u_closed = (closed or (nxt is not None and nxt in _DOUBLE_TOKS))
+        if u_closed:
             return "ʌ"                          # 버튼
         return "uː" if nxt is None else "juː"   # 말리부 부 vs 유타 유
     if v == "a":
@@ -480,6 +521,8 @@ def _resolve_digraph(tok: str, nxt: str | None, i: int,
         return "oʊ" if nxt is None else "aʊ"     # low 로 vs town 타운
     if tok == "ie":
         return "ie"
+    if tok == "ey" and nxt is None and i > 0 and sub[i - 1] == "n":
+        return "iː"          # word-final -ney: sydney 시드니/cheney 체니
     fixed = {"ea": "iː", "ee": "iː", "oo": "uː", "ai": "eɪ", "ay": "eɪ",
              "oa": "oʊ", "ou": "aʊ", "au": "ɔː", "aw": "ɔː", "ui": "uː",
              "ue": "juː", "oe": "oʊ", "eu": "juː", "eo": "ɔː", "ei": "iː",
@@ -684,7 +727,8 @@ def _render(toks: list[str]) -> str:
                     pending = None
                     i += 1
                     continue
-                if _tok_is_cons(nxt):
+                if _tok_is_cons(nxt) \
+                        and not (len(nxt) > 1 and nxt[0] == "w"):
                     units.append([pending or "ㅅ", "ㅜ", "ㄹ"])  # ashland 슐
                     pending = _pending_of(nxt)
                     i += 1
@@ -693,7 +737,9 @@ def _render(toks: list[str]) -> str:
             jung = _PAL_KEY_JUNG[sym].get(key, "ㅣ")
             onset = {"ʃ": "ㅅ", "tʃ": "ㅊ", "dʒ": "ㅈ"}[sym]
             if key == "" and nxt is not None and _tok_is_cons(nxt) \
-                    and nxt not in ("|", "| "):
+                    and nxt not in ("|", "| ") \
+                    and not (len(nxt) > 1 and nxt[0] == "w"):
+                # w-compounds carry their own vowel: beechwood 치+우, not 칠
                 units.append([pending or onset, "ㅡ", "ㄹ"])   # ashland 슐
                 pending = _pending_of(nxt)
                 i += 1
@@ -724,11 +770,28 @@ def _render(toks: list[str]) -> str:
             long_prev = True
             i += 2
             continue
-        if t in ("qu", "wh", "w"):
-            onset = {"qu": pending or "ㅇ", "wh": "ㅎ", "w": pending or "ㅇ"}[t]
+        if t == "ny":                            # cañon 캐년 / doña 도냐
+            jung = _NY_JUNG.get(nxt, "ㅕ")
+            units.append([pending or "ㄴ", jung, ""])
+            pending = None
+            i += 2                               # consume the vowel too
+            continue
+        if t == "qu":
+            # kw: flush pending as jong (알곤퀸), render ㅋ+w-jung, consume V
+            if pending is not None:
+                if not _attach_jong(units, _FINAL.get(pending, pending)):
+                    units.append([pending, "ㅡ", ""])
+                pending = None
+            units.append(["ㅋ", _W_JUNG.get(nxt, "ㅜ"), ""])
+            i += 2
+            continue
+        if t in ("wh", "w"):
+            onset = {"wh": "ㅎ", "w": pending or "ㅇ"}[t]
             units.append([onset, _W_JUNG.get(nxt, "ㅜ"), ""])
             pending = None
-            i += 1
+            # wh+wheaton: the w-jung IS the syllable (휘턴, not 휘이턴)
+            i += 2 if nxt is not None and not _tok_is_cons(nxt) \
+                and nxt not in ("|", "| ") else 1
             continue
         if t == "j":
             units.append([pending or "ㅈ", "ㅣ", ""])
@@ -962,7 +1025,7 @@ _RU_ONSET = {"p": "п", "b": "б", "t": "т", "d": "д", "k": "к", "g": "г",
              "ŋ": "нг", "h": "х", "l": "л", "r": "р", "f": "ф", "v": "в",
              "ʃ": "ш", "ʒ": "ж", "tʃ": "ч", "dʒ": "дж"}
 _RU_FINAL = {"p": "п", "b": "б", "t": "т", "d": "д", "k": "к", "g": "г",
-             "s": "с", "z": "з", "θ": "т", "ð": "з", "m": "м", "n": "н",
+             "s": "с", "z": "с", "θ": "т", "ð": "з", "m": "м", "n": "н",
              "ŋ": "нг", "f": "ф", "v": "в", "l": "л", "h": "", "r": "р"}
 _RU_SH = {"ʃ": ["ша", "ши", "шу", "ше", "шо"],
           "tʃ": ["ча", "чи", "чу", "че", "чо"],
@@ -980,7 +1043,7 @@ _RU_WKEY = {"a": "ва", "A": "ва", "4": "ва", "@": "ва", "U": "ва",
             "e": "ве", "2": "вей", "i": "ви", "I": "ви", "u": "ву",
             "v": "ву", "O": "уо", "6": "уор", "0": "в"}
 _RU_DBL = {"tt": "тт", "dd": "д", "pp": "п", "bb": "б", "gg": "г",
-           "mm": "м", "ff": "ф", "zz": "з", "cc": "к"}
+           "mm": "м", "ff": "фф", "zz": "з", "cc": "к"}
 _RU_SHORT = {"a": "а", "æ": "а", "ɑ": "а", "ʌ": "а", "ə": "а",
              "i": "и", "ɪ": "и", "u": "у", "ʊ": "у", "e": "е", "ɛ": "е",
              "o": "о", "ɔ": "о"}
@@ -1012,7 +1075,7 @@ def _ru_capitalize(s: str) -> str:
 def transcribe_en_ru(word: str) -> str:
     """English -> Cyrillic (practical transcription, ru-Wikipedia forms)."""
     text = word.strip().replace("St. ", "Saint ")
-    key = text.lower()
+    key = _lex_key(text)
     if key in LEXICAL_EN_RU_FULL:
         return LEXICAL_EN_RU_FULL[key]
     toks = phonemes(text)
@@ -1023,9 +1086,12 @@ def transcribe_en_ru(word: str) -> str:
     while i < n:
         t = toks[i]
         if len(t) > 1 and t[0] in ("s", "z"):
-            vk = _RU_SHORT.get(_JA_KEY.get(t[1:], t[1:]))
+            key = _JA_KEY.get(t[1:], t[1:])
+            vk = _RU_SHORT.get(key)
+            if vk is None and key in _RU_VOWEL_TOKS:
+                vk = _RU_VOWEL_TOKS[key]        # summit s7 -> сю-class
             if vk is not None:
-                out.append(_RU_ONSET[t[0]] + vk)
+                out.append(_ru_flush(pending) + _RU_ONSET[t[0]] + vk)
                 pending = None
                 i += 1
                 continue
@@ -1033,7 +1099,8 @@ def transcribe_en_ru(word: str) -> str:
         nxt2 = toks[i + 2] if i + 2 < n else None
         nxt3 = toks[i + 3] if i + 3 < n else None
         if t in ("|", "| "):
-            out.append("-")
+            if any(out):                      # ʻaiea/heʻeia: no leading hyphen
+                out.append("-")
             pending = None
             i += 1
             continue
@@ -1124,7 +1191,10 @@ def transcribe_en_ru(word: str) -> str:
             i += 2
             continue
         if t in _RU_VOWEL_TOKS or t in _RU_SHORT:
-            out.append(_ru_onset_cv(pending, t))
+            if pending is None and not out and t in ("e", "ɛ"):
+                out.append("э")               # эдисон/эри: initial e -> э
+            else:
+                out.append(_ru_onset_cv(pending, t))
             pending = None
             i += 1
             continue
@@ -1139,8 +1209,7 @@ def transcribe_en_ru(word: str) -> str:
                 continue
             if nxt is None or nxt in ("|", "| ") or _tok_is_cons(nxt):
                 out.append(_RU_SH[sym][1])
-                pending = None if (nxt is None or nxt in ("|", "| ")) \
-                    else nxt
+                pending = nxt if nxt in _RU_ONSET else None
                 i += 1
                 continue
             out.append(_RU_SH[sym][_RU_SH_IDX.get(nxt, 1)])
@@ -1186,6 +1255,16 @@ def transcribe_en_ru(word: str) -> str:
         if t == "x":
             out.append("кс")
             pending = None
+            i += 1
+            continue
+        if t == "wv":                            # wood-class: w+oo/uː
+            out.append(_ru_flush(pending) + "ву")    # бичвуд
+            pending = None
+            i += 1
+            continue
+        if t == "ny":                            # cañon каньон (palatal n)
+            out.append(_ru_flush(pending))
+            pending = "нь"                       # pairs with next vowel: нья
             i += 1
             continue
         if t == "qu":
@@ -1272,6 +1351,12 @@ def transcribe_en_ru(word: str) -> str:
 
 
 def _ru_onset_cv(cons: str | None, t: str) -> str:
+    if cons == "нь":
+        # palatal n + vowel: ɑ-family iotates (донья), ɔ stays о (каньон)
+        v = _RU_VOWEL_TOKS.get(t) or _RU_SHORT.get(t)
+        if v == "а" and t in ("ɑ", "æ", "a", "ʌ"):
+            return "нья"
+        return "нь" + (v if v else "")
     if cons is None:
         v = _RU_VOWEL_TOKS.get(t) or _RU_SHORT.get(t)
         return v if v else ""
@@ -1322,6 +1407,15 @@ LEXICAL_EN_RU_FULL = {
     "mississippi": "Миссисипи", "san diego": "Сан-Диего",
     "square": "Сквер", "queens": "Куинс", "kendall": "Кендал",
     "monroe": "Монро", "midway": "Мидуэй", "yamhill": "Ямхилл",
+    # second-order gap-fill divergences (2026-11-15 slice)
+    "summit": "Саммит",                        # саммит is a Russian loanword
+    "utqiagvik": "Уткиагвик",                  # ru.wp form; system Аткиагвик
+    "ʻaiea": "Аиэа",                            # Hawaiian; system Ейи
+    "waipiʻo": "Вайпио",                       # Hawaiian ai = аи, not эй
+    "ʻewa beach": "Эва-Бич",                   # ewa digraph hijack (юа)
+    "ʻewa gentry": "Эва-Джентри",
+    "cesar chavez": "Сесар Чавес",            # final z -> с (ru convention)
+    "quincy": "Куинси",                        # ru.wp Куинси (system Квинси)
 }
 
 
@@ -1389,7 +1483,7 @@ def transcribe_en_ar(word: str) -> str:
     are translations and live in the lexical layer.
     """
     text = word.strip().replace("St. ", "Saint ")
-    key = text.lower()
+    key = _lex_key(text)
     if key in LEXICAL_EN_AR_FULL:
         return LEXICAL_EN_AR_FULL[key]
     toks = phonemes(text)
@@ -1410,7 +1504,8 @@ def transcribe_en_ar(word: str) -> str:
         nxt2 = toks[i + 2] if i + 2 < n else None
         nxt3 = toks[i + 3] if i + 3 < n else None
         if t in ("|", "| "):
-            out.append(" ")
+            if t == "| " and out:             # word gap only; glottal joins
+                out.append(" ")
             pending = None
             i += 1
             continue
@@ -1526,10 +1621,9 @@ def transcribe_en_ar(word: str) -> str:
                 pending = None
                 i += 1
                 continue
-            if nxt is None or nxt in ("|", "| ") or _tok_is_cons(nxt):
+            if nxt is None or nxt in ("|", "| ") or _ar_is_cons(nxt):
                 out.append(_AR_SH[sym][3])
-                pending = None if (nxt is None or nxt in ("|", "| ")) \
-                    else nxt
+                pending = nxt if nxt in _AR_ONSET else None
                 i += 1
                 continue
             out.append(_AR_SH[sym][_AR_SH_IDX.get(nxt, 1)])
@@ -1560,6 +1654,23 @@ def transcribe_en_ar(word: str) -> str:
             continue
         if t == "x":
             out.append("كس")
+            pending = None
+            i += 1
+            continue
+        if t == "wv":                            # wood-class: w+oo/uː
+            out.append(_ar_flush(pending) + "وو")    # بيتشوود
+            pending = None
+            i += 1
+            continue
+        if t == "qu":                            # kw: quincy كوينسي
+            nxtv = _AR_VOW_OPEN.get(nxt, "") \
+                if nxt not in (None, "|", "| ") else ""
+            out.append(_ar_flush(pending) + "كو" + nxtv)
+            pending = None
+            i += 2
+            continue
+        if t == "ny":                            # cañon كانيون (palatal n)
+            out.append(_ar_flush(pending) + "ني")
             pending = None
             i += 1
             continue
@@ -1655,6 +1766,8 @@ def transcribe_en_ar(word: str) -> str:
 
 
 def _ar_onset_cv(cons: str | None, t: str) -> str:
+    if cons == "wh":
+        return "و" + (_AR_VOW_OPEN.get(t) or _AR_DIPH.get(t, ""))
     if cons is None:
         return _AR_VOW_OPEN.get(t, _AR_DIPH.get(t, ""))
     if t == "juː":
@@ -1705,6 +1818,14 @@ LEXICAL_EN_AR_FULL = {
     "woodland": "وودلاند", "boston": "بوسطن",
     "manchester": "مانشستر", "wisconsin": "ويسكونسين",
     "iowa": "أيوا", "wyoming": "وايومينغ", "rochester": "روتشستر",
+    # second-order gap-fill divergences (2026-11-15 slice)
+    "cañon city": "كانيون سيتي",   # كانيون not كانين
+    "doña ana": "دونيا انا",
+    "cesar chavez": "سيسار تشافيز",  # chav-ez final z
+    "ʻaiea": "أيا",
+    "waipiʻo": "وايبيو",
+    "hanamaʻulu": "هاناماولو",
+    "laʻie": "لايي",
 }
 
 
@@ -1846,7 +1967,31 @@ LEXICAL_EN_KO_FULL = {
     "broadway": "브로드웨이",
     "alabama": "앨라배마",      # bama a -> 배 ㅐ (vs 새크라멘토 라 ㅏ)
     "belfast": "벨파스트",      # fast a -> 파 ㅏ (vs 캔자스 캔 ㅐ)
+    # second-order gap-fill divergences (2026-11-15 slice)
+    "summit": "서밋",           # word-final t -> ㅅ (밋; system ㅌ 밑-class)
+    "suffolk": "서퍽",          # 표기법 서퍽 (system 서폴크)
+    "utqiagvik": "우트키아그빅",  # Inuit q->k; system vowel shapes differ
+    "cañon city": "캐년시티",    # 표기법 캐년; system 카년 (open-syllable a)
+    "doña ana": "도냐 애나",
+    "española": "에스파뇰라",
+    "cesar chavez": "세사르 차베스",   # 세사르 (system r-drop 카-class)
+    "ʻaiea": "아이에아",          # Hawaiian syllables, not ai digraph
+    "laʻie": "라이에",
+    "hanamaʻulu": "하나마울루",
+    "punaluʻu": "푸날루",        # pu word-start (system 퓨 juː rule)
+    "waipiʻo": "와이피오",
+    "ʻewa beach": "에와 비치",   # ewa digraph hijack (유)
+    "ʻewa gentry": "에와 젠트리",
+    "ʻeleʻele": "에레레",
+    "maʻili": "마일리",
+    "ʻahuimanu": "아후이마누",
+    "heʻeia": "헤에이아",
+    "hanapepe": "하나페페",      # Hawaiian e final (silent-e rule does not apply)
+    "mckinney": "맥키니",        # McC prefix 맥 (system 므키-)
+    "sydney": "시드니",
+    "whitney": "휘트니",
 }
+
 
 
 
@@ -2014,7 +2159,7 @@ def _ja_cv(cons: str | None, t: str) -> str:
 def transcribe_en_ja(word: str) -> str:
     """English -> katakana (Hepburn, ja-Wikipedia place-name conventions)."""
     text = word.strip().replace("St. ", "Saint ")
-    key = text.lower()
+    key = _lex_key(text)
     if key in LEXICAL_EN_JA_FULL:
         return LEXICAL_EN_JA_FULL[key]
     toks = phonemes(text)
@@ -2025,7 +2170,7 @@ def transcribe_en_ja(word: str) -> str:
     while i < n:
         t = toks[i]
         if len(t) > 1 and t[0] in ("s", "z") and t[1:] in _JA_KEY:
-            out.append(_ja_cv(t[0], _JA_KEY[t[1:]]))   # city シ/ザ compounds
+            out.append(_ja_flush(pending) + _ja_cv(t[0], _JA_KEY[t[1:]]))
             pending = None
             i += 1
             continue
@@ -2249,6 +2394,28 @@ def transcribe_en_ja(word: str) -> str:
             pending = None
             i += 1
             continue
+        if t == "wv":                            # wood-class: w+oo/uː
+            out.append(_ja_flush(pending) + "ウ")
+            pending = None
+            i += 1
+            continue
+        if t == "qu":                            # kw: quincy クインシー
+            vok = _ja_cv(None, nxt) \
+                if nxt not in (None, "|", "| ") else ""
+            out.append(_ja_flush(pending) + "ク" + vok)
+            pending = None
+            i += 2
+            continue
+        if t == "ny":                            # doña ドニャ (palatal n)
+            nk = {"ɑ": "ニャ", "æ": "ニャ", "a": "ニャ", "ʌ": "ニャ",
+                  "ɔ": "ニョ", "o": "ニョ", "oʊ": "ニョー", "ɔː": "ニョー",
+                  "ə": "ニョ", "ʊ": "ニュ", "u": "ニュ", "uː": "ニュ"}
+            out.append(_ja_flush(pending)
+                       + nk.get(nxt, "ニ") if nxt not in (None, "|", "| ")
+                       else _ja_flush(pending) + "ニ")
+            pending = None
+            i += 2                               # consume the vowel too
+            continue
         raise ValueError(f"ja render unresolved {t!r}")
 
     return "".join(out)
@@ -2352,12 +2519,38 @@ LEXICAL_EN_JA_FULL = {
     "virginia": "バージニア",
     "west virginia": "ウェストバージニア",
     "cambridge": "ケンブリッジ",
+    # second-order gap-fill divergences (2026-11-15 slice)
+    "summit": "サミット",        # サミット (system geminate サッミト)
+    "suffolk": "サフォーク",      # サフォーク (system サッフォルク)
+    "algonquin": "アルゴンキン",    # キ not クイ (wp form)
+    "quincy": "クインシー",       # final long イー
+    "utqiagvik": "ウトキアグヴィク",
+    "cañon city": "キャニオンシティ",  # ニオン not ニョン
+    "beechwood": "ビーチウド",    # チ+ウ not チュウ
+    "beachwood": "ビーチウド",
+    "birchwood": "バーチウド",
+    "cesar chavez": "セサール・チャベス",
+    "ʻaiea": "アイエア",           # Hawaiian syllables
+    "laʻie": "ラーエ",
+    "hanamaʻulu": "ハナマウル",
+    "punaluʻu": "プナルウ",
+    "waipiʻo": "ワイピオ",
+    "ʻewa beach": "エワビーチ",   # ewa digraph hijack (ユー)
+    "ʻewa gentry": "エワジェントリー",
+    "ʻeleʻele": "エレエレ",
+    "maʻili": "マイリ",
+    "ʻahuimanu": "アフイマヌ",
+    "heʻeia": "ヘエイア",
+    "hanapepe": "ハナペペ",
+    "mckinney": "マッキニー",
+    "sydney": "シドニー",
+    "whitney": "ホイットニー",
 }
 
 def transcribe_en_ko(word: str) -> str:
     """English -> Hangul per 공식 표기법 (lexical layer wins)."""
     text = word.strip().replace("St. ", "Saint ")
-    key = text.lower()
+    key = _lex_key(text)
     if key in LEXICAL_EN_KO_FULL:
         return LEXICAL_EN_KO_FULL[key]
     return _render(phonemes(text))
@@ -2391,6 +2584,11 @@ EN_KO_EVAL = {
     "new jersey": "뉴저지", "south dakota": "사우스다코타",
     "san francisco": "샌프란시스코", "york": "요크", "oxford": "옥스퍼드",
     "kansas": "캔자스",
+    # second-order slice (2026-11-15)
+    "cañon city": "캐년시티", "doña ana": "도냐 애나", "española": "에스파뇰라",
+    "quincy": "퀸시", "algonquin": "알곤퀸", "summit": "서밋",
+    "suffolk": "서퍽", "havasu": "하바수", "beechwood": "비치우드",
+    "ʻaiea": "아이에아", "waipiʻo": "와이피오", "césar chávez": "세사르 차베스",
 }
 
 
@@ -2427,6 +2625,11 @@ EN_JA_EVAL = {
     "york": "ヨーク", "oxford": "オックスフォード",
     "cambridge": "ケンブリッジ", "edinburgh": "エディンバラ",
     "liverpool": "リヴァプール",
+    # second-order slice (2026-11-15)
+    "quincy": "クインシー", "algonquin": "アルゴンキン", "summit": "サミット",
+    "suffolk": "サフォーク", "havasu": "ハバスー", "beechwood": "ビーチウド",
+    "doña ana": "ドニャアナ", "española": "エスパニョラ",
+    "ʻaiea": "アイエア", "waipiʻo": "ワイピオ", "césar chávez": "セサール・チャベス",
 }
 
 
@@ -2481,6 +2684,11 @@ EN_RU_EVAL = {
     "cardiff": "Кардифф", "wichita": "Уичита", "alabama": "Алабама",
     "havana": "Гавана", "texas": "Техас", "ohio": "Огайо",
     "kansas": "Канзас", "michigan": "Мичиган", "kentucky": "Кентукки",
+    # second-order slice (2026-11-15)
+    "summit": "Саммит", "suffolk": "Саффолк", "havasu": "Хавасу",
+    "beechwood": "Бичивуд", "quincy": "Куинси", "utqiagvik": "Уткиагвик",
+    "cañon city": "Каньон-Сити", "doña ana": "Донья-Ана",
+    "española": "Эспаньола", "césar chávez": "Сесар Чавес",
 }
 
 
@@ -2533,6 +2741,10 @@ EN_AR_EVAL = {
     "texas": "تكساس", "ohio": "أوهايو", "kansas": "كانساس",
     "michigan": "ميشيغان", "portland": "بورتلاند",
     "mississippi": "مسيسيبي", "san diego": "سان دييغو",
+    # second-order slice (2026-11-15)
+    "quincy": "كوينسي", "wheaton": "ويتون", "beechwood": "بيتشود",
+    "sachse": "ساتشيسي", "cañon city": "كانيون سيتي", "doña ana": "دونيا انا",
+    "havasu": "هافاسو", "summit": "سوميت",
 }
 
 def selfcheck() -> int:

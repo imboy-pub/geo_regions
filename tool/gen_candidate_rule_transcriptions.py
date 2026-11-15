@@ -1027,6 +1027,9 @@ def emit_en_ko(root: Path) -> int:
                         if low.endswith(f" {q}"):
                             core = name[: -(len(q) + 1)]
                             break
+                # census parenthetical qualifiers ("(historical)"/"(balance)")
+                # are not part of the place name — strip before transcribing
+                core = re.sub(r"\s*\([^)]*\)\s*$", "", core).strip()
                 labels = {}
                 for loc, fn, purity in (
                         ("ko", en_g2p.transcribe_en_ko, purity_ko),
@@ -1040,11 +1043,18 @@ def emit_en_ko(root: Path) -> int:
                         value = fn(core)
                     except ValueError:
                         continue
-                    if county:
-                        value = (f"{value} 카운티" if loc == "ko"
-                                 else f"{value}郡")
                     if not purity.fullmatch(value):
                         continue
+                    if county:
+                        # suffix is controlled vocabulary — append AFTER the
+                        # purity gate on the core transcription (郡 is kanji,
+                        # округ Cyrillic, مقاطعة Arabic; a shared 郡 suffix
+                        # silently purity-dropped six locales for 1,370 rows)
+                        value = (f"{value} 카운티" if loc == "ko"
+                                 else f"{value}郡" if loc == "ja"
+                                 else f"{value} округ" if loc == "ru"
+                                 else f"{value} مقاطعة" if loc == "ar"
+                                 else f"{value} County")
                     labels[loc] = value
                 if not labels:
                     skipped += 1
