@@ -60,6 +60,15 @@ def fix_zh_suffix(en_name: str, zh_value: str):
     return zh_value
 
 
+# Japanese shinjitai -> zh-Hans for kanji-direct reuse (JP ward slice);
+# everything outside this map is already identical to zh-Hans
+JP_SHINJITAI_HANS = {"倉": "仓", "円": "圆", "塚": "冢", "宮": "宫", "岡": "冈",
+                     "島": "岛", "広": "广", "庫": "库", "栄": "荣", "桜": "樱",
+                     "浜": "滨", "瀬": "濑", "熱": "热", "磯": "矶", "種": "种",
+                     "穂": "穗", "竜": "龙", "緑": "绿", "芸": "艺", "葉": "叶",
+                     "長": "长", "門": "门", "駿": "骏", "鶴": "鹤", "沢": "泽",
+                     "戸": "户", "亀": "龟", "暁": "晓", "髙": "高"}
+
 ZH_GARBAGE_DROPS = {
     "csc-city:112126", "csc-city:112127", "csc-city:127553",  # US 钟声/面积
     "fr-commune:2B143",                                        # FR 扁面条
@@ -149,6 +158,8 @@ def official_2026_layers():
         for city in pref.get("cities", []):
             jp_munis.append({"iso": iso, "code": str(city["code"]), "city": city["city"],
                              "romaji": city.get("city_r"), "kana": city.get("city_k"),
+                             "ward": city.get("ward"), "ward_k": city.get("ward_k"),
+                             "ward_r": city.get("ward_r"),
                              "point": city.get("point")})
     return nfc, regions, depts, communes, jp_munis
 
@@ -274,8 +285,35 @@ def main():
                 packs["en"][nid] = nfc(en_name)
                 inherited = (csc_idx.get(m["city"].lower()) or csc_idx.get(m.get("kana", "").lower())
                              or csc_idx.get(en_name.lower()) or {})
+                # ward fallback (政令指定都市の区): Geolonia carries the real
+                # Japanese name as city+ward (札幌市中央区); CSC inheritance
+                # fails for all ward rows because the CSC index has no
+                # "Sapporo-shi"-style keys — 360 nodes were untranslated in
+                # every locale except en.  ja/zh-Hans take the kanji name,
+                # zh-Hant picks it up via the kanji-direct path below, and
+                # de/fr/it take the romaji ward form; ko/ru/ar stay honest
+                # (kana->Hangul/Polivanov tables are a separate slice).
+                ward = m.get("ward") or ""
+                ward_r = m.get("ward_r") or ""
+                ja_full = (m.get("city") or "") + ward
                 for locale, key in TRANSLATION_LOCALES.items():
                     value = inherited.get(key)
+                    if not value and ja_full and nid not in ZH_GARBAGE_DROPS:
+                        # NOTE: compare LOCALE not key — key is the CSC field
+                        # name and zh-Hans maps to "zh-CN" (the aliasing bug
+                        # that silently skipped the zh-Hans branch)
+                        if locale == "ja":
+                            value = ja_full
+                        elif locale == "zh-Hans" and not s2t_places.has_kana(ja_full):
+                            # shinjitai ≈ zh-Hans; map the ~28 divergent chars
+                            # (NOT s2t_places.convert — that is S->T and would
+                            # corrupt 区->區)
+                            value = "".join(JP_SHINJITAI_HANS.get(c, c)
+                                            for c in ja_full)
+                        elif locale in ("de", "fr", "it") and ward_r:
+                            value = f"{en_name} {ward_r}"
+                        elif not ward and locale in ("de", "fr", "it"):
+                            value = en_name          # latin borrowing (旭川市)
                     if value and nid not in ZH_GARBAGE_DROPS:
                         packs[locale][nid] = nfc(value)
             stats_jp_note = {"jpMunisGeolonia": len(jp_munis)}
