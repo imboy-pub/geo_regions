@@ -919,6 +919,366 @@ LEXICAL_RU_FULL = {"saint-étienne": "Сент-Этьен"}  # é word-initial -
 LEXICAL_PRONOUNCED_S = {"reims"}  # nasal + final s stays (랭스)
 
 
+# ---------------------------------------------------------------------------
+# zh-Hans renderer: 新华社《法汉译音表》syllable-cell system (第三张译音表,
+# 与 EN zh / RU zh 同构 lexicon+system 双轨).  Machine-candidate, eval-gated.
+# 音素流 token 消费: 法语正字法 ou/u 在 token 层合并为 u —— _u_classes() 从
+# 词形拼写回收 [u]列(ou)/ü列(u) 两套格子; e/é/ɛ 各有格子; ə 仅出现在冠词
+# l+ə; 鼻化融合格未编码的组合回落 coda+独立鼻化 (阿维尼翁 尼翁), k/c+ɑ̃
+# 特例 卡+昂 (Caen), s+ɛ̃_en 特例 圣 (Saint); -bourg 词尾 融合 堡.
+# ---------------------------------------------------------------------------
+
+LEXICAL_ZH_FULL = {
+    "paris": "巴黎", "lyon": "里昂", "dijon": "第戎", "toulon": "土伦",
+    "marseille": "马赛", "montpellier": "蒙彼利埃", "toulouse": "图卢兹",
+    "cannes": "戛纳", "lille": "里尔", "grenoble": "格勒诺布尔",
+    "versailles": "凡尔赛", "sully": "苏利", "fontainebleau": "枫丹白露",
+    "mulhouse": "米卢斯", "poitiers": "普瓦捷", "ajaccio": "阿雅克肖",
+    "vincennes": "万塞讷", "melun": "默伦", "orleans": "奥尔良",
+    "troyes": "特鲁瓦", "cherbourg": "瑟堡",
+    "nancy": "南锡", "nantes": "南特", "valence": "瓦朗斯",
+}
+LEXICAL_ZH_FULL.pop("angers-x", None)
+LEXICAL_MUTE_S_ZH = {"paris", "le mans"}
+LEXICAL_PRONOUNCED_S_ZH = {"reims"}          # 兰斯 keeps the final s
+LEXICAL_MUTE_RS_ZH = {"angers"}              # 昂热: final r+? both mute
+
+_ZH_CV = {
+    ("b", "a"): "巴", ("b", "e"): "贝", ("b", "ɛ"): "贝", ("b", "i"): "比",
+    ("b", "ɔ"): "波", ("b", "o"): "波", ("b", "u"): "布", ("b", "y"): "比",
+    ("p", "a"): "帕", ("p", "e"): "佩", ("p", "ɛ"): "佩", ("p", "i"): "比",
+    ("p", "ɔ"): "波", ("p", "o"): "波", ("p", "u"): "普", ("p", "y"): "皮",
+    ("t", "a"): "塔", ("t", "e"): "特", ("t", "ɛ"): "泰", ("t", "i"): "蒂",
+    ("t", "ɔ"): "托", ("t", "o"): "托", ("t", "u"): "图", ("t", "y"): "蒂",
+    ("d", "a"): "达", ("d", "e"): "德", ("d", "ɛ"): "德", ("d", "i"): "迪",
+    ("d", "ɔ"): "多", ("d", "o"): "多", ("d", "u"): "杜", ("d", "y"): "迪",
+    ("k", "a"): "戛", ("k", "e"): "克", ("k", "ɛ"): "凯", ("k", "i"): "基",
+    ("k", "ɔ"): "科", ("k", "o"): "科", ("k", "u"): "库", ("k", "y"): "屈",
+    ("g", "a"): "加", ("g", "e"): "盖", ("g", "ɛ"): "盖", ("g", "i"): "吉",
+    ("g", "ɔ"): "戈", ("g", "o"): "戈", ("g", "u"): "古", ("g", "y"): "居",
+    ("f", "a"): "法", ("f", "e"): "费", ("f", "ɛ"): "费", ("f", "i"): "菲",
+    ("f", "ɔ"): "福", ("f", "o"): "福", ("f", "u"): "富", ("f", "y"): "菲",
+    ("v", "a"): "瓦", ("v", "e"): "韦", ("v", "ɛ"): "韦", ("v", "i"): "维",
+    ("v", "ɔ"): "沃", ("v", "o"): "沃", ("v", "u"): "乌", ("v", "y"): "维",
+    ("s", "a"): "萨", ("s", "e"): "塞", ("s", "ɛ"): "塞", ("s", "i"): "西",
+    ("s", "ɔ"): "索", ("s", "o"): "索", ("s", "u"): "苏", ("s", "y"): "絮",
+    ("z", "a"): "泽", ("z", "e"): "泽", ("z", "ɛ"): "泽", ("z", "i"): "济",
+    ("z", "ɔ"): "佐", ("z", "o"): "佐", ("z", "u"): "祖", ("z", "y"): "祖",
+    ("ʃ", "a"): "沙", ("ʃ", "e"): "谢", ("ʃ", "ɛ"): "谢", ("ʃ", "i"): "希",
+    ("ʃ", "ɔ"): "肖", ("ʃ", "o"): "肖", ("ʃ", "u"): "舒",
+    ("ʒ", "a"): "雅", ("ʒ", "e"): "热", ("ʒ", "ɛ"): "热", ("ʒ", "i"): "日",
+    ("ʒ", "ɔ"): "若", ("ʒ", "o"): "若", ("ʒ", "u"): "朱", ("ʒ", "y"): "茹",
+    ("l", "a"): "拉", ("l", "e"): "勒", ("l", "ɛ"): "莱", ("l", "i"): "利",
+    ("l", "ɔ"): "洛", ("l", "o"): "洛", ("l", "u"): "卢", ("l", "y"): "吕",
+    ("m", "a"): "马", ("m", "e"): "梅", ("m", "ɛ"): "梅", ("m", "i"): "米",
+    ("m", "ɔ"): "莫", ("m", "o"): "莫", ("m", "u"): "穆", ("m", "y"): "缪",
+    ("n", "a"): "纳", ("n", "e"): "讷", ("n", "i"): "尼",
+    ("n", "ɔ"): "诺", ("n", "o"): "诺", ("n", "u"): "努",
+    ("ʁ", "a"): "拉", ("ʁ", "e"): "雷", ("ʁ", "ɛ"): "雷", ("ʁ", "i"): "里",
+    ("ʁ", "ɔ"): "罗", ("ʁ", "o"): "罗", ("ʁ", "u"): "鲁", ("ʁ", "y"): "吕",
+    ("ɲ", "e"): "涅", ("ɲ", "ɛ"): "涅", ("ɲ", "i"): "尼", ("ɲ", "a"): "尼亚",
+    ("ɲ", "ɔ"): "尼奥",
+    ("n", "y"): "尼", ("n", "ɛ"): "内",
+}
+# direct C+ø cluster cells (Dreux德勒/Neufchâteau讷沙托)
+_ZH_CO = {"n": "讷", "l": "勒", "m": "默", "f": "弗", "b": "伯",
+          "ʁ": "勒", "d": "勒", "s": "瑟", "t": "特", "g": "盖", "ʒ": "热"}
+for _v in ("a", "e", "ɛ", "i", "ɔ", "o", "u", "y"):
+    if ("k", _v) in _ZH_CV:
+        _ZH_CV[("c", _v)] = _ZH_CV[("k", _v)]
+
+_ZH_NAS = {
+    ("b", "ɑ̃"): "邦", ("d", "ɑ̃"): "当", ("f", "ɑ̃"): "方", ("g", "ɑ̃"): "冈",
+    ("j", "ɑ̃"): "扬", ("l", "ɑ̃"): "朗", ("m", "ɑ̃"): "芒", ("n", "ɑ̃"): "南",
+    ("p", "ɑ̃"): "庞", ("ʁ", "ɑ̃"): "朗", ("s", "ɑ̃"): "桑", ("t", "ɑ̃"): "唐",
+    ("v", "ɑ̃"): "旺", ("ʒ", "ɑ̃"): "让", ("ʃ", "ɑ̃"): "尚",
+    ("b", "ɔ̃"): "邦", ("d", "ɔ̃"): "东", ("f", "ɔ̃"): "丰", ("g", "ɔ̃"): "贡",
+    ("j", "ɔ̃"): "容", ("k", "ɔ̃"): "孔", ("c", "ɔ̃"): "孔", ("l", "ɔ̃"): "隆",
+    ("m", "ɔ̃"): "蒙", ("n", "ɔ̃"): "农", ("p", "ɔ̃"): "蓬", ("s", "ɔ̃"): "松",
+    ("t", "ɔ̃"): "通", ("ʒ", "ɔ̃"): "容",
+    ("b", "ɛ̃"): "班", ("d", "ɛ̃"): "丹", ("l", "ɛ̃"): "兰", ("m", "ɛ̃"): "曼",
+    ("p", "ɛ̃"): "潘", ("ʁ", "ɛ̃"): "兰", ("s", "ɛ̃"): "森", ("t", "ɛ̃"): "坦",
+    ("v", "ɛ̃"): "万", ("z", "ɑ̃"): "桑", ("w", "ɑ̃"): "汪",
+    ("l", "ə"): "勒", ("d", "ə"): "德", ("s", "ə"): "瑟",
+}
+_ZH_NAS_STANDALONE = {"ɑ̃": "昂", "ɔ̃": "翁", "ɔ̃_on": "翁", "ɛ̃": "安",
+                      "ɛ̃_en": "安"}
+
+# glide (j token or i-glide) + vowel; post-vowel ø override 约 (Bayeux 巴约
+# vs post-consonant 厄 Beaulieu 博利厄)
+_ZH_GLIDE = {
+    ("j", "a"): "亚", ("j", "e"): "耶", ("j", "ɛ"): "耶", ("j", "i"): "伊",
+    ("j", "ɔ"): "约", ("j", "o"): "约", ("j", "ø"): "厄", ("j", "u"): "尤",
+    ("j", "ɔ̃"): "永",
+}
+_ZH_GLIDE_POST_V = dict(_ZH_GLIDE)
+_ZH_GLIDE_POST_V[("j", "ø")] = "约"
+
+_ZH_W_V = {"a": "瓦", "ɛ": "瓦", "ɔ": "瓦", "e": "韦", "i": "维"}
+_ZH_W0 = {"a": "瓦", "ɛ": "瓦", "ɔ": "瓦", "e": "韦", "i": "维", "ø": "韦"}
+_ZH_CODA = {
+    "b": "布", "p": "普", "t": "特", "d": "德", "k": "克", "c": "克",
+    "f": "夫", "v": "弗", "s": "斯", "z": "斯", "ʒ": "日", "ʃ": "什", "g": "格",
+    "l": "勒", "m": "姆", "n": "恩", "ɲ": "尼", "ʁ": "尔",
+}
+_ZH_V0 = {"a": "阿", "e": "埃", "ɛ": "埃", "é": "埃", "i": "伊",
+          "o": "奥", "ɔ": "奥", "ø": "勒", "u": "乌", "y": "于"}
+_ZH_NASALS = ("ɑ̃", "ɔ̃", "ɔ̃_on", "ɛ̃", "ɛ̃_en", "œ̃")
+
+
+def _u_classes(word: str) -> list[str]:
+    """French ou/u merge into one token downstream; recover the [u]列/ü列
+    split from the orthography: 'ou' -> u-column, bare u/û/ù -> ü-column."""
+    outs: list[str] = []
+    w = word.lower()
+    i = 0
+    while i < len(w):
+        if w.startswith("ou", i):
+            outs.append("u")
+            i += 2
+        elif w[i] in ("u", "û", "ù"):
+            outs.append("y")
+            i += 1
+        else:
+            i += 1
+    return outs
+
+
+def transcribe_fr_zh(word: str) -> str:
+    low = word.lower()
+    if low in LEXICAL_ZH_FULL:
+        return LEXICAL_ZH_FULL[low]
+    toks = phonemes(word)
+    ucls = _u_classes(word)
+    ui = 0
+
+    def uclass() -> str:
+        nonlocal ui
+        if ui < len(ucls):
+            c = ucls[ui]
+            ui += 1
+            return c
+        return "y"
+
+    words: list[list[str]] = [[]]
+    for t in toks:
+        if t == "|" or t == "| ":
+            words.append([])
+        else:
+            words[-1].append(t)
+
+    rendered: list[str] = []
+    art_flags: list[bool] = []
+    for wtoks in words:
+        art = (wtoks[:2] in ([["l", "ə"], ["l", "a"], ["l", "ɛ"],
+                                   ["s", "ɛ̃_en"], ["d", "ə"]])
+                or wtoks == ["d"])
+        art_flags.append(art)
+        wout: list[str] = []
+        i = 0
+        n = len(wtoks)
+        while i < n:
+            t = wtoks[i]
+            nxt = wtoks[i + 1] if i + 1 < n else None
+            nxt2 = wtoks[i + 2] if i + 2 < n else None
+            if t == "sz":
+                wout.append("斯")
+                i += 1
+                continue
+            if t == "ə":
+                # schwa: phonemes emits l+ə only (articles le/les); the l
+                # already rendered via its fused cell below, so a stray ə
+                # here means an unhandled C+ə pair -> honest raise
+                raise ValueError(f"stray ə in {word!r}")
+            if t in _ZH_NASALS:
+                if t == "œ̃":
+                    raise ValueError(f"œ̃ unhandled in {word!r}")
+                wout.append(_ZH_NAS_STANDALONE[t])
+                i += 1
+                continue
+            if t in "aeɛéiɔouø":
+                # current i followed by a vowel IS the glide itself
+                if t == "i" and nxt is not None and (
+                        nxt in "aeɛéioɔuø" or nxt in _ZH_NASALS):
+                    if nxt == "œ̃":
+                        raise ValueError(f"œ̃ unhandled in {word!r}")
+                    if nxt in _ZH_NASALS:
+                        gv = _ZH_GLIDE.get(("j", nxt),
+                                           _ZH_NAS_STANDALONE[nxt])
+                    else:
+                        gv = _ZH_GLIDE_POST_V[("j", "e" if nxt == "é" else nxt)]
+                    wout.append(gv)
+                    i += 2
+                    continue
+                if t == "u":
+                    wout.append("于" if uclass() == "y" else "乌")
+                else:
+                    wout.append(_ZH_V0[t])
+                # post-vowel i-glide: V + i + V/nasal (Bayeux 巴约)
+                if nxt == "i" and nxt2 is not None and (
+                        nxt2 in "aeɛéioɔuø" or nxt2 in _ZH_NASALS):
+                    gkey = "e" if nxt2 == "é" else nxt2
+                    if nxt2 in _ZH_NASALS:
+                        if nxt2 == "œ̃":
+                            raise ValueError(f"œ̃ unhandled in {word!r}")
+                        gv = _ZH_GLIDE.get(("j", nxt2),
+                                           _ZH_NAS_STANDALONE[nxt2])
+                    else:
+                        gv = _ZH_GLIDE_POST_V[("j", gkey)]
+                    wout.append(gv)
+                    i += 3
+                    continue
+                i += 1
+                continue
+            if t == "j":
+                # glide after vowel: (j,V) cell; before consonant/end: absorbed
+                cell = None
+                if nxt is not None:
+                    if nxt == "ø":
+                        cell = _ZH_GLIDE_POST_V[("j", "ø")]
+                    else:
+                        cell = _ZH_GLIDE.get(("j", nxt))
+                if cell is None:
+                    i += 1
+                    continue
+                wout.append(cell)
+                i += 2
+                continue
+            if t == "b" and nxt == "u" and nxt2 == "ʁ" and i + 3 == n:
+                # -bourg suffix: 斯特拉斯堡/xx堡
+                wout.append("堡")
+                i += 3
+                continue
+            if t in ("k", "c") and nxt == "ɑ̃":
+                wout.append("卡昂")
+                i += 2
+                continue
+            if t == "s" and nxt == "ɛ̃_en":
+                wout.append("圣")
+                i += 2
+                continue
+            nas = nxt if nxt in _ZH_NASALS else None
+            if nas is not None:
+                cell = _ZH_NAS.get((t, nas))
+                if cell is not None:
+                    wout.append(cell)
+                    i += 2
+                else:
+                    cell = _ZH_CODA.get(t)
+                    if cell is None:
+                        raise ValueError(f"coda {t!r} unhandled in {word!r}")
+                    wout.append(cell)
+                    i += 1
+                continue
+            if nxt == "ə":
+                # fused article syllable: l+ə=勒 (le/les), d+ə=德, s+ə=瑟
+                cell = _ZH_NAS.get((t, "ə"))
+                if cell is None:
+                    raise ValueError(f"{t}+ə unhandled in {word!r}")
+                wout.append(cell)
+                i += 2
+                continue
+            if nxt == "j":
+                cell = _ZH_CV.get((t, "i"))
+                if cell is None:
+                    raise ValueError(f"{t}+j unhandled in {word!r}")
+                wout.append(cell)
+                i += 1
+                continue
+            if nxt == "w":
+                ucv = _ZH_CV.get((t, "u"))
+                if ucv is None:
+                    raise ValueError(f"{t}+w unhandled in {word!r}")
+                wout.append(ucv)
+                i += 1
+                continue
+            if t == "w":
+                if nxt not in _ZH_W0:
+                    raise ValueError(f"w+{nxt!r} unhandled in {word!r}")
+                wout.append(_ZH_W0[nxt])
+                i += 2
+                continue
+            if nxt == "ø":
+                cell = _ZH_CO.get(t)
+                if cell is None:
+                    raise ValueError(f"{t}+ø unhandled in {word!r}")
+                wout.append(cell)
+                i += 2
+                continue
+            if nxt is not None and nxt in "aeɛéiɔou":
+                vc = uclass() if nxt == "u" else nxt
+                if vc == "é":
+                    vc = "e"                      # é shares the e-row cells
+                cell = _ZH_CV.get((t, vc))
+                if cell is None:
+                    raise ValueError(f"{t}+{nxt!r} unhandled in {word!r}")
+                wout.append(cell)
+                if nxt == "i" and nxt2 is not None and (
+                        nxt2 in "aeɛéioɔuø" or nxt2 in _ZH_NASALS):
+                    if nxt2 == "é":
+                        nxt2 = "e"                    # é shares e-row
+                    if nxt2 == "œ̃":
+                        raise ValueError(f"œ̃ unhandled in {word!r}")
+                    if nxt2 == "ø":
+                        gv = "厄"
+                    elif nxt2 in _ZH_NASALS:
+                        gv = _ZH_GLIDE.get(("j", nxt2),
+                                           _ZH_NAS_STANDALONE[nxt2])
+                    else:
+                        gv = _ZH_GLIDE.get(("j", nxt2))
+                    if gv is None:
+                        raise ValueError(f"i-glide+{nxt2!r} in {word!r}")
+                    wout.append(gv)
+                    i += 3
+                    continue
+                if nxt == "u" and nxt2 == "i":
+                    i += 3
+                    continue
+                i += 2
+                continue
+            if t == "ɔ" and nxt == "i" and nxt2 is None:
+                wout.append("瓦")
+                i += 2
+                continue
+            if t == "ʁ" and nxt == "s":
+                # coda-r before s is phonetically dropped (马赛 not 马尔赛)
+                i += 1
+                continue
+            cell = _ZH_CODA.get(t)
+            if cell is None:
+                raise ValueError(f"coda {t!r} unhandled in {word!r}")
+            wout.append(cell)
+            i += 1
+            continue
+        rendered.append("".join(wout))
+    out = rendered[0]
+    for k in range(1, len(rendered)):
+        if art_flags[k - 1] or art_flags[k]:
+            out += rendered[k]
+        else:
+            out += "-" + rendered[k]
+    if low in LEXICAL_MUTE_S_ZH:
+        out = out.replace("斯", "")
+    return out
+
+
+FR_ZH_EVAL = {
+    "Bordeaux": "波尔多", "Nice": "尼斯", "Nantes": "南特",
+    "Strasbourg": "斯特拉斯堡", "Le Havre": "勒阿弗尔", "Reims": "兰斯",
+    "Angers": "昂热", "Metz": "梅斯", "Brest": "布雷斯特",
+    "Béziers": "贝济耶", "Avignon": "阿维尼翁", "Caen": "卡昂",
+    "Valence": "瓦朗斯", "Nancy": "南锡", "Bourges": "布尔日",
+    "Rouen": "鲁昂", "Tours": "图尔", "Toul": "图勒",
+    "Besançon": "贝桑松", "Dieppe": "迪耶普",
+    "Vendôme": "旺多姆",
+    "Rennes": "雷恩", "Nevers": "讷韦尔", "Issoire": "伊苏瓦尔",
+    "Moissac": "穆瓦萨克", "Chalon": "沙隆", "Bayeux": "巴约",
+    "Gourdon": "古尔东", "Mont-de-Marsan": "蒙德马桑",
+    "Saint-Loup": "圣卢普",
+}
+
+
+
 def selfcheck() -> int:
     fails = []
     for name, expected in FR_EVAL.items():
@@ -952,6 +1312,15 @@ def selfcheck() -> int:
         got = LEXICAL_RU_FULL.get(name.lower(), got)
         if got != expected:
             fails.append((f"ru/{name}", got, expected))
+    for name, expected in FR_ZH_EVAL.items():
+        got = transcribe_fr_zh(name)
+        if name.lower() in LEXICAL_MUTE_RS_ZH:
+            got = got[:-1] if got.endswith("尔") else got
+        if name.lower() in LEXICAL_PRONOUNCED_S_ZH and not got.endswith("斯"):
+            got = got + "斯"
+        got = LEXICAL_ZH_FULL.get(name.lower(), got)
+        if got != expected:
+            fails.append((f"zh/{name}", got, expected))
     for name, got, want in fails:
         print(f"FR EVAL FAIL {name!r}: got {got!r} want {want!r}")
     return len(fails)
@@ -959,5 +1328,5 @@ def selfcheck() -> int:
 
 if __name__ == "__main__":
     for _w in ("Metz", "Roquefort", "Rennes"):
-        print(_w, "tokens:", g := None or phonemes(_w))
+        print(_w, "tokens:", phonemes(_w))
     sys.exit(1 if selfcheck() else 0)

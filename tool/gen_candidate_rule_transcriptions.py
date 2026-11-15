@@ -954,7 +954,9 @@ def emit_fr_ko(root: Path) -> int:
                                    ("ru", fr_g2p.transcribe_fr_ru,
                                     re.compile(r"[А-яЁё\- ]+")),
                                    ("ar", fr_g2p.transcribe_fr_ar,
-                                    re.compile(r"[\u0621-\u064A ]+"))):
+                                    re.compile(r"[\u0621-\u064A ]+")),
+                                   ("zh-Hans", fr_g2p.transcribe_fr_zh,
+                                    re.compile(r"[\u4e00-\u9fff\-]+"))):
                 try:
                     value = fn(name)
                 except ValueError:
