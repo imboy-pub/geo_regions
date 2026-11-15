@@ -685,7 +685,7 @@ AR_CONS = {"k": "ك", "c": "ك", "t": "ت", "d": "د", "p": "ب", "b": "ب",
 AR_VOW = {"a": "ا", "e": "ي", "ɛ": "ي", "é": "ي", "i": "ي", "o": "و",
           "ɔ": "و", "u": "و", "y": "ي", "ø": "و", "ə": "و", "w": "و"}
 AR_NAS = {"ɑ̃": "ان", "ɛ̃": "ين", "ɔ̃": "ون", "œ̃": "ين",
-          "ε̃_en": "ين", "ɔ̃_on": "ون"}
+          "ɛ̃_en": "ين", "ε̃_en": "ين", "ɔ̃_on": "ون"}
 AR_PURITY = re.compile(r"[\u0621-\u064A ]+")
 
 
@@ -708,7 +708,7 @@ def transcribe_fr_ar(word: str) -> str:
             continue
         if t in AR_NAS:
             if saint_word and t in ("ɛ̃", "ɛ̃_en"):
-                out.append("ين")  # Saint سين/سانت-ين
+                out.append("ان")  # Saint: s renders س itself -> سان (ar.wp سان دوني)
             else:
                 out.append(AR_NAS[t])
             at_word_start = False
