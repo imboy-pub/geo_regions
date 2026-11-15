@@ -25,6 +25,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tool"))
 import geo_data as geo  # noqa: E402
+import ja_transcribe  # noqa: E402
 import s2t_places  # noqa: E402
 
 SNAP = REPO / "staging/csc-snapshot"
@@ -274,6 +275,7 @@ def main():
 
         county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
         if cc == "JP":
+            ja_transcribe.selfcheck()        # eval gate: fail loud, not silent
             csc_idx = csc_translation_index(cc)
             source_refs_jp = [GEOLONIA_SOURCE, CSC_SOURCE]
             for m in sorted(jp_munis, key=lambda r: r["code"]):
@@ -291,8 +293,11 @@ def main():
                 # "Sapporo-shi"-style keys — 360 nodes were untranslated in
                 # every locale except en.  ja/zh-Hans take the kanji name,
                 # zh-Hant picks it up via the kanji-direct path below, and
-                # de/fr/it take the romaji ward form; ko/ru/ar stay honest
-                # (kana->Hangul/Polivanov tables are a separate slice).
+                # de/fr/it take the romaji ward form; ko/ru transcribe the
+                # Geolonia kana readings (ja_transcribe: 국립국어원 일본어
+                # 표기법 Hangul / Polivanov Cyrillic, machine-candidate,
+                # eval-gated); ar stays honest (kana->Arabic is a separate,
+                # uncodified slice).
                 ward = m.get("ward") or ""
                 ward_r = m.get("ward_r") or ""
                 ja_full = (m.get("city") or "") + ward
@@ -310,6 +315,20 @@ def main():
                             # corrupt 区->區)
                             value = "".join(JP_SHINJITAI_HANS.get(c, c)
                                             for c in ja_full)
+                        elif locale == "ko" and m.get("kana"):
+                            try:
+                                value = ja_transcribe.ko_muni(
+                                    m["kana"], m["city"],
+                                    m.get("ward_k") or "", ward)
+                            except ValueError:
+                                value = None     # honest miss, eval-gated
+                        elif locale == "ru" and m.get("kana"):
+                            try:
+                                value = ja_transcribe.ru_muni(
+                                    m["kana"], m["city"],
+                                    m.get("ward_k") or "", ward)
+                            except ValueError:
+                                value = None     # honest miss, eval-gated
                         elif locale in ("de", "fr", "it") and ward_r:
                             value = f"{en_name} {ward_r}"
                         elif not ward and locale in ("de", "fr", "it"):
@@ -704,6 +723,10 @@ def main():
         "(machine-candidate, eval-gated 455 anchors six renderers, "
         "tool/en_g2p.py; zh-Hans per 新华社《英汉译音表》syllable-cell "
         "system + LEXICAL divergence freezes)\n"
+        "- JP ko/ru: rule-table kana->Hangul (국립국어원 외래어 표기법 "
+        "일본어 일람표+세칙) / Polivanov kana->Cyrillic transcriptions of the "
+        "Geolonia kana readings (machine-candidate, eval-gated 77 anchors, "
+        "tool/ja_transcribe.py)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"

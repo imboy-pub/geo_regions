@@ -8,6 +8,7 @@
 - RU ja/ko/de/fr/it/ar/zh-Hans: rule-table Cyrillic->katakana/hangul/Latin/Arabic/Hanzi transcriptions (machine-candidate, eval-gated, tool/gen_candidate_rule_transcriptions.py)
 - FR ko/ja/ru/ar/zh-Hans: rule-table French->Hangul/Katakana/Cyrillic/Arabic/Hanzi transcriptions (machine-candidate, eval-gated, tool/fr_g2p.py)
 - EN ko/ja/ru/ar/zh-Hans/de/fr/it: rule-table English->Hangul/Katakana/Cyrillic/Arabic/Hanzi + Latin borrowing transcriptions (machine-candidate, eval-gated 455 anchors six renderers, tool/en_g2p.py; zh-Hans per 新华社《英汉译音表》syllable-cell system + LEXICAL divergence freezes)
+- JP ko/ru: rule-table kana->Hangul (국립국어원 외래어 표기법 일본어 일람표+세칙) / Polivanov kana->Cyrillic transcriptions of the Geolonia kana readings (machine-candidate, eval-gated 77 anchors, tool/ja_transcribe.py)
 - FR/JP: CSC upstream translations re-joined through the staged qid->nid bridge for rows the name-matching inheritance missed (ODbL-1.0, provisional)
 - zh-Hant: zh-Hant is s2t-derived machine-candidate + FR wikidata community labels
 - All non-en translations are provisional; AI proof-reading samples do not flip quality words
