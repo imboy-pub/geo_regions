@@ -40,6 +40,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import en_g2p
 import fr_g2p
+import it_g2p
 
 OUT = Path("staging/ai-cand/ru-transcriptions.json")  # 4 locales: ja ko de fr
 LOCALE = "ja"  # primary locale (kept for the doc header); ja+ko both emitted
@@ -1114,6 +1115,8 @@ def main() -> int:
         return 1
     if emit_fr_ko(root) != 0:
         return 1
+    if emit_it_ko(root) != 0:
+        return 1
     cyr = re.compile(r"[\u0400-\u04FF]")
 
     for name, fn, expected in ([(k, transcribe, v) for k, v in EVAL.items()] +
@@ -1181,6 +1184,67 @@ def main() -> int:
     OUT.write_bytes(text)
     print(f"wrote {OUT} ({len(text):,} bytes): nodes={len(nodes)} "
           f"sha256={hashlib.sha256(text).hexdigest()[:16]}…")
+    return 0
+
+
+
+
+def emit_it_ko(root: Path) -> int:
+    """IT communes/states (CSC name) -> rule-transcription ko extract."""
+    fails = it_g2p.selfcheck()
+    if fails:
+        print(f"IT g2p eval fails: {fails}")
+        return 1
+    nodes: dict[str, dict] = {}
+    skipped = 0
+    purity = re.compile(r"[가-힣 \-]+")
+    # IT has no states file in the CSC snapshot; the 4 Sardinian reform
+    # provinces are build-maintained nodes pending ISTAT (build comment
+    # IT-S5830..S5833) — render them explicitly.
+    special = [(5830, "Gallura Nord-Est Sardegna"), (5831, "Ogliastra"),
+               (5832, "Medio Campidano"), (5833, "Sulcis Iglesiente")]
+    for sid, name in special:
+        try:
+            value = it_g2p.transcribe_it_ko(name)
+        except ValueError:
+            continue
+        if purity.fullmatch(value):
+            nodes[f"csc-state:{sid}"] = {"source": name,
+                                         "labels": {"ko": value}}
+    for kind, prefix in (("cities", "csc-city:"),):
+        path = root / f"staging/csc-snapshot/contributions/{kind}/IT.json"
+        if not path.is_file():
+            continue
+        for row in json.loads(path.read_text(encoding="utf-8")):
+            name = (row.get("name") or "").strip()
+            if not name:
+                continue
+            try:
+                value = it_g2p.transcribe_it_ko(name)
+            except ValueError:
+                skipped += 1
+                continue
+            if not purity.fullmatch(value):
+                skipped += 1
+                continue
+            nodes[f"{prefix}{row['id']}"] = {"source": name,
+                                             "labels": {"ko": value}}
+    document = {
+        "generator": "tool/it_g2p.py",
+        "ruleVersion": "it-ko-1",
+        "retrievedAt": "2026-11-15",
+        "quality": "machine-candidate",
+        "humanReviewVerified": False,
+        "license": "self-generated (rule-table transcription, no upstream bytes)",
+        "locales": ["ko"],
+        "nodeCount": len(nodes),
+        "skipped": skipped,
+        "nodes": nodes,
+    }
+    out = root / "staging/ai-cand/it-transcriptions.json"
+    out.write_text(json.dumps(document, ensure_ascii=False, sort_keys=True,
+                              separators=(",", ":")), encoding="utf-8")
+    print(f"wrote {out} ({out.stat().st_size:,} bytes): nodes={len(nodes)} skipped={skipped}")
     return 0
 
 
