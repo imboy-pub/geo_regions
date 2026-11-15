@@ -435,11 +435,11 @@ def main():
                     "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana/Cyrillic transcription, machine-candidate, tool/fr_g2p.py)")
                    for loc in ("ko", "ja", "ru", "ar")],
             "US": [(f"staging/ai-cand/en-transcriptions.json", loc,
-                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana transcription, machine-candidate, tool/en_g2p.py)")
-                   for loc in ("ko", "ja", "ru", "ar", "de", "fr", "it")],
+                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Hanzi transcription, machine-candidate, tool/en_g2p.py)")
+                   for loc in ("ko", "ja", "ru", "ar", "zh-Hans", "de", "fr", "it")],
             "GB": [(f"staging/ai-cand/en-transcriptions.json", loc,
-                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Cyrillic/Arabic + Latin borrowing transcription, machine-candidate, tool/en_g2p.py)")
-                   for loc in ("ko", "ja", "ru", "ar", "de", "fr", "it")],
+                    "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Cyrillic/Arabic/Hanzi + Latin borrowing transcription, machine-candidate, tool/en_g2p.py)")
+                   for loc in ("ko", "ja", "ru", "ar", "zh-Hans", "de", "fr", "it")],
         }
         if cc in RULE_STAGED:
             rule_filled = set()
@@ -658,6 +658,11 @@ def main():
         "- RU ja/ko/de/fr/it/ar/zh-Hans: rule-table Cyrillic->katakana/"
         "hangul/Latin/Arabic/Hanzi transcriptions (machine-candidate, "
         "eval-gated, tool/gen_candidate_rule_transcriptions.py)\n"
+        "- EN ko/ja/ru/ar/zh-Hans/de/fr/it: rule-table English->Hangul/"
+        "Katakana/Cyrillic/Arabic/Hanzi + Latin borrowing transcriptions "
+        "(machine-candidate, eval-gated 455 anchors six renderers, "
+        "tool/en_g2p.py; zh-Hans per 新华社《英汉译音表》syllable-cell "
+        "system + LEXICAL divergence freezes)\n"
         "- FR/JP: CSC upstream translations re-joined through the staged "
         "qid->nid bridge for rows the name-matching inheritance missed "
         "(ODbL-1.0, provisional)\n"

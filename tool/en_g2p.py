@@ -309,10 +309,6 @@ def _resolve_plain(sub: list[str]) -> list[str]:
             i += 1
             continue
         if tok == "ch":
-            if nxt == "i":
-                out.append("ʃi")                       # 시카고/미시간 (consume i)
-                i += 2
-                continue
             if nxt in _VOWEL_LETTERS:
                 v = _resolve_letter_vowel(nxt, sub, i + 1)
                 out.append("tʃ" + _render_vowel_key(v))
@@ -1407,6 +1403,7 @@ LEXICAL_EN_RU_FULL = {
     "mississippi": "Миссисипи", "san diego": "Сан-Диего",
     "square": "Сквер", "queens": "Куинс", "kendall": "Кендал",
     "monroe": "Монро", "midway": "Мидуэй", "yamhill": "Ямхилл",
+    "chicago": "Чикаго", "michigan": "Мичиган",
     # second-order gap-fill divergences (2026-11-15 slice)
     "summit": "Саммит",                        # саммит is a Russian loanword
     "utqiagvik": "Уткиагвик",                  # ru.wp form; system Аткиагвик
@@ -1804,6 +1801,7 @@ LEXICAL_EN_AR_FULL = {
     "aberdeen": "أبردين", "annapolis": "أنابوليس", "norfolk": "نورفولك",
     "nashville": "ناشفيل", "oxford": "أوكسفورد", "york": "يورك",
     "cambridge": "كامبريدج", "wheeling": "ويلينغ", "jersey": "جيرسي",
+    "chicago": "شيكاغو", "michigan": "ميشيغان",
     "virginia": "فرجينيا", "london": "لندن", "dallas": "دالاس",
     "great": "غريت", "broad": "برود", "broadway": "برودواي",
     "clarksburg": "كلاركسبرغ", "clark": "كلارك",
@@ -1826,6 +1824,511 @@ LEXICAL_EN_AR_FULL = {
     "waipiʻo": "وايبيو",
     "hanamaʻulu": "هاناماولو",
     "laʻie": "لايي",
+}
+
+
+# --- hanzi renderer (新华社《英汉译音表》lexicon+system 双轨) ----------------
+# consumes the same phoneme stream as the other four renderers; only
+# high-confidence table cells are encoded, uncertain rows raise ValueError
+# (honest skip).  Word-initial Saint/San/Santa/New are semantic prefixes,
+# Fort inverts to 堡 suffix-position, " City"→城, "land"→兰, "shire"→谢.
+
+_ZH_VROW = {"æ": "a", "ɑ": "a", "ʌ": "a", "ɔ": "o", "ɔː": "o", "oʊ": "o",
+            "ʊ": "u", "uː": "u", "ɪ": "i", "iː": "i", "ɛ": "e", "e": "e",
+            "ə": "ə", "eɪ": "ei", "aɪ": "ai", "juː": "u"}
+_ZH_CV = {
+    ("b", "a"): "巴", ("p", "a"): "帕", ("t", "a"): "塔", ("d", "a"): "达",
+    ("k", "a"): "卡", ("g", "a"): "加", ("f", "a"): "法", ("v", "a"): "瓦",
+    ("s", "a"): "萨", ("z", "a"): "扎", ("ʃ", "a"): "沙", ("tʃ", "a"): "查",
+    ("dʒ", "a"): "贾", ("m", "a"): "马", ("n", "a"): "纳", ("l", "a"): "拉",
+    ("r", "a"): "拉", ("h", "a"): "哈", ("w", "a"): "瓦", ("j", "a"): "亚",
+    ("θ", "a"): "萨",
+    ("b", "o"): "波", ("p", "o"): "波", ("t", "o"): "托", ("d", "o"): "多",
+    ("k", "o"): "科", ("g", "o"): "戈", ("f", "o"): "福", ("v", "o"): "沃",
+    ("s", "o"): "索", ("z", "o"): "佐", ("ʃ", "o"): "肖", ("tʃ", "o"): "乔",
+    ("dʒ", "o"): "乔", ("m", "o"): "莫", ("n", "o"): "诺", ("l", "o"): "洛",
+    ("r", "o"): "罗", ("h", "o"): "霍", ("w", "o"): "沃", ("j", "o"): "约",
+    ("θ", "o"): "索",
+    ("b", "u"): "布", ("p", "u"): "普", ("t", "u"): "图", ("d", "u"): "杜",
+    ("k", "u"): "库", ("g", "u"): "古", ("f", "u"): "富", ("v", "u"): "武",
+    ("s", "u"): "苏", ("z", "u"): "祖", ("ʃ", "u"): "舒", ("tʃ", "u"): "丘",
+    ("dʒ", "u"): "朱", ("m", "u"): "穆", ("n", "u"): "努", ("l", "u"): "卢",
+    ("r", "u"): "鲁", ("h", "u"): "胡", ("w", "u"): "伍", ("j", "u"): "尤",
+    ("θ", "u"): "苏",
+    ("b", "i"): "比", ("p", "i"): "皮", ("t", "i"): "蒂", ("d", "i"): "迪",
+    ("k", "i"): "基", ("g", "i"): "吉", ("f", "i"): "菲", ("v", "i"): "维",
+    ("s", "i"): "西", ("z", "i"): "济", ("ʃ", "i"): "希", ("tʃ", "i"): "奇",
+    ("dʒ", "i"): "吉", ("m", "i"): "密", ("n", "i"): "尼", ("l", "i"): "利",
+    ("r", "i"): "里", ("h", "i"): "希", ("w", "i"): "威", ("j", "i"): "伊",
+    ("θ", "i"): "西",
+    ("b", "e"): "贝", ("p", "e"): "佩", ("t", "e"): "特", ("d", "e"): "德",
+    ("k", "e"): "克", ("g", "e"): "格", ("f", "e"): "弗", ("v", "e"): "弗",
+    ("s", "e"): "塞", ("z", "e"): "泽", ("ʃ", "e"): "谢", ("tʃ", "e"): "切",
+    ("dʒ", "e"): "杰", ("m", "e"): "梅", ("n", "e"): "内", ("l", "e"): "勒",
+    ("r", "e"): "雷", ("h", "e"): "赫", ("w", "e"): "韦", ("j", "e"): "耶",
+    ("θ", "e"): "塞",
+    ("b", "ei"): "贝", ("p", "ei"): "佩", ("t", "ei"): "泰", ("d", "ei"): "代",
+    ("k", "ei"): "凯", ("g", "ei"): "盖", ("f", "ei"): "费", ("v", "ei"): "韦",
+    ("s", "ei"): "塞", ("z", "ei"): "泽", ("ʃ", "ei"): "谢", ("tʃ", "ei"): "蔡",
+    ("dʒ", "ei"): "杰", ("m", "ei"): "梅", ("n", "ei"): "内", ("l", "ei"): "莱",
+    ("r", "ei"): "雷", ("h", "ei"): "海", ("w", "ei"): "韦", ("j", "ei"): "耶",
+    ("b", "ai"): "拜", ("p", "ai"): "派", ("t", "ai"): "泰", ("d", "ai"): "代",
+    ("k", "ai"): "凯", ("g", "ai"): "盖", ("f", "ai"): "法", ("v", "ai"): "韦",
+    ("s", "ai"): "赛", ("z", "ai"): "泽", ("ʃ", "ai"): "夏", ("tʃ", "ai"): "柴",
+    ("dʒ", "ai"): "贾", ("m", "ai"): "麦", ("n", "ai"): "奈", ("l", "ai"): "莱",
+    ("r", "ai"): "赖", ("h", "ai"): "海", ("w", "ai"): "怀", ("j", "ai"): "亚",
+}
+# er/ir/ur pair base row (ɜ): 伯/特/德... distinct from the open-e row
+_ZH_ER = {"b": "伯", "p": "珀", "t": "特", "d": "德", "k": "克", "g": "格",
+          "f": "弗", "v": "弗", "s": "瑟", "z": "泽", "ʃ": "舍", "tʃ": "彻",
+          "dʒ": "杰", "m": "默", "n": "纳", "l": "勒", "r": "尔", "h": "赫",
+          "w": "沃", "j": "耶", "θ": "瑟"}
+_ZH_C0 = {"b": "布", "p": "普", "t": "特", "d": "德", "k": "克", "g": "格",
+          "f": "弗", "v": "夫", "s": "斯", "z": "兹", "ʃ": "什", "tʃ": "奇",
+          "dʒ": "吉", "m": "姆", "n": "恩", "l": "尔", "r": "尔", "h": "赫",
+          "w": "沃", "j": "伊", "θ": "斯", "ð": "德"}
+_ZH_V0 = {"a": "阿", "o": "奥", "u": "乌", "i": "伊", "e": "埃",
+          "ə": "厄", "ei": "埃", "ai": "艾", "juː": "尤"}
+_ZH_CN = {  # (vowel-row) -> {onset: char}; n/m/ŋ codas merged per Xinhua
+    "a": {"b": "班", "p": "潘", "t": "坦", "d": "丹", "k": "坎", "g": "甘",
+          "f": "范", "v": "万", "s": "桑", "z": "赞", "dʒ": "詹", "m": "曼",
+          "n": "南", "l": "兰", "r": "兰", "h": "汉", "w": "万"},
+    "e": {"b": "本", "p": "彭", "t": "滕", "d": "登", "k": "肯", "g": "根",
+          "f": "芬", "v": "文", "s": "森", "z": "森", "dʒ": "詹", "m": "门",
+          "l": "伦", "r": "伦", "h": "亨", "w": "温"},
+    "i": {"b": "宾", "p": "平", "t": "廷", "d": "丁", "k": "金", "g": "金",
+          "f": "芬", "v": "文", "s": "辛", "z": "津", "dʒ": "金", "m": "明",
+          "n": "宁", "l": "林", "r": "林", "h": "欣", "w": "温"},
+    "o": {"b": "邦", "p": "蓬", "t": "顿", "d": "唐", "k": "康", "g": "冈",
+          "f": "丰", "s": "森", "z": "宗", "dʒ": "琼", "m": "蒙",
+          "n": "农", "l": "朗", "r": "朗", "h": "洪"},
+    "ə": {"b": "本", "p": "彭", "t": "顿", "d": "登", "k": "康", "g": "根",
+          "f": "芬", "v": "文", "s": "森", "z": "森", "dʒ": "詹", "m": "蒙",
+          "n": "恩", "l": "伦", "r": "伦", "h": "亨", "w": "温"},
+    "au": {"t": "汤", "d": "唐"},
+}
+_ZH_CN_NG = {"l": {"i": "灵"}}     # arlington 阿灵顿 (vs berlin 柏林 林)
+_ZH_VN = {"a": "安", "e": "恩", "i": "因", "o": "翁"}
+_ZH_HW = {"i": "惠", "ɪ": "惠", "e": "惠", "ɛ": "惠", "ai": "怀",
+          "aɪ": "怀", "a": "瓦", "ɑ": "瓦", "o": "沃", "ɔ": "沃",
+          "u": "伍", "ʊ": "伍"}
+_ZH_DBL = {"ll": "l", "rr": "r", "ss": "s", "tt": "t", "dd": "d", "pp": "p",
+           "bb": "b", "gg": "g", "mm": "m", "nn": "n", "ff": "f", "zz": "z",
+           "cc": "k"}
+_ZH_SPLITS = {"se": ("s", "e"), "sa": ("s", "a"), "si": ("s", "i"),
+              "sA": ("s", "a"), "sO": ("s", "o"), "sU": ("s", "u"),
+              "s7": ("s", "u"), "sv": ("s", "u"),
+              "we": ("w", "e"), "wi": ("w", "i"), "wa": ("w", "a"),
+              "wA": ("w", "a"), "wO": ("w", "o"), "wU": ("w", "u"),
+              "wv": ("w", "u"), "w4": ("w", "a"), "w2": ("w", "ei"),
+              "ʃi": ("ʃ", "i"), "ʃe": ("ʃ", "e"), "ʃa": ("ʃ", "a"),
+              "ʃA": ("ʃ", "a"), "ʃO": ("ʃ", "o"), "ʃU": ("ʃ", "u"),
+              "ʃ7": ("ʃ", "u"),
+              "tʃi": ("tʃ", "i"),
+              "tʃe": ("tʃ", "e"), "tʃa": ("tʃ", "a"), "tʃA": ("tʃ", "a"),
+              "tʃO": ("tʃ", "o"), "tʃU": ("tʃ", "u"), "tʃ7": ("tʃ", "u"),
+              "dʒe": ("dʒ", "e"), "dʒa": ("dʒ", "a"), "dʒA": ("dʒ", "a"),
+              "dʒi": ("dʒ", "i"), "dʒO": ("dʒ", "o"), "dʒU": ("dʒ", "a"),
+              "dʒ7": ("dʒ", "u")}
+_ZH_RPAIR = {"ar": "a", "or": "o", "er": "er", "ir": "er", "ur": "er"}
+_ZH_NASALS = ("n", "m", "ng", "nk")
+
+LEXICAL_EN_ZH_FULL = {
+    # 有名分歧形（lexicon+system 双轨，新华社《世界地名翻译大辞典》模式）
+    "houston": "休斯敦", "los angeles": "洛杉矶", "new york": "纽约",
+    "chicago": "芝加哥", "philadelphia": "费城", "san antonio": "圣安东尼奥",
+    "san diego": "圣迭戈", "san francisco": "旧金山", "san jose": "圣何塞",
+    "las vegas": "拉斯维加斯", "seattle": "西雅图", "denver": "丹佛",
+    "detroit": "底特律", "washington": "华盛顿", "baltimore": "巴尔的摩",
+    "pittsburgh": "匹兹堡", "nashville": "纳什维尔",
+    "indianapolis": "印第安纳波利斯", "columbus": "哥伦布",
+    "charlotte": "夏洛特", "new orleans": "新奥尔良",
+    "jacksonville": "杰克逊维尔", "jackson": "杰克逊", "newton": "牛顿",
+    "powell": "鲍威尔", "hollywood": "好莱坞", "tucson": "图森",
+    "duluth": "德卢斯", "nevada": "内华达", "florida": "佛罗里达",
+    "virginia": "弗吉尼亚", "west virginia": "西弗吉尼亚",
+    "pennsylvania": "宾夕法尼亚", "massachusetts": "马萨诸塞",
+    "connecticut": "康涅狄格", "kentucky": "肯塔基", "tennessee": "田纳西",
+    "minnesota": "明尼苏达", "oklahoma": "俄克拉何马", "arkansas": "阿肯色",
+    "idaho": "爱达荷", "utah": "犹他", "oregon": "俄勒冈",
+    "vermont": "佛蒙特", "wyoming": "怀俄明", "hawaii": "夏威夷",
+    "alaska": "阿拉斯加", "alabama": "亚拉巴马", "michigan": "密歇根",
+    "illinois": "伊利诺伊", "iowa": "艾奥瓦", "missouri": "密苏里",
+    "colorado": "科罗拉多", "georgia": "佐治亚", "maine": "缅因",
+    "texas": "得克萨斯", "london": "伦敦", "birmingham": "伯明翰",
+    "manchester": "曼彻斯特", "liverpool": "利物浦", "glasgow": "格拉斯哥",
+    "edinburgh": "爱丁堡", "leeds": "利兹", "sheffield": "谢菲尔德",
+    "nottingham": "诺丁汉", "newcastle": "纽卡斯尔", "aberdeen": "阿伯丁",
+    "jersey": "泽西", "york": "约克", "dallas": "达拉斯",
+    "boulder": "博尔德", "charleston": "查尔斯顿", "boston": "波士顿",
+    "franklin": "富兰克林", "kansas": "堪萨斯", "mobile": "莫比尔",
+    "toledo": "托莱多", "topeka": "托皮卡", "newark": "纽瓦克",
+    "wichita": "威奇托", "berry": "贝里", "omaha": "奥马哈",
+    "denver": "丹佛", "harrisburg": "哈里斯堡", "maryland": "马里兰",
+}
+
+
+def _zh_vrow(v: str) -> str:
+    return _ZH_VROW.get(v, "")
+
+
+def _zh_cell(cons: str, vrow: str) -> str:
+    return _ZH_CV.get((cons, vrow), "")
+
+
+def _zh_is_cons_token(t: str | None) -> bool:
+    if t is None or t in ("|", "| "):
+        return False
+    if t in ("qu", "ny", "wh", "wh2", "w", "y", "j", "wv", "x", "sch",
+             "kn", "wr", "mb", "g~") or t in _ZH_DBL:
+        return True
+    if t in _ZH_SPLITS:
+        return False
+    if t in _ZH_RPAIR or t in _ZH_VROW:
+        return False
+    if t in _ZH_C0:
+        return True
+    return False
+
+
+def _zh_core(word: str) -> str:
+    text = word.strip()
+    key = _lex_key(text)
+    if key in LEXICAL_EN_ZH_FULL:
+        return LEXICAL_EN_ZH_FULL[key]
+    toks = phonemes(text)
+    out: list[str] = []
+    pending: str | None = None          # consonant onset awaiting a vowel
+    n = len(toks)
+    i = 0
+    while i < n:
+        t = toks[i]
+        nxt = toks[i + 1] if i + 1 < n else None
+        nxt2 = toks[i + 2] if i + 2 < n else None
+        if t in ("|", "| "):
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            if t == "| " and out:
+                out.append(" ")
+            i += 1
+            continue
+        if pending is not None and (t in _ZH_SPLITS or t in ("ia", "iA", "ie")):
+            vrow = _ZH_SPLITS[t][1] if t in _ZH_SPLITS else \
+                ("i" if t != "ie" else "i")
+            tail = "阿" if t == "iA" else ""
+            cell = _zh_cell(pending, vrow)
+            if not cell:
+                raise ValueError(f"zh unmappable {pending!r}+{t!r} in {word!r}")
+            out.append(cell + tail)
+            pending = None
+            i += 1
+            continue
+        if t in ("|",):
+            i += 1
+            continue
+        if t in _ZH_SPLITS:
+            cons, vrow = _ZH_SPLITS[t]
+            nasal = nxt if nxt in _ZH_NASALS else None
+            if cons == "w" and t == "wv":
+                pass
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            if nasal and (nxt2 is None or not _zh_is_vowelish_tok(nxt2)):
+                if _ZH_CN.get(vrow, {}).get(cons):
+                    out.append(_ZH_CN[vrow][cons])
+                else:
+                    out.append(_zh_cell(cons, vrow)
+                               + ("姆" if nasal == "m" else "恩"))
+                pending = "k" if nasal == "nk" else None
+                i += 2                              # vowel + nasal consumed
+                if nasal == "n" and nxt2 == "g":
+                    i += 1
+            else:
+                cell = _zh_cell(cons, vrow)
+                if not cell:
+                    raise ValueError(f"zh unmappable {t!r} in {word!r}")
+                out.append(cell)
+                i += 1
+            continue
+        if t == "iA":
+            pal = {"n": "尼亚", "l": "利亚", "r": "里亚", "dʒ": "吉亚"}
+            if pending is not None:
+                out.append(pal.get(pending, _zh_cell(pending, "i") + "亚"))
+                pending = None
+            else:
+                out.append("伊亚")
+            i += 1
+            continue
+        if t == "ie":
+            if pending is not None:
+                cell = _zh_cell(pending, "i")
+                if not cell:
+                    raise ValueError(f"zh unmappable ie in {word!r}")
+                out.append(cell)
+                pending = None
+            else:
+                out.append("伊")
+            i += 1
+            continue
+        if t == "y":
+            if pending is not None:
+                cell = _zh_cell(pending, "i")
+                if not cell:
+                    raise ValueError(f"zh unmappable y in {word!r}")
+                out.append(cell)
+                pending = None
+            else:
+                out.append("伊")
+            i += 1
+            continue
+        if t in _ZH_RPAIR:
+            cons = pending
+            pending = None
+            base_vrow = _ZH_RPAIR[t]
+            cell = (_ZH_ER.get(cons, "") if base_vrow == "er"
+                    else _zh_cell(cons or "", base_vrow))
+            if not cell and cons:
+                raise ValueError(f"zh unmappable {cons!r}+{t!r} in {word!r}")
+            if cons is None:
+                cell = {"ar": "阿", "or": "奥", "er": "厄", "ir": "伊",
+                        "ur": "乌"}.get(t, "厄")
+            if t == "er" and nxt == "r":
+                out.append(_zh_cell(cons or "", "e") if cons else "厄")
+                pending = "r"
+                i += 1
+                continue
+            if nxt in _ZH_NASALS and (nxt2 is None
+                                      or not _zh_is_vowelish_tok(nxt2)):
+                out.append(cell)               # r silent before nasal coda
+                row = _ZH_RPAIR[t]
+                if cons and _ZH_CN.get(row, {}).get(cons):
+                    out.append(_ZH_CN[row][cons])
+                else:
+                    out.append("恩")
+                pending = "k" if nxt == "nk" else None
+                i += 2
+                continue
+            if nxt is None or nxt in ("|", "| "):
+                out.append(cell)               # word-final r drops (reno 里诺)
+            elif _zh_is_cons_token(nxt):
+                if nxt2 is None or nxt2 in ("|", "| ") \
+                        or not _zh_is_cons_token(nxt2):
+                    out.append(cell)           # onset/word-end: r silent
+                elif nxt == "l" and nxt2 == "k":
+                    out.append(cell)           # -rlk: norfolk 诺福克
+                else:
+                    out.append(cell + "尔")     # coda cluster: 查尔斯
+            else:
+                out.append(cell)               # resyllabified: 马里兰
+                pending = "r"
+            i += 1
+            continue
+        if t == "juː":
+            if pending == "h":
+                out.append("休")               # hughes 休斯
+            elif pending == "n":
+                out.append("纽")               # newark 纽瓦克
+            elif pending is not None:
+                out.append(_ZH_C0.get(pending, "") + "尤")
+            else:
+                out.append("尤")
+            pending = None
+            i += 1
+            continue
+        if t == "qu":
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            if nxt in ("ɪ", "ɛ", "e", "ʌ", "æ"):
+                out.append("昆")               # quincy 昆西 / algonquin 冈昆
+                i += 2
+                if toks[i] == "n" if i < n else False:
+                    nxt3 = toks[i + 1] if i + 1 < n else None
+                    if nxt3 is None or not _zh_is_vowelish_tok(nxt3):
+                        i += 1
+            else:
+                vrow = _zh_vrow(nxt) if nxt in _ZH_VROW else None
+                if vrow:
+                    out.append(_zh_cell("k", vrow))
+                    i += 2
+                else:
+                    out.append("克")
+                    i += 1
+            continue
+        if t in ("wh", "wh2"):
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            if t == "wh2":
+                out.append(_ZH_HW.get("ai", "怀"))
+                i += 2 if nxt == "ɪ" else 1
+            else:
+                vrow = _zh_vrow(nxt) if nxt in _ZH_VROW else None
+                cell = _ZH_HW.get(nxt, "") or (_ZH_HW.get(vrow, "") if vrow else "")
+                if not cell:
+                    raise ValueError(f"zh unmappable wh+{nxt!r} in {word!r}")
+                out.append(cell)
+                i += 2 if nxt in _ZH_VROW else 1
+            continue
+        if t == "ny":
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            pending = "n"
+            i += 1
+            continue
+        if t == "x":
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            out.append("克")
+            pending = "s"
+            i += 1
+            continue
+        if t == "g~":
+            out.append("堡")                   # -burg suffix cell (匹兹堡)
+            pending = None
+            i += 1
+            continue
+        if nxt == "g~" and t in _ZH_VROW:
+            pending = None                      # harrisburg 哈里斯堡
+            out.append("堡")
+            i += 2
+            continue
+        if t == "mb":
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            pending = "m"
+            i += 1
+            continue
+        if t == "sch":
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            out.append("斯")
+            pending = "k"
+            i += 1
+            continue
+        if t in ("kn", "wr"):
+            if pending is not None:
+                out.append(_ZH_C0.get(pending, ""))
+                pending = None
+            out.append("克" if t == "kn" else "沃")
+            pending = "n" if t == "kn" else "r"
+            i += 1
+            continue
+        if t in _ZH_DBL:
+            t = _ZH_DBL[t]
+        if t == "w" and nxt is None:
+            out.append("尤" if out and out[-1] and out[-1][-1] in "维尤伊"
+                       else "")                # longview 朗维尤 / shaw 肖
+            i += 1
+            continue
+        if t == "l" and nxt == "k":
+            i += 1                              # silent l: norfolk 诺福克
+            continue
+        if t in _ZH_C0:
+            if nxt is not None and (nxt in _ZH_VROW or nxt in _ZH_SPLITS
+                                    or nxt in _ZH_RPAIR
+                                    or nxt in ("ia", "iA", "ie", "juː", "y")):
+                if pending is not None:
+                    out.append(_ZH_C0[pending])
+                pending = t
+            else:
+                if pending is not None:
+                    out.append(_ZH_C0[pending])
+                    pending = None
+                out.append(_ZH_C0[t])
+            i += 1
+            continue
+        if t in _ZH_VROW:
+            vrow = _zh_vrow(t)
+            nasal = nxt if nxt in _ZH_NASALS else None
+            if nasal and (nxt2 is None or not _zh_is_vowelish_tok(nxt2)):
+                if pending is None:
+                    out.append(_ZH_VN.get(vrow, _ZH_V0[vrow] + "恩"))
+                elif _ZH_CN.get(vrow, {}).get(pending):
+                    out.append(_ZH_CN[vrow][pending])
+                else:
+                    cell = (_zh_cell(pending, vrow) or
+                            (_zh_cell(pending, "e") if vrow == "ə" else ""))
+                    if pending == "v" and t == "ə":
+                        cell = "佛"                # denver 丹佛
+                    if not cell:
+                        raise ValueError(
+                            f"zh unmappable {pending!r}+{t!r} in {word!r}")
+                    out.append(cell + ("姆" if nasal == "m" else "恩"))
+                pending = "k" if nasal == "nk" else None
+                i += 2                              # vowel + nasal consumed
+                if nasal == "n" and nxt2 == "g":
+                    i += 1                          # n+g cluster = ŋ (朗维尤)
+                continue
+            cell = _zh_cell(pending, vrow) if pending else _ZH_V0[vrow]
+            if pending == "v" and t == "ə":
+                cell = "佛"                        # denver 丹佛
+            if pending and not cell:
+                cell = (_zh_cell(pending, "e") if vrow == "ə" else "")
+            if pending and not cell:
+                raise ValueError(f"zh unmappable {pending!r}+{t!r} in {word!r}")
+            out.append(cell)
+            pending = None
+            i += 1
+            continue
+        if t in ("|",):
+            i += 1
+            continue
+        raise ValueError(f"zh unmappable token {t!r} in {word!r}")
+    if pending is not None:
+        out.append(_ZH_C0.get(pending, ""))
+    return "".join(out)
+
+
+def _zh_is_vowelish_tok(t: str | None) -> bool:
+    if t is None:
+        return False
+    # _ZH_SPLITS excluded: they carry their own onset (kansas 堪+萨斯)
+    return (t in _ZH_VROW or t in ("ia", "iA", "ie", "juː", "y", "qu"))
+
+
+def transcribe_en_zh(word: str) -> str:
+    """English -> Hanzi (新华社《英汉译音表》, lexicon+system dual track)."""
+    text = word.strip().replace("St. ", "Saint ")
+    low = text.lower()
+    core = _zh_core
+    if low.startswith("saint "):
+        return "圣" + core(text[6:])
+    if low.startswith("santa "):
+        return "圣" + core(text[6:])
+    if low.startswith("san "):
+        return "圣" + core(text[4:])
+    if low.startswith("new "):
+        return "新" + core(text[4:])
+    if low.startswith("fort "):
+        return core(text[5:]) + "堡"
+    if low.endswith(" city"):
+        return core(text[:-5]) + "城"
+    if low.endswith("land") and len(low) > 5:
+        return core(text[:-4]) + "兰"
+    if low.endswith("shire") and len(low) > 6:
+        return core(text[:-5]) + "谢"
+    return core(text)
+
+
+EN_ZH_EVAL = {
+    "Houston": "休斯敦", "Dallas": "达拉斯", "Boston": "波士顿",
+    "Denver": "丹佛", "Orlando": "奥兰多", "Franklin": "富兰克林",
+    "Knoxville": "诺克斯维尔", "Longview": "朗维尤", "Mobile": "莫比尔",
+    "Reno": "雷诺", "Toledo": "托莱多", "Waco": "瓦科", "Canton": "坎顿",
+    "Kansas": "堪萨斯", "Springfield": "斯普林菲尔德",
+    "Pittsburgh": "匹兹堡", "Norfolk": "诺福克", "Newton": "牛顿",
+    "Newark": "纽瓦克", "Topeka": "托皮卡", "Omaha": "奥马哈",
+    "Wichita": "威奇托", "Wisconsin": "威斯康辛", "Lansing": "兰辛",
+    "Harrisburg": "哈里斯堡", "Maryland": "马里兰", "Berry": "贝里",
+    "Baltimore": "巴尔的摩", "San Marcos": "圣马科斯", "Fort Wayne": "韦恩堡",
+    "Kansas City": "堪萨斯城", "Cleveland": "克利夫兰", "York": "约克",
 }
 
 
@@ -1870,6 +2373,7 @@ EN_IT_EVAL = dict(EN_DE_EVAL)
 
 LEXICAL_EN_KO_FULL = {
     # 유명 불규칙形（lexicon+system 双轨，新华社模式）— 分歧已存档
+    "chicago": "시카고", "michigan": "미시간",
     "london": "런던",           # o closed unstressed -> 런 (rules: 론던-type)
     "houston": "휴스턴",        # u closed but /hjuː/ long (rules: 허스턴)
     "dallas": "댈러스",         # ll double ㄹ tradition (vs 밸리 single)
@@ -2422,6 +2926,7 @@ def transcribe_en_ja(word: str) -> str:
 
 LEXICAL_EN_JA_FULL = {
     # 有名不規則形（lexicon+system 双轨）
+    "chicago": "シカゴ", "michigan": "ミシガン",
     "miami": "マイアミ",        # maɪ split (rules: ミアミ)
     "los angeles": "ロサンゼルス",
     "new york": "ニューヨーク",
@@ -2773,6 +3278,14 @@ def selfcheck() -> int:
             print(f"EN-AR EVAL FAIL {name!r}: got {got!r} want {want!r}")
             fails += 1
     print(f"en_ar anchors: {len(EN_AR_EVAL) - fails}/{len(EN_AR_EVAL)} pass")
+    zh_fails = 0
+    for name, want in EN_ZH_EVAL.items():
+        got = transcribe_en_zh(name)
+        if got != want:
+            print(f"EN-ZH EVAL FAIL {name!r}: got {got!r} want {want!r}")
+            zh_fails += 1
+    fails += zh_fails
+    print(f"en_zh anchors: {len(EN_ZH_EVAL) - zh_fails}/{len(EN_ZH_EVAL)} pass")
     for name, want in EN_DE_EVAL.items():
         for fn in (transcribe_identity,):
             got = fn(name)

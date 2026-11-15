@@ -973,7 +973,7 @@ def emit_fr_ko(root: Path) -> int:
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko", "ja", "ru", "ar", "de", "fr", "it"],
+        "locales": ["ko", "ja", "ru", "ar", "zh-Hans", "de", "fr", "it"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,
@@ -1006,6 +1006,7 @@ def emit_en_ko(root: Path) -> int:
     purity_de = re.compile(r"[A-Za-zÀ-ÿ\u0100-\u017F'’\- .]+")
     purity_fr = purity_de
     purity_it = purity_de
+    purity_zh = re.compile(r"[\u4e00-\u9fff\- ]+")
     for cc in ("US", "GB"):
         for kind, prefix in (("cities", "csc-city"), ("counties", "csc-county")):
             path = root / f"staging/csc-snapshot/contributions/{kind}/{cc}.json"
@@ -1036,6 +1037,7 @@ def emit_en_ko(root: Path) -> int:
                         ("ja", en_g2p.transcribe_en_ja, purity_ja),
                         ("ru", en_g2p.transcribe_en_ru, purity_ru),
                         ("ar", en_g2p.transcribe_en_ar, purity_ar),
+                        ("zh-Hans", en_g2p.transcribe_en_zh, purity_zh),
                         ("de", en_g2p.transcribe_identity, purity_de),
                         ("fr", en_g2p.transcribe_identity, purity_fr),
                         ("it", en_g2p.transcribe_identity, purity_it)):
@@ -1054,6 +1056,9 @@ def emit_en_ko(root: Path) -> int:
                                  else f"{value}郡" if loc == "ja"
                                  else f"{value} округ" if loc == "ru"
                                  else f"{value} مقاطعة" if loc == "ar"
+                                 else f"{value}县" if loc == "zh-Hans"
+                                      and cc == "US"
+                                 else f"{value}郡" if loc == "zh-Hans"
                                  else f"{value} County")
                     labels[loc] = value
                 if not labels:
@@ -1063,7 +1068,7 @@ def emit_en_ko(root: Path) -> int:
                                                   "labels": labels}
     document = {
         "generator": "tool/en_g2p.py",
-        "ruleVersion": "en-ko-1",
+        "ruleVersion": "en-zh-1",
         "retrievedAt": "2026-11-15",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
