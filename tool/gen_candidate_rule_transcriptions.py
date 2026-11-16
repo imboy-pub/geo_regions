@@ -1190,27 +1190,45 @@ def main() -> int:
 
 
 def emit_it_ko(root: Path) -> int:
-    """IT communes/states (CSC name) -> rule-transcription ko extract."""
-    fails = it_g2p.selfcheck()
+    """IT communes/states (CSC name) -> rule-transcription ko/ar/ru/zh/ja."""
+    fails = it_g2p.selfcheck() + sum(
+        len(getattr(it_g2p, a)) - sum(1 for k, w in getattr(it_g2p, a).items()
+                                      if fn(k) == w)
+        for a, fn in (("IT_AR_EVAL", it_g2p.transcribe_it_ar),
+                      ("IT_RU_EVAL", it_g2p.transcribe_it_ru),
+                      ("IT_ZH_EVAL", it_g2p.transcribe_it_zh),
+                      ("IT_JA_EVAL", it_g2p.transcribe_it_ja)))
     if fails:
         print(f"IT g2p eval fails: {fails}")
         return 1
+    fns = (("ko", it_g2p.transcribe_it_ko, re.compile(r"[가-힣 \-]+")),
+           ("ar", it_g2p.transcribe_it_ar, re.compile(r"[\u0621-\u064A ]+")),
+           ("ru", it_g2p.transcribe_it_ru, re.compile(r"[А-яЁё\- ]+")),
+           ("zh-Hans", it_g2p.transcribe_it_zh, re.compile(r"[\u4e00-\u9fff\-]+")),
+           ("ja", it_g2p.transcribe_it_ja, re.compile(r"[ァ-ヴー・]+")))
     nodes: dict[str, dict] = {}
     skipped = 0
-    purity = re.compile(r"[가-힣 \-]+")
+
+    def render(name):
+        labels = {}
+        for locale, fn, pr in fns:
+            try:
+                value = fn(name)
+            except ValueError:
+                continue
+            if pr.fullmatch(value):
+                labels[locale] = value
+        return labels
+
     # IT has no states file in the CSC snapshot; the 4 Sardinian reform
     # provinces are build-maintained nodes pending ISTAT (build comment
     # IT-S5830..S5833) — render them explicitly.
     special = [(5830, "Gallura Nord-Est Sardegna"), (5831, "Ogliastra"),
                (5832, "Medio Campidano"), (5833, "Sulcis Iglesiente")]
     for sid, name in special:
-        try:
-            value = it_g2p.transcribe_it_ko(name)
-        except ValueError:
-            continue
-        if purity.fullmatch(value):
-            nodes[f"csc-state:{sid}"] = {"source": name,
-                                         "labels": {"ko": value}}
+        labels = render(name)
+        if labels:
+            nodes[f"csc-state:{sid}"] = {"source": name, "labels": labels}
     for kind, prefix in (("cities", "csc-city:"),):
         path = root / f"staging/csc-snapshot/contributions/{kind}/IT.json"
         if not path.is_file():
@@ -1219,24 +1237,20 @@ def emit_it_ko(root: Path) -> int:
             name = (row.get("name") or "").strip()
             if not name:
                 continue
-            try:
-                value = it_g2p.transcribe_it_ko(name)
-            except ValueError:
+            labels = render(name)
+            if labels:
+                nodes[f"{prefix}{row['id']}"] = {"source": name,
+                                                 "labels": labels}
+            else:
                 skipped += 1
-                continue
-            if not purity.fullmatch(value):
-                skipped += 1
-                continue
-            nodes[f"{prefix}{row['id']}"] = {"source": name,
-                                             "labels": {"ko": value}}
     document = {
         "generator": "tool/it_g2p.py",
-        "ruleVersion": "it-ko-1",
+        "ruleVersion": "it-ko-ar-ru-zh-ja-1",
         "retrievedAt": "2026-11-15",
         "quality": "machine-candidate",
         "humanReviewVerified": False,
         "license": "self-generated (rule-table transcription, no upstream bytes)",
-        "locales": ["ko"],
+        "locales": ["ko", "ar", "ru", "zh-Hans", "ja"],
         "nodeCount": len(nodes),
         "skipped": skipped,
         "nodes": nodes,

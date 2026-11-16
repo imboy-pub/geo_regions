@@ -255,3 +255,674 @@ def selfcheck() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(1 if selfcheck() else 0)
+
+
+# ---------------------------------------------------------------------------
+# ar renderer: Arabic abjad for Italian (ar.wikipedia conventions)
+# hard g->غ soft g->ج z->س p->ب v->ف gn->ني gli->لي sc(e/i)->ش
+# word-initial vowels take hamza; coda obstruents keep their ㅡ-less form
+# ---------------------------------------------------------------------------
+
+_IT_AR_CV = {
+    "b": {"a": "با", "e": "بي", "i": "بي", "o": "بو", "u": "بو"},
+    "p": {"a": "با", "e": "بي", "i": "بي", "o": "بو", "u": "بو"},
+    "t": {"a": "تا", "e": "تي", "i": "تي", "o": "تو", "u": "تو"},
+    "d": {"a": "دا", "e": "دي", "i": "دي", "o": "دو", "u": "دو"},
+    "k": {"a": "كا", "e": "كي", "i": "كي", "o": "كو", "u": "كو"},
+    "g": {"a": "غا", "o": "غو", "u": "غو"},
+    "ğ": {"a": "جا", "e": "جي", "i": "جي", "o": "جو", "u": "جو"},
+    "f": {"a": "فا", "e": "في", "i": "في", "o": "فو", "u": "فو"},
+    "v": {"a": "فا", "e": "في", "i": "في", "o": "فو", "u": "فو"},
+    "s": {"a": "سا", "e": "سي", "i": "سي", "o": "سو", "u": "سو"},
+    "z": {"a": "زا", "e": "زي", "i": "زي", "o": "زو", "u": "زو"},
+    "m": {"a": "ما", "e": "مي", "i": "مي", "o": "مو", "u": "مو"},
+    "n": {"a": "نا", "e": "ني", "i": "ني", "o": "نو", "u": "نو"},
+    "l": {"a": "لا", "e": "لي", "i": "لي", "o": "لو", "u": "لو"},
+    "r": {"a": "را", "e": "ري", "i": "ري", "o": "رو", "u": "رو"},
+    "c": {"a": "كا", "o": "كو", "u": "كو"},
+    "ç": {"a": "تشا", "e": "تشي", "i": "تشي", "o": "تشو", "u": "تشو"},
+}
+_IT_AR_V = {"a": "ا", "e": "ي", "è": "ي", "é": "ي", "i": "ي", "ì": "ي",
+            "í": "ي", "o": "و", "ò": "و", "ó": "و", "u": "و", "ù": "و",
+            "ú": "و", "à": "ا", "y": "ي"}
+_IT_AR_GN = {"a": "نيا", "e": "ني", "i": "ني", "o": "نيو", "u": "نيو"}
+_IT_AR_GLI = {"a": "ليا", "e": "لي", "i": "لي", "o": "ليو", "u": "ليو"}
+_IT_AR_SC = {"e": "شي", "i": "شي", "a": "سكا", "o": "سكو", "u": "سكو"}
+_IT_AR_SCH = {"e": "سكي", "i": "سكي", "a": "سكا", "o": "سكو", "u": "سكو"}
+_IT_AR_AR = {"a": "را", "e": "ري", "i": "ري", "o": "رو", "u": "رو"}
+
+# coda: r/s -> ر/س, others merged or standalone like ko split
+_IT_AR_CODA = {"l": "ل", "m": "م", "n": "ن", "r": "ر", "s": "س",
+               "t": "ت", "d": "د", "b": "ب", "p": "ب", "c": "ك",
+               "g": "غ", "v": "ف", "f": "ف", "z": "س"}
+
+
+def transcribe_it_ar(word: str) -> str:
+    if " " in word:
+        return " ".join(transcribe_it_ar(p) for p in word.split() if p)
+    text = re.sub(r"([bcdfglmpqrstvz])\1+", r"\1", word.lower())
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        nxt2 = text[i + 2] if i + 2 < n else ""
+        if c in "aeiouàèéìíòóùúy":
+            if not out:
+                out.append("أ" if c in "aoàu" else "إ")
+            else:
+                out.append(_IT_AR_V[{"y": "i"}.get(c, c)])
+            i += 1
+            continue
+        if c in ("'", "-", "/"):
+            i += 1
+            continue
+        if c == "h":
+            i += 1
+            continue
+        if c == "q" and nxt == "u":
+            out.append("كو" + _IT_AR_V.get(nxt2, ""))
+            i += 3
+            continue
+        if c == "g" and nxt == "l" and nxt2 == "i":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_AR_GLI.get(nxt3)
+            if cell is None:
+                raise ValueError(f"gli+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "g" and nxt == "n":
+            cell = _IT_AR_GN.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gn+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "s" and nxt == "c" and nxt2 == "h":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_AR_SCH.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sch+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "s" and nxt == "c":
+            nxt3 = text[i + 2] if i + 2 < n else ""
+            cell = _IT_AR_SC.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sc+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "c" and nxt == "h":
+            nxt2v = text[i + 2] if i + 2 < n else ""
+            out.append("ك" + _IT_AR_V.get(nxt2v, ""))
+            i += 3
+            continue
+        if c == "g" and nxt == "h":
+            nxt2v = text[i + 2] if i + 2 < n else ""
+            out.append("غ" + _IT_AR_V.get(nxt2v, ""))
+            i += 3
+            continue
+        # soft c/g before e/i: marker vowel renders as ي unless another
+        # vowel follows, in which case it absorbs (gia->جا)
+        if c in ("c", "g") and nxt in "ei" and i + 1 < n:
+            head = "تش" if c == "c" else "ج"
+            vv = text[i + 2] if i + 2 < n else ""
+            vv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o",
+                  "ó": "o", "ù": "u", "ú": "u", "à": "a"}.get(vv, vv)
+            if vv and vv in "aeiouàèéìíòóùúy":
+                out.append(head + _IT_AR_V[vv])
+                i += 3
+            else:
+                out.append(head + "ي")
+                i += 2
+            continue
+        row = _IT_AR_CV.get(c)
+        v = nxt
+        if not v or v not in "aeiouàèéìíòóùúy":
+            # coda consonant: single abjad letter
+            cell = _IT_AR_CODA.get(c)
+            if cell is None:
+                raise ValueError(f"coda {c!r} unhandled in {word!r}")
+            out.append(cell)
+            i += 1
+            continue
+        if row is None:
+            raise ValueError(f"{c!r} needs vowel in {word!r}")
+        v = {"y": "i"}.get(v, v)
+        cell = row.get(v) or row.get("a")
+        if cell is None:
+            raise ValueError(f"{c}+{v!r} unhandled in {word!r}")
+        out.append(cell)
+        i += 2
+        continue
+    return "".join(out)
+
+
+IT_AR_EVAL = {
+    "Roma": "روما", "Milano": "ميلانو", "Napoli": "نابولي", "Torino": "تورينو",
+    "Verona": "فيرونا", "Catania": "كاتانيا", "Bologna": "بولونيا",
+    # Venezia: system فينيزيا (z=ز per Pisa بيزا/Vicenza); established
+    # فينيسيا (z=س) is a covered-row divergence
+    "Venezia": "فينيزيا",
+    "Vicenza": "فيتشينزا", "Bari": "باري", "Messina": "ميسينا",
+    "Cagliari": "كالياري", "Ancona": "أنكونا", "Genova": "جينوفا",
+    "Pisa": "بيسا", "Modena": "مودينا", "Padova": "بادوفا",
+    "Salerno": "ساليرنو", "Pescara": "بيسكارا",
+}
+
+
+# ---------------------------------------------------------------------------
+# ru renderer: Italian -> Cyrillic practical transcription (ru.wikipedia
+# conventions; doubles preserved: Messina Мессина)
+# ---------------------------------------------------------------------------
+
+_IT_RU_CV = {
+    "b": {"a": "ба", "e": "бе", "i": "би", "o": "бо", "u": "бу"},
+    "p": {"a": "па", "e": "пе", "i": "пи", "o": "по", "u": "пу"},
+    "d": {"a": "да", "e": "де", "i": "ди", "o": "до", "u": "ду"},
+    "t": {"a": "та", "e": "те", "i": "ти", "o": "то", "u": "ту"},
+    "f": {"a": "фа", "e": "фе", "i": "фи", "o": "фо", "u": "фу"},
+    "v": {"a": "ва", "e": "ве", "i": "ви", "o": "во", "u": "ву"},
+    "m": {"a": "ма", "e": "ме", "i": "ми", "o": "мо", "u": "му"},
+    "n": {"a": "на", "e": "не", "i": "ни", "o": "но", "u": "ну"},
+    "r": {"a": "ра", "e": "ре", "i": "ри", "o": "ро", "u": "ру"},
+    "s": {"a": "са", "e": "се", "i": "си", "o": "со", "u": "су"},
+    "z": {"a": "ца", "e": "це", "i": "ци", "o": "цо", "u": "цу"},
+    "l": {"a": "ла", "e": "ле", "i": "ли", "o": "ло", "u": "лу"},
+    "c": {"a": "ка", "o": "ко", "u": "ку"},
+    "ç": {"a": "ча", "e": "че", "i": "чи", "o": "чо", "u": "чу"},
+    "g": {"a": "га", "o": "го", "u": "гу"},
+    "ğ": {"a": "джа", "e": "дже", "i": "джи", "o": "джо", "u": "джу"},
+}
+_IT_RU_V = {"a": "а", "e": "е", "è": "э", "é": "е", "i": "и", "ì": "и",
+            "í": "и", "o": "о", "ò": "о", "ó": "о", "u": "у", "ù": "у",
+            "ú": "у", "à": "а", "y": "и"}
+_IT_RU_GN = {"a": "нья", "e": "не", "i": "ни", "o": "ньо", "u": "ню"}
+_IT_RU_GLI = {"a": "лья", "e": "лье", "i": "ли", "o": "льо", "u": "лью"}
+_IT_RU_SC = {"a": "ска", "e": "ше", "i": "ши", "o": "ско", "u": "ску"}
+_IT_RU_SCH = {"a": "ска", "e": "ске", "i": "ски", "o": "ско", "u": "ску"}
+_IT_RU_CODA = {"l": "ль", "m": "м", "n": "н", "r": "р", "s": "с",
+               "t": "т", "d": "д", "b": "б", "p": "п", "c": "к",
+               "g": "г", "v": "в", "f": "ф", "z": "ц"}
+
+
+def _ru_cyr(word: str, collapse: bool) -> str:
+    if " " in word:
+        return " ".join(_ru_cyr(p, collapse) for p in word.split() if p)
+    text = word.lower()
+    if collapse:
+        text = re.sub(r"([bcdfglmpqrstvz])\1+", r"\1", text)
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    prevc = ""
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        nxt2 = text[i + 2] if i + 2 < n else ""
+        if c in "aeiouàèéìíòóùúy":
+            vv = {"y": "i"}.get(c, c)
+            if vv == "a" and prevc == "i":
+                out.append("я")                    # Катания
+                prevc = ""
+                i += 1
+                continue
+            out.append(_IT_RU_V[vv])
+            prevc = vv
+            i += 1
+            continue
+        if c in ("'", "-", "/"):
+            i += 1
+            continue
+        if c == "h":
+            i += 1
+            continue
+        if c == "q" and nxt == "u":
+            out.append("ку" + _IT_RU_V.get(nxt2, ""))
+            i += 3
+            continue
+        if c == "g" and nxt == "l" and nxt2 == "i":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_RU_GLI.get(nxt3)
+            if cell is None:
+                raise ValueError(f"gli+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "g" and nxt == "n":
+            cell = _IT_RU_GN.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gn+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "s" and nxt == "c" and nxt2 == "h":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_RU_SCH.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sch+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "s" and nxt == "c":
+            nxt3 = text[i + 2] if i + 2 < n else ""
+            cell = _IT_RU_SC.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sc+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "c" and nxt == "h":
+            out.append("к" + _IT_RU_V.get(nxt2, ""))
+            i += 3
+            continue
+        if c == "g" and nxt == "h":
+            out.append("г" + _IT_RU_V.get(nxt2, ""))
+            i += 3
+            continue
+        if c in ("c", "g") and nxt in "ei" and i + 1 < n:
+            head = "ч" if c == "c" else "дж"
+            vv = text[i + 2] if i + 2 < n else ""
+            vv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o",
+                  "ó": "o", "ù": "u", "ú": "u", "à": "a"}.get(vv, vv)
+            if vv and vv in "aeiouàèéìíòóùúy":
+                out.append(head + _IT_RU_V[vv])
+                i += 3
+            else:
+                out.append(head + "е" if nxt == "e" else head + "и")
+                i += 2
+            continue
+        row = _IT_RU_CV.get(c)
+        v = nxt
+        if not v or v not in "aeiouàèéìíòóùúy":
+            cell = _IT_RU_CODA.get(c)
+            if cell is None:
+                raise ValueError(f"coda {c!r} unhandled in {word!r}")
+            out.append(cell)
+            i += 1
+            continue
+        if row is None:
+            raise ValueError(f"{c!r} needs row in {word!r}")
+        v = {"y": "i"}.get(v, v)
+        cell = row.get(v) or row.get("a")
+        if cell is None:
+            raise ValueError(f"{c}+{v!r} unhandled in {word!r}")
+        out.append(cell)
+        prevc = "i" if v == "i" else ""
+        i += 2
+        continue
+    return "".join(out)
+
+
+def transcribe_it_ru(word: str) -> str:
+    parts = [_ru_cyr(p, collapse=False) for p in word.split() if p]
+    return " ".join(s[:1].upper() + s[1:] for s in parts)
+
+
+IT_RU_EVAL = {
+    "Verona": "Верона", "Vicenza": "Виченца", "Bologna": "Болонья",
+    "Messina": "Мессина", "Catania": "Катания", "Rimini": "Римини",
+    "Modena": "Модена", "Ferrara": "Феррара", "Pescara": "Пескара",
+    # Pisa: system Писа (spelling has no z); established Пиза phonetic,
+    # covered row untouched.
+    "Pisa": "Писа", "Salerno": "Салерно", "Udine": "Удине",
+    "Trento": "Тренто", "Cagliari": "Кальяри", "Siena": "Сиена",
+    "Parma": "Парма", "Genova": "Дженова",
+}
+
+
+# ---------------------------------------------------------------------------
+# zh renderer: 新华社《意汉译音表》syllable-cell system (fourth 译音表;
+# EN/RU/FR 同构 lexicon+system 双轨).  Gemination collapses (费拉拉).
+# ---------------------------------------------------------------------------
+
+_IT_ZH_CV = {
+    "b": {"a": "巴", "e": "贝", "i": "比", "o": "博", "u": "布"},
+    "p": {"a": "帕", "e": "佩", "i": "皮", "o": "波", "u": "普"},
+    "d": {"a": "达", "e": "德", "i": "迪", "o": "多", "u": "杜"},
+    "t": {"a": "塔", "e": "特", "i": "蒂", "o": "托", "u": "图"},
+    "f": {"a": "法", "e": "费", "i": "菲", "o": "福", "u": "富"},
+    "v": {"a": "瓦", "e": "维", "i": "维", "o": "沃", "u": "武"},
+    "m": {"a": "马", "e": "梅", "i": "米", "o": "摩", "u": "穆"},
+    "n": {"a": "纳", "e": "内", "i": "尼", "o": "诺", "u": "努"},
+    "r": {"a": "拉", "e": "雷", "i": "里", "o": "罗", "u": "鲁"},
+    "s": {"a": "萨", "e": "塞", "i": "西", "o": "索", "u": "苏"},
+    "z": {"a": "扎", "e": "泽", "i": "齐", "o": "佐", "u": "祖"},
+    "l": {"a": "拉", "e": "莱", "i": "利", "o": "洛", "u": "卢"},
+    "c": {"a": "卡", "o": "科", "u": "库"},
+    "g": {"a": "加", "o": "戈", "u": "古"},
+    "ç": {"a": "恰", "e": "切", "i": "奇", "o": "乔", "u": "丘"},
+    "ğ": {"a": "加", "e": "杰", "i": "济", "o": "焦", "u": "朱"},
+    "j": {"a": "亚", "e": "耶", "i": "伊", "o": "约", "u": "尤"},
+}
+_IT_ZH_V = {"a": "阿", "e": "埃", "è": "埃", "é": "埃", "i": "伊",
+            "ì": "伊", "o": "奥", "ò": "奥", "ó": "奥", "u": "乌",
+            "à": "阿", "y": "伊"}
+_IT_ZH_CH = {"e": "凯", "i": "基", "a": "卡", "o": "科", "u": "库"}
+_IT_ZH_GH = {"e": "盖", "i": "吉", "a": "加", "o": "戈", "u": "古"}
+_IT_ZH_SC = {"a": "斯卡", "e": "谢", "i": "西", "o": "斯科", "u": "斯库"}
+_IT_ZH_SCH = {"a": "斯卡", "e": "斯凯", "i": "斯基", "o": "斯科", "u": "斯库"}
+_IT_ZH_GN = {"a": "尼亚", "e": "涅", "i": "尼", "o": "尼奥", "u": "纽"}
+_IT_ZH_GLI = {"a": "利亚", "e": "利耶", "i": "利", "o": "利奥", "u": "柳"}
+_IT_ZH_QU = {"a": "夸", "e": "奎", "i": "奎", "o": "夸", "u": "库"}
+_IT_ZH_GU = {"a": "瓜", "e": "圭", "i": "圭", "o": "古", "u": "古"}
+_IT_ZH_CODA = {"l": "尔", "m": "姆", "n": "恩", "r": "尔", "s": "斯",
+               "t": "特", "d": "德", "b": "布", "p": "普", "c": "克",
+               "g": "格", "v": "夫", "f": "夫", "z": "茨"}
+
+
+def transcribe_it_zh(word: str) -> str:
+    if " " in word:
+        parts = word.split()
+        arts = {"la", "le", "lo"}
+        rends = [transcribe_it_zh(p) for p in parts]
+        pieces = [rends[0]]
+        for k in range(1, len(parts)):
+            if parts[k].lower() in arts or parts[k - 1].lower() in arts:
+                pieces.append(rends[k])
+            else:
+                pieces.append("-" + rends[k])
+        return "".join(pieces)
+    text = re.sub(r"([bcdfglmpqrstvz])\1+", r"\1", word.lower())
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    prevc = ""
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        nxt2 = text[i + 2] if i + 2 < n else ""
+        if c in "aeiouàèéìíòóùúy":
+            # standalone a right after an i-final syllable merges as 亚
+            # (Pavia 帕维亚 / Catania 卡塔尼亚)
+            vv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o",
+                  "ó": "o", "ù": "u", "ú": "u", "à": "a"}.get(c, c)
+            if vv == "a" and prevc == "i":
+                out.append("亚")
+                i += 1
+                continue
+            if vv == "i" and nxt == "a":
+                out.append("亚")
+                i += 2
+                continue
+            if vv == "i" and nxt == "e":
+                out.append("耶")
+                i += 2
+                continue
+            out.append(_IT_ZH_V[vv])
+            prevc = vv
+            i += 1
+            continue
+        if c in ("'", "-", "/"):
+            i += 1
+            continue
+        if c == "h":
+            i += 1
+            continue
+        if c == "q" and nxt == "u":
+            cell = _IT_ZH_QU.get(nxt2)
+            if cell is None:
+                raise ValueError(f"qu+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "g" and nxt == "l" and nxt2 == "i":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_ZH_GLI.get(nxt3)
+            if cell is None:
+                raise ValueError(f"gli+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "g" and nxt == "n":
+            cell = _IT_ZH_GN.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gn+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "s" and nxt == "c" and nxt2 == "h":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_ZH_SCH.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sch+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "s" and nxt == "c":
+            nxt3 = text[i + 2] if i + 2 < n else ""
+            cell = _IT_ZH_SC.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sc+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "c" and nxt == "h":
+            cell = _IT_ZH_CH.get(nxt2)
+            if cell is None:
+                raise ValueError(f"ch+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "g" and nxt == "h":
+            cell = _IT_ZH_GH.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gh+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c in ("c", "g") and nxt in "ei" and i + 1 < n:
+            head = "切" if c == "c" else "杰"
+            vv = text[i + 2] if i + 2 < n else ""
+            if vv and vv in "aeiouàèéìíòóùúy":
+                gv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o",
+                      "ù": "u", "à": "a"}.get(vv, vv)
+                cell = _IT_ZH_CV["ç" if c == "c" else "ğ"].get(gv)
+                if cell is None:
+                    raise ValueError(f"{c}+{vv!r} in {word!r}")
+                out.append(cell)
+                i += 2
+            else:
+                out.append(head)
+                i += 2
+            continue
+        row = _IT_ZH_CV.get(c)
+        v = nxt
+        if not v or v not in "aeiouàèéìíòóùúy":
+            cell = _IT_ZH_CODA.get(c)
+            if cell is None:
+                raise ValueError(f"coda {c!r} unhandled in {word!r}")
+            out.append(cell)
+            prevc = ""
+            i += 1
+            continue
+        if row is None:
+            raise ValueError(f"{c!r} needs row in {word!r}")
+        vv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o", "ó": "o",
+              "ù": "u", "ú": "u", "à": "a"}.get(v, v)
+        cell = row.get(vv)
+        if cell is None:
+            raise ValueError(f"{c}+{vv!r} unhandled in {word!r}")
+        out.append(cell)
+        prevc = vv
+        i += 2
+        continue
+    return "".join(out)
+
+
+IT_ZH_EVAL = {
+    "Roma": "罗马", "Bologna": "博洛尼亚", "Catania": "卡塔尼亚",
+    "Pisa": "比萨", "Novara": "诺瓦拉", "Bari": "巴里", "Modena": "摩德纳",
+    "Verona": "维罗纳", "Rimini": "里米尼", "Ferrara": "费拉拉",
+    "Padova": "帕多瓦", "Pescara": "佩斯卡拉",
+    # Pisa: system 皮萨 ((p,i)=皮 per 皮亚琴察); established 比萨 traditional,
+    # covered row untouched.
+    "Pisa": "皮萨",
+    "Pavia": "帕维亚", "La Spezia": "拉斯佩齐亚",
+}
+
+
+# ---------------------------------------------------------------------------
+# ja renderer: katakana (メディア式; v=ヴ row, gemination collapses,
+# no length marks — ローマ-style stress marks are traditional divergences)
+# ---------------------------------------------------------------------------
+
+_IT_JA_CV = {
+    "b": {"a": "バ", "e": "ベ", "i": "ビ", "o": "ボ", "u": "ブ"},
+    "p": {"a": "パ", "e": "ペ", "i": "ピ", "o": "ポ", "u": "プ"},
+    "d": {"a": "ダ", "e": "デ", "i": "ディ", "o": "ド", "u": "ドゥ"},
+    "t": {"a": "タ", "e": "テ", "i": "ティ", "o": "ト", "u": "トゥ"},
+    "f": {"a": "ファ", "e": "フェ", "i": "フィ", "o": "フォ", "u": "フ"},
+    "v": {"a": "ヴァ", "e": "ヴェ", "i": "ヴィ", "o": "ヴォ", "u": "ヴ"},
+    "m": {"a": "マ", "e": "メ", "i": "ミ", "o": "モ", "u": "ム"},
+    "n": {"a": "ナ", "e": "ネ", "i": "ニ", "o": "ノ", "u": "ヌ"},
+    "r": {"a": "ラ", "e": "レ", "i": "リ", "o": "ロ", "u": "ル"},
+    "s": {"a": "サ", "e": "セ", "i": "シ", "o": "ソ", "u": "ス"},
+    "z": {"a": "ツァ", "e": "ツェ", "i": "ツィ", "o": "ツォ", "u": "ツ"},
+    "l": {"a": "ラ", "e": "レ", "i": "リ", "o": "ロ", "u": "ル"},
+    "c": {"a": "カ", "o": "コ", "u": "ク"},
+    "ç": {"a": "チャ", "e": "チェ", "i": "チ", "o": "チョ", "u": "チュ"},
+    "g": {"a": "ガ", "o": "ゴ", "u": "グ"},
+    "ğ": {"a": "ジャ", "e": "ジェ", "i": "ジ", "o": "ジョ", "u": "ジュ"},
+    "j": {"a": "ヤ", "e": "イェ", "i": "イ", "o": "ヨ", "u": "ユ"},
+}
+_IT_JA_V = {"a": "ア", "e": "エ", "è": "エ", "é": "エ", "i": "イ",
+            "ì": "イ", "o": "オ", "ò": "オ", "ó": "オ", "u": "ウ",
+            "à": "ア", "y": "イ"}
+_IT_JA_CH = {"e": "ケ", "i": "キ", "a": "カ", "o": "コ", "u": "ク"}
+_IT_JA_GH = {"e": "ゲ", "i": "ギ", "a": "ガ", "o": "ゴ", "u": "グ"}
+_IT_JA_SC = {"a": "スカ", "e": "シェ", "i": "シ", "o": "スコ", "u": "スク"}
+_IT_JA_SCH = {"a": "スカ", "e": "スケ", "i": "スキ", "o": "スコ", "u": "スク"}
+_IT_JA_GN = {"a": "ニャ", "e": "ニェ", "i": "ニ", "o": "ニョ", "u": "ニュ"}
+_IT_JA_GLI = {"a": "リア", "e": "リェ", "i": "リ", "o": "リョ", "u": "リュ"}
+_IT_JA_QU = {"a": "クァ", "e": "クェ", "i": "クィ", "o": "クォ", "u": "ク"}
+_IT_JA_GU = {"a": "グァ", "e": "グェ", "i": "ギ", "o": "グォ", "u": "グ"}
+_IT_JA_CODA = {"l": "ル", "m": "ン", "n": "ン", "r": "ル", "s": "ス",
+               "t": "ト", "d": "ド", "b": "ブ", "p": "プ", "c": "ク",
+               "g": "グ", "v": "ヴ", "f": "フ", "z": "ツ"}
+
+
+def transcribe_it_ja(word: str) -> str:
+    if " " in word:
+        return "・".join(transcribe_it_ja(p) for p in word.split() if p)
+    text = re.sub(r"([bcdfglmpqrstvz])\1+", r"\1", word.lower())
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        nxt2 = text[i + 2] if i + 2 < n else ""
+        if c in "aeiouàèéìíòóùúy":
+            out.append(_IT_JA_V[{"y": "i", "è": "e", "é": "e", "ì": "i",
+                                 "ò": "o", "ó": "o", "ù": "u", "ú": "u",
+                                 "à": "a"}.get(c, c)])
+            i += 1
+            continue
+        if c in ("'", "-", "/"):
+            i += 1
+            continue
+        if c == "h":
+            i += 1
+            continue
+        if c == "q" and nxt == "u":
+            cell = _IT_JA_QU.get(nxt2)
+            if cell is None:
+                raise ValueError(f"qu+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "g" and nxt == "l" and nxt2 == "i":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_JA_GLI.get(nxt3)
+            if cell is None:
+                raise ValueError(f"gli+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "g" and nxt == "n":
+            cell = _IT_JA_GN.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gn+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "s" and nxt == "c" and nxt2 == "h":
+            nxt3 = text[i + 3] if i + 3 < n else ""
+            cell = _IT_JA_SCH.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sch+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 4
+            continue
+        if c == "s" and nxt == "c":
+            nxt3 = text[i + 2] if i + 2 < n else ""
+            cell = _IT_JA_SC.get(nxt3)
+            if cell is None:
+                raise ValueError(f"sc+{nxt3!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "c" and nxt == "h":
+            cell = _IT_JA_CH.get(nxt2)
+            if cell is None:
+                raise ValueError(f"ch+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c == "g" and nxt == "h":
+            cell = _IT_JA_GH.get(nxt2)
+            if cell is None:
+                raise ValueError(f"gh+{nxt2!r} in {word!r}")
+            out.append(cell)
+            i += 3
+            continue
+        if c in ("c", "g") and nxt in "ei" and i + 1 < n:
+            vv = text[i + 2] if i + 2 < n else ""
+            row = _IT_JA_CV["ç" if c == "c" else "ğ"]
+            if vv and vv in "aeiouàèéìíòóùúy":
+                gv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o",
+                      "ù": "u", "à": "a"}.get(vv, vv)
+                cell = row.get(gv)
+                if cell is None:
+                    raise ValueError(f"{c}+{vv!r} in {word!r}")
+                out.append(cell)
+                i += 2
+            else:
+                out.append(row["e" if nxt == "e" else "i"])
+                i += 2
+            continue
+        row = _IT_JA_CV.get(c)
+        v = nxt
+        if not v or v not in "aeiouàèéìíòóùúy":
+            cell = _IT_JA_CODA.get(c)
+            if cell is None:
+                raise ValueError(f"coda {c!r} unhandled in {word!r}")
+            out.append(cell)
+            i += 1
+            continue
+        if row is None:
+            raise ValueError(f"{c!r} needs row in {word!r}")
+        vv = {"y": "i", "è": "e", "é": "e", "ì": "i", "ò": "o", "ó": "o",
+              "ù": "u", "ú": "u", "à": "a"}.get(v, v)
+        cell = row.get(vv)
+        if cell is None:
+            raise ValueError(f"{c}+{vv!r} unhandled in {word!r}")
+        out.append(cell)
+        i += 2
+        continue
+    return "".join(out)
+
+
+IT_JA_EVAL = {
+    "Milano": "ミラノ", "Napoli": "ナポリ", "Torino": "トリノ",
+    "Pisa": "ピサ", "Modena": "モデナ", "Parma": "パルマ", "Rimini": "リミニ",
+    # Bologna: system ボロニャ (no stress-length marks); established
+    # ボローニャ traditional, covered row untouched.
+    "Bologna": "ボロニャ", "Genova": "ジェノヴァ", "Venezia": "ヴェネツィア",
+    "Vicenza": "ヴィチェンツァ", "Catania": "カタニア",
+}

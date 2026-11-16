@@ -492,8 +492,8 @@ def main():
                     "staging/ai-cand/fr-transcriptions.json (rule-table French->Hangul/Katakana/Cyrillic/Hanzi transcription, machine-candidate, tool/fr_g2p.py)")
                    for loc in ("ko", "ja", "ru", "ar", "zh-Hans")],
             "IT": [(f"staging/ai-cand/it-transcriptions.json", loc,
-                    "staging/ai-cand/it-transcriptions.json (rule-table Italian->Hangul transcription, machine-candidate, tool/it_g2p.py)")
-                   for loc in ("ko",)],
+                    "staging/ai-cand/it-transcriptions.json (rule-table Italian->Hangul/Arabic/Cyrillic/Hanzi/Katakana transcription, machine-candidate, tool/it_g2p.py)")
+                   for loc in ("ko", "ar", "ru", "zh-Hans", "ja")],
             "US": [(f"staging/ai-cand/en-transcriptions.json", loc,
                     "staging/ai-cand/en-transcriptions.json (rule-table English->Hangul/Katakana/Hanzi transcription, machine-candidate, tool/en_g2p.py)")
                    for loc in ("ko", "ja", "ru", "ar", "zh-Hans", "de", "fr", "it")],
