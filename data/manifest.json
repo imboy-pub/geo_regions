@@ -150,14 +150,14 @@
       "sha256": "2174d6b63c2c41a20ab18bffb44d2b7bb7cc51954d1f46de2e5ec62c14f4481c"
     },
     {
-      "bytes": 4612,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4615,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "ar",
       "path": "i18n/ar/JP.json",
       "revision": "l-2ee81f704d650301",
-      "sha256": "f5a29cf94526224733d1bae2e66ee5c7cb81cbe18f9dda4bb6798520632ff881"
+      "sha256": "82a8ef740e824512a11cfab52c0bda8d665e485d09dfeb920be487aa954ce501"
     },
     {
       "bytes": 2454,
@@ -250,14 +250,14 @@
       "sha256": "fcde7b9ce66bc5a78e4adda8d07e3279b225b68793e2e7771136d59b27406640"
     },
     {
-      "bytes": 4815,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4818,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "de",
       "path": "i18n/de/JP.json",
       "revision": "l-500e82897209dd9e",
-      "sha256": "632cf1e74893e53e4bdd04e323d0d993ec365a4bd16ace265fd45e5d535e82bd"
+      "sha256": "fa48788e5ad7278d5e5af78c7725cd09e72e76769e6e90d662b274ae1c82b302"
     },
     {
       "bytes": 2172,
@@ -350,14 +350,14 @@
       "sha256": "32d874bfa6417a7fff2980543f4f61951a92543ff57847fd04cf2cf24b8c69ea"
     },
     {
-      "bytes": 4651,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4654,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "en",
       "path": "i18n/en/JP.json",
       "revision": "l-e12e215a44111451",
-      "sha256": "d5ccbd9a1ae180c0e1dc5842b5e064e70b94de6f81170eaa051ec936fd0804fd"
+      "sha256": "0b0bc538bddb5a3976e26905eac79be95da2b694337c1ceedd5dda2507a25a41"
     },
     {
       "bytes": 2289,
@@ -450,14 +450,14 @@
       "sha256": "d0ec79a23558951717cb092e388ca7ae723f2f7f944cafff4f664a7c52a14f8c"
     },
     {
-      "bytes": 5021,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 5024,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "fr",
       "path": "i18n/fr/JP.json",
       "revision": "l-428f83d6b1f68995",
-      "sha256": "82bfc8c2dabf424d9e04f89073cf768441a27d311fc18fb527412b343042116a"
+      "sha256": "b2e0bdd3c2dbbaffc491f8e2746eed6d2252fab7ae84b75f39a767e3bf5cc903"
     },
     {
       "bytes": 2175,
@@ -550,14 +550,14 @@
       "sha256": "6e114cab9d09db880aa5b14a014121e9ff8904e878fc50c7635bc6dbc346276d"
     },
     {
-      "bytes": 4967,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4970,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "it",
       "path": "i18n/it/JP.json",
       "revision": "l-fd77078c0181c778",
-      "sha256": "da610fed108e9b550e7c26d7627bb645297151b567c1215698111db8573b7f8c"
+      "sha256": "9ff70a7999b8d42170a953c644f3810cd4bce958c205d59fff43e9679777dc57"
     },
     {
       "bytes": 2170,
@@ -650,14 +650,14 @@
       "sha256": "6221e7f9253eec45dac6a29b9b9e81d41feeee5e9e2ff9607f78e73f73485d90"
     },
     {
-      "bytes": 4446,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 166216,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "ja",
       "path": "i18n/ja/JP.json",
-      "revision": "l-4b95241f36e1b908",
-      "sha256": "9f249e2c681968af0d47d58ea244ccb48b971d439c709f48a685e577cea0ad0d"
+      "revision": "l-a7f717c8a7209698",
+      "sha256": "95416ea14a0bf9dab78a7b538d0252188176982185029709f9a4429b064e3efe"
     },
     {
       "bytes": 2250,
@@ -750,14 +750,14 @@
       "sha256": "f6fd09e9a4bf0fa4f42214bf1b8920baaefa32feb8c3b29507719064ecda691f"
     },
     {
-      "bytes": 4651,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4654,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "ko",
       "path": "i18n/ko/JP.json",
       "revision": "l-dbb5b308811da569",
-      "sha256": "7be33525da4ac670a193ac4f451b03a4aaa2c9eb72ff9aae118cf4c1b2c4bf93"
+      "sha256": "3234276535a56e42b8e88b56dc447bb7bdd26d3922a80fd9cc83342044299955"
     },
     {
       "bytes": 2247,
@@ -850,14 +850,14 @@
       "sha256": "fa8f73f7304a95542588a1129454d5945694e53815f509b1cd8121de0afecb8e"
     },
     {
-      "bytes": 4584,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4587,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "ru",
       "path": "i18n/ru/JP.json",
       "revision": "l-476d2dc2c201769e",
-      "sha256": "00fcde87451e6acf6798e92b01c1cd25c0454d03680cba6b146f8d21f466d975"
+      "sha256": "f4a9d5a6edadd53298887c2544bf9c2f91ed0c418de2de43d89eae104016b37d"
     },
     {
       "bytes": 2303,
@@ -950,14 +950,14 @@
       "sha256": "2da81080fb5e9e732fc4df1ff402633b8f087d903db8253c1e7fc70bf23d92f7"
     },
     {
-      "bytes": 4451,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4454,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "zh-Hans",
       "path": "i18n/zh-Hans/JP.json",
       "revision": "l-5a1e731e13746c02",
-      "sha256": "0fdaf529b1946d4adb2571c92034386dd4f573ed1e6deb49425fe46ba1002f5a"
+      "sha256": "43c7472c6d1c54e50c04924d3eeb82fd126334ecee9d51a919034eb2f87c7336"
     },
     {
       "bytes": 2228,
@@ -1050,14 +1050,14 @@
       "sha256": "e2a25542a3f6cec836ba0818540f67934f3ebaf89a5dab31eaa8f40fba80e039"
     },
     {
-      "bytes": 4778,
-      "compatibleStructureRevision": "s-f6f89e0185926a48",
+      "bytes": 4781,
+      "compatibleStructureRevision": "s-a142e026c44cc331",
       "countryCode": "JP",
       "kind": "locale",
       "locale": "zh-Hant",
       "path": "i18n/zh-Hant/JP.json",
       "revision": "l-63c3a33bf8df80c5",
-      "sha256": "33059138f0b707dc1581828b3199d9c4b2c0a24e33eada5928a68dbb582348b9"
+      "sha256": "00bf0789cc8bbf76cb7b4eed2994b0a8c4b4ea2d5f9242e30e299077184e708f"
     },
     {
       "bytes": 2555,
@@ -1140,12 +1140,12 @@
       "sha256": "50286ee40b45165a4710f5a221f2ca78946f926888dcd96da0c3892a3ca3dfbd"
     },
     {
-      "bytes": 12906,
+      "bytes": 466925,
       "countryCode": "JP",
       "kind": "structure",
       "path": "regions/JP.json",
-      "revision": "s-f6f89e0185926a48",
-      "sha256": "058fa3b230a6c9e268c554f76ff22d0384b92a54525afea872b2bc4de56b654b"
+      "revision": "s-a142e026c44cc331",
+      "sha256": "8b743027ee2e48f2f860840bd7230be9446e2930f85abe0a9a35c09e0778be77"
     },
     {
       "bytes": 5444,
@@ -1180,5 +1180,5 @@
       "sha256": "c0394850813532327317ddaffe3c9ba2ede44d3f95f2025e1b239a591e4bd78b"
     }
   ],
-  "revision": "m-cd3490c8198ac4f3"
+  "revision": "m-f3b88515292f64be"
 }

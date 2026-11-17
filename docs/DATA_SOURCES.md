@@ -42,7 +42,7 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 | Catalog code | Country / 国家 | Structure | Name sources | Source profile boundary |
 |---|---|---|---|---|
 | CN | China / 中国 | CLDR province codes plus modood historical tree | CLDR ten-locale names; source-native Chinese for mainland descendants | Mainland starter profile; no HK/MO/TW subtrees in this seed |
-| JP | Japan / 日本 | CLDR containment | CLDR | 47 prefectures; municipal data remains an expansion task |
+| JP | Japan / 日本 | CLDR containment plus MIC 全国地方公共団体コード municipalities (016951..016993 北方地域 rows excluded; ordinance-city wards are a recorded gap) | CLDR for prefectures and ten-locale catalog; source-native Japanese (ja) for municipalities | Effective baseline 2024-01-01 (令和6年1月1日更新); GoS-2.0 per e-Stat terms; ward sub-level pending a locked source |
 | KR | South Korea / 韩国 | CLDR containment | CLDR | 17 first-level subdivisions; not a complete municipal tree |
 | US | United States / 美国 | CLDR containment | CLDR | 57 source subdivisions including territories; no county/city layer |
 | GB | United Kingdom / 英国 | CLDR containment, recursively expanded | CLDR | Four constituent countries and reachable source subdivisions |
@@ -53,6 +53,13 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 | SA | Saudi Arabia / 沙特阿拉伯 | CLDR containment | CLDR | 13 source regions; not a city-level tree |
 
 The scope is an administrative name and selection dataset. No polygons, geocoding, precise boundaries, street-address validation or coordinates are promised. Published code lists are snapshots; they are not proof that every entry is an up-to-date authoritative administrative entity.
+
+### JP official municipal snapshot (2026-11-17 batch)
+
+- Source: 総務省「都道府県コード及び市区町村コード」 `sources/raw/official/jp/local-gov-code-000925835.xlsx` (令和6年1月1日更新, effective 2024-01-01; GoS-2.0 — 政府標準利用規約 第2.0版, per the e-Stat terms snapshot in the same directory; attribution required on redistribution).
+- Adapter normalization (deterministic, in `tool/importers/jp.py`): 7 rows carry a trailing half-width-kana run glued onto the 漢字 name cell (e.g. 那珂川市ナカガワシ) — the kana run is stripped; 北方地域 historical codes 016951..016993 (色丹村/泊村トマリ/留夜別村/留別村/紗那村) are excluded from active nodes and recorded in `sources/migrations/JP.json`.
+- Recorded gap: 政令指定都市の区 are not listed in the MIC source; ordinance cities keep `childrenStatus=unknown` until a locked ward source lands. Tokyo special wards (23) are covered as `special-ward` nodes.
+- Batch is additive: the 47 legacy `iso3166-2:JP-XX` ids and their CLDR names are preserved; municipalities use `jp-municipality:{6-digit official code}` with ja source-native names only — other locales stay missing (sparse packs).
 
 ## 3. 加工流程 / Transformation rules
 

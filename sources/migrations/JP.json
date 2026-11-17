@@ -1,0 +1,36 @@
+{
+  "countryCode": "JP",
+  "note": "Additive batch: no legacy ids removed. Excluded rows are 北方地域 historical codes retained by the official table (source-faithful exclusion). 政令指定都市の区 are a recorded gap: not listed in the MIC 地方公共団体コード source, ordinance cities keep childrenStatus=unknown until a locked ward source lands.",
+  "records": [
+    {
+      "disposition": "excluded",
+      "name": "色丹村シコタンムラ",
+      "officialCode": "016951",
+      "reason": "北方地域 historical code retained by the official table; not current administration"
+    },
+    {
+      "disposition": "excluded",
+      "name": "泊村トマリムラ",
+      "officialCode": "016969",
+      "reason": "北方地域 historical code retained by the official table; not current administration"
+    },
+    {
+      "disposition": "excluded",
+      "name": "留夜別村",
+      "officialCode": "016977",
+      "reason": "北方地域 historical code retained by the official table; not current administration"
+    },
+    {
+      "disposition": "excluded",
+      "name": "留別村",
+      "officialCode": "016985",
+      "reason": "北方地域 historical code retained by the official table; not current administration"
+    },
+    {
+      "disposition": "excluded",
+      "name": "紗那村",
+      "officialCode": "016993",
+      "reason": "北方地域 historical code retained by the official table; not current administration"
+    }
+  ]
+}

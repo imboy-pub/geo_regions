@@ -1,9 +1,9 @@
 {
-  "compatibleStructureRevision": "s-f6f89e0185926a48",
+  "compatibleStructureRevision": "s-a142e026c44cc331",
   "countryCode": "JP",
   "coverage": {
     "explicitNames": 48,
-    "missingNames": 0,
+    "missingNames": 1742,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 47,

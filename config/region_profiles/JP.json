@@ -1,0 +1,10 @@
+{
+  "profile": "JP-official-municipal-current",
+  "officialCodeSystem": "全国地方公共団体コード (MIC, 6-digit incl. check digit; 団体コード)",
+  "targetKinds": ["prefecture", "city", "special-ward", "ward", "town", "village"],
+  "excludedKinds": ["一部事務組合", "広域連合"],
+  "sourceBaseline": "soumu-local-gov-code-000925835 (令和6年1月1日更新, effective 2024-01-01)",
+  "parentRule": "ward→政令市 by 3-digit body prefix; city/town/village→prefecture by 2-digit prefix; prefecture→country",
+  "idRule": "prefecture preserves existing iso3166-2:JP-XX; municipality/ward = jp-municipality:{6-digit official code}",
+  "nameRule": "Japanese official names from the listing; nameLocale=ja, nameQuality=source-native; no CLDR/EN/zh copying"
+}

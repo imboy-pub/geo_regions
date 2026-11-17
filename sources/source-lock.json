@@ -432,6 +432,42 @@
    "license": "WTFPL",
    "retrievedAt": "2026-11-13",
    "upstreamVersion": "2023-06-30 statistical divisions"
+  },
+  {
+   "repository": "https://www.soumu.go.jp/denshijiti/code.html",
+   "upstreamPath": "main_content/000925835.xlsx",
+   "url": "https://www.soumu.go.jp/main_content/000925835.xlsx",
+   "localPath": "sources/raw/official/jp/local-gov-code-000925835.xlsx",
+   "sha256": "7d04c8a7f6a6e76a7823a0414a8422bf2b26bb6070766971df76eab58ea6ff78",
+   "sizeBytes": 97186,
+   "license": "GoS-2.0",
+   "retrievedAt": "2026-11-17",
+   "upstreamVersion": "令和6年1月1日更新 (effective 2024-01-01)",
+   "snapshotDate": "2024-01-01"
+  },
+  {
+   "repository": "https://www.soumu.go.jp/denshijiti/code.html",
+   "upstreamPath": "denshijiti/code.html",
+   "url": "https://www.soumu.go.jp/denshijiti/code.html",
+   "localPath": "sources/raw/official/jp/code-listing-page.html",
+   "sha256": "040c86bfb4b497f2f8b9a6107c8fb7de3be554f38b7686a909d11b5629a9b331",
+   "sizeBytes": 41047,
+   "license": "GoS-2.0",
+   "retrievedAt": "2026-11-17",
+   "upstreamVersion": "listing page stating 令和6年1月1日更新 (effective date evidence)",
+   "snapshotDate": "2024-01-01"
+  },
+  {
+   "repository": "https://www.e-stat.go.jp",
+   "upstreamPath": "terms-of-use",
+   "url": "https://www.e-stat.go.jp/terms-of-use",
+   "localPath": "sources/raw/official/jp/e-stat-terms-of-use.html",
+   "sha256": "065525f3eed90d12798c157c1bc5c46decd008b3eed9530b4c8a76ddee20c62f",
+   "sizeBytes": 132062,
+   "license": "GoS-2.0",
+   "retrievedAt": "2026-11-17",
+   "upstreamVersion": "e-Stat 利用ルール (政府標準利用規約 第2.0版 準拠)",
+   "snapshotDate": "2016-01-29"
   }
  ],
  "derivedSources": [

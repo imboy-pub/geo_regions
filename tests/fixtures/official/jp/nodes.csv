@@ -1,0 +1,5 @@
+official_code,parent_code,kind,name,name_locale,name_quality,children_status,abolished
+010006,,prefecture,北海道,ja,source-native,complete,false
+011002,010006,city,札幌市,ja,source-native,complete,false
+011011,011002,ward,中央区,ja,source-native,unknown,false
+013431,010006,town,歌登町,ja,source-native,unknown,true

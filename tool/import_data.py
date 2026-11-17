@@ -16,6 +16,7 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import s2t_places
+from importers.jp import build as jp_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -371,9 +372,27 @@ def build(root):
     for cc in COUNTRIES:
         nodes, index = base_nodes(cc, containment, translations, territories, quality_maps)
         native_names = {}
+        jp_nodes, jp_migrations = [], []
         if cc == 'CN':
             crosswalk, native_names = add_cn(root, nodes, index, translations, aliases)
             out['sources/cn-province-crosswalk.json'] = encoded({'records': crosswalk})
+        if cc == 'JP':
+            jp_nodes, jp_migrations = jp_build(root)
+            ids_now = {n['id'] for n in nodes}
+            for n in jp_nodes:
+                if n['id'].startswith('iso3166-2:'):
+                    # Legacy 47 prefecture ids must survive the batch untouched.
+                    if n['id'] not in ids_now:
+                        raise ValueError(f'JP prefecture crosswalk lost legacy id: {n["id"]}')
+                    continue
+                nodes.append(n)
+            out['sources/migrations/JP.json'] = encoded(dict(
+                countryCode='JP', records=jp_migrations,
+                note=('Additive batch: no legacy ids removed. Excluded rows are 北方地域 historical '
+                      'codes retained by the official table (source-faithful exclusion). '
+                      '政令指定都市の区 are a recorded gap: not listed in the MIC 地方公共団体コード '
+                      'source, ordinance cities keep childrenStatus=unknown until a locked ward '
+                      'source lands.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -400,6 +419,15 @@ def build(root):
                             defaultNameSource='modood source-native Chinese for mainland descendants; CLDR English country root. Per-node nameLocale/nameQuality govern fallback.',
                             warning='Upstream modood states the dataset is no longer updated. This seed is not 2026-current data.')
             sources += ['sources/raw/modood/pca-code.json', 'sources/raw/cldr/aliases.json', 'sources/raw/cldr/subdivisions-zh.xml']
+        if cc == 'JP':
+            coverage.update(profile='JP-MIC-local-gov-code-effective-2024-01-01',
+                            officialBaselineDate='2024-01-01',
+                            excludedNodeCount=len(jp_migrations),
+                            exclusionReason='北方地域 historical codes (016951..016993) retained by the official table; not current administration. Source-faithful exclusion, recorded in sources/migrations/JP.json.',
+                            knownGap='政令指定都市の区 are not listed in the MIC 地方公共団体コード source; ordinance cities keep childrenStatus=unknown and the ward sub-level is a recorded gap pending a locked ward source.',
+                            defaultNameSource='MIC listing Japanese official names (ja, source-native) for municipalities; legacy CLDR English names preserved on the 47 prefecture nodes.')
+            sources += ['sources/raw/official/jp/local-gov-code-000925835.xlsx',
+                        'sources/raw/official/jp/code-listing-page.html']
         country_doc = dict(common, countryCode=cc, revision=country_revision, nodes=nodes,
                            coverage=coverage, sourceRefs=sources)
         out[f'data/regions/{cc}.json'] = encoded(country_doc)
@@ -441,6 +469,12 @@ def build(root):
                 names.update(native_names)
                 quality.update({k: 'source-native' for k in native_names})
                 refs.append('sources/raw/modood/pca-code.json')
+            if cc == 'JP' and locale == 'ja':
+                jp_ja_names = {n['id']: n['name'] for n in jp_nodes
+                               if not n['id'].startswith('iso3166-2:')}
+                names.update(jp_ja_names)
+                quality.update({k: 'source-native' for k in jp_ja_names})
+                refs.append('sources/raw/official/jp/local-gov-code-000925835.xlsx')
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
                 for nid, text in zh_hans_names.items():

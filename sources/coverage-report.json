@@ -119,13 +119,18 @@
     {
       "countryCode": "JP",
       "kinds": {
+        "city": 787,
         "country": 1,
-        "subdivision": 47
+        "municipality": 5,
+        "special-ward": 23,
+        "subdivision": 47,
+        "town": 743,
+        "village": 184
       },
       "locales": {
         "ar": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -135,7 +140,7 @@
         },
         "de": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -145,7 +150,7 @@
         },
         "en": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 47,
           "sourceNative": 0,
@@ -155,7 +160,7 @@
         },
         "fr": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -165,7 +170,7 @@
         },
         "it": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -174,18 +179,18 @@
           "sourceUnconfirmed": 0
         },
         "ja": {
-          "explicitNames": 48,
+          "explicitNames": 1790,
           "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
-          "sourceNative": 0,
+          "sourceNative": 1742,
           "sourceProvisional": 47,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
         "ko": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -195,7 +200,7 @@
         },
         "ru": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -205,7 +210,7 @@
         },
         "zh-Hans": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -215,7 +220,7 @@
         },
         "zh-Hant": {
           "explicitNames": 48,
-          "missingNames": 0,
+          "missingNames": 1742,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -224,9 +229,9 @@
           "sourceUnconfirmed": 0
         }
       },
-      "nodes": 48,
+      "nodes": 1790,
       "rootChildren": 47,
-      "subdivisionNodes": 47
+      "subdivisionNodes": 1789
     },
     {
       "countryCode": "KR",
@@ -1131,5 +1136,5 @@
   "localeCount": 10,
   "protocolVersion": "1.0",
   "status": "research-seed",
-  "totalNodes": 4143
+  "totalNodes": 5885
 }

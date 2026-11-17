@@ -148,6 +148,28 @@ def check_schema(root, kind, value):
         raise DataError(f"{schema_path.name}: {list(errors[0].path)}: {errors[0].message}")
 
 
+def source_pin_admitted(entry):
+    """Two admissible pin forms (ten-country design doc, section 4):
+
+    1. commit-pinned: upstream is a git repository — full 40-hex commit.
+    2. snapshot-pinned: official artifact with no versioned interface —
+       raw snapshot saved, pinned by the official snapshotDate, the
+       retrieval record (retrievedAt), an https URL, a non-empty
+       upstreamVersion label, and the response sha256/sizeBytes enforced
+       elsewhere in this loop.
+    """
+    if re.fullmatch(r"[a-f0-9]{40}", entry.get("commit", "")):
+        return True
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry.get("snapshotDate", "")):
+        return False
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry.get("retrievedAt", "")):
+        return False
+    if not str(entry.get("url", "")).startswith("https://"):
+        return False
+    version = entry.get("upstreamVersion")
+    return isinstance(version, str) and bool(version.strip())
+
+
 def verify_sources(root):
     root = Path(root).resolve()
     lock_path = root / "sources/source-lock.json"
@@ -164,7 +186,7 @@ def verify_sources(root):
         path = safe_resource(root, relative)
         require(sha256(path) == entry.get("sha256"), f"source hash mismatch: {relative}")
         require(path.stat().st_size == entry.get("sizeBytes"), f"source byte count mismatch: {relative}")
-        require(re.fullmatch(r"[a-f0-9]{40}", entry.get("commit", "")), f"source not pinned to full commit: {relative}")
+        require(source_pin_admitted(entry), f"source not pinned: {relative} (full commit or snapshotDate+retrieval+hash required)")
         text_value(entry.get("license"), f"{relative}.license")
     # Derived extracts are committed reductions of an upstream dump (e.g. the
     # GeoNames CN rows). They are byte-pinned like sources but have no upstream
