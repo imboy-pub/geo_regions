@@ -1,19 +1,19 @@
 {
-  "compatibleStructureRevision": "s-fa8d4c05a82b07c6",
+  "compatibleStructureRevision": "s-30b8db9e8942154c",
   "countryCode": "IT",
   "coverage": {
     "cldrTerritoryNameFill": {
-      "filled": 66,
+      "filled": 63,
       "note": "Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality."
     },
-    "explicitNames": 127,
-    "missingNames": 0,
+    "explicitNames": 122,
+    "missingNames": 7905,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,
     "sourceNative": 0,
-    "sourceProvisional": 60,
-    "sourceQualified": 67,
+    "sourceProvisional": 58,
+    "sourceQualified": 64,
     "sourceUnconfirmed": 0,
     "status": "research-seed",
     "translationQualityById": {
@@ -56,7 +56,6 @@
       "iso3166-2:IT-BS": "cldr-json-qualified",
       "iso3166-2:IT-BT": "cldr-json-qualified",
       "iso3166-2:IT-BZ": "cldr-json-qualified",
-      "iso3166-2:IT-CA": "cldr-json-qualified",
       "iso3166-2:IT-CB": "provisional",
       "iso3166-2:IT-CE": "provisional",
       "iso3166-2:IT-CH": "cldr-json-qualified",
@@ -96,8 +95,6 @@
       "iso3166-2:IT-MT": "cldr-json-qualified",
       "iso3166-2:IT-NA": "cldr-json-qualified",
       "iso3166-2:IT-NO": "cldr-json-qualified",
-      "iso3166-2:IT-NU": "cldr-json-qualified",
-      "iso3166-2:IT-OR": "provisional",
       "iso3166-2:IT-PA": "cldr-json-qualified",
       "iso3166-2:IT-PC": "provisional",
       "iso3166-2:IT-PD": "provisional",
@@ -124,8 +121,6 @@
       "iso3166-2:IT-SO": "cldr-json-qualified",
       "iso3166-2:IT-SP": "provisional",
       "iso3166-2:IT-SR": "cldr-json-qualified",
-      "iso3166-2:IT-SS": "cldr-json-qualified",
-      "iso3166-2:IT-SU": "provisional",
       "iso3166-2:IT-SV": "cldr-json-qualified",
       "iso3166-2:IT-TA": "cldr-json-qualified",
       "iso3166-2:IT-TE": "provisional",
@@ -147,7 +142,7 @@
     },
     "zhHantScriptConversion": {
       "changed": 24,
-      "filled": 60,
+      "filled": 63,
       "note": "Recorded conservative simplified-to-traditional conversion of the zh-Hans names; ambiguous characters stay unchanged and keep honest fallback. Provisional quality, not human-reviewed.",
       "table": "tool/s2t_places.py"
     }
@@ -194,7 +189,6 @@
     "iso3166-2:IT-BS": "巴哈馬",
     "iso3166-2:IT-BT": "不丹",
     "iso3166-2:IT-BZ": "貝里斯",
-    "iso3166-2:IT-CA": "加拿大",
     "iso3166-2:IT-CB": "坎波巴索省",
     "iso3166-2:IT-CE": "卡塞塔省",
     "iso3166-2:IT-CH": "瑞士",
@@ -234,8 +228,6 @@
     "iso3166-2:IT-MT": "馬爾他",
     "iso3166-2:IT-NA": "納米比亞",
     "iso3166-2:IT-NO": "挪威",
-    "iso3166-2:IT-NU": "紐埃島",
-    "iso3166-2:IT-OR": "奧里斯塔諾省",
     "iso3166-2:IT-PA": "巴拿馬",
     "iso3166-2:IT-PC": "皮亞琴察省",
     "iso3166-2:IT-PD": "帕多瓦省",
@@ -262,8 +254,6 @@
     "iso3166-2:IT-SO": "索馬利亞",
     "iso3166-2:IT-SP": "拉斯佩齊亞省",
     "iso3166-2:IT-SR": "蘇利南",
-    "iso3166-2:IT-SS": "南蘇丹",
-    "iso3166-2:IT-SU": "南撒丁省",
     "iso3166-2:IT-SV": "薩爾瓦多",
     "iso3166-2:IT-TA": "特里斯坦達庫尼亞群島",
     "iso3166-2:IT-TE": "泰拉莫省",
@@ -284,7 +274,7 @@
     "iso3166-2:IT-VV": "維博瓦倫蒂亞省"
   },
   "protocolVersion": "1.0",
-  "revision": "l-08dce38251bc06ed",
+  "revision": "l-58903854cded0f87",
   "sourceRefs": [
     "sources/raw/cldr/territories-zh-Hant.json",
     "sources/raw/cldr/subdivisions-zh-Hant.xml"

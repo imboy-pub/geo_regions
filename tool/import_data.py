@@ -22,6 +22,7 @@ from importers.us import build as us_build
 from importers.gb import build as gb_build
 from importers.de import build as de_build
 from importers.fr import build as fr_build
+from importers.it import build as it_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -505,6 +506,31 @@ def build(root):
                       'zonages are per-row excluded records. Per the plan name rule no '
                       'legacy names are inherited on re-id — new ids carry source-native '
                       'French names and other locales stay missing.')))
+        if cc == 'IT':
+            legacy_it = [n for n in nodes
+                         if str(n.get('id') or '').startswith('iso3166-2:IT-')]
+            it_nodes, it_records = it_build(root, legacy_it)
+            superseded_it = {r['oldId'] for r in it_records
+                             if r.get('disposition') == 'superseded' and r.get('oldId')}
+            nodes = [n for n in nodes if n['id'] not in superseded_it]
+            ids_now = {n['id'] for n in nodes}
+            it_ids = ids_now | {n['id'] for n in it_nodes}
+            for n in it_nodes:
+                if n['parentId'] not in it_ids:
+                    raise ValueError(f'IT node parent missing: {n["id"]} → {n["parentId"]}')
+                nodes.append(n)
+            out['sources/migrations/IT.json'] = encoded(dict(
+                countryCode='IT', records=it_records,
+                note=('Additive-plus batch: the 20 legacy region ids and the 101 sigla-mapped '
+                      'legacy province ids stay untouched (preserved bindings recorded per '
+                      'row; province→metropolitan-city conversions are entity '
+                      'continuations per TIPO_UTS). Legacy Sardinia provinces (CA/SS/NU/'
+                      'OR/SU) are superseded administration: the 2025 regional reform '
+                      're-created the provincial layer with new ISTAT codes 112-119 and '
+                      'reused siglas, and the boundaries release carries no predecessor '
+                      'column, so their removal is explicit rather than a name-guessed '
+                      're-id. Comunes use it-comune:{PRO_COM_T}; COMUNE_A aliases are '
+                      'source-provided only.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -557,6 +583,14 @@ def build(root):
                         'sources/raw/official/fr/v_commune_outremer_depuis_1943.csv',
                         'sources/raw/official/fr/cog2026.html',
                         'sources/raw/official/fr/datagouv_cog_insee.json']
+        if cc == 'IT':
+            coverage.update(profile='IT-ISTAT-limits-2026',
+                            officialBaselineDate='2026-01-01',
+                            knownGap='The RipGeo statistical grouping and below-comune layers are outside the profile. Legacy Sardinia provinces are superseded (records in sources/migrations/IT.json); the boundaries release carries no abolished comuni — real abolishments live in the separate ISTAT administrative-variation dataset.',
+                            defaultNameSource='ISTAT 2026 Italian official names (it, source-native) for new province/comune nodes; COMUNE_A bilingual aliases are source-provided; preserved legacy region/province ids keep their inherited CLDR names.')
+            sources += ['sources/raw/official/it/Limiti01012026_g.zip',
+                        'sources/raw/official/it/istat-limits-archivio.html',
+                        'sources/raw/official/it/istat-note-legali.html']
         if cc == 'US':
             coverage.update(profile='US-Census-gazetteer-counties-2025-vintage',
                             knownGap='place/MCD layers are outside the profile; county-equivalent records are included.',
@@ -653,6 +687,11 @@ def build(root):
                 quality.update({k: 'source-native' for k in fr_fr_names})
                 refs += ['sources/raw/official/fr/v_commune_2026.csv',
                          'sources/raw/official/fr/v_commune_outremer_depuis_1943.csv']
+            if cc == 'IT' and locale == 'it':
+                it_it_names = {n['id']: n['name'] for n in it_nodes}
+                names.update(it_it_names)
+                quality.update({k: 'source-native' for k in it_it_names})
+                refs.append('sources/raw/official/it/Limiti01012026_g.zip')
 
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
@@ -696,11 +735,14 @@ def build(root):
                 names.update(ai_overlay)
                 quality.update({k: 'provisional' for k in ai_overlay})
                 refs.append(AI_TRANSLATIONS)
-            if cc in ('GB', 'FR'):
-                # re-ided rows retire the legacy ids across every locale pack
-                # and every overlay (CLDR, s2t, wikidata, ai) — popped last so
-                # overlays cannot resurrect retired ids
-                for m in (gb_migrations if cc == 'GB' else fr_migrations):
+            if cc in ('GB', 'FR', 'IT'):
+                # re-ided/superseded rows retire the legacy ids across every
+                # locale pack and every overlay (CLDR, s2t, wikidata, ai) —
+                # popped last so overlays cannot resurrect retired ids
+                legacy_records = (gb_migrations if cc == 'GB'
+                                  else fr_migrations if cc == 'FR'
+                                  else it_records)
+                for m in legacy_records:
                     if m.get('oldId'):
                         names.pop(m['oldId'], None)
                         quality.pop(m['oldId'], None)
@@ -771,7 +813,7 @@ def coverage_markdown(report):
               'GB':'CLDR constituent countries + reachable subdivisions',
               'DE':'Destatis官方：16州+19 Regierungsbezirk+401 Kreis/kreisfreie Stadt+10,747 Gemeinde / Destatis RB+Kreis+Gemeinde, Land ids preserved',
               'FR':'INSEE COG 2026官方：18 region+101 department+34,960 commune+9 海外集体 / INSEE COG region+department+commune with overseas collectivities',
-              'IT':'CLDR regions + reachable subdivisions',
+              'IT':'ISTAT官方：20 region+110 province-tier+7,896 comune（含撒丁2025改革新省）/ ISTAT region+province+comune, 2026 edition',
               'RU':'CLDR83条目；保留上游口径 / 83 entries in the pinned source profile',
               'SA':'CLDR13行政区；不含城市 / 13 regions'}
     for c in report['countries']:

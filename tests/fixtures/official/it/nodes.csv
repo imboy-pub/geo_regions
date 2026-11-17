@@ -1,0 +1,16 @@
+official_code,parent_code,kind,name,name_locale,name_quality,children_status,abolished,alias,sigla,uts
+1,,region,Piemonte,it,source-native,complete,false,,,
+19,,region,Sicilia,it,source-native,complete,false,,,
+20,,region,Sardegna,it,source-native,complete,false,,,
+4,,region,Trentino-Alto Adige,it,source-native,complete,false,,,
+1,1,province,Torino,it,source-native,complete,false,,TO,201
+84,19,province,Agrigento,it,source-native,complete,false,,AG,84
+21,4,province,Bolzano/Bozen,it,source-native,complete,false,,BZ,21
+113,20,province,Gallura Nord-Est Sardegna,it,source-native,complete,false,,OT,113
+118,20,citta-metropolitana,Cagliari,it,source-native,complete,false,,CA,318
+001272,1,comune,Torino,it,source-native,unknown,false,,,
+084001,84,comune,Agrigento,it,source-native,unknown,false,,,
+021001,21,comune,Aldino/Aldein,it,source-native,unknown,false,Aldein,BZ,
+113001,113,comune,Aggius,it,source-native,unknown,false,,,
+118002,118,comune,Assemini,it,source-native,unknown,false,,,
+999999,1,comune,"Comune di prova (fixture-only, abolished)",it,source-native,unknown,true,,,

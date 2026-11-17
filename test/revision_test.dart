@@ -116,7 +116,7 @@ void publishedRevisionGroup() {
     expect(geoCatalogRevision(countries['countries']), countries['revision']);
 
     final manifest = loadDecodedData('manifest.json');
-    expect(geoManifestRevision(manifest['resources']), 'm-4df79db30b85f5e0');
+    expect(geoManifestRevision(manifest['resources']), 'm-b9310bfa4fc255c7');
     expect(geoManifestRevision(manifest['resources']), manifest['revision']);
   });
 }
@@ -133,6 +133,7 @@ void structureRevisionGroup() {
         'GB': 's-c386bb1ed99d140c',
         'DE': 's-73ee6998dd0a7116',
         'FR': 's-8d84e50b79b38e0a',
+        'IT': 's-30b8db9e8942154c',
       };
       for (final entry in expected.entries) {
         final decoded = loadDecodedData('regions/${entry.key}.json');

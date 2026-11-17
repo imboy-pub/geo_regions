@@ -696,6 +696,42 @@
    "retrievedAt": "2026-11-17",
    "snapshotDate": "2026-11-17",
    "upstreamVersion": "data.gouv.fr machine-readable licence record for the INSEE-published COG dataset (license fr-lo = Licence Ouverte / Open Licence 2.0), last_update 2026-11-07"
+  },
+  {
+   "repository": "https://www.istat.it/",
+   "upstreamPath": "storage/cartografia/confini_amministrativi/generalizzati/2026/Limiti01012026_g.zip",
+   "url": "https://www.istat.it/storage/cartografia/confini_amministrativi/generalizzati/2026/Limiti01012026_g.zip",
+   "localPath": "sources/raw/official/it/Limiti01012026_g.zip",
+   "sha256": "b011a590656c3a3ebc297fba80726a376aa843b6f164641cf6a4a990021a81d6",
+   "sizeBytes": 10450609,
+   "license": "CC-BY-4.0 (ISTAT note legali: \"Licenza CC-by Creative Commons 4.0\" — attribution required, redistribution permitted)",
+   "retrievedAt": "2026-11-18",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "ISTAT Limiti delle unità amministrative 2026 (generalized edition; attribute tables Reg/ProvCM/Com DBF = situation 1 January 2026 — geometry generalization does not affect codes or names)"
+  },
+  {
+   "repository": "https://www.istat.it/",
+   "upstreamPath": "it/archivio/222527",
+   "url": "https://www.istat.it/it/archivio/222527",
+   "localPath": "sources/raw/official/it/istat-limits-archivio.html",
+   "sha256": "44e222b0ee5d040fc71136159df7592eaa72b59b3a4a700a5cc957d31f3d90e7",
+   "sizeBytes": 132497,
+   "license": "CC-BY-4.0 (ISTAT note legali: \"Licenza CC-by Creative Commons 4.0\" — attribution required, redistribution permitted)",
+   "retrievedAt": "2026-11-18",
+   "snapshotDate": "2026-11-18",
+   "upstreamVersion": "ISTAT \"Limiti delle unità amministrative\" archive page (provenance: 2026 edition links)"
+  },
+  {
+   "repository": "https://www.istat.it/",
+   "upstreamPath": "it/note-legali",
+   "url": "https://www.istat.it/it/note-legali",
+   "localPath": "sources/raw/official/it/istat-note-legali.html",
+   "sha256": "96cf6bb1ae016b41462c246a3217619c4e549f6c3ab8167a273e2122f666f97d",
+   "sizeBytes": 109617,
+   "license": "CC-BY-4.0",
+   "retrievedAt": "2026-11-18",
+   "snapshotDate": "2026-11-18",
+   "upstreamVersion": "ISTAT note legali — \"Licenza CC-by Creative Commons 4.0\" applies to all published content unless stated otherwise"
   }
  ],
  "derivedSources": [

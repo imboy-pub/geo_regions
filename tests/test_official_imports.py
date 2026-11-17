@@ -531,5 +531,144 @@ class FrAdapterTests(unittest.TestCase):
         self.assertEqual(ain.parent_code, '84')
 
 
+class ItAdapterTests(unittest.TestCase):
+    """tool.importers.it — fixture-level adapter behaviour."""
+
+    IT_FIXTURE = REPO / 'tests/fixtures/official/it/nodes.csv'
+
+    def _parsed(self):
+        from tool.importers.common import SourceNode
+        rows = []
+        sigla_by_provcod = {}
+        uts_by_provcod = {}
+        aliases_by_com = {}
+        for r in load_rows(self.IT_FIXTURE):
+            rows.append(SourceNode(
+                official_code=r['official_code'], parent_code=r['parent_code'],
+                kind=r['kind'], name=r['name'], name_locale=r['name_locale'],
+                name_quality=r['name_quality'], children_status=r['children_status'],
+                abolished=r['abolished'] == 'true'))
+            if r['kind'] != 'region' and r.get('sigla'):
+                sigla_by_provcod[r['official_code']] = r['sigla']
+                uts_by_provcod[r['official_code']] = r['uts']
+            if r['kind'] == 'comune' and r['abolished'] != 'true' and r.get('alias'):
+                aliases_by_com[r['official_code']] = r['alias']
+        return {'rows': rows, 'sigla_by_provcod': sigla_by_provcod,
+                'aliases_by_com': aliases_by_com, 'uts_by_provcod': uts_by_provcod}
+
+    def _legacy(self):
+        return [
+            {'id': 'iso3166-2:IT-21', 'parentId': 'cc:IT', 'name': 'Piedmont'},
+            {'id': 'iso3166-2:IT-82', 'parentId': 'cc:IT', 'name': 'Sicily'},
+            {'id': 'iso3166-2:IT-88', 'parentId': 'cc:IT', 'name': 'Sardinia'},
+            {'id': 'iso3166-2:IT-TO', 'parentId': 'iso3166-2:IT-21', 'name': 'Turin'},
+            {'id': 'iso3166-2:IT-AG', 'parentId': 'iso3166-2:IT-82', 'name': 'Agrigento'},
+            {'id': 'iso3166-2:IT-BZ', 'parentId': 'iso3166-2:IT-32', 'name': 'South Tyrol'},
+            {'id': 'iso3166-2:IT-CA', 'parentId': 'iso3166-2:IT-88', 'name': 'Cagliari'},
+            {'id': 'iso3166-2:IT-SS', 'parentId': 'iso3166-2:IT-88', 'name': 'Sassari'},
+        ]
+
+    def test_region_crosswalk_preserves_legacy_ids(self):
+        from tool.importers.it import REGION_ISO
+        self.assertEqual(len(REGION_ISO), 20)
+        existing = {n['id'] for n in json.load(open(REPO / 'data/regions/IT.json'))['nodes']}
+        for iso_suffix, cod_reg in REGION_ISO.items():
+            self.assertIn(f'iso3166-2:IT-{iso_suffix}', existing)
+        self.assertEqual(REGION_ISO['88'], '20')   # Sardinia
+        self.assertEqual(REGION_ISO['21'], '1')    # Piedmont
+
+    def test_province_sigla_mapping_and_sardinia_superseded(self):
+        from tool.importers.it import build_nodes
+        active, records = build_nodes(self._parsed(), self._legacy())
+        by_id = {n['id']: n for n in active}
+        # precisely-mapped provinces keep their legacy SEED ids untouched —
+        # the adapter emits only new nodes, and comunes bind to the legacy id
+        # (Torino metro city = same entity as legacy IT-TO, per TIPO_UTS)
+        self.assertNotIn('iso3166-2:IT-TO', by_id)
+        self.assertEqual(by_id['it-comune:001272']['parentId'], 'iso3166-2:IT-TO')
+        # Sardinia 2025 reform entities are new ISTAT codes — new nodes
+        self.assertIn('it-prov:113', by_id)
+        self.assertIn('it-prov:318', by_id)
+        self.assertEqual(by_id['it-prov:318']['kind'], 'citta-metropolitana')
+        disp = {r.get('id') or r.get('oldId'): r['disposition'] for r in records}
+        self.assertEqual(disp.get('iso3166-2:IT-TO'), 'preserved')
+        self.assertEqual(disp.get('iso3166-2:IT-AG'), 'preserved')
+        # legacy Sardinia provinces are superseded administration: removed
+        # from active with explicit records (sigla reuse is not identity)
+        self.assertNotIn('iso3166-2:IT-CA', by_id)
+        self.assertNotIn('iso3166-2:IT-SS', by_id)
+        self.assertEqual(disp.get('iso3166-2:IT-CA'), 'superseded')
+        self.assertEqual(disp.get('iso3166-2:IT-SS'), 'superseded')
+
+    def test_comune_ids_parents_and_source_alias(self):
+        from tool.importers.it import build_nodes
+        active, records = build_nodes(self._parsed(), self._legacy())
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['it-comune:001272']['parentId'], 'iso3166-2:IT-TO')
+        self.assertEqual(by_id['it-comune:084001']['parentId'], 'iso3166-2:IT-AG')
+        # Sardinia comunes parent the new reform provinces by COD_PROV
+        self.assertEqual(by_id['it-comune:113001']['parentId'], 'it-prov:113')
+        self.assertEqual(by_id['it-comune:118002']['parentId'], 'it-prov:318')
+        # COMUNE_A is a source-provided alias, never generated
+        self.assertEqual(by_id['it-comune:021001']['aliases'], ['Aldein'])
+        self.assertNotIn('aliases', by_id['it-comune:001272'])
+        for n in active:
+            self.assertEqual(n['nameLocale'], 'it')
+            self.assertEqual(n['nameQuality'], 'source-native')
+
+    def test_abolished_comune_routes_to_migration(self):
+        from tool.importers.it import build_nodes
+        active, records = build_nodes(self._parsed(), self._legacy())
+        ids = {n['id'] for n in active}
+        self.assertNotIn('it-comune:999999', ids)
+        rec = next(r for r in records if r.get('officialCode') == '999999')
+        self.assertEqual(rec['disposition'], 'abolished')
+
+    def test_validate_draft_accepts_it_draft(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.it import build_nodes, draft_keys
+        parsed = self._parsed()
+        legacy = self._legacy()
+        active, records = build_nodes(parsed, legacy)
+        identity, parent_identity = draft_keys(parsed, legacy)
+        draft_rows = [r for r in parsed['rows'] if not r.abolished]
+        draft = CountryDraft(nodes=draft_rows, migrations=records)
+        self.assertIsNone(validate_draft(draft, identity=identity,
+                                         parent_identity=parent_identity))
+
+    def test_validate_draft_it_keys_catch_duplicates(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.it import draft_keys
+        parsed = self._parsed()
+        legacy = self._legacy()
+        rows = parsed['rows']
+        twin = type(rows[5])(**{**rows[5].__dict__})
+        identity, parent_identity = draft_keys(parsed, legacy)
+        err = validate_draft(CountryDraft(nodes=rows + [twin], migrations=[]),
+                             identity=identity, parent_identity=parent_identity)
+        self.assertIsNotNone(err)
+        self.assertIn('duplicate official code', err)
+
+    def test_parse_official_zip_shape(self):
+        from tool.importers.it import parse_official_zip
+        parsed = parse_official_zip(REPO / 'sources/raw/official/it/Limiti01012026_g.zip')
+        rows = parsed['rows']
+        regions = [r for r in rows if r.kind == 'region']
+        provs = [r for r in rows if r.kind != 'region' and r.kind != 'comune']
+        com = [r for r in rows if r.kind == 'comune']
+        self.assertEqual(len(regions), 20)
+        self.assertEqual(len(provs), 110)
+        self.assertEqual(len(com), 7896)
+        self.assertEqual(len(parsed['sigla_by_provcod']), 110)
+        self.assertEqual(len(parsed['aliases_by_com']), 124)
+        self.assertTrue(all(r.name_locale == 'it' for r in rows))
+        # codes are the official ISTAT strings
+        self.assertIn('001272', {r.official_code for r in com})
+        sard = [r for r in provs if r.parent_code == '20']
+        self.assertEqual(len(sard), 8)
+        self.assertTrue(all(r.official_code not in ('90', '91', '92', '105')
+                            for r in sard))
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,743 @@
+{
+  "countryCode": "IT",
+  "note": "Additive-plus batch: the 20 legacy region ids and the 101 sigla-mapped legacy province ids stay untouched (preserved bindings recorded per row; province→metropolitan-city conversions are entity continuations per TIPO_UTS). Legacy Sardinia provinces (CA/SS/NU/OR/SU) are superseded administration: the 2025 regional reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas, and the boundaries release carries no predecessor column, so their removal is explicit rather than a name-guessed re-id. Comunes use it-comune:{PRO_COM_T}; COMUNE_A aliases are source-provided only.",
+  "records": [
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TO",
+      "istatCode": "1",
+      "name": "Turin",
+      "sigla": "TO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VC",
+      "istatCode": "2",
+      "name": "Vercelli",
+      "sigla": "VC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-NO",
+      "istatCode": "3",
+      "name": "Novara",
+      "sigla": "NO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CN",
+      "istatCode": "4",
+      "name": "Cuneo",
+      "sigla": "CN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AT",
+      "istatCode": "5",
+      "name": "Asti",
+      "sigla": "AT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AL",
+      "istatCode": "6",
+      "name": "Alessandria",
+      "sigla": "AL"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-IM",
+      "istatCode": "8",
+      "name": "Imperia",
+      "sigla": "IM"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SV",
+      "istatCode": "9",
+      "name": "Savona",
+      "sigla": "SV"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-GE",
+      "istatCode": "10",
+      "name": "Genoa",
+      "sigla": "GE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SP",
+      "istatCode": "11",
+      "name": "La Spezia",
+      "sigla": "SP"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VA",
+      "istatCode": "12",
+      "name": "Varese",
+      "sigla": "VA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CO",
+      "istatCode": "13",
+      "name": "Como",
+      "sigla": "CO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SO",
+      "istatCode": "14",
+      "name": "Sondrio",
+      "sigla": "SO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MI",
+      "istatCode": "15",
+      "name": "Milan",
+      "sigla": "MI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BG",
+      "istatCode": "16",
+      "name": "Bergamo",
+      "sigla": "BG"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BS",
+      "istatCode": "17",
+      "name": "Brescia",
+      "sigla": "BS"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PV",
+      "istatCode": "18",
+      "name": "Pavia",
+      "sigla": "PV"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CR",
+      "istatCode": "19",
+      "name": "Cremona",
+      "sigla": "CR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MN",
+      "istatCode": "20",
+      "name": "Mantua",
+      "sigla": "MN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BZ",
+      "istatCode": "21",
+      "name": "South Tyrol",
+      "sigla": "BZ"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TN",
+      "istatCode": "22",
+      "name": "Trentino",
+      "sigla": "TN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VR",
+      "istatCode": "23",
+      "name": "Verona",
+      "sigla": "VR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VI",
+      "istatCode": "24",
+      "name": "Vicenza",
+      "sigla": "VI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BL",
+      "istatCode": "25",
+      "name": "Belluno",
+      "sigla": "BL"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TV",
+      "istatCode": "26",
+      "name": "Treviso",
+      "sigla": "TV"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VE",
+      "istatCode": "27",
+      "name": "Venice",
+      "sigla": "VE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PD",
+      "istatCode": "28",
+      "name": "Padua",
+      "sigla": "PD"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RO",
+      "istatCode": "29",
+      "name": "Rovigo",
+      "sigla": "RO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-UD",
+      "istatCode": "30",
+      "name": "Udine",
+      "sigla": "UD"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-GO",
+      "istatCode": "31",
+      "name": "Gorizia",
+      "sigla": "GO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TS",
+      "istatCode": "32",
+      "name": "Trieste",
+      "sigla": "TS"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PC",
+      "istatCode": "33",
+      "name": "Piacenza",
+      "sigla": "PC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PR",
+      "istatCode": "34",
+      "name": "Parma",
+      "sigla": "PR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RE",
+      "istatCode": "35",
+      "name": "Reggio Emilia",
+      "sigla": "RE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MO",
+      "istatCode": "36",
+      "name": "Modena",
+      "sigla": "MO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BO",
+      "istatCode": "37",
+      "name": "Bologna",
+      "sigla": "BO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FE",
+      "istatCode": "38",
+      "name": "Ferrara",
+      "sigla": "FE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RA",
+      "istatCode": "39",
+      "name": "Ravenna",
+      "sigla": "RA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FC",
+      "istatCode": "40",
+      "name": "Forlì-Cesena",
+      "sigla": "FC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PU",
+      "istatCode": "41",
+      "name": "Pesaro and Urbino",
+      "sigla": "PU"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AN",
+      "istatCode": "42",
+      "name": "Ancona",
+      "sigla": "AN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MC",
+      "istatCode": "43",
+      "name": "Macerata",
+      "sigla": "MC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AP",
+      "istatCode": "44",
+      "name": "Ascoli Piceno",
+      "sigla": "AP"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MS",
+      "istatCode": "45",
+      "name": "Massa and Carrara",
+      "sigla": "MS"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LU",
+      "istatCode": "46",
+      "name": "Lucca",
+      "sigla": "LU"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PT",
+      "istatCode": "47",
+      "name": "Pistoia",
+      "sigla": "PT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FI",
+      "istatCode": "48",
+      "name": "Florence",
+      "sigla": "FI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LI",
+      "istatCode": "49",
+      "name": "Livorno",
+      "sigla": "LI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PI",
+      "istatCode": "50",
+      "name": "Pisa",
+      "sigla": "PI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AR",
+      "istatCode": "51",
+      "name": "Arezzo",
+      "sigla": "AR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SI",
+      "istatCode": "52",
+      "name": "Siena",
+      "sigla": "SI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-GR",
+      "istatCode": "53",
+      "name": "Grosseto",
+      "sigla": "GR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PG",
+      "istatCode": "54",
+      "name": "Perugia",
+      "sigla": "PG"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TR",
+      "istatCode": "55",
+      "name": "Terni",
+      "sigla": "TR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VT",
+      "istatCode": "56",
+      "name": "Viterbo",
+      "sigla": "VT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RI",
+      "istatCode": "57",
+      "name": "Rieti",
+      "sigla": "RI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RM",
+      "istatCode": "58",
+      "name": "Rome",
+      "sigla": "RM"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LT",
+      "istatCode": "59",
+      "name": "Latina",
+      "sigla": "LT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FR",
+      "istatCode": "60",
+      "name": "Frosinone",
+      "sigla": "FR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CE",
+      "istatCode": "61",
+      "name": "Caserta",
+      "sigla": "CE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BN",
+      "istatCode": "62",
+      "name": "Benevento",
+      "sigla": "BN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-NA",
+      "istatCode": "63",
+      "name": "Naples",
+      "sigla": "NA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AV",
+      "istatCode": "64",
+      "name": "Avellino",
+      "sigla": "AV"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SA",
+      "istatCode": "65",
+      "name": "Salerno",
+      "sigla": "SA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AQ",
+      "istatCode": "66",
+      "name": "L’Aquila",
+      "sigla": "AQ"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TE",
+      "istatCode": "67",
+      "name": "Teramo",
+      "sigla": "TE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PE",
+      "istatCode": "68",
+      "name": "Pescara",
+      "sigla": "PE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CH",
+      "istatCode": "69",
+      "name": "Chieti",
+      "sigla": "CH"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CB",
+      "istatCode": "70",
+      "name": "Campobasso",
+      "sigla": "CB"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FG",
+      "istatCode": "71",
+      "name": "Foggia",
+      "sigla": "FG"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BA",
+      "istatCode": "72",
+      "name": "Bari",
+      "sigla": "BA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TA",
+      "istatCode": "73",
+      "name": "Taranto",
+      "sigla": "TA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BR",
+      "istatCode": "74",
+      "name": "Brindisi",
+      "sigla": "BR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LE",
+      "istatCode": "75",
+      "name": "Lecce",
+      "sigla": "LE"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PZ",
+      "istatCode": "76",
+      "name": "Potenza",
+      "sigla": "PZ"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MT",
+      "istatCode": "77",
+      "name": "Matera",
+      "sigla": "MT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CS",
+      "istatCode": "78",
+      "name": "Cosenza",
+      "sigla": "CS"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CZ",
+      "istatCode": "79",
+      "name": "Catanzaro",
+      "sigla": "CZ"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RC",
+      "istatCode": "80",
+      "name": "Reggio Calabria",
+      "sigla": "RC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-TP",
+      "istatCode": "81",
+      "name": "Trapani",
+      "sigla": "TP"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PA",
+      "istatCode": "82",
+      "name": "Palermo",
+      "sigla": "PA"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-ME",
+      "istatCode": "83",
+      "name": "Messina",
+      "sigla": "ME"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-AG",
+      "istatCode": "84",
+      "name": "Agrigento",
+      "sigla": "AG"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CL",
+      "istatCode": "85",
+      "name": "Caltanissetta",
+      "sigla": "CL"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-EN",
+      "istatCode": "86",
+      "name": "Enna",
+      "sigla": "EN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-CT",
+      "istatCode": "87",
+      "name": "Catania",
+      "sigla": "CT"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RG",
+      "istatCode": "88",
+      "name": "Ragusa",
+      "sigla": "RG"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-SR",
+      "istatCode": "89",
+      "name": "Syracuse",
+      "sigla": "SR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PN",
+      "istatCode": "93",
+      "name": "Pordenone",
+      "sigla": "PN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-IS",
+      "istatCode": "94",
+      "name": "Isernia",
+      "sigla": "IS"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BI",
+      "istatCode": "96",
+      "name": "Biella",
+      "sigla": "BI"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LC",
+      "istatCode": "97",
+      "name": "Lecco",
+      "sigla": "LC"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-LO",
+      "istatCode": "98",
+      "name": "Lodi",
+      "sigla": "LO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-RN",
+      "istatCode": "99",
+      "name": "Rimini",
+      "sigla": "RN"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-PO",
+      "istatCode": "100",
+      "name": "Prato",
+      "sigla": "PO"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-KR",
+      "istatCode": "101",
+      "name": "Crotone",
+      "sigla": "KR"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VV",
+      "istatCode": "102",
+      "name": "Vibo Valentia",
+      "sigla": "VV"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-VB",
+      "istatCode": "103",
+      "name": "Verbano-Cusio-Ossola",
+      "sigla": "VB"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-MB",
+      "istatCode": "108",
+      "name": "Monza and Brianza",
+      "sigla": "MB"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-FM",
+      "istatCode": "109",
+      "name": "Fermo",
+      "sigla": "FM"
+    },
+    {
+      "disposition": "preserved",
+      "id": "iso3166-2:IT-BT",
+      "istatCode": "110",
+      "name": "Barletta-Andria-Trani",
+      "sigla": "BT"
+    },
+    {
+      "disposition": "superseded",
+      "name": "Cagliari",
+      "oldId": "iso3166-2:IT-CA",
+      "reason": "the 2025 Sardinian reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas; the boundaries release carries no predecessor column, so the legacy entity cannot be mapped to a 2026 entity without name-guessing"
+    },
+    {
+      "disposition": "superseded",
+      "name": "Nuoro",
+      "oldId": "iso3166-2:IT-NU",
+      "reason": "the 2025 Sardinian reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas; the boundaries release carries no predecessor column, so the legacy entity cannot be mapped to a 2026 entity without name-guessing"
+    },
+    {
+      "disposition": "superseded",
+      "name": "Oristano",
+      "oldId": "iso3166-2:IT-OR",
+      "reason": "the 2025 Sardinian reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas; the boundaries release carries no predecessor column, so the legacy entity cannot be mapped to a 2026 entity without name-guessing"
+    },
+    {
+      "disposition": "superseded",
+      "name": "Sassari",
+      "oldId": "iso3166-2:IT-SS",
+      "reason": "the 2025 Sardinian reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas; the boundaries release carries no predecessor column, so the legacy entity cannot be mapped to a 2026 entity without name-guessing"
+    },
+    {
+      "disposition": "superseded",
+      "name": "Sud Sardegna",
+      "oldId": "iso3166-2:IT-SU",
+      "reason": "the 2025 Sardinian reform re-created the provincial layer with new ISTAT codes 112-119 and reused siglas; the boundaries release carries no predecessor column, so the legacy entity cannot be mapped to a 2026 entity without name-guessing"
+    }
+  ]
+}
