@@ -45,7 +45,7 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 | JP | Japan / 日本 | CLDR containment plus MIC 全国地方公共団体コード municipalities (016951..016993 北方地域 rows excluded; ordinance-city wards are a recorded gap) | CLDR for prefectures and ten-locale catalog; source-native Japanese (ja) for municipalities | Effective baseline 2024-01-01 (令和6年1月1日更新); GoS-2.0 per e-Stat terms; ward sub-level pending a locked source |
 | KR | South Korea / 韩国 | CLDR containment plus MOIS 행정기관코드 municipalities (268 standard 시군구; 광주·전남 integration effective 2026-07-01 recorded via migrations with 전남광주통합특별시 as kr-municipality:1200000000) | CLDR for metropolitan nodes and ten-locale catalog; source-native Korean (ko) for municipalities | Effective baseline 2026-10-26 (jscode20261026); KOGL Type 1 per MOIS copyright policy; 읍면동/리 and 출장소 outside profile |
 | US | United States / 美国 | CLDR containment plus Census 2025 Gazetteer counties (3,222 county/county-equivalent records as us-county:{5-digit FIPS}) | CLDR for states/territories and ten-locale catalog; source-native English (en) for counties | Effective vintage 2025; U.S. government work, public domain (17 USC §105); place/MCD layers outside profile |
-| GB | United Kingdom / 英国 | CLDR containment, recursively expanded | CLDR | Four constituent countries and reachable source subdivisions |
+| GB | United Kingdom / 英国 | CLDR containment plus ONS LAD (December 2024, 361 records as gb-lad:{GSS}); 179 legacy rows re-ided by unique exact-name match, 38 kept legacy with unmapped records | CLDR for constituent countries; source-native English (en) for local authorities | OGL v3.0; no heuristic re-parenting — unmapped rows in sources/migrations/GB.json |
 | DE | Germany / 德国 | CLDR containment | CLDR | 16 states; municipal layer not included |
 | FR | France / 法国 | CLDR containment, recursively expanded | CLDR | Source regions, overseas entries and reachable subdivisions |
 | IT | Italy / 意大利 | CLDR containment, recursively expanded | CLDR | Source regions and reachable subdivisions; not all comuni |
@@ -53,6 +53,12 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 | SA | Saudi Arabia / 沙特阿拉伯 | CLDR containment | CLDR | 13 source regions; not a city-level tree |
 
 The scope is an administrative name and selection dataset. No polygons, geocoding, precise boundaries, street-address validation or coordinates are promised. Published code lists are snapshots; they are not proof that every entry is an up-to-date authoritative administrative entity.
+
+### GB official LAD snapshot (2026-11-17 batch)
+
+- Source: ONS Open Geography Portal "Local Authority Districts (December 2024) Boundaries UK BUC" (`sources/raw/official/gb/lad-dec2024-uk-buc-query.json`, 361 records; OGL v3.0 per the ONS licensing footer snapshot).
+- Adapter (`tool/importers/gb.py`): GSS first letter binds the constituent country (E/S/W/N → GB-ENG/SCT/WLS/NIR); LAD nodes = gb-lad:{GSS} parented to the constituent country node. Legacy ISO subdivision rows re-id to gb-lad:{GSS} ONLY on a unique exact source-name match within the country (method recorded per row, tree-duplicate rows all retired); the remaining 38 county-tier/renamed rows stay legacy with explicit unmapped records — no heuristic re-parenting.
+- Retired legacy ids are dropped from every locale pack after all overlays (CLDR/s2t/wikidata/ai) so overlays cannot resurrect them; the four constituent country nodes are preserved.
 
 ### US official county snapshot (2026-11-17 batch)
 

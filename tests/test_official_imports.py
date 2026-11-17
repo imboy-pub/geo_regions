@@ -207,5 +207,68 @@ class UsAdapterTests(unittest.TestCase):
         self.assertEqual(len(USPS_ISO), 57)
 
 
+class GbAdapterTests(unittest.TestCase):
+    """tool.importers.gb — fixture-level adapter behaviour."""
+
+    GB_FIXTURE = REPO / 'tests/fixtures/official/gb/nodes.csv'
+
+    def _rows(self):
+        from tool.importers.common import SourceNode
+        rows = []
+        for r in load_rows(self.GB_FIXTURE):
+            rows.append(SourceNode(
+                official_code=r['gss_code'], parent_code=r['country_letter'],
+                kind='local-authority', name=r['name'], name_locale='en',
+                name_quality='source-native', children_status='unknown',
+                abolished=r['abolished'] == 'true'))
+        return rows
+
+    def test_lads_parent_to_constituent_countries(self):
+        from tool.importers.gb import build_nodes
+        active, migrations, unmapped = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['gb-lad:E06000001']['parentId'], 'iso3166-2:GB-ENG')
+        self.assertEqual(by_id['gb-lad:S12000049']['parentId'], 'iso3166-2:GB-SCT')
+        self.assertEqual(by_id['gb-lad:W06000015']['parentId'], 'iso3166-2:GB-WLS')
+        self.assertEqual(by_id['gb-lad:N09000002']['parentId'], 'iso3166-2:GB-NIR')
+
+    def test_no_country_relation_routes_to_migration(self):
+        from tool.importers.gb import build_nodes
+        active, migrations, unmapped = build_nodes(self._rows())
+        self.assertNotIn('gb-lad:X99999999', {n['id'] for n in active})
+        rec = next(m for m in migrations if m['officialCode'] == 'X99999999')
+        self.assertEqual(rec['disposition'], 'unmapped')
+        self.assertIn('country', rec['reason'])
+
+    def test_no_country_relation_breaks_validate_draft(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.gb import build_nodes
+        # if such a record were ever carried as an active node with an
+        # unresolvable parent, the shared contract must refuse the draft
+        active, _, _ = build_nodes(self._rows())
+        draft_nodes = [type('N', (), {'official_code': 'gb-lad:X99999999',
+                                      'parent_code': 'gb:XX',
+                                      'abolished': False})()]
+        err = validate_draft(CountryDraft(nodes=draft_nodes, migrations=[]))
+        self.assertIsNotNone(err)
+        self.assertIn('missing parent', err)
+
+    def test_parse_lad_query_shape(self):
+        from tool.importers.gb import parse_lad_query
+        rows = parse_lad_query(REPO / 'sources/raw/official/gb/lad-dec2024-uk-buc-query.json')
+        self.assertEqual(len(rows), 361)
+        prefixes = {r.official_code[0] for r in rows}
+        self.assertEqual(prefixes, set('ESWN'))
+        self.assertTrue(all(r.name_locale == 'en' for r in rows))
+
+    def test_all_four_constituent_ids_exist_in_seed(self):
+        regions = json.load(open(REPO / 'data/regions/GB.json'))
+        with open(REPO / 'data/regions/GB.json') as f:
+            regions = json.load(f)
+        existing = {n['id'] for n in regions['nodes']}
+        for iso in ('GB-ENG', 'GB-SCT', 'GB-WLS', 'GB-NIR'):
+            self.assertIn(f'iso3166-2:{iso}', existing)
+
+
 if __name__ == '__main__':
     unittest.main()

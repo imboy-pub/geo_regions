@@ -1,0 +1,1451 @@
+{
+  "countryCode": "GB",
+  "note": "Legacy ISO subdivision rows matching an ONS LAD exactly-by-name-within-country are re-ided to gb-lad:{GSS} (method recorded per row). Rows without a unique match stay legacy with explicit unmapped records — no heuristic re-parenting. The four constituent country nodes are preserved.",
+  "reIds": [
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Hartlepool",
+      "newId": "gb-lad:E06000001",
+      "oldId": "iso3166-2:GB-HPL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Middlesbrough",
+      "newId": "gb-lad:E06000002",
+      "oldId": "iso3166-2:GB-MDB"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Redcar and Cleveland",
+      "newId": "gb-lad:E06000003",
+      "oldId": "iso3166-2:GB-RCC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Stockton-on-Tees",
+      "newId": "gb-lad:E06000004",
+      "oldId": "iso3166-2:GB-STT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Darlington",
+      "newId": "gb-lad:E06000005",
+      "oldId": "iso3166-2:GB-DAL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Halton",
+      "newId": "gb-lad:E06000006",
+      "oldId": "iso3166-2:GB-HAL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Warrington",
+      "newId": "gb-lad:E06000007",
+      "oldId": "iso3166-2:GB-WRT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Blackburn with Darwen",
+      "newId": "gb-lad:E06000008",
+      "oldId": "iso3166-2:GB-BBD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Blackpool",
+      "newId": "gb-lad:E06000009",
+      "oldId": "iso3166-2:GB-BPL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "East Riding of Yorkshire",
+      "newId": "gb-lad:E06000011",
+      "oldId": "iso3166-2:GB-ERY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North East Lincolnshire",
+      "newId": "gb-lad:E06000012",
+      "oldId": "iso3166-2:GB-NEL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Lincolnshire",
+      "newId": "gb-lad:E06000013",
+      "oldId": "iso3166-2:GB-NLN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "York",
+      "newId": "gb-lad:E06000014",
+      "oldId": "iso3166-2:GB-YOR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Derby",
+      "newId": "gb-lad:E06000015",
+      "oldId": "iso3166-2:GB-DER"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Leicester",
+      "newId": "gb-lad:E06000016",
+      "oldId": "iso3166-2:GB-LCE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Rutland",
+      "newId": "gb-lad:E06000017",
+      "oldId": "iso3166-2:GB-RUT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Nottingham",
+      "newId": "gb-lad:E06000018",
+      "oldId": "iso3166-2:GB-NGM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Telford and Wrekin",
+      "newId": "gb-lad:E06000020",
+      "oldId": "iso3166-2:GB-TFW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Stoke-on-Trent",
+      "newId": "gb-lad:E06000021",
+      "oldId": "iso3166-2:GB-STE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bath and North East Somerset",
+      "newId": "gb-lad:E06000022",
+      "oldId": "iso3166-2:GB-BAS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Somerset",
+      "newId": "gb-lad:E06000024",
+      "oldId": "iso3166-2:GB-NSM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "South Gloucestershire",
+      "newId": "gb-lad:E06000025",
+      "oldId": "iso3166-2:GB-SGC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Plymouth",
+      "newId": "gb-lad:E06000026",
+      "oldId": "iso3166-2:GB-PLY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Torbay",
+      "newId": "gb-lad:E06000027",
+      "oldId": "iso3166-2:GB-TOB"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Swindon",
+      "newId": "gb-lad:E06000030",
+      "oldId": "iso3166-2:GB-SWD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Luton",
+      "newId": "gb-lad:E06000032",
+      "oldId": "iso3166-2:GB-LUT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Southend-on-Sea",
+      "newId": "gb-lad:E06000033",
+      "oldId": "iso3166-2:GB-SOS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Thurrock",
+      "newId": "gb-lad:E06000034",
+      "oldId": "iso3166-2:GB-THR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Medway",
+      "newId": "gb-lad:E06000035",
+      "oldId": "iso3166-2:GB-MDW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bracknell Forest",
+      "newId": "gb-lad:E06000036",
+      "oldId": "iso3166-2:GB-BRC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "West Berkshire",
+      "newId": "gb-lad:E06000037",
+      "oldId": "iso3166-2:GB-WBK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Reading",
+      "newId": "gb-lad:E06000038",
+      "oldId": "iso3166-2:GB-RDG"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Slough",
+      "newId": "gb-lad:E06000039",
+      "oldId": "iso3166-2:GB-SLG"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Windsor and Maidenhead",
+      "newId": "gb-lad:E06000040",
+      "oldId": "iso3166-2:GB-WNM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wokingham",
+      "newId": "gb-lad:E06000041",
+      "oldId": "iso3166-2:GB-WOK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Milton Keynes",
+      "newId": "gb-lad:E06000042",
+      "oldId": "iso3166-2:GB-MIK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Brighton and Hove",
+      "newId": "gb-lad:E06000043",
+      "oldId": "iso3166-2:GB-BNH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Portsmouth",
+      "newId": "gb-lad:E06000044",
+      "oldId": "iso3166-2:GB-POR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Southampton",
+      "newId": "gb-lad:E06000045",
+      "oldId": "iso3166-2:GB-STH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Isle of Wight",
+      "newId": "gb-lad:E06000046",
+      "oldId": "iso3166-2:GB-IOW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Cheshire East",
+      "newId": "gb-lad:E06000049",
+      "oldId": "iso3166-2:GB-CHE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Cheshire West and Chester",
+      "newId": "gb-lad:E06000050",
+      "oldId": "iso3166-2:GB-CHW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Shropshire",
+      "newId": "gb-lad:E06000051",
+      "oldId": "iso3166-2:GB-SHR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Cornwall",
+      "newId": "gb-lad:E06000052",
+      "oldId": "iso3166-2:GB-CON"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Isles of Scilly",
+      "newId": "gb-lad:E06000053",
+      "oldId": "iso3166-2:GB-IOS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wiltshire",
+      "newId": "gb-lad:E06000054",
+      "oldId": "iso3166-2:GB-WIL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bedford",
+      "newId": "gb-lad:E06000055",
+      "oldId": "iso3166-2:GB-BDF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Central Bedfordshire",
+      "newId": "gb-lad:E06000056",
+      "oldId": "iso3166-2:GB-CBF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Northumberland",
+      "newId": "gb-lad:E06000057",
+      "oldId": "iso3166-2:GB-NBL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bournemouth, Christchurch and Poole",
+      "newId": "gb-lad:E06000058",
+      "oldId": "iso3166-2:GB-BCP"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Dorset",
+      "newId": "gb-lad:E06000059",
+      "oldId": "iso3166-2:GB-DOR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Buckinghamshire",
+      "newId": "gb-lad:E06000060",
+      "oldId": "iso3166-2:GB-BKM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Northamptonshire",
+      "newId": "gb-lad:E06000061",
+      "oldId": "iso3166-2:GB-NNH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "West Northamptonshire",
+      "newId": "gb-lad:E06000062",
+      "oldId": "iso3166-2:GB-WNH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Yorkshire",
+      "newId": "gb-lad:E06000065",
+      "oldId": "iso3166-2:GB-NYK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Somerset",
+      "newId": "gb-lad:E06000066",
+      "oldId": "iso3166-2:GB-SOM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bolton",
+      "newId": "gb-lad:E08000001",
+      "oldId": "iso3166-2:GB-BOL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bury",
+      "newId": "gb-lad:E08000002",
+      "oldId": "iso3166-2:GB-BUR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Manchester",
+      "newId": "gb-lad:E08000003",
+      "oldId": "iso3166-2:GB-MAN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Oldham",
+      "newId": "gb-lad:E08000004",
+      "oldId": "iso3166-2:GB-OLD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Rochdale",
+      "newId": "gb-lad:E08000005",
+      "oldId": "iso3166-2:GB-RCH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Salford",
+      "newId": "gb-lad:E08000006",
+      "oldId": "iso3166-2:GB-SLF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Stockport",
+      "newId": "gb-lad:E08000007",
+      "oldId": "iso3166-2:GB-SKP"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Tameside",
+      "newId": "gb-lad:E08000008",
+      "oldId": "iso3166-2:GB-TAM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Trafford",
+      "newId": "gb-lad:E08000009",
+      "oldId": "iso3166-2:GB-TRF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wigan",
+      "newId": "gb-lad:E08000010",
+      "oldId": "iso3166-2:GB-WGN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Knowsley",
+      "newId": "gb-lad:E08000011",
+      "oldId": "iso3166-2:GB-KWL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Liverpool",
+      "newId": "gb-lad:E08000012",
+      "oldId": "iso3166-2:GB-LIV"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Sefton",
+      "newId": "gb-lad:E08000014",
+      "oldId": "iso3166-2:GB-SFT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wirral",
+      "newId": "gb-lad:E08000015",
+      "oldId": "iso3166-2:GB-WRL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Barnsley",
+      "newId": "gb-lad:E08000016",
+      "oldId": "iso3166-2:GB-BNS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Doncaster",
+      "newId": "gb-lad:E08000017",
+      "oldId": "iso3166-2:GB-DNC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Rotherham",
+      "newId": "gb-lad:E08000018",
+      "oldId": "iso3166-2:GB-ROT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Sheffield",
+      "newId": "gb-lad:E08000019",
+      "oldId": "iso3166-2:GB-SHF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Newcastle upon Tyne",
+      "newId": "gb-lad:E08000021",
+      "oldId": "iso3166-2:GB-NET"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Tyneside",
+      "newId": "gb-lad:E08000022",
+      "oldId": "iso3166-2:GB-NTY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "South Tyneside",
+      "newId": "gb-lad:E08000023",
+      "oldId": "iso3166-2:GB-STY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Sunderland",
+      "newId": "gb-lad:E08000024",
+      "oldId": "iso3166-2:GB-SND"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Birmingham",
+      "newId": "gb-lad:E08000025",
+      "oldId": "iso3166-2:GB-BIR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Coventry",
+      "newId": "gb-lad:E08000026",
+      "oldId": "iso3166-2:GB-COV"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Dudley",
+      "newId": "gb-lad:E08000027",
+      "oldId": "iso3166-2:GB-DUD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Sandwell",
+      "newId": "gb-lad:E08000028",
+      "oldId": "iso3166-2:GB-SAW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Solihull",
+      "newId": "gb-lad:E08000029",
+      "oldId": "iso3166-2:GB-SOL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Walsall",
+      "newId": "gb-lad:E08000030",
+      "oldId": "iso3166-2:GB-WLL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wolverhampton",
+      "newId": "gb-lad:E08000031",
+      "oldId": "iso3166-2:GB-WLV"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bradford",
+      "newId": "gb-lad:E08000032",
+      "oldId": "iso3166-2:GB-BRD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Calderdale",
+      "newId": "gb-lad:E08000033",
+      "oldId": "iso3166-2:GB-CLD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Kirklees",
+      "newId": "gb-lad:E08000034",
+      "oldId": "iso3166-2:GB-KIR"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Leeds",
+      "newId": "gb-lad:E08000035",
+      "oldId": "iso3166-2:GB-LDS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wakefield",
+      "newId": "gb-lad:E08000036",
+      "oldId": "iso3166-2:GB-WKF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Gateshead",
+      "newId": "gb-lad:E08000037",
+      "oldId": "iso3166-2:GB-GAT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Barking and Dagenham",
+      "newId": "gb-lad:E09000002",
+      "oldId": "iso3166-2:GB-BDG"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Barnet",
+      "newId": "gb-lad:E09000003",
+      "oldId": "iso3166-2:GB-BNE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bexley",
+      "newId": "gb-lad:E09000004",
+      "oldId": "iso3166-2:GB-BEX"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Brent",
+      "newId": "gb-lad:E09000005",
+      "oldId": "iso3166-2:GB-BEN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bromley",
+      "newId": "gb-lad:E09000006",
+      "oldId": "iso3166-2:GB-BRY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Camden",
+      "newId": "gb-lad:E09000007",
+      "oldId": "iso3166-2:GB-CMD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Croydon",
+      "newId": "gb-lad:E09000008",
+      "oldId": "iso3166-2:GB-CRY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Ealing",
+      "newId": "gb-lad:E09000009",
+      "oldId": "iso3166-2:GB-EAL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Enfield",
+      "newId": "gb-lad:E09000010",
+      "oldId": "iso3166-2:GB-ENF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Greenwich",
+      "newId": "gb-lad:E09000011",
+      "oldId": "iso3166-2:GB-GRE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Hackney",
+      "newId": "gb-lad:E09000012",
+      "oldId": "iso3166-2:GB-HCK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Hammersmith and Fulham",
+      "newId": "gb-lad:E09000013",
+      "oldId": "iso3166-2:GB-HMF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Haringey",
+      "newId": "gb-lad:E09000014",
+      "oldId": "iso3166-2:GB-HRY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Harrow",
+      "newId": "gb-lad:E09000015",
+      "oldId": "iso3166-2:GB-HRW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Havering",
+      "newId": "gb-lad:E09000016",
+      "oldId": "iso3166-2:GB-HAV"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Hillingdon",
+      "newId": "gb-lad:E09000017",
+      "oldId": "iso3166-2:GB-HIL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Hounslow",
+      "newId": "gb-lad:E09000018",
+      "oldId": "iso3166-2:GB-HNS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Islington",
+      "newId": "gb-lad:E09000019",
+      "oldId": "iso3166-2:GB-ISL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Kensington and Chelsea",
+      "newId": "gb-lad:E09000020",
+      "oldId": "iso3166-2:GB-KEC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Kingston upon Thames",
+      "newId": "gb-lad:E09000021",
+      "oldId": "iso3166-2:GB-KTT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Lambeth",
+      "newId": "gb-lad:E09000022",
+      "oldId": "iso3166-2:GB-LBH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Lewisham",
+      "newId": "gb-lad:E09000023",
+      "oldId": "iso3166-2:GB-LEW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Merton",
+      "newId": "gb-lad:E09000024",
+      "oldId": "iso3166-2:GB-MRT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Newham",
+      "newId": "gb-lad:E09000025",
+      "oldId": "iso3166-2:GB-NWM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Redbridge",
+      "newId": "gb-lad:E09000026",
+      "oldId": "iso3166-2:GB-RDB"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Richmond upon Thames",
+      "newId": "gb-lad:E09000027",
+      "oldId": "iso3166-2:GB-RIC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Southwark",
+      "newId": "gb-lad:E09000028",
+      "oldId": "iso3166-2:GB-SWK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Sutton",
+      "newId": "gb-lad:E09000029",
+      "oldId": "iso3166-2:GB-STN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Tower Hamlets",
+      "newId": "gb-lad:E09000030",
+      "oldId": "iso3166-2:GB-TWH"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Waltham Forest",
+      "newId": "gb-lad:E09000031",
+      "oldId": "iso3166-2:GB-WFT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wandsworth",
+      "newId": "gb-lad:E09000032",
+      "oldId": "iso3166-2:GB-WND"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Westminster",
+      "newId": "gb-lad:E09000033",
+      "oldId": "iso3166-2:GB-WSM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Antrim and Newtownabbey",
+      "newId": "gb-lad:N09000001",
+      "oldId": "iso3166-2:GB-ANN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Belfast",
+      "newId": "gb-lad:N09000003",
+      "oldId": "iso3166-2:GB-BFS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Causeway Coast and Glens",
+      "newId": "gb-lad:N09000004",
+      "oldId": "iso3166-2:GB-CCG"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Fermanagh and Omagh",
+      "newId": "gb-lad:N09000006",
+      "oldId": "iso3166-2:GB-FMO"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Lisburn and Castlereagh",
+      "newId": "gb-lad:N09000007",
+      "oldId": "iso3166-2:GB-LBC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Mid and East Antrim",
+      "newId": "gb-lad:N09000008",
+      "oldId": "iso3166-2:GB-MEA"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Mid Ulster",
+      "newId": "gb-lad:N09000009",
+      "oldId": "iso3166-2:GB-MUL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Newry, Mourne and Down",
+      "newId": "gb-lad:N09000010",
+      "oldId": "iso3166-2:GB-NMD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Ards and North Down",
+      "newId": "gb-lad:N09000011",
+      "oldId": "iso3166-2:GB-AND"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Clackmannanshire",
+      "newId": "gb-lad:S12000005",
+      "oldId": "iso3166-2:GB-CLK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Dumfries and Galloway",
+      "newId": "gb-lad:S12000006",
+      "oldId": "iso3166-2:GB-DGY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "East Ayrshire",
+      "newId": "gb-lad:S12000008",
+      "oldId": "iso3166-2:GB-EAY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "East Lothian",
+      "newId": "gb-lad:S12000010",
+      "oldId": "iso3166-2:GB-ELN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "East Renfrewshire",
+      "newId": "gb-lad:S12000011",
+      "oldId": "iso3166-2:GB-ERW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Falkirk",
+      "newId": "gb-lad:S12000014",
+      "oldId": "iso3166-2:GB-FAL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Highland",
+      "newId": "gb-lad:S12000017",
+      "oldId": "iso3166-2:GB-HLD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Inverclyde",
+      "newId": "gb-lad:S12000018",
+      "oldId": "iso3166-2:GB-IVC"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Midlothian",
+      "newId": "gb-lad:S12000019",
+      "oldId": "iso3166-2:GB-MLN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Moray",
+      "newId": "gb-lad:S12000020",
+      "oldId": "iso3166-2:GB-MRY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Ayrshire",
+      "newId": "gb-lad:S12000021",
+      "oldId": "iso3166-2:GB-NAY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Orkney Islands",
+      "newId": "gb-lad:S12000023",
+      "oldId": "iso3166-2:GB-ORK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Scottish Borders",
+      "newId": "gb-lad:S12000026",
+      "oldId": "iso3166-2:GB-SCB"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "South Ayrshire",
+      "newId": "gb-lad:S12000028",
+      "oldId": "iso3166-2:GB-SAY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "South Lanarkshire",
+      "newId": "gb-lad:S12000029",
+      "oldId": "iso3166-2:GB-SLK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Stirling",
+      "newId": "gb-lad:S12000030",
+      "oldId": "iso3166-2:GB-STG"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Aberdeenshire",
+      "newId": "gb-lad:S12000034",
+      "oldId": "iso3166-2:GB-ABD"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Argyll and Bute",
+      "newId": "gb-lad:S12000035",
+      "oldId": "iso3166-2:GB-AGB"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Renfrewshire",
+      "newId": "gb-lad:S12000038",
+      "oldId": "iso3166-2:GB-RFW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "West Dunbartonshire",
+      "newId": "gb-lad:S12000039",
+      "oldId": "iso3166-2:GB-WDU"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "West Lothian",
+      "newId": "gb-lad:S12000040",
+      "oldId": "iso3166-2:GB-WLN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Angus",
+      "newId": "gb-lad:S12000041",
+      "oldId": "iso3166-2:GB-ANS"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "East Dunbartonshire",
+      "newId": "gb-lad:S12000045",
+      "oldId": "iso3166-2:GB-EDU"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Fife",
+      "newId": "gb-lad:S12000047",
+      "oldId": "iso3166-2:GB-FIF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Perth and Kinross",
+      "newId": "gb-lad:S12000048",
+      "oldId": "iso3166-2:GB-PKN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "North Lanarkshire",
+      "newId": "gb-lad:S12000050",
+      "oldId": "iso3166-2:GB-NLK"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Gwynedd",
+      "newId": "gb-lad:W06000002",
+      "oldId": "iso3166-2:GB-GWN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Conwy",
+      "newId": "gb-lad:W06000003",
+      "oldId": "iso3166-2:GB-CWY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Denbighshire",
+      "newId": "gb-lad:W06000004",
+      "oldId": "iso3166-2:GB-DEN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Flintshire",
+      "newId": "gb-lad:W06000005",
+      "oldId": "iso3166-2:GB-FLN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Wrexham",
+      "newId": "gb-lad:W06000006",
+      "oldId": "iso3166-2:GB-WRX"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Ceredigion",
+      "newId": "gb-lad:W06000008",
+      "oldId": "iso3166-2:GB-CGN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Pembrokeshire",
+      "newId": "gb-lad:W06000009",
+      "oldId": "iso3166-2:GB-PEM"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Carmarthenshire",
+      "newId": "gb-lad:W06000010",
+      "oldId": "iso3166-2:GB-CMN"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Swansea",
+      "newId": "gb-lad:W06000011",
+      "oldId": "iso3166-2:GB-SWA"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Neath Port Talbot",
+      "newId": "gb-lad:W06000012",
+      "oldId": "iso3166-2:GB-NTL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Bridgend",
+      "newId": "gb-lad:W06000013",
+      "oldId": "iso3166-2:GB-BGE"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Vale of Glamorgan",
+      "newId": "gb-lad:W06000014",
+      "oldId": "iso3166-2:GB-VGL"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Cardiff",
+      "newId": "gb-lad:W06000015",
+      "oldId": "iso3166-2:GB-CRF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Rhondda Cynon Taf",
+      "newId": "gb-lad:W06000016",
+      "oldId": "iso3166-2:GB-RCT"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Caerphilly",
+      "newId": "gb-lad:W06000018",
+      "oldId": "iso3166-2:GB-CAY"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Blaenau Gwent",
+      "newId": "gb-lad:W06000019",
+      "oldId": "iso3166-2:GB-BGW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Torfaen",
+      "newId": "gb-lad:W06000020",
+      "oldId": "iso3166-2:GB-TOF"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Monmouthshire",
+      "newId": "gb-lad:W06000021",
+      "oldId": "iso3166-2:GB-MON"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Newport",
+      "newId": "gb-lad:W06000022",
+      "oldId": "iso3166-2:GB-NWP"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Powys",
+      "newId": "gb-lad:W06000023",
+      "oldId": "iso3166-2:GB-POW"
+    },
+    {
+      "disposition": "re-id",
+      "method": "unique-exact-source-name-match",
+      "name": "Merthyr Tydfil",
+      "newId": "gb-lad:W06000024",
+      "oldId": "iso3166-2:GB-MTY"
+    }
+  ],
+  "unmapped": [
+    {
+      "name": "Bristol",
+      "oldId": "iso3166-2:GB-BST",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Cambridgeshire",
+      "oldId": "iso3166-2:GB-CAM",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Cumbria",
+      "oldId": "iso3166-2:GB-CMA",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Derbyshire",
+      "oldId": "iso3166-2:GB-DBY",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Devon",
+      "oldId": "iso3166-2:GB-DEV",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Durham",
+      "oldId": "iso3166-2:GB-DUR",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Essex",
+      "oldId": "iso3166-2:GB-ESS",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "East Sussex",
+      "oldId": "iso3166-2:GB-ESX",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Gloucestershire",
+      "oldId": "iso3166-2:GB-GLS",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Hampshire",
+      "oldId": "iso3166-2:GB-HAM",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Herefordshire",
+      "oldId": "iso3166-2:GB-HEF",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Hertfordshire",
+      "oldId": "iso3166-2:GB-HRT",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Kent",
+      "oldId": "iso3166-2:GB-KEN",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Kingston upon Hull",
+      "oldId": "iso3166-2:GB-KHL",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Lancashire",
+      "oldId": "iso3166-2:GB-LAN",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Leicestershire",
+      "oldId": "iso3166-2:GB-LEC",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Lincolnshire",
+      "oldId": "iso3166-2:GB-LIN",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "London",
+      "oldId": "iso3166-2:GB-LND",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Norfolk",
+      "oldId": "iso3166-2:GB-NFK",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Nottinghamshire",
+      "oldId": "iso3166-2:GB-NTT",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Oxfordshire",
+      "oldId": "iso3166-2:GB-OXF",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Peter",
+      "oldId": "iso3166-2:GB-PTE",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Suffolk",
+      "oldId": "iso3166-2:GB-SFK",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Saint Helens",
+      "oldId": "iso3166-2:GB-SHN",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Surrey",
+      "oldId": "iso3166-2:GB-SRY",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Staffordshire",
+      "oldId": "iso3166-2:GB-STS",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Warwickshire",
+      "oldId": "iso3166-2:GB-WAR",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Worcestershire",
+      "oldId": "iso3166-2:GB-WOR",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "West Sussex",
+      "oldId": "iso3166-2:GB-WSX",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Armagh, Banbridge and Craigavon",
+      "oldId": "iso3166-2:GB-ABC",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Derry and Strabane",
+      "oldId": "iso3166-2:GB-DRS",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Aberdeen",
+      "oldId": "iso3166-2:GB-ABE",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Dundee",
+      "oldId": "iso3166-2:GB-DND",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Edinburgh",
+      "oldId": "iso3166-2:GB-EDH",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Outer Hebrides",
+      "oldId": "iso3166-2:GB-ELS",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Glasgow",
+      "oldId": "iso3166-2:GB-GLG",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Shetland",
+      "oldId": "iso3166-2:GB-ZET",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    },
+    {
+      "name": "Anglesey",
+      "oldId": "iso3166-2:GB-AGY",
+      "reason": "no unique exact-name match within the ONS LAD layer (tier mismatch or renamed); legacy node kept"
+    }
+  ]
+}

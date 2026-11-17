@@ -1,0 +1,10 @@
+{
+  "profile": "GB-official-lad-current",
+  "officialCodeSystem": "ONS GSS codes (Local Authority Districts December 2024; E/S/W/N prefix = constituent country)",
+  "targetKinds": ["local-authority"],
+  "excludedKinds": ["parish", "community", "electoral ward", "county-tier legacy without LAD match"],
+  "sourceBaseline": "ons-lad-dec2024-uk-buc (361 records)",
+  "parentRule": "LAD→constituent country by GSS first letter (E→GB-ENG, S→GB-SCT, W→GB-WLS, N→GB-NIR); constituent countries→country",
+  "idRule": "constituent country nodes preserve legacy iso3166-2:GB-ENG/SCT/WLS/NIR; LAD = gb-lad:{GSS code}; legacy subdivision rows matching an LAD exactly-by-name-within-country are re-ided with the crosswalk recorded; others stay unmapped with an explicit record (no heuristic re-parenting)",
+  "nameRule": "English official names from LAD24NM (nameLocale=en, nameQuality=source-native); LAD24NMW Welsh names noted but out of locale scope"
+}

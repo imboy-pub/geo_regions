@@ -8,7 +8,7 @@
 
 ## 实际覆盖 / Actual coverage
 
-共 10 个国家数据分片、10 种语言、9,376 个节点（包括国家根节点）。
+共 10 个国家数据分片、10 种语言、9,558 个节点（包括国家根节点）。
 
 Each of the ten small country-name packs has all ten catalog names. Region-name packs are sparse and carry per-ID upstream quality metadata.
 
@@ -18,7 +18,7 @@ Each of the ten small country-name packs has all ten catalog names. Region-name 
 | JP | 1,790 | 47 | CLDR47都道府县；不含市区町村 / 47 prefectures |
 | KR | 287 | 18 | CLDR17省级；不含市郡区 / 17 first-level subdivisions |
 | US | 3,280 | 57 | CLDR57州、地区及领地条目；不含县市 / 57 source subdivisions, including territories |
-| GB | 222 | 4 | CLDR constituent countries + reachable subdivisions |
+| GB | 404 | 4 | CLDR constituent countries + reachable subdivisions |
 | DE | 17 | 16 | CLDR16州；不含市镇 / 16 states |
 | FR | 125 | 26 | CLDR regions/overseas entries + reachable subdivisions |
 | IT | 127 | 20 | CLDR regions + reachable subdivisions |
@@ -37,7 +37,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 | JP | 48/1790 | 48/1790 | 48/1790 | 1790/1790 | 48/1790 | 48/1790 | 48/1790 | 48/1790 | 48/1790 | 48/1790 |
 | KR | 18/287 | 18/287 | 18/287 | 18/287 | 287/287 | 18/287 | 18/287 | 18/287 | 18/287 | 18/287 |
 | US | 58/3280 | 58/3280 | 3280/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 |
-| GB | 219/222 | 219/222 | 222/222 | 222/222 | 222/222 | 218/222 | 219/222 | 220/222 | 219/222 | 222/222 |
+| GB | 43/404 | 43/404 | 404/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 |
 | DE | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 |
 | FR | 124/125 | 124/125 | 125/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 |
 | IT | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 |
@@ -48,16 +48,16 @@ Cells count explicit source names / total nodes, including the country root. Pre
 
 | Locale | Explicit | Approved in XML | JSON-qualified / contributed | Provisional | Unconfirmed | Source-native | Missing | Project reviewed |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| zh-Hans | 4139 | 3 | 24 | 683 | 0 | 3429 | 5237 | 0 |
-| zh-Hant | 4139 | 3 | 150 | 3986 | 0 | 0 | 5237 | 0 |
-| en | 7145 | 734 | 10 | 3179 | 0 | 3222 | 2231 | 0 |
-| ja | 5660 | 3 | 30 | 3885 | 0 | 1742 | 3716 | 0 |
-| ko | 4183 | 3 | 24 | 3887 | 0 | 269 | 5193 | 0 |
-| ru | 3905 | 3 | 25 | 3877 | 0 | 0 | 5471 | 0 |
-| de | 3912 | 3 | 24 | 3885 | 0 | 0 | 5464 | 0 |
-| fr | 3897 | 3 | 24 | 3870 | 0 | 0 | 5479 | 0 |
-| it | 3894 | 3 | 24 | 3867 | 0 | 0 | 5482 | 0 |
-| ar | 3919 | 3 | 24 | 3892 | 0 | 0 | 5457 | 0 |
+| zh-Hans | 3963 | 3 | 24 | 507 | 0 | 3429 | 5595 | 0 |
+| zh-Hant | 3963 | 3 | 150 | 3810 | 0 | 0 | 5595 | 0 |
+| en | 7327 | 555 | 10 | 3179 | 0 | 3583 | 2231 | 0 |
+| ja | 5481 | 3 | 30 | 3706 | 0 | 1742 | 4077 | 0 |
+| ko | 4004 | 3 | 24 | 3708 | 0 | 269 | 5554 | 0 |
+| ru | 3730 | 3 | 25 | 3702 | 0 | 0 | 5828 | 0 |
+| de | 3736 | 3 | 24 | 3709 | 0 | 0 | 5822 | 0 |
+| fr | 3720 | 3 | 24 | 3693 | 0 | 0 | 5838 | 0 |
+| it | 3718 | 3 | 24 | 3691 | 0 | 0 | 5840 | 0 |
+| ar | 3740 | 3 | 24 | 3713 | 0 | 0 | 5818 | 0 |
 
 ### 质量字段的准确含义 / Exact quality semantics
 

@@ -540,6 +540,42 @@
    "retrievedAt": "2026-11-17",
    "snapshotDate": "2026-11-17",
    "upstreamVersion": "Gazetteer files listing page (download provenance)"
+  },
+  {
+   "repository": "https://geoportal.statistics.gov.uk/",
+   "upstreamPath": "services/Local_Authority_Districts_December_2024_Boundaries_UK_BUC/FeatureServer/0/query (all records, no geometry)",
+   "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_December_2024_Boundaries_UK_BUC/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=json",
+   "localPath": "sources/raw/official/gb/lad-dec2024-uk-buc-query.json",
+   "sha256": "bb68d5cdb903e7b586bc49258732ac585200b9c00838a8bc0a95901411d651e2",
+   "sizeBytes": 98256,
+   "license": "OGL-3.0",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "Local Authority Districts (December 2024) Boundaries UK BUC — 361 LAD records"
+  },
+  {
+   "repository": "https://geoportal.statistics.gov.uk/",
+   "upstreamPath": "services/Local_Authority_Districts_December_2024_Boundaries_UK_BUC/FeatureServer/0?f=json",
+   "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_December_2024_Boundaries_UK_BUC/FeatureServer/0?f=json",
+   "localPath": "sources/raw/official/gb/lad-dec2024-uk-buc-metadata.json",
+   "sha256": "63a1a7b95924342856200fc99e65b3324494ace616386d8f4772b25128c2d53e",
+   "sizeBytes": 9695,
+   "license": "OGL-3.0",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "LAD_DEC_24_UK_BUC layer metadata (field list)"
+  },
+  {
+   "repository": "https://www.ons.gov.uk",
+   "upstreamPath": "methodology/geography/licensing",
+   "url": "https://www.ons.gov.uk/methodology/geography/licensing",
+   "localPath": "sources/raw/official/gb/ons-licensing.html",
+   "sha256": "79d5b9fb33fa35d9c65d4e7ace8d9cafec5e5c55f89818b3d4e5478e89670603",
+   "sizeBytes": 27237,
+   "license": "OGL-3.0",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "ONS licensing page (Open Government Licence v3.0 footer evidence)"
   }
  ],
  "derivedSources": [

@@ -19,6 +19,7 @@ import s2t_places
 from importers.jp import build as jp_build
 from importers.kr import build as kr_build
 from importers.us import build as us_build
+from importers.gb import build as gb_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -377,6 +378,7 @@ def build(root):
         jp_nodes, jp_migrations = [], []
         kr_nodes, kr_migrations = [], []
         us_nodes, us_migrations = [], []
+        gb_nodes, gb_migrations, gb_unmapped = [], [], []
         if cc == 'CN':
             crosswalk, native_names = add_cn(root, nodes, index, translations, aliases)
             out['sources/cn-province-crosswalk.json'] = encoded({'records': crosswalk})
@@ -431,6 +433,24 @@ def build(root):
                 note=('Additive batch: the 57 legacy state/territory ids stay; counties use '
                       'us-county:{5-digit FIPS GEOID}. place/MCD records are outside the '
                       'profile and never become nodes.')))
+        if cc == 'GB':
+            legacy_gb = [n for n in nodes
+                         if str(n.get('parentId') or '').startswith('iso3166-2:GB-')]
+            gb_nodes, gb_migrations, gb_unmapped = gb_build(root, legacy_gb)
+            migrated_old = {m['oldId'] for m in gb_migrations if m.get('oldId')}
+            nodes = [n for n in nodes if n['id'] not in migrated_old]
+            ids_now = {n['id'] for n in nodes}
+            for n in gb_nodes:
+                if n['parentId'] not in ids_now:
+                    raise ValueError(f'GB LAD parent missing: {n["id"]} → {n["parentId"]}')
+                nodes.append(n)
+            out['sources/migrations/GB.json'] = encoded(dict(
+                countryCode='GB', reIds=gb_migrations, unmapped=gb_unmapped,
+                note=('Legacy ISO subdivision rows matching an ONS LAD exactly-by-name-'
+                      'within-country are re-ided to gb-lad:{GSS} (method recorded per row). '
+                      'Rows without a unique match stay legacy with explicit unmapped records '
+                      '— no heuristic re-parenting. The four constituent country nodes are '
+                      'preserved.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -457,6 +477,12 @@ def build(root):
                             defaultNameSource='modood source-native Chinese for mainland descendants; CLDR English country root. Per-node nameLocale/nameQuality govern fallback.',
                             warning='Upstream modood states the dataset is no longer updated. This seed is not 2026-current data.')
             sources += ['sources/raw/modood/pca-code.json', 'sources/raw/cldr/aliases.json', 'sources/raw/cldr/subdivisions-zh.xml']
+        if cc == 'GB':
+            coverage.update(profile='GB-ONS-lad-dec2024-uk-buc',
+                            knownGap='Legacy subdivision rows without a unique exact-name LAD match stay legacy (tier mismatch or renamed); unmapped records in sources/migrations/GB.json. No heuristic re-parenting.',
+                            defaultNameSource='ONS LAD24NM English official names (en, source-native) for local authorities; constituent country nodes keep legacy CLDR names.')
+            sources += ['sources/raw/official/gb/lad-dec2024-uk-buc-query.json',
+                        'sources/raw/official/gb/ons-licensing.html']
         if cc == 'US':
             coverage.update(profile='US-Census-gazetteer-counties-2025-vintage',
                             knownGap='place/MCD layers are outside the profile; county-equivalent records are included.',
@@ -537,6 +563,12 @@ def build(root):
                 names.update(us_en_names)
                 quality.update({k: 'source-native' for k in us_en_names})
                 refs.append('sources/raw/official/us/2025_Gaz_counties_national.zip')
+            if cc == 'GB' and locale == 'en':
+                gb_en_names = {n['id']: n['name'] for n in gb_nodes}
+                names.update(gb_en_names)
+                quality.update({k: 'source-native' for k in gb_en_names})
+                refs.append('sources/raw/official/gb/lad-dec2024-uk-buc-query.json')
+
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
                 for nid, text in zh_hans_names.items():
@@ -579,6 +611,14 @@ def build(root):
                 names.update(ai_overlay)
                 quality.update({k: 'provisional' for k in ai_overlay})
                 refs.append(AI_TRANSLATIONS)
+            if cc == 'GB':
+                # re-ided rows retire the legacy ids across every locale pack
+                # and every overlay (CLDR, s2t, wikidata, ai) — popped last so
+                # overlays cannot resurrect retired ids
+                for m in gb_migrations:
+                    if m.get('oldId'):
+                        names.pop(m['oldId'], None)
+                        quality.pop(m['oldId'], None)
             stats = quality_stats(names, quality, len(nodes))
             locale_coverage = dict(stats, status='research-seed', translationQualityById=quality,
                 policy='Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.')
