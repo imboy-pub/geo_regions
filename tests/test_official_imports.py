@@ -270,5 +270,129 @@ class GbAdapterTests(unittest.TestCase):
             self.assertIn(f'iso3166-2:{iso}', existing)
 
 
+class DeAdapterTests(unittest.TestCase):
+    """tool.importers.de — fixture-level adapter behaviour."""
+
+    DE_FIXTURE = REPO / 'tests/fixtures/official/de/nodes.csv'
+
+    def _rows(self):
+        from tool.importers.common import SourceNode
+        rows = []
+        for r in load_rows(self.DE_FIXTURE):
+            rows.append(SourceNode(
+                official_code=r['official_code'], parent_code=r['parent_code'],
+                kind=r['kind'], name=r['name'], name_locale=r['name_locale'],
+                name_quality=r['name_quality'], children_status=r['children_status'],
+                abolished=r['abolished'] == 'true'))
+        return rows
+
+    def test_land_crosswalk_completes_to_existing_seed(self):
+        from tool.importers.de import LAND_ISO
+        self.assertEqual(len(LAND_ISO), 16)
+        self.assertEqual(set(LAND_ISO.values()), {
+            'DE-SH', 'DE-HH', 'DE-NI', 'DE-HB', 'DE-NW', 'DE-HE', 'DE-RP', 'DE-BW',
+            'DE-BY', 'DE-SL', 'DE-BE', 'DE-BB', 'DE-MV', 'DE-SN', 'DE-ST', 'DE-TH'})
+        existing = {n['id'] for n in json.load(open(REPO / 'data/regions/DE.json'))['nodes']}
+        for iso in LAND_ISO.values():
+            self.assertIn(f'iso3166-2:{iso}', existing)
+
+    def test_build_nodes_prefixes_and_parent_chain(self):
+        from tool.importers.de import build_nodes
+        active, migrations = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        # the 16 legacy ISO Land ids are preserved untouched — no land nodes emitted
+        self.assertEqual([n for n in active if n['kind'] == 'land'], [])
+        self.assertEqual(by_id['de-regbez:081']['parentId'], 'iso3166-2:DE-BW')
+        # Kreis under a non-RB Land parents directly to the Land node
+        self.assertEqual(by_id['de-kreis:01001']['parentId'], 'iso3166-2:DE-SH')
+        self.assertEqual(by_id['de-kreis:01051']['parentId'], 'iso3166-2:DE-SH')
+        # Kreis under an RB-Land parents to the Regierungsbezirk (Region layer is
+        # outside the profile)
+        self.assertEqual(by_id['de-kreis:08111']['parentId'], 'de-regbez:081')
+        self.assertEqual(by_id['de-gemeinde:01001000']['parentId'], 'de-kreis:01001')
+        self.assertEqual(by_id['de-gemeinde:08111000']['parentId'], 'de-kreis:08111')
+        # kreisfreie Städte exist at both tiers exactly as the official register
+        self.assertIn('de-kreis:01001', by_id)
+        self.assertIn('de-gemeinde:01001000', by_id)
+        self.assertEqual(by_id['de-kreis:08111']['kind'], 'kreisfreie-stadt')
+        self.assertEqual(by_id['de-kreis:01051']['kind'], 'kreis')
+
+    def test_names_verbatim_source_native(self):
+        from tool.importers.de import build_nodes
+        active, _ = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['de-gemeinde:08111000']['name'], 'Stuttgart, Landeshauptstadt')
+        self.assertEqual(by_id['de-gemeinde:01001000']['name'], 'Flensburg, Stadt')
+        self.assertEqual(by_id['de-kreis:01051']['name'], 'Dithmarschen')
+        self.assertEqual(by_id['de-regbez:081']['name'], 'Reg.-Bez. Stuttgart')
+        for n in active:
+            self.assertEqual(n['nameLocale'], 'de')
+            self.assertEqual(n['nameQuality'], 'source-native')
+
+    def test_children_status_complete_above_gemeinde(self):
+        from tool.importers.de import build_nodes
+        active, _ = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        # RB and Kreis child sets are fully determined by the same snapshot
+        self.assertEqual(by_id['de-regbez:081']['childrenStatus'], 'complete')
+        self.assertEqual(by_id['de-kreis:01051']['childrenStatus'], 'complete')
+        # below Gemeinde the profile ends — honest unknown
+        self.assertEqual(by_id['de-gemeinde:01051003']['childrenStatus'], 'unknown')
+
+    def test_non_admin_tier_rows_route_to_migrations(self):
+        from tool.importers.de import build_nodes
+        active, migrations = build_nodes(self._rows())
+        ids = {n['id'] for n in active}
+        self.assertNotIn('de-regbez:031', ids)
+        self.assertNotIn('de-region:0811', ids)
+        self.assertNotIn('de-gemeinde:03151501', ids)
+        disp = {m['officialCode']: m['disposition'] for m in migrations}
+        self.assertEqual(disp['031'], 'excluded')
+        self.assertEqual(disp['0811'], 'excluded')
+        self.assertEqual(disp['03151501'], 'excluded')
+        self.assertIn('not politically self-governing',
+                      next(m for m in migrations if m['officialCode'] == '03151501')['reason'])
+
+    def test_abolished_ags_routes_with_recorded_successor(self):
+        from tool.importers.de import build_nodes
+        active, migrations = build_nodes(self._rows(), successors={'01051007': '01051003'})
+        ids = {n['id'] for n in active}
+        self.assertNotIn('de-gemeinde:01051007', ids)
+        rec = next(m for m in migrations if m['officialCode'] == '01051007')
+        self.assertEqual(rec['disposition'], 'merged')
+        self.assertEqual(rec['newId'], 'de-gemeinde:01051003')
+
+    def test_abolished_without_successor_stays_plain_abolished(self):
+        from tool.importers.de import build_nodes
+        active, migrations = build_nodes(self._rows())
+        rec = next(m for m in migrations if m['officialCode'] == '01051007')
+        self.assertEqual(rec['disposition'], 'abolished')
+        self.assertNotIn('newId', rec)
+
+    def test_validate_draft_accepts_de_draft(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.de import build_nodes
+        active, migrations = build_nodes(self._rows())
+        draft = CountryDraft(nodes=self._rows(), migrations=migrations)
+        self.assertIsNone(validate_draft(draft))
+
+    def test_parse_official_xlsx_shape(self):
+        from tool.importers.de import parse_official_xlsx
+        rows = parse_official_xlsx(REPO / 'sources/raw/official/de/AuszugGV2QAktuell.xlsx')
+        lands = [r for r in rows if r.kind == 'land']
+        rbs = [r for r in rows if r.kind == 'regierungsbezirk']
+        kreis = [r for r in rows if r.kind in ('kreis', 'kreisfreie-stadt', 'regionalverband')]
+        gem = [r for r in rows if r.kind == 'gemeinde']
+        gf = [r for r in rows if r.kind == 'gemeindefreies-gebiet']
+        self.assertEqual(len(lands), 16)
+        self.assertEqual(len(rbs), 19)       # NW 5 + HE 3 + BW 4 + BY 7
+        self.assertEqual(len(kreis), 401)    # TK 41-45
+        self.assertEqual(len(gem), 10747)    # TK 60-64, 67
+        self.assertEqual(len(gf), 196)       # TK 65/66
+        # the Gemeindeverband layer (Satzart 50, 4583 rows) never becomes rows
+        self.assertEqual(len(rows), 16 + 29 + 12 + 401 + 10747 + 196)
+        self.assertTrue(all(r.name_locale == 'de' for r in rows))
+
+
 if __name__ == '__main__':
     unittest.main()

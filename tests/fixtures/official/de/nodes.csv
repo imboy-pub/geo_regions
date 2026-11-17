@@ -1,0 +1,16 @@
+official_code,parent_code,kind,name,name_locale,name_quality,children_status,abolished,successor_code
+01,,land,Schleswig-Holstein,de,source-native,complete,false,
+03,,land,Niedersachsen,de,source-native,complete,false,
+08,,land,Baden-Württemberg,de,source-native,complete,false,
+031,03,statistical-region,Statistische Region Braunschweig,de,source-native,unknown,false,
+0811,,region,Region Stuttgart,de,source-native,unknown,false,
+081,08,regierungsbezirk,"Reg.-Bez. Stuttgart",de,source-native,complete,false,
+03151,03,kreis,Gifhorn,de,source-native,complete,false,
+01001,01,kreisfreie-stadt,"Flensburg, Stadt",de,source-native,complete,false,
+01051,01,kreis,Dithmarschen,de,source-native,complete,false,
+08111,081,kreisfreie-stadt,"Stuttgart, Stadtkreis",de,source-native,complete,false,
+01001000,01001,gemeinde,"Flensburg, Stadt",de,source-native,unknown,false,
+08111000,08111,gemeinde,"Stuttgart, Landeshauptstadt",de,source-native,unknown,false,
+01051003,01051,gemeinde,Averlak,de,source-native,unknown,false,
+03151501,03151,gemeindefreies-gebiet,"Giebel, gemfr. Gebiet",de,source-native,unknown,false,
+01051007,01051,gemeinde,"Testgemeinde (fixture-only, abolished)",de,source-native,unknown,true,01051003

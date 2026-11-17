@@ -116,7 +116,7 @@ void publishedRevisionGroup() {
     expect(geoCatalogRevision(countries['countries']), countries['revision']);
 
     final manifest = loadDecodedData('manifest.json');
-    expect(geoManifestRevision(manifest['resources']), 'm-cd3490c8198ac4f3');
+    expect(geoManifestRevision(manifest['resources']), 'm-94848b4c922f5590');
     expect(geoManifestRevision(manifest['resources']), manifest['revision']);
   });
 }
@@ -127,9 +127,11 @@ void structureRevisionGroup() {
     () {
       final expected = <String, String>{
         'CN': 's-618de1dd32b43463',
-        'JP': 's-f6f89e0185926a48',
-        'GB': 's-b6c4c44272f8f283',
-        'US': 's-65edb4a623631538',
+        'JP': 's-a142e026c44cc331',
+        'KR': 's-f4a812992c29410b',
+        'US': 's-e041917b13cd3b37',
+        'GB': 's-c386bb1ed99d140c',
+        'DE': 's-73ee6998dd0a7116',
       };
       for (final entry in expected.entries) {
         final decoded = loadDecodedData('regions/${entry.key}.json');

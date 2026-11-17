@@ -1,0 +1,1314 @@
+{
+  "countryCode": "DE",
+  "note": "Additive batch: the 16 legacy Land ids stay untouched (no re-id, no rename, childrenStatus unchanged). RB-tier non-admin rows (NI Statistische Region, \"früher:\" RBs/Direktionsbezirke), BW planning Regionen and gemeindefreie Gebiete are per-row excluded records; the Gemeindeverband association layer (Satzart 50) is a whole-layer exclusion documented in the profile. Abolished-AGS routing with an explicit successor map is fixture-proven; the quarterly Gebietsstand snapshot carries no abolished rows.",
+  "records": [
+    {
+      "disposition": "excluded",
+      "name": "Statistische Region Braunschweig",
+      "officialCode": "031",
+      "reason": "statistical region, not current administrative Regierungsbezirk; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Giebel, gemfr. Gebiet",
+      "officialCode": "03151501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Harz (Landkreis Goslar), gemfr. Gebiet",
+      "officialCode": "03153504",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Brunsleberfeld, gemfr. Gebiet",
+      "officialCode": "03154501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Helmstedt, gemfr. Gebiet",
+      "officialCode": "03154502",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Königslutter, gemfr. Gebiet",
+      "officialCode": "03154503",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mariental, gemfr. Gebiet",
+      "officialCode": "03154504",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schöningen, gemfr. Gebiet",
+      "officialCode": "03154506",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Solling (Landkreis Northeim), gemfr. Geb.",
+      "officialCode": "03155501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Am Großen Rhode, gemfr. Gebiet",
+      "officialCode": "03158501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Barnstorf-Warle, gemfr. Gebiet",
+      "officialCode": "03158502",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Voigtsdahlum, gemfr. Gebiet",
+      "officialCode": "03158503",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Harz (Landkreis Göttingen), gemfr. Geb.",
+      "officialCode": "03159501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Statistische Region Hannover",
+      "officialCode": "032",
+      "reason": "statistical region, not current administrative Regierungsbezirk; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Boffzen, gemfr. Gebiet",
+      "officialCode": "03255501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eimen, gemfr. Gebiet",
+      "officialCode": "03255502",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eschershausen, gemfr. Gebiet",
+      "officialCode": "03255503",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Grünenplan, gemfr. Gebiet",
+      "officialCode": "03255504",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Holzminden, gemfr. Gebiet",
+      "officialCode": "03255505",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Merxhausen, gemfr. Gebiet",
+      "officialCode": "03255506",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Wenzen, gemfr. Gebiet",
+      "officialCode": "03255508",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Statistische Region Lüneburg",
+      "officialCode": "033",
+      "reason": "statistical region, not current administrative Regierungsbezirk; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Lohheide, gemfr. Bezirk",
+      "officialCode": "03351501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gartow, gemfr. Gebiet",
+      "officialCode": "03354501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Göhrde, gemfr. Gebiet",
+      "officialCode": "03354502",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Osterheide, gemfr. Bezirk",
+      "officialCode": "03358501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Statistische Region Weser-Ems",
+      "officialCode": "034",
+      "reason": "statistical region, not current administrative Regierungsbezirk; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Nordseeinsel Memmert, gemfr. Gebiet",
+      "officialCode": "03452501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Insel Lütje Hörn, gemfr. Gebiet",
+      "officialCode": "03457501",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Michelbuch, gemfr. Gebiet",
+      "officialCode": "06431200",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gutsbezirk Spessart, gemfr. Gebiet",
+      "officialCode": "06435200",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gutsbezirk Reinhardswald, gemfr. Gebiet",
+      "officialCode": "06633200",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gutsbezirk Kaufunger Wald, gemfr. Gebiet",
+      "officialCode": "06636200",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gemeinsames deutsch-luxemburgisches Hoheitsgebiet",
+      "officialCode": "07000999",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Reg.-Bez. Koblenz",
+      "officialCode": "071",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Reg.-Bez. Trier",
+      "officialCode": "072",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Reg.-Bez. Rheinhessen-Pfalz",
+      "officialCode": "073",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Stuttgart",
+      "officialCode": "0811",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Heilbronn-Franken",
+      "officialCode": "0812",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Ostwürttemberg",
+      "officialCode": "0813",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Karlsruhe",
+      "officialCode": "0821",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Rhein-Neckar",
+      "officialCode": "0822",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Nordschwarzwald",
+      "officialCode": "0823",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Südlicher Oberrhein",
+      "officialCode": "0831",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rheinau, gemeindefreies Gebiet",
+      "officialCode": "08317971",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Schwarzwald-Baar-Heuberg",
+      "officialCode": "0832",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Hochrhein-Bodensee",
+      "officialCode": "0833",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Neckar-Alb",
+      "officialCode": "0841",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gutsbezirk Münsingen, gemeindefreies Gebiet",
+      "officialCode": "08415971",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Donau-Iller",
+      "officialCode": "0842",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Region Bodensee-Oberschwaben",
+      "officialCode": "0843",
+      "reason": "Baden-Württemberg planning Region between RB and Kreis; outside the declared profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eck",
+      "officialCode": "09172452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schellenberger Forst",
+      "officialCode": "09172454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Pupplinger Au",
+      "officialCode": "09173451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Wolfratshauser Forst",
+      "officialCode": "09173452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Anzinger Forst",
+      "officialCode": "09175451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ebersberger Forst",
+      "officialCode": "09175452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eglhartinger Forst",
+      "officialCode": "09175453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Haunstetter Forst",
+      "officialCode": "09176451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ettaler Forst",
+      "officialCode": "09180451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ammersee",
+      "officialCode": "09181451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mühldorfer Hart",
+      "officialCode": "09183451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forstenrieder Park",
+      "officialCode": "09184452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Grünwalder Forst",
+      "officialCode": "09184454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Perlacher Forst",
+      "officialCode": "09184457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rotter Forst-Nord",
+      "officialCode": "09187451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rotter Forst-Süd",
+      "officialCode": "09187452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Starnberger See",
+      "officialCode": "09188451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Chiemsee (See)",
+      "officialCode": "09189451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Waginger See",
+      "officialCode": "09189452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Annathaler Wald",
+      "officialCode": "09272451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Frauenberger u. Duschlberger Wald",
+      "officialCode": "09272452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Graineter Wald",
+      "officialCode": "09272453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Leopoldsreuter Wald",
+      "officialCode": "09272455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mauther Forst",
+      "officialCode": "09272456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Philippsreuter Wald",
+      "officialCode": "09272457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Pleckensteiner Wald",
+      "officialCode": "09272458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Sankt Oswald",
+      "officialCode": "09272459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schlichtenberger Wald",
+      "officialCode": "09272460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schönbrunner Wald",
+      "officialCode": "09272461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Waldhäuserwald",
+      "officialCode": "09272463",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Dürnbucher Forst",
+      "officialCode": "09273451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Hacklberg",
+      "officialCode": "09273453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eichen",
+      "officialCode": "09371452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Manteler Forst",
+      "officialCode": "09374452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Speinsharter Forst",
+      "officialCode": "09374458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forstmühler Forst",
+      "officialCode": "09375451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Kreuther Forst",
+      "officialCode": "09375452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Wolferlohe",
+      "officialCode": "09376455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ebracher Forst",
+      "officialCode": "09471452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Eichwald",
+      "officialCode": "09471453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Geisberger Forst",
+      "officialCode": "09471454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Hauptsmoor",
+      "officialCode": "09471455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Koppenwinder Forst",
+      "officialCode": "09471456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Lindach",
+      "officialCode": "09471457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Semberg",
+      "officialCode": "09471459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Steinachsrangen",
+      "officialCode": "09471460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Winkelhofer Forst",
+      "officialCode": "09471461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Zückshuter Forst",
+      "officialCode": "09471462",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Bischofsgrüner Forst",
+      "officialCode": "09472451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Fichtelberg",
+      "officialCode": "09472453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Neustädtlein a.Forst",
+      "officialCode": "09472454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Glashüttener Forst",
+      "officialCode": "09472456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Heinersreuther Forst",
+      "officialCode": "09472458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Neubauer Forst-Nord",
+      "officialCode": "09472463",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Prüll",
+      "officialCode": "09472464",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Veldensteinerforst",
+      "officialCode": "09472468",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Waidacher Forst",
+      "officialCode": "09472469",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Warmensteinacher Forst-Nord",
+      "officialCode": "09472470",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Callenberger Forst-West",
+      "officialCode": "09473452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Köllnholz",
+      "officialCode": "09473454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Martinlamitzer Forst-Nord",
+      "officialCode": "09475454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Birnbaum",
+      "officialCode": "09476451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Breitengüßbacher Forst",
+      "officialCode": "09478451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Neuensorger Forst",
+      "officialCode": "09478453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Martinlamitzer Forst-Süd",
+      "officialCode": "09479455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Neubauer Forst-Süd",
+      "officialCode": "09479457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Tröstauer Forst-Ost",
+      "officialCode": "09479459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Tröstauer Forst-West",
+      "officialCode": "09479460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Vordorfer Forst",
+      "officialCode": "09479461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Unterer Wald",
+      "officialCode": "09571451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Birkach",
+      "officialCode": "09572451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Buckenhofer Forst",
+      "officialCode": "09572452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Dormitzer Forst",
+      "officialCode": "09572453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Erlenstegener Forst",
+      "officialCode": "09572454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Tennenlohe",
+      "officialCode": "09572455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Geschaidt",
+      "officialCode": "09572456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Kalchreuther Forst",
+      "officialCode": "09572457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Kraftshofer Forst",
+      "officialCode": "09572458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mark",
+      "officialCode": "09572459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Neunhofer Forst",
+      "officialCode": "09572460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Behringersdorfer Forst",
+      "officialCode": "09574451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Brunn",
+      "officialCode": "09574452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Engelthaler Forst",
+      "officialCode": "09574453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Feuchter Forst",
+      "officialCode": "09574454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Fischbach",
+      "officialCode": "09574455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forsthof",
+      "officialCode": "09574456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Günthersbühler Forst",
+      "officialCode": "09574457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Haimendorfer Forst",
+      "officialCode": "09574458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Laufamholzer Forst",
+      "officialCode": "09574460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Leinburg",
+      "officialCode": "09574461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rückersdorfer Forst",
+      "officialCode": "09574462",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schönberg",
+      "officialCode": "09574463",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Winkelhaid",
+      "officialCode": "09574464",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Zerzabelshofer Forst",
+      "officialCode": "09574465",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Osing",
+      "officialCode": "09575451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Abenberger Wald",
+      "officialCode": "09576451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Dechenwald",
+      "officialCode": "09576452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Kleinschwarzenlohe",
+      "officialCode": "09576453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Heidenberg",
+      "officialCode": "09576454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Soos",
+      "officialCode": "09576455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Hain i.Spessart",
+      "officialCode": "09671451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Heinrichsthaler Forst",
+      "officialCode": "09671453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rohrbrunner Forst",
+      "officialCode": "09671456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Rothenbucher Forst",
+      "officialCode": "09671457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Sailaufer Forst",
+      "officialCode": "09671458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schöllkrippener Forst",
+      "officialCode": "09671459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Waldaschaffer Forst",
+      "officialCode": "09671460",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Wiesener Forst",
+      "officialCode": "09671461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Dreistelzer Forst",
+      "officialCode": "09672451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Detter-Süd",
+      "officialCode": "09672454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Geiersnest-Ost",
+      "officialCode": "09672455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Geiersnest-West",
+      "officialCode": "09672456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Kälberberg",
+      "officialCode": "09672458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mottener Forst-Süd",
+      "officialCode": "09672461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Neuwirtshauser Forst",
+      "officialCode": "09672462",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Omerz u. Roter Berg",
+      "officialCode": "09672463",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Römershager Forst-Nord",
+      "officialCode": "09672464",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Römershager Forst-Ost",
+      "officialCode": "09672465",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Roßbacher Forst",
+      "officialCode": "09672466",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Waldfensterer Forst",
+      "officialCode": "09672468",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Bundorfer Forst",
+      "officialCode": "09673451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Burgwallbacher Forst",
+      "officialCode": "09673452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Schmalwasser-Nord",
+      "officialCode": "09673453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Schmalwasser-Süd",
+      "officialCode": "09673454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Mellrichstadter Forst",
+      "officialCode": "09673455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Steinacher Forst r.d.Saale",
+      "officialCode": "09673456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Sulzfelder Forst",
+      "officialCode": "09673457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Weigler",
+      "officialCode": "09673458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forstwald",
+      "officialCode": "09676452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Hohe Wart",
+      "officialCode": "09676455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Burgjoß",
+      "officialCode": "09677452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Aura",
+      "officialCode": "09677453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Forst Lohrerstraße",
+      "officialCode": "09677454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Frammersbacher Forst",
+      "officialCode": "09677455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Fürstl. Löwenstein'scher Park",
+      "officialCode": "09677456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Haurain",
+      "officialCode": "09677457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Herrnwald",
+      "officialCode": "09677458",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Langenprozeltener Forst",
+      "officialCode": "09677459",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Partensteiner Forst",
+      "officialCode": "09677461",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ruppertshüttener Forst",
+      "officialCode": "09677463",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Bürgerwald",
+      "officialCode": "09678451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Geiersberg",
+      "officialCode": "09678452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Hundelshausen",
+      "officialCode": "09678453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Nonnenkloster",
+      "officialCode": "09678454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Stollbergerforst",
+      "officialCode": "09678455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Vollburg",
+      "officialCode": "09678456",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Wustvieler Forst",
+      "officialCode": "09678457",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Gramschatzer Wald",
+      "officialCode": "09679451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Guttenberger Wald",
+      "officialCode": "09679452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Irtenberger Wald",
+      "officialCode": "09679453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Schmellerforst",
+      "officialCode": "09772451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ebershauser-Nattenhauser Wald",
+      "officialCode": "09774451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Winzerwald",
+      "officialCode": "09774452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Auwald",
+      "officialCode": "09775451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Oberroggenburger Wald",
+      "officialCode": "09775452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Stoffenrieder Forst",
+      "officialCode": "09775454",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Unterroggenburger Wald",
+      "officialCode": "09775455",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Ungerhauser Wald",
+      "officialCode": "09778451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Dornstadt-Linkersbaindt",
+      "officialCode": "09779452",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Esterholz",
+      "officialCode": "09779453",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Kempter Wald",
+      "officialCode": "09780451",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Deutsch-luxemburgisches Hoheitsgebiet",
+      "officialCode": "10042999",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "gemeindefreies Gebiet M-V",
+      "officialCode": "13000998",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "Küstengewässer einschl. Anteil am Festlandsockel",
+      "officialCode": "13000999",
+      "reason": "unincorporated area; not politically self-governing, outside the Gemeinde profile; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Direktionsbezirk Chemnitz",
+      "officialCode": "145",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Direktionsbezirk Dresden",
+      "officialCode": "146",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    },
+    {
+      "disposition": "excluded",
+      "name": "früher: Direktionsbezirk Leipzig",
+      "officialCode": "147",
+      "reason": "marked \"früher:\" by the source — former administrative unit retained for statistics; per-row excluded record, never an active node"
+    }
+  ]
+}

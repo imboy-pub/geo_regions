@@ -576,6 +576,42 @@
    "retrievedAt": "2026-11-17",
    "snapshotDate": "2026-11-17",
    "upstreamVersion": "ONS licensing page (Open Government Licence v3.0 footer evidence)"
+  },
+  {
+   "repository": "https://www.destatis.de/",
+   "upstreamPath": "DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV2QAktuell.xlsx",
+   "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV2QAktuell.xlsx?__blob=publicationFile&v=13",
+   "localPath": "sources/raw/official/de/AuszugGV2QAktuell.xlsx",
+   "sha256": "92e51ee097b1fea2f76a1c383c02d01ffa889975647d640b61c39845a1067174",
+   "sizeBytes": 1868818,
+   "license": "Dl-DE-BY-2.0-equivalent (in-artifact footer: \"Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellenangabe gestattet\" — Herausgebergemeinschaft Statistische Ämter des Bundes und der Länder)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-06-30",
+   "upstreamVersion": "Auszug aus dem Gemeindeverzeichnis, Quartalsausgabe 30.06.2026 (2. Quartal), Onlineprodukt_Gemeinden sheet — Gebietsstand am 30.06.2026"
+  },
+  {
+   "repository": "https://www.destatis.de/",
+   "upstreamPath": "DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
+   "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
+   "localPath": "sources/raw/official/de/gv-isys-landing-page.html",
+   "sha256": "4636973f3cb9ceec8666d9f0afe8bbbfb01a722a8a422c371693f30dcaf1d5ce",
+   "sizeBytes": 176206,
+   "license": "Dl-DE-BY-2.0-equivalent",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "GV-ISys landing page — publisher \"Statistische Ämter des Bundes und der Länder\", ARS/AGS definitions and quarterly edition list (30.06.2026 current quarterly)"
+  },
+  {
+   "repository": "https://www.destatis.de/",
+   "upstreamPath": "DE/Service/Impressum/impressum.html",
+   "url": "https://www.destatis.de/DE/Service/Impressum/impressum.html",
+   "localPath": "sources/raw/official/de/destatis-impressum.html",
+   "sha256": "39841e930fc7360475693b4c9d082cce58b18069fc1664548f252d545c11c8e6",
+   "sizeBytes": 86563,
+   "license": "Dl-DE-BY-2.0",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "Destatis Impressum — general copyright statement (reproduction/distribution with source attribution permitted) and Dl-DE-BY-2.0 naming for Destatis databases"
   }
  ],
  "derivedSources": [

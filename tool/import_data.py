@@ -20,6 +20,7 @@ from importers.jp import build as jp_build
 from importers.kr import build as kr_build
 from importers.us import build as us_build
 from importers.gb import build as gb_build
+from importers.de import build as de_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -451,6 +452,27 @@ def build(root):
                       'Rows without a unique match stay legacy with explicit unmapped records '
                       '— no heuristic re-parenting. The four constituent country nodes are '
                       'preserved.')))
+        if cc == 'DE':
+            de_nodes, de_migrations = de_build(root)
+            ids_now = {n['id'] for n in nodes}
+            preserved_states = [n for n in nodes if n['id'].startswith('iso3166-2:DE-')]
+            if len(preserved_states) != 16:
+                raise ValueError(f'DE Land crosswalk expected 16 legacy ids, found {len(preserved_states)}')
+            de_ids = ids_now | {n['id'] for n in de_nodes}
+            for n in de_nodes:
+                if n['parentId'] not in de_ids:
+                    raise ValueError(f'DE node parent missing: {n["id"]} → {n["parentId"]}')
+                nodes.append(n)
+            out['sources/migrations/DE.json'] = encoded(dict(
+                countryCode='DE', records=de_migrations,
+                note=('Additive batch: the 16 legacy Land ids stay untouched (no re-id, '
+                      'no rename, childrenStatus unchanged). RB-tier non-admin rows '
+                      '(NI Statistische Region, "früher:" RBs/Direktionsbezirke), BW '
+                      'planning Regionen and gemeindefreie Gebiete are per-row excluded '
+                      'records; the Gemeindeverband association layer (Satzart 50) is a '
+                      'whole-layer exclusion documented in the profile. Abolished-AGS '
+                      'routing with an explicit successor map is fixture-proven; the '
+                      'quarterly Gebietsstand snapshot carries no abolished rows.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -483,6 +505,14 @@ def build(root):
                             defaultNameSource='ONS LAD24NM English official names (en, source-native) for local authorities; constituent country nodes keep legacy CLDR names.')
             sources += ['sources/raw/official/gb/lad-dec2024-uk-buc-query.json',
                         'sources/raw/official/gb/ons-licensing.html']
+        if cc == 'DE':
+            coverage.update(profile='DE-Destatis-gemeindeverzeichnis-q2-2026',
+                            officialBaselineDate='2026-06-30',
+                            knownGap='The Gemeindeverband association layer (Satzart 50, 4,583 rows), BW planning Regionen, non-administrative RB-tier rows (NI Statistische Region, "früher:" RBs/Direktionsbezirke) and gemeindefreie Gebiete (196 rows) are outside the declared profile — per-row excluded records and the layer-level exclusion are in sources/migrations/DE.json and config/region_profiles/DE.json. Below Gemeinde is not in scope.',
+                            defaultNameSource='Destatis Gemeindeverzeichnis German official names, verbatim (de, source-native) for RB/Kreis/Gemeinde; the 16 Land nodes keep legacy CLDR names.')
+            sources += ['sources/raw/official/de/AuszugGV2QAktuell.xlsx',
+                        'sources/raw/official/de/gv-isys-landing-page.html',
+                        'sources/raw/official/de/destatis-impressum.html']
         if cc == 'US':
             coverage.update(profile='US-Census-gazetteer-counties-2025-vintage',
                             knownGap='place/MCD layers are outside the profile; county-equivalent records are included.',
@@ -568,6 +598,11 @@ def build(root):
                 names.update(gb_en_names)
                 quality.update({k: 'source-native' for k in gb_en_names})
                 refs.append('sources/raw/official/gb/lad-dec2024-uk-buc-query.json')
+            if cc == 'DE' and locale == 'de':
+                de_de_names = {n['id']: n['name'] for n in de_nodes}
+                names.update(de_de_names)
+                quality.update({k: 'source-native' for k in de_de_names})
+                refs.append('sources/raw/official/de/AuszugGV2QAktuell.xlsx')
 
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
@@ -684,7 +719,7 @@ def coverage_markdown(report):
               'KR':'CLDR17省级；不含市郡区 / 17 first-level subdivisions',
               'US':'CLDR57州、地区及领地条目；不含县市 / 57 source subdivisions, including territories',
               'GB':'CLDR constituent countries + reachable subdivisions',
-              'DE':'CLDR16州；不含市镇 / 16 states',
+              'DE':'Destatis官方：16州+19 Regierungsbezirk+401 Kreis/kreisfreie Stadt+10,747 Gemeinde / Destatis RB+Kreis+Gemeinde, Land ids preserved',
               'FR':'CLDR regions/overseas entries + reachable subdivisions',
               'IT':'CLDR regions + reachable subdivisions',
               'RU':'CLDR83条目；保留上游口径 / 83 entries in the pinned source profile',

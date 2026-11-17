@@ -81,9 +81,17 @@ void main() {
       );
       expect(store.writeLog.map((key) => key.countryCode), everyElement('JP'));
 
-      // JP provinces are unknown coverage: entering one shows the honest
-      // state, and the country root still confirms (PROTOCOL §8).
+      // Since the Phase 2 JP batch prefectures carry their official
+      // municipality children: entering Tokyo navigates into them, and a
+      // childless municipality is the honest unknown-coverage leaf whose
+      // confirm stays disabled (PROTOCOL §8).
       await tester.tap(find.byKey(const ValueKey('node-iso3166-2:JP-13')));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+        find.byKey(const ValueKey('node-jp-municipality:131016')),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('node-jp-municipality:131016')));
       await tester.pumpAndSettle();
       expect(find.byKey(const ValueKey('coverage-unknown')), findsOneWidget);
       expect(
@@ -95,6 +103,14 @@ void main() {
         isNull,
       );
 
+      // Back clears the ward and the Tokyo levels; the country root still
+      // confirms (PROTOCOL §8).
+      await tester.ensureVisible(find.byKey(const ValueKey('back-button')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('back-button')));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byKey(const ValueKey('back-button')));
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const ValueKey('back-button')));
       await tester.pumpAndSettle();
       await tester.ensureVisible(

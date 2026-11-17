@@ -579,12 +579,17 @@
       "countryCode": "DE",
       "kinds": {
         "country": 1,
+        "gemeinde": 10747,
+        "kreis": 293,
+        "kreisfreie-stadt": 107,
+        "regierungsbezirk": 19,
+        "regionalverband": 1,
         "subdivision": 16
       },
       "locales": {
         "ar": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -593,18 +598,18 @@
           "sourceUnconfirmed": 0
         },
         "de": {
-          "explicitNames": 17,
+          "explicitNames": 11184,
           "missingNames": 0,
           "projectReviewed": 0,
           "sourceApproved": 0,
-          "sourceNative": 0,
+          "sourceNative": 11167,
           "sourceProvisional": 16,
           "sourceQualified": 1,
           "sourceUnconfirmed": 0
         },
         "en": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 16,
           "sourceNative": 0,
@@ -614,7 +619,7 @@
         },
         "fr": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -624,7 +629,7 @@
         },
         "it": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -634,7 +639,7 @@
         },
         "ja": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -644,7 +649,7 @@
         },
         "ko": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -654,7 +659,7 @@
         },
         "ru": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -664,7 +669,7 @@
         },
         "zh-Hans": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -674,7 +679,7 @@
         },
         "zh-Hant": {
           "explicitNames": 17,
-          "missingNames": 0,
+          "missingNames": 11167,
           "projectReviewed": 0,
           "sourceApproved": 0,
           "sourceNative": 0,
@@ -683,9 +688,9 @@
           "sourceUnconfirmed": 0
         }
       },
-      "nodes": 17,
+      "nodes": 11184,
       "rootChildren": 16,
-      "subdivisionNodes": 16
+      "subdivisionNodes": 11183
     },
     {
       "countryCode": "FR",
@@ -1142,5 +1147,5 @@
   "localeCount": 10,
   "protocolVersion": "1.0",
   "status": "research-seed",
-  "totalNodes": 9558
+  "totalNodes": 20725
 }

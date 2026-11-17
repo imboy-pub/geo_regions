@@ -1,0 +1,16 @@
+{
+  "profile": "DE-official-gemeindeverzeichnis-q2-2026",
+  "officialCodeSystem": "Destatis Amtlicher Gemeindeschlüssel (AGS, 8 digits = Land 2 + RB 1 + Kreis 2 + Gemeinde 3) inside the 12-digit Amtlicher Regionalschlüssel (ARS = AGS + Gemeindeverband 4)",
+  "targetKinds": ["regierungsbezirk", "kreis", "kreisfreie-stadt", "regionalverband", "gemeinde"],
+  "excludedKinds": [
+    "gemeindeverband (Satzart 50, 4583 rows — inter-municipal association layer, not a profile tier; whole-layer exclusion like US place/MCD)",
+    "region (Satzart 30, 12 rows — BW planning Regionen between RB and Kreis; per-row excluded migration records)",
+    "non-administrative Regierungsbezirk-tier rows (10 rows — NI 'Statistische Region' and 'früher:' former RBs/Direktionsbezirke; per-row excluded migration records)",
+    "gemeindefreies Gebiet (Satzart 60 Textkennzeichen 65/66, 196 rows — unincorporated areas are not politically self-governing municipalities; per-row excluded migration records)"
+  ],
+  "sourceBaseline": "destatis-auszuggv2q-2026-06-30 (16,002 rows; 16 Land + 29 RB-tier + 12 Region + 401 Kreis + 4583 Gemeindeverband + 10943 Gemeinde-tier incl. 196 gemeindefrei)",
+  "parentRule": "Gemeinde→Kreis (AGS[:5]); Kreis→Regierungsbezirk for the four RB-Länder (NW/HE/BW/BY, fixed table 05/06/08/09) else directly to the Land node; Region layer is outside the profile; Land→country",
+  "idRule": "the 16 Land nodes preserve legacy iso3166-2:DE-XX ids (no re-id, no rename); RB = de-regbez:{ARS[:3]}; Kreis = de-kreis:{ARS[:5]}; Gemeinde = de-gemeinde:{AGS 8 digits}. Kreisfreie Städte appear at both tiers exactly as the official register lists them (Satzart 40 Textkennzeichen 41/42 + Satzart 60 Textkennzeichen 61/62)",
+  "nameRule": "official German names verbatim from the Gemeindename column, including statutory suffixes like 'Flensburg, Stadt' or 'Tüßling, M' (nameLocale=de, nameQuality=source-native); no suffix stripping, no renaming",
+  "abolishedRule": "the quarterly edition is a Gebietsstand snapshot and contains no abolished rows; the adapter still supports abolished AGS rows with an explicit successor map (fixture-proven): old AGS never becomes an active node and the migration record carries de-gemeinde:{successor} as its newId — never a name-guess"
+}

@@ -88,14 +88,17 @@ void childrenCoverageGroup() {
 
     test('unknown coverage is never a verified leaf', () {
       final index = GeoRegionIndex.single(loadStructure('JP'));
-      expect(index.children('iso3166-2:JP-13'), isEmpty);
-      expect(index.hasDeclaredChildren('iso3166-2:JP-13'), isFalse);
+      // A profile leaf with no children: the Phase 2 official batches gave
+      // prefectures their municipality children, so the childless unknown
+      // sample is a municipality (Tokyo ward) instead of a prefecture.
+      expect(index.children('jp-municipality:131016'), isEmpty);
+      expect(index.hasDeclaredChildren('jp-municipality:131016'), isFalse);
       expect(
-        index.coverageStatus('iso3166-2:JP-13'),
+        index.coverageStatus('jp-municipality:131016'),
         GeoChildrenStatus.unknown,
       );
       expect(
-        () => index.requireKnownCoverage('iso3166-2:JP-13'),
+        () => index.requireKnownCoverage('jp-municipality:131016'),
         throwsA(
           isA<GeoUnknownCoverageError>().having(
             (error) => error.message,

@@ -8,7 +8,7 @@
 
 ## 实际覆盖 / Actual coverage
 
-共 10 个国家数据分片、10 种语言、9,558 个节点（包括国家根节点）。
+共 10 个国家数据分片、10 种语言、20,725 个节点（包括国家根节点）。
 
 Each of the ten small country-name packs has all ten catalog names. Region-name packs are sparse and carry per-ID upstream quality metadata.
 
@@ -19,7 +19,7 @@ Each of the ten small country-name packs has all ten catalog names. Region-name 
 | KR | 287 | 18 | CLDR17省级；不含市郡区 / 17 first-level subdivisions |
 | US | 3,280 | 57 | CLDR57州、地区及领地条目；不含县市 / 57 source subdivisions, including territories |
 | GB | 404 | 4 | CLDR constituent countries + reachable subdivisions |
-| DE | 17 | 16 | CLDR16州；不含市镇 / 16 states |
+| DE | 11,184 | 16 | Destatis官方：16州+19 Regierungsbezirk+401 Kreis/kreisfreie Stadt+10,747 Gemeinde / Destatis RB+Kreis+Gemeinde, Land ids preserved |
 | FR | 125 | 26 | CLDR regions/overseas entries + reachable subdivisions |
 | IT | 127 | 20 | CLDR regions + reachable subdivisions |
 | RU | 84 | 83 | CLDR83条目；保留上游口径 / 83 entries in the pinned source profile |
@@ -38,7 +38,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 | KR | 18/287 | 18/287 | 18/287 | 18/287 | 287/287 | 18/287 | 18/287 | 18/287 | 18/287 | 18/287 |
 | US | 58/3280 | 58/3280 | 3280/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 |
 | GB | 43/404 | 43/404 | 404/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 |
-| DE | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 | 17/17 |
+| DE | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 11184/11184 | 17/11184 | 17/11184 | 17/11184 |
 | FR | 124/125 | 124/125 | 125/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 |
 | IT | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 |
 | RU | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 |
@@ -48,16 +48,16 @@ Cells count explicit source names / total nodes, including the country root. Pre
 
 | Locale | Explicit | Approved in XML | JSON-qualified / contributed | Provisional | Unconfirmed | Source-native | Missing | Project reviewed |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| zh-Hans | 3963 | 3 | 24 | 507 | 0 | 3429 | 5595 | 0 |
-| zh-Hant | 3963 | 3 | 150 | 3810 | 0 | 0 | 5595 | 0 |
-| en | 7327 | 555 | 10 | 3179 | 0 | 3583 | 2231 | 0 |
-| ja | 5481 | 3 | 30 | 3706 | 0 | 1742 | 4077 | 0 |
-| ko | 4004 | 3 | 24 | 3708 | 0 | 269 | 5554 | 0 |
-| ru | 3730 | 3 | 25 | 3702 | 0 | 0 | 5828 | 0 |
-| de | 3736 | 3 | 24 | 3709 | 0 | 0 | 5822 | 0 |
-| fr | 3720 | 3 | 24 | 3693 | 0 | 0 | 5838 | 0 |
-| it | 3718 | 3 | 24 | 3691 | 0 | 0 | 5840 | 0 |
-| ar | 3740 | 3 | 24 | 3713 | 0 | 0 | 5818 | 0 |
+| zh-Hans | 3963 | 3 | 24 | 507 | 0 | 3429 | 16762 | 0 |
+| zh-Hant | 3963 | 3 | 150 | 3810 | 0 | 0 | 16762 | 0 |
+| en | 7327 | 555 | 10 | 3179 | 0 | 3583 | 13398 | 0 |
+| ja | 5481 | 3 | 30 | 3706 | 0 | 1742 | 15244 | 0 |
+| ko | 4004 | 3 | 24 | 3708 | 0 | 269 | 16721 | 0 |
+| ru | 3730 | 3 | 25 | 3702 | 0 | 0 | 16995 | 0 |
+| de | 14903 | 3 | 24 | 3709 | 0 | 11167 | 5822 | 0 |
+| fr | 3720 | 3 | 24 | 3693 | 0 | 0 | 17005 | 0 |
+| it | 3718 | 3 | 24 | 3691 | 0 | 0 | 17007 | 0 |
+| ar | 3740 | 3 | 24 | 3713 | 0 | 0 | 16985 | 0 |
 
 ### 质量字段的准确含义 / Exact quality semantics
 
