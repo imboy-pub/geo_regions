@@ -394,5 +394,142 @@ class DeAdapterTests(unittest.TestCase):
         self.assertTrue(all(r.name_locale == 'de' for r in rows))
 
 
+class FrAdapterTests(unittest.TestCase):
+    """tool.importers.fr — fixture-level adapter behaviour."""
+
+    FR_FIXTURE = REPO / 'tests/fixtures/official/fr/nodes.csv'
+
+    def _rows(self):
+        from tool.importers.common import SourceNode
+        rows = []
+        for r in load_rows(self.FR_FIXTURE):
+            rows.append(SourceNode(
+                official_code=r['official_code'], parent_code=r['parent_code'],
+                kind=r['kind'], name=r['name'], name_locale=r['name_locale'],
+                name_quality=r['name_quality'], children_status=r['children_status'],
+                abolished=r['abolished'] == 'true'))
+        return rows
+
+    def test_region_department_commune_ids_and_parents(self):
+        from tool.importers.fr import build_nodes
+        active, migrations, unmapped = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['fr-region:84']['parentId'], 'cc:FR')
+        self.assertEqual(by_id['fr-department:01']['parentId'], 'fr-region:84')
+        self.assertEqual(by_id['fr-commune:01001']['parentId'], 'fr-department:01')
+        # DROM: department 971 parents the region 01 (both INSEE tiers)
+        self.assertEqual(by_id['fr-department:971']['parentId'], 'fr-region:01')
+        self.assertEqual(by_id['fr-commune:97101']['parentId'], 'fr-department:971')
+        # overseas collectivité carries no department tier
+        self.assertEqual(by_id['fr-region:975']['kind'], 'collectivite-outremer')
+        self.assertEqual(by_id['fr-region:975']['parentId'], 'cc:FR')
+        self.assertEqual(by_id['fr-commune:97501']['parentId'], 'fr-region:975')
+
+    def test_merged_commune_routes_with_comparent_successor(self):
+        from tool.importers.fr import build_nodes
+        active, migrations, unmapped = build_nodes(self._rows())
+        ids = {n['id'] for n in active}
+        # déléguée Arbignieu: the commune nouvelle Arboys en Bugey reuses the
+        # same INSEE code — the déléguée never becomes an active node
+        self.assertIn('fr-commune:01015', ids)
+        rec = next(m for m in migrations if m['officialCode'] == '01015')
+        self.assertEqual(rec['disposition'], 'absorbed')
+        self.assertEqual(rec['newId'], 'fr-commune:01015')
+        rec2 = next(m for m in migrations if m['officialCode'] == '01120')
+        self.assertEqual(rec2['disposition'], 'absorbed')
+        self.assertEqual(rec2['newId'], 'fr-commune:01262')
+
+    def test_arm_routes_excluded_never_active(self):
+        from tool.importers.fr import build_nodes
+        active, migrations, unmapped = build_nodes(self._rows())
+        ids = {n['id'] for n in active}
+        self.assertNotIn('fr-commune:13201', ids)
+        rec = next(m for m in migrations if m['officialCode'] == '13201')
+        self.assertEqual(rec['disposition'], 'excluded')
+        self.assertIn('arrondissement', rec['reason'])
+
+    def test_validate_draft_accepts_fr_draft(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.fr import (build_nodes, identity_keys,
+                                       parent_identity_key)
+        active, migrations, unmapped = build_nodes(self._rows())
+        # shipped draft = active SourceNode rows only (absorbed COMD/COMA rows
+        # route to migrations and never enter the draft — the COG reuses the
+        # seat code for the commune nouvelle, so a shared code with an active
+        # row is expected, not an error)
+        draft_rows = [r for r in self._rows() if not r.abolished]
+        draft = CountryDraft(nodes=draft_rows, migrations=migrations)
+        self.assertIsNone(validate_draft(draft, identity=identity_keys,
+                                         parent_identity=parent_identity_key))
+
+    def test_validate_draft_tier_aware_keys_still_catch_duplicates(self):
+        from tool.importers.common import CountryDraft, validate_draft
+        from tool.importers.fr import identity_keys
+        rows = self._rows()
+        twin = type(rows[3])(**{**rows[3].__dict__, 'parent_code': '84'})
+        draft = CountryDraft(nodes=rows + [twin], migrations=[])
+        err = validate_draft(draft, identity=identity_keys)
+        self.assertIsNotNone(err)
+        self.assertIn('duplicate official code', err)
+
+    def test_legacy_crosswalk_reids_iso_nodes(self):
+        from tool.importers.fr import build_nodes
+        legacy = [
+            {'id': 'iso3166-2:FR-ARA', 'parentId': 'cc:FR', 'name': 'Auvergne-Rhône-Alpes'},
+            {'id': 'iso3166-2:FR-01', 'parentId': 'iso3166-2:FR-ARA', 'name': 'Ain'},
+            {'id': 'iso3166-2:FR-971', 'parentId': 'cc:FR', 'name': 'Guadeloupe'},
+            {'id': 'iso3166-2:FR-BL', 'parentId': 'cc:FR', 'name': 'St. Barthélemy'},
+            {'id': 'iso3166-2:FR-75C', 'parentId': 'cc:FR', 'name': 'Paris'},
+            {'id': 'iso3166-2:FR-6AE', 'parentId': 'cc:FR', 'name': 'Rhône'},
+            {'id': 'iso3166-2:FR-69M', 'parentId': 'cc:FR', 'name': 'Métropole de Lyon'},
+            {'id': 'iso3166-2:FR-XX9', 'parentId': 'cc:FR', 'name': 'Unknown unit'},
+        ]
+        active, migrations, unmapped = build_nodes(self._rows(), legacy)
+        by_id = {n['id'] for n in active}
+        reid = {m['oldId']: m for m in migrations if m.get('oldId')}
+        self.assertNotIn('iso3166-2:FR-ARA', by_id)
+        self.assertIn('fr-region:84', by_id)
+        self.assertEqual(reid['iso3166-2:FR-ARA']['newId'], 'fr-region:84')
+        self.assertEqual(reid['iso3166-2:FR-01']['newId'], 'fr-department:01')
+        self.assertEqual(reid['iso3166-2:FR-971']['newId'], 'fr-department:971')
+        self.assertEqual(reid['iso3166-2:FR-BL']['newId'], 'fr-region:977')
+        self.assertEqual(reid['iso3166-2:FR-75C']['newId'], 'fr-commune:75056')
+        self.assertEqual(reid['iso3166-2:FR-6AE']['newId'], 'fr-department:69')
+        self.assertEqual(reid['iso3166-2:FR-ARA']['method'], 'official-iso-insee-crosswalk')
+        self.assertTrue(any(u['oldId'] == 'iso3166-2:FR-69M' for u in unmapped))
+        self.assertTrue(any(u['oldId'] == 'iso3166-2:FR-XX9' for u in unmapped))
+        # unmapped legacy nodes are kept, not silently dropped
+        self.assertTrue(all(m.get('disposition') != 'unmapped' for m in migrations))
+
+    def test_parse_official_cog_shape(self):
+        from tool.importers.fr import parse_official_files
+        rows = parse_official_files(REPO / 'sources/raw/official/fr')
+        by_kind = {}
+        for r in rows:
+            by_kind.setdefault(r.kind, []).append(r)
+        self.assertEqual(len(by_kind['region']), 18)
+        self.assertEqual(len(by_kind['department']), 101)
+        self.assertEqual(len(by_kind['commune']), 34960)   # 34,875 + 85 overseas COM
+        self.assertEqual(len(by_kind['collectivite-outremer']), 9)
+        self.assertEqual(len(by_kind['commune-deleguee']), 2105)
+        self.assertEqual(len(by_kind['commune-associee']), 471)
+        self.assertEqual(len(by_kind['arrondissement-municipal']), 45)
+        zonage = len(by_kind.get('overseas-district', [])) \
+            + len(by_kind.get('overseas-circonscription', [])) \
+            + len(by_kind.get('overseas-condominium', [])) \
+            + len(by_kind.get('overseas-territory', []))
+        self.assertEqual(zonage, 10)
+        self.assertEqual(len(rows), 18 + 101 + 34960 + 9 + 2105 + 471 + 45 + 10)
+        self.assertTrue(all(r.name_locale == 'fr' for r in rows))
+        # absorbed rows are marked abolished; active tiers are not
+        self.assertTrue(all(r.abolished for r in by_kind['commune-deleguee']))
+        self.assertTrue(all(r.abolished for r in by_kind['commune-associee']))
+        self.assertFalse(any(r.abolished for r in by_kind['commune']))
+        # names verbatim with article
+        ain = next(r for r in by_kind['department'] if r.official_code == '01')
+        self.assertEqual(ain.name, 'Ain')
+        self.assertEqual(ain.parent_code, '84')
+
+
 if __name__ == '__main__':
     unittest.main()

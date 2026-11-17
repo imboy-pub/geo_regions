@@ -21,6 +21,7 @@ from importers.kr import build as kr_build
 from importers.us import build as us_build
 from importers.gb import build as gb_build
 from importers.de import build as de_build
+from importers.fr import build as fr_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -473,6 +474,37 @@ def build(root):
                       'whole-layer exclusion documented in the profile. Abolished-AGS '
                       'routing with an explicit successor map is fixture-proven; the '
                       'quarterly Gebietsstand snapshot carries no abolished rows.')))
+        if cc == 'FR':
+            legacy_fr = [n for n in nodes
+                         if str(n.get('id') or '').startswith('iso3166-2:FR-')]
+            fr_nodes, fr_migrations, fr_unmapped = fr_build(root, legacy_fr)
+            migrated_old = {m['oldId'] for m in fr_migrations if m.get('oldId')}
+            reid_map = {m['oldId']: m['newId'] for m in fr_migrations if m.get('oldId')}
+            nodes = [n for n in nodes if n['id'] not in migrated_old]
+            # an unmapped legacy node whose parent was re-ided is re-parented
+            # to the mapped successor (explicit parent change, recorded in its
+            # unmapped record as reParentedTo)
+            for n in nodes:
+                if (n['id'].startswith('iso3166-2:FR-')
+                        and str(n.get('parentId') or '') in migrated_old):
+                    n['parentId'] = reid_map[n['parentId']]
+            ids_now = {n['id'] for n in nodes}
+            fr_ids = ids_now | {n['id'] for n in fr_nodes}
+            for n in fr_nodes:
+                if n['parentId'] not in fr_ids:
+                    raise ValueError(f'FR node parent missing: {n["id"]} → {n["parentId"]}')
+                nodes.append(n)
+            out['sources/migrations/FR.json'] = encoded(dict(
+                countryCode='FR', reIds=fr_migrations, unmapped=fr_unmapped,
+                note=('Legacy ISO subdivision nodes are re-ided to fr-region/fr-department/'
+                      'fr-commune ids through the fixed official ISO↔INSEE correspondence '
+                      '(method recorded per row); FR-69M (Métropole de Lyon, CTCD tier) has '
+                      'no profile counterpart and stays legacy with an unmapped record. '
+                      'COMD/COMA absorbed communes carry the COMPARENT successor (commune '
+                      'nouvelle codes may reuse the seat code); ARM and non-COM overseas '
+                      'zonages are per-row excluded records. Per the plan name rule no '
+                      'legacy names are inherited on re-id — new ids carry source-native '
+                      'French names and other locales stay missing.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -513,6 +545,18 @@ def build(root):
             sources += ['sources/raw/official/de/AuszugGV2QAktuell.xlsx',
                         'sources/raw/official/de/gv-isys-landing-page.html',
                         'sources/raw/official/de/destatis-impressum.html']
+        if cc == 'FR':
+            coverage.update(profile='FR-INSEE-cog-2026',
+                            officialBaselineDate='2026-01-01',
+                            knownGap='CTCD competence-body layer (incl. the Métropole de Lyon FR-69M legacy node), arrondissements municipaux, absorbed COMD/COMA communes and non-COM overseas zonages are outside the declared profile — records in sources/migrations/FR.json and config/region_profiles/FR.json. Below commune is not in scope.',
+                            defaultNameSource='INSEE COG 2026 French official names, verbatim (fr, source-native); per the plan name rule legacy CLDR names are not inherited on re-id, so other locales stay missing on the new ids.')
+            sources += ['sources/raw/official/fr/v_region_2026.csv',
+                        'sources/raw/official/fr/v_departement_2026.csv',
+                        'sources/raw/official/fr/v_commune_2026.csv',
+                        'sources/raw/official/fr/v_tom_depuis_1943.csv',
+                        'sources/raw/official/fr/v_commune_outremer_depuis_1943.csv',
+                        'sources/raw/official/fr/cog2026.html',
+                        'sources/raw/official/fr/datagouv_cog_insee.json']
         if cc == 'US':
             coverage.update(profile='US-Census-gazetteer-counties-2025-vintage',
                             knownGap='place/MCD layers are outside the profile; county-equivalent records are included.',
@@ -603,6 +647,12 @@ def build(root):
                 names.update(de_de_names)
                 quality.update({k: 'source-native' for k in de_de_names})
                 refs.append('sources/raw/official/de/AuszugGV2QAktuell.xlsx')
+            if cc == 'FR' and locale == 'fr':
+                fr_fr_names = {n['id']: n['name'] for n in fr_nodes}
+                names.update(fr_fr_names)
+                quality.update({k: 'source-native' for k in fr_fr_names})
+                refs += ['sources/raw/official/fr/v_commune_2026.csv',
+                         'sources/raw/official/fr/v_commune_outremer_depuis_1943.csv']
 
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
@@ -646,11 +696,11 @@ def build(root):
                 names.update(ai_overlay)
                 quality.update({k: 'provisional' for k in ai_overlay})
                 refs.append(AI_TRANSLATIONS)
-            if cc == 'GB':
+            if cc in ('GB', 'FR'):
                 # re-ided rows retire the legacy ids across every locale pack
                 # and every overlay (CLDR, s2t, wikidata, ai) — popped last so
                 # overlays cannot resurrect retired ids
-                for m in gb_migrations:
+                for m in (gb_migrations if cc == 'GB' else fr_migrations):
                     if m.get('oldId'):
                         names.pop(m['oldId'], None)
                         quality.pop(m['oldId'], None)
@@ -720,7 +770,7 @@ def coverage_markdown(report):
               'US':'CLDR57州、地区及领地条目；不含县市 / 57 source subdivisions, including territories',
               'GB':'CLDR constituent countries + reachable subdivisions',
               'DE':'Destatis官方：16州+19 Regierungsbezirk+401 Kreis/kreisfreie Stadt+10,747 Gemeinde / Destatis RB+Kreis+Gemeinde, Land ids preserved',
-              'FR':'CLDR regions/overseas entries + reachable subdivisions',
+              'FR':'INSEE COG 2026官方：18 region+101 department+34,960 commune+9 海外集体 / INSEE COG region+department+commune with overseas collectivities',
               'IT':'CLDR regions + reachable subdivisions',
               'RU':'CLDR83条目；保留上游口径 / 83 entries in the pinned source profile',
               'SA':'CLDR13行政区；不含城市 / 13 regions'}

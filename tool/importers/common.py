@@ -55,41 +55,58 @@ def load_fixture_csv(path) -> list[SourceNode]:
     return rows
 
 
-def validate_draft(draft: CountryDraft) -> str | None:
+def validate_draft(draft: CountryDraft, identity=None, parent_identity=None) -> str | None:
     """Return None when the draft is structurally sound, else the error text.
 
     Checks per the design doc: duplicate official codes, missing parents,
     parent cycles, cross-country parents, and abolished rows never entering
     the active node set.
+
+    identity(node) -> hashable overrides the duplicate/cycle key (default:
+    the bare official_code). parent_identity(node) -> hashable overrides the
+    parent lookup key (default: the bare parent_code). National registries
+    that legally reuse the same number across tiers (INSEE region 01
+    Guadeloupe vs department 01 Ain; ISTAT likewise) need tier-aware keys;
+    the default keeps every pre-existing behaviour byte-identical.
     """
     active = [n for n in draft.nodes if not n.abolished]
     by_code = {}
     for n in active:
-        if n.official_code in by_code:
-            return f"duplicate official code: {n.official_code}"
-        by_code[n.official_code] = n
+        key = identity(n) if identity else n.official_code
+        if key in by_code:
+            return f"duplicate official code: {key}"
+        by_code[key] = n
     for n in active:
-        if n.parent_code:
-            if n.parent_code == n.official_code:
-                return f"parent cycle at {n.official_code}"
-            if n.parent_code not in by_code:
-                return f"missing parent {n.parent_code} for {n.official_code}"
+        pkey = parent_identity(n) if parent_identity else n.parent_code
+        if pkey:
+            selfkey = identity(n) if identity else n.official_code
+            if pkey == selfkey:
+                return f"parent cycle at {selfkey}"
+            if pkey not in by_code:
+                return f"missing parent {pkey} for {selfkey}"
     # cycle check beyond self-parent: walk up with a visit budget
     for n in active:
         seen = set()
         cur = n
-        while cur.parent_code:
-            if cur.official_code in seen:
-                return f"parent cycle at {n.official_code}"
-            seen.add(cur.official_code)
-            nxt = by_code.get(cur.parent_code)
+        while True:
+            selfkey = identity(cur) if identity else cur.official_code
+            pkey = parent_identity(cur) if parent_identity else cur.parent_code
+            if not pkey:
+                break
+            if selfkey in seen:
+                return f"parent cycle at {selfkey}"
+            seen.add(selfkey)
+            nxt = by_code.get(pkey)
             if nxt is None:
                 break
             cur = nxt
     for n in draft.nodes:
         if n.abolished:
             # must not appear as an active node row
-            actives_with_code = [a for a in active if a.official_code == n.official_code]
+            nkey = identity(n) if identity else n.official_code
+            actives_with_code = [
+                a for a in active
+                if (identity(a) if identity else a.official_code) == nkey]
             if actives_with_code:
-                return f"abolished code {n.official_code} also present as active"
+                return f"abolished code {nkey} also present as active"
     return None

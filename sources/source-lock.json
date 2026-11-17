@@ -612,6 +612,90 @@
    "retrievedAt": "2026-11-17",
    "snapshotDate": "2026-11-17",
    "upstreamVersion": "Destatis Impressum — general copyright statement (reproduction/distribution with source attribution permitted) and Dl-DE-BY-2.0 naming for Destatis databases"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "8740222/v_region_2026.csv",
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_region_2026.csv",
+   "localPath": "sources/raw/official/fr/v_region_2026.csv",
+   "sha256": "d903566d9c0d263389d279baea6761917b7460749a07bec8ba37dd8f2ff7d98a",
+   "sizeBytes": 1245,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "COG 2026 — v_region (18 régions: 13 métropole incl. 94 Corse + 5 DROM 01/02/03/04/06)"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "8740222/v_departement_2026.csv",
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_departement_2026.csv",
+   "localPath": "sources/raw/official/fr/v_departement_2026.csv",
+   "sha256": "513900ca23edc682ef9b912d7bfc317129eac3a7d71ff19bc22b40ea4838e6eb",
+   "sizeBytes": 6076,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "COG 2026 — v_departement (101 départements: 96 métropole incl. 2A/2B + 971/972/973/974/976)"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "8740222/v_commune_2026.csv",
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_commune_2026.csv",
+   "localPath": "sources/raw/official/fr/v_commune_2026.csv",
+   "sha256": "7be1153de3a63df48fa0ca77f8490c8a0c5c9c4eb12f5cec1ca7f70b0237b1d3",
+   "sizeBytes": 3565935,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "COG 2026 — v_commune (37,496 rows: 34,875 COM incl. 129 DROM + 2,105 COMD + 471 COMA + 45 ARM; COMPARENT carries the commune nouvelle code)"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "8740222/v_tom_depuis_1943.csv",
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_tom_depuis_1943.csv",
+   "localPath": "sources/raw/official/fr/v_tom_depuis_1943.csv",
+   "sha256": "6814a3ddedfa186557f5f7a10ff0f4c521f72fd388bdd430318d3d0d59b426bd",
+   "sizeBytes": 5795,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "COG 2026 edition — v_tom_depuis_1943 (61 rows; 9 current collectivités/territoires 975/977/978/981/984/986/987/988/989 filtered by DATE_FIN)"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "8740222/v_commune_outremer_depuis_1943.csv",
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_commune_outremer_depuis_1943.csv",
+   "localPath": "sources/raw/official/fr/v_commune_outremer_depuis_1943.csv",
+   "sha256": "d2e2d3b376540d5c5e624e1cdf3d6a1959f6f24d6763268eec67883fe82ce748",
+   "sizeBytes": 71020,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-01-01",
+   "upstreamVersion": "COG 2026 edition — v_commune_outremer_depuis_1943 (830 rows; 95 current overseas zonages filtered by DATE_FIN, 85 nature COM)"
+  },
+  {
+   "repository": "https://www.insee.fr/",
+   "upstreamPath": "fr/information/8740222",
+   "url": "https://www.insee.fr/fr/information/8740222",
+   "localPath": "sources/raw/official/fr/cog2026.html",
+   "sha256": "5ca7fb43deff15edbdc4b384a41b70fb8f50f4ad7ece3ab4006528c93260e792",
+   "sizeBytes": 157153,
+   "license": "fr-lo (Licence Ouverte / Open Licence 2.0 — Etalab; INSEE publisher record on data.gouv.fr id 58c984b088ee386cdb1261f3)",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "COG 2026 file download page — edition listing, last update 2026-02-24 (provenance)"
+  },
+  {
+   "repository": "https://www.data.gouv.fr/",
+   "upstreamPath": "data.gouv.fr/api/2/datasets/code-officiel-geographique-1/",
+   "url": "https://www.data.gouv.fr/api/2/datasets/code-officiel-geographique-1/",
+   "localPath": "sources/raw/official/fr/datagouv_cog_insee.json",
+   "sha256": "711a73f3d711c3b9e7928903facfe1997d75067cfc8abed5558db76c0d09a358",
+   "sizeBytes": 8457,
+   "license": "fr-lo",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "data.gouv.fr machine-readable licence record for the INSEE-published COG dataset (license fr-lo = Licence Ouverte / Open Licence 2.0), last_update 2026-11-07"
   }
  ],
  "derivedSources": [

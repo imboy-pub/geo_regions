@@ -1,0 +1,16 @@
+{
+  "profile": "FR-official-cog-2026",
+  "officialCodeSystem": "INSEE Code officiel géographique 2026 (situation au 1er janvier 2026): REG 2-digit region, DEP 2/3-digit department, COM 5-digit commune; overseas collectivities 975/977/978/981/984/986/987/988/989 carry no department tier",
+  "targetKinds": ["region", "department", "commune", "collectivite-outremer"],
+  "excludedKinds": [
+    "CTCD (collectivité territoriale à compétences départementales — competence body layer, whole-layer exclusion like US place/MCD; Métropole de Lyon FR-69M legacy node belongs to this tier and stays legacy with an unmapped record)",
+    "arrondissement municipal (45 ARM rows of Paris/Lyon/Marseille — sub-commune administrative units, per-row excluded migration records)",
+    "commune déléguée / commune associée (2,105 COMD + 471 COMA rows — former communes merged into commune nouvelles; per-row absorbed migration records carrying the COMPARENT successor)",
+    "overseas non-commune zonages (10 rows — TAAF districts DIS ×5, Wallis circonscriptions CIR ×3, condominium CDM ×1, Clipperton CPT ×1; per-row excluded migration records)"
+  ],
+  "sourceBaseline": "insee-cog-2026 (v_region 18 + v_departement 101 + v_commune 37,496 + current overseas: 9 collectivités + 85 nature-COM communes from the depuis-1943 files)",
+  "parentRule": "commune→department (DEP column) for métropole and DROM; overseas nature-COM communes→collectivité (3-digit prefix, no department tier); department→region (REG column); region/collectivité→country",
+  "idRule": "fr-region:{REG} container id with precise kind (collectivité d'outre-mer shares the fr-region: prefix at the container tier); fr-department:{DEP}; fr-commune:{COM}. Legacy ISO nodes map through a fixed official ISO↔INSEE correspondence table (12 regions + FR-20R→94, 96 métropole departments incl. FR-6AE→69 and FR-2A/2B, FR-75C→fr-commune:75056 Paris, 5 DROM departments, 8 overseas collectivities incl. FR-CP→989 La Passion-Clipperton): re-id with a per-row migration record (method official-iso-insee-crosswalk, never name-guessed). FR-69M (Métropole de Lyon, CTCD tier) has no profile counterpart and stays legacy with an unmapped record",
+  "nameRule": "official French names verbatim from the COG LIBELLE column (nameLocale=fr, nameQuality=source-native); no inheritance of legacy names on re-id per the plan name rule — new ids start with source-native French names and other locales stay missing (sparse packs)",
+  "mergedCommuneRule": "the COG carries the real successor: COMD/COMA rows carry COMPARENT (the commune nouvelle code, which often REUSES the seat commune's code — e.g. 01015 Arbignieu déléguée → 01015 Arboys en Bugey commune nouvelle; the code now denotes the commune nouvelle). Merged rows never become active nodes; the migration record carries newId=fr-commune:{COMPARENT}"
+}

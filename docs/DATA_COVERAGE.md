@@ -8,7 +8,7 @@
 
 ## 实际覆盖 / Actual coverage
 
-共 10 个国家数据分片、10 种语言、20,725 个节点（包括国家根节点）。
+共 10 个国家数据分片、10 种语言、55,690 个节点（包括国家根节点）。
 
 Each of the ten small country-name packs has all ten catalog names. Region-name packs are sparse and carry per-ID upstream quality metadata.
 
@@ -20,7 +20,7 @@ Each of the ten small country-name packs has all ten catalog names. Region-name 
 | US | 3,280 | 57 | CLDR57州、地区及领地条目；不含县市 / 57 source subdivisions, including territories |
 | GB | 404 | 4 | CLDR constituent countries + reachable subdivisions |
 | DE | 11,184 | 16 | Destatis官方：16州+19 Regierungsbezirk+401 Kreis/kreisfreie Stadt+10,747 Gemeinde / Destatis RB+Kreis+Gemeinde, Land ids preserved |
-| FR | 125 | 26 | CLDR regions/overseas entries + reachable subdivisions |
+| FR | 35,090 | 27 | INSEE COG 2026官方：18 region+101 department+34,960 commune+9 海外集体 / INSEE COG region+department+commune with overseas collectivities |
 | IT | 127 | 20 | CLDR regions + reachable subdivisions |
 | RU | 84 | 83 | CLDR83条目；保留上游口径 / 83 entries in the pinned source profile |
 | SA | 14 | 13 | CLDR13行政区；不含城市 / 13 regions |
@@ -39,7 +39,7 @@ Cells count explicit source names / total nodes, including the country root. Pre
 | US | 58/3280 | 58/3280 | 3280/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 | 58/3280 |
 | GB | 43/404 | 43/404 | 404/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 | 43/404 |
 | DE | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 17/11184 | 11184/11184 | 17/11184 | 17/11184 | 17/11184 |
-| FR | 124/125 | 124/125 | 125/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 | 124/125 |
+| FR | 1/35090 | 1/35090 | 2/35090 | 1/35090 | 1/35090 | 1/35090 | 1/35090 | 35089/35090 | 1/35090 | 1/35090 |
 | IT | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 | 127/127 |
 | RU | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 | 84/84 |
 | SA | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 | 14/14 |
@@ -48,16 +48,16 @@ Cells count explicit source names / total nodes, including the country root. Pre
 
 | Locale | Explicit | Approved in XML | JSON-qualified / contributed | Provisional | Unconfirmed | Source-native | Missing | Project reviewed |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| zh-Hans | 3963 | 3 | 24 | 507 | 0 | 3429 | 16762 | 0 |
-| zh-Hant | 3963 | 3 | 150 | 3810 | 0 | 0 | 16762 | 0 |
-| en | 7327 | 555 | 10 | 3179 | 0 | 3583 | 13398 | 0 |
-| ja | 5481 | 3 | 30 | 3706 | 0 | 1742 | 15244 | 0 |
-| ko | 4004 | 3 | 24 | 3708 | 0 | 269 | 16721 | 0 |
-| ru | 3730 | 3 | 25 | 3702 | 0 | 0 | 16995 | 0 |
-| de | 14903 | 3 | 24 | 3709 | 0 | 11167 | 5822 | 0 |
-| fr | 3720 | 3 | 24 | 3693 | 0 | 0 | 17005 | 0 |
-| it | 3718 | 3 | 24 | 3691 | 0 | 0 | 17007 | 0 |
-| ar | 3740 | 3 | 24 | 3713 | 0 | 0 | 16985 | 0 |
+| zh-Hans | 3840 | 3 | 16 | 392 | 0 | 3429 | 51850 | 0 |
+| zh-Hant | 3840 | 3 | 142 | 3695 | 0 | 0 | 51850 | 0 |
+| en | 7204 | 432 | 10 | 3179 | 0 | 3583 | 48486 | 0 |
+| ja | 5358 | 3 | 22 | 3591 | 0 | 1742 | 50332 | 0 |
+| ko | 3881 | 3 | 16 | 3593 | 0 | 269 | 51809 | 0 |
+| ru | 3607 | 3 | 17 | 3587 | 0 | 0 | 52083 | 0 |
+| de | 14780 | 3 | 16 | 3594 | 0 | 11167 | 40910 | 0 |
+| fr | 38685 | 3 | 16 | 3578 | 0 | 35088 | 17005 | 0 |
+| it | 3595 | 3 | 16 | 3576 | 0 | 0 | 52095 | 0 |
+| ar | 3617 | 3 | 16 | 3598 | 0 | 0 | 52073 | 0 |
 
 ### 质量字段的准确含义 / Exact quality semantics
 
