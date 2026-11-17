@@ -2,10 +2,12 @@
   "countryCode": "KR",
   "coverage": {
     "cldrRelease": "49.0.0",
-    "defaultNameSource": "CLDR English XML; node nameLocale/nameQuality preserve language and quality. Missing English names use code with identifier quality.",
+    "defaultNameSource": "MOIS listing Korean official names (ko, source-native) for municipalities; legacy CLDR English names preserved on metropolitan nodes.",
+    "knownGap": "읍면동/리 sub-level and 출장소 branch offices are outside the profile. 광주·전남 integration (2026-07-01) recorded via sources/migrations/KR.json: iso3166-2:KR-29/KR-46 are replaced in current administration by kr-municipality:1200000000 (전남광주통합특별시); their nodes stay with childrenStatus=unknown.",
     "leafMeaning": "childrenStatus unknown means lower subdivisions are outside this snapshot; it does not mean an administrative leaf.",
     "missingDefaultNames": [],
-    "profile": "CLDR-49-subdivision-containment",
+    "officialBaselineDate": "2026-10-26",
+    "profile": "KR-MOIS-kikcd_h-effective-2026-10-26",
     "scopeMeaning": "All reachable nodes in the pinned source profile, not a claim of current official administrative completeness.",
     "status": "research-seed"
   },
@@ -190,13 +192,2705 @@
       "nameLocale": "en",
       "nameQuality": "approved-in-source",
       "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11110",
+      "id": "kr-municipality:1111000000",
+      "kind": "autonomous-district",
+      "name": "종로구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11140",
+      "id": "kr-municipality:1114000000",
+      "kind": "autonomous-district",
+      "name": "중구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11170",
+      "id": "kr-municipality:1117000000",
+      "kind": "autonomous-district",
+      "name": "용산구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11200",
+      "id": "kr-municipality:1120000000",
+      "kind": "autonomous-district",
+      "name": "성동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11215",
+      "id": "kr-municipality:1121500000",
+      "kind": "autonomous-district",
+      "name": "광진구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11230",
+      "id": "kr-municipality:1123000000",
+      "kind": "autonomous-district",
+      "name": "동대문구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11260",
+      "id": "kr-municipality:1126000000",
+      "kind": "autonomous-district",
+      "name": "중랑구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11290",
+      "id": "kr-municipality:1129000000",
+      "kind": "autonomous-district",
+      "name": "성북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11305",
+      "id": "kr-municipality:1130500000",
+      "kind": "autonomous-district",
+      "name": "강북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11320",
+      "id": "kr-municipality:1132000000",
+      "kind": "autonomous-district",
+      "name": "도봉구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11350",
+      "id": "kr-municipality:1135000000",
+      "kind": "autonomous-district",
+      "name": "노원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11380",
+      "id": "kr-municipality:1138000000",
+      "kind": "autonomous-district",
+      "name": "은평구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11410",
+      "id": "kr-municipality:1141000000",
+      "kind": "autonomous-district",
+      "name": "서대문구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11440",
+      "id": "kr-municipality:1144000000",
+      "kind": "autonomous-district",
+      "name": "마포구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11470",
+      "id": "kr-municipality:1147000000",
+      "kind": "autonomous-district",
+      "name": "양천구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11500",
+      "id": "kr-municipality:1150000000",
+      "kind": "autonomous-district",
+      "name": "강서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11530",
+      "id": "kr-municipality:1153000000",
+      "kind": "autonomous-district",
+      "name": "구로구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11545",
+      "id": "kr-municipality:1154500000",
+      "kind": "autonomous-district",
+      "name": "금천구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11560",
+      "id": "kr-municipality:1156000000",
+      "kind": "autonomous-district",
+      "name": "영등포구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11590",
+      "id": "kr-municipality:1159000000",
+      "kind": "autonomous-district",
+      "name": "동작구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11620",
+      "id": "kr-municipality:1162000000",
+      "kind": "autonomous-district",
+      "name": "관악구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11650",
+      "id": "kr-municipality:1165000000",
+      "kind": "autonomous-district",
+      "name": "서초구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11680",
+      "id": "kr-municipality:1168000000",
+      "kind": "autonomous-district",
+      "name": "강남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11710",
+      "id": "kr-municipality:1171000000",
+      "kind": "autonomous-district",
+      "name": "송파구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "11740",
+      "id": "kr-municipality:1174000000",
+      "kind": "autonomous-district",
+      "name": "강동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-11"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "1200000000",
+      "id": "kr-municipality:1200000000",
+      "kind": "subdivision",
+      "name": "전남광주통합특별시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "cc:KR"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12110",
+      "id": "kr-municipality:1211000000",
+      "kind": "city",
+      "name": "목포시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12130",
+      "id": "kr-municipality:1213000000",
+      "kind": "city",
+      "name": "여수시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12150",
+      "id": "kr-municipality:1215000000",
+      "kind": "city",
+      "name": "순천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12170",
+      "id": "kr-municipality:1217000000",
+      "kind": "city",
+      "name": "나주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12190",
+      "id": "kr-municipality:1219000000",
+      "kind": "city",
+      "name": "광양시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12210",
+      "id": "kr-municipality:1221000000",
+      "kind": "non-autonomous-district",
+      "name": "동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12240",
+      "id": "kr-municipality:1224000000",
+      "kind": "non-autonomous-district",
+      "name": "서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12270",
+      "id": "kr-municipality:1227000000",
+      "kind": "non-autonomous-district",
+      "name": "남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12300",
+      "id": "kr-municipality:1230000000",
+      "kind": "non-autonomous-district",
+      "name": "북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12330",
+      "id": "kr-municipality:1233000000",
+      "kind": "non-autonomous-district",
+      "name": "광산구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12710",
+      "id": "kr-municipality:1271000000",
+      "kind": "county",
+      "name": "담양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12720",
+      "id": "kr-municipality:1272000000",
+      "kind": "county",
+      "name": "곡성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12730",
+      "id": "kr-municipality:1273000000",
+      "kind": "county",
+      "name": "구례군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12740",
+      "id": "kr-municipality:1274000000",
+      "kind": "county",
+      "name": "고흥군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12750",
+      "id": "kr-municipality:1275000000",
+      "kind": "county",
+      "name": "보성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12760",
+      "id": "kr-municipality:1276000000",
+      "kind": "county",
+      "name": "화순군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12770",
+      "id": "kr-municipality:1277000000",
+      "kind": "county",
+      "name": "장흥군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12780",
+      "id": "kr-municipality:1278000000",
+      "kind": "county",
+      "name": "강진군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12790",
+      "id": "kr-municipality:1279000000",
+      "kind": "county",
+      "name": "해남군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12800",
+      "id": "kr-municipality:1280000000",
+      "kind": "county",
+      "name": "영암군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12810",
+      "id": "kr-municipality:1281000000",
+      "kind": "county",
+      "name": "무안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12820",
+      "id": "kr-municipality:1282000000",
+      "kind": "county",
+      "name": "함평군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12830",
+      "id": "kr-municipality:1283000000",
+      "kind": "county",
+      "name": "영광군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12840",
+      "id": "kr-municipality:1284000000",
+      "kind": "county",
+      "name": "장성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12850",
+      "id": "kr-municipality:1285000000",
+      "kind": "county",
+      "name": "완도군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12860",
+      "id": "kr-municipality:1286000000",
+      "kind": "county",
+      "name": "진도군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "12870",
+      "id": "kr-municipality:1287000000",
+      "kind": "county",
+      "name": "신안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "kr-municipality:1200000000"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26110",
+      "id": "kr-municipality:2611000000",
+      "kind": "non-autonomous-district",
+      "name": "중구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26140",
+      "id": "kr-municipality:2614000000",
+      "kind": "non-autonomous-district",
+      "name": "서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26170",
+      "id": "kr-municipality:2617000000",
+      "kind": "non-autonomous-district",
+      "name": "동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26200",
+      "id": "kr-municipality:2620000000",
+      "kind": "non-autonomous-district",
+      "name": "영도구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26230",
+      "id": "kr-municipality:2623000000",
+      "kind": "non-autonomous-district",
+      "name": "부산진구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26260",
+      "id": "kr-municipality:2626000000",
+      "kind": "non-autonomous-district",
+      "name": "동래구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26290",
+      "id": "kr-municipality:2629000000",
+      "kind": "non-autonomous-district",
+      "name": "남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26320",
+      "id": "kr-municipality:2632000000",
+      "kind": "non-autonomous-district",
+      "name": "북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26350",
+      "id": "kr-municipality:2635000000",
+      "kind": "non-autonomous-district",
+      "name": "해운대구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26380",
+      "id": "kr-municipality:2638000000",
+      "kind": "non-autonomous-district",
+      "name": "사하구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26410",
+      "id": "kr-municipality:2641000000",
+      "kind": "non-autonomous-district",
+      "name": "금정구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26440",
+      "id": "kr-municipality:2644000000",
+      "kind": "non-autonomous-district",
+      "name": "강서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26470",
+      "id": "kr-municipality:2647000000",
+      "kind": "non-autonomous-district",
+      "name": "연제구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26500",
+      "id": "kr-municipality:2650000000",
+      "kind": "non-autonomous-district",
+      "name": "수영구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26530",
+      "id": "kr-municipality:2653000000",
+      "kind": "non-autonomous-district",
+      "name": "사상구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "26710",
+      "id": "kr-municipality:2671000000",
+      "kind": "county",
+      "name": "기장군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-26"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27110",
+      "id": "kr-municipality:2711000000",
+      "kind": "non-autonomous-district",
+      "name": "중구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27140",
+      "id": "kr-municipality:2714000000",
+      "kind": "non-autonomous-district",
+      "name": "동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27170",
+      "id": "kr-municipality:2717000000",
+      "kind": "non-autonomous-district",
+      "name": "서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27200",
+      "id": "kr-municipality:2720000000",
+      "kind": "non-autonomous-district",
+      "name": "남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27230",
+      "id": "kr-municipality:2723000000",
+      "kind": "non-autonomous-district",
+      "name": "북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27260",
+      "id": "kr-municipality:2726000000",
+      "kind": "non-autonomous-district",
+      "name": "수성구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27290",
+      "id": "kr-municipality:2729000000",
+      "kind": "non-autonomous-district",
+      "name": "달서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27710",
+      "id": "kr-municipality:2771000000",
+      "kind": "county",
+      "name": "달성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "27720",
+      "id": "kr-municipality:2772000000",
+      "kind": "county",
+      "name": "군위군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-27"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28125",
+      "id": "kr-municipality:2812500000",
+      "kind": "non-autonomous-district",
+      "name": "제물포구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28155",
+      "id": "kr-municipality:2815500000",
+      "kind": "non-autonomous-district",
+      "name": "영종구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28177",
+      "id": "kr-municipality:2817700000",
+      "kind": "non-autonomous-district",
+      "name": "미추홀구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28185",
+      "id": "kr-municipality:2818500000",
+      "kind": "non-autonomous-district",
+      "name": "연수구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28200",
+      "id": "kr-municipality:2820000000",
+      "kind": "non-autonomous-district",
+      "name": "남동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28237",
+      "id": "kr-municipality:2823700000",
+      "kind": "non-autonomous-district",
+      "name": "부평구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28245",
+      "id": "kr-municipality:2824500000",
+      "kind": "non-autonomous-district",
+      "name": "계양구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28275",
+      "id": "kr-municipality:2827500000",
+      "kind": "non-autonomous-district",
+      "name": "서해구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28290",
+      "id": "kr-municipality:2829000000",
+      "kind": "non-autonomous-district",
+      "name": "검단구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28710",
+      "id": "kr-municipality:2871000000",
+      "kind": "county",
+      "name": "강화군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "28720",
+      "id": "kr-municipality:2872000000",
+      "kind": "county",
+      "name": "옹진군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-28"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "30110",
+      "id": "kr-municipality:3011000000",
+      "kind": "non-autonomous-district",
+      "name": "동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "30140",
+      "id": "kr-municipality:3014000000",
+      "kind": "non-autonomous-district",
+      "name": "중구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "30170",
+      "id": "kr-municipality:3017000000",
+      "kind": "non-autonomous-district",
+      "name": "서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "30200",
+      "id": "kr-municipality:3020000000",
+      "kind": "non-autonomous-district",
+      "name": "유성구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "30230",
+      "id": "kr-municipality:3023000000",
+      "kind": "non-autonomous-district",
+      "name": "대덕구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-30"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "31110",
+      "id": "kr-municipality:3111000000",
+      "kind": "non-autonomous-district",
+      "name": "중구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "31140",
+      "id": "kr-municipality:3114000000",
+      "kind": "non-autonomous-district",
+      "name": "남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "31170",
+      "id": "kr-municipality:3117000000",
+      "kind": "non-autonomous-district",
+      "name": "동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "31200",
+      "id": "kr-municipality:3120000000",
+      "kind": "non-autonomous-district",
+      "name": "북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "31710",
+      "id": "kr-municipality:3171000000",
+      "kind": "county",
+      "name": "울주군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-31"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41110",
+      "id": "kr-municipality:4111000000",
+      "kind": "city",
+      "name": "수원시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41111",
+      "id": "kr-municipality:4111100000",
+      "kind": "non-autonomous-district",
+      "name": "수원시 장안구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41113",
+      "id": "kr-municipality:4111300000",
+      "kind": "non-autonomous-district",
+      "name": "수원시 권선구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41115",
+      "id": "kr-municipality:4111500000",
+      "kind": "non-autonomous-district",
+      "name": "수원시 팔달구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41117",
+      "id": "kr-municipality:4111700000",
+      "kind": "non-autonomous-district",
+      "name": "수원시 영통구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41130",
+      "id": "kr-municipality:4113000000",
+      "kind": "city",
+      "name": "성남시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41131",
+      "id": "kr-municipality:4113100000",
+      "kind": "non-autonomous-district",
+      "name": "성남시 수정구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41133",
+      "id": "kr-municipality:4113300000",
+      "kind": "non-autonomous-district",
+      "name": "성남시 중원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41135",
+      "id": "kr-municipality:4113500000",
+      "kind": "non-autonomous-district",
+      "name": "성남시 분당구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41150",
+      "id": "kr-municipality:4115000000",
+      "kind": "city",
+      "name": "의정부시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41170",
+      "id": "kr-municipality:4117000000",
+      "kind": "city",
+      "name": "안양시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41171",
+      "id": "kr-municipality:4117100000",
+      "kind": "non-autonomous-district",
+      "name": "안양시 만안구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41173",
+      "id": "kr-municipality:4117300000",
+      "kind": "non-autonomous-district",
+      "name": "안양시 동안구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41190",
+      "id": "kr-municipality:4119000000",
+      "kind": "city",
+      "name": "부천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41192",
+      "id": "kr-municipality:4119200000",
+      "kind": "non-autonomous-district",
+      "name": "부천시 원미구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41194",
+      "id": "kr-municipality:4119400000",
+      "kind": "non-autonomous-district",
+      "name": "부천시 소사구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41196",
+      "id": "kr-municipality:4119600000",
+      "kind": "non-autonomous-district",
+      "name": "부천시 오정구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41210",
+      "id": "kr-municipality:4121000000",
+      "kind": "city",
+      "name": "광명시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41220",
+      "id": "kr-municipality:4122000000",
+      "kind": "city",
+      "name": "평택시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41250",
+      "id": "kr-municipality:4125000000",
+      "kind": "city",
+      "name": "동두천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41270",
+      "id": "kr-municipality:4127000000",
+      "kind": "city",
+      "name": "안산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41271",
+      "id": "kr-municipality:4127100000",
+      "kind": "non-autonomous-district",
+      "name": "안산시 상록구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41273",
+      "id": "kr-municipality:4127300000",
+      "kind": "non-autonomous-district",
+      "name": "안산시 단원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41280",
+      "id": "kr-municipality:4128000000",
+      "kind": "city",
+      "name": "고양시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41281",
+      "id": "kr-municipality:4128100000",
+      "kind": "non-autonomous-district",
+      "name": "고양시 덕양구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41285",
+      "id": "kr-municipality:4128500000",
+      "kind": "non-autonomous-district",
+      "name": "고양시 일산동구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41287",
+      "id": "kr-municipality:4128700000",
+      "kind": "non-autonomous-district",
+      "name": "고양시 일산서구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41290",
+      "id": "kr-municipality:4129000000",
+      "kind": "city",
+      "name": "과천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41310",
+      "id": "kr-municipality:4131000000",
+      "kind": "city",
+      "name": "구리시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41360",
+      "id": "kr-municipality:4136000000",
+      "kind": "city",
+      "name": "남양주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41370",
+      "id": "kr-municipality:4137000000",
+      "kind": "city",
+      "name": "오산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41390",
+      "id": "kr-municipality:4139000000",
+      "kind": "city",
+      "name": "시흥시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41410",
+      "id": "kr-municipality:4141000000",
+      "kind": "city",
+      "name": "군포시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41430",
+      "id": "kr-municipality:4143000000",
+      "kind": "city",
+      "name": "의왕시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41450",
+      "id": "kr-municipality:4145000000",
+      "kind": "city",
+      "name": "하남시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41460",
+      "id": "kr-municipality:4146000000",
+      "kind": "city",
+      "name": "용인시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41461",
+      "id": "kr-municipality:4146100000",
+      "kind": "non-autonomous-district",
+      "name": "용인시 처인구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41463",
+      "id": "kr-municipality:4146300000",
+      "kind": "non-autonomous-district",
+      "name": "용인시 기흥구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41465",
+      "id": "kr-municipality:4146500000",
+      "kind": "non-autonomous-district",
+      "name": "용인시 수지구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41480",
+      "id": "kr-municipality:4148000000",
+      "kind": "city",
+      "name": "파주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41500",
+      "id": "kr-municipality:4150000000",
+      "kind": "city",
+      "name": "이천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41550",
+      "id": "kr-municipality:4155000000",
+      "kind": "city",
+      "name": "안성시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41570",
+      "id": "kr-municipality:4157000000",
+      "kind": "city",
+      "name": "김포시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41590",
+      "id": "kr-municipality:4159000000",
+      "kind": "city",
+      "name": "화성시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41591",
+      "id": "kr-municipality:4159100000",
+      "kind": "non-autonomous-district",
+      "name": "화성시 만세구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41593",
+      "id": "kr-municipality:4159300000",
+      "kind": "non-autonomous-district",
+      "name": "화성시 효행구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41595",
+      "id": "kr-municipality:4159500000",
+      "kind": "non-autonomous-district",
+      "name": "화성시 병점구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41597",
+      "id": "kr-municipality:4159700000",
+      "kind": "non-autonomous-district",
+      "name": "화성시 동탄구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41610",
+      "id": "kr-municipality:4161000000",
+      "kind": "city",
+      "name": "광주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41630",
+      "id": "kr-municipality:4163000000",
+      "kind": "city",
+      "name": "양주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41650",
+      "id": "kr-municipality:4165000000",
+      "kind": "city",
+      "name": "포천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41670",
+      "id": "kr-municipality:4167000000",
+      "kind": "city",
+      "name": "여주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41800",
+      "id": "kr-municipality:4180000000",
+      "kind": "county",
+      "name": "연천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41820",
+      "id": "kr-municipality:4182000000",
+      "kind": "county",
+      "name": "가평군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "41830",
+      "id": "kr-municipality:4183000000",
+      "kind": "county",
+      "name": "양평군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-41"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43110",
+      "id": "kr-municipality:4311000000",
+      "kind": "city",
+      "name": "청주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43111",
+      "id": "kr-municipality:4311100000",
+      "kind": "non-autonomous-district",
+      "name": "청주시 상당구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43112",
+      "id": "kr-municipality:4311200000",
+      "kind": "non-autonomous-district",
+      "name": "청주시 서원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43113",
+      "id": "kr-municipality:4311300000",
+      "kind": "non-autonomous-district",
+      "name": "청주시 흥덕구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43114",
+      "id": "kr-municipality:4311400000",
+      "kind": "non-autonomous-district",
+      "name": "청주시 청원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43130",
+      "id": "kr-municipality:4313000000",
+      "kind": "city",
+      "name": "충주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43150",
+      "id": "kr-municipality:4315000000",
+      "kind": "city",
+      "name": "제천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43720",
+      "id": "kr-municipality:4372000000",
+      "kind": "county",
+      "name": "보은군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43730",
+      "id": "kr-municipality:4373000000",
+      "kind": "county",
+      "name": "옥천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43740",
+      "id": "kr-municipality:4374000000",
+      "kind": "county",
+      "name": "영동군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43745",
+      "id": "kr-municipality:4374500000",
+      "kind": "county",
+      "name": "증평군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43750",
+      "id": "kr-municipality:4375000000",
+      "kind": "county",
+      "name": "진천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43760",
+      "id": "kr-municipality:4376000000",
+      "kind": "county",
+      "name": "괴산군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43770",
+      "id": "kr-municipality:4377000000",
+      "kind": "county",
+      "name": "음성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "43800",
+      "id": "kr-municipality:4380000000",
+      "kind": "county",
+      "name": "단양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-43"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44130",
+      "id": "kr-municipality:4413000000",
+      "kind": "city",
+      "name": "천안시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44131",
+      "id": "kr-municipality:4413100000",
+      "kind": "non-autonomous-district",
+      "name": "천안시 동남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44133",
+      "id": "kr-municipality:4413300000",
+      "kind": "non-autonomous-district",
+      "name": "천안시 서북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44150",
+      "id": "kr-municipality:4415000000",
+      "kind": "city",
+      "name": "공주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44180",
+      "id": "kr-municipality:4418000000",
+      "kind": "city",
+      "name": "보령시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44200",
+      "id": "kr-municipality:4420000000",
+      "kind": "city",
+      "name": "아산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44210",
+      "id": "kr-municipality:4421000000",
+      "kind": "city",
+      "name": "서산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44230",
+      "id": "kr-municipality:4423000000",
+      "kind": "city",
+      "name": "논산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44250",
+      "id": "kr-municipality:4425000000",
+      "kind": "city",
+      "name": "계룡시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44270",
+      "id": "kr-municipality:4427000000",
+      "kind": "city",
+      "name": "당진시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44710",
+      "id": "kr-municipality:4471000000",
+      "kind": "county",
+      "name": "금산군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44760",
+      "id": "kr-municipality:4476000000",
+      "kind": "county",
+      "name": "부여군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44770",
+      "id": "kr-municipality:4477000000",
+      "kind": "county",
+      "name": "서천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44790",
+      "id": "kr-municipality:4479000000",
+      "kind": "county",
+      "name": "청양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44800",
+      "id": "kr-municipality:4480000000",
+      "kind": "county",
+      "name": "홍성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44810",
+      "id": "kr-municipality:4481000000",
+      "kind": "county",
+      "name": "예산군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "44825",
+      "id": "kr-municipality:4482500000",
+      "kind": "county",
+      "name": "태안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-44"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47110",
+      "id": "kr-municipality:4711000000",
+      "kind": "city",
+      "name": "포항시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47111",
+      "id": "kr-municipality:4711100000",
+      "kind": "non-autonomous-district",
+      "name": "포항시 남구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47113",
+      "id": "kr-municipality:4711300000",
+      "kind": "non-autonomous-district",
+      "name": "포항시 북구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47130",
+      "id": "kr-municipality:4713000000",
+      "kind": "city",
+      "name": "경주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47150",
+      "id": "kr-municipality:4715000000",
+      "kind": "city",
+      "name": "김천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47170",
+      "id": "kr-municipality:4717000000",
+      "kind": "city",
+      "name": "안동시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47190",
+      "id": "kr-municipality:4719000000",
+      "kind": "city",
+      "name": "구미시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47210",
+      "id": "kr-municipality:4721000000",
+      "kind": "city",
+      "name": "영주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47230",
+      "id": "kr-municipality:4723000000",
+      "kind": "city",
+      "name": "영천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47250",
+      "id": "kr-municipality:4725000000",
+      "kind": "city",
+      "name": "상주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47280",
+      "id": "kr-municipality:4728000000",
+      "kind": "city",
+      "name": "문경시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47290",
+      "id": "kr-municipality:4729000000",
+      "kind": "city",
+      "name": "경산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47730",
+      "id": "kr-municipality:4773000000",
+      "kind": "county",
+      "name": "의성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47750",
+      "id": "kr-municipality:4775000000",
+      "kind": "county",
+      "name": "청송군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47760",
+      "id": "kr-municipality:4776000000",
+      "kind": "county",
+      "name": "영양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47770",
+      "id": "kr-municipality:4777000000",
+      "kind": "county",
+      "name": "영덕군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47820",
+      "id": "kr-municipality:4782000000",
+      "kind": "county",
+      "name": "청도군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47830",
+      "id": "kr-municipality:4783000000",
+      "kind": "county",
+      "name": "고령군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47840",
+      "id": "kr-municipality:4784000000",
+      "kind": "county",
+      "name": "성주군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47850",
+      "id": "kr-municipality:4785000000",
+      "kind": "county",
+      "name": "칠곡군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47900",
+      "id": "kr-municipality:4790000000",
+      "kind": "county",
+      "name": "예천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47920",
+      "id": "kr-municipality:4792000000",
+      "kind": "county",
+      "name": "봉화군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47930",
+      "id": "kr-municipality:4793000000",
+      "kind": "county",
+      "name": "울진군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "47940",
+      "id": "kr-municipality:4794000000",
+      "kind": "county",
+      "name": "울릉군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-47"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48120",
+      "id": "kr-municipality:4812000000",
+      "kind": "city",
+      "name": "창원시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48121",
+      "id": "kr-municipality:4812100000",
+      "kind": "non-autonomous-district",
+      "name": "창원시 의창구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48123",
+      "id": "kr-municipality:4812300000",
+      "kind": "non-autonomous-district",
+      "name": "창원시 성산구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48125",
+      "id": "kr-municipality:4812500000",
+      "kind": "non-autonomous-district",
+      "name": "창원시 마산합포구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48127",
+      "id": "kr-municipality:4812700000",
+      "kind": "non-autonomous-district",
+      "name": "창원시 마산회원구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48129",
+      "id": "kr-municipality:4812900000",
+      "kind": "non-autonomous-district",
+      "name": "창원시 진해구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48170",
+      "id": "kr-municipality:4817000000",
+      "kind": "city",
+      "name": "진주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48220",
+      "id": "kr-municipality:4822000000",
+      "kind": "city",
+      "name": "통영시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48240",
+      "id": "kr-municipality:4824000000",
+      "kind": "city",
+      "name": "사천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48250",
+      "id": "kr-municipality:4825000000",
+      "kind": "city",
+      "name": "김해시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48270",
+      "id": "kr-municipality:4827000000",
+      "kind": "city",
+      "name": "밀양시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48310",
+      "id": "kr-municipality:4831000000",
+      "kind": "city",
+      "name": "거제시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48330",
+      "id": "kr-municipality:4833000000",
+      "kind": "city",
+      "name": "양산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48720",
+      "id": "kr-municipality:4872000000",
+      "kind": "county",
+      "name": "의령군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48730",
+      "id": "kr-municipality:4873000000",
+      "kind": "county",
+      "name": "함안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48740",
+      "id": "kr-municipality:4874000000",
+      "kind": "county",
+      "name": "창녕군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48820",
+      "id": "kr-municipality:4882000000",
+      "kind": "county",
+      "name": "고성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48840",
+      "id": "kr-municipality:4884000000",
+      "kind": "county",
+      "name": "남해군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48850",
+      "id": "kr-municipality:4885000000",
+      "kind": "county",
+      "name": "하동군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48860",
+      "id": "kr-municipality:4886000000",
+      "kind": "county",
+      "name": "산청군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48870",
+      "id": "kr-municipality:4887000000",
+      "kind": "county",
+      "name": "함양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48880",
+      "id": "kr-municipality:4888000000",
+      "kind": "county",
+      "name": "거창군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "48890",
+      "id": "kr-municipality:4889000000",
+      "kind": "county",
+      "name": "합천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-48"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "50110",
+      "id": "kr-municipality:5011000000",
+      "kind": "city",
+      "name": "제주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "50130",
+      "id": "kr-municipality:5013000000",
+      "kind": "city",
+      "name": "서귀포시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-49"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51110",
+      "id": "kr-municipality:5111000000",
+      "kind": "city",
+      "name": "춘천시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51130",
+      "id": "kr-municipality:5113000000",
+      "kind": "city",
+      "name": "원주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51150",
+      "id": "kr-municipality:5115000000",
+      "kind": "city",
+      "name": "강릉시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51170",
+      "id": "kr-municipality:5117000000",
+      "kind": "city",
+      "name": "동해시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51190",
+      "id": "kr-municipality:5119000000",
+      "kind": "city",
+      "name": "태백시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51210",
+      "id": "kr-municipality:5121000000",
+      "kind": "city",
+      "name": "속초시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51230",
+      "id": "kr-municipality:5123000000",
+      "kind": "city",
+      "name": "삼척시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51720",
+      "id": "kr-municipality:5172000000",
+      "kind": "county",
+      "name": "홍천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51730",
+      "id": "kr-municipality:5173000000",
+      "kind": "county",
+      "name": "횡성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51750",
+      "id": "kr-municipality:5175000000",
+      "kind": "county",
+      "name": "영월군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51760",
+      "id": "kr-municipality:5176000000",
+      "kind": "county",
+      "name": "평창군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51770",
+      "id": "kr-municipality:5177000000",
+      "kind": "county",
+      "name": "정선군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51780",
+      "id": "kr-municipality:5178000000",
+      "kind": "county",
+      "name": "철원군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51790",
+      "id": "kr-municipality:5179000000",
+      "kind": "county",
+      "name": "화천군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51800",
+      "id": "kr-municipality:5180000000",
+      "kind": "county",
+      "name": "양구군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51810",
+      "id": "kr-municipality:5181000000",
+      "kind": "county",
+      "name": "인제군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51820",
+      "id": "kr-municipality:5182000000",
+      "kind": "county",
+      "name": "고성군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "51830",
+      "id": "kr-municipality:5183000000",
+      "kind": "county",
+      "name": "양양군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-42"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52110",
+      "id": "kr-municipality:5211000000",
+      "kind": "city",
+      "name": "전주시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52111",
+      "id": "kr-municipality:5211100000",
+      "kind": "non-autonomous-district",
+      "name": "전주시 완산구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52113",
+      "id": "kr-municipality:5211300000",
+      "kind": "non-autonomous-district",
+      "name": "전주시 덕진구",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52130",
+      "id": "kr-municipality:5213000000",
+      "kind": "city",
+      "name": "군산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52140",
+      "id": "kr-municipality:5214000000",
+      "kind": "city",
+      "name": "익산시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52180",
+      "id": "kr-municipality:5218000000",
+      "kind": "city",
+      "name": "정읍시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52190",
+      "id": "kr-municipality:5219000000",
+      "kind": "city",
+      "name": "남원시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52210",
+      "id": "kr-municipality:5221000000",
+      "kind": "city",
+      "name": "김제시",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52710",
+      "id": "kr-municipality:5271000000",
+      "kind": "county",
+      "name": "완주군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52720",
+      "id": "kr-municipality:5272000000",
+      "kind": "county",
+      "name": "진안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52730",
+      "id": "kr-municipality:5273000000",
+      "kind": "county",
+      "name": "무주군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52740",
+      "id": "kr-municipality:5274000000",
+      "kind": "county",
+      "name": "장수군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52750",
+      "id": "kr-municipality:5275000000",
+      "kind": "county",
+      "name": "임실군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52770",
+      "id": "kr-municipality:5277000000",
+      "kind": "county",
+      "name": "순창군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52790",
+      "id": "kr-municipality:5279000000",
+      "kind": "county",
+      "name": "고창군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
+    },
+    {
+      "childrenStatus": "unknown",
+      "code": "52800",
+      "id": "kr-municipality:5280000000",
+      "kind": "county",
+      "name": "부안군",
+      "nameLocale": "ko",
+      "nameQuality": "source-native",
+      "parentId": "iso3166-2:KR-45"
     }
   ],
   "protocolVersion": "1.0",
-  "revision": "s-abc8dce69b7c079e",
+  "revision": "s-f4a812992c29410b",
   "sourceRefs": [
     "sources/raw/cldr/subdivisionContainment.json",
     "sources/raw/cldr/subdivisions-en.xml",
-    "sources/raw/cldr/territories-en.json"
+    "sources/raw/cldr/territories-en.json",
+    "sources/raw/official/kr/jscode20261026.zip",
+    "sources/raw/official/kr/notice-130674.html"
   ]
 }

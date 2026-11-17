@@ -1,0 +1,20 @@
+{
+ "profile": "KR-official-municipal-current",
+ "officialCodeSystem": "행정안전부 행정기관코드 (MOIS KIKcd_H, 10-digit; 시도2+시군구3+읍면동3+리2)",
+ "targetKinds": [
+  "metropolitan",
+  "city",
+  "county",
+  "autonomous-district",
+  "non-autonomous-district"
+ ],
+ "excludedKinds": [
+  "읍면동",
+  "리",
+  "출장소 (branch offices — B column carries the agency name, C empty)"
+ ],
+ "sourceBaseline": "mois-jscode20261026 (2026-10-26 기준, 말소코드포함 패키지)",
+ "parentRule": "city/county/district→metropolitan by 2-digit prefix; metropolitan→country; 자치구 = 서울특별시의 구, 일반구 = 광역시의 구 (official type by parent city, never name-matching)",
+ "idRule": "metropolitan preserves existing iso3166-2:KR-XX; city/county/district = kr-municipality:{5-digit administrative code}",
+ "nameRule": "Korean official names from the listing; nameLocale=ko, nameQuality=source-native; abolished codes route to migrations via 말소일자"
+}

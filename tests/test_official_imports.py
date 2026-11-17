@@ -103,5 +103,59 @@ class JpAdapterTests(unittest.TestCase):
             self.assertIn(f'iso3166-2:{iso}', existing, f'JP-{two} missing from seed')
 
 
+class KrAdapterTests(unittest.TestCase):
+    """tool.importers.kr — fixture-level adapter behaviour."""
+
+    KR_FIXTURE = REPO / 'tests/fixtures/official/kr/nodes.csv'
+
+    def _rows(self):
+        from tool.importers.common import SourceNode
+        return [SourceNode(**{**r, 'abolished': r['abolished'] == 'true'})
+                for r in load_rows(self.KR_FIXTURE)]
+
+    def test_metro_crosswalk_and_new_integration_city(self):
+        from tool.importers.kr import build_nodes
+        active, migrations = build_nodes(self._rows())
+        ids = {n['id'] for n in active}
+        # legacy Seoul id preserved; the integration city is NEW (no ISO id)
+        self.assertIn('iso3166-2:KR-11', ids)
+        self.assertIn('kr-municipality:1200000000', ids)
+        # 서울 구 = autonomous; 광역시 구 = non-autonomous (official type by parent)
+        kinds = {n['id']: n['kind'] for n in active}
+        self.assertEqual(kinds['kr-municipality:1111000000'], 'autonomous-district')
+        self.assertEqual(kinds['kr-municipality:2729000000'], 'non-autonomous-district')
+        self.assertEqual(kinds['kr-municipality:4872000000'], 'county')
+
+    def test_parents_resolve_to_metro_ids(self):
+        from tool.importers.kr import build_nodes
+        active, _ = build_nodes(self._rows())
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['kr-municipality:1111000000']['parentId'], 'iso3166-2:KR-11')
+        self.assertEqual(by_id['kr-municipality:2729000000']['parentId'], 'iso3166-2:KR-27')
+        self.assertEqual(by_id['kr-municipality:4872000000']['parentId'], 'iso3166-2:KR-48')
+
+    def test_old_integrated_city_routes_to_migration(self):
+        from tool.importers.kr import build_nodes
+        active, migrations = build_nodes(self._rows())
+        self.assertNotIn('kr-municipality:4135000000', {n['id'] for n in active})
+        self.assertTrue(any(m['officialCode'] == '4135000000' for m in migrations))
+
+    def test_parse_active_shape(self):
+        from tool.importers.kr import parse_active
+        rows = parse_active(REPO / 'sources/raw/official/kr/jscode20261026.zip')
+        metros = [r for r in rows if r.kind == 'metropolitan']
+        self.assertEqual(len(metros), 16)  # 15 legacy-mapped + 전남광주통합특별시
+        self.assertEqual(len(rows) - len(metros), 268)  # 268 standard 시군구 (출장소/branch rows excluded)
+        self.assertTrue(all(r.name_locale == 'ko' for r in rows))
+
+    def test_abolished_packages_yield_migrations(self):
+        from tool.importers.kr import parse_abolished, build_nodes
+        abolished = parse_abolished(REPO / 'sources/raw/official/kr/jscode20261026-abolished-included.zip')
+        self.assertTrue(len(abolished) > 100)
+        rows = self._rows() + []
+        active, migrations = build_nodes(rows, abolished)
+        self.assertTrue(len(migrations) >= len(abolished))
+
+
 if __name__ == '__main__':
     unittest.main()

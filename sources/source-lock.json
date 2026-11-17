@@ -468,6 +468,54 @@
    "retrievedAt": "2026-11-17",
    "upstreamVersion": "e-Stat 利用ルール (政府標準利用規約 第2.0版 準拠)",
    "snapshotDate": "2016-01-29"
+  },
+  {
+   "repository": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052",
+   "upstreamPath": "frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674 (attachment fileSn=1)",
+   "url": "https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_00150183sQwGjok&fileSn=1",
+   "localPath": "sources/raw/official/kr/jscode20261026.zip",
+   "sha256": "cce7299a01bfb29edc234884dbd4afa87b4a3a899ae3aefb9d6e4d0fe7b82509",
+   "sizeBytes": 2114284,
+   "license": "KOGL-Type-1",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-10-26",
+   "upstreamVersion": "jscode20261026 (2026-10-26 기준 행정기관 및 법정동 코드)"
+  },
+  {
+   "repository": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052",
+   "upstreamPath": "frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674 (attachment fileSn=2)",
+   "url": "https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_00150183sQwGjok&fileSn=2",
+   "localPath": "sources/raw/official/kr/jscode20261026-abolished-included.zip",
+   "sha256": "93aa5ab401c96d542d020f9fccbc2ed4dbf37e0e0d4568daa05109aa1a28e2a1",
+   "sizeBytes": 5542195,
+   "license": "KOGL-Type-1",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-10-26",
+   "upstreamVersion": "jscode20261026(말소코드포함) — abolished codes included"
+  },
+  {
+   "repository": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052",
+   "upstreamPath": "frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674",
+   "url": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674",
+   "localPath": "sources/raw/official/kr/notice-130674.html",
+   "sha256": "8ce6c7e385b5e0fbb04874c57a055e2233634eb833ea05acc6e1c574b1315770",
+   "sizeBytes": 173540,
+   "license": "KOGL-Type-1",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-10-30",
+   "upstreamVersion": "행정기관(행정동) 및 관할구역(법정동) 코드 변경내역 알림(2026.10.30.)"
+  },
+  {
+   "repository": "https://www.mois.go.kr",
+   "upstreamPath": "frt/sub/a08/copyrightPolicy/screen.do",
+   "url": "https://www.mois.go.kr/frt/sub/a08/copyrightPolicy/screen.do",
+   "localPath": "sources/raw/official/kr/mois-copyright-policy.html",
+   "sha256": "18e26057dc4e63a06a405ffd7344ed832b0fbdae12f803c9e8cad91abe5660cb",
+   "sizeBytes": 153200,
+   "license": "KOGL-Type-1",
+   "retrievedAt": "2026-11-17",
+   "snapshotDate": "2026-11-17",
+   "upstreamVersion": "MOIS 저작권정책 — 공공누리(KOGL) 제1유형 출처표시"
   }
  ],
  "derivedSources": [

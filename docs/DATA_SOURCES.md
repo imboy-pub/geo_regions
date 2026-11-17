@@ -43,7 +43,7 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 |---|---|---|---|---|
 | CN | China / 中国 | CLDR province codes plus modood historical tree | CLDR ten-locale names; source-native Chinese for mainland descendants | Mainland starter profile; no HK/MO/TW subtrees in this seed |
 | JP | Japan / 日本 | CLDR containment plus MIC 全国地方公共団体コード municipalities (016951..016993 北方地域 rows excluded; ordinance-city wards are a recorded gap) | CLDR for prefectures and ten-locale catalog; source-native Japanese (ja) for municipalities | Effective baseline 2024-01-01 (令和6年1月1日更新); GoS-2.0 per e-Stat terms; ward sub-level pending a locked source |
-| KR | South Korea / 韩国 | CLDR containment | CLDR | 17 first-level subdivisions; not a complete municipal tree |
+| KR | South Korea / 韩国 | CLDR containment plus MOIS 행정기관코드 municipalities (268 standard 시군구; 광주·전남 integration effective 2026-07-01 recorded via migrations with 전남광주통합특별시 as kr-municipality:1200000000) | CLDR for metropolitan nodes and ten-locale catalog; source-native Korean (ko) for municipalities | Effective baseline 2026-10-26 (jscode20261026); KOGL Type 1 per MOIS copyright policy; 읍면동/리 and 출장소 outside profile |
 | US | United States / 美国 | CLDR containment | CLDR | 57 source subdivisions including territories; no county/city layer |
 | GB | United Kingdom / 英国 | CLDR containment, recursively expanded | CLDR | Four constituent countries and reachable source subdivisions |
 | DE | Germany / 德国 | CLDR containment | CLDR | 16 states; municipal layer not included |
@@ -53,6 +53,14 @@ The source lock records the exact repository, commit, upstream path, raw URL, lo
 | SA | Saudi Arabia / 沙特阿拉伯 | CLDR containment | CLDR | 13 source regions; not a city-level tree |
 
 The scope is an administrative name and selection dataset. No polygons, geocoding, precise boundaries, street-address validation or coordinates are promised. Published code lists are snapshots; they are not proof that every entry is an up-to-date authoritative administrative entity.
+
+### KR official municipal snapshot (2026-11-17 batch)
+
+- Source: 행정안전부 MOIS jscode20261026 packages (`sources/raw/official/kr/jscode20261026.zip` active + `jscode20261026-abolished-included.zip` with 말소 rows, 2026-10-26 기준; KOGL Type 1 — 공공누리 출처표시, per the MOIS copyright policy snapshot in the same directory).
+- Adapter (`tool/importers/kr.py`): KIKcd_H 10-digit 행정기관코드 parsed to 시도 (metropolitan) + 시군구 (city/county/autonomous-district/non-autonomous-district) rows; 읍면동/리 and 출장소 branch offices outside the profile. 서울 구 = 자치구, 광역시 구 = 일반구 — official type by parent city, never name matching.
+- 광주·전남 integration reality check: 전라남도 4600000000 말소 2026-07-01 and 전남광주통합특별시 1200000000 생성 2026-07-01 — the integration is CURRENT administration (not the previously-fictionalized proposal). The integration city is new (kr-municipality:1200000000, no ISO id); legacy iso3166-2:KR-29/KR-46 nodes stay (ISO assignments persist) with childrenStatus=unknown and the replacement recorded in `sources/migrations/KR.json` (282 abolished 시군구 migration records from the 말소코드포함 package).
+- Metropolitan numbering is the MOIS 행정기관 sequence (11 서울, 12 통합, 26 부산, 27 대구, 28 인천, 30 대전, 31 울산, 36 세종, 41 경기, 43 충북, 44 충남, 47 경북, 48 경남, 50 제주, 51 강원, 52 전북) — crosswalked to legacy ISO ids via a fixed official table in the adapter; 세종 (36) → iso3166-2:KR-50.
+- Batch is additive-plus: the 17 legacy `iso3166-2:KR-XX` ids stay; municipalities use `kr-municipality:{5-digit administrative code}` with ko source-native names only — other locales stay missing (sparse packs).
 
 ### JP official municipal snapshot (2026-11-17 batch)
 

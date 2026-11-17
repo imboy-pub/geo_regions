@@ -1,0 +1,7 @@
+official_code,parent_code,kind,name,name_locale,name_quality,children_status,abolished
+1100000000,,metropolitan,서울특별시,ko,source-native,unknown,false
+1200000000,,metropolitan,전남광주통합특별시,ko,source-native,unknown,false
+1111000000,1100000000,autonomous-district,종로구,ko,source-native,unknown,false
+2729000000,2700000000,non-autonomous-district,달서구,ko,source-native,unknown,false
+4872000000,4800000000,county,의령군,ko,source-native,unknown,false
+4135000000,4100000000,city,미금시,ko,source-native,unknown,true

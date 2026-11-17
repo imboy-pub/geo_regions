@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import s2t_places
 from importers.jp import build as jp_build
+from importers.kr import build as kr_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -373,6 +374,7 @@ def build(root):
         nodes, index = base_nodes(cc, containment, translations, territories, quality_maps)
         native_names = {}
         jp_nodes, jp_migrations = [], []
+        kr_nodes, kr_migrations = [], []
         if cc == 'CN':
             crosswalk, native_names = add_cn(root, nodes, index, translations, aliases)
             out['sources/cn-province-crosswalk.json'] = encoded({'records': crosswalk})
@@ -393,6 +395,28 @@ def build(root):
                       '政令指定都市の区 are a recorded gap: not listed in the MIC 地方公共団体コード '
                       'source, ordinance cities keep childrenStatus=unknown until a locked ward '
                       'source lands.')))
+        if cc == 'KR':
+            kr_nodes, kr_migrations = kr_build(root)
+            ids_now = {n['id'] for n in nodes}
+            replaced = [m for m in kr_migrations if m.get('disposition') == 'replaced-by']
+            for n in kr_nodes:
+                if n['id'].startswith('iso3166-2:'):
+                    if n['id'] not in ids_now:
+                        raise ValueError(f'KR metropolitan crosswalk lost legacy id: {n["id"]}')
+                    continue
+                nodes.append(n)
+            for m in replaced:
+                legacy = m['officialCode']
+                if legacy in ids_now:
+                    idx = next(i for i, x in enumerate(nodes) if x['id'] == legacy)
+                    nodes[idx]['childrenStatus'] = 'unknown'
+            out['sources/migrations/KR.json'] = encoded(dict(
+                countryCode='KR', records=kr_migrations,
+                note=('Additive-plus batch: legacy metro ids stay. 광주·전남 통합 effective '
+                      '2026-07-01: iso3166-2:KR-29/KR-46 are replaced in current administration '
+                      'by 전남광주통합특별시 (kr-municipality:1200000000) and their nodes remain '
+                      'with the replacement recorded. Abolished 시군구 codes from the '
+                      '말소코드포함 package are recorded as abolished migrations.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -419,6 +443,13 @@ def build(root):
                             defaultNameSource='modood source-native Chinese for mainland descendants; CLDR English country root. Per-node nameLocale/nameQuality govern fallback.',
                             warning='Upstream modood states the dataset is no longer updated. This seed is not 2026-current data.')
             sources += ['sources/raw/modood/pca-code.json', 'sources/raw/cldr/aliases.json', 'sources/raw/cldr/subdivisions-zh.xml']
+        if cc == 'KR':
+            coverage.update(profile='KR-MOIS-kikcd_h-effective-2026-10-26',
+                            officialBaselineDate='2026-10-26',
+                            knownGap='읍면동/리 sub-level and 출장소 branch offices are outside the profile. 광주·전남 integration (2026-07-01) recorded via sources/migrations/KR.json: iso3166-2:KR-29/KR-46 are replaced in current administration by kr-municipality:1200000000 (전남광주통합특별시); their nodes stay with childrenStatus=unknown.',
+                            defaultNameSource='MOIS listing Korean official names (ko, source-native) for municipalities; legacy CLDR English names preserved on metropolitan nodes.')
+            sources += ['sources/raw/official/kr/jscode20261026.zip',
+                        'sources/raw/official/kr/notice-130674.html']
         if cc == 'JP':
             coverage.update(profile='JP-MIC-local-gov-code-effective-2024-01-01',
                             officialBaselineDate='2024-01-01',
@@ -475,6 +506,12 @@ def build(root):
                 names.update(jp_ja_names)
                 quality.update({k: 'source-native' for k in jp_ja_names})
                 refs.append('sources/raw/official/jp/local-gov-code-000925835.xlsx')
+            if cc == 'KR' and locale == 'ko':
+                kr_ko_names = {n['id']: n['name'] for n in kr_nodes
+                               if not n['id'].startswith('iso3166-2:')}
+                names.update(kr_ko_names)
+                quality.update({k: 'source-native' for k in kr_ko_names})
+                refs.append('sources/raw/official/kr/jscode20261026.zip')
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
                 for nid, text in zh_hans_names.items():
