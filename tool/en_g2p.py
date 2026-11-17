@@ -2009,8 +2009,10 @@ def _zh_core(word: str) -> str:
             if pending is not None:
                 out.append(_ZH_C0.get(pending, ""))
                 pending = None
-            if t == "| " and out:
-                out.append(" ")
+            # word gaps JOIN (round-38): zh cartographic convention writes
+            # Baton Rouge 巴吞鲁日 / Abita Springs 阿比塔斯普林斯 without
+            # internal spaces — upstream MT's spaced style was the defect
+            # the build-side fix_zh_space_norm pass exists to sweep.
             i += 1
             continue
         if pending is not None and (t in _ZH_SPLITS or t in ("ia", "iA", "ie")):
@@ -2329,6 +2331,11 @@ EN_ZH_EVAL = {
     "Harrisburg": "哈里斯堡", "Maryland": "马里兰", "Berry": "贝里",
     "Baltimore": "巴尔的摩", "San Marcos": "圣马科斯", "Fort Wayne": "韦恩堡",
     "Kansas City": "堪萨斯城", "Cleveland": "克利夫兰", "York": "约克",
+    # word-gap JOIN path (round-38): multi-word names outside the
+    # saint/new/fort/city prefix-suffix branches
+    "Abita Springs": "阿比塔斯普林斯",
+    "Cedar Rapids": "塞达拉皮德斯",
+    "Bay Horse": "贝霍雷",
 }
 
 

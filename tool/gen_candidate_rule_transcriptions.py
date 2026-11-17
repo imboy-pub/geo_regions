@@ -856,8 +856,15 @@ def transcribe_zh(word: str) -> str:
         if c in "ьъ":
             i += 1
             continue
-        if c in ("-", " ", "–"):
+        if c in ("-", "–"):
             out.append(c)
+            at_word_start = True
+            i += 1
+            continue
+        if c == " ":
+            # word gaps JOIN (round-38): zh convention 克拉斯内雅尔, no
+            # internal spaces (matches the build-side fix_zh_space_norm
+            # sweep and the en zh renderer's Baton-Rouge style)
             at_word_start = True
             i += 1
             continue
@@ -943,8 +950,11 @@ ZH_EVAL = {
     # Ханты-Мансийск: system 哈恩特 (coda-н standalone=恩 is the pack-wide
     # convention, 127 covered rows); established 汉特 = future fusion slice.
     "Ханты-Мансийск": "哈恩特-马恩西斯克",
-    "Красный Яр": "克拉斯内 雅尔",
+    "Красный Яр": "克拉斯内雅尔",
     "Королёв": "科罗廖夫",
+    # word-gap JOIN path (round-38), twin-word names outside hyphenation
+    "Набережные Челны": "纳别列日内叶切尔内",
+    "Новая Балахна": "诺瓦亚巴拉赫纳",
 }
 # excluded traditional/localized: Москва 莫斯科, Казань 喀山, Тюмень 秋明,
 # Пермь 彼尔姆, Оренбург 奥伦堡, Омск 鄂木斯克, Волгоград 伏尔加格勒,

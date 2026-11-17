@@ -46,5 +46,110 @@
   "locale": "zh-Hans",
   "id": "csc-city:99529",
   "value": "学习管理系统"
+ },
+ {
+  "cc": "US",
+  "locale": "zh-Hans",
+  "id": "csc-city:111132",
+  "value": "美国铝业公司",
+  "note": "round-38 Alcoa brand-MT; system 阿科 refills via en staged"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:102060",
+  "value": "大学",
+  "note": "round-38 Универ common-noun MT; 乌尼维尔 refills"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:97528",
+  "value": "学院",
+  "note": "round-38 Академическое common-noun MT; 阿卡杰米切斯科叶 refills"
+ },
+ {
+  "cc": "RU",
+  "locale": "zh-Hans",
+  "id": "csc-city:99873",
+  "value": "金属建筑公司",
+  "note": "round-38 Металлострой 公司-hallucination; 梅塔尔洛斯特罗 refills"
+ },
+ {
+  "cc": "DE",
+  "locale": "zh-Hans",
+  "id": "csc-city:25764",
+  "value": "黑林山铁路沿线古塔赫",
+  "note": "round-38 Gutach added-description; honest miss (WD zh title also refused)"
+ },
+ {
+  "cc": "DE",
+  "locale": "zh-Hans",
+  "id": "csc-city:24437",
+  "value": "城堡",
+  "note": "round-38 Burgwerben truncation; honest miss"
+ },
+ {
+  "cc": "DE",
+  "locale": "zh-Hans",
+  "id": "csc-city:28448",
+  "value": "博登湖畔拉多夫采尔车站",
+  "note": "round-38 Radolfzell added-车站; honest miss"
+ },
+ {
+  "cc": "DE",
+  "locale": "zh-Hans",
+  "id": "csc-city:26283",
+  "value": "洪堡学院",
+  "note": "round-38 kolonie≠college; WD label is parent entity Humboldt/Gremberg, refused; honest miss"
+ },
+ {
+  "cc": "GB",
+  "locale": "zh-Hans",
+  "id": "csc-city:48375",
+  "value": "银行",
+  "note": "round-38 Banks common-noun MT; 班克斯 refills; cross-locale 銀行/은행/Банки/البنوك also dropped"
+ },
+ {
+  "cc": "IT",
+  "locale": "zh-Hans",
+  "id": "csc-city:136267",
+  "value": "博瓦利诺高级酒店",
+  "note": "round-38 Superiore→酒店 hallucination; 博瓦利诺-苏佩里奥雷 refills"
+ },
+ {
+  "cc": "FR",
+  "locale": "zh-Hans",
+  "id": "fr-commune:77210",
+  "value": "大教堂区",
+  "note": "round-38 paroisse≠cathedral; 拉格朗德-帕鲁瓦斯 refills"
+ },
+ {
+  "cc": "FR",
+  "locale": "zh-Hans",
+  "id": "fr-commune:85059",
+  "value": "城堡花园",
+  "note": "round-38 châtaigneraie=chestnut grove, castle-garden hallucination; 拉沙泰涅雷 refills"
+ },
+ {
+  "cc": "SA",
+  "locale": "zh-Hans",
+  "id": "csc-city:148770",
+  "value": "艾 沙特阿拉伯",
+  "note": "round-38 country-suffix contamination; honest miss"
+ },
+ {
+  "cc": "SA",
+  "locale": "zh-Hans",
+  "id": "csc-city:148784",
+  "value": "Juha 沙特阿拉伯",
+  "note": "round-38 Latin+suffix; honest miss; 7-locale suffix drops"
+ },
+ {
+  "cc": "SA",
+  "locale": "zh-Hans",
+  "id": "csc-city:148788",
+  "value": "卡提卜 沙特阿拉伯",
+  "note": "round-38 suffix; honest miss; 7-locale suffix drops"
  }
 ]

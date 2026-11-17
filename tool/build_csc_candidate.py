@@ -75,7 +75,95 @@ ZH_GARBAGE_DROPS = {
     "fr-commune:2B143",                                        # FR 扁面条
     "csc-city:137393",                                         # IT 系列
     "csc-city:101733", "csc-city:102272", "csc-city:99529",    # RU 系统/上系统/学习管理系统
+    # round-38 sweep: factual-error classes only (hallucinated word,
+    # truncation, added description, brand association, country-suffix
+    # contamination). Refills flow back through the rule-transcription
+    # overlay (en/ru/it/fr staged) where a renderer covers the country;
+    # DE/SA stay honestly missing (no renderer, no invented fill).
+    "csc-city:111132",      # US Alcoa→美国铝业公司 (brand-MT); system 阿科 refills
+    "csc-city:102060",      # RU Универ→大学 (common-noun MT); 乌尼维尔 refills
+    "csc-city:97528",       # RU Академическое→学院 (common-noun MT); 阿卡杰米切斯科叶 refills
+    "csc-city:99873",       # RU Металлострой→金属建筑公司 (公司 hallucinated); 梅塔尔洛斯特罗 refills
+    "csc-city:25764",       # DE Gutach→黑林山铁路沿线古塔赫 (added description); honest miss
+    "csc-city:24437",       # DE Burgwerben→城堡 (truncation, werben lost); honest miss
+    "csc-city:28448",       # DE Radolfzell→博登湖畔拉多夫采尔车站 (added 车站); honest miss
+    "csc-city:26283",       # DE Humboldtkolonie→洪堡学院 (kolonie≠college); honest miss
+    "csc-city:136267",      # IT Bovalino Superiore→博瓦利诺高级酒店 (酒店 hallucinated); 博瓦利诺-苏佩里奥雷 refills
+    "csc-city:48375",       # GB Banks→银行 (common-noun MT); 班克斯 refills
+    "fr-commune:77210",     # FR La Grande-Paroisse→大教堂区 (paroisse≠cathedral); 拉格朗德-帕鲁瓦斯 refills
+    "fr-commune:85059",     # FR La Châtaigneraie→城堡花园 (châtaigneraie=chestnut grove); 拉沙泰涅雷 refills
+    "csc-city:148770",      # SA Al Qa'im→艾 沙特阿拉伯 (country-suffix contamination); honest miss
+    "csc-city:148784",      # SA Juha Saudi Arabia→'Juha 沙特阿拉伯' (Latin+suffix); honest miss
+    "csc-city:148788",      # SA Khatib Saudi Arabia→卡提卜 沙特阿拉伯 (suffix); honest miss
 }
+# Archived after the same round-38 diagonal scan — component-faithful
+# semantic renderings, i.e. style divergence, NOT factual error. The rows
+# stay upstream-covered; never dropped, never re-frozen:
+# - RU Комендантский аэродром→科门丹茨基机场 (aerodrom IS the name component)
+# - IT Stazione→火车站 / Marina→码头 / Castel→城堡 / Borgata class (~105 cells)
+# - US "X Park/Center/Plain"→公园/中心/平原 class (~250 cells)
+# - GB Castle→城堡 / Plain→平原 / component-Bank / Ballycastle→巴利城堡镇
+# - FR Bois-le-Roi→国王森林 (bois/Roi faithful) ×2; established keeps:
+#   Colombey 科隆贝双教堂村, Canary Wharf 金丝雀码头
+# - DE Burg Stargard 斯塔加德城堡 / Gartenstadt 花园城 / Lauterbach/Schwarzwald
+
+
+def fix_zh_space_norm(value: str) -> str:
+    """Round-38 rule, in-generator so regeneration keeps it: upstream MT and
+    the early renderers wrote internal spaces between transliteration
+    syllables/words (阿拉莫 海特斯); zh cartographic convention joins them
+    (Baton-Rouge 巴吞鲁日 style). Collapse only when the whole value is
+    pure Hanzi after the collapse — mixed-script or punctuation-bearing
+    values (马赛 16, 帕拉齐的 S.P., dash-joined dual names, hyphenated
+    哈恩特-马恩西斯克) stay untouched. Idempotent."""
+    import re as _re
+    stripped = value.strip()
+    if not stripped or " " not in stripped:
+        return value
+    collapsed = _re.sub(r"\s+", "", stripped)
+    if _re.fullmatch(r"[一-鿿㐀-䶿豈-﫿]+", collapsed):
+        return collapsed
+    return value
+
+
+# Cross-locale upstream garbage (round-38 diagonal sweep): confirmed
+# factual-error values per (nid, locale) in the NON-zh packs — the same
+# classes as the zh list: common-noun MT (Banks→銀行/은행/Банки/البنوك,
+# Универ→جامعة "university"), semantic MT of a name component as the whole
+# (Bells→종, Catena→사슬, The Acreage→土地面積/Площадь/المساحة, 112127→
+# Колокола), LMS brand MT, and the SA country-suffix contamination rows
+# ("X Saudi Arabia" — MT suffix in ja/ko/ru/ar, suffix-bearing Latin
+# pass-through in fr/de/it). Clean values stay (ru Сысерть, ja カテナ …).
+# Refills: rule-renderer overlay where staged (US/GB/RU/IT), else WD
+# community labels, else honest missing.
+LOCALE_GARBAGE_DROPS = {
+    # round-1 rows, cross-locale half (zh half lives in ZH_GARBAGE_DROPS)
+    ("csc-city:99529", "ja"), ("csc-city:99529", "ko"), ("csc-city:99529", "ar"),
+    ("csc-city:101733", "ja"), ("csc-city:101733", "ko"),
+    ("csc-city:112126", "ko"),
+    ("csc-city:112127", "ko"), ("csc-city:112127", "ru"),
+    ("csc-city:127553", "ja"), ("csc-city:127553", "ru"), ("csc-city:127553", "ar"),
+    ("csc-city:137393", "ko"), ("csc-city:137393", "ar"),
+    # round-38 sweep, non-zh half
+    ("csc-city:48375", "ja"), ("csc-city:48375", "ko"),
+    ("csc-city:48375", "ru"), ("csc-city:48375", "ar"),
+    ("csc-city:102060", "ar"),
+    ("csc-city:148784", "ja"), ("csc-city:148784", "ko"), ("csc-city:148784", "ru"),
+    ("csc-city:148784", "fr"), ("csc-city:148784", "de"), ("csc-city:148784", "it"),
+    ("csc-city:148784", "ar"),
+    ("csc-city:148788", "ja"), ("csc-city:148788", "ko"), ("csc-city:148788", "ru"),
+    ("csc-city:148788", "fr"), ("csc-city:148788", "de"), ("csc-city:148788", "it"),
+    ("csc-city:148788", "ar"),
+}
+
+
+def _garbage_for(nid: str, locale: str) -> bool:
+    """Upstream-garbage drop check at (nid, locale) granularity: zh packs
+    drop the whole ZH_GARBAGE_DROPS set; other locales drop only entries
+    confirmed in LOCALE_GARBAGE_DROPS."""
+    if locale in ("zh-Hans", "zh-Hant"):
+        return nid in ZH_GARBAGE_DROPS
+    return (nid, locale) in LOCALE_GARBAGE_DROPS
 # Confirmed upstream errors in zh-Hans packs (AI proof-reading round 1/3):
 # values rewritten and quality flipped to machine-candidate — never approved.
 # Japanese sisters of the RU truncation errors (same proof-reading rounds)
@@ -259,7 +347,7 @@ def main():
                     packs.setdefault("_ja_fixed", {})[nid] = True
                     continue
                 value = (row.get("translations") or {}).get(key)
-                if value and nid not in ZH_GARBAGE_DROPS:
+                if value and not _garbage_for(nid, locale):
                     packs[locale][nid] = nfc(value)
 
         for row in sorted(counties_by_cc.get(cc, []), key=lambda r: r["id"]):
@@ -270,7 +358,7 @@ def main():
             packs["en"][nid] = nfc(row["name"])
             for locale, key in TRANSLATION_LOCALES.items():
                 value = (row.get("translations") or {}).get(key)
-                if value and nid not in ZH_GARBAGE_DROPS:
+                if value and not _garbage_for(nid, locale):
                     packs[locale][nid] = nfc(value)
 
         county_ids = {row["id"] for row in counties_by_cc.get(cc, [])}
@@ -303,7 +391,7 @@ def main():
                 ja_full = (m.get("city") or "") + ward
                 for locale, key in TRANSLATION_LOCALES.items():
                     value = inherited.get(key)
-                    if not value and ja_full and nid not in ZH_GARBAGE_DROPS:
+                    if not value and ja_full and not _garbage_for(nid, locale):
                         # NOTE: compare LOCALE not key — key is the CSC field
                         # name and zh-Hans maps to "zh-CN" (the aliasing bug
                         # that silently skipped the zh-Hans branch)
@@ -333,7 +421,7 @@ def main():
                             value = f"{en_name} {ward_r}"
                         elif not ward and locale in ("de", "fr", "it"):
                             value = en_name          # latin borrowing (旭川市)
-                    if value and nid not in ZH_GARBAGE_DROPS:
+                    if value and not _garbage_for(nid, locale):
                         packs[locale][nid] = nfc(value)
             stats_jp_note = {"jpMunisGeolonia": len(jp_munis)}
             # JP uses no CSC city rows
@@ -393,7 +481,7 @@ def main():
                 packs["en"][nid] = nfc(row["LIBELLE"])
                 for locale, key in TRANSLATION_LOCALES.items():
                     v = (csc_idx.get(row["NCCENR"].lower()) or csc_idx.get(row["LIBELLE"].lower()) or {}).get(key)
-                    if v and nid not in ZH_GARBAGE_DROPS:
+                    if v and not _garbage_for(nid, locale):
                         packs[locale][nid] = nfc(v)
             cities_by_cc[cc] = []
             counties_by_cc[cc] = []
@@ -419,7 +507,7 @@ def main():
                     packs.setdefault("_zh_fixed", {})[nid] = True
                     continue
                 value = (row.get("translations") or {}).get(key)
-                if value and nid not in ZH_GARBAGE_DROPS:
+                if value and not _garbage_for(nid, locale):
                     packs[locale][nid] = nfc(value)
 
         # CSC-translations bridge for FR/JP (ODbL): these layers inherit CSC
@@ -451,12 +539,14 @@ def main():
             bridged_nodes = 0
             for row in bridge_rows:
                 bridge_nid = qid_to_nid.get((row.get("wikiDataId") or "").strip())
-                if not bridge_nid or bridge_nid in ZH_GARBAGE_DROPS:
+                if not bridge_nid:
                     continue
                 trans = row.get("translations") or {}
                 filled = False
                 for locale, key in TRANSLATION_LOCALES.items():
                     if bridge_nid in packs[locale]:
+                        continue
+                    if _garbage_for(bridge_nid, locale):
                         continue
                     value = trans.get(key)
                     if value:
@@ -527,6 +617,16 @@ def main():
                 packs["_rule_pairs"] = rule_pairs
                 packs["_rule_refs"] = rule_refs
             print(f"{cc} rule-transcription overlay: {len(rule_filled)} nodes filled")
+        # zh space normalization (round-38, post-overlay so it also covers
+        # overlay-filled values; runs before the zh-Hant derivation which
+        # inherits the normalized forms via s2t). Rewritten cells land as
+        # machine-candidate via the _zh_fixed marker — never approved.
+        for _nid in list(packs["zh-Hans"]):
+            _v = packs["zh-Hans"][_nid]
+            _nv = fix_zh_space_norm(_v)
+            if _nv != _v:
+                packs["zh-Hans"][_nid] = nfc(_nv)
+                packs.setdefault("_zh_fixed", {})[_nid] = True
         # derive zh-Hant pack (machine-candidate)
         hant_names, hant_quality = {}, {}
         conversion_stats = {"convertedChars": 0, "names": 0, "kanjiDirectJP": 0}
@@ -631,6 +731,16 @@ def main():
                     for locale in list(TRANSLATION_LOCALES) + ["zh-Hant"]:
                         if nid in packs[locale]:
                             continue
+                        # round-38: zh locales honor ZH_GARBAGE_DROPS — a
+                        # dropped cell stays missing here (community labels
+                        # may repeat the upstream MT text or the label of a
+                        # parent entity, e.g. Gutach's zh-wiki descriptive
+                        # title, Humboldtkolonie's Humboldt/Gremberg parent
+                        # label); rule-renderer refills already ran earlier
+                        # and are unaffected. Non-zh locales honor only the
+                        # confirmed LOCALE_GARBAGE_DROPS entries.
+                        if _garbage_for(nid, locale):
+                            continue
                         label = entry["labels"].get(locale)
                         if label:
                             packs[locale][nid] = nfc(label)
@@ -643,6 +753,15 @@ def main():
             print(f"{cc} wikidata overlay: {len(wd_filled)} nodes filled, "
                   f"{len(wd_refs)} staged sources applied")
 
+        # second zh space-normalization pass (round-38): sweeps values the
+        # wikidata/geonames overlays wrote after the first pass (which feeds
+        # the s2t zh-Hant derivation). Idempotent; same _zh_fixed marking.
+        for _nid in list(packs["zh-Hans"]):
+            _v = packs["zh-Hans"][_nid]
+            _nv = fix_zh_space_norm(_v)
+            if _nv != _v:
+                packs["zh-Hans"][_nid] = nfc(_nv)
+                packs.setdefault("_zh_fixed", {})[_nid] = True
 
         structure = {"protocolVersion": "1.0", "datasetId": "geo-regions-csc-candidate",
                      "countryCode": cc,
