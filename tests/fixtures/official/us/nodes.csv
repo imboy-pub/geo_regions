@@ -1,0 +1,5 @@
+usps,geoid,name,kind,abolished
+AL,01001,Autauga County,county,false
+DC,11001,District of Columbia,county,false
+PR,72001,Adjuntas Municipio,county,false
+CA,06075,San Francisco city,place,true

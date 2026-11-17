@@ -1,0 +1,5 @@
+{
+  "countryCode": "US",
+  "note": "Additive batch: the 57 legacy state/territory ids stay; counties use us-county:{5-digit FIPS GEOID}. place/MCD records are outside the profile and never become nodes.",
+  "records": []
+}

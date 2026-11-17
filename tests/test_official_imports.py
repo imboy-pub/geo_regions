@@ -157,5 +157,55 @@ class KrAdapterTests(unittest.TestCase):
         self.assertTrue(len(migrations) >= len(abolished))
 
 
+class UsAdapterTests(unittest.TestCase):
+    """tool.importers.us — fixture-level adapter behaviour."""
+
+    US_FIXTURE = REPO / 'tests/fixtures/official/us/nodes.csv'
+
+    def _rows(self):
+        from tool.importers.common import SourceNode
+        rows = []
+        for r in load_rows(self.US_FIXTURE):
+            rows.append(SourceNode(
+                official_code=r['geoid'], parent_code=r['usps'], kind=r['kind'],
+                name=r['name'], name_locale='en', name_quality='source-native',
+                children_status='unknown', abolished=r['abolished'] == 'true'))
+        return rows
+
+    def test_county_ids_are_five_digit_fips_with_iso_parents(self):
+        from tool.importers.us import build_nodes
+        active, migrations = build_nodes(self._rows())
+        ids = {n['id'] for n in active}
+        self.assertIn('us-county:01001', ids)
+        self.assertIn('us-county:11001', ids)
+        self.assertIn('us-county:72001', ids)
+        by_id = {n['id']: n for n in active}
+        self.assertEqual(by_id['us-county:01001']['parentId'], 'iso3166-2:US-AL')
+        self.assertEqual(by_id['us-county:11001']['parentId'], 'iso3166-2:US-DC')
+        self.assertEqual(by_id['us-county:72001']['parentId'], 'iso3166-2:US-PR')
+
+    def test_place_records_never_become_nodes(self):
+        from tool.importers.us import build_nodes
+        active, _ = build_nodes(self._rows())
+        self.assertNotIn('us-county:06075', {n['id'] for n in active})
+        self.assertFalse(any(n['kind'] == 'place' for n in active))
+
+    def test_parse_gazetteer_shape(self):
+        from tool.importers.us import parse_gazetteer
+        rows = parse_gazetteer(REPO / 'sources/raw/official/us/2025_Gaz_counties_national.zip')
+        self.assertEqual(len(rows), 3222)
+        self.assertTrue(all(r.kind == 'county' for r in rows))
+        self.assertTrue(all(r.name_locale == 'en' for r in rows))
+
+    def test_all_57_state_ids_map_into_existing_seed(self):
+        from tool.importers.us import USPS_ISO
+        with open(REPO / 'data/regions/US.json') as f:
+            regions = json.load(f)
+        existing = {n['id'] for n in regions['nodes']}
+        for usps, iso in USPS_ISO.items():
+            self.assertIn(f'iso3166-2:{iso}', existing, f'{usps} missing from seed')
+        self.assertEqual(len(USPS_ISO), 57)
+
+
 if __name__ == '__main__':
     unittest.main()

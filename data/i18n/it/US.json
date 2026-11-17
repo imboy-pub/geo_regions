@@ -1,5 +1,5 @@
 {
-  "compatibleStructureRevision": "s-65edb4a623631538",
+  "compatibleStructureRevision": "s-e041917b13cd3b37",
   "countryCode": "US",
   "coverage": {
     "cldrTerritoryNameFill": {
@@ -7,7 +7,7 @@
       "note": "Subdivision nodes whose ISO code is also a CLDR territory entry (e.g. US-AS, FR-BL) filled from the same pinned CLDR territories export; JSON export threshold quality."
     },
     "explicitNames": 58,
-    "missingNames": 0,
+    "missingNames": 3222,
     "policy": "Default production policy rejects provisional and unconfirmed; demo may opt in explicitly. Missing or filtered names fall back, never fill by copying another language.",
     "projectReviewed": 0,
     "sourceApproved": 0,

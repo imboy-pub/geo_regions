@@ -1,0 +1,10 @@
+{
+  "profile": "US-official-county-current",
+  "officialCodeSystem": "US Census Gazetteer counties (5-digit FIPS GEOID; state FIPS = first 2 digits)",
+  "targetKinds": ["state-equivalent", "county", "county-equivalent"],
+  "excludedKinds": ["place", "MCD", "census-designated place"],
+  "sourceBaseline": "census-2025-gazetteer-counties-national (vintage 2025)",
+  "parentRule": "county/county-equivalent→state by USPS abbr crosswalked to the legacy iso3166-2:US-XX nodes; state→country",
+  "idRule": "57 state/territory nodes preserve legacy iso3166-2:US-XX; county = us-county:{5-digit FIPS GEOID}",
+  "nameRule": "English official names from the Gazetteer (nameLocale=en, nameQuality=source-native); no place/MCD records become nodes"
+}

@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import s2t_places
 from importers.jp import build as jp_build
 from importers.kr import build as kr_build
+from importers.us import build as us_build
 
 COUNTRIES = ('CN', 'JP', 'KR', 'US', 'GB', 'DE', 'FR', 'IT', 'RU', 'SA')
 LOCALES = ('zh-Hans', 'zh-Hant', 'en', 'ja', 'ko', 'ru', 'de', 'fr', 'it', 'ar')
@@ -375,6 +376,7 @@ def build(root):
         native_names = {}
         jp_nodes, jp_migrations = [], []
         kr_nodes, kr_migrations = [], []
+        us_nodes, us_migrations = [], []
         if cc == 'CN':
             crosswalk, native_names = add_cn(root, nodes, index, translations, aliases)
             out['sources/cn-province-crosswalk.json'] = encoded({'records': crosswalk})
@@ -417,6 +419,18 @@ def build(root):
                       'by 전남광주통합특별시 (kr-municipality:1200000000) and their nodes remain '
                       'with the replacement recorded. Abolished 시군구 codes from the '
                       '말소코드포함 package are recorded as abolished migrations.')))
+        if cc == 'US':
+            us_nodes, us_migrations = us_build(root)
+            ids_now = {n['id'] for n in nodes}
+            for n in us_nodes:
+                if n['parentId'] not in ids_now:
+                    raise ValueError(f'US county parent missing: {n["id"]} → {n["parentId"]}')
+                nodes.append(n)
+            out['sources/migrations/US.json'] = encoded(dict(
+                countryCode='US', records=us_migrations,
+                note=('Additive batch: the 57 legacy state/territory ids stay; counties use '
+                      'us-county:{5-digit FIPS GEOID}. place/MCD records are outside the '
+                      'profile and never become nodes.')))
         nodes.sort(key=lambda n: n['id'])
         ids = {n['id'] for n in nodes}
         if len(ids) != len(nodes):
@@ -443,6 +457,12 @@ def build(root):
                             defaultNameSource='modood source-native Chinese for mainland descendants; CLDR English country root. Per-node nameLocale/nameQuality govern fallback.',
                             warning='Upstream modood states the dataset is no longer updated. This seed is not 2026-current data.')
             sources += ['sources/raw/modood/pca-code.json', 'sources/raw/cldr/aliases.json', 'sources/raw/cldr/subdivisions-zh.xml']
+        if cc == 'US':
+            coverage.update(profile='US-Census-gazetteer-counties-2025-vintage',
+                            knownGap='place/MCD layers are outside the profile; county-equivalent records are included.',
+                            defaultNameSource='Census Gazetteer English official county names (en, source-native); legacy CLDR names preserved on the 57 state/territory nodes.')
+            sources += ['sources/raw/official/us/2025_Gaz_counties_national.zip',
+                        'sources/raw/official/us/gazetteer-files-page.html']
         if cc == 'KR':
             coverage.update(profile='KR-MOIS-kikcd_h-effective-2026-10-26',
                             officialBaselineDate='2026-10-26',
@@ -512,6 +532,11 @@ def build(root):
                 names.update(kr_ko_names)
                 quality.update({k: 'source-native' for k in kr_ko_names})
                 refs.append('sources/raw/official/kr/jscode20261026.zip')
+            if cc == 'US' and locale == 'en':
+                us_en_names = {n['id']: n['name'] for n in us_nodes}
+                names.update(us_en_names)
+                quality.update({k: 'source-native' for k in us_en_names})
+                refs.append('sources/raw/official/us/2025_Gaz_counties_national.zip')
             s2t_overlay, s2t_changed = {}, 0
             if locale == 'zh-Hant':
                 for nid, text in zh_hans_names.items():
