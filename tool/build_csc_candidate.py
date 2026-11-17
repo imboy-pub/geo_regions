@@ -178,15 +178,32 @@ def _garbage_for(nid: str, locale: str) -> bool:
 RU_CODA_N_FUSION = [
     ("哈恩", "汉"), ("马恩", "曼"), ("塔恩", "坦"), ("卡恩", "坎"),
     ("瓦恩", "万"), ("拉恩", "兰"), ("阿恩", "安"), ("多恩", "顿"),
-    ("米恩", "明"),
+    ("米恩", "明"), ("达恩", "丹"),
 ]
 
 
 def fix_ru_coda_n(value: str) -> str:
-    """RU pack only: fuse the standalone 恩 coda pairs (round-40)."""
+    """RU pack only: fuse the standalone 恩 coda pairs (round-40), plus
+    two more upstream-MT alignment rules (round-41):
+    - word-final 叶 → 耶: MT renders word-final -е as 叶 while every
+      established -ское/-ное/-ье/-ое spelling ends in 耶 (斯科耶/诺耶/
+      奇耶/沃耶) — 13 census rows, all established-fused;
+    - 斯斯克 → 斯克: MT splits the geminate сс while established
+      collapses it (Новочеркасск 诺沃切尔卡斯克, Невинномысск
+      涅温诺梅斯克, Спасск 斯帕斯克).
+    NOT encoded (deliberately): coda-м fusion — established usage is
+    split (Тамбов 坦波夫 fused-frozen vs Волоколамск 沃洛科拉姆斯克 /
+    Нижнекамск 下卡姆斯克 / Любим 柳比姆 unfused), so м stays
+    transliteration-м (姆); and 维恩 (в+н) — two underlying vowels share
+    the MT spelling ((в,е)→文 vs (в,и)→温), so the blind pattern is not
+    one-to-one; the renderer's context-aware cells handle new fills."""
     for old, new in RU_CODA_N_FUSION:
         if old in value:
             value = value.replace(old, new)
+    if value.endswith("叶"):
+        value = value[:-1] + "耶"
+    if "斯斯克" in value:
+        value = value.replace("斯斯克", "斯克")
     return value
 # Confirmed upstream errors in zh-Hans packs (AI proof-reading round 1/3):
 # values rewritten and quality flipped to machine-candidate — never approved.

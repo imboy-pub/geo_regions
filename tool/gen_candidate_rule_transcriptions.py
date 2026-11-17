@@ -861,6 +861,10 @@ FUSED_N_CV = {
     ("л", "а"): "兰",   # Лангепас 兰格帕斯, Улан-Удэ 乌兰乌德
     ("р", "а"): "兰",   # Назрань 纳兹兰, Сызрань 瑟兹兰
     ("д", "о"): "顿",   # Донской 顿(河)
+    ("д", "а"): "丹",   # Магадан 马加丹 (round-41)
+    ("в", "и"): "温",   # Невинномысск 涅温诺梅斯克, Тихвин 季赫温 (round-41)
+    ("в", "е"): "文",   # Венгерово 文格罗沃, Эвенкийский 埃文基 (round-41)
+    ("р", "я"): "良",   # Брянск 布良斯克, Зырянское (round-41)
     ("м", "и"): "明",   # Минск 明斯克
     ("м", "е"): "明",   # Тюмень 秋明
     ("ч", "и"): "钦",   # Ачинск 阿钦斯克 (-нск path)
@@ -921,6 +925,15 @@ def transcribe_zh(word: str) -> str:
                 i += 1
                 at_word_start = False
                 continue
+            if c == "с" and nxt == "с" and nxt2 == "к":
+                # -сск gemination collapses (round-41): Невинномысск
+                # 涅温诺梅斯克, Новочеркасск 诺沃切尔卡斯克 — established
+                # writes one 斯 for the geminate сс; the к renders on its
+                # own pass (word-final 克, -кий 基)
+                out.append("斯")
+                i += 2
+                at_word_start = False
+                continue
             if c == "н":
                 # coda-н fusion (round-40): н before a consonant, word-end,
                 # word boundary (hyphen/space — Улан-Удэ 乌兰乌德), or hard-ь
@@ -967,8 +980,14 @@ def transcribe_zh(word: str) -> str:
             at_word_start = False
             continue
         if c in ZH_V0:
-            # word-initial я=雅 (Якуtск); standalone after a vowel=亚 (Красноярск)
-            out.append("亚" if (c == "я" and not at_word_start) else ZH_V0[c])
+            # word-initial я=雅 (Якуtск); standalone after a vowel=亚 (Красноярск);
+            # word-final standalone е=耶 (round-41: -ское 斯科耶/-ное 诺耶/
+            # -ье 奇耶 — established renders the closing [je] as 耶)
+            nxt = chars[i + 1] if i + 1 < len(chars) else None
+            if c == "е" and (nxt is None or nxt in ("-", " ", "–")):
+                out.append("耶")
+            else:
+                out.append("亚" if (c == "я" and not at_word_start) else ZH_V0[c])
             last = ("v0", c)
             i += 1
             at_word_start = False
@@ -1019,10 +1038,19 @@ ZH_EVAL = {
     "Улан-Удэ": "乌兰-乌德",
     "Тюмень": "秋明",
     "Ачинск": "阿钦斯克",
+    # round-41 cells + word-final е→耶 + -сск collapse
+    "Магадан": "马加丹",
+    "Тихвин": "季赫温",
+    "Брянск": "布良斯克",
+    "Невинномысск": "涅温诺梅斯克",
+    "Венгерово": "文格罗沃",
+    "Красное": "克拉斯诺耶",
     "Красный Яр": "克拉斯内雅尔",
     "Королёв": "科罗廖夫",
-    # word-gap JOIN path (round-38), twin-word names outside hyphenation
-    "Набережные Челны": "纳别列日内叶切尔内",
+    # word-gap JOIN path (round-38), twin-word names outside hyphenation;
+    # word-final е→耶 applies to the adjectival -ные too (system form;
+    # established 尼耶-class renderings queued for review)
+    "Набережные Челны": "纳别列日内耶切尔内",
     "Новая Балахна": "诺瓦亚巴拉赫纳",
 }
 # excluded traditional/localized: Москва 莫斯科, Казань 喀山, Пермь 彼尔姆,
