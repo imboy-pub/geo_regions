@@ -742,6 +742,21 @@ def main():
                         if _garbage_for(nid, locale):
                             continue
                         label = entry["labels"].get(locale)
+                        if label and locale == "zh-Hant":
+                            # round-39: the WD/geonames zh-Hant channel ships
+                            # simplified copies (386 verbatim hans==hant) and
+                            # script hybrids (蘭-迪尔县 — partial conversion).
+                            # When the label's s2t target equals the zh-Hans
+                            # label's, the pair differs by script only — write
+                            # the fully converted form (same output the s2t
+                            # derivation path would produce). Genuinely
+                            # divergent labels (大阪 vs 大坂 class, s2t targets
+                            # differ) are kept untouched.
+                            hans_label = entry["labels"].get("zh-Hans")
+                            if (hans_label and
+                                    s2t_places.convert(label)[0] != label and
+                                    s2t_places.convert(label)[0] == s2t_places.convert(hans_label)[0]):
+                                label = s2t_places.convert(hans_label)[0]
                         if label:
                             packs[locale][nid] = nfc(label)
                             wd_filled.add(nid)
