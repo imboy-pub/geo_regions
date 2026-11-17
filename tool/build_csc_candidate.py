@@ -164,6 +164,30 @@ def _garbage_for(nid: str, locale: str) -> bool:
     if locale in ("zh-Hans", "zh-Hant"):
         return nid in ZH_GARBAGE_DROPS
     return (nid, locale) in LOCALE_GARBAGE_DROPS
+
+
+# Upstream coda-н migration (round-40): upstream MT wrote the syllable-
+# closing н as a standalone 恩 syllable (哈恩特-马恩西斯克) while the
+# established forms fuse (汉特-曼西斯克 city row, 阿尔汉格尔斯克,
+# 阿斯特拉汉, 纳兹兰, 兰格帕斯) — and upstream itself was inconsistent
+# (city 汉特-曼西斯к vs county 哈恩特-马恩西斯克). In Cyrillic
+# phonotactics V+н+C can ONLY be a closing н (no native ха+ан clusters),
+# so each 2-char pair maps one-to-one; diagonal scan of the RU pack found
+# 32 hits, every one a true fusion. Pack-wide migration unifies on fusion
+# and lands many rows on their established spellings.
+RU_CODA_N_FUSION = [
+    ("哈恩", "汉"), ("马恩", "曼"), ("塔恩", "坦"), ("卡恩", "坎"),
+    ("瓦恩", "万"), ("拉恩", "兰"), ("阿恩", "安"), ("多恩", "顿"),
+    ("米恩", "明"),
+]
+
+
+def fix_ru_coda_n(value: str) -> str:
+    """RU pack only: fuse the standalone 恩 coda pairs (round-40)."""
+    for old, new in RU_CODA_N_FUSION:
+        if old in value:
+            value = value.replace(old, new)
+    return value
 # Confirmed upstream errors in zh-Hans packs (AI proof-reading round 1/3):
 # values rewritten and quality flipped to machine-candidate — never approved.
 # Japanese sisters of the RU truncation errors (same proof-reading rounds)
@@ -568,6 +592,19 @@ def main():
             elif fixed != packs["zh-Hans"][nid]:
                 packs["zh-Hans"][nid] = nfc(fixed)
                 packs.setdefault("_zh_fixed", {})[nid] = True
+
+        # RU coda-н fusion migration (round-40, RU pack only): fuse the
+        # standalone 恩 coda pairs (哈恩特→汉特 ...) so upstream rows land
+        # on the established fused spellings — same forms the renderer's
+        # FUSED_N layer now emits. Runs before the rule overlay and the
+        # zh-Hant derivation (s2t mirrors 汉漢/兰蘭/顿頓/万萬 automatically);
+        # rewritten cells land as machine-candidate via _zh_fixed.
+        if cc == "RU":
+            for nid in list(packs["zh-Hans"]):
+                fixed = fix_ru_coda_n(packs["zh-Hans"][nid])
+                if fixed != packs["zh-Hans"][nid]:
+                    packs["zh-Hans"][nid] = nfc(fixed)
+                    packs.setdefault("_zh_fixed", {})[nid] = True
 
 
         # rule-transcription overlay (last fill-missing stage): derived

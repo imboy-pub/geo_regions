@@ -824,6 +824,7 @@ ZH_CV = {
     ("щ", "у"): "舒",
     ("т", "ю"): "秋", ("л", "ю"): "柳", ("н", "ю"): "纽", ("д", "ю"): "久",
     ("р", "ю"): "留", ("т", "ё"): "乔", ("л", "ё"): "廖", ("н", "ау"): "瑙",
+    ("д", "э"): "德",  # -дэ word-final: Улан-Удэ 乌兰乌德 (round-40)
     # ы column (round-35: -ский/-льный adjectives dominate the RU county tail;
     # anchors: -льный=利内/Камышин 卡梅申/Выкса 维克萨/Клинцы 克林цы=齐/
     # Новозыбковск 新兹布科夫斯克=兹/Куйбышев 古比雪夫=比/Сызрань 瑟兹兰=瑟/
@@ -845,12 +846,35 @@ ZH_PURITY = re.compile(r"[\u4e00-\u9fff\- ]+")
 ZH_CV_VOWELS = set("аоуэыиеёюя")
 
 
+# coda-н fusion (round-40): established zh fuses the closing н into the
+# previous syllable (Ханты 汉特, Архангельск 阿尔汉格尔斯克, Астрахань
+# 阿斯特拉汉, Назрань 纳兹兰) — Cyrillic phonotactics make V+н+C a
+# syllable-closing н, so each (onset, vowel) maps one-to-one. Cells are
+# encoded only where an established anchor exists; unlisted combos fall
+# back to the standalone 恩 syllable (honest partial encoding).
+FUSED_N_CV = {
+    ("х", "а"): "汉",   # Ханты-Мансийск 汉特-曼西斯克 (city row upstream)
+    ("м", "а"): "曼",   # Мантуровский 曼图罗夫斯基
+    ("т", "а"): "坦",   # Константиновский 坦
+    ("к", "а"): "坎",   # Кандалакша 坎达拉克沙, Канск 坎斯克 (-нск path)
+    ("в", "а"): "万",   # Ивантеевский 伊万捷叶夫斯基
+    ("л", "а"): "兰",   # Лангепас 兰格帕斯, Улан-Удэ 乌兰乌德
+    ("р", "а"): "兰",   # Назрань 纳兹兰, Сызрань 瑟兹兰
+    ("д", "о"): "顿",   # Донской 顿(河)
+    ("м", "и"): "明",   # Минск 明斯克
+    ("м", "е"): "明",   # Тюмень 秋明
+    ("ч", "и"): "钦",   # Ачинск 阿钦斯克 (-нск path)
+}
+FUSED_N_V0 = {"а": "安"}  # Ангарск 安加尔斯克, Анна 安纳 — word-initial а+н
+
+
 def transcribe_zh(word: str) -> str:
     word = unicodedata.normalize("NFC", word).strip()
     out: list[str] = []
     chars = list(word.lower())
     i = 0
     at_word_start = True
+    last: tuple | None = None   # ('cv', (cons, vow)) | ('v0', vow) — coda-н fusion key
     while i < len(chars):
         c = chars[i]
         if c in "ьъ":
@@ -859,6 +883,7 @@ def transcribe_zh(word: str) -> str:
         if c in ("-", "–"):
             out.append(c)
             at_word_start = True
+            last = None
             i += 1
             continue
         if c == " ":
@@ -866,6 +891,7 @@ def transcribe_zh(word: str) -> str:
             # internal spaces (matches the build-side fix_zh_space_norm
             # sweep and the en zh renderer's Baton-Rouge style)
             at_word_start = True
+            last = None
             i += 1
             continue
         if c == "й":
@@ -877,6 +903,7 @@ def transcribe_zh(word: str) -> str:
                 pass  # (й, V) cells fire when the vowel branch sees й? no — handled below
             else:
                 out.append("伊")  # Майский 马伊斯基
+            last = None
             i += 1
             at_word_start = False
             continue
@@ -884,9 +911,31 @@ def transcribe_zh(word: str) -> str:
             nxt = chars[i + 1] if i + 1 < len(chars) else None
             nxt2 = chars[i + 2] if i + 2 < len(chars) else None
             if c == "н" and nxt == "с" and nxt2 == "к":
-                i += 1  # -нск drops the н (Ачинск 阿钦斯克)
+                # -нск drops the н (Ачинск 阿钦斯克); the closing н fuses
+                # into the previous syllable where a fused cell exists
+                # (Канск 坎斯克, Ачинск 钦)
+                if last:
+                    fused = FUSED_N_CV.get(last[1]) if last[0] == "cv" else FUSED_N_V0.get(last[1])
+                    if fused and out and out[-1] not in ("-", "–"):
+                        out[-1] = fused
+                i += 1
                 at_word_start = False
                 continue
+            if c == "н":
+                # coda-н fusion (round-40): н before a consonant, word-end,
+                # word boundary (hyphen/space — Улан-Удэ 乌兰乌德), or hard-ь
+                # fuses into the previous syllable; нь followed by a vowel
+                # stays onset-soft and falls through to the standalone one.
+                is_coda = (nxt is None or nxt not in ZH_CV_VOWELS
+                           and not (nxt == "ь" and nxt2 in ZH_CV_VOWELS))
+                if is_coda and last:
+                    fused = FUSED_N_CV.get(last[1]) if last[0] == "cv" else FUSED_N_V0.get(last[1])
+                    if fused and out and out[-1] not in ("-", "–"):
+                        out[-1] = fused
+                        last = None
+                        i += 1
+                        at_word_start = False
+                        continue
             if c == "т" and nxt == "с":
                 out.append("茨")  # тс -> 茨 (Иркутск 伊尔库茨克)
                 i += 2
@@ -898,12 +947,14 @@ def transcribe_zh(word: str) -> str:
                     if cell is None:
                         raise ValueError(f"unhandled diphthong ау in {word!r}")
                     out.append(cell)
+                    last = ("cv", (c, "ау"))
                     i += 3
                 else:
                     cell = ZH_CV.get((c, nxt))
                     if cell is None:
                         raise ValueError(f"unhandled syllable {c+nxt!r} in {word!r}")
                     out.append(cell)
+                    last = ("cv", (c, nxt))
                     i += 2
                 at_word_start = False
                 continue
@@ -911,12 +962,14 @@ def transcribe_zh(word: str) -> str:
                 out.append("木")  # -мск renders 木 (Томск 托木斯克)
             else:
                 out.append(ZH_C[c])
+            last = None
             i += 1
             at_word_start = False
             continue
         if c in ZH_V0:
-            # word-initial я=雅 (Якутск); standalone after a vowel=亚 (Красноярск)
+            # word-initial я=雅 (Якуtск); standalone after a vowel=亚 (Красноярск)
             out.append("亚" if (c == "я" and not at_word_start) else ZH_V0[c])
+            last = ("v0", c)
             i += 1
             at_word_start = False
             continue
@@ -947,19 +1000,38 @@ ZH_EVAL = {
     # Байкал 贝加尔); established 克孜勒 is a traditional divergence, and
     # the row itself is CSC-covered — anchor pins the system cells.
     "Кызыл": "克兹尔",
-    # Ханты-Мансийск: system 哈恩特 (coda-н standalone=恩 is the pack-wide
-    # convention, 127 covered rows); established 汉特 = future fusion slice.
-    "Ханты-Мансийск": "哈恩特-马恩西斯克",
+    # coda-н fusion anchors (round-40): established forms fuse the closing
+    # н into the previous syllable; the renderer and the build-side
+    # upstream migration (RU pack) now both produce the fused forms.
+    # Ханты-Мансийск pins the city-row upstream spelling 汉特-曼西斯克.
+    "Ханты-Мансийск": "汉特-曼西斯克",
+    "Архангельск": "阿尔汉格尔斯克",
+    "Астрахань": "阿斯特拉汉",
+    "Минск": "明斯克",
+    "Кандалакша": "坎达拉克沙",
+    "Канск": "坎斯克",
+    "Ангарск": "安加尔斯克",
+    "Анна": "安纳",
+    "Назрань": "纳兹兰",
+    "Лангепас": "兰格帕斯",
+    # system keeps the hyphen (汉特-曼西斯克 city-row convention);
+    # established 乌兰乌德 drops it — dash divergence archived
+    "Улан-Удэ": "乌兰-乌德",
+    "Тюмень": "秋明",
+    "Ачинск": "阿钦斯克",
     "Красный Яр": "克拉斯内雅尔",
     "Королёв": "科罗廖夫",
     # word-gap JOIN path (round-38), twin-word names outside hyphenation
     "Набережные Челны": "纳别列日内叶切尔内",
     "Новая Балахна": "诺瓦亚巴拉赫纳",
 }
-# excluded traditional/localized: Москва 莫斯科, Казань 喀山, Тюмень 秋明,
-# Пермь 彼尔姆, Оренбург 奥伦堡, Омск 鄂木斯克, Волгоград 伏尔加格勒,
-# Кемерово 克麦罗沃, Ачинск 阿钦斯克 (чи=契 vs standard 钦 fusion),
-# Тамбов 坦波夫 (м devoicing fusion), Улан-Удэ 乌兰乌德 (лан fusion).
+# excluded traditional/localized: Москва 莫斯科, Казань 喀山, Пермь 彼尔姆,
+# Оренбург 奥伦堡, Омск 鄂木斯克, Волгоград 伏尔加格勒, Кемерово 克麦罗沃,
+# Тамбов 坦波夫 (coda-м devoicing fusion — coda-м is a different family,
+# not encoded), Иваново 伊瓦诺沃 (system 瓦 vs established 万 — etymological
+# syllabification Иван-ово, no coda н to fuse).
+# Fusion-landed (round-40, now anchors above): Тюмень 秋明, Улан-Удэ
+# 乌兰乌德, Ачинск 阿钦斯克.
 # NOTE: й+V words (Йошкар-Ола) will SKIP in zh (й branch passes; the vowel
 # branch then renders the vowel standalone — acceptable systematic output).
 
