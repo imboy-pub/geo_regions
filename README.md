@@ -17,7 +17,7 @@ Phase 1 is complete (2026-11-14, local main). Code is BSD-3-Clause, data licensi
 | Demo 与设计 / Demo and UX | [demo/README.md](demo/README.md), [docs/DEMO_UX.md](docs/DEMO_UX.md) |
 | **演示站 / Demo site** | [docs/PAGES_DEMO.md](docs/PAGES_DEMO.md)（上线后 https://imboy-pub.github.io/geo_regions/） |
 | 覆盖与来源 / Coverage and sources | [docs/DATA_COVERAGE.md](docs/DATA_COVERAGE.md), [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) |
-| **CN 来源决策 / CN source decision** | [docs/CN_SOURCE_DECISION.md](docs/CN_SOURCE_DECISION.md)（民政部官方平台实证 + 属主决策清单） |
+| **CN 来源决策 / CN source decision** | [已确认决定](docs/CN_SOURCE_DECISION.md)、[研究证据](docs/evidence/cn-source/README.md)、[迁移规则](docs/CN_MIGRATION_RULES.md)（当前C；A限定准备；A′暂缓） |
 | 工具与扩展 / Tooling and extension | [docs/TOOLING.md](docs/TOOLING.md), [docs/DATA_RULES.md](docs/DATA_RULES.md), [docs/DATA_WORKPACKAGES.md](docs/DATA_WORKPACKAGES.md) |
 | **源更新合同 / Update contract** | [docs/UPDATE_RUNBOOK.md](docs/UPDATE_RUNBOOK.md) |
 | Phase 1 发布候选 / Release candidate | [docs/RELEASE_CANDIDATE_P1.md](docs/RELEASE_CANDIDATE_P1.md), [docs/RELEASE_NOTES_TEMPLATE.md](docs/RELEASE_NOTES_TEMPLATE.md) |

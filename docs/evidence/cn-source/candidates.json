@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "kind": "reference-candidate-index",
+  "purpose": "bounded_documentary_research_only",
+  "reviewedOn": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "reviewBaseline": {
+    "reportHead": "1e181bd08ff26ed6079a92105ff7ff468e989df9",
+    "policyMain": "46b8779607af35af27b1ca158ee44bd7f9f099aa"
+  },
+  "ownerDecision": "confirmed_limited_preparation",
+  "researchWindowStart": "2023-07-01",
+  "researchWindowTargetEnd": "2026-11-19",
+  "coverageComplete": false,
+  "coverageThrough": null,
+  "containsRegionCodes": false,
+  "containsRealMigrationMappings": false,
+  "containsSourceBodies": false,
+  "rawOrDerivedDataSubmission": "blocked_pending_use_basis_and_owner_decision",
+  "rawOrDerivedDataRelease": "not_approved",
+  "nationwideCollectionApproved": false,
+  "evidenceLegend": {
+    "official_page_read": "本轮已读取官方页面正文；不代表权利清理、行政完整性或生效日期已确认。",
+    "official_index_only": "仅取得官方网页的检索索引内容；直接正文读取受阻，须继续复核。"
+  },
+  "candidates": [
+    {
+      "documentDate": null,
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_index_only",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-001",
+      "sourceTitle": "行政区划",
+      "publisher": "安阳县人民政府",
+      "sourceUrl": "https://www.ayx.gov.cn/2024/12-24/3372590.html",
+      "sourceKind": "official_retrospective_summary",
+      "pagePublishedDate": null,
+      "pageDateAsDisplayed": "2026-06-10",
+      "relatedDocumentTitle": "安阳市人民政府关于调整文峰区和安阳县部分行政区划的通知",
+      "relatedDocumentNumber": "安政文〔2023〕70号",
+      "reportedEventDate": "2023-08-16",
+      "retrievalNote": "官方检索索引可读；正文直开403。索引所示页面日期未区分发布或更新，被引用的原通知亦待正文复核。",
+      "summary": "县政府沿革页提供2023年下半年跨县级区域调整线索，提示应补核基线后的完整时间窗口。",
+      "pending": [
+        "原通知正文、成文及生效日期",
+        "对本项目目标层级及历史记录的具体影响"
+      ]
+    },
+    {
+      "documentDate": "2024-05-31",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-002",
+      "sourceTitle": "关于调整铁门关市与巴音郭楞蒙古自治州和静县、焉耆回族自治县、博湖县、尉犁县、且末县行政区划的公告",
+      "publisher": "新疆维吾尔自治区民政厅、兵团民政局",
+      "sourceUrl": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202405/834823359bbc4bd4babc103177464474.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-05-31",
+      "summary": "公告涉及部分行政区域调整，适合研究局部边界变化与县级实体身份变化的区别。",
+      "pending": [
+        "批准日期、原批复文号及生效日期",
+        "边界范围及独立代码变更证据"
+      ]
+    },
+    {
+      "documentDate": null,
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_index_only",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-003",
+      "sourceTitle": "国务院批复同意我省调整德钦县与维西傈僳族自治县行政区划",
+      "publisher": "云南省民政厅",
+      "sourceUrl": "https://ynmz.yn.gov.cn/cms/quhuadiming/10329.html",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-10-10",
+      "retrievalNote": "官方检索索引可读；正文直开405。索引中的日期不替代原报告的另一日期。",
+      "priorReportDate": "2024-09-27",
+      "priorReportDateMeaning": "原2026-11-18报告中的公告日期，尚未与本页发布日期对应",
+      "summary": "公告涉及下级单位跨县归属调整；不能据此认定两个县级实体发生整体身份替换。",
+      "pending": [
+        "原公告正文及原批准文件",
+        "2024-09-27与2024-10-10的来源和日期含义",
+        "正式生效日期"
+      ]
+    },
+    {
+      "documentDate": "2024-12-27",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-004",
+      "sourceTitle": "新疆维吾尔自治区人民政府关于党中央、国务院批准设立和康县的公告",
+      "publisher": "新疆维吾尔自治区人民政府",
+      "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202412/624c97cbd6ef462e8b4ce0f234ac58c1.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-12-27",
+      "summary": "设立新实体的公告提供事件线索，尚不足以建立既有记录与新实体的迁移关系。",
+      "pending": [
+        "批准文件及正式生效日期",
+        "代码发布证据",
+        "旧实体与新实体的范围及继承关系"
+      ]
+    },
+    {
+      "documentDate": "2025-11-07",
+      "documentNumber": "渝府发〔2025〕15号",
+      "effectiveDate": null,
+      "verificationStatus": "official_index_only",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-005",
+      "sourceTitle": "重庆市人民政府关于党中央、国务院批准同意调整江北区渝北区北碚区行政区划的公告",
+      "publisher": "重庆市人民政府",
+      "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/szfwj/qtgw/202511/t20251107_15148513.html",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2025-11-07",
+      "retrievalNote": "官方检索索引包含标题、文号和日期；网页及附件直开超时，正文直接复核待完成。",
+      "summary": "撤设与局部划转同时出现，不能简化成所有旧记录统一一对一替换。",
+      "pending": [
+        "官方正文或附件直接复核",
+        "生效日期和代码发布证据",
+        "区分旧记录去向所需的附加信息"
+      ]
+    },
+    {
+      "documentDate": "2026-04-17",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-006",
+      "sourceTitle": "新疆维吾尔自治区人民政府关于党中央、国务院批准设立县级草湖市的公告",
+      "publisher": "新疆维吾尔自治区人民政府",
+      "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202604/3691350b13064945947d8f78933ccb3e.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2026-04-17",
+      "summary": "官方公告确认一项新设事件；本条是文献线索，不是码表新增或历史ID迁移记录。",
+      "pending": [
+        "批准文件及正式生效日期",
+        "代码发布证据",
+        "旧实体与新实体的范围关系"
+      ]
+    }
+  ]
+}
