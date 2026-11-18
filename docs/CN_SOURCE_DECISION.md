@@ -16,7 +16,7 @@ Verified capabilities (2026-11-18, all commands reproducible):
 2. `/description?dcpid=1` indexes **official county-and-above change records for every year 2001–2026**, full text with government announcement dates. Sample verified: 2024 铁门关市 adjustment (2024-05-31), 云南 德钦/维西 adjustment (2024-09-27), new counties 和康县/和安县 (2024-12-27); 2025 重庆两江新区 (2025-11-07); 2026 草湖市 establishment (2026-04-17).
 3. `/statistics/` publishes the official annual 行政区划统计表 1998–**2022** (latest: 34 省级 / 333 地级 / county breakdown per province) — an authoritative validation baseline, frozen at 2022.
 
-**Not yet verified:** county-level cascade (POST with `shengji`/`diji` params returned `[]` for every encoding/format variant tried — name, name(abbreviation), GBK bytes, 6-digit code). Enumerating counties via the API needs further reverse engineering (~1 session).
+**County cascade — verified after full-width parenthesis discovery:** the province dropdown values embedded server-side use **full-width parentheses**（`北京市（京）`，U+FF08/U+FF09）. With the exact option values the cascade fully works: `shengji=北京市（京）` → prefecture; `+&diji=北京市` → all 16 districts with official codes (110101 东城区…；110103 崇文/110104 宣武 absent = post-2010 merges — the data is genuinely current, not a stale copy). Spot-checked 河北省（冀）→石家庄市 → 22 county entities (130102–130184). **Complete 3-level enumeration ≈ 370 API calls (~34 provinces × avg ~11 prefectures) — trivially scriptable. The A' path is engineering-ready.**
 
 **License gap (the decision):** the platform asserts copyright (民政部) but publishes **no explicit open-data or redistribution license** — unlike the other eight countries' sources (GoS 2.0, KOGL-1, PD, OGL v3, Dl-DE-BY, fr-lo, CC-BY-4.0). Under PRC law the individual 公告 texts are likely outside copyright (著作权法第五条: official documents), and 政府信息公开条例 governs proactive disclosure, but the assembled code tables' database rights and BSD-3 redistribution compatibility **require an owner judgment call**. Per the design gate ("不能确认时停止 CN 数据提交"), no production data was generated from this source in this round.
 
@@ -73,7 +73,7 @@ curl -s 'http://xzqh.mca.gov.cn/statistics/2022.html'  # 34省级/333地级/分�
 - `selectJson` 空参返回 **341 行**：337 行带 6 位官方码（11/12/31/50 四直辖市各 1 行，65 新疆 14 行与官方口径一致）+ 4 行“（省/自治区）直辖县级行政单位”分组行（县级市在分组内，需级联枚举）。**无 81/82/83 港澳台前缀** → 与 CN profile 的 `excludedKinds: hk/mo/tw` 一致。
 - 变更公告为**全文**且带公文出处（例：“新疆维吾尔自治区人民政府2024年12月27日公告”），可直接结构化为迁移记录（设计稿 §7 口径）。
 - 统计表 2022 为最新一期（该栏目 2022 后停更）→ 作 2023 前的计数基线；2023 后计数校验用平台查询数据。
-- **县级级联未打通**：`shengji=<省名>/<省名(简称)>/GBK 字节/<6位码>` 四种形态均返回 `[]`。浏览器内可用说明参数形态另有所指（可能与省份下拉的真实 option value 或会话状态相关），需一次专门的逆向工程。
+- **县级级联已打通（全角括号关键）**：省级参数须用页面内嵌下拉的精确值——**全角括号** `北京市（京）`/`河北省（冀）`（此前半角/裸名/GBK/码四种形态全返回 `[]` 的根因）。级联实测：北京 16 区（110101–110118，崇文/宣武缺席=2010 合并后形态 ✓ 数据非陈旧拷贝）、石家庄 22 县级（130102–130184 ✓）。全国三级完整枚举 ≈ 370 次调用，可脚本化。证据件：`selectJson_beijing_districts.json`、`selectJson_sjz_county_sample.json`。
 - stats.gov.cn：域名可达，但旧统计区划代码路径 404、`/sj/tjbz/` 为 JS 壳页；本期未发现 2023 快照的可下载入口（Batch 0 结论维持）。
 
 ## 4. 授权分析（BSD-3 兼容性）
@@ -93,7 +93,7 @@ curl -s 'http://xzqh.mca.gov.cn/statistics/2022.html'  # 34省级/333地级/分�
 | 选项 | 内容 | 本轮评估更新 | 授权链 |
 |---|---|---|---|
 | **A（推荐）** | modood 2023 基线（WTFPL）+ xzqh.mca.gov.cn 2024/2025/2026 官方公告增量（结构化为迁移记录） | **可行性大增**：增量源已实证（逐年全文公告，年均个位数条变更）；统计表 2022 可作计数锚 | 最干净（WTFPL + 官方文件豁免） |
-| **A'** | 以平台查询数据（selectJson 全量）为主源直接重建现势 | 权威性最高、2026 现势；**前置条件：县级级联逆向 + 属主接受无明示许可** | 有不确定性 |
+| **A'** | 以平台查询数据（selectJson 全量）为主源直接重建现势 | 权威性最高、2026 现势；**县级级联已实证打通（全角括号参数），完整枚举 ≈ 370 次调用——工程就绪**；前置条件仅剩：属主接受无明示许可 | 有不确定性 |
 | **B** | 等待《行政区划代码管理办法》（令第79号）配套发布渠道 | 本轮未发现新渠道落地证据 | 未知 |
 | **C** | 维持现状（2023 冻结快照+诚实标注） | 零成本；产品代价=CN 无现势声明 | 无风险 |
 
@@ -103,7 +103,7 @@ A 与 A' 非互斥：可先 A（公告增量）快速把 seed 推进到“2023 �
 
 1. **授权判定**：接受“gov.cn 官方平台无明示开放许可”的数据进入 `research-seed`（研究种子层，非 BSD 再授权发布物）吗？——接受则 A' 可行；不接受则仅走 A（公告增量，法律面最干净）。
 2. **路径选择**：A（快+干净，现势性=2023+增量）/ A'（全量现势，需先逆向县级 API）/ C（维持）？
-3. **工程启动**：若选 A'，是否批准县级级联逆向工程（预计 1 个会话规模：抓包真实浏览器请求形态）？
+3. **工程启动**：若选 A'，是否批准全量抓取脚本（级联已打通，预计 1 个会话内完成抓取+适配器+TDD+迁移记录）？
 4. **发布口径**：CN 在包级元数据中标注 “2023 statistical base + official MCA increments to 2026-04”（A）或 “MCA platform snapshot 2026-11”（A'）——确认措辞。
 
 ---
