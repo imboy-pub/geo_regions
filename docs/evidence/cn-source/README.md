@@ -13,7 +13,7 @@
 |---|---|---|---|
 | cn-reference-001 | 安阳2023年下半年跨县级区域调整 | 官方沿革页检索索引；正文403 | 原通知、日期含义及目标层级影响 |
 | cn-reference-002 | 铁门关2024年部分区域调整 | 官方公告正文已读 | 批复、生效日、范围及代码证据 |
-| cn-reference-003 | 德钦/维西2024年下级单位归属调整 | 主页面仅检索索引；另有已读官方公报转引 | 原通知及2024-09-27/2024-10-10日期对应关系 |
+| cn-reference-003 | 德钦/维西2024年下级单位归属调整 | 主页面仅检索索引；另有已读官方公报转引和沿革批准日陈述 | 原通知、沿革日期与原文的对应关系及两个公告页面日期含义 |
 | cn-reference-004 | 和康2024年新设事件 | 官方公告正文已读 | 生效日、代码与继承关系 |
 | cn-reference-005 | 重庆2025年撤设与部分划转 | 原公告及官方转载正文已读 | 生效日、代码、区分去向的信息及网站条款适用 |
 | cn-reference-006 | 草湖2026年新设事件 | 官方公告正文已读 | 生效日、代码与历史范围关系 |
@@ -25,6 +25,7 @@
 接续后主页面取得状态为四条正文已读、两条仅检索索引；补充文献不是新的行政事件，也不提高全国覆盖率。
 读取渠道、日期出处、两个具体材料的使用依据草稿和仍待审定的问题见[MATERIAL_USE_REVIEW](MATERIAL_USE_REVIEW.md)。
 JSON中的 `lastCheckedOn`、`reviewNotes` 与 `supportingReferences` 只描述文献核查；`rightsStatus`仍表示真实数据导入审查未完成。
+新增的 `reportedApprovalDate` 限定在相应沿革文献中；`searchStatus` 只描述有限查找的接续状态，不参与数据校验或授权判断。
 
 ## 2. 文件与发布边界
 
@@ -44,6 +45,7 @@ JSON中的 `lastCheckedOn`、`reviewNotes` 与 `supportingReferences` 只描述�
 | CN迁移研究规则 | DONE | 见[迁移规则](../../CN_MIGRATION_RULES.md) |
 | 新增合成跨快照用例 | IMPLEMENTED | 实际验证记录见下节 |
 | 两项具体材料的使用依据研究卡 | DRAFT / pending | 草湖、重庆各限定材料及用途；不是数据使用结论 |
+| 安阳、云南原文件定向补核 | BOUNDED SEARCH COMPLETE / waiting new lead | 新增一条官方沿革批准日陈述；原文件仍未取得，等待新的官方原文入口，避免重复相同检索 |
 | 全国变更完整性、各事件生效日、代码与身份关系 | OPEN | 继续有限文献核查，不按名称猜配 |
 | 真实CN来源使用依据与数据导入 | BLOCKED / not approved | 补具体依据并取得范围明确的实施决定 |
 | A′全国采集、数据发布、生产成熟度提升、PR合并 | NOT AUTHORIZED | 分别决定，不从准备工作批准中推导 |
@@ -80,20 +82,32 @@ git diff --check
 共54项相关单元测试通过。未运行本地全量真实数据重建或Flutter测试，未把本轮结果宣传为完整CI或法律清权通过。
 数据、来源锁、生产工具、schema、config和workflow均无改动；GitHub CI状态以对应提交的实际运行记录为准。
 
-## 5. 本次文献接续与验证
+## 5. 第二轮文献接续与验证
 
-接续起点为上述提交，仍只处理原六条候选。本次补足重庆原公告及转载正文，保存云南相关原文件的正式转引线索，并为草湖、重庆建立具体材料的待审记录。
+本节结果对应 `7f6d75d8850dc541b9aef64e7c36a40e941295ac`，接续起点为上一节提交，仍只处理原六条候选。本次补足重庆原公告及转载正文，保存云南相关原文件的正式转引线索，并为草湖、重庆建立具体材料的待审记录。
 重庆网站声明的限制性表述与新疆网站声明未见开放授权的事实分别记录，不推导通用的网站法律结论。详见[审查记录](MATERIAL_USE_REVIEW.md)。
 
 本次只改五个文档/研究元信息文件，没有修改测试或执行工具；不重复上轮54项测试，也不把旧结果冒称新提交的完整测试结果。
 本次实际检查结果：JSON解析及六条候选的未批准状态检查通过；31个相对Markdown链接（其中7个带锚点）及7个JSON文档引用全部可解析；改动范围恰为五个预期文档/研究元信息文件；`git diff --check`通过。
 本轮没有对外发送咨询。下一步仍可补原通知或细化材料分析；真实数据导入、数据发布及PR合并仍须分别决定。
 
+## 6. 原文件补核与接续条件
+
+从 `7f6d75d` 继续，仅对安阳、云南待核原文件开展有限检索。
+新取得德钦县政府沿革正文，将2024-07-29记为该材料所述批准日期；它没有给出对应批复文号，也不能代填成文或生效日期。
+安阳原通知和云南目标原通知均未取得。两项原文件查找已记录停止条件，后续出现新的官方文献线索即可继续；不重复已受阻页面，也不因此暂停其他已授权的准备工作。
+
+[补证问题单](MATERIAL_USE_REVIEW.md#6-待补证问题单与接续条件)列明所需原文件、日期出处及两个材料使用依据的具体待答问题。
+政府信息获取、材料使用依据和项目实施决定分别记录。本轮没有发送信息公开申请或授权咨询，没有填入联系人身份资料。
+
+本次只改五个文档/研究元信息文件，没有新测试或生产代码改动。实际检查结果：JSON解析、日期只归属对应补充文献、六条候选证据等级及未批准状态均通过；34个相对Markdown链接（其中10个带锚点）和9个JSON文档引用可解析；改动范围检查及 `git diff --check` 通过。已有54项本地测试与CI结果保留各自提交归属，本轮未重跑这些本地测试。
+
 ## English scope
 
 This is a bounded bibliography, not a nationwide change ledger or a geography dataset.
 Four candidate primary pages have been read; two remain official search-index evidence only.
 An additional official cross-reference does not substitute for the referenced original document.
+An official retrospective approval-date statement is kept distinct from original-document and effective dates.
 All effective dates are unknown and all automatic migration flags are false.
 The owner authorized preparation only. Synthetic contract tests do not prove actual CN continuity,
 licensing, source completeness or human review. Material-specific use reviews remain drafts.

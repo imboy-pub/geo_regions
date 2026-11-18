@@ -48,7 +48,10 @@
         "对本项目目标层级及历史记录的具体影响"
       ],
       "lastCheckedOn": "2026-11-19",
-      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录"
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "searchStatus": "bounded_search_complete_waiting_new_lead",
+      "searchReviewNotes": "MATERIAL_USE_REVIEW.md#21-原文件定向补核",
+      "searchSummary": "已按完整标题、文号、市政府公报与官方引用完成本次有限检索，未取得新原通知正文；未重试已受阻详情页。等待新的官方原文入口，不将未找到解释为文件不存在。"
     },
     {
       "documentDate": "2024-05-31",
@@ -88,6 +91,7 @@
       "summary": "公告涉及下级单位跨县归属调整；不能据此认定两个县级实体发生整体身份替换。",
       "pending": [
         "原公告正文及云政发〔2024〕22号原通知",
+        "沿革所述2024-07-29批准日与具体原文件的对应关系",
         "2024-09-27与2024-10-10的来源和日期含义",
         "正式生效日期"
       ],
@@ -108,8 +112,25 @@
           "referencedDocumentNumber": "云政发〔2024〕22号",
           "retrievalNote": "一条读取路径取得正文；另一条路径403，官方检索索引可交叉核对。没有归档原件。",
           "limitation": "仅补强被引通知标题与文号的查找线索。2025年目录的日期及施行条款不属于2024年行政区划事件。"
+        },
+        {
+          "sourceTitle": "历史沿革（建制沿革栏目）",
+          "sourceUrl": "https://www.deqin.gov.cn/jzyg.html",
+          "publisher": "德钦县人民政府",
+          "sourceKind": "official_retrospective_summary",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "pageDateAsDisplayed": "2026-10-21",
+          "pageDateMeaning": "页面只标日期，未区分首次发布或更新。",
+          "reportedApprovalDate": "2024-07-29",
+          "reportedApprovalDateMeaning": "该官方沿革页将此日表述为党中央、国务院批准日期；原批准文件未取得，页面未将此日明确绑定到目标文号。",
+          "locator": "历史沿革正文的2024年事项记述",
+          "limitation": "不作为云政发〔2024〕22号或其他目标原文件的成文日，不作为行政生效日，也不解释另外两个公告页面的日期差异。"
         }
-      ]
+      ],
+      "searchStatus": "bounded_search_complete_waiting_new_lead",
+      "searchReviewNotes": "MATERIAL_USE_REVIEW.md#21-原文件定向补核",
+      "searchSummary": "本次精确文号、完整标题、官方公报及转引检索未取得目标原通知。新增官方沿革日期陈述，原文件及其日期仍待新线索；主页面证据等级不变。"
     },
     {
       "documentDate": "2024-12-27",
@@ -207,6 +228,6 @@
       }
     }
   ],
-  "followupBaseline": "056ddc4f87d01478393fc71b4212a5fffe926095",
+  "followupBaseline": "7f6d75d8850dc541b9aef64e7c36a40e941295ac",
   "materialUseReview": "MATERIAL_USE_REVIEW.md"
 }
