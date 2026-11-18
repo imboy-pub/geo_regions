@@ -41,12 +41,14 @@
       "relatedDocumentTitle": "安阳市人民政府关于调整文峰区和安阳县部分行政区划的通知",
       "relatedDocumentNumber": "安政文〔2023〕70号",
       "reportedEventDate": "2023-08-16",
-      "retrievalNote": "官方检索索引可读；正文直开403。索引所示页面日期未区分发布或更新，被引用的原通知亦待正文复核。",
+      "retrievalNote": "官方检索索引可读；本次网页读取及普通公开GET均403。2023-08-16仍仅为沿革摘要所述事件日；页面展示日期的发布/更新含义及被引原通知正文未核实。",
       "summary": "县政府沿革页提供2023年下半年跨县级区域调整线索，提示应补核基线后的完整时间窗口。",
       "pending": [
         "原通知正文、成文及生效日期",
         "对本项目目标层级及历史记录的具体影响"
-      ]
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录"
     },
     {
       "documentDate": "2024-05-31",
@@ -80,14 +82,33 @@
       "sourceUrl": "https://ynmz.yn.gov.cn/cms/quhuadiming/10329.html",
       "sourceKind": "official_announcement",
       "pagePublishedDate": "2024-10-10",
-      "retrievalNote": "官方检索索引可读；正文直开405。索引中的日期不替代原报告的另一日期。",
+      "retrievalNote": "主页面仍仅官方检索索引可读；网页读取405，普通公开GET为404。新增的官方公报转引正文是另一份文献，不替代本页或原通知，也未解决两日期对应关系。",
       "priorReportDate": "2024-09-27",
       "priorReportDateMeaning": "原2026-11-18报告中的公告日期，尚未与本页发布日期对应",
       "summary": "公告涉及下级单位跨县归属调整；不能据此认定两个县级实体发生整体身份替换。",
       "pending": [
-        "原公告正文及原批准文件",
+        "原公告正文及云政发〔2024〕22号原通知",
         "2024-09-27与2024-10-10的来源和日期含义",
         "正式生效日期"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "supportingReferences": [
+        {
+          "sourceTitle": "迪庆藏族自治州人民政府办公室关于印发《迪庆州人民政府2025年重大行政决策事项目录清单》的通知",
+          "sourceUrl": "https://www.diqing.gov.cn/subsiteIndex/bulletin/ex/articleView.html?articleId=236405&fromSubsiteFlagEx=dqzzf_zfbgs&newsClassId=223&orgCode=&subsiteId=16",
+          "sourceKind": "official_cross_reference",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "documentNumber": "办公室便签〔2025〕317号",
+          "documentDate": "2025-11-14",
+          "pagePublishedDate": "2025-12-12",
+          "locator": "附件第8项的依据栏",
+          "referencedDocumentTitle": "云南省人民政府关于调整德钦县与维西傈僳族自治县行政区划的通知",
+          "referencedDocumentNumber": "云政发〔2024〕22号",
+          "retrievalNote": "一条读取路径取得正文；另一条路径403，官方检索索引可交叉核对。没有归档原件。",
+          "limitation": "仅补强被引通知标题与文号的查找线索。2025年目录的日期及施行条款不属于2024年行政区划事件。"
+        }
       ]
     },
     {
@@ -114,7 +135,7 @@
       "documentDate": "2025-11-07",
       "documentNumber": "渝府发〔2025〕15号",
       "effectiveDate": null,
-      "verificationStatus": "official_index_only",
+      "verificationStatus": "official_page_read",
       "autoMigrationEligible": false,
       "rightsStatus": "not_reviewed_for_data_import",
       "candidateId": "cn-reference-005",
@@ -123,13 +144,37 @@
       "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/szfwj/qtgw/202511/t20251107_15148513.html",
       "sourceKind": "official_announcement",
       "pagePublishedDate": "2025-11-07",
-      "retrievalNote": "官方检索索引包含标题、文号和日期；网页及附件直开超时，正文直接复核待完成。",
+      "retrievalNote": "网页读取工具仍超时；普通公开GET返回200并直接读取原公告及地方志办公室转载正文。成文、原页发布和原公告落款均为2025-11-07，转载页面发布为2025-11-13；未见单列行政生效日期。",
       "summary": "撤设与局部划转同时出现，不能简化成所有旧记录统一一对一替换。",
       "pending": [
-        "官方正文或附件直接复核",
-        "生效日期和代码发布证据",
-        "区分旧记录去向所需的附加信息"
-      ]
+        "行政生效日期和代码发布证据",
+        "区分旧记录去向所需的附加信息",
+        "网站条款及具体材料无需许可依据的适用性"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "supportingReferences": [
+        {
+          "sourceTitle": "重庆市人民政府关于党中央、国务院批准同意调整江北区渝北区北碚区行政区划的公告",
+          "sourceUrl": "https://dfz.cq.gov.cn/zwgk_536/zfxxgkml/zcwj1/202511/t20251113_15160557.html",
+          "publisher": "重庆市地方志办公室（转载重庆市人民政府公告）",
+          "sourceKind": "official_republication",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "documentNumber": "渝府发〔2025〕15号",
+          "documentDate": "2025-11-07",
+          "pagePublishedDate": "2025-11-13",
+          "retrievalNote": "普通公开GET返回200，正文已读；转载日与原公告日期分别保留。"
+        }
+      ],
+      "websiteStatement": {
+        "sourceUrl": "https://wap.cq.gov.cn/wzxg/bqsm/202509/t20250901_14956023.html",
+        "pagePublishedDate": "2025-09-01",
+        "verificationStatus": "official_page_read",
+        "lastCheckedOn": "2026-11-19",
+        "reviewNotes": "MATERIAL_USE_REVIEW.md#4-重庆公告网站条款待解决的使用依据草稿",
+        "summary": "存在来源署名、商业使用和镜像限制表述；对具体材料及用途的适用性与效力待审，不标为开放许可。"
+      }
     },
     {
       "documentDate": "2026-04-17",
@@ -149,7 +194,19 @@
         "批准文件及正式生效日期",
         "代码发布证据",
         "旧实体与新实体的范围关系"
-      ]
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "retrievalNote": "本次重新读取官方公告正文；页面日期和落款均为2026-04-17，没有以其代填批准或生效日期。",
+      "websiteStatement": {
+        "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/wzsm/tydp.shtml",
+        "verificationStatus": "official_page_read",
+        "lastCheckedOn": "2026-11-19",
+        "reviewNotes": "MATERIAL_USE_REVIEW.md#3-草湖公告必要事实使用依据草稿",
+        "summary": "已读声明主要涉及网站职责、信息准确性和个人信息处理，未列明本项目所需开放再分发授权；未发现授权不等于已获许可。"
+      }
     }
-  ]
+  ],
+  "followupBaseline": "056ddc4f87d01478393fc71b4212a5fffe926095",
+  "materialUseReview": "MATERIAL_USE_REVIEW.md"
 }
