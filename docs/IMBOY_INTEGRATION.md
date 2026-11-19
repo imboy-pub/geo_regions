@@ -1,6 +1,8 @@
 # IMBoy 独立接入方案 / IMBoy integration
 
-本方案属于Phase 2，不在本次交付中修改IMBoy源码。Source baseline checked on 2026-11-13: `imboy-pub/imboy-flutter` main at `2cee59317de36e2f70420f46dc881b1117b034c9`.
+本方案属于Phase 2，不在本次交付中修改IMBoy源码。Source baseline checked on 2026-11-13: `imboy-pub/imboy-flutter` main at `2cee59317de36e2f70420f46dc881b1117b034c9`。
+
+> ⚠️ **历史锚点声明（GEO-DOC-01，2026-11-19）**：上述 baseline 与下文全部行号/行为/SHA 均为 2026-11-13 历史快照。该仓（现 imboyapp）持续演进，P2 执行由父计划 `IMBOY_MASTER_V2_2_20261118` 的消费者卡（I-01～05、FL-09～11）承接——**实施前必须重新审计当前 HEAD，本文不得替代消费端审计**。
 
 ## 1. 已核实行为 / Verified baseline
 
@@ -13,7 +15,7 @@
 
 These are inspected existing behaviors, not proposed APIs. PR #68 is already present; preserve it. Recheck HEAD and working trees before implementing because this baseline may advance.
 
-源链接 / Immutable references:
+源链接 / Immutable references（**历史快照，仅供追溯；不作为实施依据**）:
 
 - [SetRegionPage](https://github.com/imboy-pub/imboy-flutter/blob/2cee59317de36e2f70420f46dc881b1117b034c9/lib/page/personal_info/set_region/set_region_page.dart)
 - [SetRegionProvider](https://github.com/imboy-pub/imboy-flutter/blob/2cee59317de36e2f70420f46dc881b1117b034c9/lib/page/personal_info/set_region/set_region_provider.dart)

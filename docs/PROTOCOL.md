@@ -96,9 +96,13 @@ Region packs contain `countryCode`, `locale`, `compatibleStructureRevision` and 
 
 Dataset maturity (`research-seed`) and individual name quality are separate. A pack can contain some eligible names and still be a non-production dataset because coverage, currency or review is incomplete. Integrity PASS never implies geographic or linguistic correctness. `--production` is an additional gate, not proof of legal/linguistic review.
 
-发布扩展语言时不修改结构；返回值建议包括requestedLocale/resolvedLocale/quality/isFallback。该解析API是Phase1待实现要求，不是本包已有生产实现。
+Readiness 语义（GEO-DOC-01，2026-11-19 对齐）：`tool/check_readiness.py` 的 `expectedProductionGateRefusal` / `productionGateRefused` 只证明「seed 数据会被生产门拒绝」这道防线**在位**——check 通过是 tripwire 通过，不是 production-ready；`validate --production` 当前退出码非零同样是预期防线。翻转生产状态需要逐源许可证据、人工语言审校与属主生产 profile 决策（见 `docs/LICENSE_POLICY.md` 逐源清单与 DATA_SOURCES §7），不能靠填满名称或改 maturity 字符串达成。
 
-Adding a language changes no structure. The future resolver returns requested/resolved locale, quality and fallback status. This API is a Phase 1 implementation requirement, not an already shipped production implementation.
+Readiness semantics (GEO-DOC-01, aligned 2026-11-19): `expectedProductionGateRefusal` / `productionGateRefused` in `tool/check_readiness.py` only prove that the guard "seed data is refused by the production gate" is in place — a passing readiness check is a passing tripwire, not production readiness; a non-zero `validate --production` exit is likewise the expected defense. Flipping to production requires per-source license evidence, human linguistic review and an owner production-profile decision (see the `docs/LICENSE_POLICY.md` inventory and DATA_SOURCES §7) — never name completion or a maturity-string edit.
+
+发布扩展语言时不修改结构；解析返回 requestedLocale/resolvedLocale/quality/isFallback。该解析API已由SDK实现（`lib/src/names.dart` 的 `GeoNameResolver`，含显式alias表与质量过滤，随包 0.1.0-wip.1），不再是待实现要求。
+
+Adding a language changes no structure. The resolver returns requested/resolved locale, quality and fallback status. This API is implemented by the SDK (`GeoNameResolver` in `lib/src/names.dart`, with the explicit alias table and quality filter, shipped in 0.1.0-wip.1) — it is no longer a pending Phase 1 requirement.
 
 ## 6. 内容版本 / Content revisions
 
