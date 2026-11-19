@@ -27,6 +27,7 @@ void main() {
   defaultLocaleGroup();
   idFallbackGroup();
   catalogNameGroup();
+  tenLocaleCatalogGroup();
 }
 
 void aliasTableGroup() {
@@ -347,6 +348,66 @@ void catalogNameGroup() {
       expect(bare.text, 'China');
       expect(bare.isFallback, isTrue);
       expect(bare.source, GeoNameSource.defaultName);
+    });
+  });
+}
+
+/// GEO-SDK-03: the consumer contract's ten host locales each resolve the
+/// catalog entry from its own resource-locale pack over the real published
+/// catalog names — no locale silently falls back to the English default
+/// name when its pack is bundled (values re-probed from data/ on 2026-11-19).
+void tenLocaleCatalogGroup() {
+  group('GEO-SDK-03: ten-locale catalog resolution (real data)', () {
+    test('every contract locale resolves the CN entry from its own pack', () {
+      final catalog = loadCountryCatalog();
+      final cn = catalog.entryFor('CN')!;
+      const contractPairs = <String, String>{
+        'zh-CN': 'zh-Hans',
+        'zh-Hant': 'zh-Hant',
+        'en-US': 'en',
+        'ja-JP': 'ja',
+        'ko-KR': 'ko',
+        'ru-RU': 'ru',
+        'de-DE': 'de',
+        'fr-FR': 'fr',
+        'it-IT': 'it',
+        'ar-SA': 'ar',
+      };
+      final expectedText = const <String, String>{
+        'zh-Hans': '中国',
+        'zh-Hant': '中國',
+        'en': 'China',
+        'ja': '中国',
+        'ko': '중국',
+        'ru': 'Китай',
+        'de': 'China',
+        'fr': 'Chine',
+        'it': 'Cina',
+        'ar': 'الصين',
+      };
+      final resolver = GeoNameResolver(
+        catalogPacks: <String, GeoCatalogNames>{
+          for (final resourceLocale in contractPairs.values.toSet())
+            resourceLocale: loadCatalogNames(resourceLocale),
+        },
+      );
+      contractPairs.forEach((hostLocale, resourceLocale) {
+        final resolved = resolver.resolveCatalogName(cn, hostLocale);
+        expect(
+          resolved.text,
+          expectedText[resourceLocale],
+          reason:
+              '$hostLocale (via $resourceLocale pack) must serve its '
+              'own catalog name over the real published pack',
+        );
+        expect(
+          resolved.isFallback,
+          isFalse,
+          reason:
+              '$hostLocale has a bundled pack; falling back to the '
+              'catalog default name would hide a resolution defect',
+        );
+      });
     });
   });
 }

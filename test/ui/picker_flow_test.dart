@@ -31,6 +31,7 @@ GeoRepositoryDataSource _source({
 }
 
 void main() {
+  longNameRenderingGroup();
   group('AT-01 responsive layout', () {
     for (final size in const <Size>[
       Size(390, 844),
@@ -467,6 +468,55 @@ void main() {
         }
       }
     });
+  });
+}
+
+void longNameRenderingGroup() {
+  group('GEO-SDK-03: long-name and Unicode rendering', () {
+    testWidgets(
+      'the longest published zh-Hans native name renders in full via search',
+      (tester) async {
+        await pumpPicker(tester, picker: realPicker(_source()));
+        await tester.pumpAndSettle();
+        await tester.enterText(
+          find.byKey(const ValueKey('region-search')),
+          '双江',
+        );
+        await tester.pumpAndSettle();
+        expect(
+          find.text('双江拉祜族佤族布朗族傣族自治县'),
+          findsOneWidget,
+          reason:
+              'the longest zh-Hans native name in the published set must '
+              'render as the row title (the path subtitle may repeat it '
+              'as disambiguation), not degrade to an ID fallback',
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'a 60-char mixed-Unicode host label renders without exception',
+      (tester) async {
+        final source = FakePickerDataSource();
+        const longLabel =
+            'При́мер-超长地区名称标签-rendering-contract-0123456789-αβγδε-ζηθικ';
+        source.countries = <GeoPickerItem>[source.item('cc:ZZ', longLabel)];
+        await pumpPicker(
+          tester,
+          picker: GeoRegionPicker(dataSource: source, displayLocale: 'en'),
+        );
+        await tester.pumpAndSettle();
+        expect(
+          find.textContaining(longLabel),
+          findsOneWidget,
+          reason:
+              'host labels of arbitrary length and script stay intact '
+              '(identity is the node id, the label is display-only)',
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
 
