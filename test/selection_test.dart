@@ -25,6 +25,7 @@ void main() {
   shapeFailuresGroup();
   shapeBoundaryGroup();
   crossDatasetGroup();
+  renameStableIdentityGroup();
 }
 
 GeoSelection _selection(
@@ -298,6 +299,75 @@ void crossDatasetGroup() {
       expect(
         () => validateGeoSelection(fromFixture, _jp),
         throwsA(isA<GeoNotFoundError>()),
+      );
+    });
+  });
+}
+
+void renameStableIdentityGroup() {
+  group('GEO-SDK-02: rename does not change identity', () {
+    test(
+      'renamed node keeps its id; selection revalidates on new revision',
+      () {
+        const nodeId = 'iso3166-2:JP-13';
+        final original = loadStructure('JP');
+
+        // Same nodes, one display name changed: identity untouched.
+        final decoded = loadDecodedData('regions/JP.json');
+        final nodes = decoded['nodes']! as List<Object?>;
+        var renamed = false;
+        for (final node in nodes) {
+          final map = node! as Map<String, Object?>;
+          if (map['id'] == nodeId) {
+            map['name'] = 'Tokyo (renamed display label)';
+            renamed = true;
+          }
+        }
+        expect(renamed, isTrue, reason: 'fixture node must exist in real data');
+        // A rename is a content change: recompute the declared revision with
+        // the SDK's own canonical rule before parsing (parseRegionStructure
+        // verifies declared == computed).
+        decoded['revision'] = geoStructureRevision(decoded['nodes']);
+        final renamedStructure = parseRegionStructure(decoded);
+        expect(
+          renamedStructure.revision,
+          isNot(original.revision),
+          reason: 'a rename is a content change: revision must recompute',
+        );
+
+        final index = GeoRegionIndex.single(renamedStructure);
+        final selection = _selection('JP', <String>[
+          'cc:JP',
+          nodeId,
+        ], dataRevision: renamedStructure.revision);
+        expect(
+          () => validateGeoSelection(selection, index),
+          returnsNormally,
+          reason: 'the stable-id path survives a pure rename',
+        );
+        // Rebuild from the renamed index: same ids, no guessed migration.
+        final rebuilt = buildGeoSelection(index, nodeId);
+        expect(rebuilt.pathIds, <String>['cc:JP', nodeId]);
+      },
+    );
+
+    test('stale display snapshot (old names) never invalidates identity', () {
+      // Display snapshots are parallel metadata: renaming upstream does not
+      // invalidate a persisted selection that carries old display text.
+      final structure = loadStructure('JP');
+      const nodeId = 'iso3166-2:JP-13';
+      final selection = GeoSelection(
+        protocolVersion: '1.0',
+        datasetId: 'geo-regions-seed',
+        countryCode: 'JP',
+        dataRevision: structure.revision,
+        pathIds: <String>['cc:JP', nodeId],
+        displaySnapshot: const <String>['日本', '東京 (pre-rename label)'],
+      );
+      expect(
+        () => validateGeoSelection(selection, GeoRegionIndex.single(structure)),
+        returnsNormally,
+        reason: 'labels are display-only; identity is the id path',
       );
     });
   });
