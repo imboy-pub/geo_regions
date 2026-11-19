@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "kind": "reference-candidate-index",
+  "purpose": "bounded_documentary_research_only",
+  "reviewedOn": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "reviewBaseline": {
+    "reportHead": "1e181bd08ff26ed6079a92105ff7ff468e989df9",
+    "policyMain": "46b8779607af35af27b1ca158ee44bd7f9f099aa"
+  },
+  "ownerDecision": "confirmed_limited_preparation",
+  "researchWindowStart": "2023-07-01",
+  "researchWindowTargetEnd": "2026-11-19",
+  "coverageComplete": false,
+  "coverageThrough": null,
+  "containsRegionCodes": false,
+  "containsRealMigrationMappings": false,
+  "containsSourceBodies": false,
+  "rawOrDerivedDataSubmission": "blocked_pending_use_basis_and_owner_decision",
+  "rawOrDerivedDataRelease": "not_approved",
+  "nationwideCollectionApproved": false,
+  "evidenceLegend": {
+    "official_page_read": "本轮已读取官方页面正文；不代表权利清理、行政完整性或生效日期已确认。",
+    "official_index_only": "仅取得官方网页的检索索引内容；直接正文读取受阻，须继续复核。"
+  },
+  "candidates": [
+    {
+      "documentDate": null,
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_index_only",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-001",
+      "sourceTitle": "行政区划",
+      "publisher": "安阳县人民政府",
+      "sourceUrl": "https://www.ayx.gov.cn/2024/12-24/3372590.html",
+      "sourceKind": "official_retrospective_summary",
+      "pagePublishedDate": null,
+      "pageDateAsDisplayed": "2026-06-10",
+      "relatedDocumentTitle": "安阳市人民政府关于调整文峰区和安阳县部分行政区划的通知",
+      "relatedDocumentNumber": "安政文〔2023〕70号",
+      "reportedEventDate": "2023-08-16",
+      "retrievalNote": "官方检索索引可读；本次网页读取及普通公开GET均403。2023-08-16仍仅为沿革摘要所述事件日；页面展示日期的发布/更新含义及被引原通知正文未核实。",
+      "summary": "县政府沿革页提供2023年下半年跨县级区域调整线索，提示应补核基线后的完整时间窗口。",
+      "pending": [
+        "原通知正文、成文及生效日期",
+        "对本项目目标层级及历史记录的具体影响"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "searchStatus": "bounded_search_complete_waiting_new_lead",
+      "searchReviewNotes": "MATERIAL_USE_REVIEW.md#21-原文件定向补核",
+      "searchSummary": "已按完整标题、文号、市政府公报与官方引用完成本次有限检索，未取得新原通知正文；未重试已受阻详情页。等待新的官方原文入口，不将未找到解释为文件不存在。"
+    },
+    {
+      "documentDate": "2024-05-31",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-002",
+      "sourceTitle": "关于调整铁门关市与巴音郭楞蒙古自治州和静县、焉耆回族自治县、博湖县、尉犁县、且末县行政区划的公告",
+      "publisher": "新疆维吾尔自治区民政厅、兵团民政局",
+      "sourceUrl": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202405/834823359bbc4bd4babc103177464474.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-05-31",
+      "summary": "公告涉及部分行政区域调整，适合研究局部边界变化与县级实体身份变化的区别。",
+      "pending": [
+        "批准日期、原批复文号及生效日期",
+        "边界范围及独立代码变更证据"
+      ]
+    },
+    {
+      "documentDate": null,
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_index_only",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-003",
+      "sourceTitle": "国务院批复同意我省调整德钦县与维西傈僳族自治县行政区划",
+      "publisher": "云南省民政厅",
+      "sourceUrl": "https://ynmz.yn.gov.cn/cms/quhuadiming/10329.html",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-10-10",
+      "retrievalNote": "主页面仍仅官方检索索引可读；网页读取405，普通公开GET为404。新增的官方公报转引正文是另一份文献，不替代本页或原通知，也未解决两日期对应关系。",
+      "priorReportDate": "2024-09-27",
+      "priorReportDateMeaning": "原2026-11-18报告中的公告日期，尚未与本页发布日期对应",
+      "summary": "公告涉及下级单位跨县归属调整；不能据此认定两个县级实体发生整体身份替换。",
+      "pending": [
+        "原公告正文及云政发〔2024〕22号原通知",
+        "沿革所述2024-07-29批准日与具体原文件的对应关系",
+        "2024-09-27与2024-10-10的来源和日期含义",
+        "正式生效日期"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "supportingReferences": [
+        {
+          "sourceTitle": "迪庆藏族自治州人民政府办公室关于印发《迪庆州人民政府2025年重大行政决策事项目录清单》的通知",
+          "sourceUrl": "https://www.diqing.gov.cn/subsiteIndex/bulletin/ex/articleView.html?articleId=236405&fromSubsiteFlagEx=dqzzf_zfbgs&newsClassId=223&orgCode=&subsiteId=16",
+          "sourceKind": "official_cross_reference",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "documentNumber": "办公室便签〔2025〕317号",
+          "documentDate": "2025-11-14",
+          "pagePublishedDate": "2025-12-12",
+          "locator": "附件第8项的依据栏",
+          "referencedDocumentTitle": "云南省人民政府关于调整德钦县与维西傈僳族自治县行政区划的通知",
+          "referencedDocumentNumber": "云政发〔2024〕22号",
+          "retrievalNote": "一条读取路径取得正文；另一条路径403，官方检索索引可交叉核对。没有归档原件。",
+          "limitation": "仅补强被引通知标题与文号的查找线索。2025年目录的日期及施行条款不属于2024年行政区划事件。"
+        },
+        {
+          "sourceTitle": "历史沿革（建制沿革栏目）",
+          "sourceUrl": "https://www.deqin.gov.cn/jzyg.html",
+          "publisher": "德钦县人民政府",
+          "sourceKind": "official_retrospective_summary",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "pageDateAsDisplayed": "2026-10-21",
+          "pageDateMeaning": "页面只标日期，未区分首次发布或更新。",
+          "reportedApprovalDate": "2024-07-29",
+          "reportedApprovalDateMeaning": "该官方沿革页将此日表述为党中央、国务院批准日期；原批准文件未取得，页面未将此日明确绑定到目标文号。",
+          "locator": "历史沿革正文的2024年事项记述",
+          "limitation": "不作为云政发〔2024〕22号或其他目标原文件的成文日，不作为行政生效日，也不解释另外两个公告页面的日期差异。"
+        }
+      ],
+      "searchStatus": "bounded_search_complete_waiting_new_lead",
+      "searchReviewNotes": "MATERIAL_USE_REVIEW.md#21-原文件定向补核",
+      "searchSummary": "本次精确文号、完整标题、官方公报及转引检索未取得目标原通知。新增官方沿革日期陈述，原文件及其日期仍待新线索；主页面证据等级不变。"
+    },
+    {
+      "documentDate": "2024-12-27",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-004",
+      "sourceTitle": "新疆维吾尔自治区人民政府关于党中央、国务院批准设立和康县的公告",
+      "publisher": "新疆维吾尔自治区人民政府",
+      "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202412/624c97cbd6ef462e8b4ce0f234ac58c1.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2024-12-27",
+      "summary": "设立新实体的公告提供事件线索，尚不足以建立既有记录与新实体的迁移关系。",
+      "pending": [
+        "批准文件及正式生效日期",
+        "代码发布证据",
+        "旧实体与新实体的范围及继承关系"
+      ]
+    },
+    {
+      "documentDate": "2025-11-07",
+      "documentNumber": "渝府发〔2025〕15号",
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-005",
+      "sourceTitle": "重庆市人民政府关于党中央、国务院批准同意调整江北区渝北区北碚区行政区划的公告",
+      "publisher": "重庆市人民政府",
+      "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/szfwj/qtgw/202511/t20251107_15148513.html",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2025-11-07",
+      "retrievalNote": "网页读取工具仍超时；普通公开GET返回200并直接读取原公告及地方志办公室转载正文。成文、原页发布和原公告落款均为2025-11-07，转载页面发布为2025-11-13；未见单列行政生效日期。",
+      "summary": "撤设与局部划转同时出现，不能简化成所有旧记录统一一对一替换。",
+      "pending": [
+        "行政生效日期和代码发布证据",
+        "区分旧记录去向所需的附加信息",
+        "网站条款及具体材料无需许可依据的适用性"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "supportingReferences": [
+        {
+          "sourceTitle": "重庆市人民政府关于党中央、国务院批准同意调整江北区渝北区北碚区行政区划的公告",
+          "sourceUrl": "https://dfz.cq.gov.cn/zwgk_536/zfxxgkml/zcwj1/202511/t20251113_15160557.html",
+          "publisher": "重庆市地方志办公室（转载重庆市人民政府公告）",
+          "sourceKind": "official_republication",
+          "verificationStatus": "official_page_read",
+          "lastCheckedOn": "2026-11-19",
+          "documentNumber": "渝府发〔2025〕15号",
+          "documentDate": "2025-11-07",
+          "pagePublishedDate": "2025-11-13",
+          "retrievalNote": "普通公开GET返回200，正文已读；转载日与原公告日期分别保留。"
+        }
+      ],
+      "websiteStatement": {
+        "sourceUrl": "https://wap.cq.gov.cn/wzxg/bqsm/202509/t20250901_14956023.html",
+        "pagePublishedDate": "2025-09-01",
+        "verificationStatus": "official_page_read",
+        "lastCheckedOn": "2026-11-19",
+        "reviewNotes": "MATERIAL_USE_REVIEW.md#4-重庆公告网站条款待解决的使用依据草稿",
+        "summary": "存在来源署名、商业使用和镜像限制表述；对具体材料及用途的适用性与效力待审，不标为开放许可。"
+      }
+    },
+    {
+      "documentDate": "2026-04-17",
+      "documentNumber": null,
+      "effectiveDate": null,
+      "verificationStatus": "official_page_read",
+      "autoMigrationEligible": false,
+      "rightsStatus": "not_reviewed_for_data_import",
+      "candidateId": "cn-reference-006",
+      "sourceTitle": "新疆维吾尔自治区人民政府关于党中央、国务院批准设立县级草湖市的公告",
+      "publisher": "新疆维吾尔自治区人民政府",
+      "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202604/3691350b13064945947d8f78933ccb3e.shtml",
+      "sourceKind": "official_announcement",
+      "pagePublishedDate": "2026-04-17",
+      "summary": "官方公告确认一项新设事件；本条是文献线索，不是码表新增或历史ID迁移记录。",
+      "pending": [
+        "批准文件及正式生效日期",
+        "代码发布证据",
+        "旧实体与新实体的范围关系"
+      ],
+      "lastCheckedOn": "2026-11-19",
+      "reviewNotes": "MATERIAL_USE_REVIEW.md#2-接续观察记录",
+      "retrievalNote": "本次重新读取官方公告正文；页面日期和落款均为2026-04-17，没有以其代填批准或生效日期。",
+      "websiteStatement": {
+        "sourceUrl": "https://www.xinjiang.gov.cn/xinjiang/wzsm/tydp.shtml",
+        "verificationStatus": "official_page_read",
+        "lastCheckedOn": "2026-11-19",
+        "reviewNotes": "MATERIAL_USE_REVIEW.md#3-草湖公告必要事实使用依据草稿",
+        "summary": "已读声明主要涉及网站职责、信息准确性和个人信息处理，未列明本项目所需开放再分发授权；未发现授权不等于已获许可。"
+      }
+    }
+  ],
+  "followupBaseline": "7f6d75d8850dc541b9aef64e7c36a40e941295ac",
+  "materialUseReview": "MATERIAL_USE_REVIEW.md"
+}
