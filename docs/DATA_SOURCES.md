@@ -177,3 +177,33 @@ When a new source is proposed, review its immutable revision, license, source da
 - 数据扩展的并行任务见 [DATA_COVERAGE.md](DATA_COVERAGE.md)，对应的完整执行与验收顺序由 Plan 控制。
 
 Default production name policy excludes provisional and unconfirmed names. Candidate preview is explicit. Data absence, source coverage limits, network errors and administrative leaves remain separate states. The coverage report and main Plan define the remaining parallel completion work.
+
+## 7. 本机 local-preview 快照冻结 / Local-preview snapshot freeze（GEO-GOV-01:LOCAL:01，2026-11-19）
+
+本节冻结本机 local-preview 快照的**当前**范围与真实质量标记（重采样自当前工作树，不继承旧审计数值）。本机门不要求属主代选生产国家；生产 profile 冻结与 `config/production-profile.json` 创建等待属主决策。
+
+| 冻结项 | 值（2026-11-19 重采） |
+|---|---|
+| dataset / manifest revision | `geo-regions-seed` / `m-b9310bfa4fc255c7`（protocol `1.0`） |
+| 资源 | 121 = countries 1 + structure 10 + locale 100 + country-names 10 |
+| 国家（10） | CN, DE, FR, GB, IT, JP, KR, RU, SA, US |
+| 语言（10） | ar, de, en, fr, it, ja, ko, ru, zh-Hans, zh-Hant |
+| 节点 | 63,590；**全部 structure `status=research-seed`（0 国 production）** |
+| 名称覆盖（100 locale packs 聚合） | 显式 96,262 / 缺失 539,638 / 潜在 cells 635,900 |
+| 名称质量（聚合） | approved 454；qualified 284；native 63,183；**provisional 32,341；unconfirmed 0；projectReviewed 0** |
+| 生成源 | AI 残余译名 1 项，`humanReviewVerified=false`，永不自动升 approved |
+| SDK 版本 | `0.1.0-wip.1`（`pubspec.yaml`） |
+| `data/manifest.json` SHA-256 | `3080cbacca3246ead649fa951514731618f37bb14312299f9eb33d8119fef219` |
+| `sources/source-lock.json` SHA-256 | `7153037ee84b186602112cbaa98e948b6fb9d998b6bbf0bc12700a2d0d57c78a`（61 源 + 3 derived + 1 generated） |
+
+复核命令（本机均可复跑）：
+
+```sh
+python3 tool/geo_data.py validate --schema            # integrity: pass（seed 正向）
+python3 tool/geo_data.py validate --schema --production  # 退出码 1：research-seed 非生产数据，拒绝
+python3 tool/check_readiness.py                        # productionGateRefused=true（预期拒绝=门通过）
+python3 -m unittest discover -s tests -p test_source_pin_rules.py -v  # 6/6 OK
+python3 tool/import_data.py --check                    # 131 生成物一致重建（2026-11-19 实测）
+```
+
+生产/预览分账：以上数字仅证明 local-preview 快照的结构、完整性与已知机器缺陷防线（seed 生产拒绝）；**不是**目标生产 profile 的语言质量、现势或人审验收。许可证据与缺口见 [LICENSE_POLICY.md](LICENSE_POLICY.md) 逐源清单。

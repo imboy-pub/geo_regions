@@ -1,6 +1,6 @@
 # Locked source snapshots / 固定源快照
 
-`source-lock.json` identifies 36 exact public GitHub files, with immutable commit URLs, complete SHA-256 values, sizes, retrieval date, declared upstream version and license.
+`source-lock.json` pins 61 upstream files — 36 on `raw.githubusercontent.com` plus 25 from official statistics portals (soumu.go.jp, e-stat.go.jp, mois.go.kr, census.gov/www2.census.gov, services1.arcgis.com, ons.gov.uk, destatis.de, insee.fr, data.gouv.fr, istat.it) — with immutable URLs, complete SHA-256 values, sizes, retrieval date, declared upstream version and license, alongside 3 derived entries and 1 generated entry. Per-license-family evidence and human-review gaps: [LICENSE_POLICY.md](../docs/LICENSE_POLICY.md) inventory (GEO-GOV-01:LOCAL:02).
 
 - `raw/cldr/`: CLDR 49 JSON catalog/containment/alias data and source XML names with original draft metadata.
 - `raw/modood/`: the 2023-06-30 mainland China statistical tree and the upstream update notice.
