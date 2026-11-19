@@ -4,8 +4,10 @@
 ///
 /// The repository owns one immutable published set: a [GeoManifest] plus the
 /// parsed resources loaded under it. Sources run cache (identity-keyed) →
-/// bundled assets → remote; remote downloads are length- and SHA-256-verified
-/// *before* any JSON decoding (AT-08). Generation tokens discard stale
+/// bundled assets → remote; cache hits and remote downloads are length- and
+/// SHA-256-verified *before* any JSON decoding (AT-08), and a cache entry
+/// that fails proof is evicted so the load falls back to the later sources
+/// instead of serving damaged bytes. Generation tokens discard stale
 /// commits (AT-07); atomic manifest swaps never mix releases (AT-10). Offline
 /// without cache is a [GeoNetworkError] ("unavailable"), never empty children
 /// (AT-11).
@@ -478,14 +480,31 @@ class GeoRegionsRepository {
   }
 
   /// Source order: identity-keyed cache, bundled assets, then remote.
+  ///
+  /// A cache hit must re-prove its bytes against the manifest identity
+  /// (length and SHA-256) before any decoding: a corrupted entry — including
+  /// same-length damage that would still parse as JSON — is evicted
+  /// best-effort and the load falls through to the bundled/remote sources.
+  /// An unreadable store is treated as a miss (the entry is not proven bad,
+  /// so it is not evicted); with no remaining source the load fails
+  /// explicitly with a [GeoNetworkError] and the committed set stays
+  /// untouched.
   Future<GeoBytes> _obtainBytes(GeoManifestEntry entry) async {
+    final key = GeoCacheKey.fromManifestEntry(datasetId, entry);
     final store = _store;
     if (store != null) {
-      final cached = await store.read(
-        GeoCacheKey.fromManifestEntry(datasetId, entry),
-      );
+      GeoBytes? cached;
+      try {
+        cached = await store.read(key);
+      } on Object {
+        // Unreadable is not corrupt: fall through without evicting.
+        cached = null;
+      }
       if (cached != null) {
-        return _checkCachedLength(cached, entry);
+        if (_cacheBytesMatch(cached, entry)) {
+          return cached;
+        }
+        await _invalidateCacheSafely(key);
       }
     }
     final bundled = _bundledLoader;
@@ -510,14 +529,24 @@ class GeoRegionsRepository {
     );
   }
 
-  GeoBytes _checkCachedLength(GeoBytes cached, GeoManifestEntry entry) {
-    if (cached.length != entry.bytes) {
-      throw GeoIntegrityMismatchError(
-        'cache entry for ${entry.path} holds ${cached.length} bytes, '
-        'manifest declares ${entry.bytes}',
-      );
+  /// Whether cached bytes still prove out against the manifest identity —
+  /// the same length + SHA-256 bar as bundled/remote verification, applied
+  /// to the cache layer before any JSON decoding (GEO-SDK-01; AT-08).
+  bool _cacheBytesMatch(GeoBytes bytes, GeoManifestEntry entry) {
+    if (bytes.length != entry.bytes) {
+      return false;
     }
-    return cached;
+    return geoSha256Hex(bytes.bytes) == entry.sha256;
+  }
+
+  /// Best-effort eviction of a proven-corrupt entry; a store failure here
+  /// must not fail the recovery the source fallback is performing.
+  Future<void> _invalidateCacheSafely(GeoCacheKey key) async {
+    try {
+      await _store?.invalidate(key);
+    } on Object {
+      // The bad entry stays; the next load re-detects and retries eviction.
+    }
   }
 
   /// Digest check re-proves bundled bytes against the pinned identity.

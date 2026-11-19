@@ -43,6 +43,68 @@ void offlineGroup() {
     });
 
     test(
+      'GEO-SDK-01: corrupt cache with no remaining source fails explicitly',
+      () async {
+        final store = GeoMemoryCacheStore();
+        final entry = realEntry('regions/JP.json');
+        final key = GeoCacheKey.fromManifestEntry('geo-regions-seed', entry);
+        await store.write(
+          key,
+          GeoBytes(shortBytes(dataBytes('regions/JP.json'))),
+        );
+        final repository = GeoRegionsRepository(
+          manifest: realManifest,
+          store: store,
+        );
+
+        await expectLater(
+          repository.loadStructure('JP'),
+          throwsA(
+            isA<GeoNetworkError>().having(
+              (error) => error.message,
+              'message',
+              contains('unavailable'),
+            ),
+          ),
+        );
+        expect(
+          repository.structureFor('JP'),
+          isNull,
+          reason: 'damaged bytes must never be served or committed',
+        );
+        expect(repository.index, isNull);
+        expect(
+          await store.read(key),
+          isNull,
+          reason: 'the proven-corrupt entry is evicted on the way out',
+        );
+      },
+    );
+
+    test('GEO-SDK-01: unreadable cache with no other source fails without eviction', () async {
+      final store = GeoMemoryCacheStore()
+        ..readFault = (key) => const GeoNetworkError('store read blew up');
+      final entry = realEntry('regions/JP.json');
+      final key = GeoCacheKey.fromManifestEntry('geo-regions-seed', entry);
+      await store.write(key, GeoBytes(dataBytes('regions/JP.json')));
+      final repository = GeoRegionsRepository(
+        manifest: realManifest,
+        store: store,
+      );
+
+      await expectLater(
+        repository.loadStructure('JP'),
+        throwsA(isA<GeoNetworkError>()),
+      );
+      expect(repository.structureFor('JP'), isNull);
+      expect(
+        await store.keys(),
+        contains(key),
+        reason: 'unreadable is not corrupt: the entry must not be evicted',
+      );
+    });
+
+    test(
       'remote transport failure surfaces as-is, then cache recovery works',
       () async {
         final store = GeoMemoryCacheStore();

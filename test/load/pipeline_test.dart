@@ -32,6 +32,7 @@ void main() {
   strictRemoteConfigGroup();
   integrityGroup();
   cacheIsolationGroup();
+  cacheCorruptionRecoveryGroup();
   evictionGroup();
 }
 
@@ -285,22 +286,36 @@ void integrityGroup() {
       },
     );
 
-    test('corrupted cache entry with wrong length is detected', () async {
-      final store = GeoMemoryCacheStore();
-      final entry = realEntry('regions/JP.json');
-      await store.write(
-        GeoCacheKey.fromManifestEntry('geo-regions-seed', entry),
-        GeoBytes(shortBytes(dataBytes('regions/JP.json'))),
-      );
-      final loader = servingLoader(<String, Uint8List>{});
-      final repository = repositoryWith(loader: loader, store: store);
+    test(
+      'wrong-length cache entry is evicted and refetched, not served',
+      () async {
+        final store = GeoMemoryCacheStore();
+        final entry = realEntry('regions/JP.json');
+        final key = GeoCacheKey.fromManifestEntry('geo-regions-seed', entry);
+        await store.write(
+          key,
+          GeoBytes(shortBytes(dataBytes('regions/JP.json'))),
+        );
+        final loader = servingLoader(<String, Uint8List>{
+          'regions/JP.json': dataBytes('regions/JP.json'),
+        });
+        final repository = repositoryWith(loader: loader, store: store);
 
-      await expectLater(
-        repository.loadStructure('JP'),
-        throwsA(isA<GeoIntegrityMismatchError>()),
-      );
-      expect(loader.callCount, 0);
-    });
+        final structure = await repository.loadStructure('JP');
+
+        expect(structure.revision, entry.revision);
+        expect(
+          loader.callCount,
+          1,
+          reason: 'a bad entry must not end the load',
+        );
+        expect(
+          (await store.read(key))!.bytes,
+          dataBytes('regions/JP.json'),
+          reason: 'the verified refetch must replace the corrupt entry',
+        );
+      },
+    );
 
     test('verifier rejection surfaces as integrity mismatch', () async {
       final verifier = FakeVerifier()..failNext = true;
@@ -363,6 +378,107 @@ GeoCacheKey copyKeyOf(GeoManifestEntry entry, {String? revision}) {
     revision: revision ?? entry.revision,
     sha256: entry.sha256,
   );
+}
+
+/// Same-length corruption that stays valid JSON: rewrites the first newline
+/// to a space (interchangeable JSON whitespace). The damaged payload has an
+/// identical byte length and still parses — only its SHA-256 changes, which
+/// is exactly the damage a length-only cache check would serve (GEO-SDK-01).
+Uint8List sameLengthValidJsonCorruption(Uint8List bytes) {
+  final copy = Uint8List.fromList(bytes);
+  final index = copy.indexOf(0x0a);
+  if (index < 0) {
+    throw StateError('fixture expected to be pretty-printed with newlines');
+  }
+  copy[index] = 0x20;
+  return copy;
+}
+
+void cacheCorruptionRecoveryGroup() {
+  group('GEO-SDK-01: corrupt cache is contained and repaired', () {
+    test(
+      'same-length valid-JSON damage is caught by the SHA-256 check',
+      () async {
+        final store = GeoMemoryCacheStore();
+        final entry = realEntry('regions/JP.json');
+        final key = GeoCacheKey.fromManifestEntry('geo-regions-seed', entry);
+        final goodBytes = dataBytes('regions/JP.json');
+        await store.write(
+          key,
+          GeoBytes(sameLengthValidJsonCorruption(goodBytes)),
+        );
+        final loader = servingLoader(<String, Uint8List>{
+          'regions/JP.json': goodBytes,
+        });
+        final repository = repositoryWith(loader: loader, store: store);
+
+        final structure = await repository.loadStructure('JP');
+
+        expect(structure.countryCode, 'JP');
+        expect(structure.revision, entry.revision);
+        expect(
+          loader.callCount,
+          1,
+          reason: 'length-only checking would have served the damage',
+        );
+        expect(
+          (await store.read(key))!.bytes,
+          goodBytes,
+          reason: 'the verified refetch must replace the damaged entry',
+        );
+      },
+    );
+
+    test(
+      'proven-corrupt entry is evicted even when the fallback also fails',
+      () async {
+        final store = GeoMemoryCacheStore();
+        final entry = realEntry('regions/JP.json');
+        final key = GeoCacheKey.fromManifestEntry('geo-regions-seed', entry);
+        await store.write(
+          key,
+          GeoBytes(flipOneByte(dataBytes('regions/JP.json'))),
+        );
+        final loader =
+            servingLoader(<String, Uint8List>{
+                'regions/JP.json': dataBytes('regions/JP.json'),
+              })
+              ..fault = (Uri uri) => uri.toString().contains('regions/JP.json')
+                  ? const GeoNetworkError('airplane mode')
+                  : null;
+        final repository = repositoryWith(loader: loader, store: store);
+
+        await expectLater(
+          repository.loadStructure('JP'),
+          throwsA(isA<GeoNetworkError>()),
+        );
+        expect(
+          await store.read(key),
+          isNull,
+          reason: 'the corrupt entry must be evicted, not retried forever',
+        );
+        expect(repository.structureFor('JP'), isNull);
+      },
+    );
+
+    test('unreadable store is a miss, not a load failure', () async {
+      final store = GeoMemoryCacheStore()
+        ..readFault = (key) => const GeoNetworkError('store read blew up');
+      final loader = servingLoader(<String, Uint8List>{
+        'regions/JP.json': dataBytes('regions/JP.json'),
+      });
+      final repository = repositoryWith(loader: loader, store: store);
+
+      final structure = await repository.loadStructure('JP');
+
+      expect(structure.countryCode, 'JP');
+      expect(
+        loader.callCount,
+        1,
+        reason: 'a cache read error must fall through to remote',
+      );
+    });
+  });
 }
 
 void evictionGroup() {
