@@ -34,3 +34,4 @@ datasets/csc-candidate/catalog_root_consistency.json
 .env.*
 !.env.example
 .DS_Store
+.plans/2026-11-18-imboy-master-geo-v2.2
