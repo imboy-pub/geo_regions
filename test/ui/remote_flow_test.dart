@@ -91,7 +91,9 @@ void main() {
         find.byKey(const ValueKey('node-jp-municipality:131016')),
       );
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const ValueKey('node-jp-municipality:131016')));
+      await tester.tap(
+        find.byKey(const ValueKey('node-jp-municipality:131016')),
+      );
       await tester.pumpAndSettle();
       expect(find.byKey(const ValueKey('coverage-unknown')), findsOneWidget);
       expect(

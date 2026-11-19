@@ -268,8 +268,11 @@ void main() {
       'jp-municipality:131016',
       'zh-Hans',
     );
-    expect(deeper, isEmpty,
-        reason: 'JP municipalities are profile leaves (no children listed)');
+    expect(
+      deeper,
+      isEmpty,
+      reason: 'JP municipalities are profile leaves (no children listed)',
+    );
 
     // A never-loaded country now fails as a network error.
     await expectLater(
