@@ -432,6 +432,43 @@ def guard_output(root, output, replace=False):
     return output
 
 
+def preview_files(root):
+    files = []
+    for folder in ("data", "sources", "schemas", "licenses/third_party"):
+        files.extend(path for path in (root / folder).rglob("*") if path.is_file() or path.is_symlink())
+    files.extend((root / "tool/importers").glob("*.py"))
+    for relative in (
+        "LICENSE", "tool/import_data.py", "tool/geo_data.py", "tool/requirements-ci.txt",
+        "tool/s2t_places.py", "config/data_policy.json", "config/offline.example.json",
+        "docs/DATA_SOURCES.md", "docs/DATA_COVERAGE.md", "docs/LICENSE_POLICY.md",
+    ):
+        path = root / relative
+        if path.is_file() or path.is_symlink():
+            files.append(path)
+    return [safe_resource(root, path.relative_to(root).as_posix()) for path in sorted(files)]
+
+
+def build_preview_root(root, output):
+    root = Path(root).resolve()
+    output = Path(output).absolute()
+    for path in (output, *output.parents):
+        require(not path.is_symlink(), f"preview output cannot use a symlink: {path}")
+    require(not output.resolve().is_relative_to(root), "preview output must be outside the source root")
+    validate(root, schema=True)
+    files = preview_files(root)
+    output.mkdir()
+    try:
+        for source in files:
+            target = output / source.relative_to(root)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+        result = validate(output, schema=True)
+    except BaseException:
+        shutil.rmtree(output)
+        raise
+    return result
+
+
 def build_offline(root, config_path, output, replace=False, dry_run=False, asset_prefix=None):
     root = Path(root).resolve()
     validate(root)
@@ -598,6 +635,8 @@ def main(argv=None):
     validate_parser.add_argument("--report", type=Path)
     manifest_parser = sub.add_parser("manifest")
     manifest_parser.add_argument("--check", action="store_true")
+    preview_parser = sub.add_parser("preview-root")
+    preview_parser.add_argument("--out", type=Path, required=True)
     offline_parser = sub.add_parser("offline")
     offline_parser.add_argument("--config", type=Path, required=True)
     offline_parser.add_argument("--out", type=Path, required=True)
@@ -636,6 +675,8 @@ def main(argv=None):
             else:
                 write_json(path, obj)
             print(json.dumps({"path": str(path), "revision": obj["revision"], "resources": len(obj["resources"]), "checked": args.check}, indent=2))
+        elif args.command == "preview-root":
+            print(json.dumps(build_preview_root(args.root, args.out), ensure_ascii=False, indent=2))
         elif args.command == "offline":
             print(json.dumps(build_offline(args.root, args.config, args.out, args.replace, args.dry_run, args.asset_prefix), ensure_ascii=False, indent=2))
         elif args.command == "add-country":
@@ -649,7 +690,7 @@ def main(argv=None):
                 require(not result["migrationRequired"], "removed or reparented IDs require an explicit reviewed migration plan")
         elif args.command == "selection":
             print(json.dumps(validate_selection(args.root, args.file, args.schema), ensure_ascii=False, indent=2))
-    except (DataError, KeyError, TypeError) as exc:
+    except (DataError, KeyError, TypeError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     return 0

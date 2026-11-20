@@ -3,6 +3,7 @@
 import copy
 import importlib.util
 import json
+import shutil
 from pathlib import Path
 import tempfile
 import unittest
@@ -51,6 +52,18 @@ class DataToolsTests(unittest.TestCase):
         transform(obj)
         obj["revision"] = geo.revision("s", obj["nodes"])
         geo.write_json(path, obj)
+
+    def test_preview_root_preserves_manifest_and_refuses_existing_destination(self):
+        schemas = self.root / "schemas"
+        shutil.copytree(Path(geo.__file__).resolve().parents[1] / "schemas", schemas)
+        output = self.root.parent / "preview"
+        self.assertEqual(geo.build_preview_root(self.root, output)["nodes"], 6)
+        manifest = output / "data/manifest.json"
+        original = manifest.read_bytes()
+        self.assertEqual(original, (self.data / "manifest.json").read_bytes())
+        with self.assertRaises(FileExistsError):
+            geo.build_preview_root(self.root, output)
+        self.assertEqual(manifest.read_bytes(), original)
 
     def test_valid_seed_and_missing_translation_count(self):
         result = geo.validate(self.root)
