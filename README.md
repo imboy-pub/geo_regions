@@ -25,6 +25,7 @@ Phase 1 is complete (2026-11-14, local main). Code is BSD-3-Clause, data licensi
 | ZCODE 启动 / Start | [prompts/ZCODE_START.zh-CN.md](prompts/ZCODE_START.zh-CN.md) |
 | 新会话续跑 / Resume | [prompts/ZCODE_RESUME.zh-CN.md](prompts/ZCODE_RESUME.zh-CN.md) |
 | 国家/语言/审查提示词 / Worker prompts | [ADD_COUNTRY](prompts/ADD_COUNTRY.zh-CN.md), [ADD_LOCALE](prompts/ADD_LOCALE.zh-CN.md), [REVIEW_DATA](prompts/REVIEW_DATA.zh-CN.md) |
+| ECC 工程案例 / ECC use cases | [geo_regions ECC 案例库](docs/prompts/ECC_USE_CASES.zh-CN.md) · [四仓统一索引](https://github.com/imboy-pub/imboy/blob/main/docs/prompts/README.md) |
 | 代码/数据许可 / Licensing | [docs/LICENSE_POLICY.md](docs/LICENSE_POLICY.md), [CONTRIBUTING.md](CONTRIBUTING.md) |
 | GitHub CI/CD | [docs/CI_CD.md](docs/CI_CD.md) |
 | IMBoy 改造 / Integration | [docs/IMBOY_INTEGRATION.md](docs/IMBOY_INTEGRATION.md) |
