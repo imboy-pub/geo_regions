@@ -1,6 +1,6 @@
 # IMBoy ECC 使用案例 / geo_regions
 
-> 本文是可直接复制到 Codex 会话的 ECC 使用案例库。每个案例均可独立复制，以 `$skill-name` 开头。原 72 个工程案例各提供一个提示词；新增功能场景提供 A 新增功能、B 优化现有功能、C 测试现有功能三个独立提示词。
+ > 本文是可直接复制到 Codex 会话的 ECC 使用案例库。每个案例均可独立复制，以 `$skill-name` 开头。原 72 个工程案例各提供一个提示词；新增功能场景提供 A 新增功能、B 优化现有功能、C 测试现有功能三个独立提示词。
 >
 > **使用约定**
 > - 在已安装 ECC 的 Codex 会话中，复制单个案例的完整代码块执行。
@@ -16,11 +16,15 @@
 ## 本仓库范围
 
 本文件包含 geo_regions 工程案例 6 个，以及地区数据场景复刻/功能迭代案例 2 个；合计 8 个（ECC-004、046–050、108–109）。原 prompts/ 中的 ZCODE 工作提示词保持不变。
+
+> **时间估算说明**：时间为单个案例的一次 A/B/C 模式执行预算，包含仓库阅读、代码分析、必要实施及相关验证；不是保证完成时间。A/B/C 只能选择一种执行。30 分钟及以上建议安排 ZCODE 闲时任务。遇到缺少设备、数据库、凭据、外部服务或需求决策时，应报告 BLOCKED/NOT RUN，不能为了符合预算而跳过验证。复杂度按当前仓库结构与案例提示词范围估算，实际会随工作树状态、测试环境和缺陷数量变化。
 ## 案例清单
 
 ### 项目理解与架构分析
 
 #### ECC-004 · geo_regions SDK 架构梳理
+
+**预计执行时间：30 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
 
 **Skills：** `codebase-onboarding` · `contract-first`
 
@@ -34,6 +38,8 @@ $codebase-onboarding $contract-first
 
 #### ECC-046 · 新增国家和语言数据
 
+**预计执行时间：60 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
+
 **Skills：** `change-impact` · `test-collaboration`
 
 ```text
@@ -43,6 +49,8 @@ $change-impact $test-collaboration
 ```
 
 #### ECC-047 · Manifest 完整性
+
+**预计执行时间：60 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
 
 **Skills：** `security-review` · `test-collaboration`
 
@@ -54,6 +62,8 @@ $security-review $test-collaboration
 
 #### ECC-048 · 数据来源和许可证审计
 
+**预计执行时间：45 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
+
 **Skills：** `change-impact` · `docs-governance`
 
 ```text
@@ -64,6 +74,8 @@ $change-impact $docs-governance
 
 #### ECC-049 · 生产成熟度审查
 
+**预计执行时间：45 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
+
 **Skills：** `production-audit` · `test-collaboration`
 
 ```text
@@ -73,6 +85,8 @@ $production-audit $test-collaboration
 ```
 
 #### ECC-050 · 接入 Flutter 方案
+
+**预计执行时间：60 分钟**（单次执行；包含代码阅读、定向实施/分析与相关验证）
 
 **Skills：** `contract-first` · `change-impact` · `parallel-execution-optimizer`
 
@@ -90,6 +104,8 @@ $contract-first $change-impact $parallel-execution-optimizer
 
 
 #### ECC-108 · 客户国家/地区/地址选择场景
+
+**预计执行时间（单选一种模式）：A 新增功能 60 分钟 · B 优化现有功能 45 分钟 · C 测试现有功能 30 分钟**
 
 **场景：** 地区选择和本地化
 
@@ -150,6 +166,8 @@ $test-collaboration $ai-regression-testing $verification-loop
 ```
 
 #### ECC-109 · 客户国际化地区数据扩展
+
+**预计执行时间（单选一种模式）：A 新增功能 60 分钟 · B 优化现有功能 45 分钟 · C 测试现有功能 30 分钟**
 
 **场景：** 多国家多语言客户数据接入
 
