@@ -88,7 +88,7 @@ $contract-first $change-impact $parallel-execution-optimizer
 
 > 本组面向客户业务场景复刻。每个场景提供两条独立提示词：A 用于需求/能力映射；B 用于在批准后实施客户差异。将提示词中的“客户”替换为具体客户、行业、角色和目标流程。
 
-### ECC-126 · 客户国家/地区/地址选择场景
+### ECC-108 · 客户国家/地区/地址选择场景
 
 **场景：** 地区选择和本地化
 
@@ -100,15 +100,15 @@ $product-lens $product-capability
 为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
 ```
 
-**B ·  · 客户差异实施**
+**B · `contract-first` + `orch-change-feature` + `tdd-workflow` · 客户差异实施**
 
 ```text
+$contract-first $orch-change-feature $tdd-workflow
 
-
-undefined
+实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
 ```
 
-### ECC-128 · 客户国际化地区数据扩展
+### ECC-109 · 客户国际化地区数据扩展
 
 **场景：** 多国家多语言客户数据接入
 
@@ -120,12 +120,12 @@ $product-lens $product-capability
 为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
 ```
 
-**B ·  · 客户差异实施**
+**B · `contract-first` + `orch-add-feature` + `test-collaboration` · 客户差异实施**
 
 ```text
+$contract-first $orch-add-feature $test-collaboration
 
-
-undefined
+实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
 ```
 
 ## 维护说明
