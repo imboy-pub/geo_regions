@@ -88,7 +88,7 @@ $contract-first $change-impact $parallel-execution-optimizer
 > 本组面向客户业务场景复刻。每个场景提供三条独立提示词：A 新增功能；B 优化现有功能（重点适用于新模型复审旧 AI 代码）；C 测试现有功能。将提示词中的“客户”替换为具体客户、行业、角色和目标流程。
 
 
-### ECC-108 · 客户国家/地区/地址选择场景
+#### ECC-108 · 客户国家/地区/地址选择场景
 
 **场景：** 地区选择和本地化
 
@@ -155,7 +155,7 @@ $test-collaboration $ai-regression-testing $verification-loop
 ```
 
 
-### ECC-109 · 客户国际化地区数据扩展
+#### ECC-109 · 客户国际化地区数据扩展
 
 **场景：** 多国家多语言客户数据接入
 
