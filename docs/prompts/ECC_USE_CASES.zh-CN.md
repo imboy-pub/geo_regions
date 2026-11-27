@@ -83,6 +83,51 @@ $contract-first $change-impact $parallel-execution-optimizer
 规划 geo_regions 接入 imboy-flutter。检查当前 SDK、IMBOY_INTEGRATION.md、CONSUMER_CONTRACT.md 和 Flutter 地区选择代码。明确 SDK、宿主 Adapter、账号缓存、结构化 Selection、旧字符串兼容、保存事务及测试责任。核对各仓当前 HEAD，不采用未经验证的历史 SHA/API。
 ```
 
+
+## IMBoy 地区数据与国际化场景复刻（geo_regions）
+
+> 本组面向客户业务场景复刻。每个场景提供两条独立提示词：A 用于需求/能力映射；B 用于在批准后实施客户差异。将提示词中的“客户”替换为具体客户、行业、角色和目标流程。
+
+### ECC-126 · 客户国家/地区/地址选择场景
+
+**场景：** 地区选择和本地化
+
+**A · `product-lens` + `product-capability` · 客户场景映射**
+
+```text
+$product-lens $product-capability
+
+为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
+```
+
+**B ·  · 客户差异实施**
+
+```text
+
+
+undefined
+```
+
+### ECC-128 · 客户国际化地区数据扩展
+
+**场景：** 多国家多语言客户数据接入
+
+**A · `product-lens` + `product-capability` · 客户场景映射**
+
+```text
+$product-lens $product-capability
+
+为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
+```
+
+**B ·  · 客户差异实施**
+
+```text
+
+
+undefined
+```
+
 ## 维护说明
 
 - 本文只维护本仓库职责范围内的提示词；跨仓案例的统一索引位于 [imboy 后端主仓 docs/prompts/README.md](https://github.com/imboy-pub/imboy/blob/main/docs/prompts/README.md)。
