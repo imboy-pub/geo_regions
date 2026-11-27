@@ -88,6 +88,7 @@ $contract-first $change-impact $parallel-execution-optimizer
 > 本组面向客户业务场景复刻。每个场景提供三条独立提示词：A 新增功能；B 优化现有功能（重点适用于新模型复审旧 AI 代码）；C 测试现有功能。将提示词中的“客户”替换为具体客户、行业、角色和目标流程。
 
 
+
 #### ECC-108 · 客户国家/地区/地址选择场景
 
 **场景：** 地区选择和本地化
@@ -96,6 +97,12 @@ $contract-first $change-impact $parallel-execution-optimizer
 
 ```text
 $product-capability $orch-add-feature $test-collaboration
+
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：新增功能。
 
 当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
@@ -108,6 +115,20 @@ $product-capability $orch-add-feature $test-collaboration
 实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
 
 请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
+
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
+
+实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+先判断现有能力能否通过配置或组合满足需求，只有确认存在真实能力缺口才新增代码。输出 capability contract：角色、用户旅程、状态机、权限与数据归属、接口、迁移兼容、失败恢复、观测和验收标准。需求不完整时列出阻塞问题并停在方案阶段；需求明确后按 TDD 先写失败测试再实现，遵守仓库架构和测试合同。先过计划门禁，不 commit/push/合并/部署。
 ```
 
 **B · 优化现有功能 / 新模型复审旧 AI 代码 · `brownfield-retrospective` + `security-review` + `test-collaboration` + `verification-loop`**
@@ -115,21 +136,43 @@ $product-capability $orch-add-feature $test-collaboration
 ```text
 $brownfield-retrospective $security-review $test-collaboration $verification-loop
 
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：优化现有功能，特别用于新一代 AI 模型独立复审旧 AI 模型生成的实现。
+
 当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
 先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
 
-任务类型：优化现有功能，特别用于新一代 AI 模型复审和改进旧 AI 模型生成的代码。
+任务类型：新增功能。
 
 为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
 
 实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
 
-请把当前实现视为待验证证据，不信任注释、旧模型自评或“看起来合理”的抽象。按 brownfield-retrospective 的 slice-first 方法，先限定约 15 个文件或 2000 行以内的功能切片，重建实际行为和不变量，建立现有测试/性能/错误行为基线，再检查：逻辑正确性、并发与竞态、失败处理、边界条件、权限与安全、资源生命周期、性能热点、重复/过度抽象、可维护性和跨端一致性。
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
 
-优先做行为保持型优化；不得为了体现新模型能力而重写整个模块、改变公共契约或引入新依赖。每项发现提供文件/行号、复现或证据、影响、建议和风险。先新增/修正测试证明原行为与目标行为，再实施最小改动。若需要改变用户可见行为、数据结构或协议，先停下请求确认。重点检查数据可追溯性、稳定 ID/pathIds、Manifest 原子切换、hash 校验、缓存和 SDK 公共契约。
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
-不要自动创建 docs/retro、重复计划或审计文档；先在会话中输出基线、差距登记和改进方案。经用户明确授权后才落盘必要的长期文档。完成后运行相关测试、静态检查和 diff review；不 commit、不 push、不合并、不部署。
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
+
+实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+按 brownfield-retrospective 的 slice-first 方法，将范围限制在约 15 个文件或 2000 行以内。不要信任旧模型自评、代码注释或现有测试完整性；独立重建真实行为，追踪调用链、数据流、权限边界、失败路径、并发/竞态、资源生命周期和跨端契约。先建立改动前测试/性能/错误行为基线。
+
+检查正确性、边界条件、异常处理、幂等/重试、安全、性能热点、重复/过度抽象、可维护性和跨端一致性。重点排查 AI 常见盲点：只改响应没改查询/持久化、只修主路径漏掉其他分支、字段/可空性漂移、异常吞掉、UI-only 权限、mock 通过但真实路径失败、测试与实现共享同一假设。
+
+每个发现提供文件/行号、证据、影响、风险和最小修复方案。优先行为保持型优化；先新增/修正测试证明问题，再做最小改动。涉及公共 API/WS、数据库结构、E2EE、权限语义或用户可见行为变化时先请求确认。重点检查数据可追溯性、稳定 ID/pathIds、Manifest 原子切换、hash 校验、缓存和 SDK 公共契约。
+
+先在会话中输出基线、差距登记和改进方案；不要自动创建 docs/retro 或重复审计文档。完成批准范围内的修改后运行定向测试、相关静态检查和 diff review，报告改动前后证据及未验证项。不 commit、不 push、不合并、不部署。
 ```
 
 **C · 测试现有功能 · `test-collaboration` + `ai-regression-testing` + `verification-loop`**
@@ -137,21 +180,41 @@ $brownfield-retrospective $security-review $test-collaboration $verification-loo
 ```text
 $test-collaboration $ai-regression-testing $verification-loop
 
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：测试现有功能，独立验证旧 AI 实现。
+
 当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
 先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
 
-任务类型：测试现有功能。
+任务类型：新增功能。
 
 为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
 
 实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
 
-请不要先修改业务实现。先盘点该场景已有单元、组件/Widget、契约、集成、E2E、平台/设备测试和 CI 门禁，建立“需求/业务规则 → TEST-ID 或现有测试资产 → 执行命令 → 证据”矩阵。重点设计正常路径、权限拒绝、非法输入、边界值、重复请求、并发、超时、断线恢复、旧数据兼容和跨端一致性用例。针对旧 AI 生成代码，额外检查 mock/sandbox 与真实路径不一致、遗漏 SELECT/序列化字段、只测 happy path、异常被吞、测试与实现共享同一错误假设等盲点。
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
 
-只新增真正有区分力的测试，不复制重复用例、不降低阈值、不扩大 skip。使用 tool/import_data.py、tool/geo_data.py、tool/check_readiness.py、semantic audit、manifest 检查及 tests 现有入口。
+当前功能场景：客户国家/地区/地址选择场景（地区选择和本地化）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
-执行后逐项报告通过/失败/阻塞/未执行，给出实际命令、退出码、测试数量和证据位置。发现产品代码缺陷时先提交复现证据和最小修复建议；没有明确授权不修改业务代码。不得把未运行、环境缺失或模拟测试写成 PASS。
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为 IMBoy 客户复刻国家、省州、城市、区县等地区选择功能。评估 geo_regions SDK 当前稳定 API、生产数据成熟度、候选数据隔离、locale、离线资源、远程加载、身份稳定性和 Flutter 宿主 Adapter。明确研究 seed、candidate 和生产数据边界，不得承诺尚未生产化的数据覆盖。
+
+实施已批准的 geo_regions/IMBoy 集成差异。先读取 CONSUMER_CONTRACT、IMBOY_INTEGRATION、SDK_INTEGRATION 和当前 SDK 代码，验证真实导出 API、revision 与 storage adapter。遵守 stable ID/pathIds、SHA-256、locale quality、缓存隔离和 Flutter 平台差异。补充宿主测试，不将候选数据混入生产层。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+先不要修改业务实现。盘点单元、集成、契约、E2E、平台/设备测试和 CI 门禁，建立“需求/不变量 → 测试资产或 TEST-ID → 命令 → 证据”矩阵。覆盖正常路径、权限拒绝、非法输入、边界值、重复请求、并发、超时、故障恢复、旧数据兼容和跨端行为。
+
+针对 AI 生成代码特别检查 mock/sandbox 与真实路径不一致、数据库查询/写入字段遗漏、序列化遗漏、仅测 happy path、异常吞掉、重试重复副作用和测试 fixture 迎合实现。只新增有区分力的测试，不复制重复用例、不降低阈值、不扩大 skip。使用 tool/import_data.py、tool/geo_data.py、tool/check_readiness.py、semantic audit、manifest 检查及 tests 现有入口。
+
+逐项报告 PASS/FAIL/BLOCKED/NOT RUN、真实命令、退出码、数量和证据位置。发现缺陷先提供复现与最小修复建议；未经授权不修改业务代码。不得把未执行或环境缺失标记为 PASS。
 ```
 
 
@@ -164,6 +227,12 @@ $test-collaboration $ai-regression-testing $verification-loop
 ```text
 $product-capability $orch-add-feature $test-collaboration
 
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：新增功能。
+
 当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
 先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
@@ -175,6 +244,20 @@ $product-capability $orch-add-feature $test-collaboration
 实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
 
 请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
+
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
+
+实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+先判断现有能力能否通过配置或组合满足需求，只有确认存在真实能力缺口才新增代码。输出 capability contract：角色、用户旅程、状态机、权限与数据归属、接口、迁移兼容、失败恢复、观测和验收标准。需求不完整时列出阻塞问题并停在方案阶段；需求明确后按 TDD 先写失败测试再实现，遵守仓库架构和测试合同。先过计划门禁，不 commit/push/合并/部署。
 ```
 
 **B · 优化现有功能 / 新模型复审旧 AI 代码 · `brownfield-retrospective` + `security-review` + `test-collaboration` + `verification-loop`**
@@ -182,21 +265,43 @@ $product-capability $orch-add-feature $test-collaboration
 ```text
 $brownfield-retrospective $security-review $test-collaboration $verification-loop
 
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：优化现有功能，特别用于新一代 AI 模型独立复审旧 AI 模型生成的实现。
+
 当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
 先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
 
-任务类型：优化现有功能，特别用于新一代 AI 模型复审和改进旧 AI 模型生成的代码。
+任务类型：新增功能。
 
 为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
 
 实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
 
-请把当前实现视为待验证证据，不信任注释、旧模型自评或“看起来合理”的抽象。按 brownfield-retrospective 的 slice-first 方法，先限定约 15 个文件或 2000 行以内的功能切片，重建实际行为和不变量，建立现有测试/性能/错误行为基线，再检查：逻辑正确性、并发与竞态、失败处理、边界条件、权限与安全、资源生命周期、性能热点、重复/过度抽象、可维护性和跨端一致性。
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
 
-优先做行为保持型优化；不得为了体现新模型能力而重写整个模块、改变公共契约或引入新依赖。每项发现提供文件/行号、复现或证据、影响、建议和风险。先新增/修正测试证明原行为与目标行为，再实施最小改动。若需要改变用户可见行为、数据结构或协议，先停下请求确认。重点检查数据可追溯性、稳定 ID/pathIds、Manifest 原子切换、hash 校验、缓存和 SDK 公共契约。
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
-不要自动创建 docs/retro、重复计划或审计文档；先在会话中输出基线、差距登记和改进方案。经用户明确授权后才落盘必要的长期文档。完成后运行相关测试、静态检查和 diff review；不 commit、不 push、不合并、不部署。
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
+
+实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+按 brownfield-retrospective 的 slice-first 方法，将范围限制在约 15 个文件或 2000 行以内。不要信任旧模型自评、代码注释或现有测试完整性；独立重建真实行为，追踪调用链、数据流、权限边界、失败路径、并发/竞态、资源生命周期和跨端契约。先建立改动前测试/性能/错误行为基线。
+
+检查正确性、边界条件、异常处理、幂等/重试、安全、性能热点、重复/过度抽象、可维护性和跨端一致性。重点排查 AI 常见盲点：只改响应没改查询/持久化、只修主路径漏掉其他分支、字段/可空性漂移、异常吞掉、UI-only 权限、mock 通过但真实路径失败、测试与实现共享同一假设。
+
+每个发现提供文件/行号、证据、影响、风险和最小修复方案。优先行为保持型优化；先新增/修正测试证明问题，再做最小改动。涉及公共 API/WS、数据库结构、E2EE、权限语义或用户可见行为变化时先请求确认。重点检查数据可追溯性、稳定 ID/pathIds、Manifest 原子切换、hash 校验、缓存和 SDK 公共契约。
+
+先在会话中输出基线、差距登记和改进方案；不要自动创建 docs/retro 或重复审计文档。完成批准范围内的修改后运行定向测试、相关静态检查和 diff review，报告改动前后证据及未验证项。不 commit、不 push、不合并、不部署。
 ```
 
 **C · 测试现有功能 · `test-collaboration` + `ai-regression-testing` + `verification-loop`**
@@ -204,21 +309,41 @@ $brownfield-retrospective $security-review $test-collaboration $verification-loo
 ```text
 $test-collaboration $ai-regression-testing $verification-loop
 
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/业务流程：[填写客户行业、角色、业务目标、关键流程和特殊规则]。目标范围：[填写端、模块和子功能]。
+
+先核对当前仓库 HEAD、工作区状态、AGENTS.md/CLAUDE.md、权威概念文档、接口契约、实际代码和测试。把实现状态明确标注为 CURRENT、TARGET、LOCKED、UNKNOWN 或 NOT_VERIFIED；不得把文档/API 存在等同于端到端交付。
+
+任务类型：测试现有功能，独立验证旧 AI 实现。
+
 当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
 先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
 
-任务类型：测试现有功能。
+任务类型：新增功能。
 
 为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
 
 实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
 
-请不要先修改业务实现。先盘点该场景已有单元、组件/Widget、契约、集成、E2E、平台/设备测试和 CI 门禁，建立“需求/业务规则 → TEST-ID 或现有测试资产 → 执行命令 → 证据”矩阵。重点设计正常路径、权限拒绝、非法输入、边界值、重复请求、并发、超时、断线恢复、旧数据兼容和跨端一致性用例。针对旧 AI 生成代码，额外检查 mock/sandbox 与真实路径不一致、遗漏 SELECT/序列化字段、只测 happy path、异常被吞、测试与实现共享同一错误假设等盲点。
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
 
-只新增真正有区分力的测试，不复制重复用例、不降低阈值、不扩大 skip。使用 tool/import_data.py、tool/geo_data.py、tool/check_readiness.py、semantic audit、manifest 检查及 tests 现有入口。
+当前功能场景：客户国际化地区数据扩展（多国家多语言客户数据接入）。目标客户/目标业务流程：[请填写客户行业、用户角色、业务目标、关键流程、特殊规则和优先级]。目标范围：[请填写本次要覆盖的端/模块/子功能]。
 
-执行后逐项报告通过/失败/阻塞/未执行，给出实际命令、退出码、测试数量和证据位置。发现产品代码缺陷时先提交复现证据和最小修复建议；没有明确授权不修改业务代码。不得把未运行、环境缺失或模拟测试写成 PASS。
+先读取当前仓库规则和权威文档，再核对实际代码与测试。不得把设计、文档或 API 存在等同于功能已交付；明确标注 CURRENT、TARGET、LOCKED、UNKNOWN 和 NOT_VERIFIED。
+
+任务类型：新增功能。
+
+为客户评估新增国家、语言或行政区层级的地区数据需求。检查来源许可、source-lock、版本日期、数据完整性、机器候选标签、人工审校状态和 production readiness。输出国家覆盖、语言覆盖、许可风险和上线阻塞，不虚构数据来源。
+
+实施已批准的地区数据接入。遵守来源固定、许可分层、稳定 ID、Schema/Manifest/Revision、SHA-256 和 maturity tripwire。先在独立候选层导入和验证，运行 import --check、schema、semantic audit、manifest 和 readiness；未经人工审校不得提升为生产数据。
+
+请先判断需求能否由现有能力配置/组合完成；只有确认存在真实能力缺口才新增代码。输出 capability contract：参与角色、用户旅程、状态机、权限/数据边界、API/WS/客户端界面、迁移兼容、观测和验收标准。客户输入不完整或涉及产品决策时，列出阻塞问题并停在方案阶段。输入充分且任务明确时，按 TDD 先写失败测试再实现，遵循项目已有架构和测试命令。遵守 Gate：计划/契约先审阅，实施后完整验证；不 commit、不 push、不合并、不部署。
+
+先不要修改业务实现。盘点单元、集成、契约、E2E、平台/设备测试和 CI 门禁，建立“需求/不变量 → 测试资产或 TEST-ID → 命令 → 证据”矩阵。覆盖正常路径、权限拒绝、非法输入、边界值、重复请求、并发、超时、故障恢复、旧数据兼容和跨端行为。
+
+针对 AI 生成代码特别检查 mock/sandbox 与真实路径不一致、数据库查询/写入字段遗漏、序列化遗漏、仅测 happy path、异常吞掉、重试重复副作用和测试 fixture 迎合实现。只新增有区分力的测试，不复制重复用例、不降低阈值、不扩大 skip。使用 tool/import_data.py、tool/geo_data.py、tool/check_readiness.py、semantic audit、manifest 检查及 tests 现有入口。
+
+逐项报告 PASS/FAIL/BLOCKED/NOT RUN、真实命令、退出码、数量和证据位置。发现缺陷先提供复现与最小修复建议；未经授权不修改业务代码。不得把未执行或环境缺失标记为 PASS。
 ```
 
 
